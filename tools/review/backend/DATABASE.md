@@ -1,8 +1,13 @@
 # The review backend on App Builder Database
 
-Status (24 Nov 2026): **connected** (the credential is on the package; `admin.mjs db-check`
-passes). The backend still stores its entries in State (key–value), with daily backups to Files
-(README, *Backups*); the move (section 2) is next.
+Status (24 Nov 2026): **step 1 of the move running**: the database is a second, live copy of
+State. Every write of the backend to State is made in the database too (`lib/mirror.mjs`,
+collection `kv`, one document per State key: the key, its value as it is, its parts); all 667
+existing keys were copied and compared equal; the write-heavy tests left both copies equal; every
+night after the backup the two are compared key by key and the database put right from State
+(report in Files `mirror/compare/<day>.json`; failed mirrored writes in `mirror/failures/`, none
+so far). State is still what everything reads. Saves with the mirror: 220 changes ~3.4 s (2.9 s
+without), one change ~0.25 s. Admin: `db-compare`, `db-sync`.
 
 **Measured 24 Nov 2026 (Stage, amer):** a write ~20–90 ms, a read ~20–50 ms, **200 documents in
 one call ~30–60 ms** (State: 220 changes ~3 s). **Reads must ask for the primary**
@@ -58,6 +63,10 @@ Production: the same with the Production workspace when the backend moves there.
    database; a daily comparison of the two (every key, its value) reports any difference.
 3. **Copy what exists:** every entry and invitation of both reviews from State into the
    database (from the day's backup), counted and compared key by key.
+   **Open before step 4:** the service refuses `readPreference` on lists (`find`), and a
+   default read can come from a replica that hasn't got the newest write (single reads ask for
+   the primary: fine). Lists (a page's entries) must be shown to read their own writes before
+   reads move: test `readConcern`, ask Adobe, or read a page's entries by key from the primary.
 4. **Read from the database:** once the comparison has been clean for several days; State keeps
    being written as the second copy for a few weeks, then stops. Backups go on daily, from the
    database to Files.

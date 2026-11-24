@@ -20,7 +20,7 @@ async function allKeys(state) {
 }
 
 /** every key with its value and expiration, 25 at a time */
-async function readEverything(state) {
+export async function readEverything(state) {
   const keys = await allKeys(state);
   const out = {};
   for (let i = 0; i < keys.length; i += 25) {
@@ -46,7 +46,7 @@ export async function backup({ state, files }) {
   }
   const bytes = JSON.stringify(keys).length;
   return {
-    day, keys: Object.keys(keys).length, renewed: soon.length, bytes,
+    day, keys: Object.keys(keys).length, renewed: soon.length, bytes, all: keys,
   };
 }
 
