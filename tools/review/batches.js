@@ -185,6 +185,9 @@ export async function markOrg(pages, kind, value) {
 }
 export const markBatch = (pages, batch) => markOrg(pages, 'batch', batch);
 
+/** pages → no longer their group's chosen representative (its first page stands in) */
+export const clearRepresentatives = (pages) => saveOrg(pages.map((page) => ({ page, kind: 'representative', value: false })));
+
 /**
  * pages → the representatives of their groups (one per group: the group's earlier one is one no
  * more). Pages in no group, or two pages of one group, are refused: { done, failed, refused }.

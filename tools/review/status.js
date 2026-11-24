@@ -11,7 +11,7 @@ import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl, scopeFacts } from './pages.js';
 import {
   getFilters, setFilters, pagesOf, markOrg, makeRepresentatives, areaLabel, orgLabel, passes,
-  markFirstRepresentatives,
+  markFirstRepresentatives, clearRepresentatives,
 } from './batches.js';
 
 const { hostname } = window.location;
@@ -63,7 +63,184 @@ let previousVisit = '';
 let shown = PAGE_SIZE;
 const picked = new Set();
 // the table is drawn further down; the state tiles redraw it through this
-const hooks = { draw: () => {} };
+const hooks = { draw: () => {}, load: () => {} };
+// the AOE team's organising: the pages ticked in the table, the page whose row is being edited
+const selected = new Set();
+let editing = null;
+// the groups whose page list is open (kept across redraws)
+const openGroups = new Set();
+
+/** a batch or group number typed in a field: a number 1–999, null (empty) or undefined (wrong) */
+function numberOf(input) {
+  const v = input.value.trim();
+  if (!v) return null;
+  const n = Number(v);
+  return Number.isInteger(n) && n >= 1 && n <= 999 ? n : undefined;
+}
+
+/** the pages' organisation for makeRepresentatives (path → page), with changes on top */
+const orgMap = (over = {}) => new Map(all.filter((p) => (over[p.path] ?? p.group))
+  .map((p) => [p.path, { ...p, group: over[p.path] ?? p.group }]));
+
+/** organising steps, one after the other, then the page read again; the outcome said */
+async function organise(steps, done) {
+  const msg = $('.st-org-msg');
+  msg.textContent = 'Saving…';
+  const problems = [];
+  await steps.reduce((chain, step) => chain.then(async () => {
+    const r = await step();
+    problems.push(...(r?.refused || []), ...(r?.failed || []).map((f) => `not saved: ${f}`));
+  }), Promise.resolve());
+  editing = null;
+  await hooks.load();
+  // (said once the page shows it)
+  msg.textContent = problems.length ? `${done}, except: ${problems.join('; ')}` : done;
+}
+
+/** the editor in a page's Batch / group cell: batch, group, representative of its group */
+function orgEditor(p) {
+  const batch = el('input', {
+    type: 'number', min: '1', max: '999', class: 'st-ed-num', value: p.batch ?? '', 'aria-label': 'Batch (empty: none)',
+  });
+  const group = el('input', {
+    type: 'number', min: '1', max: '999', class: 'st-ed-num', value: p.group ?? '', 'aria-label': 'Group (empty: none)',
+  });
+  const rep = el('input', { type: 'checkbox', ...(p.representative ? { checked: '' } : {}) });
+  rep.disabled = !p.group;
+  group.addEventListener('input', () => {
+    rep.disabled = !group.value.trim();
+    if (rep.disabled) rep.checked = false;
+  });
+  const err = el('span', { class: 'st-ed-err', 'aria-live': 'polite' });
+  const save = async () => {
+    const nb = numberOf(batch);
+    const ng = numberOf(group);
+    if (nb === undefined || ng === undefined) {
+      err.textContent = 'A batch or group is a number from 1 to 999 (empty: none).';
+      return;
+    }
+    const steps = [];
+    if (nb !== (p.batch || null)) steps.push(() => markOrg([p.path], 'batch', nb));
+    if (ng !== (p.group || null)) steps.push(() => markOrg([p.path], 'group', ng));
+    const wantRep = rep.checked && !!ng;
+    if (wantRep && (!p.representative || ng !== p.group)) {
+      steps.push(() => makeRepresentatives([p.path], orgMap({ [p.path]: ng })));
+    }
+    if (!wantRep && p.representative && ng === p.group) {
+      steps.push(() => clearRepresentatives([p.path]));
+    }
+    if (!steps.length) {
+      editing = null;
+      hooks.draw();
+      return;
+    }
+    await organise(steps, `${p.title}: saved`);
+  };
+  return el(
+    'div',
+    { class: 'st-ed' },
+    el('label', {}, 'Batch ', batch),
+    el('label', {}, 'Group ', group),
+    el('label', { class: 'st-check' }, rep, ' Representative of its group'),
+    el('div', {}, el('button', { type: 'button', class: 'rs-btn st-ed-save', onclick: save }, 'Save'), ' ', el('button', {
+      type: 'button',
+      class: 'rs-btn st-ed-cancel',
+      onclick: () => {
+        editing = null;
+        hooks.draw();
+      },
+    }, 'Cancel')),
+    err,
+  );
+}
+
+/** the bar for the ticked pages: the same change for all of them */
+function drawBulk() {
+  const bar = $('.st-bulk');
+  const pages = [...selected].filter((path) => all.some((p) => p.path === path));
+  bar.hidden = me.role !== 'aoe' || !pages.length;
+  if (bar.hidden) return;
+  const num = (name) => el('input', {
+    type: 'number', min: '1', max: '999', class: 'st-ed-num', 'aria-label': name,
+  });
+  const batch = num('Batch number');
+  const group = num('Group number');
+  const n = `${pages.length} page${pages.length === 1 ? '' : 's'}`;
+  const move = (kind, input) => () => {
+    const v = numberOf(input);
+    if (!v) {
+      $('.st-org-msg').textContent = `Give the ${kind} number (1 to 999).`;
+      return;
+    }
+    organise([() => markOrg(pages, kind, v)], `${n} moved to ${kind} ${v}`);
+  };
+  const btn = (text, onclick, title = '') => el('button', {
+    type: 'button', class: 'rs-btn', onclick, title,
+  }, text);
+  bar.replaceChildren(
+    el('b', {}, `${n} selected:`),
+    el('span', { class: 'st-bulk-group' }, 'Batch ', batch, btn('Move', move('batch', batch)), btn('Take out of their batch', () => organise([() => markOrg(pages, 'batch', null)], `${n} taken out of their batch`))),
+    el('span', { class: 'st-bulk-group' }, 'Group ', group, btn('Move', move('group', group)), btn('Take out of their group', () => organise([() => markOrg(pages, 'group', null)], `${n} taken out of their group`))),
+    el(
+      'span',
+      { class: 'st-bulk-group' },
+      btn('Make representatives', () => organise([() => makeRepresentatives(pages, orgMap())], 'Representatives chosen'), 'Each becomes its group\'s representative (one per group)'),
+      btn('Clear representative', () => organise([() => clearRepresentatives(pages)], 'Representatives cleared (each group\'s first page stands in)')),
+    ),
+    btn('Clear the selection', () => {
+      selected.clear();
+      hooks.draw();
+    }),
+  );
+}
+
+/** the groups: each with its pages and its representative to choose (or none: its first page) */
+function drawGroups() {
+  const box = $('.st-groups');
+  box.hidden = me.role !== 'aoe';
+  if (box.hidden) return;
+  const groups = [...new Set(all.map((p) => p.group).filter(Boolean))].sort((a, b) => a - b);
+  $('.st-groups-sum').textContent = `Groups and their representatives (${groups.length})`;
+  if (!groups.length) {
+    $('.st-groups-body').replaceChildren(el('p', { class: 'rs-muted' }, 'No groups yet: give pages a group (Edit in their row, the selection bar or the box above).'));
+    return;
+  }
+  const short = (p) => `${p.title} (${p.path})`;
+  $('.st-groups-body').replaceChildren(...groups.map((g) => {
+    const members = all.filter((p) => p.group === g).sort((a, b) => (a.path < b.path ? -1 : 1));
+    const chosen = members.find((p) => p.representative);
+    const first = members.find((p) => p.representativeAuto) || members[0];
+    const pick = el('select', {
+      class: 'st-rep-pick',
+      'aria-label': `Representative of group ${g}`,
+      onchange: (e) => {
+        const v = e.target.value;
+        organise([v
+          ? () => makeRepresentatives([v], orgMap())
+          : () => clearRepresentatives(members.filter((p) => p.representative).map((p) => p.path))], v ? `Group ${g}: representative chosen` : `Group ${g}: no representative chosen (its first page stands in)`);
+      },
+    }, el('option', { value: '' }, `None chosen: the first page stands in (${first?.title || ''})`), ...members.map((p) => el('option', { value: p.path }, short(p))));
+    pick.value = chosen ? chosen.path : '';
+    return el(
+      'div',
+      { class: 'st-group-row' },
+      el('b', {}, `Group ${g}`),
+      el('span', { class: 'rs-muted' }, ` ${members.length} page${members.length === 1 ? '' : 's'} · representative `),
+      pick,
+      el('details', {
+        ...(openGroups.has(g) ? { open: '' } : {}),
+        ontoggle: (e) => (e.target.open ? openGroups.add(g) : openGroups.delete(g)),
+      }, el('summary', {}, 'Its pages'), el('ul', {}, ...members.map((p) => el(
+        'li',
+        {},
+        `${short(p)}${p.representative ? ' ★' : ''}${p.representativeAuto ? ' ☆' : ''} `,
+        el('button', {
+          type: 'button', class: 'rs-btn st-take-out', onclick: () => organise([() => markOrg([p.path], 'group', null)], `${p.title}: taken out of group ${g}`),
+        }, 'Take out'),
+      )))),
+    );
+  }));
+}
 
 /** the saved state of the page: { search, template, state, order, onlyNew, picked, scroll } */
 function savedView() {
@@ -226,10 +403,32 @@ function draw() {
   $('.st-count').textContent = `${list.length} of ${all.length} pages${all.some((p) => p.isNew) ? ` · ${all.filter((p) => p.isNew).length} with news since your last visit` : ''}`;
   // (template and design choices: only where the pages have them)
   const templates = all.some((p) => p.template);
+  const aoe = me.role === 'aoe';
   const head = ['State', 'Page', 'Batch / group', 'Area', templates && 'Template', 'Threads', REVIEW.design && 'Design choices', 'Approved', 'Latest activity'].filter(Boolean);
-  const rows = list.slice(0, shown).map((p) => el(
+  const visible = list.slice(0, shown);
+  // (the AOE team: a tick per page, and one for all the pages shown)
+  const tickAll = aoe ? el('input', {
+    type: 'checkbox',
+    'aria-label': 'Select every page shown',
+    ...(visible.length && visible.every((p) => selected.has(p.path)) ? { checked: '' } : {}),
+    onchange: (e) => {
+      visible.forEach((p) => (e.target.checked ? selected.add(p.path) : selected.delete(p.path)));
+      hooks.draw();
+    },
+  }) : null;
+  const rows = visible.map((p) => el(
     'tr',
-    { class: p.isNew ? 'st-row-new' : '' },
+    { class: `${p.isNew ? 'st-row-new' : ''}${selected.has(p.path) ? ' st-row-picked' : ''}` },
+    aoe ? el('td', {}, el('input', {
+      type: 'checkbox',
+      'aria-label': `Select ${p.title}`,
+      ...(selected.has(p.path) ? { checked: '' } : {}),
+      onchange: (e) => {
+        if (e.target.checked) selected.add(p.path);
+        else selected.delete(p.path);
+        hooks.draw();
+      },
+    })) : null,
     el('td', {}, el('span', { class: `st-chip st-${p.state}` }, label(p.state))),
     el(
       'td',
@@ -242,7 +441,18 @@ function draw() {
         class: 'st-edit', href: editUrl(p.path), target: '_blank', rel: 'noopener', title: 'Open the page in Document Authoring to edit it',
       }, 'Edit in DA')] : null,
     ),
-    el('td', {}, orgLabel(p) ? el('span', { class: `st-batch-tag${p.representative || p.representativeAuto ? ' st-rep' : ''}`, title: repTitle(p) }, orgLabel(p)) : ''),
+    el('td', {}, editing === p.path ? orgEditor(p) : [
+      orgLabel(p) ? el('span', { class: `st-batch-tag${p.representative || p.representativeAuto ? ' st-rep' : ''}`, title: repTitle(p) }, orgLabel(p)) : '',
+      aoe ? el('button', {
+        type: 'button',
+        class: 'st-ed-open',
+        title: 'Change the batch, the group or the representative of this page',
+        onclick: () => {
+          editing = p.path;
+          hooks.draw();
+        },
+      }, 'Edit') : null,
+    ]),
     el('td', {}, areaLabel(p.unit || '')),
     templates ? el('td', {}, p.template) : null,
     el('td', {}, threadsText(p.threads)),
@@ -250,8 +460,10 @@ function draw() {
     el('td', {}, approvedText(p)),
     el('td', {}, p.last ? [`${p.last.by}${p.last.role === 'aoe' ? ' (AOE)' : ''} · ${when(p.last.at)}`, p.isNew ? el('span', { class: 'st-new-badge' }, 'new') : null] : ''),
   ));
+  drawBulk();
+  drawGroups();
   $('.st-table').replaceChildren(list.length
-    ? el('table', {}, el('thead', {}, el('tr', {}, ...head.map((h) => el('th', {}, h)))), el('tbody', {}, ...rows))
+    ? el('table', {}, el('thead', {}, el('tr', {}, aoe ? el('th', {}, tickAll) : null, ...head.map((h) => el('th', {}, h)))), el('tbody', {}, ...rows))
     : el('p', { class: 'rs-none' }, 'No pages match.'));
   $('.st-more').hidden = list.length <= shown;
   $('.st-more').textContent = `Show more (${list.length - shown} more)`;
@@ -317,6 +529,8 @@ async function load() {
   draw();
   window.localStorage.setItem(VISIT_KEY, body.at);
 }
+
+hooks.load = load;
 
 async function start() {
   if (!PREVIEW) {

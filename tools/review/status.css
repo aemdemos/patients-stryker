@@ -55,3 +55,23 @@
 .st-scope summary { font-weight: 600; cursor: pointer; }
 .st-scope h3 { margin: 10px 0 4px; font-size: 13px; }
 .st-scope-list { max-height: 220px; margin: 0; padding-left: 18px; overflow: auto; font-size: 12px; }
+
+/* the AOE team's organising: a page's editor, the selection bar, the groups */
+.st-ed-open { margin-left: 6px; padding: 0 6px; border: 1px solid #d0d7de; border-radius: 3px; background: #fff; color: #0969da; font-size: 12px; cursor: pointer; }
+.st-ed { display: flex; flex-direction: column; gap: 4px; min-width: 190px; padding: 6px; border: 1px solid #d0d7de; border-radius: 4px; background: #f6f8fa; font-size: 12px; }
+.st-ed-num { width: 64px; }
+.st-ed-err { color: #cf222e; }
+.st-ed .rs-btn { padding: 2px 8px; font-size: 12px; }
+.st-bulk { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 6px 0; padding: 8px 10px; border: 1px solid #54aeff; border-radius: 6px; background: #ddf4ff; font-size: 13px; }
+.st-bulk[hidden] { display: none; }
+.st-bulk-group { display: inline-flex; gap: 6px; align-items: center; }
+.st-bulk .rs-btn { padding: 2px 8px; font-size: 12px; }
+.st-org-msg { min-height: 1em; margin: 4px 0; color: #116329; font-size: 13px; }
+.st-row-picked { background: #ddf4ff; }
+.st-groups { margin: 10px 0; padding: 8px 12px; border: 1px solid #d0d7de; border-radius: 6px; background: #f6f8fa; }
+.st-groups summary { font-weight: 600; cursor: pointer; }
+.st-group-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid #eaeef2; font-size: 13px; }
+.st-group-row details { flex: 1 1 100%; }
+.st-group-row ul { margin: 4px 0; padding-left: 18px; }
+.st-rep-pick { max-width: 520px; }
+.st-take-out { padding: 0 6px; font-size: 11px; }

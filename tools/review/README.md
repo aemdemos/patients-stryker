@@ -315,6 +315,18 @@ page**: the only page the customer reviews, to approve the whole group. Set by h
   `threads.js`, used by the overview). Derived, nothing written: a page moved out of the group
   leaves the approval.
 
+**Changing it** (status page, AOE team), besides the paste box:
+- **A page's row:** **Edit** in its Batch / group cell: the batch, the group, "Representative
+  of its group"; an empty number takes the page out. Save or Cancel.
+- **Several pages:** tick them (the header's tick: every page shown); the selection bar moves
+  them to a batch or a group, takes them out of their batch or group, makes them the
+  representatives of their groups (one per group) or clears that.
+- **Groups and their representatives:** every group with its pages; choose its representative
+  from its pages, or **None chosen** (its first published page stands in, ☆); **Take out** a
+  page of the group (its page list stays open while you work).
+- Every change is saved at once and kept in the audit; the message under the selection bar
+  says what was done once the page shows it.
+
 ### Edit in Document Authoring (AOE team)
 
 Here the link opens the standard page's document (`/std/…`).
@@ -541,6 +553,7 @@ node tools/review/backend/test/scope-live.test.mjs    # deployed: scope pages, a
 node tools/review/backend/test/scope-tool.test.mjs <dev server>   # the scope on the status page, a backend shot in the tool, ☆
 node tools/review/backend/test/status-view.test.mjs <dev server>  # the customer's status page (no AOE parts), new tabs, state kept on refresh
 node tools/review/backend/test/live-tool.test.mjs <dev server> [page] [space]   # the Live comparison: the copy, fonts, no scripts, sync, links, widths
+node tools/review/backend/test/org-edit.test.mjs <dev server> [space] [prefix of 3 pages]   # changing batches, groups, representatives (pages nobody used; purged after)
 ```
 
 The standard-pages review's browser and summary tests live on `standardise-v3` (they use its
