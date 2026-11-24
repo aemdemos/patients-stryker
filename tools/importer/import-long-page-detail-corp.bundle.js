@@ -2676,7 +2676,42 @@ var CustomImportScript = (() => {
       from.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells }), from));
     });
   }
+  var WIDGET_VARIANTS = [
+    [/medical-information-request/, "medical-information-request"],
+    [/mapbox|coverage|map\b/, "map"],
+    [/calculator|surfaces-rental/, "calculator"]
+  ];
+  function widgetBlock(doc, variant, href) {
+    const a = doc.createElement("a");
+    a.setAttribute("href", href);
+    a.textContent = href;
+    return keepBlock(WebImporter.Blocks.createBlock(doc, { name: `Widget (${variant})`, cells: [[a]] }));
+  }
+  function microApps(main, doc) {
+    main.querySelectorAll(".c-remoteComponent").forEach((component) => {
+      const value = (component.querySelector(".hdnSelComp") || {}).value || component.querySelector(".hdnSelComp") && component.querySelector(".hdnSelComp").getAttribute("value") || "";
+      const raw = value.split("|")[1];
+      if (!raw) return;
+      let url;
+      try {
+        url = new URL(raw.trim());
+      } catch (e) {
+        return;
+      }
+      url.host = "microapp.stryker.com";
+      const hit = WIDGET_VARIANTS.find(([re]) => re.test(url.pathname.toLowerCase()));
+      const from = component.closest(".remotecomponent") || component;
+      from.replaceWith(widgetBlock(doc, hit ? hit[1] : "product-explorer", url.href));
+    });
+    main.querySelectorAll(".c-cventComponent").forEach((component) => {
+      const box = component.querySelector("[data-calendar-id]");
+      if (!box) return;
+      const href = `https://www.cvent.com/c/calendar/${box.getAttribute("data-calendar-id")}?widget=${box.getAttribute("data-widget-id") || ""}`;
+      (component.closest(".cventcomponent") || component).replaceWith(widgetBlock(doc, "cvent", href));
+    });
+  }
   function numberCounters(main, doc, h) {
+    if (STD_DRAFT_IMPORT) microApps(main, doc);
     if (STD_DRAFT_IMPORT) statisticsBlocks(main, doc);
     main.querySelectorAll(".numbercounter").forEach((component) => {
       const widget = component.querySelector('[data-widget="numbercounter"]');

@@ -57,6 +57,13 @@ function applyWidgetShell(widget, source, widgetName, searchParams) {
  */
 export default async function decorate(widget) {
   const source = widget.querySelector('a[href]');
+  // in review (draft pages, docs/standardisation/widget.md): a stryker.com micro-app or the
+  // Cvent calendar, embedded as it is
+  if (document.body.classList.contains('std-draft') && /^https:\/\/(microapp\.stryker\.com|www\.cvent\.com\/c\/calendar)\//.test(source?.href || '')) {
+    const { default: embed } = await import('./widget-microapp.js');
+    await embed(widget, source);
+    return;
+  }
   const { pathname, searchParams } = new URL(source.href);
   const { widgetPath, widgetName } = parseWidgetHref(pathname);
 
