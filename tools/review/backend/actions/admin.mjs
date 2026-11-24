@@ -49,7 +49,9 @@ import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
 import {
   backup, listBackups, restoreCheck, restore, readEverything,
 } from '../lib/backup.mjs';
-import { dbCheck, dbConsistency } from '../lib/db.mjs';
+import {
+  dbCheck, dbConsistency, dbListTest, dbListChangeTest,
+} from '../lib/db.mjs';
 import { compareAndRepair, mirrorFailures } from '../lib/mirror.mjs';
 
 // operations that change entries: the review's summary is built again after them
@@ -122,6 +124,8 @@ async function run(params) {
       return ok(await compareAndRepair(params, files, all, { repair: op === 'db-sync', state }));
     }
     if (op === 'db-check') return ok(await dbCheck(params));
+    if (op === 'db-listchange') return ok(await dbListChangeTest(params, Number(params.n) || 150));
+    if (op === 'db-listtest') return ok(await dbListTest(params, Number(params.n) || 40));
     if (op === 'db-consistency') return ok(await dbConsistency(params, Number(params.n) || 30));
     if (op === 'backups') return ok({ days: await listBackups(files) });
     if (op === 'restore-check') {
