@@ -55,6 +55,18 @@ const rowOf = (page, field, e) => ({
 });
 const rowsOfDoc = (doc) => (doc ? Object.entries(doc.e || {}).map(([f, e]) => rowOf(doc.page, f, e)) : []);
 
+// two upserts of one new page document at the same moment: the second fails with a duplicate
+// key (the first created it); the same write again then updates it ($set: done twice = once)
+const DUP = /duplicate key|E11000/i;
+async function once(write) {
+  try {
+    return await write();
+  } catch (e) {
+    if (!DUP.test(String(e.message))) throw e;
+    return write();
+  }
+}
+
 /** a page's own rows (from the primary: always the newest) */
 export async function pageRows(client, space, page) {
   return rowsOfDoc(await client.collection('pages').findOne({ _id: pageId(space, page) }, PRIMARY).catch(() => null));
@@ -78,7 +90,7 @@ export async function saveEntry(client, {
   const id = pageId(space, page);
   const set = { $set: { [f]: entry, space: space || 'std', page } };
   if (rev === null) {
-    await col.updateOne({ _id: id }, set, { upsert: true });
+    await once(() => col.updateOne({ _id: id }, set, { upsert: true }));
     return { ok: true, rev: entry.rev, before: undefined };
   }
   // the rev check inside the write: only when the entry is still the one it started from
@@ -88,7 +100,7 @@ export async function saveEntry(client, {
     if (before || rev === 0) return { ok: true, rev: entry.rev, before: before ? before.e?.[fieldOf(item, kind)] || null : null };
   } catch (e) {
     // (rev 0 and the entry there already: the upsert collides with the page's document)
-    if (!/duplicate key|E11000/i.test(String(e.message))) throw e;
+    if (!DUP.test(String(e.message))) throw e;
   }
   const now = await col.findOne({ _id: id }, PRIMARY).catch(() => null);
   const cur = now?.e?.[fieldOf(item, kind)];
@@ -101,7 +113,8 @@ export async function saveEntry(client, {
 export async function saveMany(client, items) {
   const col = client.collection('pages');
   for (let i = 0; i < items.length; i += 500) {
-    await col.bulkWrite(items.slice(i, i + 500).map(({
+    const part = items.slice(i, i + 500);
+    await once(() => col.bulkWrite(part.map(({
       space, page, item, kind, entry,
     }) => ({
       updateOne: {
@@ -109,7 +122,7 @@ export async function saveMany(client, items) {
         update: { $set: { [`e.${fieldOf(item, kind)}`]: entry, space: space || 'std', page } },
         upsert: true,
       },
-    })));
+    }))));
   }
 }
 
@@ -151,9 +164,9 @@ export function kv(client) {
       const w = where(key);
       if (!w) throw new Error(`not a review key: ${key}`);
       if (w.coll === 'invites') {
-        await coll('invites').replaceOne({ _id: w.id }, { _id: w.id, value }, { upsert: true });
+        await once(() => coll('invites').replaceOne({ _id: w.id }, { _id: w.id, value }, { upsert: true }));
       } else {
-        await coll('pages').updateOne({ _id: w.id }, { $set: { [`e.${w.field}`]: JSON.parse(value), space: w.space, page: w.page } }, { upsert: true });
+        await once(() => coll('pages').updateOne({ _id: w.id }, { $set: { [`e.${w.field}`]: JSON.parse(value), space: w.space, page: w.page } }, { upsert: true }));
       }
       return key;
     },

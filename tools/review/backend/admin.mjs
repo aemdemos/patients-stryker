@@ -4,7 +4,7 @@
  * environment). Prints the JSON answer.
  * usage: node tools/review/backend/admin.mjs <op> [--name "…"] [--paths /us/en/a,/us/en/b]
  *   [--days 30] [--no-groups] [--results] [--role aoe] [--page /us/en/…] [--id <invite id>] [--json '<params>' | --json-file <file>]
- *   [--space std|main] [--host <branch>--stryker-com--strykerenterprise.aem.page] [--ns 892544-strykerstdreview-stage]
+ *   [--space std|main] [--host <branch>--stryker-com--strykerenterprise.aem.page] [--ns <namespace, default Production: backend/target.mjs>]
  *   [--api adobeioruntime.net | runtime.adobe.io] (the Runtime API host whose Settings key opens --ns:
  *   Stage adobeioruntime.net, Production runtime.adobe.io)
  * --space: the review the op works in (std, the standard pages, the default; main, the client
@@ -13,6 +13,7 @@
  *   shot-requests | shot-history | shot-add | shot-fail
  */
 import { readFileSync } from 'fs';
+import { NS, apiOf } from './target.mjs';
 
 const args = process.argv.slice(2);
 const op = args[0];
@@ -20,8 +21,8 @@ const opt = (name, fallback) => {
   const i = args.indexOf(name);
   return i >= 0 ? args[i + 1] : fallback;
 };
-const ns = opt('--ns', '892544-strykerstdreview-stage');
-const HOST = opt('--api', 'adobeioruntime.net');
+const ns = opt('--ns', NS);
+const HOST = opt('--api', apiOf(ns));
 if (!op) {
   console.error('usage: admin.mjs <setup|invite|revoke|invites|export|status|import|purge-invite|purge-test> [options]');
   process.exit(2);

@@ -11,6 +11,7 @@
 import {
   open, checkInvite, inScope, reply, fail, isPreflight, inviteOf, spaceOf,
 } from '../lib/core.mjs';
+import { movedMessage } from '../lib/move.mjs';
 import {
   readHistory, readRequest, requestShot, withoutLeaves,
 } from '../lib/shots.mjs';
@@ -29,6 +30,7 @@ export async function main(params) {
     const { files } = stores;
     const method = (params.__ow_method || 'get').toLowerCase();
     if (method === 'post') {
+      if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
       if (invite.role !== 'aoe') return fail(params, 403, 'aoe-only', 'Only the AOE team asks for new source shots.');
       const history = await readHistory(files, space, page);
       if (!history.versions.length) {

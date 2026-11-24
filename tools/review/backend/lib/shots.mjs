@@ -18,6 +18,7 @@
  * SHA-256 here shows they are the ones captured then.
  */
 import crypto from 'crypto';
+import { listAll } from './listall.mjs';
 
 export const WIDTHS = [1440, 860, 375];
 export const SHOT_ID = /^s-\d{8}-\d{6}$/;
@@ -48,7 +49,7 @@ export const readRequest = (files, space, page) => readJson(files, requestFile(s
 
 /** every open request of a space */
 export async function listRequests(files, space) {
-  const list = await files.list(`${pre(space)}shot-requests/`);
+  const list = await listAll(files, `${pre(space)}shot-requests/`);
   const got = await Promise.all(list.map((f) => readJson(files, f.name)));
   return got.filter(Boolean).sort((a, b) => (a.at < b.at ? -1 : 1));
 }

@@ -16,6 +16,7 @@ import crypto from 'crypto';
 import {
   open, checkInvite, inScope, reply, fail, isPreflight, inviteOf, spaceOf,
 } from '../lib/core.mjs';
+import { movedMessage } from '../lib/move.mjs';
 import {
   createInvite, listInvites, revokeInvite, inviteProblem,
 } from '../lib/invites.mjs';
@@ -59,6 +60,7 @@ export async function main(params) {
       const all = (await listInvites(state)).filter((i) => i.space === space);
       return reply(params, 200, { me: invite.id, space, invites: all.map((i) => shown(i, invite.id)).reverse() });
     }
+    if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
     const at = new Date().toISOString();
     if (params.op === 'create') {
       const name = String(params.name || '').trim();

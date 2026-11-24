@@ -5,6 +5,7 @@
  *     problems: { <page>: { source, reason, at, tries } }  sources to correct (404, redirect),
  *     lastRun: { at, took, done: [...], failed: [...], waiting }, health: { at, ok, detail } }
  */
+import { listAll } from './listall.mjs';
 const pre = (space) => (!space || space === 'std' ? '' : `${space}/`);
 export const stateFile = (space) => `${pre(space)}capture/state.json`;
 export const lockFile = (space) => `${pre(space)}capture/lock.json`;
@@ -26,7 +27,7 @@ export const writeCaptureState = (files, space, s) => files.write(stateFile(spac
 
 /** the pages that have a shot history (file names of <space>/shots/) */
 export async function pagesWithShots(files, space) {
-  const list = await files.list(`${pre(space)}shots/`);
+  const list = await listAll(files, `${pre(space)}shots/`);
   return new Set(list.map((f) => f.name.split('/').pop().replace(/\.json$/, ''))
     .map((b) => Buffer.from(b, 'base64url').toString()));
 }

@@ -101,6 +101,31 @@ Project "Stryker std review", workspace **Stage** (Runtime namespace
    using Stage (`config.js` backend URL) until the review moves. Web actions answer at
    `https://892544-strykerstdreview.adobeioruntime.net/api/v1/web/std-review/<name>`.
 
+## The move to Production (24 Nov 2026)
+
+`node tools/review/backend/move.mjs [--apply]` (lib/move.mjs), from Stage to Production, printing
+counts only (no file contents, links or keys):
+
+1. both workspaces reachable; Production empty. Stage then held 827 + 2 page documents (875
+   entries) and 41 invitations (11 active), and 1,767 files (22 MB: audit 876, shot history
+   647, backend shot tiles 237, backups, the signing key, summaries).
+2. Stage's schedules off; 3. Stage frozen: package parameter `REVIEW_MOVED_TO` (its database
+   credential kept), so saves, shot requests and invitation changes answer 410 "moved: reload";
+4. Stage's backup of every entry and invitation (916 keys);
+5. every file copied by short-lived read links (Stage `files-presign`, Production
+   `files-pull`): 1,767 of 1,767. The **signing key** came with them, so every invitation link
+   keeps working (checked: a Stage-signed link passes Production's signature check);
+6. Production's `restore` of that backup; then every entry compared one by one (38 std, 837
+   main: none missing, none different) and every invitation record (41, equal);
+7. Production's summaries built again, its schedules on (capture, live warm-up, backup).
+
+Found on the way: Files' list stops at 1,000 files, silently (`lib/listall.mjs` pages through
+the rest; also used for the shot history, which will pass 1,000 pages); several restores of one
+new page document at the same moment collided on its id (`lib/dbstate.mjs` writes again once).
+The tool and the scripts point at Production (`config.js` backend, `backend/target.mjs`); all
+tests of both reviews passed there. Speed as on Stage (220 changes ~0.56 s, overview ~0.1 s).
+Stage keeps its copy, frozen, as a fallback; nothing reads it.
+
 ## 2. The move (how it was planned; done 24 Nov 2026, steps 2 and 4 shortened: the data was test data)
 
 1. **Measure:** db-check's timings; a test collection with the review's real volume.

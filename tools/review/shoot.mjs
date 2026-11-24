@@ -13,6 +13,7 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { createHash } from 'crypto';
 import { createRequire } from 'module';
 import { join } from 'path';
+import { NS, actionUrl } from './backend/target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 export const { chromium } = createRequire(`${S}/package.json`)('playwright');
@@ -126,8 +127,8 @@ export function versionOf(dirsByWidth, {
 }
 
 /** the review backend's private admin action (the workspace credential is added by the environment) */
-export async function admin(p, namespace = '892544-strykerstdreview-stage') {
-  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${namespace}/actions/std-review/admin?blocking=true&result=true`, {
+export async function admin(p, namespace = NS) {
+  const resp = await fetch(actionUrl(namespace), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });
   const text = await resp.text();

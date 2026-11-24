@@ -10,9 +10,10 @@
  * usage: node tools/review/backend/test/shots-live.test.mjs
  */
 import { REVIEW } from '../../config.js';
+import { NS, actionUrl } from '../target.mjs';
 
-async function admin(p, namespace = '892544-strykerstdreview-stage') {
-  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${namespace}/actions/std-review/admin?blocking=true&result=true`, {
+async function admin(p, namespace = NS) {
+  const resp = await fetch(actionUrl(namespace), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });
   const text = await resp.text();

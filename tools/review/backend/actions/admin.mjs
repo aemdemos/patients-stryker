@@ -19,6 +19,8 @@
  *   backups                                 the days with a backup
  *   migrate-from-state { apply }            once: every key of the old State store into the database
  *                                           (apply false: only the comparison)
+ *   files-list / files-presign { names }    moving: the files to copy, short-lived read links
+ *   files-pull { items: [{ name, url }] }   moving: each link fetched and written under its name
  *   empty-state { apply }                   the old State store: a final copy to Files
  *                                           (backups/state-final/), then every key deleted
  *   db-check                                the App Builder Database: credential there, connect, write,
@@ -58,12 +60,14 @@ import {
   dbCheck, dbConsistency, dbListTest, dbListChangeTest,
 } from '../lib/db.mjs';
 import { migrateFromState, emptyState } from '../lib/migrate.mjs';
+import { filesList, filesPresign, filesPull } from '../lib/move.mjs';
 
 // operations that change entries: the review's summary is built again after them
 const WRITES = ['migrate-from-state', 'status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
 import {
   listRequests, readHistory, addVersions, failRequest, historyFile, requestFile,
 } from '../lib/shots.mjs';
+import { listAll } from '../lib/listall.mjs';
 
 const ok = (body) => ({ body });
 const bad = (message) => ({ body: { error: { code: 'bad-request', message } } });
@@ -126,6 +130,10 @@ async function run(params) {
     }
     if (op === 'migrate-from-state') return ok(await migrateFromState(state, { apply: params.apply === true }));
     if (op === 'empty-state') return ok(await emptyState(files, { apply: params.apply === true }));
+    // moving the review to another workspace (lib/move.mjs, backend/move.mjs)
+    if (op === 'files-list') return ok({ files: await filesList(files) });
+    if (op === 'files-presign') return ok({ links: await filesPresign(files, [].concat(params.names || [])) });
+    if (op === 'files-pull') return ok(await filesPull(files, [].concat(params.items || [])));
     if (op === 'db-check') return ok(await dbCheck(params));
     if (op === 'db-stats') {
       // the documents per space and invitations; pages left without entries removed
@@ -256,7 +264,7 @@ async function run(params) {
     if (op === 'audit') {
       // the audit files of one day (UTC date, default today), oldest first; optionally one page
       const day = /^\d{4}-\d{2}-\d{2}$/.test(params.date || '') ? params.date : new Date().toISOString().slice(0, 10);
-      const list = (await files.list(`${auditDir}/${day}/`)).map((f) => f.name).sort();
+      const list = (await listAll(files, `${auditDir}/${day}/`)).map((f) => f.name).sort();
       const out = [];
       for (const name of list) {
         const batch = JSON.parse((await files.read(name)).toString());

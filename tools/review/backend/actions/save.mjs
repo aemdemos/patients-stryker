@@ -12,12 +12,14 @@ import {
   open, checkInvite, inScope, saveChanges, reply, fail, isPreflight, inviteOf,
   REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, MAX_ORG_CHANGES, REPLY_KIND, replyProblem, stateProblem, doneProblem, spaceOf,
 } from '../lib/core.mjs';
+import { movedMessage } from '../lib/move.mjs';
 import { updateSummary, readSummary } from '../lib/summary.mjs';
 import { ORG_KINDS, orgProblem } from '../../threads.js';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
   if ((params.__ow_method || '').toLowerCase() !== 'post') return fail(params, 405, 'method', 'POST only');
+  if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
   try {
     const stores = await open(params);
     const { invite, error } = await checkInvite(stores, inviteOf(params));

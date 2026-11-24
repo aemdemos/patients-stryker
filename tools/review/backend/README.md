@@ -2,7 +2,9 @@
 
 The review tool's store for the final scope (plan: `../backend-plan.md`): reviewers without an
 Adobe ID save with an **invitation link**; the state per page and block lives in App Builder.
-Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (Production not set up).
+Project "Stryker std review", **Production** workspace `892544-strykerstdreview` (since 24 Nov 2026; Stage,
+`892544-strykerstdreview-stage`, ran it before and is frozen: it refuses writes with "moved"). The scripts and tests on this machine find it in
+`target.mjs`; the move itself: `move.mjs` (DATABASE.md, "The move to Production").
 
 | Action | Kind | What |
 |---|---|---|
@@ -12,12 +14,13 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
 | `overview` | web | `GET` + header `x-review-invite` (any invitation) → every page with entries in its scope and its state (`lib/states.mjs`), for the status page |
 | `admin` | private | `setup`, `invite`, `revoke`, `invites`, `export`, `answer`, `status`, `import`, `rekey`, `audit`, `purge-invite`, `purge-test` (see the action's header) |
 
-- **Web actions** answer `https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review/<name>`;
+- **Web actions** answer `https://892544-strykerstdreview.adobeioruntime.net/api/v1/web/std-review/<name>`;
   CORS only for the branch previews, `preview-aemcoder.adobe.io` and localhost. Every call needs a
   valid, unexpired, unrevoked invitation; the reviewer's name comes from it; the page must be in its
   scope (path prefixes; group choices only with the group right).
 - **The private action** can only be called with the workspace's credential, which the
-  environment adds (Settings, host `adobeioruntime.net`, Basic).
+  environment adds (Settings, Basic: Production's on host `runtime.adobe.io`, Stage's on
+  `adobeioruntime.net`; one key per host, the same Runtime API on both).
 - **Storage** (`lib/core.mjs`, `lib/dbstate.mjs`, `DATABASE.md`): App Builder Database, one
   document per page of a review (`pages`, `_id` `<space>|<page>`, page `*` the group choices),
   each entry a field `{ v, by, at, rev, inv, role }`; invitations in `invites`. The backend still

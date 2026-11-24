@@ -13,10 +13,10 @@
  */
 import { createHash } from 'crypto';
 import { REVIEW } from '../../config.js';
+import { NS, actionUrl } from '../target.mjs';
 
-const NS = '892544-strykerstdreview-stage';
 async function runtime(action, p) {
-  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${NS}/actions/std-review/${action}?blocking=true&result=true`, {
+  const resp = await fetch(actionUrl(NS, action), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });
   const text = await resp.text();
