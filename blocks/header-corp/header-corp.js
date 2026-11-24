@@ -285,18 +285,31 @@ function handleEscape(block) {
 
 function wireBehaviour(block) {
   const toggle = block.querySelector('.menu-toggle');
+  const searchToggle = block.querySelector('.search-toggle');
+  const searchBar = block.querySelector('.search-bar');
+  const hideSearch = () => {
+    searchBar.classList.remove('is-shown');
+    searchToggle.setAttribute('aria-expanded', 'false');
+  };
+
   toggle.addEventListener('click', () => {
     block.classList.add('anim');
     const open = block.classList.toggle('show-main-nav');
     if (!open) closePanels(block);
+    // as on www.stryker.com, opening the menu closes the search bar
+    if (open) hideSearch();
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
     syncFocus(block);
   });
 
-  const searchToggle = block.querySelector('.search-toggle');
-  const searchBar = block.querySelector('.search-bar');
   searchToggle.addEventListener('click', () => {
+    // with the menu open, the live site's page overlay takes the tap on the search button
+    // and closes the menu (the search bar stays closed)
+    if (block.classList.contains('show-main-nav')) {
+      closeDrawer(block);
+      return;
+    }
     const shown = searchBar.classList.toggle('is-shown');
     searchToggle.setAttribute('aria-expanded', String(shown));
     if (shown) searchBar.querySelector('input').focus();
