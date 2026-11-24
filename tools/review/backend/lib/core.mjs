@@ -171,6 +171,8 @@ export async function secretOf(files, create = false) {
     return JSON.parse(buf.toString()).key;
   } catch (e) {
     if (!create) throw new Error('not set up: run the admin action with op "setup"');
+    // (a key that is there but could not be read: never replaced, every invitation depends on it)
+    if ((await files.list(SECRET_FILE)).length) throw e;
     const key = crypto.randomBytes(32).toString('base64url');
     await files.write(SECRET_FILE, JSON.stringify({ key, created: new Date().toISOString() }));
     return key;

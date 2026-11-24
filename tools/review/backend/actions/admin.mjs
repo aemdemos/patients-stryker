@@ -1,7 +1,8 @@
 /*
  * Action `admin` (private: not a web action, only callable with the project's credential).
  * params.op:
- *   setup                                   creates the signing key once (Files, never returned)
+ *   setup                                   creates the signing key once (Files, never returned) and,
+ *                                           with the database's credential, the page index
  *   invite { name, paths: [...], days, groups, results, role }  → { id, token, link, results link, expires }
  *     (groups: choices for all blocks like this, default on; results: the results page, default off;
  *     role: reviewer (default) or aoe: the AOE team, answers threads with a status, results on)
@@ -88,8 +89,11 @@ async function run(params) {
   const auditDir = space === 'std' ? 'audit' : `${space}/audit`;
   try {
     if (op === 'setup') {
+      // a workspace's first step: the signing key; with the database's credential, its page index
       await secretOf(files, true);
-      return ok({ ready: true });
+      if (!stores.client) return ok({ ready: true, database: 'no credential yet (DATABASE.md, 1.)' });
+      await stores.client.collection('pages').createIndex({ space: 1 });
+      return ok({ ready: true, database: 'ready (index on space)' });
     }
     if (op === 'invite') {
       const name = String(params.name || '').trim().slice(0, 80);

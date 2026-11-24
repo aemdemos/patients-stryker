@@ -78,7 +78,20 @@ Project "Stryker std review", workspace **Stage** (Runtime namespace
 3. Tell the review's maintainer; `node tools/review/backend/admin.mjs db-check` then connects,
    writes, reads and writes 200 documents at once, and answers `ok: true` with the timings.
 
-Production: the same with the Production workspace when the backend moves there.
+**Production** (asked 24 Nov 2026: the whole backend deployed there, idle):
+
+1. The developer: steps 1 and 2 above with the **Production** workspace selected (`aio app
+   use` → Stryker std review → Production; its own database and its own OAuth Server-to-Server
+   credential). `aio runtime package update std-review …` creates the package if it isn't
+   there yet.
+2. Settings: the Production workspace's Runtime auth as a credential for `adobeioruntime.net`
+   (`curl https://adobeioruntime.net/api/v1/namespaces` must list the Production namespace;
+   `deploy.mjs` refuses a namespace the credential doesn't open, and stops rather than write the
+   package again when it can't read its parameters).
+3. The maintainer: `node tools/review/backend/deploy.mjs --ns <production namespace>`, then
+   `admin.mjs setup --ns …` (signing key, page index) and `admin.mjs db-check --ns …`.
+   **Idle:** no schedules (`admin schedule` not run there), the tool keeps using Stage
+   (`config.js` backend URL) until the review moves.
 
 ## 2. The move (how it was planned; done 24 Nov 2026, steps 2 and 4 shortened: the data was test data)
 
