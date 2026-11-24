@@ -1211,13 +1211,13 @@ body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6) :is(:is(em, i) > 
 
 @media (width >= 600px) {
   /* news-xf-body: a columns-67-33 row splits 62% / 38% (instead of two thirds / one third).
-     A cell that is a box with margins of its own (boxed-last / gold-last last cell, gold-first
-     first cell) keeps taking what the other cell leaves, so it still fits beside it */
+     A cell that is a box of its own (boxed-last / gold-last / dark-last last cell, gold-first
+     first cell) keeps its variant's width, so it still fits beside the other cell */
   body.news-detail.news-xf-body .columns.columns-67-33:not(.gold-first) > div > div:first-child {
     flex: 0 0 62%;
   }
 
-  body.news-detail.news-xf-body .columns.columns-67-33:not(.boxed-last, .gold-last) > div > div:last-child {
+  body.news-detail.news-xf-body .columns.columns-67-33:not(.boxed-last, .gold-last, .dark-last) > div > div:last-child {
     flex: 0 0 38%;
   }
 }
