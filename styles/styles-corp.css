@@ -336,12 +336,6 @@ body.corp main > .section:has(+ .section.spacer.small) {
   margin-bottom: 0;
 }
 
-/* section style `spacer, golden`: the spacer's gap is a gold band (--color-accent) across
-   the page; its height still comes from the spacer (plain, small, large, xlarge, xxlarge) */
-:where(body.corp) main > .section.spacer.golden {
-  background-color: var(--color-accent);
-}
-
 /* section styles: backgrounds */
 :where(body.corp) main > .section.bg-white {
   background-color: var(--color-white);
