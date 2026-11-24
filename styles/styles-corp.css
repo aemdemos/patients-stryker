@@ -1052,15 +1052,29 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 }
 
 /* ---- back-to-top control (corp.js) ---- */
-:where(body.corp) .back-to-top {
+
+/* the wrapper of the round link (lazy-styles.css styles .back-to-top as the patients'
+   circle button — on corp that drew a second black circle with its own arrow, anchored 18px
+   from the bottom instead of 2%, so the button looked misshapen): it draws nothing itself */
+body.corp .back-to-top {
+  position: static;
+  display: block;
   visibility: hidden;
   opacity: 0;
   z-index: 100;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
   text-align: right;
   transition: visibility 0s 0.2s, opacity 0.2s linear;
 }
 
-:where(body.corp) .back-to-top.visible {
+body.corp .back-to-top::before {
+  content: none;
+}
+
+body.corp .back-to-top.visible {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.2s linear;
@@ -1088,14 +1102,16 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   color: var(--color-white);
 }
 
+/* the up arrow sits on the link's text line, as the source's inline <i class="icon-upmenu">
+   (its glyph 13–22px down the 40px circle; centred inline-block it sat 3px lower) */
 :where(body.corp) .back-to-top-cta::before {
   content: "\e260";
-  display: inline-block;
+  display: inline;
   font-family: var(--corp-icon-font-family);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 /* audience note under a full-bleed hero */
