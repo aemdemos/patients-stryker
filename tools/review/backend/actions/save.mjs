@@ -10,8 +10,9 @@
  */
 import {
   open, checkInvite, inScope, saveChanges, reply, fail, isPreflight, inviteOf,
-  REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, REPLY_KIND, replyProblem, stateProblem, doneProblem, spaceOf,
+  REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, MAX_ORG_CHANGES, REPLY_KIND, replyProblem, stateProblem, doneProblem, spaceOf,
 } from '../lib/core.mjs';
+import { updateSummary, readSummary } from '../lib/summary.mjs';
 import { ORG_KINDS, orgProblem } from '../../threads.js';
 
 export async function main(params) {
@@ -24,9 +25,10 @@ export async function main(params) {
     const page = String(params.page || '');
     const changes = Array.isArray(params.changes) ? params.changes : [];
     if (!page.startsWith('/') || page.length > 400) return fail(params, 400, 'bad-page', 'page must be a path');
-    if (!changes.length || changes.length > MAX_CHANGES) return fail(params, 400, 'bad-changes', `1 to ${MAX_CHANGES} changes`);
     // (organisation entries may name other pages: a batch marks many pages in one save)
     const org = (c) => ORG_KINDS.includes(c.kind);
+    const max = changes.every(org) ? MAX_ORG_CHANGES : MAX_CHANGES;
+    if (!changes.length || changes.length > max) return fail(params, 400, 'bad-changes', `1 to ${max} changes`);
     const bad = changes.find((c) => typeof c.item !== 'string' || !c.item || c.item.length > 300
       || !(REVIEW_KINDS.includes(c.kind) || REPLY_KIND.test(c.kind || ''))
       || typeof c.value !== 'string' || c.value.length > MAX_VALUE
@@ -52,9 +54,21 @@ export async function main(params) {
     const pages = [...new Set(changes.map((c) => c.page || page))];
     const outside = pages.find((p) => !inScope(invite.scope, p));
     if (outside) return fail(params, 403, 'out-of-scope', outside === '*' ? 'Choices for all pages are not part of your review.' : 'This page is not part of your review.');
+    const space = spaceOf(invite.scope);
+    // organisation changes: their values before from the review's summary (not read one by one)
+    const summary = orgChanges.length ? await readSummary(stores.files, space) : null;
+    const orgBefore = summary ? (p, kind) => {
+      const s = summary.pages[p];
+      if (!s) return null;
+      return kind === 'representative' ? !!s.representative : s[kind] ?? null;
+    } : null;
     const result = await saveChanges(stores, {
-      page, changes, by: invite.name, inv: invite.id, role: invite.role, space: spaceOf(invite.scope),
+      page, changes, by: invite.name, inv: invite.id, role: invite.role, space, orgBefore,
     });
+    // the review's summary (the overview reads it): what was saved
+    await updateSummary(stores, space, changes.filter((c, i) => result.results[i]?.ok)
+      .map((c) => ({ page: c.page || page, kind: c.kind, value: c.value })))
+      .catch(() => null);
     return reply(params, 200, result);
   } catch (e) {
     return fail(params, 500, 'server', String(e.message || e).slice(0, 200));

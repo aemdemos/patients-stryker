@@ -24,6 +24,7 @@ import {
 import {
   readCaptureState, writeCaptureState, pagesWithShots, tileFile, lockFile,
 } from '../lib/capture-state.mjs';
+import { rebuildSummary } from '../lib/summary.mjs';
 
 const WIDTHS = [1440, 860, 375];
 const TILE = 4000;
@@ -238,6 +239,8 @@ export async function main(params) {
     }
     if (op === 'health') return { body: await health(stores, space) };
     const last = await run(stores, space, started);
+    // the reviews' summaries built again (a safety net for anything a save missed)
+    await Promise.all(['main', 'std'].map((sp) => rebuildSummary(stores, sp).catch(() => null)));
     // nothing to do and no health check for a day: check the browser once
     const cs = await readCaptureState(files, space);
     if (!last.done.length && !last.failed.length && (!cs.health || Date.now() - Date.parse(cs.health.at) > RETRY_MS)) {
