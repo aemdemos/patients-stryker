@@ -10,10 +10,12 @@
  *                  correct (tried again when its row changes, or after a day)
  *   test { page, source }   one shot of a test page (/test/… only), for the tests
  *   health                  loads one known page (nothing kept): the browser still works
- *   check { pages?, force? }  the daily source change check (lib/changes.mjs): the pages of the
- *                  check's list not checked today, one at a time, gently; screenshots only for a
- *                  confirmed change (pages: a list instead of the check's own, for tests; force:
- *                  checked again today)
+ *   check { pages?, force?, testDesign? }  the daily source change check (lib/changes.mjs): the
+ *                  pages of the check's list not checked today, one at a time, gently; screenshots
+ *                  for a confirmed change, and of every page after a change of the site's design
+ *                  (queued, in the time the checks leave) (pages: a list instead of the check's
+ *                  own, for tests; force: checked again today; testDesign: a pretend design change,
+ *                  /test/ pages only)
  *   bench { pages: [{ page, source }], mode, tabs }   the change check's pilot (nothing kept):
  *                  each page loaded in a mode (js, lite, waitUntil, wait, pause, settle, scroll,
  *                  visual), tabs at once in one browser → timings, content fingerprints
@@ -344,6 +346,9 @@ async function bench(params) {
 
 // ---------- the daily source change check ----------
 const CHECK_MS = 200000;
+// the design-change shots: in the time the day's checks leave, none started after this (a shot
+// of three widths takes ~15-25 s; the action stops at 300 s)
+const SHOTS_UNTIL_MS = 255000;
 const CHECK_PAUSE = 700;
 const sleep = (ms) => new Promise((r) => { setTimeout(r, ms); });
 
@@ -490,7 +495,7 @@ async function check(stores, space, started, params) {
   const site = await readSite(files, space);
   site.pendingShots = site.pendingShots || [];
   const stats = {
-    checked: 0, baseline: 0, unchanged: 0, variant: 0, changed: 0, unreachable: 0, shots: 0, siteShots: 0, blocked: false, errors: [],
+    checked: 0, baseline: 0, unchanged: 0, variant: 0, changed: 0, unreachable: 0, shots: 0, siteShots: 0, siteSkipped: 0, blocked: false, errors: [],
   };
   // the pages not checked today, the longest unchecked first
   const states = await Promise.all(scope.pages.map(async (p) => ({ p, s: await readPageState(files, space, p.page) })));
@@ -502,24 +507,6 @@ async function check(stores, space, started, params) {
   let in404 = 0;
   let browser = await launch();
   try {
-    // the site's design changed (an earlier run): one page per template shot again first
-    while (site.pendingShots.length && Date.now() - started < CHECK_MS) {
-      const job = site.pendingShots[0];
-      try {
-        const shot = await shoot(stores, browser, space, job.page, job.source, { by: 'change history: site design changed', site: job.day });
-        let state = await readPageState(files, space, job.page);
-        if (state) {
-          state = addLog(state, {
-            day: today, at: new Date().toISOString(), result: 'changed', parts: [], images: [], site: job.day, shot,
-          });
-          await writeJson(files, pageFile(space, job.page), state);
-        }
-        stats.siteShots += 1;
-      } catch (e) {
-        stats.errors.push(`${job.page} (site shot): ${String(e.message || e).slice(0, 120)}`);
-      }
-      site.pendingShots.shift();
-    }
     for (const p of due) {
       if (Date.now() - started > CHECK_MS) break;
       try {
@@ -566,11 +553,50 @@ async function check(stores, space, started, params) {
         }
       }
     }
+    // the site's design changed (an earlier run): EVERY page of the check gets a new shot (a
+    // page can look like no other: none is taken for another), after the day's checks, in the
+    // time left, so the checks are never pushed aside; a page shot since the change (its content
+    // changed too) is not shot again; a 404 stops the shots for this run (the page stays queued)
+    while (!stats.blocked && site.pendingShots.length && Date.now() - started < SHOTS_UNTIL_MS) {
+      const job = site.pendingShots[0];
+      const history = await readHistory(files, space, job.page);
+      const newest = history.versions[history.versions.length - 1];
+      if (newest && newest.captured >= job.at) {
+        site.pendingShots.shift();
+        stats.siteSkipped += 1;
+        continue;
+      }
+      try {
+        const shot = await shoot(stores, browser, space, job.page, job.source, { by: 'change history: site design changed', site: job.day });
+        let state = await readPageState(files, space, job.page);
+        if (state) {
+          state = addLog(state, {
+            day: today, at: new Date().toISOString(), result: 'changed', parts: [], images: [], site: job.day, shot,
+          });
+          await writeJson(files, pageFile(space, job.page), state);
+        }
+        stats.siteShots += 1;
+        site.pendingShots.shift();
+      } catch (e) {
+        const reason = String(e.message || e).slice(0, 120);
+        if (/answers 404/.test(reason)) {
+          stats.blocked = true;
+          break;
+        }
+        stats.errors.push(`${job.page} (design shot): ${reason}`);
+        site.pendingShots.shift();
+        if (!e.source) {
+          await browser.close().catch(() => null);
+          browser = await launch();
+        }
+      }
+    }
   } finally {
     await browser.close().catch(() => null);
   }
   // the site's code: each file's version seen on at least two pages of this run; a known file
-  // in another version: the site's design changed → one page per template shot again
+  // in another version: the site's design changed → every page of the check queued for a shot
+  // (testDesign: a test run's pretend change, test pages only)
   const changedCode = [];
   Object.entries(seen).forEach(([file, versions]) => {
     const [id, n] = Object.entries(versions).sort((x, y) => y[1] - x[1])[0];
@@ -581,15 +607,22 @@ async function check(stores, space, started, params) {
     if (before && (before.stamp !== now.stamp || before.size !== now.size)) changedCode.push({ file, from: before, to: now });
     site.code[file] = now;
   });
-  if (changedCode.length) {
-    const byTemplate = new Map();
-    scope.pages.forEach((p) => {
-      if (!byTemplate.has(p.template || '')) byTemplate.set(p.template || '', p);
-    });
-    site.log = [...(site.log || []), { day: today, at: new Date().toISOString(), changed: changedCode }];
-    site.pendingShots.push(...[...byTemplate.values()].map((p) => ({ page: p.page, source: p.source, day: today })));
+  if (params.testDesign && Array.isArray(params.pages) && params.pages.every((p) => p.page.startsWith('/test/'))) {
+    changedCode.push({ file: 'test', from: null, to: null });
   }
-  site.lastRun = { at: new Date(started).toISOString(), took: Date.now() - started, ...stats, codeChanged: changedCode.length };
+  if (changedCode.length) {
+    const at = new Date().toISOString();
+    if (!params.testDesign) site.log = [...(site.log || []), { day: today, at, changed: changedCode, pages: scope.pages.length }];
+    // (a second change while pages still wait: every page queued again, once)
+    const queued = new Map(site.pendingShots.map((j) => [j.page, j]));
+    scope.pages.forEach((p) => queued.set(p.page, {
+      page: p.page, source: p.source, day: today, at,
+    }));
+    site.pendingShots = [...queued.values()];
+  }
+  site.lastRun = {
+    at: new Date(started).toISOString(), took: Date.now() - started, ...stats, codeChanged: changedCode.length, shotsWaiting: site.pendingShots.length,
+  };
   site.runs = [...(site.runs || []), site.lastRun].slice(-500);
   await writeJson(files, siteFile(space), site);
   return site.lastRun;

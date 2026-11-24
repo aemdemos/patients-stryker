@@ -7,7 +7,10 @@
  *   <space>/changes/scope.json            { pages: [{ page, source, template }] }: the pages checked
  *   <space>/changes/pages/<b64 page>.json { page, source, known: [part hashes seen], images:
  *        { <image>: <last-modified> }, day, misses, log: [{ day, at, result, … }] }
- *   <space>/changes/site.json             { code: { <file>: { stamp, size } }, log, lastRun, pendingShots }
+ *   <space>/changes/site.json             { code: { <file>: { stamp, size } }, log (design changes),
+ *        pendingShots (after a design change: EVERY page of the check, a new shot each; stryker.com
+ *        has no templates that guarantee the same look, and a page can leave its own any day),
+ *        lastRun, runs }
  * A page's log results: baseline (the history starts: 3 loads, every version of a part seen is
  * known), unchanged, variant (a part seen once and not on the confirming load: dynamic, learned),
  * changed { parts, images, shot, unsteady }, unreachable { reason }, gone (3 days unreachable).
