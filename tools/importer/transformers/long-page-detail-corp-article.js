@@ -54,6 +54,7 @@
  */
 
 import { videoLink } from '../parsers/video.js';
+import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -446,6 +447,24 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     a.append(u);
   });
 
+  // staging build (draft pages): a Heading 2 that is Futura bold throughout, in no size of its own,
+  // is a plain Heading 2 (already Futura bold on corp pages); Bold on all of it would make it the
+  // 35px display heading of Columns (h2.columns-bold, the 2.5x Futura bold lines), e.g. the
+  // 24.5px "Our educational programs prepare you for what's next" of the Neuroelite program
+  if (STD_DRAFT_IMPORT) {
+    const squash = (t) => (t || '').replace(/[\s\u00a0]+/g, '');
+    root.querySelectorAll('h2').forEach((h) => {
+      const bolds = [...h.querySelectorAll('span.futura-bold')]
+        .filter((el) => !el.parentElement.closest('.futura-bold'));
+      const sized = h.querySelector('[class*="fontsize-"]') || h.closest('[class*="fontsize-"]')
+        || /\[\[[^\]]*\b(text|headline|size)-/.test(h.textContent)
+        // a coloured heading (gold → Bold + Italic) keeps its Bold
+        || h.querySelector('[style*="color"]') || h.closest('[style*="color"]');
+      if (!sized && bolds.length && squash(bolds.map((el) => el.textContent).join('')) === squash(h.textContent)) {
+        bolds.forEach(unwrap);
+      }
+    });
+  }
   // span.futura-bold → <strong>: on corp pages <strong> is Futura bold in the text colour
   // (styles-corp.css); gold text → Bold + Italic (gold, the authoring convention).
   // <b> → <strong>.

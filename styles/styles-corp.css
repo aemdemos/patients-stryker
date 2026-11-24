@@ -327,6 +327,34 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 400;
 }
 
+/* a bold link inside a sentence (scripts.js decorateButtons: .link-inline) is a bold teal text
+   link, as on stryker.com (<b><a> in the text, e.g. "Stryker's LIFELINKcentral AED program
+   manager offers:"), not the teal button the global strong > a rule paints; bold + underline
+   links keep their own look. In review: draft pages only (body.std-draft, scripts/corp.js) */
+body.corp.std-draft main strong > a.link-inline:any-link:not(:has(u)) {
+  display: inline;
+  max-width: none;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+}
+
+body.corp.std-draft main strong > a.link-inline:any-link:not(:has(u)):is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+/* …in the font of the sentence around it (stryker.com <a><b>: Humanist bold in body copy), not
+   the Futura of a <strong> (bold + underline links set their own font) */
+body.corp.std-draft main strong:has(> a.link-inline:any-link) {
+  font-family: inherit;
+}
+
 /* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
 :where(body.corp) main > .section > .default-content-wrapper h2 {
   padding-bottom: var(--heading-underline-gap);

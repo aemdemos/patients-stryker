@@ -355,6 +355,8 @@ Hovering a greyed choice shows why ("Not available here: needs images in the row
 While the standardisation is reviewed, the new rendering applies **only on draft pages** (`/drafts/…`)
 and in the authoring panels' previews (`body.std-draft`, scripts/corp.js): the Text style markers and
 the Columns rules for class names that real pages already carry (`image-border`, `border-bottom`,
-`label-right`, `columns-25-75`, the related-links titles). Every other page renders exactly as on the
+`label-right`, `columns-25-75`, the related-links titles), and bold links inside a sentence shown
+as bold teal text links in the sentence's font, as on stryker.com, instead of teal buttons (49 such
+links on 34 pages today). Every other page renders exactly as on the
 branch's starting code (checked element by element on product, news, fragment and trial pages).
 Removing the gate is one line in scripts/corp.js once the business approves.
