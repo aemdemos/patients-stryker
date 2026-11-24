@@ -1955,8 +1955,8 @@ body.corp .columns.page-title.block > div > div > h2:nth-child(n):nth-child(n) {
 }
 
 /* faculty (jr45, bundles gray-last): only the text box is grey, not the cell around it (and the
-   episode video under it), 15px in from the row edges on phones, 20px from 600px (stryker.com
-   jr45 April: a 360px box at 390px, 440px beside the faculty at 1440px). On phones the box
+   episode video under it), 15px in on both sides at every width, as in the source column
+   (stryker.com jr45 April: a 360px box at 390px, 440px in the 470px column at 1440px). On phones the box
    sits 10px under the faculty above it and 20px above what follows; a video under it is 20px
    below it (30px from 600px: December); its lines are 25px apart on phones (the source's
    21px Large Headline line around its 3vw text) */
@@ -1975,7 +1975,7 @@ body.corp main .columns.faculty.block > div > div:last-child > .columns-box > :i
 
 @media (width >= 600px) {
   body.corp main .columns.faculty.block > div > :where(div:last-child:has(> .columns-box)) {
-    padding: 0 var(--space-block-l);
+    padding-block: 0;
   }
 
   body.corp main .columns.faculty.block > div > div > .columns-box + :where(*) {
