@@ -30,6 +30,8 @@
   --corp-column-figure-size: 3vw; /* measured: stryker.com lifecycle support column figure (fontsize-3vw) */
   --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
+  --corp-back-arrow-width: 8px; /* source mobile-menu BACK arrow image is 8x12 */
+  --corp-back-arrow-half-height: 6px;
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
   --corp-icon-font-family: strykericons;
@@ -326,6 +328,21 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
+  margin-bottom: 0;
+}
+
+/* section style `spacer, small`: a 20px gap at every width and the whole gap between the
+   two sections it separates — no margins of its own, and the section above it runs
+   straight into it (its bottom margin is cancelled) */
+:where(body.corp) main > .section.spacer.small {
+  height: var(--space-block-l);
+  margin: 0;
+  padding: 0;
+}
+
+/* (body.corp, not :where(): it also outranks the templates' own section gaps, e.g. the
+   news-detail title section's 15px) */
+body.corp main > .section:has(+ .section.spacer.small) {
   margin-bottom: 0;
 }
 
@@ -1035,8 +1052,9 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 }
 
 /* section styles btn-purple / btn-blue: the section's bold-link buttons in purple or blue;
-   the talent banner's button is the blue one */
-:where(body.corp) main .section.btn-purple a.button.primary:any-link {
+   the talent banner's button is the blue one. An Italic + Underline link alone on its line
+   is the purple button anywhere (corp.js, authoring conventions) */
+:where(body.corp) main :is(.section.btn-purple a.button.primary, a.button.primary.purple):any-link {
   border-color: var(--corp-color-purple-dark);
   background-color: var(--color-purple);
 }
@@ -1046,7 +1064,7 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   background-color: var(--color-navy-bright);
 }
 
-:where(body.corp) main .section.btn-purple a.button.primary:any-link:is(:hover, :focus-visible) {
+:where(body.corp) main :is(.section.btn-purple a.button.primary, a.button.primary.purple):any-link:is(:hover, :focus-visible) {
   border-color: var(--corp-color-purple-pressed);
   background-color: var(--corp-color-purple-pressed);
 }
@@ -1057,15 +1075,29 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 }
 
 /* ---- back-to-top control (corp.js) ---- */
-:where(body.corp) .back-to-top {
+
+/* the wrapper of the round link (lazy-styles.css styles .back-to-top as the patients'
+   circle button — on corp that drew a second black circle with its own arrow, anchored 18px
+   from the bottom instead of 2%, so the button looked misshapen): it draws nothing itself */
+body.corp .back-to-top {
+  position: static;
+  display: block;
   visibility: hidden;
   opacity: 0;
   z-index: 100;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
   text-align: right;
   transition: visibility 0s 0.2s, opacity 0.2s linear;
 }
 
-:where(body.corp) .back-to-top.visible {
+body.corp .back-to-top::before {
+  content: none;
+}
+
+body.corp .back-to-top.visible {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.2s linear;
@@ -1093,14 +1125,16 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   color: var(--color-white);
 }
 
+/* the up arrow sits on the link's text line, as the source's inline <i class="icon-upmenu">
+   (its glyph 13–22px down the 40px circle; centred inline-block it sat 3px lower) */
 :where(body.corp) .back-to-top-cta::before {
   content: "\e260";
-  display: inline-block;
+  display: inline;
   font-family: var(--corp-icon-font-family);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 /* audience note under a full-bleed hero */
