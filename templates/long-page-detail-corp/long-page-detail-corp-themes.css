@@ -534,6 +534,12 @@ body.long-page-detail-corp.skill main .hero-corp.banner .hero-corp-text-box {
   padding: calc(var(--space-block) + var(--space-block-l)) var(--space-block-s) 2.5% 10%;
 }
 
+/* …20px above the image when the box sits over it (phones and tablets: stryker.com SKILL
+   banners below 840px, 20px from the gold box to the image); from 900px the banner's own 20px */
+body.long-page-detail-corp.skill main .hero-corp.banner.half-text > div:last-child {
+  padding-bottom: var(--space-block-l);
+}
+
 body.long-page-detail-corp.skill main .accordion-item + .accordion-item {
   margin-top: var(--space-block);
 }
