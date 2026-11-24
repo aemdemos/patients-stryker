@@ -63,10 +63,29 @@ Production: the same with the Production workspace when the backend moves there.
    database; a daily comparison of the two (every key, its value) reports any difference.
 3. **Copy what exists:** every entry and invitation of both reviews from State into the
    database (from the day's backup), counted and compared key by key.
-   **Open before step 4:** the service refuses `readPreference` on lists (`find`), and a
-   default read can come from a replica that hasn't got the newest write (single reads ask for
-   the primary: fine). Lists (a page's entries) must be shown to read their own writes before
-   reads move: test `readConcern`, ask Adobe, or read a page's entries by key from the primary.
+   **Reading its own writes (tested 24 Nov 2026, `admin.mjs db-listtest` / `db-listchange`):**
+   a write, then at once a read of it:
+
+   | Read | Missed |
+   |---|---|
+   | list (`find`), default | 1 of 180 new; 4 of 300 new, 1 of 300 changed, 4 of 300 deleted |
+   | list, `readConcern: majority` | 1 of 180 |
+   | list, `readConcern: local` | 0 of 180 (same mechanism: not relied on) |
+   | `aggregate` with `$match` | 1 of 180 |
+   | `countDocuments` with the primary | 0 of 180 |
+   | **one document per page, `findOne` with the primary** | **0 of 220** |
+   | `findOne` with the primary | 0 of 240 |
+   | `findOne`, default | 10–12 of 40 |
+
+   Lists of any kind can be a moment behind (~1%; `find` refuses `readPreference`); only single
+   reads from the primary always see the newest write. **So for step 4: a page's entries in one
+   document** (`_id` = space + page, the entries as fields), written in place (`updateOne` with
+   `$set` / `$unset` of the changed entries) and read with one `findOne` from the primary: a page
+   always shows what was just saved. The rev check becomes part of the write (the update's
+   filter names the rev it started from: someone else's change in between is refused by the
+   database itself, which State can't do). Lists across pages (the overview) stay on the
+   review's summary; a moment's lag there is harmless. Group choices (page `*`) and
+   invitations: one document each, read by `_id` from the primary.
 4. **Read from the database:** once the comparison has been clean for several days; State keeps
    being written as the second copy for a few weeks, then stops. Backups go on daily, from the
    database to Files.
