@@ -468,6 +468,78 @@ var CustomImportScript = (() => {
     if (overlay && (overlay.classList.contains("mobile-text-black") || overlay.querySelector(".mobile-text-black"))) options.push("mobile-text-black");
     return options;
   }
+  function dropColourTags(lines, colours) {
+    if (!colours.size) return;
+    const TOKEN2 = /\[\[([^\][]+)\]|\]/g;
+    lines.forEach((line) => {
+      const doc = line.ownerDocument;
+      const walker = doc.createTreeWalker(line, 4);
+      const nodes = [];
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+      const stack = [];
+      const edits = [];
+      nodes.forEach((node) => {
+        TOKEN2.lastIndex = 0;
+        let m = TOKEN2.exec(node.nodeValue);
+        while (m) {
+          if (m[1] !== void 0) {
+            const classes = m[1].split(",").map((c) => c.trim());
+            const kept = classes.filter((c) => !colours.has((c.match(/^color-(.+)$/) || [])[1]));
+            const token = {
+              node,
+              start: m.index,
+              end: m.index + m[0].length,
+              kept,
+              changed: kept.length !== classes.length
+            };
+            stack.push(token);
+            if (token.changed) edits.push(token);
+          } else if (stack.length) {
+            const open = stack.pop();
+            if (open.changed && !open.kept.length) {
+              edits.push({
+                node,
+                start: m.index,
+                end: m.index + 1,
+                kept: null,
+                changed: true
+              });
+            }
+          }
+          m = TOKEN2.exec(node.nodeValue);
+        }
+      });
+      edits.reverse().forEach((e) => {
+        let out = "";
+        if (e.kept && e.kept.length) out = `[[${e.kept.join(",")}]`;
+        e.node.nodeValue = e.node.nodeValue.slice(0, e.start) + out + e.node.nodeValue.slice(e.end);
+      });
+    });
+  }
+  function takeStripe(element) {
+    let el = element;
+    for (let i = 0; el && i < 6; i += 1) {
+      const next = el.nextElementSibling;
+      if (next) {
+        const panel = next.matches(".fullbleedpanel") ? next.querySelector(".c-full-bleed-panel") : null;
+        if (!panel || panel.textContent.replace(/[\s\u00a0]+/g, "") || panel.querySelector("img, iframe")) return "";
+        let stripe = "";
+        if (panel.classList.contains("bg-gold")) stripe = "stripe-gold";
+        else if (panel.classList.contains("bg-golden-gradient")) stripe = "stripe-gradient";
+        if (stripe) next.remove();
+        return stripe;
+      }
+      el = el.parentElement;
+    }
+    return "";
+  }
+  function slideVideo(slide) {
+    const asset = slide.querySelector('.c-standalone-video [data-asset-path], [data-asset-type^="video"][data-asset-path]');
+    const path = asset && asset.getAttribute("data-asset-path");
+    if (!path || path.startsWith("/content/dam/")) return "";
+    const base = "https://media-assets.stryker.com/is";
+    return `${base}/content/${path}.m3u8?poster=${base}/image/${path}?fit=constrain,1&wid=909&hei=511`;
+  }
 
   // tools/importer/parsers/hero-full-width-image.js
   function text2(el) {
@@ -658,13 +730,28 @@ var CustomImportScript = (() => {
         const m = style.match(re);
         return m ? parseFloat(m[1]) : null;
       };
-      variants.splice(1, variants.length - 1, ...slideOptions({
+      const options = slideOptions({
         left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
         right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
         top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
         overlay,
         headline: overlay.querySelector(".c-largeheadline") || overlay
-      }));
+      });
+      const colours = new Set(options.map((o) => (o.match(/^(?:title|subline)-(.+)$/) || [])[1]).filter(Boolean));
+      if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add("white");
+      const copy = cells[cells.length - 1];
+      if (copy && Array.isArray(copy[0])) dropColourTags(copy[0], colours);
+      const video = slideVideo(slide);
+      if (video) {
+        const a = document.createElement("a");
+        a.setAttribute("href", video);
+        a.textContent = video;
+        cells.unshift([a]);
+        options.push("video-background");
+      }
+      const stripe = takeStripe(element);
+      if (stripe) options.push(stripe);
+      variants.splice(1, variants.length - 1, ...options);
     }
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
       name: `Hero Corp (${variants.join(", ")})`,
@@ -2283,7 +2370,7 @@ var CustomImportScript = (() => {
     });
   }
   function pageHeroes(main, doc, h) {
-    main.querySelectorAll(".c-page-hero").forEach((component) => {
+    main.querySelectorAll(STD_DRAFT_IMPORT ? ".c-page-hero, .c-hero" : ".c-page-hero").forEach((component) => {
       const columnNodes = (col) => [...col.querySelectorAll("h1, h2, p, img")].flatMap((el) => {
         var _a;
         if (el.matches("img")) {
@@ -2358,7 +2445,7 @@ var CustomImportScript = (() => {
         const rows = [[copy]];
         if (pics.length) rows.push([pics[0]]);
         const block = keepBlock(WebImporter.Blocks.createBlock(doc, { name: `Hero Corp (${options.join(", ")})`, cells: rows }));
-        (component.closest(".pagehero") || component).replaceWith(block);
+        (component.closest(".pagehero, .hero") || component).replaceWith(block);
         return;
       }
       const cells = cols.map(columnNodes).filter((nodes) => nodes.length);
@@ -3207,12 +3294,31 @@ var CustomImportScript = (() => {
         form.setAttribute("data-keep", "section");
         const asides = [...colctrl.querySelectorAll("table")].filter((t) => t.getAttribute("data-keep"));
         asides.forEach((t) => t.setAttribute("data-keep", "join"));
-        const others = columns.filter((col) => !col.querySelector(".c-marketo-form") && !col.querySelector("table[data-keep]")).map((col) => cellNodes(col, doc)).filter((nodes) => nodes.length).map((nodes) => {
-          const box = doc.createElement("div");
-          box.setAttribute("data-keep", "join");
-          box.append(...nodes);
-          return box;
-        });
+        const box = (nodes) => {
+          const div = doc.createElement("div");
+          div.setAttribute("data-keep", "join");
+          div.append(...nodes);
+          return div;
+        };
+        const at = columns.findIndex((col) => col.querySelector(".c-marketo-form"));
+        if (STD_DRAFT_IMPORT && at >= 0) {
+          const ratio = { 8: "flex-67-33", 4: "flex-33-67" }[columnWidth(columns[0])];
+          const side = [];
+          const parts2 = columns.map((col, i) => {
+            if (i === at) return [form];
+            if (col.querySelector("table[data-keep]")) return asides.filter((t) => col.contains(t));
+            const nodes = cellNodes(col, doc);
+            if (nodes.length) side.push(nodes);
+            return nodes.length ? [box(nodes)] : [];
+          }).flat();
+          const copy = rowCopyStyle(side, doc);
+          form.setAttribute("data-keep", "join");
+          parts2[0].setAttribute("data-keep", "section");
+          parts2[0].setAttribute("data-section-style", ["flex", ratio, copy].filter(Boolean).join(", "));
+          wrapper.replaceWith(...parts2);
+          return;
+        }
+        const others = columns.filter((col) => !col.querySelector(".c-marketo-form") && !col.querySelector("table[data-keep]")).map((col) => cellNodes(col, doc)).filter((nodes) => nodes.length).map(box);
         wrapper.replaceWith(form, ...asides, ...others);
         return;
       }

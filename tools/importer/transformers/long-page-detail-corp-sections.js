@@ -794,16 +794,39 @@ function columnRows(main, doc) {
       asides.forEach((t) => t.setAttribute('data-keep', 'join'));
       // the content of the other columns (e.g. the spine contact page's "Check out our social
       // media" and its buttons) joins the form's section too, so none of it is lost
+      const box = (nodes) => {
+        const div = doc.createElement('div');
+        div.setAttribute('data-keep', 'join');
+        div.append(...nodes);
+        return div;
+      };
+      // in review (staging build only, docs/standardisation/section-layout.md): the form and
+      // the content beside it stay side by side in their source order, a `flex` section in the
+      // first column's width (2/3 → `flex-67-33`, 1/3 → `flex-33-67`, halves → `flex`)
+      const at = columns.findIndex((col) => col.querySelector('.c-marketo-form'));
+      if (STD_DRAFT_IMPORT && at >= 0) {
+        const ratio = { 8: 'flex-67-33', 4: 'flex-33-67' }[columnWidth(columns[0])];
+        const side = [];
+        const parts = columns.map((col, i) => {
+          if (i === at) return [form];
+          if (col.querySelector('table[data-keep]')) return asides.filter((t) => col.contains(t));
+          const nodes = cellNodes(col, doc);
+          if (nodes.length) side.push(nodes);
+          return nodes.length ? [box(nodes)] : [];
+        }).flat();
+        // the text beside the form keeps its size and font (Text style markers), as a row's
+        const copy = rowCopyStyle(side, doc);
+        form.setAttribute('data-keep', 'join');
+        parts[0].setAttribute('data-keep', 'section');
+        parts[0].setAttribute('data-section-style', ['flex', ratio, copy].filter(Boolean).join(', '));
+        wrapper.replaceWith(...parts);
+        return;
+      }
       const others = columns
         .filter((col) => !col.querySelector('.c-marketo-form') && !col.querySelector('table[data-keep]'))
         .map((col) => cellNodes(col, doc))
         .filter((nodes) => nodes.length)
-        .map((nodes) => {
-          const box = doc.createElement('div');
-          box.setAttribute('data-keep', 'join');
-          box.append(...nodes);
-          return box;
-        });
+        .map(box);
       wrapper.replaceWith(form, ...asides, ...others);
       return;
     }

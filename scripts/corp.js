@@ -9,6 +9,7 @@
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
  *   decorateSections(main)  after the section metadata is applied, before the blocks are
  *                           decorated: builds blocks from section styles (accordion-panel)
+ *   decorateLayout(main)    after the blocks are decorated: side-by-side columns (draft pages)
  *   loadTemplate(name)      template CSS + JS (+ <name>-themes.css when `theme` is set)
  *   loadFirstSections(main) instead of loading the first section eagerly
  *   loadHeader(doc) / loadFooter(doc) / loadLazy(doc) / decorateLastModified(main)
@@ -282,6 +283,35 @@ function decorateExclaimButtons(main) {
     a.className = 'button accent';
     outer.replaceWith(a);
   });
+}
+
+/**
+ * A side-by-side section in two widths (`flex` with `flex-67-33` / `flex-33-67`) holding more
+ * than two parts (stryker.com governance: a text and the accordion under it, beside a box)
+ * keeps two columns: the narrow one is the last part (wide + narrow) or the first (narrow +
+ * wide); the other parts stack in the wide column, in their order. In review: draft pages only
+ * (docs/standardisation/section-layout.md).
+ * @param {Element} main The container element
+ */
+function groupFlexColumns(main) {
+  main.querySelectorAll(':scope > .section.flex:is(.flex-67-33, .flex-33-67)').forEach((section) => {
+    const parts = [...section.children].filter((div) => div.matches('div') && div.childElementCount);
+    if (parts.length < 3) return;
+    const wide = section.classList.contains('flex-33-67') ? parts.slice(1) : parts.slice(0, -1);
+    const column = document.createElement('div');
+    column.className = 'flex-column';
+    wide[0].before(column);
+    column.append(...wide);
+  });
+}
+
+/**
+ * Corp layout of the decorated sections. Runs on <main> and on fragments, after the blocks
+ * are decorated (their wrappers exist, so moving them keeps every block found).
+ * @param {Element} main The container element
+ */
+export function decorateLayout(main) {
+  if (document.body.classList.contains('std-draft')) groupFlexColumns(main);
 }
 
 /**

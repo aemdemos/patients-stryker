@@ -68,6 +68,7 @@
   --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block));
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
+  --corp-row-icon-size: 35px; /* source social icons in a contact aside on phones (48px from 600px) */
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
   --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
 
@@ -1386,5 +1387,103 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
   :where(body.corp) main > .section.bu-resources .columns > div > div {
     flex: 1 1 0;
+  }
+}
+
+/* ---- section layout (in review: draft pages only, body.std-draft; docs/standardisation/
+   section-layout.md). Blocks side by side are separate blocks in one `flex` section:
+   `flex` equal parts, `flex-67-33` / `flex-33-67` (above) wide + narrow / narrow + wide,
+   `flex-row-mobile` side by side on phones too. stryker.com column rows (cols2, cols3, cols4):
+   top-aligned, one 30px gutter, side by side from 841px (EDS 600px), stacked on phones;
+   three and four parts two per row until 1024px (EDS 900px) */
+@media (width >= 600px) {
+  body.corp.std-draft main > .section.flex:not(.flex-67-33, .flex-33-67, .flex-row-mobile) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0 calc(2 * var(--container-gutter));
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  body.corp.std-draft main > .section.flex:not(.flex-67-33, .flex-33-67, .flex-row-mobile) > div {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  body.corp.std-draft main > .section.flex:not(.flex-67-33, .flex-33-67, .flex-row-mobile) > div:empty {
+    display: none;
+  }
+
+  body.corp.std-draft main > .section.flex:not(.flex-67-33, .flex-33-67, .flex-row-mobile):has(> div:nth-child(3 of :not(:empty))) > div {
+    flex: 0 0 calc((100% - 2 * var(--container-gutter)) / 2);
+  }
+}
+
+@media (width >= 900px) {
+  body.corp.std-draft main > .section.flex:not(.flex-67-33, .flex-33-67, .flex-row-mobile):has(> div:nth-child(3 of :not(:empty))) > div {
+    flex: 1 1 0;
+  }
+}
+
+/* a wide column of several parts (scripts/corp.js groups them: a text and the accordion
+   under it beside a box) keeps the parts' own spacing */
+body.corp.std-draft main > .section.flex > .flex-column > div {
+  max-width: none;
+  margin: 0;
+  padding-inline: 0;
+}
+
+/* `flex-row-mobile` (with `flex`): the row stays side by side on phones too — on stryker.com
+   the social icons of a business unit's contact aside (310 icons in 227 rows), 35px (48px
+   from 600px) and 30px apart; each part (or each line of the text) is one item of the row */
+body.corp.std-draft main .section.flex.flex-row-mobile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: calc(2 * var(--container-gutter));
+}
+
+body.corp.std-draft main .section.flex.flex-row-mobile > div {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+
+body.corp.std-draft main .section.flex.flex-row-mobile > div:empty {
+  display: none;
+}
+
+body.corp.std-draft main .section.flex.flex-row-mobile > .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: calc(2 * var(--container-gutter));
+}
+
+body.corp.std-draft main .section.flex.flex-row-mobile > .default-content-wrapper > * {
+  margin: 0;
+}
+
+body.corp.std-draft main .section.flex.flex-row-mobile img {
+  display: block;
+  width: var(--corp-row-icon-size);
+  height: auto;
+}
+
+@media (width >= 600px) {
+  body.corp.std-draft main .section.flex.flex-row-mobile img {
+    width: var(--corp-social-icon-size-l);
+  }
+}
+
+@media (width >= 900px) {
+  /* the section's own 15px edge (styles.css flex), not the parts' too */
+  body.corp.std-draft main .section.flex.flex-row-mobile > div {
+    padding-inline: 0;
   }
 }

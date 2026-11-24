@@ -604,6 +604,7 @@ export function decorateMain(main) {
   buildTabbedSections(main);
   corp?.decorateSections(main);
   decorateBlocks(main);
+  corp?.decorateLayout(main);
   decorateLinkTargets(main);
   decorateButtons(main);
   decorateUnderlinedHeadings(main);
