@@ -45,8 +45,9 @@ export const REVIEW = {
 // Production for the real review (the reviews' branch previews and main), Stage, the test
 // workspace (test data), everywhere else: feature-branch previews, the local preview.
 // ?backend=stage|production chooses (kept in this browser for this host; the host's own choice
-// again clears it); outside a browser Stage (the backend tests take their address from
-// backend/target.mjs, like their admin calls).
+// again clears it; so does an invitation link that names no backend: a Stage invitation's link
+// names Stage, the live review's names none); outside a browser Stage (the backend tests take
+// their address from backend/target.mjs, like their admin calls).
 const BACKENDS = {
   production: 'https://892544-strykerstdreview.adobeioruntime.net/api/v1/web/std-review',
   stage: 'https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review',
@@ -58,7 +59,8 @@ function backendEnv() {
   if (typeof window === 'undefined') return 'stage';
   const w = window;
   const own = LIVE_HOSTS.test(w.location.hostname) ? 'production' : 'stage';
-  const asked = new URLSearchParams(w.location.search).get('backend');
+  const params = new URLSearchParams(w.location.search);
+  const asked = params.get('backend') || (params.get('invite') ? own : null);
   try {
     if (asked === own) w.localStorage.removeItem(BACKEND_KEY);
     else if (BACKENDS[asked]) w.localStorage.setItem(BACKEND_KEY, asked);
