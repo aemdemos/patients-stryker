@@ -214,6 +214,10 @@ layout and choice, next to a link to its source page. A comparison measures ever
 those rows (font, size, weight, colour, background) on both sites and lists the differences, so each
 one is either fixed or explained.
 
+**Columns result:** on its review page, **48 of the 50 comparable rows match stryker.com exactly**
+in text colour, size and font, using only the limited sets above. The other 2 have a headline
+between two steps, which joins the next step up, as the grouping intends.
+
 # 7. Columns: what changed in practice
 
 | Before | After |
@@ -225,6 +229,9 @@ one is either fixed or explained.
 | Fonts and sizes typed per paragraph | **Text look** for the whole row, **Text style** for a few words |
 | Rows of tiles built as columns | moved to the **Cards** block, which is made for tiles |
 | Product page intros built as columns | to the **Hero** block's page intro layout |
+| A coloured box around one line in a cell | a Text style **line box**, in the cell box colours |
+| Bold links inside a sentence shown as teal buttons | bold teal text links in the sentence's font, as on stryker.com |
+| Plain bold headings enlarged to 35px | kept at the heading size (24.5px), as on stryker.com |
 
 # 8. Safe by design
 
@@ -245,10 +252,18 @@ one is either fixed or explained.
    pull quotes) are one choice per row, instead of styling every paragraph. This departs slightly
    from the rule "fonts and sizes are never block options", for row-wide looks only.
 3. Rows of tiles move to Cards; product page intros move to the Hero page intro.
+4. The limited text sets: normal and 6 text sizes, 4 headline sizes, the 8 brand colours plus
+   black, mid grey, dark gold and pale grey (charcoal is not a choice).
 
-**Proposed, still open:** the first-line bars of Columns (a gold, dark grey or blue bar on a cell's
-first line) become Text style line boxes, and the light grey ones become a light grey cell box,
-since on stryker.com that grey box wraps the whole cell.
+**Proposed, still open:**
+
+- The first-line bars of Columns (a gold, dark grey or blue bar on a cell's first line) become
+  Text style line boxes, and the light grey ones become a light grey cell box, since on
+  stryker.com that grey box wraps the whole cell.
+- Bold headings: 55 Columns headings on 33 pages are fully bold; they are measured before the
+  migration stops enlarging them on every page.
+- Bold and underlined links inside a sentence: teal as on stryker.com, or gold as the authoring
+  rules show them today.
 
 # Glossary
 

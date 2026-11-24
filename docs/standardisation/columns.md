@@ -17,7 +17,7 @@ redirect, are counted.*
 | **The situation** | On www.stryker.com, a row of columns could be set up freely: any column ratio, any box colour in any cell, any inner spacing in percent, any image border colour. |
 | **The risk** | Copying every value means dozens of special cases for what is mostly the same handful of layouts. |
 | **What we did** | We counted every column row on the live site, kept the five layouts it really uses, and turned the free settings into a few named choices in the **Block options panel**. |
-| **The result** | Rows look the same or almost the same as today. Authors pick a layout and, when needed, a box colour, the cell that holds it, the spacing, an image border or centred text. |
+| **The result** | Rows look the same or almost the same as today. Authors pick a layout and, when needed, a box colour, the cell that holds it, the spacing, an image border, centred text or a *Text look* for the whole row. Coloured, sized or serif words inside the text use the site-wide **Text style** with the same small set of sizes and brand colours. On the review page, 48 of 50 rows match stryker.com exactly in text colour, size and font; the other 2 move by one headline step by design. |
 
 ---
 
@@ -40,7 +40,7 @@ that is one of the named colours.
 | Outer spacing, right | **8** | 43 | 0 (standard) | **98%** | 4 (14), 5 (9), 2 (6), 3 (5) |
 | Font size | **39** | 8,473 | 6 + 4 | **97%** | 1.25× (4,580), 1.5× (1,432), 1.75× (489), 2× (430) |
 | Font | **6** | 4,905 | 3 | **99%** | Futura bold (3,040), Egyptienne (1,827) |
-| Text colour | **22** | 2,087 | 8 | **98%** | gold (703 + 401 written differently), black (195), white (147) |
+| Text colour | **22** | 2,087 | 8 + 4 | **98%** | gold (703 + 401 written differently), black (195), white (147) |
 | Box / background colour | **6** | 74 | 10 | **100%** | light grey (52 + 8), gold (8 + 3) |
 | Image border colour | **9** | 161 | 3 | **96%** | grey (93 + 10), black (38), teal (6) |
 | Video border colour | **1** | 1 | 1 | **100%** | black (1) |
@@ -58,8 +58,8 @@ Two settings have nothing to choose, because stryker.com always uses the same va
 
 | Setting | Where authors set it |
 |---|---|
-| Layout, cell box (colour and cell), inner spacing, image border, centred text | **Block options panel** (section 5) |
-| Font size, font, text colour | the site-wide **text layer**: formatting and the **Text style panel**, the same choices in every block |
+| Layout, cell box (colour and cell), inner spacing, image border, centred text, the row's *Text look* | **Block options panel** (section 5) |
+| Font size, font, text colour of a few words; a box around one line | the site-wide **text layer**: formatting and the **Text style panel**, the same choices in every block (section 5.7) |
 | Outer spacing (margins) | **no setting**: the block keeps its standard gap |
 
 ---
@@ -218,8 +218,11 @@ pages (not package numbers).*
 | Group | Choices | Rows on imported pages |
 |---|---|---|
 | More widths (Layout) | three quarters + quarter, quarter + three quarters, 70 / 30, icon + text (1/5, 4/5), quarter + quarter + half | 8, 8, 1, 0, 1 |
-| First line of the text | in a light grey box, a gold bar, a dark grey bar, a **blue bar** (stryker.com coloured heads), serif lead paragraph | 79, 2, 1, 1, 1 |
-| Row looks (switches) | large headline type, linked images, one per row on phones, related links, link groups, icon beside text, numbered quotes, page title beside a photo, pull quote in the last cell, large pull quote beside a photo, serif captions, caption right under the photo, images centred at their size, photo two thirds wide on phones, rule under the first cell, **line below the row**, **first cell right-aligned (labels)** | 479, 315, 72, 11, 1, 4, 4, 1, 1, 1, 3, 1, 1, 3, 3, **750**, **7** |
+| First line of the text | in a light grey box, a gold bar, a dark grey bar, a **blue bar** (stryker.com coloured heads) | 79, 2, 1, 1 |
+| Text look (switches) | large headline type, serif lead paragraph, serif captions, pull quote in the last cell, large pull quote beside a photo, numbered quotes | 479, 1, 3, 1, 1, 4 |
+| Row looks (switches) | linked images, one per row on phones, related links, link groups, icon beside text, page title beside a photo, caption right under the photo, images centred at their size, photo two thirds wide on phones, rule under the first cell, **line below the row**, **first cell right-aligned (labels)** | 315, 72, 11, 1, 4, 1, 1, 1, 3, 3, **750**, **7** |
+
+A first-line bar replaces a cell box (both colour the cell), so picking one clears the other.
 
 **Moved to Cards:** the six tile looks (challenge cards 7 rows, icon cards 1, colour profile cards 1,
 product tiles 3, CTA tiles 2, icon grid 0) are rows of tiles, which the package puts in Cards. They are
@@ -227,12 +230,15 @@ no longer Columns choices; pages that carry those names render as before until t
 
 **Text look (in Block options, to approve by the business).** Large headline type (479 rows), serif
 lead paragraph, serif captions and the pull quotes style a whole row's text on stryker.com (one
-component style). The proposal keeps them as one choice in a *Text look* group of Block options, using
-the same sizes and fonts as the Text style panel, while words inside a line stay with the Text style
-panel. Like every Block option it is a name on the block (`Columns (columns-50-50, large-headline)`),
-not a marker in the text; switches, as rows combine them (large headline + numbered quotes). This
-departs from the package rule "fonts and sizes of text are never block options" for row-wide looks
-only.
+component style). They are one choice each in a *Text look* group of Block options, using the same
+sizes and fonts as the Text style panel, while words inside a line stay with the Text style panel.
+Like every Block option a Text look is a name on the block (`Columns (columns-50-50, large-headline)`),
+**not** a colon marker in the text, so the author never edits markers for it; they are switches,
+as rows combine them (large headline + numbered quotes). This departs from the package rule "fonts
+and sizes of text are never block options" for row-wide looks only.
+
+**The rule for authors:** if it changes the **whole row**, it is in Block options; if it changes
+**a few words**, it is in Text style.
 
 **Imported names that are existing choices** (no new variant; the panel shows them as these choices):
 
@@ -247,6 +253,34 @@ only.
 **Not carried over:** `text-columns`, `card-grid`, `feature-statement`, `wide-first`, `wide-last` and
 `image-row`, and 19 of the 24 `media-text` rows, appear only in the `std/` trial copy of 17 pages
 whose normal imports use the standard names.
+
+### 5.7 Text inside the cells (Text style, not Block options)
+
+Colour, size and font of **a few words** are set with the site-wide **Text style panel**, the same in
+every block. The panel wraps the words in a pair of markers written in the text, for example
+`:start-white-xxxl:Get in touch:end:`. On the page the markers disappear and the words take the
+look. A **line box** puts a coloured box around one whole line (TEACH "Trauma & Extremities", the
+quotes of "A winning spirit"), in the same colour names as the cell boxes, 10px inside as on
+stryker.com.
+
+Only the package's limited sets are offered; every stryker.com value joins the nearest one:
+
+| Setting | Choices | How the values were grouped |
+|---|---|---|
+| Text size | normal, 0.8×, 1.25×, 1.5×, 1.75×, 2×, 2.5× | within about 10% of a step. 2.5× is kept (753 uses, mostly big figures in boxes); 3.5× was dropped and joins 2.5× |
+| Headline size (grows with the screen) | **S 1.5**, **M 2**, **L 3**, **XL 4.5** (% of the width) | 17 values today, each joins the nearest by proportion: 1–1.5 → S (862 uses), 2 → M (787), 2.5–3.5 → L (1,245), 4–9 → XL (690). 73% are within 12.5% of their step, 96% within a quarter step |
+| Font | body, serif (Egyptienne), sans (Futura bold) | the 6 font looks of stryker.com |
+| Text colour | the 8 brand colours (blue, gold, purple, teal, navy, grey, white, light grey) and 4 Stryker colours its own components use: black, mid grey #b2b4ae, dark gold #af6d04, pale grey #dfe1de | exact values only, never blended; the same colour written two ways counts once. A charcoal (#323232, 93 uses) is a code typed by authors, not a component colour, so it is not a choice (section 7) |
+| Line box | the 9 cell box colours | exact values |
+
+Two fixes make the text read as on stryker.com:
+
+- **Bold links inside a sentence** (for example the AED link) show as bold teal text links in the
+  sentence's own font, as on stryker.com, instead of a teal button. A bold link alone on its line
+  stays a button, per the authoring conventions.
+- **A plain Futura bold Heading 2** (no size of its own) keeps the heading size (24.5px) instead of
+  the larger bold heading size (35px): the importer leaves it without bold, on the review page only,
+  until the 55 such headings on 33 pages are measured (section 10).
 
 ---
 
@@ -266,6 +300,12 @@ whose normal imports use the standard names.
 **What moves more:** the outer spacing on the left, where 61% are kept: most of the others are a 20% left
 margin (49 instances), which the standard gap replaces.
 
+**Checked on the review page.** The Columns review page holds a real stryker.com row for every layout
+and choice (53 sections). A comparison measured every piece of text in those rows on both sites
+(font, size, weight, colour, background). **48 of the 50 comparable rows match exactly.** The other 2
+are the blue-box rows of the Latera implant page: their 2.5% headline joins step *L (3)*, so it is one
+step larger, as the grouping intends.
+
 ---
 
 ## 7. To review (outliers)
@@ -282,6 +322,10 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 | Bottom spacing far from the scale (15%: 5, 17%: 3, 13%: 3, and a few others) | | [Fluoro-free](https://www.stryker.com/us/en/joint-replacement/c/fluoro-free.html), [Triathlon Revision](https://www.stryker.com/us/en/joint-replacement/products/Triathlon_Revision.html) | nearest step (*Large* for 15% and more) |
 | Right-aligned text | 9 cells | [Suppliers](https://www.stryker.com/us/en/about/suppliers.html), [Caregiver stories](https://www.stryker.com/us/en/acute-care/c/caregiver-stories.html) | left |
 | Image borders in other colours | blue 6, white 3, dark grey 2 images | | blue → teal, dark grey → black, white → no border (the agreed colour list) |
+| Charcoal text (#323232, typed by authors, not a Stryker component colour) | 93 uses | | black (the nearest Stryker colour), unless the business adds charcoal to the brand list |
+| Headline sizes between two steps (2.5% joins L, 3.5% joins L, 1% joins S) | part of 3,584 headlines | [Latera implant](https://www.stryker.com/us/en/ent/products/latera-absorbable-nasal-implant-system.html) | nearest step (section 5.7) |
+| Text sizes above 2.5× (3.5×) | a few uses | | 2.5× |
+| Bold **and underlined** links inside a sentence | | | teal on stryker.com, gold on the new site today; to align with the authoring conventions (section 10) |
 
 ---
 
@@ -289,8 +333,10 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 
 | Not carried over as a Columns option | Where it goes instead |
 |---|---|
-| Font size, font and text colour inside the cells | the site-wide **text layer** (formatting and the Text style panel). Cell text on stryker.com starts with one of 6 looks: body Humanist 14px (70%), Egyptienne 21 / 24.5 / 28px (25%), Futura bold 17.5px (3%), Egyptienne 14px (2%). The importer writes them as Text style markers (`:start-xxxl-serif:…:end:`, tools/importer/transformers/corp-text-markers.js). |
+| Font size, font and text colour of words inside the cells | the site-wide **text layer** (formatting and the Text style panel, section 5.7). Cell text on stryker.com starts with one of 6 looks: body Humanist 14px (70%), Egyptienne 21 / 24.5 / 28px (25%), Futura bold 17.5px (3%), Egyptienne 14px (2%). The migration writes them as Text style markers (`:start-xxxl-serif:…:end:`), for the review pages only until the business approves. |
+| The same look on the whole row's text (large headline, serif lead, captions, pull quotes) | a **Text look** in Block options (section 5.6) |
 | A coloured box around one line in the middle of a cell (TEACH "Trauma & Extremities", the quotes of "A winning spirit") | a Text style **line box** in the same colour names as the cell boxes (`box-dark-purple-gradient` …), 10px inside as the source default |
+| Sizes, headline sizes and colours outside the limited sets | the nearest step or Stryker colour (section 5.7); none added to match a single page |
 | Outer spacing (margins) around a cell | **no setting**: the block's standard gap (section 6) |
 | Backgrounds behind a whole row (full-width panels) | a **section style** |
 | Image on the left or the right | the **order** in which the author places the cells (image first in 76% of rows) |
@@ -307,13 +353,34 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 | One colour list across banner, panel, cards and columns | Rows of tiles change block (to Cards), which authors need to know |
 | Imported pages keep working: the old option names are read as the new ones | The old names stay readable for existing pages, so two spellings exist until those pages are re-saved |
 | Phones behave exactly as today | |
+| The panel greys out choices that don't fit the selected row and says why, so authors don't pick options that do nothing | Authors learn one rule: whole row in Block options, a few words in Text style |
+| Text keeps stryker.com's colours, sizes and fonts with normal and 6 text sizes, 4 headline sizes and 12 colours | Headlines between two steps (and 3.5× text) move by one step |
 
 ---
 
 ## 10. Decisions we need from the business
 
-None open for Columns. The rows listed in section 7 follow the proposal shown there unless the business
-asks otherwise.
+**To approve:**
+
+1. **Text look** in Block options (section 5.6): whole-row text looks as one choice per row, a small
+   departure from the package rule "fonts and sizes are never block options".
+2. The **limited text sets** (section 5.7): normal and 6 text sizes, headline sizes S 1.5 / M 2 / L 3 / XL 4.5,
+   the 8 brand colours plus black, mid grey, dark gold and pale grey. Charcoal is not a choice.
+3. Removing the review-only gate (section *Review status*), so real pages get the new rendering and
+   the migration writes Text style markers for every page.
+
+**Proposed, still open:**
+
+- The **first-line bars** (gold, dark grey, blue) become Text style line boxes, and *In a light grey
+  box* becomes a light grey **cell box**, since on stryker.com that grey box wraps the whole cell.
+- **Bold Futura Heading 2** (55 headings on 33 pages): measure them before the migration stops
+  enlarging every plain one (section 5.7).
+- **Bold and underlined links** inside a sentence: teal as on stryker.com, or gold as the authoring
+  conventions render them today.
+- The news and contact pages still bring their own copy styles; they move to Text style in their own
+  sessions.
+
+The other rows listed in section 7 follow the proposal shown there unless the business asks otherwise.
 
 ---
 
@@ -327,6 +394,10 @@ asks otherwise.
 | Cell box | a coloured or shadowed background behind the content of one cell, or of every cell |
 | Block options panel | the editor panel where authors pick a block's choices from named options |
 | Text layer | fonts, sizes and coloured words, set with formatting and the Text style panel, the same on every block |
+| Text look | a Block option that styles the whole row's text (large headline, serif lead, captions, pull quotes) |
+| Text style marker | the pair `:start-…:` / `:end:` the Text style panel writes around a few words; hidden on the page |
+| Line box | a Text style look that puts a coloured box around one whole line |
+| Headline step | one of the 4 headline sizes (S, M, L, XL) that grow with the screen width |
 | Section style | a choice for a whole section of the page, such as a full-width background |
 | Cards | the block for rows of the same unit (tiles, boxes, image rows) |
 | Side-by-side section | a section that places a block next to other content (`flex`) |
@@ -350,6 +421,9 @@ Hovering a greyed choice shows why ("Not available here: needs images in the row
 | Links / lists of links | Related links / Link groups |
 | Any text | Centred, the first-line bars, Large headline, Serif lead paragraph |
 
+The same needs are written in each Columns sample of the **Block Library** ("When it fits: …"), so
+authors see them before inserting a row.
+
 ## Review status (draft pages only)
 
 While the standardisation is reviewed, the new rendering applies **only on draft pages** (`/drafts/…`)
@@ -360,3 +434,8 @@ as bold teal text links in the sentence's font, as on stryker.com, instead of te
 links on 34 pages today). Every other page renders exactly as on the
 branch's starting code (checked element by element on product, news, fragment and trial pages).
 Removing the gate is one line in scripts/corp.js once the business approves.
+
+The migration works the same way: the Text style markers, the line boxes and the plain Futura bold
+Heading 2 are written only by a review build used for the draft pages. A normal re-import of a real
+page gives exactly the same output as before (compared file by file on the TEACH and ClotTriever
+pages).
