@@ -269,6 +269,21 @@ export const BLOCK_OPTIONS = {
       },
     ],
   },
+  // stryker.com local page navigation (docs/standardisation/local-nav.md):
+  // the grey rule above it is the default; stryker.com's "hide bottom line" has no visible effect
+  // there, so it is not a choice.
+  'local-nav': {
+    label: 'Local navigation',
+    groups: [
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['no-top-line', 'No top line', { hint: 'No grey rule above the navigation' }],
+        ],
+      },
+    ],
+  },
   // stryker.com data tables (stryker-aemcoder-package, docs/standardisation/table.md): the
   // header row (default, the first row in bold) or none, rows as lines on phones, and the patent
   // lists' rows from a linked sheet. Older imported names: `striped` is always on, `stacked` is

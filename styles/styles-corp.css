@@ -29,6 +29,21 @@
   --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
 
+  /* local navigation (blocks/local-nav) — measured: stryker.com local page navigation
+     (CR hub, room design, 1788 platform) */
+  --local-nav-link-color: #9f9d9d; /* the links of the section */
+  --local-nav-separator-color: #c2c2c2; /* the "|" between them */
+  --local-nav-menu-link-color: #404040; /* phones: the links in the open list */
+  --local-nav-arrow-size: 8px; /* phones: the gold up / down arrows of the list button (19px) */
+  --local-nav-arrow-box: 19px;
+  --local-nav-arrow-inset: 1px;
+  --local-nav-arrow-up-top: 4px;
+  --local-nav-arrow-down-top: 11px;
+  --local-nav-height: 40px; /* from 600px: the navigation's height */
+  --local-nav-title-gap: 30px; /* from 600px: space right of the parent page's title */
+  --local-nav-title-line-height: 1.15; /* 17.5px / 20.125px */
+  --local-nav-links-end: 55px; /* from 600px: the pages end 55px before the right edge (the source keeps room for its overflow button) */
+
   /* carousel (blocks/carousel-corp) — measured: stryker.com slick carousels, augment (image
      slides) and Malis / ACFAS 2018 (split slides) */
   --carousel-corp-speed: 300ms; /* slide / fade transition (slick speed 300) */

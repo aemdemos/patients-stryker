@@ -1,0 +1,167 @@
+/*
+ * Local Nav (docs/standardisation/local-nav.md), in review: rendered on draft pages only
+ * (local-nav.js). Measured on stryker.com (CR hub, room design, 1788 platform): a 1px grey rule,
+ * 15px above the navigation (`no-top-line` drops it); from 600px the parent page's title
+ * (Futura bold 17.5px, capitals) on the left and the section's pages on the right (Futura
+ * 14px, capitals, grey, "|" between them, the current page in black); on phones the current
+ * page's title (Futura bold 14px) and a gold up / down arrow that opens the pages in a list.
+ */
+body.corp.std-draft .local-nav {
+  margin-bottom: var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+  padding-top: var(--space-block);
+}
+
+body.corp.std-draft .local-nav.no-top-line {
+  border-top: 0;
+}
+
+body.corp.std-draft .local-nav .local-nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: var(--space-block-s);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+}
+
+body.corp.std-draft .local-nav .local-nav-parent,
+body.corp.std-draft .local-nav .local-nav-links {
+  display: none;
+}
+
+body.corp.std-draft .local-nav .local-nav-current {
+  flex: 1;
+  margin: 0;
+  line-height: var(--body-line-height);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+}
+
+body.corp.std-draft .local-nav .local-nav-toggle {
+  position: relative;
+  width: var(--local-nav-arrow-box);
+  height: var(--local-nav-arrow-box);
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* the source's dropdown-arrow.png: a gold triangle up over a gold triangle down */
+body.corp.std-draft .local-nav .local-nav-toggle::before,
+body.corp.std-draft .local-nav .local-nav-toggle::after {
+  content: "";
+  position: absolute;
+  left: var(--local-nav-arrow-inset);
+  width: var(--local-nav-arrow-size);
+  height: calc(var(--local-nav-arrow-size) / 2);
+  background: var(--color-accent);
+}
+
+body.corp.std-draft .local-nav .local-nav-toggle::before {
+  top: var(--local-nav-arrow-up-top);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+body.corp.std-draft .local-nav .local-nav-toggle::after {
+  top: var(--local-nav-arrow-down-top);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+body.corp.std-draft .local-nav .local-nav-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+body.corp.std-draft .local-nav .local-nav-menu {
+  flex-basis: 100%;
+  margin: var(--space-block-s) 0 var(--space-block);
+  padding: 0;
+  background: var(--color-white);
+  list-style: none;
+}
+
+body.corp.std-draft .local-nav .local-nav-menu[hidden] {
+  display: none;
+}
+
+body.corp.std-draft .local-nav .local-nav-menu li {
+  padding: var(--space-block-s);
+}
+
+body.corp.std-draft .local-nav .local-nav-menu a:any-link {
+  color: var(--local-nav-menu-link-color);
+  text-decoration: none;
+}
+
+body.corp.std-draft .local-nav .local-nav-menu .local-nav-menu-parent a:any-link,
+body.corp.std-draft .local-nav .local-nav-menu a[aria-current="page"] {
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp.std-draft .local-nav .local-nav-menu a[aria-current="page"] {
+  color: var(--color-black);
+}
+
+@media (width >= 600px) {
+  body.corp.std-draft .local-nav {
+    margin-bottom: 0;
+  }
+
+  body.corp.std-draft .local-nav .local-nav-bar {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 0;
+    min-height: var(--local-nav-height);
+  }
+
+  body.corp.std-draft .local-nav .local-nav-current,
+  body.corp.std-draft .local-nav .local-nav-toggle,
+  body.corp.std-draft .local-nav .local-nav-menu {
+    display: none;
+  }
+
+  body.corp.std-draft .local-nav .local-nav-parent {
+    display: block;
+    flex: 0 0 auto;
+    padding-right: var(--local-nav-title-gap);
+    font-size: var(--body-font-size-l);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--local-nav-title-line-height);
+    color: var(--color-black);
+    text-decoration: none;
+  }
+
+  body.corp.std-draft .local-nav .local-nav-links {
+    display: block;
+    flex: 1;
+    margin: 0;
+    padding: 0 var(--local-nav-links-end) 0 0;
+    list-style: none;
+    text-align: right;
+  }
+
+  body.corp.std-draft .local-nav .local-nav-links li {
+    display: inline-block;
+    margin-left: var(--space-block-s);
+    color: var(--local-nav-separator-color);
+  }
+
+  body.corp.std-draft .local-nav .local-nav-links li:not(:last-child)::after {
+    content: "|";
+  }
+
+  body.corp.std-draft .local-nav .local-nav-links a:any-link {
+    padding: 0 var(--space-block-s);
+    color: var(--local-nav-link-color);
+    text-decoration: none;
+  }
+
+  body.corp.std-draft .local-nav .local-nav-links a[aria-current="page"] {
+    color: var(--color-black);
+  }
+}

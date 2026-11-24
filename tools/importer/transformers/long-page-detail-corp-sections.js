@@ -335,6 +335,9 @@ function localNav(main, doc) {
   if (!nav) return null;
   const parent = nav.querySelector('a.parent-node');
   const links = [...nav.querySelectorAll('ul.links > li > a[href]')];
+  // review build: the grey rule above it (.margin-hr.rule-separator) or `no-top-line`
+  const widget = nav.closest('[data-widget="local-page-nav"]') || nav.parentElement;
+  const noTopLine = STD_DRAFT_IMPORT && !(widget && widget.querySelector('.margin-hr.rule-separator'));
   nav.closest('.localpagenavigation').remove();
   if (!parent && !links.length) return null;
   const rows = [];
@@ -354,7 +357,7 @@ function localNav(main, doc) {
     ul.append(li);
   });
   rows.push([ul]);
-  return WebImporter.Blocks.createBlock(doc, { name: 'Local Nav', cells: rows });
+  return WebImporter.Blocks.createBlock(doc, { name: noTopLine ? 'Local Nav (no-top-line)' : 'Local Nav', cells: rows });
 }
 
 /** A source Marketo form (form[data-marketo-form-id]) → `Marketo Form` block, or null. */
