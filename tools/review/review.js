@@ -70,7 +70,7 @@ const quietUntil = {
   std: 0, rs: 0, src: 0, live: 0,
 };
 // the live copy of the source page (backend action live): what it was rendered for, its blob URL
-const live = { key: '', url: '' };
+const live = { key: '', url: '', prefetched: new Set() };
 let anchors = [];
 // the source snapshot of the page at the current width (meta.json of capture-snapshots.mjs)
 let snapshot = null;
@@ -1320,10 +1320,17 @@ async function loadLive(fresh = false) {
   const msg = panes.live.querySelector('.rv-live-msg');
   const tag = panes.live.querySelector('.rv-tag');
   const again = panes.live.querySelector('.rv-live-again');
+  // the backdrop: over the page shown before, until the new copy is there
+  const width = REVIEW.widths.find((w) => w.vp === state.vp)?.label || `${state.vp} px`;
+  msg.classList.remove('rv-live-error');
+  msg.replaceChildren(
+    el('span', { class: 'rv-live-spinner', 'aria-hidden': 'true' }),
+    el('strong', {}, 'Rendering the live stryker.com page'),
+    el('span', {}, `${width} width · a few seconds`),
+  );
   msg.hidden = false;
-  msg.textContent = 'Rendering the live stryker.com page… (a few seconds)';
   again.hidden = true;
-  tag.textContent = 'Live stryker.com';
+  tag.textContent = 'Live stryker.com: rendering…';
   const q = new URLSearchParams({
     page: state.page, vp: String(state.vp), ...(SOURCE[state.page] ? { source: SOURCE[state.page] } : {}), ...(fresh ? { fresh: '1' } : {}),
   });
@@ -1331,13 +1338,30 @@ async function loadLive(fresh = false) {
   if (live.key !== key) return;
   again.hidden = false;
   if (status !== 200 || !body?.html) {
-    msg.textContent = body?.error?.message ? `No live copy: ${body.error.message}` : 'The live copy could not be made (the review backend did not answer).';
+    msg.classList.add('rv-live-error');
+    msg.replaceChildren(
+      el('strong', {}, 'No live copy'),
+      el('span', {}, body?.error?.message || 'The review backend did not answer.'),
+    );
+    tag.textContent = 'Live stryker.com';
     return;
   }
   if (live.url) URL.revokeObjectURL(live.url);
   live.url = URL.createObjectURL(new Blob([body.html], { type: 'text/html' }));
+  // (the backdrop goes once the new copy has loaded in the frame)
+  frames.live.addEventListener('load', () => {
+    if (live.key === key) msg.hidden = true;
+  }, { once: true });
   frames.live.src = live.url;
-  msg.hidden = true;
+  // the other widths, made in the background now: switching widths is then instant
+  if (!live.prefetched.has(state.page)) {
+    live.prefetched.add(state.page);
+    const { page } = state;
+    REVIEW.widths.map((w) => w.vp).filter((vp) => vp !== state.vp)
+      .reduce((chain, vp) => chain.then(() => call(`live?${new URLSearchParams({
+        page, vp: String(vp), ...(SOURCE[page] ? { source: SOURCE[page] } : {}),
+      })}`).catch(() => null)), Promise.resolve());
+  }
   const at = new Date(body.at).toLocaleTimeString([], { timeStyle: 'short' });
   tag.textContent = `Live stryker.com, rendered ${at}${body.cached ? '' : ' (now)'}`;
 }

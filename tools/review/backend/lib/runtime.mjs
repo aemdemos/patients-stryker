@@ -1,7 +1,7 @@
 /*
  * Calls to I/O Runtime from inside an action, with the action's own credential (the environment
- * of every action: __OW_API_HOST, __OW_API_KEY, __OW_NAMESPACE): start the capture, set up its
- * schedule. Never used outside the backend.
+ * of every action: __OW_API_HOST, __OW_API_KEY, __OW_NAMESPACE): start the capture, set up the
+ * schedules. Never used outside the backend.
  */
 const host = () => process.env.__OW_API_HOST || 'https://adobeioruntime.net';
 const auth = () => `Basic ${Buffer.from(process.env.__OW_API_KEY || '').toString('base64')}`;
@@ -27,30 +27,47 @@ export async function ow(method, path, body) {
 export const startCapture = (space) => ow('POST', `_/actions/std-review/capture?blocking=false`, { op: 'run', space });
 
 /**
- * the capture's schedule: a trigger fed by the alarms package (cron), a rule to the capture
- * action; enabled false removes them
+ * one schedule: a trigger fed by the alarms package (cron) and a rule to an action, the payload
+ * as its params; enabled false removes them. Setting up again replaces the old one.
  */
-export async function schedule({ cron = '*/15 * * * *', enabled = true, space = 'main' } = {}) {
+async function scheduleOne({
+  name, action, cron, payload, enabled,
+}) {
   const ns = namespace();
-  const trigger = `/${ns}/review-capture`;
+  const trigger = `/${ns}/${name}`;
   const out = [];
-  // (the feed first gets a DELETE: setting up again replaces the old schedule)
-  out.push(['feed delete', (await ow('POST', 'whisk.system/actions/alarms/alarm?blocking=true', {
+  out.push([`${name} feed delete`, (await ow('POST', 'whisk.system/actions/alarms/alarm?blocking=true', {
     authKey: process.env.__OW_API_KEY, lifecycleEvent: 'DELETE', triggerName: trigger,
   })).status]);
-  out.push(['rule delete', (await ow('DELETE', '_/rules/review-capture-rule')).status]);
-  out.push(['trigger delete', (await ow('DELETE', '_/triggers/review-capture')).status]);
+  out.push([`${name} rule delete`, (await ow('DELETE', `_/rules/${name}-rule`)).status]);
+  out.push([`${name} trigger delete`, (await ow('DELETE', `_/triggers/${name}`)).status]);
   if (!enabled) return out;
-  out.push(['trigger', (await ow('PUT', '_/triggers/review-capture?overwrite=true', {
-    parameters: [{ key: 'op', value: 'run' }, { key: 'space', value: space }],
+  out.push([`${name} trigger`, (await ow('PUT', `_/triggers/${name}?overwrite=true`, {
+    parameters: Object.entries(payload).map(([key, value]) => ({ key, value })),
     annotations: [{ key: 'feed', value: '/whisk.system/alarms/alarm' }],
   })).status]);
   const feed = await ow('POST', 'whisk.system/actions/alarms/alarm?blocking=true', {
-    authKey: process.env.__OW_API_KEY, lifecycleEvent: 'CREATE', triggerName: trigger, cron, trigger_payload: { op: 'run', space },
+    authKey: process.env.__OW_API_KEY, lifecycleEvent: 'CREATE', triggerName: trigger, cron, trigger_payload: payload,
   });
-  out.push(['feed', feed.status, JSON.stringify(feed.body).slice(0, 200)]);
-  out.push(['rule', (await ow('PUT', '_/rules/review-capture-rule?overwrite=true', {
-    trigger, action: `/${ns}/std-review/capture`,
+  out.push([`${name} feed`, feed.status]);
+  out.push([`${name} rule`, (await ow('PUT', `_/rules/${name}-rule?overwrite=true`, {
+    trigger, action: `/${ns}/std-review/${action}`,
   })).status]);
   return out;
+}
+
+/**
+ * the backend's schedules: the capture (first shots, every 15 minutes) and the live copies'
+ * warm-up (every 5 minutes a container of the live action keeps its browser running, so a
+ * reviewer's first Live copy doesn't wait for a container and a browser to start)
+ */
+export async function schedule({ cron = '*/15 * * * *', warm = '*/5 * * * *', enabled = true, space = 'main' } = {}) {
+  return [
+    ...await scheduleOne({
+      name: 'review-capture', action: 'capture', cron, payload: { op: 'run', space }, enabled,
+    }),
+    ...await scheduleOne({
+      name: 'review-live-warm', action: 'live', cron: warm, payload: { op: 'warm' }, enabled,
+    }),
+  ];
 }

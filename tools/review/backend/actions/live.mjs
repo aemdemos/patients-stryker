@@ -26,13 +26,15 @@ const cacheFile = (space, source, vp) => `${pre(space)}live/${Buffer.from(source
 
 // the browser stays open in a warm container (the next copy is faster)
 let browserP = null;
+let warmSince = null;
 async function browser() {
   if (browserP) {
     const b = await browserP.catch(() => null);
-    if (b && b.connected) return b;
+    if (b && b.connected) return { b, cold: false };
   }
   browserP = launch();
-  return browserP;
+  warmSince = new Date().toISOString();
+  return { b: await browserP, cold: true };
 }
 
 /** the rendered page as a copy: no scripts, a <base> to stryker.com (runs in the browser) */
@@ -61,6 +63,14 @@ async function sourceOf(files, space, page, given) {
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
+  const t0 = Date.now();
+  const timing = {};
+  const mark = (k) => { timing[k] = Date.now() - t0; };
+  // (the schedule's warm-up: start the browser, render nothing)
+  if (params.op === 'warm') {
+    const { cold } = await browser();
+    return reply(params, 200, { warm: true, cold, since: warmSince, took: Date.now() - t0 });
+  }
   try {
     const stores = await open();
     const { files } = stores;
@@ -74,6 +84,7 @@ export async function main(params) {
     const space = spaceOf(invite.scope);
     const source = await sourceOf(files, space, page, params.source);
     if (!source) return fail(params, 404, 'no-source', 'No source page is known for this page.');
+    mark('ready');
     const file = cacheFile(space, source, vp);
     if (!params.fresh) {
       try {
@@ -83,13 +94,17 @@ export async function main(params) {
         // none kept
       }
     }
-    const b = await browser();
-    const tab = await openPage(b, vp);
+    const { b, cold } = await browser();
+    mark('browser');
+    const lite = params.full !== '1';
+    const tab = await openPage(b, vp, { lite });
     let out;
     try {
-      const status = await loadSource(tab, source, { wait: 1500 });
+      const status = await loadSource(tab, source, lite ? { wait: 600, pause: 40, waitUntil: 'domcontentloaded' } : { wait: 1500 });
+      mark('loaded');
       const finalUrl = tab.url();
       const html = await tab.evaluate(copyOf, finalUrl);
+      mark('copied');
       if (html.length > MAX_HTML) return fail(params, 413, 'too-large', 'This page is too large for a live copy.');
       out = {
         html, at: new Date().toISOString(), source, finalUrl, status, title: await tab.title(), vp,
@@ -100,7 +115,10 @@ export async function main(params) {
       await tab.close().catch(() => null);
     }
     await files.write(file, JSON.stringify(out));
-    return reply(params, 200, { ...out, cached: false });
+    mark('kept');
+    return reply(params, 200, {
+      ...out, cached: false, timing: { ...timing, coldBrowser: cold, lite },
+    });
   } catch (e) {
     browserP = null;
     return fail(params, 500, 'server', String(e.message || e).slice(0, 200));
