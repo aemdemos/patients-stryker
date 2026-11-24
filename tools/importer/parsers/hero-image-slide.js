@@ -87,7 +87,33 @@ function percent(style, re) {
   return m ? String(parseFloat(m[1])).replace('.', '-') : null;
 }
 
-export default function parse(element, { document }) {
+export default function parse(element, context) {
+  const { document } = context;
+  // in review (staging build only, docs/standardisation/carousel-corp.md): a carousel of
+  // several slides becomes one `carousel` section per slide, each slide a Hero Corp
+  // (image-slide) with its own options; autoplay (any speed) and fade are slide section styles
+  const slides = [...element.querySelectorAll('.carouselslide:not(.slick-cloned)')];
+  if (STD_DRAFT_IMPORT && slides.length > 1 && !element.hasAttribute('data-std-slide')) {
+    const settings = element.querySelector('.slider-wrapper') || element;
+    const styles = ['carousel'];
+    if (settings.getAttribute('data-autoplay') === 'true') styles.push('autoplay');
+    if (settings.getAttribute('data-transition') === 'true') styles.push('fade');
+    const out = [document.createElement('hr')];
+    slides.forEach((one) => {
+      const holder = document.createElement('div');
+      const single = document.createElement('div');
+      single.setAttribute('data-std-slide', '');
+      single.append(one.cloneNode(true));
+      holder.append(single);
+      parse(single, context);
+      out.push(...holder.childNodes, WebImporter.Blocks.createBlock(document, {
+        name: 'Section Metadata',
+        cells: { style: styles.join(', ') },
+      }), document.createElement('hr'));
+    });
+    element.replaceWith(...out);
+    return;
+  }
   const slide = element.querySelector('.carouselslide:not(.slick-cloned)') || element;
   const desktop = slide.querySelector('.experienceFragment-ef img');
   const mobile = slide.querySelector('.experienceFragment-ef-mobile img');

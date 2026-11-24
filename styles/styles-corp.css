@@ -28,6 +28,24 @@
   --corp-table-line-height: 20px; /* measured: stryker.com table text, 14px / 20px */
   --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
+
+  /* carousel (blocks/carousel-corp) — measured: stryker.com slick carousels, augment (image
+     slides) and Malis / ACFAS 2018 (split slides) */
+  --carousel-corp-speed: 300ms; /* slide / fade transition (slick speed 300) */
+  --carousel-corp-arrow-width: 36px; /* image slides: thin white chevron 36 x 65, 14px in from the edge */
+  --carousel-corp-arrow-height: 65px;
+  --carousel-corp-arrow-inset: 14px;
+  --carousel-corp-split-arrow-width: 35px; /* split slides: gold box 35 x 25 at the edge */
+  --carousel-corp-split-arrow-height: 25px;
+  --carousel-corp-dot-size: 19px; /* phone dots, 29px apart */
+  --carousel-corp-dot-gap: 10px;
+  --carousel-corp-band-inset: 60px; /* split band: 370px high in a 490px slide, the image 20px over it */
+  --carousel-corp-band-overflow: 20px;
+  --carousel-corp-split-gutter: 50px;
+  --carousel-corp-split-gap: 30px;
+  --carousel-corp-split-title: 24px; /* split slide title, Egyptienne Light: 24px on phones, 56px from 840px */
+  --carousel-corp-split-title-l: 56px;
+  --carousel-corp-split-line-height: 1.06;
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
   --corp-icon-font-family: strykericons;

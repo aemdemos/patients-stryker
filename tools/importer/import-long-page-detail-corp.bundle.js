@@ -685,7 +685,30 @@ var CustomImportScript = (() => {
     const m = style.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
   }
-  function parse5(element, { document }) {
+  function parse5(element, context) {
+    const { document } = context;
+    const slides = [...element.querySelectorAll(".carouselslide:not(.slick-cloned)")];
+    if (STD_DRAFT_IMPORT && slides.length > 1 && !element.hasAttribute("data-std-slide")) {
+      const settings = element.querySelector(".slider-wrapper") || element;
+      const styles = ["carousel"];
+      if (settings.getAttribute("data-autoplay") === "true") styles.push("autoplay");
+      if (settings.getAttribute("data-transition") === "true") styles.push("fade");
+      const out = [document.createElement("hr")];
+      slides.forEach((one) => {
+        const holder = document.createElement("div");
+        const single = document.createElement("div");
+        single.setAttribute("data-std-slide", "");
+        single.append(one.cloneNode(true));
+        holder.append(single);
+        parse5(single, context);
+        out.push(...holder.childNodes, WebImporter.Blocks.createBlock(document, {
+          name: "Section Metadata",
+          cells: { style: styles.join(", ") }
+        }), document.createElement("hr"));
+      });
+      element.replaceWith(...out);
+      return;
+    }
     const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
     const desktop = slide.querySelector(".experienceFragment-ef img");
     const mobile = slide.querySelector(".experienceFragment-ef-mobile img");

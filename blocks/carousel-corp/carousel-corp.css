@@ -1,0 +1,243 @@
+/*
+ * Carousel (corp), in review on draft pages (docs/standardisation/carousel-corp.md): measured
+ * on stryker.com augment (image slides) and Malis / ACFAS 2018 (split slides).
+ */
+body.corp .carousel-corp {
+  position: relative;
+  overflow: hidden;
+}
+
+body.corp .carousel-corp .carousel-corp-track {
+  display: flex;
+  transition: transform var(--carousel-corp-speed) ease;
+}
+
+body.corp .carousel-corp .carousel-corp-slide {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* the slides' own blocks keep no outer gap inside the carousel */
+body.corp .carousel-corp .carousel-corp-slide > div,
+body.corp .carousel-corp .carousel-corp-slide > div > .block {
+  margin-block: 0;
+}
+
+/* fade: the slides sit on top of each other and cross-fade */
+body.corp .carousel-corp.fade .carousel-corp-track {
+  display: grid;
+  transition: none;
+}
+
+body.corp .carousel-corp.fade .carousel-corp-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transition: opacity var(--carousel-corp-speed) ease;
+}
+
+body.corp .carousel-corp.fade .carousel-corp-slide.active {
+  opacity: 1;
+}
+
+/* arrows: a thin white chevron on image slides, from 600px */
+body.corp .carousel-corp :is(.carousel-corp-prev, .carousel-corp-next) {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: none;
+  width: var(--carousel-corp-arrow-width);
+  height: var(--carousel-corp-arrow-height);
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+body.corp .carousel-corp .carousel-corp-prev {
+  left: var(--carousel-corp-arrow-inset);
+}
+
+body.corp .carousel-corp .carousel-corp-next {
+  right: var(--carousel-corp-arrow-inset);
+}
+
+body.corp .carousel-corp :is(.carousel-corp-prev, .carousel-corp-next)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  aspect-ratio: 1;
+  border-bottom: 2px solid var(--color-white);
+  border-left: 2px solid var(--color-white);
+  transform: translate(-25%, -50%) rotate(45deg);
+}
+
+body.corp .carousel-corp .carousel-corp-next::before {
+  transform: translate(-75%, -50%) rotate(-135deg);
+}
+
+body.corp .carousel-corp :is(.carousel-corp-prev, .carousel-corp-next):focus-visible {
+  outline: 2px solid var(--color-accent);
+}
+
+/* dots: on phones, under the slide */
+body.corp .carousel-corp .carousel-corp-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--carousel-corp-dot-gap);
+  padding-block: var(--space-block);
+}
+
+body.corp .carousel-corp .carousel-corp-dots button {
+  width: var(--carousel-corp-dot-size);
+  height: var(--carousel-corp-dot-size);
+  margin: 0;
+  border: 1px solid var(--color-secondary);
+  border-radius: 50%;
+  padding: 0;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+body.corp .carousel-corp .carousel-corp-dots button[aria-current='true'] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+/* split slides: image and text on a coloured band, white text; arrows in a gold box at the
+   edges on every width; no dots */
+body.corp .carousel-corp.split .carousel-corp-slide {
+  --carousel-corp-band: var(--corp-gradient-dark-purple);
+
+  position: relative;
+  isolation: isolate;
+  padding: var(--carousel-corp-split-gutter);
+  color: var(--color-white);
+}
+
+body.corp .carousel-corp.split .carousel-corp-slide.box-blue-gradient {
+  --carousel-corp-band: var(--corp-gradient-dark-blue);
+}
+
+body.corp .carousel-corp.split .carousel-corp-slide.box-dark {
+  --carousel-corp-band: var(--color-secondary);
+}
+
+body.corp .carousel-corp.split .carousel-corp-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--carousel-corp-band);
+}
+
+body.corp .carousel-corp.split .columns > div {
+  align-items: center;
+  gap: var(--carousel-corp-split-gap);
+}
+
+/* images at their own size (at most the column), centred */
+body.corp .carousel-corp.split .columns picture {
+  display: block;
+  text-align: center;
+}
+
+body.corp .carousel-corp.split .columns img {
+  width: auto;
+  max-width: 100%;
+}
+
+/* the image first on phones, as on stryker.com */
+body.corp .carousel-corp.split .columns > div > div:has(picture) {
+  order: -1;
+}
+
+body.corp .carousel-corp.split :is(h1, h2, h3) {
+  margin: 0 0 var(--space-block-l);
+  font-family: var(--heading-font-family);
+  font-size: var(--carousel-corp-split-title);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--carousel-corp-split-line-height);
+  color: var(--color-white);
+}
+
+body.corp .carousel-corp.split p {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--carousel-corp-split-line-height);
+  color: var(--color-white);
+}
+
+/* the slide's link: a gold Futura bold link (stryker.com action link), not a button */
+body.corp .carousel-corp.split a:any-link {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp .carousel-corp.split .carousel-corp-dots {
+  display: none;
+}
+
+body.corp .carousel-corp.split :is(.carousel-corp-prev, .carousel-corp-next) {
+  display: block;
+  width: var(--carousel-corp-split-arrow-width);
+  height: var(--carousel-corp-split-arrow-height);
+  background: var(--color-accent);
+}
+
+body.corp .carousel-corp.split .carousel-corp-prev {
+  left: 0;
+}
+
+body.corp .carousel-corp.split .carousel-corp-next {
+  right: 0;
+}
+
+body.corp .carousel-corp.split :is(.carousel-corp-prev, .carousel-corp-next)::before {
+  width: 30%;
+  border-width: 0 0 2px 2px;
+}
+
+@media (width >= 600px) {
+  body.corp .carousel-corp :is(.carousel-corp-prev, .carousel-corp-next) {
+    display: block;
+  }
+
+  body.corp .carousel-corp .carousel-corp-dots {
+    display: none;
+  }
+
+  body.corp .carousel-corp.split .carousel-corp-slide {
+    padding-block: var(--carousel-corp-band-inset);
+  }
+
+  body.corp .carousel-corp.split .carousel-corp-slide::before {
+    inset: var(--carousel-corp-band-inset) 0;
+  }
+
+  body.corp .carousel-corp.split .columns > div > div:has(picture) {
+    order: 0;
+  }
+
+  body.corp .carousel-corp.split .columns picture {
+    margin-block: calc(-1 * var(--carousel-corp-band-overflow));
+  }
+
+  body.corp .carousel-corp.split :is(h1, h2, h3) {
+    font-size: var(--carousel-corp-split-title-l);
+  }
+}
+
+/* full width, as on stryker.com (the slides' own blocks keep their insets) */
+body.corp .carousel-corp-container .carousel-corp-wrapper {
+  max-width: unset;
+  padding: 0;
+}

@@ -356,13 +356,77 @@ function groupFlexColumns(main) {
   });
 }
 
+// section styles of a carousel's slides: what they become on the carousel (the rest stay on
+// the carousel's section); stryker.com speeds (autoplay-2500 …) read as autoplay
+const CAROUSEL_STYLES = /^(carousel|autoplay(-\d+)?|fade|split|banner)$/;
+const CAROUSEL_BANDS = {
+  'box-purple-gradient': 'box-purple-gradient',
+  'box-blue-gradient': 'box-blue-gradient',
+  'box-dark': 'box-dark',
+  'bg-dark-purple-gradient': 'box-purple-gradient',
+  'bg-dark-blue-gradient': 'box-blue-gradient',
+  'bg-dark-gray': 'box-dark',
+};
+
+/**
+ * In review (draft pages, docs/standardisation/carousel-corp.md): turns each run of
+ * consecutive `carousel` sections into one `carousel-corp` block, a slide per section. Each
+ * slide keeps its decorated blocks (a Hero (corp) image slide, a Columns row) and default
+ * content. Slide styles `autoplay` (or a stryker.com `autoplay-N`), `fade` and `split` (or a
+ * band colour) become the carousel's options; a split slide's band colour stays on its slide.
+ * Runs after the blocks are decorated, so the slides' blocks load in place.
+ * @param {Element} main The container element
+ */
+function buildCarousels(main) {
+  const runs = [];
+  main.querySelectorAll(':scope > .section.carousel').forEach((section) => {
+    const run = runs[runs.length - 1];
+    if (run && run[run.length - 1].nextElementSibling === section) run.push(section);
+    else runs.push([section]);
+  });
+  runs.forEach((run) => {
+    const block = document.createElement('div');
+    block.className = 'carousel-corp';
+    const options = new Set();
+    const keep = new Set();
+    run.forEach((section) => {
+      const slide = document.createElement('div');
+      [...section.classList].forEach((cls) => {
+        if (/^autoplay/.test(cls)) options.add('autoplay');
+        else if (cls === 'fade') options.add('fade');
+        else if (cls === 'split' || cls === 'banner') options.add('split');
+        else if (CAROUSEL_BANDS[cls]) {
+          options.add('split');
+          slide.classList.add(CAROUSEL_BANDS[cls]);
+        } else if (!CAROUSEL_STYLES.test(cls) && cls !== 'section') keep.add(cls);
+      });
+      slide.append(...[...section.children].filter((child) => child.childElementCount));
+      block.append(slide);
+    });
+    block.classList.add(...options, 'block');
+    block.dataset.blockName = 'carousel-corp';
+    block.dataset.blockStatus = 'initialized';
+    const wrapper = document.createElement('div');
+    wrapper.className = 'carousel-corp-wrapper';
+    wrapper.append(block);
+    const [host, ...rest] = run;
+    rest.forEach((section) => section.remove());
+    host.className = 'section';
+    host.classList.add(...keep, 'carousel-corp-container');
+    host.replaceChildren(wrapper);
+  });
+}
+
 /**
  * Corp layout of the decorated sections. Runs on <main> and on fragments, after the blocks
  * are decorated (their wrappers exist, so moving them keeps every block found).
  * @param {Element} main The container element
  */
 export function decorateLayout(main) {
-  if (document.body.classList.contains('std-draft')) groupFlexColumns(main);
+  if (document.body.classList.contains('std-draft')) {
+    groupFlexColumns(main);
+    buildCarousels(main);
+  }
 }
 
 /**
