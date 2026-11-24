@@ -3,7 +3,10 @@
 Status (24 Nov 2026): **the database is the review's only store** (both reviews, std and
 main). State held test data only: all 675 keys (entries and invitations) were copied over once
 (`admin.mjs migrate-from-state`, `lib/migrate.mjs`) and compared key by key (0 missing, 0
-different); State is no longer read or written, and can be emptied at any time.
+different); State is no longer read or written. **State emptied the same day** (admin
+`empty-state`): a final copy of all 675 keys first, in Files
+`backups/state-final/2026-11-24T15-59-01-136Z.json` (kept; read back complete before deleting),
+then every key deleted (0 left; the tests that followed left it empty).
 
 **How it is stored** (`lib/dbstate.mjs`):
 

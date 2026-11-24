@@ -18,6 +18,8 @@
  *   backups                                 the days with a backup
  *   migrate-from-state { apply }            once: every key of the old State store into the database
  *                                           (apply false: only the comparison)
+ *   empty-state { apply }                   the old State store: a final copy to Files
+ *                                           (backups/state-final/), then every key deleted
  *   db-check                                the App Builder Database: credential there, connect, write,
  *                                           read, 200 at once (DATABASE.md)
  *   db-stats                                page documents per space, invitations (empty pages removed)
@@ -54,7 +56,7 @@ import {
 import {
   dbCheck, dbConsistency, dbListTest, dbListChangeTest,
 } from '../lib/db.mjs';
-import { migrateFromState } from '../lib/migrate.mjs';
+import { migrateFromState, emptyState } from '../lib/migrate.mjs';
 
 // operations that change entries: the review's summary is built again after them
 const WRITES = ['migrate-from-state', 'status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
@@ -119,6 +121,7 @@ async function run(params) {
       return ok(await backup(stores));
     }
     if (op === 'migrate-from-state') return ok(await migrateFromState(state, { apply: params.apply === true }));
+    if (op === 'empty-state') return ok(await emptyState(files, { apply: params.apply === true }));
     if (op === 'db-check') return ok(await dbCheck(params));
     if (op === 'db-stats') {
       // the documents per space and invitations; pages left without entries removed

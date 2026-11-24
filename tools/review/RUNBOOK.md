@@ -193,7 +193,8 @@ report before any upload.
 - **The tool shows "not valid / withdrawn":** the invitation expired or was revoked: create a new
   one.
 - **Where entries live:** since 24 Nov 2026 in App Builder Database, one document per page
-  (`backend/DATABASE.md`); the old State store is no longer used (it held test data only). Daily
+  (`backend/DATABASE.md`); the old State store is empty (test data only, final copy in Files
+  `backups/state-final/`). Daily
   backups go to Files (`admin backups`, `restore-check`, `restore`); the audit files are the
   second record. `admin db-stats` counts the documents.
 

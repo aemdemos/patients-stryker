@@ -545,7 +545,8 @@ The backend keeps the review in two App Builder stores:
   read with one request from the primary (it always shows what was just saved), a save writes
   its items in place, and the rev check (someone else changed it meanwhile → a conflict) is done
   by the database inside the write. No end date. Since 24 Nov 2026 (the old State store held
-  test data only: copied over, no longer used).
+  test data only: copied over, then emptied; its final copy is in Files,
+  `backups/state-final/`).
 - **Files** (blob storage): what must stay or is large: the audit, the shot history and its
   images, the capture's record, the Live copies, the signing key, the daily backups and the
   **review's summary**.
