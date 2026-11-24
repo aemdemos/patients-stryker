@@ -251,6 +251,35 @@ export const BLOCK_OPTIONS = {
       },
     ],
   },
+  // stryker.com data tables (stryker-aemcoder-package, docs/standardisation/table.md): the
+  // header row (default, the first row in bold) or none, rows as lines on phones, and the patent
+  // lists' rows from a linked sheet. Older imported names: `striped` is always on, `stacked` is
+  // mobile-stacked.
+  table: {
+    label: 'Table',
+    aliases: {
+      striped: [],
+      stacked: ['mobile-stacked'],
+    },
+    groups: [
+      {
+        id: 'header',
+        label: 'Header row',
+        options: [
+          ['', 'Header', { hint: 'The first row is the header, in bold' }],
+          ['no-header', 'No header', { hint: 'Every row is a data row' }],
+        ],
+      },
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['mobile-stacked', 'Rows as lines on phones', { needs: ['cells-2+'], hint: 'On phones each cell is a line of its own, the rows keep their stripes' }],
+          ['sheet', 'Data from a sheet', { needs: ['sheet-link'], hint: 'The rows come from the linked sheet (a long list such as the patents), stacked on phones' }],
+        ],
+      },
+    ],
+  },
   // stryker.com column rows (stryker-aemcoder-package, docs/standardisation/columns.md): the five
   // source layouts (and the other widths the corp styles have), a cell box (one colour list for
   // every block) in the first / last / every cell, the spacing inside it, image borders, centred

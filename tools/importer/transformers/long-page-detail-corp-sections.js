@@ -45,6 +45,9 @@ import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
 
+// a source data table as a Table block (staging build only, dataTables)
+const STD_TABLE = 'table[data-std-table]';
+
 // the shared XFs: on 2 or more long-page-detail pages in the export
 const XF_PAGES = Object.values(PAGE_XFS).flat().reduce((counts, xf) => {
   counts[xf] = (counts[xf] || 0) + 1;
@@ -730,6 +733,8 @@ const TILE_KEEP = new RegExp('^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a
 const TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
 
 function tileCards(cells, variant, doc) {
+  // a cell holding a table (data or block) is not a tile: tables stay tables
+  if (cells.some((c) => c.some((n) => n.nodeType === 1 && (n.matches('table') || n.querySelector('table'))))) return null;
   const filled = cells.filter((c) => tileParts(c).length);
   const units = filled.map(unitOf);
   const names = variant.split(', ').filter(Boolean);
@@ -830,6 +835,46 @@ function columnRows(main, doc) {
       wrapper.replaceWith(form, ...asides, ...others);
       return;
     }
+    // in review (staging build only, docs/standardisation/table.md): a row with a Table in a
+    // column is a side-by-side section (no block inside Columns): each column's content in
+    // source order, the Table blocks as parts of their own, in the first column's width
+    if (STD_DRAFT_IMPORT && colctrl.querySelector(STD_TABLE)) {
+      const box = (nodes) => {
+        const div = doc.createElement('div');
+        div.setAttribute('data-keep', 'join');
+        div.append(...nodes);
+        return div;
+      };
+      const perColumn = columns.map((col) => {
+        const out = [];
+        let run = [];
+        cellNodes(col, doc).forEach((n) => {
+          if (n.nodeType === 1 && n.matches(STD_TABLE)) {
+            if (run.length) out.push(box(run));
+            run = [];
+            n.setAttribute('data-keep', 'join');
+            out.push(n);
+          } else run.push(n);
+        });
+        if (run.length) out.push(box(run));
+        return out;
+      }).filter((p) => p.length);
+      const parts = perColumn.flat();
+      if (parts.length) {
+        const ratio = { 8: 'flex-67-33', 4: 'flex-33-67' }[columnWidth(columns[0])];
+        // side by side when each column is one part, or (wide + narrow) the narrow one is: the
+        // section layout stacks the other parts in the wide column; otherwise (a heading, a
+        // table and a note in each of three columns, Transend) the parts follow one another
+        const narrow = ratio === 'flex-67-33' ? perColumn[perColumn.length - 1] : perColumn[0];
+        const side = perColumn.every((p) => p.length === 1)
+          || (ratio && perColumn.length === 2 && narrow.length === 1);
+        parts[0].setAttribute('data-keep', 'section');
+        if (side) parts[0].setAttribute('data-section-style', ['flex', ratio].filter(Boolean).join(', '));
+        if (wrapper.hasAttribute('data-row-end')) parts[0].setAttribute('data-row-end', wrapper.getAttribute('data-row-end'));
+        wrapper.replaceWith(...parts);
+        return;
+      }
+    }
     const key = columns.map(columnWidth).join(',');
     // linked images (the endoscopy resources specialty tiles): `media-pair`
     const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')].some(linkedImage));
@@ -894,6 +939,79 @@ function columnRows(main, doc) {
     if (!form) return;
     form.setAttribute('data-keep', 'section');
     (component.closest('.marketoform') || component).replaceWith(form);
+  });
+}
+
+/*
+ * In review (staging build only, STD_DRAFT_IMPORT; docs/standardisation/table.md): a source
+ * data table (content/table `.c-table`, the patent lists `.c-patenttables`) is the `Table`
+ * block; the committed build drops the full-width ones. The first row is the header when it
+ * uses <th> or every filled cell of it is all bold (its bold is dropped: a header cell is bold);
+ * otherwise `no-header`. `mobile-enabled` (stryker.com's mobile design) is `mobile-stacked`;
+ * the patent lists are `sheet` (a long list, kept in a sheet on stryker.com) and always
+ * stacked. Widths (55%, 75% on 3 tables) are not kept: full width. A table in a column row is
+ * a part of a side-by-side section (columnRows), not a block inside Columns. The component's
+ * subheading stays as an H3 before it.
+ */
+function tableCellNodes(td, doc) {
+  const cell = td.cloneNode(true);
+  cell.querySelectorAll('.cell-mobile-title').forEach((el) => el.remove());
+  cell.querySelectorAll('.cell-content').forEach((el) => el.replaceWith(...el.childNodes));
+  if (!text(cell)) return [];
+  // downloads stay on www.stryker.com, PDFs and new-tab links get the #_blank marker
+  cell.querySelectorAll('a[href]').forEach((a) => {
+    a.setAttribute('href', newTabHref(a, absoluteAsset(a.getAttribute('href'))));
+  });
+  const div = doc.createElement('div');
+  div.append(...cell.childNodes);
+  return [div];
+}
+
+function headerRow(tr) {
+  const cells = [...tr.children].filter((c) => /^T[HD]$/.test(c.tagName));
+  if (cells.some((c) => c.tagName === 'TH' && text(c))) return true;
+  const filled = cells.filter((c) => text(c));
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  return filled.length > 0 && filled.every((c) => squash([...c.querySelectorAll('b, strong')]
+    .filter((b) => !b.parentElement.closest('b, strong'))
+    .map((b) => b.textContent).join('')) === squash(c.textContent));
+}
+
+function dataTables(main, doc) {
+  main.querySelectorAll('.c-patenttables, .c-table').forEach((component) => {
+    if (!component.isConnected || component.parentElement.closest('.c-patenttables, .c-table')) return;
+    const table = component.querySelector('table');
+    const trs = table ? [...table.querySelectorAll('tr')].filter((tr) => text(tr)) : [];
+    if (!trs.length) return;
+    const header = headerRow(trs[0]);
+    if (header) {
+      trs[0].querySelectorAll('b, strong').forEach((b) => b.replaceWith(...b.childNodes));
+    }
+    const sheet = component.matches('.c-patenttables');
+    const options = [header ? '' : 'no-header',
+      sheet || component.matches('.mobile-enabled') ? 'mobile-stacked' : '',
+      sheet ? 'sheet' : ''].filter(Boolean);
+    let rows = trs.map((tr) => [...tr.children].filter((c) => /^T[HD]$/.test(c.tagName))
+      .map((td) => tableCellNodes(td, doc)));
+    // a column empty in every row (an authoring leftover, e.g. Vocera easter eggs) is dropped
+    const width = Math.max(...rows.map((r) => r.length));
+    const used = [...Array(width).keys()].filter((i) => rows.some((r) => r[i] && r[i].length));
+    rows = rows.map((r) => used.map((i) => r[i] || []));
+    const block = WebImporter.Blocks.createBlock(doc, {
+      name: options.length ? `Table (${options.join(', ')})` : 'Table',
+      cells: rows,
+    });
+    block.setAttribute('data-std-table', '');
+    block.setAttribute('data-keep', 'body');
+    const subheading = component.querySelector('.component-subheading');
+    const parts = [block];
+    if (subheading && text(subheading)) {
+      const h3 = doc.createElement('h3');
+      h3.textContent = text(subheading);
+      h3.setAttribute('data-keep', 'body');
+      parts.unshift(h3);
+    }
+    (component.closest('.table.parbase, .patenttables') || component).replaceWith(...parts);
   });
 }
 
@@ -1083,6 +1201,7 @@ export default function transform(hookName, element, payload) {
   sectionTitles(main, doc);
   downloadTitles(main, doc);
   videoCaptions(main, doc);
+  if (STD_DRAFT_IMPORT) dataTables(main, doc);
   const hasTitle = !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
     || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1');
   // no title: the first non-empty Large Headline or rich-text heading (in source order) is

@@ -23,6 +23,9 @@
   --corp-back-to-top-size: 40px;
   --corp-figure-size-l: 35px; /* measured: stryker.com span.fontsize-2-5em Futura bold figure in a gold box */
   --statistics-corp-inline-size: 56px; /* measured: stryker.com fast facts number (.c-fastfacts-number, Egyptienne) from 840px, guarantee programs; 21px below */
+  --corp-table-stripe: #f5f5f5; /* measured: stryker.com table rows 1, 3, 5 … (.table-container tr:nth-child(odd)) */
+  --corp-table-cell-padding: 10px 8px; /* measured: stryker.com table cells */
+  --corp-table-line-height: 20px; /* measured: stryker.com table text, 14px / 20px */
   --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */

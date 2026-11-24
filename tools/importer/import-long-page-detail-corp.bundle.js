@@ -2893,6 +2893,7 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/long-page-detail-corp-sections.js
   var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments"];
+  var STD_TABLE = "table[data-std-table]";
   var XF_PAGES = Object.values(long_page_detail_corp_xf_default).flat().reduce((counts, xf) => {
     counts[xf] = (counts[xf] || 0) + 1;
     return counts;
@@ -3378,6 +3379,7 @@ var CustomImportScript = (() => {
   var TILE_KEEP = new RegExp("^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a-z]+|image-border(-[a-z]+)?|text-center)$");
   var TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
   function tileCards(cells, variant, doc) {
+    if (cells.some((c) => c.some((n) => n.nodeType === 1 && (n.matches("table") || n.querySelector("table"))))) return null;
     const filled = cells.filter((c) => tileParts(c).length);
     const units = filled.map(unitOf);
     const names = variant.split(", ").filter(Boolean);
@@ -3455,6 +3457,39 @@ var CustomImportScript = (() => {
         wrapper.replaceWith(form, ...asides, ...others);
         return;
       }
+      if (STD_DRAFT_IMPORT && colctrl.querySelector(STD_TABLE)) {
+        const box = (nodes) => {
+          const div = doc.createElement("div");
+          div.setAttribute("data-keep", "join");
+          div.append(...nodes);
+          return div;
+        };
+        const perColumn = columns.map((col) => {
+          const out = [];
+          let run = [];
+          cellNodes(col, doc).forEach((n) => {
+            if (n.nodeType === 1 && n.matches(STD_TABLE)) {
+              if (run.length) out.push(box(run));
+              run = [];
+              n.setAttribute("data-keep", "join");
+              out.push(n);
+            } else run.push(n);
+          });
+          if (run.length) out.push(box(run));
+          return out;
+        }).filter((p) => p.length);
+        const parts2 = perColumn.flat();
+        if (parts2.length) {
+          const ratio = { 8: "flex-67-33", 4: "flex-33-67" }[columnWidth(columns[0])];
+          const narrow = ratio === "flex-67-33" ? perColumn[perColumn.length - 1] : perColumn[0];
+          const side = perColumn.every((p) => p.length === 1) || ratio && perColumn.length === 2 && narrow.length === 1;
+          parts2[0].setAttribute("data-keep", "section");
+          if (side) parts2[0].setAttribute("data-section-style", ["flex", ratio].filter(Boolean).join(", "));
+          if (wrapper.hasAttribute("data-row-end")) parts2[0].setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
+          wrapper.replaceWith(...parts2);
+          return;
+        }
+      }
       const key = columns.map(columnWidth).join(",");
       const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
       const boxes = boxVariant(columns);
@@ -3510,6 +3545,62 @@ var CustomImportScript = (() => {
       if (!form) return;
       form.setAttribute("data-keep", "section");
       (component.closest(".marketoform") || component).replaceWith(form);
+    });
+  }
+  function tableCellNodes(td, doc) {
+    const cell = td.cloneNode(true);
+    cell.querySelectorAll(".cell-mobile-title").forEach((el) => el.remove());
+    cell.querySelectorAll(".cell-content").forEach((el) => el.replaceWith(...el.childNodes));
+    if (!text4(cell)) return [];
+    cell.querySelectorAll("a[href]").forEach((a) => {
+      a.setAttribute("href", newTabHref(a, absoluteAsset(a.getAttribute("href"))));
+    });
+    const div = doc.createElement("div");
+    div.append(...cell.childNodes);
+    return [div];
+  }
+  function headerRow(tr) {
+    const cells = [...tr.children].filter((c) => /^T[HD]$/.test(c.tagName));
+    if (cells.some((c) => c.tagName === "TH" && text4(c))) return true;
+    const filled = cells.filter((c) => text4(c));
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    return filled.length > 0 && filled.every((c) => squash([...c.querySelectorAll("b, strong")].filter((b) => !b.parentElement.closest("b, strong")).map((b) => b.textContent).join("")) === squash(c.textContent));
+  }
+  function dataTables(main, doc) {
+    main.querySelectorAll(".c-patenttables, .c-table").forEach((component) => {
+      if (!component.isConnected || component.parentElement.closest(".c-patenttables, .c-table")) return;
+      const table = component.querySelector("table");
+      const trs = table ? [...table.querySelectorAll("tr")].filter((tr) => text4(tr)) : [];
+      if (!trs.length) return;
+      const header = headerRow(trs[0]);
+      if (header) {
+        trs[0].querySelectorAll("b, strong").forEach((b) => b.replaceWith(...b.childNodes));
+      }
+      const sheet = component.matches(".c-patenttables");
+      const options = [
+        header ? "" : "no-header",
+        sheet || component.matches(".mobile-enabled") ? "mobile-stacked" : "",
+        sheet ? "sheet" : ""
+      ].filter(Boolean);
+      let rows = trs.map((tr) => [...tr.children].filter((c) => /^T[HD]$/.test(c.tagName)).map((td) => tableCellNodes(td, doc)));
+      const width = Math.max(...rows.map((r) => r.length));
+      const used = [...Array(width).keys()].filter((i) => rows.some((r) => r[i] && r[i].length));
+      rows = rows.map((r) => used.map((i) => r[i] || []));
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: options.length ? `Table (${options.join(", ")})` : "Table",
+        cells: rows
+      });
+      block.setAttribute("data-std-table", "");
+      block.setAttribute("data-keep", "body");
+      const subheading = component.querySelector(".component-subheading");
+      const parts = [block];
+      if (subheading && text4(subheading)) {
+        const h3 = doc.createElement("h3");
+        h3.textContent = text4(subheading);
+        h3.setAttribute("data-keep", "body");
+        parts.unshift(h3);
+      }
+      (component.closest(".table.parbase, .patenttables") || component).replaceWith(...parts);
     });
   }
   function tableRows(table) {
@@ -3647,6 +3738,7 @@ var CustomImportScript = (() => {
     sectionTitles(main, doc);
     downloadTitles(main, doc);
     videoCaptions(main, doc);
+    if (STD_DRAFT_IMPORT) dataTables(main, doc);
     const hasTitle = !!(main.querySelector(".h1-title h1") && text4(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
     let firstTitle = !hasTitle && [...main.querySelectorAll(".c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)")].find((el) => text4(el) && !el.closest(".h1-title"));
     const firstHeadline = firstTitle && firstTitle.matches(".c-largeheadline") ? firstTitle : null;

@@ -152,6 +152,7 @@ function factsOf(html) {
     linkLists: false,
     text: false,
     video: false,
+    sheetLink: false,
   };
   if (!html) return null;
   const block = new DOMParser().parseFromString(html, 'text/html').body.firstElementChild;
@@ -175,6 +176,10 @@ function factsOf(html) {
   facts.text = !!block.textContent.trim();
   facts.video = !!block.querySelector('video') || [...block.querySelectorAll('a[href]')]
     .some((a) => DM_VIDEO.test(a.getAttribute('href')));
+  // the block holds only a link to a sheet (its .json): Table `sheet`
+  const links = [...block.querySelectorAll('a[href]')];
+  facts.sheetLink = links.length === 1 && /\.json([?#]|$)/.test(links[0].getAttribute('href'))
+    && block.textContent.trim() === links[0].textContent.trim();
   return facts;
 }
 
@@ -198,6 +203,7 @@ function unfit(needs, facts) {
     'rows-2+': facts.rows >= 2 ? '' : 'needs 2 or more numbers (rows)',
     'rows-4+': facts.rows >= 4 ? '' : `needs 4 or more numbers (this block has ${facts.rows})`,
     'rows-6+': facts.rows >= 6 ? '' : `needs 6 or more numbers (this block has ${facts.rows})`,
+    'sheet-link': facts.sheetLink ? '' : 'needs a link to a sheet (its .json) as the only content',
     'dm-video': facts.video ? '' : 'needs a Dynamic Media video (a YouTube video plays as YouTube sets it)',
     box: def().groups.some((g) => g.id === 'box' && selectedIn(g, draft))
       ? '' : `pick a ${def().groups.find((g) => g.id === 'box')?.label || 'box'} first`,

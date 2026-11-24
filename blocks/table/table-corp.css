@@ -1,0 +1,97 @@
+/*
+ * Table on www.stryker.com (corp) pages. Loaded by scripts/corp.js (CORP_BLOCK_STYLES) on
+ * `site: corp` pages only.
+ *
+ * The standard choices (Block options panel, docs/standardisation/table.md), measured on
+ * stryker.com (hydro irrigation, Vocera easter eggs, the patent lists): no borders, rows 1, 3,
+ * 5 … on a light grey, the body font at 14px / 20px in black, cells 10px / 8px inside, full
+ * width. The header row (default) is the first row in bold; `no-header` has none.
+ * `mobile-stacked`: on phones (below 600px) each cell is a line of its own, the rows keep their
+ * stripes. `sheet`: the rows come from a linked sheet (blocks/table/table.js), stacked on
+ * phones. stryker.com's `striped` (always on here) and `stacked` (= mobile-stacked) read as these.
+ *
+ * In review: draft pages only (body.std-draft, scripts/corp.js). Real corp pages render as
+ * before.
+ */
+
+body.corp.std-draft .table.block table {
+  border: 0;
+  color: var(--color-black);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--corp-table-line-height);
+}
+
+body.corp.std-draft .table.block table :is(thead, tbody) tr {
+  border: 0;
+}
+
+/* the stripes count every row (the header row is row 1) */
+body.corp.std-draft .table.block table thead tr {
+  background-color: var(--corp-table-stripe);
+}
+
+body.corp.std-draft .table.block table tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+
+body.corp.std-draft .table.block table thead:not(:empty) + tbody tr:nth-child(even),
+body.corp.std-draft .table.block table thead:empty + tbody tr:nth-child(odd) {
+  background-color: var(--corp-table-stripe);
+}
+
+body.corp.std-draft .table.block table :is(th, td) {
+  padding: var(--corp-table-cell-padding);
+  border: 0;
+  font-family: inherit;
+  vertical-align: top;
+}
+
+body.corp.std-draft .table.block table th {
+  font-weight: var(--font-weight-bold);
+}
+
+/* bold text in a cell stays in the body font (corp bold is Futura elsewhere) */
+body.corp.std-draft .table.block table :is(strong, b) {
+  font-family: inherit;
+}
+
+body.corp.std-draft .table.block table td p + p {
+  margin-top: 0;
+}
+
+/* the sheet's rows while they load, or when the sheet can't be read */
+body.corp.std-draft .table.block.sheet .table-sheet-status {
+  margin: 0;
+  padding: var(--corp-table-cell-padding);
+}
+
+/* phones: each cell on a line of its own */
+body.corp.std-draft .table.block:is(.mobile-stacked, .sheet) :is(table, thead, tbody, tr, th, td) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (width >= 600px) {
+  body.corp.std-draft .table.block:is(.mobile-stacked, .sheet) table {
+    display: table;
+  }
+
+  body.corp.std-draft .table.block:is(.mobile-stacked, .sheet) thead {
+    display: table-header-group;
+  }
+
+  body.corp.std-draft .table.block:is(.mobile-stacked, .sheet) tbody {
+    display: table-row-group;
+  }
+
+  body.corp.std-draft .table.block:is(.mobile-stacked, .sheet) tr {
+    display: table-row;
+  }
+
+  body.corp.std-draft .table.block:is(.mobile-stacked, .sheet) :is(th, td) {
+    display: table-cell;
+    width: auto;
+  }
+}
