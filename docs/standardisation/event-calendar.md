@@ -151,6 +151,10 @@ Fellows Course ISMF* (grey) at the same places as on stryker.com; the *Lab* filt
   `event-location`, `event-city`, `event-state`, `event-country`, `event-type`, `audience`,
   `business-unit`, `specialty`). The event pages already carry start, end, location and country; the
   migration's review build adds the others. Until then the calendars on the preview site show no events.
+- **Publish the 44 event pages.** They are on the preview site but not live, and the page index only
+  lists published pages.
+- Even then, the calendars open on the current month, which is empty because every event is in the
+  past (as on stryker.com today).
 
 **Proposed, still open:**
 
