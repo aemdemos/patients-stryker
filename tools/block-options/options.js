@@ -19,18 +19,34 @@
 import { labelOf } from '../library-options.js';
 
 export const BLOCK_OPTIONS = {
+  // stryker.com heroes (stryker-aemcoder-package, docs/standardisation/hero-corp.md): five layouts
+  // (image slide, page intro, large header, long text, tagline band); the image slide's headline
+  // box colour (the one box colour list), its column and height, the title / subline colours, the
+  // stripe under it, the framed banner, the video background and the phone layout; the page
+  // intro's no-image, no-rule and black-title switches. Text sizes, fonts and coloured words are
+  // Text style. The earlier names (gold-box, white-box, blue-box, gray-box, dark-box, text-below)
+  // show as their choices; the numeric top-N / left-N / right-N / size-N stay as other options.
   'hero-corp': {
     label: 'Hero (corp)',
+    aliases: {
+      'gold-box': ['box-gold'],
+      'white-box': ['box-white'],
+      'blue-box': ['box-blue'],
+      'gray-box': ['box-gray'],
+      'dark-box': ['box-dark'],
+      'text-below': ['mobile-below'],
+    },
     groups: [
       {
         id: 'layout',
         label: 'Layout',
         required: true,
         options: [
-          ['image-slide', 'Image slide'],
-          ['tagline-band', 'Tagline band'],
-          ['large-header', 'Large header'],
-          ['long-text', 'Long text'],
+          ['image-slide', 'Image slide', { hint: 'A full-width image (or video) with the headline over it' }],
+          ['page-hero', 'Page intro (text + image)', { hint: 'Title, subhead and copy on the left, the image on the right, a grey rule below' }],
+          ['tagline-band', 'Tagline band', { needs: ['text'], hint: 'A coloured band with the page title and a message' }],
+          ['large-header', 'Large header', { needs: ['text'], hint: 'The page title in Futura bold, flush under the header' }],
+          ['long-text', 'Long text', { needs: ['text'], hint: 'Copy beside an image, half and half' }],
         ],
       },
       {
@@ -41,14 +57,14 @@ export const BLOCK_OPTIONS = {
           ['', 'None (text on the image)'],
           ['box-white', 'White'],
           ['box-gold', 'Gold'],
-          ['box-blue', 'Blue'],
+          ['box-blue', 'Blue', { hint: 'White text by default' }],
           ['box-gray', 'Light grey'],
-          ['box-dark', 'Dark grey'],
+          ['box-dark', 'Dark grey', { hint: 'White text by default' }],
           ['box-gold-gradient', 'Gold gradient'],
-          ['box-purple-gradient', 'Purple gradient'],
-          ['box-blue-gradient', 'Blue gradient'],
+          ['box-purple-gradient', 'Purple gradient', { hint: 'White text by default' }],
+          ['box-blue-gradient', 'Blue gradient', { hint: 'White text by default' }],
         ],
-        replaces: /^box-(mt|mr|mb|ml|pt|pr|pb|pl)-n?\d+$/,
+        replaces: /^(box-(mt|mr|mb|ml|pt|pr|pb|pl)-n?\d+|(gold|white|blue|gray|dark)-box)$/,
       },
       {
         id: 'column',
@@ -77,7 +93,7 @@ export const BLOCK_OPTIONS = {
       },
       {
         id: 'title-colour',
-        label: 'Title colour (bold lines)',
+        label: 'Title colour (bold words)',
         when: 'image-slide',
         options: [
           ['', 'As set in the text'],
@@ -89,7 +105,7 @@ export const BLOCK_OPTIONS = {
       },
       {
         id: 'subline-colour',
-        label: 'Subline colour (plain lines)',
+        label: 'Subline colour (plain words)',
         when: 'image-slide',
         options: [
           ['', 'As set in the text'],
@@ -110,21 +126,51 @@ export const BLOCK_OPTIONS = {
         ],
       },
       {
-        id: 'band',
-        label: 'Band colour',
-        when: 'tagline-band',
-        options: [
-          ['', 'Gold'],
-          ['purple-gradient', 'Purple gradient'],
+        id: 'banner',
+        label: 'Banner',
+        when: 'image-slide',
+        flags: [
+          ['framed', 'Framed, with shadow', { hint: 'In the page width with a soft shadow, instead of full width' }],
+          ['video-background', 'Video background', { needs: ['video'], hint: 'The video in the first row plays muted and looping behind the headline' }],
         ],
       },
       {
         id: 'phone',
         label: 'On phones',
         when: 'image-slide',
-        flags: [
+        options: [
+          ['', 'Text over the image'],
           ['mobile-below', 'Text below the image'],
-          ['mobile-text-black', 'Black text'],
+          ['mobile-above', 'Text above the image'],
+        ],
+        replaces: /^text-below$/,
+      },
+      {
+        id: 'phone-text',
+        label: 'Phone text',
+        when: 'image-slide',
+        flags: [
+          ['mobile-text-black', 'Black text', { needs: ['text'], hint: 'On phones every headline word is black' }],
+        ],
+      },
+      {
+        id: 'band',
+        label: 'Band colour',
+        when: 'tagline-band',
+        options: [
+          ['', 'Gold'],
+          ['purple-gradient', 'Purple gradient'],
+          ['gold-gradient', 'Gold gradient'],
+        ],
+      },
+      {
+        id: 'page-hero-extras',
+        label: 'Page intro',
+        when: 'page-hero',
+        flags: [
+          ['no-image', 'No image', { hint: 'The title, subhead and copy alone, full width' }],
+          ['no-rule', 'No grey rule', { hint: 'No line under the intro' }],
+          ['title-black', 'Black title', { needs: ['text'], hint: 'The title in black instead of gold' }],
         ],
       },
     ],

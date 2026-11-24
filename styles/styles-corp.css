@@ -86,6 +86,9 @@
   --corp-color-plum: #594b61; /* stryker.com bg-dark-purple-gradient end colour */
   --corp-gradient-dark-blue: linear-gradient(90deg, var(--color-secondary), var(--corp-color-slate)); /* bg-dark-blue-gradient */
   --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-plum)); /* bg-dark-purple-gradient */
+  --corp-gradient-gold: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%); /* bg-golden-gradient */
+  --corp-gradient-purple: linear-gradient(-90deg, var(--color-secondary), var(--corp-color-plum)); /* the purple tagline band */
+  --corp-page-hero-top: 28px; /* stryker.com page hero: its title starts 28px below the top */
   --corp-people-image-width: 300px;
 }
 

@@ -108,7 +108,14 @@ function readSlideOptions(block) {
   });
 }
 
-export default function decorate(block) {
+export default async function decorate(block) {
+  // in review (docs/standardisation/hero-corp.md): draft pages use the standardised layouts and
+  // named options (hero-corp-std.js); every other page decorates as before (synchronously)
+  if (document.body.classList.contains('std-draft')) {
+    const { default: decorateStd } = await import('./hero-corp-std.js');
+    await decorateStd(block);
+    return;
+  }
   readSlideOptions(block);
   setupHero(block);
 

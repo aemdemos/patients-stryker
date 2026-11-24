@@ -131,6 +131,7 @@ const visibleGroups = () => def().groups.filter(shown);
 /* ---------------------------------------------------------------- fit */
 
 const DM_IMAGE = /media-assets\.stryker\.com\/is\/image\//i;
+const DM_VIDEO = /media-assets\.stryker\.com\/is\/content\/|\.(mp4|m3u8)(\?|$)/i;
 const isImage = (n) => n.matches?.('picture, img') || (n.matches?.('a[href]') && DM_IMAGE.test(n.getAttribute('href')))
   || !!n.querySelector?.('picture, img, a[href*="media-assets.stryker.com/is/image/"]');
 
@@ -149,6 +150,7 @@ function factsOf(html) {
     links: false,
     linkLists: false,
     text: false,
+    video: false,
   };
   if (!html) return null;
   const block = new DOMParser().parseFromString(html, 'text/html').body.firstElementChild;
@@ -169,6 +171,8 @@ function factsOf(html) {
   facts.links = [...block.querySelectorAll('a[href]')].some((a) => !DM_IMAGE.test(a.getAttribute('href')));
   facts.linkLists = !!block.querySelector('li a[href]');
   facts.text = !!block.textContent.trim();
+  facts.video = !!block.querySelector('video') || [...block.querySelectorAll('a[href]')]
+    .some((a) => DM_VIDEO.test(a.getAttribute('href')));
   return facts;
 }
 
@@ -188,6 +192,7 @@ function unfit(needs, facts) {
     links: facts.links ? '' : 'needs links in the row',
     'link-lists': facts.linkLists ? '' : 'needs a list of links',
     text: facts.text ? '' : 'needs text in the row',
+    video: facts.video ? '' : 'needs a video link in the first row',
     box: def().groups.some((g) => g.id === 'box' && selectedIn(g, draft))
       ? '' : `pick a ${def().groups.find((g) => g.id === 'box')?.label || 'box'} first`,
     'gradient-box': def().groups.some((g) => g.id === 'box' && /-gradient$/.test(selectedIn(g, draft)))

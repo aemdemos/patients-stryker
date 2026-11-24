@@ -601,7 +601,8 @@ function fastFacts(main, doc, h) {
  * (.border-bottom-gold, a 1px grey line on stryker.com) is a separator before what follows.
  */
 export function pageHeroes(main, doc, h) {
-  main.querySelectorAll('.c-page-hero').forEach((component) => {
+  // in review (staging build): also the hero component (.c-hero, 13 page intros)
+  main.querySelectorAll(STD_DRAFT_IMPORT ? '.c-page-hero, .c-hero' : '.c-page-hero').forEach((component) => {
     const columnNodes = (col) => [...col.querySelectorAll('h1, h2, p, img')].flatMap((el) => {
       if (el.matches('img')) {
         const source = el.closest('picture') && el.closest('picture').querySelector('source[srcset]');
@@ -639,6 +640,53 @@ export function pageHeroes(main, doc, h) {
       return [copy];
     });
     const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector('img'));
+    // in review (staging build only, docs/standardisation/hero-corp.md): the page intro is
+    // the hero's page-hero layout — the copy (title plain or gold, subhead, text) and the
+    // image as two rows; the grey rule is the layout's own (no-rule without it)
+    if (STD_DRAFT_IMPORT) {
+      const copy = [];
+      const pics = [];
+      cols.forEach((col) => col.querySelectorAll('h1, h2, p, img').forEach((el) => {
+        if (el.matches('img')) {
+          const source = el.closest('picture') && el.closest('picture').querySelector('source[srcset]');
+          const img = doc.createElement('img');
+          img.setAttribute('src', source ? source.getAttribute('srcset').split(/\s+/)[0] : el.getAttribute('src'));
+          img.setAttribute('alt', el.getAttribute('alt') || '');
+          pics.push(img);
+          return;
+        }
+        // a paragraph inside the title or subhead is part of it
+        if (!h.text(el) || (el.parentElement && el.parentElement.closest('h1, h2'))) return;
+        let tag = 'p';
+        if (el.matches('h1, p.title')) tag = 'h1';
+        else if (el.matches('h2, p.subhead')) tag = 'h2';
+        if (tag === 'h1' && copy.some((n) => n.tagName === 'H1')) return;
+        const node = doc.createElement(tag);
+        // the title is gold on 479 of 481 page heroes (headColor); black when the source sets it
+        const styled = el.matches('[style*="color"]') ? el : el.querySelector('[style*="color"]');
+        const black = styled && /#000\b|#000000|rgba?\(\s*0\s*,\s*0\s*,\s*0\s*[,)]/i.test(styled.getAttribute('style') || '');
+        const titleGold = tag === 'h1' && !black;
+        if (tag === 'h1') {
+          const strong = doc.createElement('strong');
+          if (titleGold) {
+            const em = doc.createElement('em');
+            em.textContent = h.text(el);
+            strong.append(em);
+          } else strong.textContent = h.text(el);
+          node.append(strong);
+        } else node.textContent = h.text(el);
+        copy.push(node);
+      }));
+      if (!copy.length && !pics.length) return;
+      const options = ['page-hero'];
+      if (!pics.length) options.push('no-image');
+      if (!component.querySelector('.border-bottom-gold')) options.push('no-rule');
+      const rows = [[copy]];
+      if (pics.length) rows.push([pics[0]]);
+      const block = keepBlock(WebImporter.Blocks.createBlock(doc, { name: `Hero Corp (${options.join(', ')})`, cells: rows }));
+      (component.closest('.pagehero, .hero') || component).replaceWith(block);
+      return;
+    }
     const cells = cols.map(columnNodes).filter((nodes) => nodes.length);
     if (!cells.length) return;
     const out = cells.length === 2

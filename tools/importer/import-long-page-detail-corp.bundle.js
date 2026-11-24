@@ -180,184 +180,6 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: `Cards Corp (teaser${variant})`, cells }));
   }
 
-  // tools/importer/parsers/hero-full-width-image.js
-  function text2(el) {
-    return (el && el.textContent ? el.textContent : "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
-  }
-  function image(src, alt, document) {
-    const img = document.createElement("img");
-    img.setAttribute("src", src);
-    img.setAttribute("alt", alt || "");
-    return img;
-  }
-  function inline(source, document) {
-    const out = [];
-    source.childNodes.forEach((node) => {
-      if (node.nodeType === 3) {
-        if (node.textContent.trim()) out.push(document.createTextNode(node.textContent.replace(/\u00a0/g, " ")));
-      } else if (node.nodeName === "BR") {
-        out.push(document.createElement("br"));
-      } else if (node.nodeType === 1 && node.classList.contains("futura-bold")) {
-        const strong = document.createElement("strong");
-        strong.textContent = text2(node);
-        out.push(strong);
-      } else if (node.nodeType === 1) {
-        out.push(...inline(node, document));
-      }
-    });
-    return out;
-  }
-  function parse4(element, { document }) {
-    const picture = element.querySelector(".imgBoxId picture");
-    const mobile = picture && picture.querySelector("img");
-    const desktop = picture && picture.querySelector("source[srcset]");
-    const box = element.querySelector(".textBoxId");
-    const rows = [];
-    if (desktop) {
-      const src = desktop.getAttribute("srcset").split(/\s+/)[0];
-      rows.push([image(src, mobile && mobile.getAttribute("alt"), document)]);
-    }
-    if (mobile) rows.push([image(mobile.getAttribute("src"), mobile.getAttribute("alt"), document)]);
-    const content = [];
-    const headline2 = box && box.querySelector(".c-largeheadline");
-    if (headline2) {
-      const line1 = headline2.querySelector(".line1");
-      const heading = line1 && line1.querySelector("h1, h2, h3");
-      if (line1 && text2(line1)) {
-        const h = document.createElement(heading ? heading.tagName.toLowerCase() : "p");
-        h.append(...inline(heading || line1, document));
-        content.push(h);
-      }
-      const line2 = headline2.querySelector(".line2");
-      if (line2 && text2(line2)) {
-        const p = document.createElement("p");
-        p.append(...inline(line2, document));
-        content.push(p);
-      }
-    }
-    if (content.length) rows.push([content]);
-    if (!rows.length) {
-      element.remove();
-      return;
-    }
-    const options = ["image-slide"];
-    if (box) {
-      const right = /\bpull-right\b/.test(box.className);
-      options.push("top-4", right ? "left-50" : "left-1", right ? "right-1" : "right-50");
-    }
-    const sized = headline2 && headline2.querySelector('[class*="fontsize-"][class*="-vw"]');
-    const m = sized && sized.className.match(/fontsize-(\d+(?:-\d+)?)-vw/);
-    if (m) options.push(`size-${m[1]}`);
-    const name = `Hero Corp (${options.join(", ")})`;
-    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
-  }
-
-  // tools/importer/parsers/hero-image-slide.js
-  function copyImage(source, document) {
-    const img = document.createElement("img");
-    img.setAttribute("src", source.getAttribute("src"));
-    img.setAttribute("alt", source.getAttribute("alt") || "");
-    return img;
-  }
-  function clean2(text5) {
-    return (text5 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
-  }
-  function headline(overlay, document) {
-    const out = [];
-    const headings = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6")];
-    const lineEls = [...overlay.querySelectorAll(".line")];
-    let lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
-    if (headings.length && lineEls.length) {
-      lines = lineEls.map((line) => line.querySelector("h1, h2, h3, h4, h5, h6") || line);
-    }
-    lines.forEach((line) => {
-      if (!clean2(line.textContent)) return;
-      const el = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : "p");
-      const box = document.createElement("div");
-      box.innerHTML = line.innerHTML;
-      box.querySelectorAll("span.futura-bold, b").forEach((span) => {
-        const strong = document.createElement("strong");
-        while (span.firstChild) strong.append(span.firstChild);
-        span.replaceWith(strong);
-      });
-      box.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
-      box.querySelectorAll("a").forEach((a) => {
-        if (!(a.getAttribute("href") || "").trim()) a.replaceWith(...a.childNodes);
-      });
-      box.querySelectorAll("strong strong").forEach((s) => s.replaceWith(...s.childNodes));
-      box.querySelectorAll("*").forEach((node) => {
-        [...node.attributes].forEach((attr) => {
-          if (!(node.tagName === "A" && attr.name === "href")) node.removeAttribute(attr.name);
-        });
-      });
-      while (box.firstChild && box.firstChild.nodeType === 3 && !box.firstChild.textContent.trim()) box.firstChild.remove();
-      while (box.lastChild && box.lastChild.nodeType === 3 && !box.lastChild.textContent.trim()) box.lastChild.remove();
-      while (box.firstChild) el.append(box.firstChild);
-      out.push(el);
-    });
-    return out;
-  }
-  function percent(style, re) {
-    const m = style.match(re);
-    return m ? String(parseFloat(m[1])).replace(".", "-") : null;
-  }
-  function parse5(element, { document }) {
-    const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
-    const desktop = slide.querySelector(".experienceFragment-ef img");
-    const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
-    const overlay = slide.querySelector(".overlayparsys");
-    const first = desktop || mobile || slide.querySelector("img");
-    if (!first) return;
-    const variants = ["image-slide"];
-    const cells = [[copyImage(first, document)]];
-    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
-    if (overlay) {
-      const lines = headline(overlay, document);
-      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
-        const p = document.createElement("p");
-        const strong = document.createElement("strong");
-        const a = document.createElement("a");
-        a.setAttribute("href", btn.getAttribute("href"));
-        a.textContent = clean2(btn.textContent);
-        strong.append(a);
-        p.append(strong);
-        lines.push(p);
-      });
-      if (lines.length) cells.push([lines]);
-      const style = overlay.getAttribute("style") || "";
-      const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
-      const left = percent(style, /margin-left:\s*(\d+(?:\.\d+)?)%/i);
-      const right = percent(style, /width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
-      if (top !== null) variants.push(`top-${top}`);
-      if (left !== null) variants.push(`left-${left}`);
-      if (right !== null) variants.push(`right-${right}`);
-      const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
-      const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
-      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
-      if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
-      if (overlay.querySelector(".has-background.bg-white")) variants.push("white-box");
-      if (overlay.querySelector(".has-background.bg-blue")) variants.push("blue-box");
-      const gold = overlay.querySelector(".has-background.bg-gold");
-      if (gold) {
-        variants.push("gold-box");
-        const margin = parseFloat(percent(gold.getAttribute("style") || "", /margin-right:\s*(\d+(?:\.\d+)?)%/i) || "0");
-        if (margin) {
-          const l = parseFloat((left || "0").replace("-", "."));
-          const r = parseFloat((right || "0").replace("-", "."));
-          const inset = Math.round((r + (100 - l - r) * margin / 100) * 10) / 10;
-          const i = variants.findIndex((v) => v.startsWith("right-"));
-          const token = `right-${String(inset).replace(".", "-")}`;
-          if (i >= 0) variants[i] = token;
-          else variants.push(token);
-        }
-      }
-    }
-    element.replaceWith(WebImporter.Blocks.createBlock(document, {
-      name: `Hero Corp (${variants.join(", ")})`,
-      cells
-    }));
-  }
-
   // tools/importer/transformers/corp-text-markers.js
   var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
   var SIZE_WORDS = {
@@ -530,6 +352,324 @@ var CustomImportScript = (() => {
     if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
     const dropped = bracketsToMarkers(element);
     if (payload && dropped.length) payload.textMarkersDropped = dropped;
+  }
+
+  // tools/importer/slide-position.js
+  var SLIDE_SIDES = { "text-left": [6, 50], "text-right": [55, 5], "text-wide": [5, 5] };
+  var SLIDE_HEIGHTS = {
+    "text-top": 5,
+    "text-upper": 18,
+    "text-middle": 30,
+    "text-lower": 45
+  };
+  function slidePosition(left, right, top) {
+    const options = [];
+    let shift = 0;
+    if (left !== null && right !== null) {
+      const [side, [l, r]] = Object.entries(SLIDE_SIDES).map((entry) => [entry, Math.abs(entry[1][0] - left) + Math.abs(entry[1][1] - right)]).sort((a, b) => a[1] - b[1])[0][0];
+      options.push(side);
+      shift = Math.max(shift, Math.abs(l - left), Math.abs(r - right));
+    }
+    if (top !== null) {
+      const [height, t] = Object.entries(SLIDE_HEIGHTS).sort((a, b) => Math.abs(a[1] - top) - Math.abs(b[1] - top))[0];
+      options.push(height);
+      shift = Math.max(shift, Math.abs(t - top));
+    }
+    return { options, shift };
+  }
+
+  // tools/importer/hero-corp-std-import.js
+  var BOXES = {
+    "bg-white": "box-white",
+    "bg-gold": "box-gold",
+    "bg-blue": "box-blue",
+    "bg-light-gray": "box-gray",
+    "bg-dark-gray": "box-dark",
+    "bg-golden-gradient": "box-gold-gradient",
+    "bg-dark-purple-gradient": "box-purple-gradient",
+    "bg-dark-blue-gradient": "box-blue-gradient"
+  };
+  var COLOURS2 = [
+    [/^(#ffb500|rgba?\(\s*255\s*,\s*181\s*,\s*0\s*(,\s*1\s*)?\))$/i, "gold"],
+    [/^(#fff(fff)?|white|rgba?\(\s*255\s*,\s*255\s*,\s*255\s*(,\s*1\s*)?\))$/i, "white"],
+    [/^(#edeeec|rgba?\(\s*237\s*,\s*238\s*,\s*236\s*(,\s*1\s*)?\))$/i, "light-gray"],
+    [/^(#1c5687|rgba?\(\s*28\s*,\s*86\s*,\s*135\s*(,\s*1\s*)?\))$/i, "blue"]
+  ];
+  var CLASS_COLOURS = {
+    "color-gold": "gold",
+    "color-white": "white",
+    "color-light-gray": "light-gray",
+    "color-blue": "blue"
+  };
+  function colourOf(node, stop) {
+    let el = node.nodeType === 1 ? node : node.parentElement;
+    while (el && el !== stop) {
+      const style = el.getAttribute && el.getAttribute("style") || "";
+      const m = style.match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+      if (m) {
+        const value = m[1].trim();
+        const hit = COLOURS2.find(([re]) => re.test(value));
+        return hit ? hit[1] : "other";
+      }
+      const cls = [...el.classList || []].find((c) => CLASS_COLOURS[c]);
+      if (cls) return CLASS_COLOURS[cls];
+      el = el.parentElement;
+    }
+    return "";
+  }
+  function colourOptions(headline2) {
+    const counts = { title: {}, subline: {} };
+    const doc = headline2.ownerDocument;
+    const walker = doc.createTreeWalker(headline2, 4);
+    let node = walker.nextNode();
+    while (node) {
+      const len = node.textContent.trim().length;
+      if (len) {
+        const bold = !!node.parentElement.closest(".futura-bold, b, strong");
+        const role = bold ? "title" : "subline";
+        const colour = colourOf(node, headline2) || "black";
+        counts[role][colour] = (counts[role][colour] || 0) + len;
+      }
+      node = walker.nextNode();
+    }
+    return ["title", "subline"].flatMap((role) => {
+      const [top] = Object.entries(counts[role]).sort((a, b) => b[1] - a[1]);
+      return top && ["gold", "white", "light-gray", "blue"].includes(top[0]) ? [`${role}-${top[0]}`] : [];
+    });
+  }
+  function sizeBrackets(root) {
+    const doc = root.ownerDocument;
+    root.querySelectorAll('span[class*="fontsize-"]').forEach((span) => {
+      if (!span.textContent.trim()) return;
+      const cls = [...span.classList].find((c) => /^fontsize-/.test(c));
+      let tag = "";
+      let m = cls.match(/^fontsize-(\d+(?:-\d+)?)-?vw$/);
+      if (m) tag = `size-${m[1]}-vw`;
+      m = cls.match(/^fontsize-(\d+(?:-\d+)?)em$/);
+      if (m) tag = `text-${m[1]}`;
+      if (!tag || span.querySelector('span[class*="fontsize-"]')) return;
+      span.prepend(doc.createTextNode(`[[${tag}]`));
+      span.append(doc.createTextNode("]"));
+    });
+  }
+  function slideOptions({
+    left,
+    right,
+    top,
+    overlay,
+    headline: headline2
+  }) {
+    const options = [...slidePosition(left, right, top).options];
+    const boxed = headline2 && headline2.querySelector('.has-background[class*="bg-"]');
+    const bg = boxed && [...boxed.classList].find((c) => BOXES[c]);
+    if (bg) options.push(BOXES[bg]);
+    if (headline2) options.push(...colourOptions(headline2));
+    if (overlay && overlay.classList.contains("mobile_Bottom")) options.push("mobile-below");
+    if (overlay && (overlay.classList.contains("mobile-text-black") || overlay.querySelector(".mobile-text-black"))) options.push("mobile-text-black");
+    return options;
+  }
+
+  // tools/importer/parsers/hero-full-width-image.js
+  function text2(el) {
+    return (el && el.textContent ? el.textContent : "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function image(src, alt, document) {
+    const img = document.createElement("img");
+    img.setAttribute("src", src);
+    img.setAttribute("alt", alt || "");
+    return img;
+  }
+  function inline(source, document) {
+    const out = [];
+    source.childNodes.forEach((node) => {
+      if (node.nodeType === 3) {
+        if (node.textContent.trim()) out.push(document.createTextNode(node.textContent.replace(/\u00a0/g, " ")));
+      } else if (node.nodeName === "BR") {
+        out.push(document.createElement("br"));
+      } else if (node.nodeType === 1 && node.classList.contains("futura-bold")) {
+        const strong = document.createElement("strong");
+        strong.textContent = text2(node);
+        out.push(strong);
+      } else if (node.nodeType === 1) {
+        out.push(...inline(node, document));
+      }
+    });
+    return out;
+  }
+  function parse4(element, { document }) {
+    const picture = element.querySelector(".imgBoxId picture");
+    const mobile = picture && picture.querySelector("img");
+    const desktop = picture && picture.querySelector("source[srcset]");
+    const box = element.querySelector(".textBoxId");
+    const rows = [];
+    if (desktop) {
+      const src = desktop.getAttribute("srcset").split(/\s+/)[0];
+      rows.push([image(src, mobile && mobile.getAttribute("alt"), document)]);
+    }
+    if (mobile) rows.push([image(mobile.getAttribute("src"), mobile.getAttribute("alt"), document)]);
+    const content = [];
+    const headline2 = box && box.querySelector(".c-largeheadline");
+    if (headline2) {
+      const line1 = headline2.querySelector(".line1");
+      const heading = line1 && line1.querySelector("h1, h2, h3");
+      if (line1 && text2(line1)) {
+        const h = document.createElement(heading ? heading.tagName.toLowerCase() : "p");
+        h.append(...inline(heading || line1, document));
+        content.push(h);
+      }
+      const line2 = headline2.querySelector(".line2");
+      if (line2 && text2(line2)) {
+        const p = document.createElement("p");
+        p.append(...inline(line2, document));
+        content.push(p);
+      }
+    }
+    if (content.length) rows.push([content]);
+    if (!rows.length) {
+      element.remove();
+      return;
+    }
+    const options = ["image-slide"];
+    if (box) {
+      const right = /\bpull-right\b/.test(box.className);
+      options.push("top-4", right ? "left-50" : "left-1", right ? "right-1" : "right-50");
+    }
+    const sized = headline2 && headline2.querySelector('[class*="fontsize-"][class*="-vw"]');
+    const m = sized && sized.className.match(/fontsize-(\d+(?:-\d+)?)-vw/);
+    if (m) options.push(`size-${m[1]}`);
+    if (STD_DRAFT_IMPORT) {
+      const right = box && /\bpull-right\b/.test(box.className);
+      options.splice(1, options.length - 1, "framed", right ? "text-right" : "text-left", "text-top");
+      if (headline2) options.push(...colourOptions(headline2));
+      const first = content[0];
+      if (m && first) {
+        first.prepend(document.createTextNode(`[[size-${m[1]}-vw]`));
+        first.append(document.createTextNode("]"));
+      }
+    }
+    const name = `Hero Corp (${options.join(", ")})`;
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
+  }
+
+  // tools/importer/parsers/hero-image-slide.js
+  function copyImage(source, document) {
+    const img = document.createElement("img");
+    img.setAttribute("src", source.getAttribute("src"));
+    img.setAttribute("alt", source.getAttribute("alt") || "");
+    return img;
+  }
+  function clean2(text5) {
+    return (text5 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
+  }
+  function headline(overlay, document) {
+    const out = [];
+    const headings = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6")];
+    const lineEls = [...overlay.querySelectorAll(".line")];
+    let lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
+    if (headings.length && lineEls.length) {
+      lines = lineEls.map((line) => line.querySelector("h1, h2, h3, h4, h5, h6") || line);
+    }
+    lines.forEach((line) => {
+      if (!clean2(line.textContent)) return;
+      const el = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : "p");
+      const box = document.createElement("div");
+      box.innerHTML = line.innerHTML;
+      if (STD_DRAFT_IMPORT) sizeBrackets(box);
+      box.querySelectorAll("span.futura-bold, b").forEach((span) => {
+        const strong = document.createElement("strong");
+        while (span.firstChild) strong.append(span.firstChild);
+        span.replaceWith(strong);
+      });
+      box.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
+      box.querySelectorAll("a").forEach((a) => {
+        if (!(a.getAttribute("href") || "").trim()) a.replaceWith(...a.childNodes);
+      });
+      box.querySelectorAll("strong strong").forEach((s) => s.replaceWith(...s.childNodes));
+      box.querySelectorAll("*").forEach((node) => {
+        [...node.attributes].forEach((attr) => {
+          if (!(node.tagName === "A" && attr.name === "href")) node.removeAttribute(attr.name);
+        });
+      });
+      while (box.firstChild && box.firstChild.nodeType === 3 && !box.firstChild.textContent.trim()) box.firstChild.remove();
+      while (box.lastChild && box.lastChild.nodeType === 3 && !box.lastChild.textContent.trim()) box.lastChild.remove();
+      while (box.firstChild) el.append(box.firstChild);
+      out.push(el);
+    });
+    return out;
+  }
+  function percent(style, re) {
+    const m = style.match(re);
+    return m ? String(parseFloat(m[1])).replace(".", "-") : null;
+  }
+  function parse5(element, { document }) {
+    const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
+    const desktop = slide.querySelector(".experienceFragment-ef img");
+    const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
+    const overlay = slide.querySelector(".overlayparsys");
+    const first = desktop || mobile || slide.querySelector("img");
+    if (!first) return;
+    const variants = ["image-slide"];
+    const cells = [[copyImage(first, document)]];
+    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+    if (overlay) {
+      const lines = headline(overlay, document);
+      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        const a = document.createElement("a");
+        a.setAttribute("href", btn.getAttribute("href"));
+        a.textContent = clean2(btn.textContent);
+        strong.append(a);
+        p.append(strong);
+        lines.push(p);
+      });
+      if (lines.length) cells.push([lines]);
+      const style = overlay.getAttribute("style") || "";
+      const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
+      const left = percent(style, /margin-left:\s*(\d+(?:\.\d+)?)%/i);
+      const right = percent(style, /width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
+      if (top !== null) variants.push(`top-${top}`);
+      if (left !== null) variants.push(`left-${left}`);
+      if (right !== null) variants.push(`right-${right}`);
+      const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
+      const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
+      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+      if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
+      if (overlay.querySelector(".has-background.bg-white")) variants.push("white-box");
+      if (overlay.querySelector(".has-background.bg-blue")) variants.push("blue-box");
+      const gold = overlay.querySelector(".has-background.bg-gold");
+      if (gold) {
+        variants.push("gold-box");
+        const margin = parseFloat(percent(gold.getAttribute("style") || "", /margin-right:\s*(\d+(?:\.\d+)?)%/i) || "0");
+        if (margin) {
+          const l = parseFloat((left || "0").replace("-", "."));
+          const r = parseFloat((right || "0").replace("-", "."));
+          const inset = Math.round((r + (100 - l - r) * margin / 100) * 10) / 10;
+          const i = variants.findIndex((v) => v.startsWith("right-"));
+          const token = `right-${String(inset).replace(".", "-")}`;
+          if (i >= 0) variants[i] = token;
+          else variants.push(token);
+        }
+      }
+    }
+    if (STD_DRAFT_IMPORT && overlay) {
+      const style = overlay.getAttribute("style") || "";
+      const num = (re) => {
+        const m = style.match(re);
+        return m ? parseFloat(m[1]) : null;
+      };
+      variants.splice(1, variants.length - 1, ...slideOptions({
+        left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
+        right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
+        top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
+        overlay,
+        headline: overlay.querySelector(".c-largeheadline") || overlay
+      }));
+    }
+    element.replaceWith(WebImporter.Blocks.createBlock(document, {
+      name: `Hero Corp (${variants.join(", ")})`,
+      cells
+    }));
   }
 
   // tools/importer/transformers/long-page-detail-corp-article.js
@@ -2179,6 +2319,48 @@ var CustomImportScript = (() => {
         return [copy];
       });
       const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector("img"));
+      if (STD_DRAFT_IMPORT) {
+        const copy = [];
+        const pics = [];
+        cols.forEach((col) => col.querySelectorAll("h1, h2, p, img").forEach((el) => {
+          if (el.matches("img")) {
+            const source = el.closest("picture") && el.closest("picture").querySelector("source[srcset]");
+            const img = doc.createElement("img");
+            img.setAttribute("src", source ? source.getAttribute("srcset").split(/\s+/)[0] : el.getAttribute("src"));
+            img.setAttribute("alt", el.getAttribute("alt") || "");
+            pics.push(img);
+            return;
+          }
+          if (!h.text(el) || el.parentElement && el.parentElement.closest("h1, h2")) return;
+          let tag = "p";
+          if (el.matches("h1, p.title")) tag = "h1";
+          else if (el.matches("h2, p.subhead")) tag = "h2";
+          if (tag === "h1" && copy.some((n) => n.tagName === "H1")) return;
+          const node = doc.createElement(tag);
+          const styled = el.matches('[style*="color"]') ? el : el.querySelector('[style*="color"]');
+          const black = styled && /#000\b|#000000|rgba?\(\s*0\s*,\s*0\s*,\s*0\s*[,)]/i.test(styled.getAttribute("style") || "");
+          const titleGold = tag === "h1" && !black;
+          if (tag === "h1") {
+            const strong = doc.createElement("strong");
+            if (titleGold) {
+              const em = doc.createElement("em");
+              em.textContent = h.text(el);
+              strong.append(em);
+            } else strong.textContent = h.text(el);
+            node.append(strong);
+          } else node.textContent = h.text(el);
+          copy.push(node);
+        }));
+        if (!copy.length && !pics.length) return;
+        const options = ["page-hero"];
+        if (!pics.length) options.push("no-image");
+        if (!component.querySelector(".border-bottom-gold")) options.push("no-rule");
+        const rows = [[copy]];
+        if (pics.length) rows.push([pics[0]]);
+        const block = keepBlock(WebImporter.Blocks.createBlock(doc, { name: `Hero Corp (${options.join(", ")})`, cells: rows }));
+        (component.closest(".pagehero") || component).replaceWith(block);
+        return;
+      }
       const cells = cols.map(columnNodes).filter((nodes) => nodes.length);
       if (!cells.length) return;
       const out = cells.length === 2 ? [keepBlock(WebImporter.Blocks.createBlock(doc, { name: "Columns (columns-50-50)", cells: [cells] }))] : [h.richText(doc, cells.flat())];
@@ -2778,12 +2960,12 @@ var CustomImportScript = (() => {
     const row = col.closest(".colctrl");
     const boxes = [...col.querySelectorAll(".has-background:not(.bg-white), .dimensional-box")].filter((b) => b.closest(".colctrl") === row && text4(b)).filter((b) => !b.parentElement.closest(".has-background:not(.bg-white), .dimensional-box"));
     if (!boxes.length) return null;
-    const colourOf = (b) => {
+    const colourOf2 = (b) => {
       const bg = (b.className.match(/\bbg-([a-z-]+)/) || [])[1];
       if (b.classList.contains("dimensional-box") && (!bg || bg === "white")) return "boxed";
       return BOX_COLOURS[bg] || "";
     };
-    const colours = [...new Set(boxes.map(colourOf))];
+    const colours = [...new Set(boxes.map(colourOf2))];
     if (colours.length !== 1 || !colours[0]) return { colour: "", kind: "" };
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const boxed = squash(boxes.map((b) => b.textContent).join(""));

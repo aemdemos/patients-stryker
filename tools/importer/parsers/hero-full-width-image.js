@@ -1,4 +1,6 @@
 /* global WebImporter */
+import { STD_DRAFT_IMPORT } from '../transformers/corp-text-markers.js';
+import { colourOptions } from '../hero-corp-std-import.js';
 
 /**
  * Parser: www.stryker.com `.fullWidthImageHero` (a page hero: image with a text box on
@@ -87,6 +89,18 @@ export default function parse(element, { document }) {
   const sized = headline && headline.querySelector('[class*="fontsize-"][class*="-vw"]');
   const m = sized && sized.className.match(/fontsize-(\d+(?:-\d+)?)-vw/);
   if (m) options.push(`size-${m[1]}`);
+  // in review (staging build only, docs/standardisation/hero-corp.md): a framed banner in the
+  // named options, its headline size as a Text style marker (bracket tag)
+  if (STD_DRAFT_IMPORT) {
+    const right = box && /\bpull-right\b/.test(box.className);
+    options.splice(1, options.length - 1, 'framed', right ? 'text-right' : 'text-left', 'text-top');
+    if (headline) options.push(...colourOptions(headline));
+    const first = content[0];
+    if (m && first) {
+      first.prepend(document.createTextNode(`[[size-${m[1]}-vw]`));
+      first.append(document.createTextNode(']'));
+    }
+  }
   const name = `Hero Corp (${options.join(', ')})`;
   element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
 }

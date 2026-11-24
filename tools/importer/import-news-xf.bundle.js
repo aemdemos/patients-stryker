@@ -41,6 +41,295 @@ var CustomImportScript = (() => {
     default: () => import_news_xf_default
   });
 
+  // tools/importer/transformers/corp-text-markers.js
+  var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
+  var SIZE_WORDS = {
+    "0-8": "s",
+    "1-25": "l",
+    "1-5": "xl",
+    "1-75": "xxl",
+    2: "xxxl",
+    "2-5": "xxxxl"
+  };
+  var COLOURS = ["gold", "white", "blue", "purple", "teal", "navy", "grey", "light-gray"];
+  var LOOKS = [
+    "rule-gold",
+    "box-white",
+    "box-gray",
+    "box-gold",
+    "box-blue",
+    "box-purple",
+    "box-teal",
+    "box-dark",
+    "box-dark-blue-gradient",
+    "box-dark-purple-gradient"
+  ];
+  var HEADLINE_STEPS = [1.5, 2, 3, 4.5];
+  var STEP_OF = {
+    s: 0.8,
+    l: 1.25,
+    xl: 1.5,
+    xxl: 1.75,
+    xxxl: 2,
+    xxxxl: 2.5
+  };
+  var stepOff = (w, n) => Math.abs(Math.log(STEP_OF[w] / n));
+  var nearestStep = (n) => Object.keys(STEP_OF).reduce((a, b) => stepOff(b, n) < stepOff(a, n) ? b : a);
+  var oneSize = (words) => {
+    const sizes = words.filter((w) => STEP_OF[w]);
+    if (sizes.length < 2) return words;
+    const step = nearestStep(sizes.reduce((p, w) => p * STEP_OF[w], 1));
+    return [...words.filter((w) => !STEP_OF[w]), step];
+  };
+  var headlineWord = (n) => {
+    const off = (step2) => Math.abs(Math.log(step2 / n));
+    const step = HEADLINE_STEPS.reduce((a, b) => off(b) < off(a) ? b : a);
+    return `hl${String(step).replace(".", "")}`;
+  };
+  function markerWords(raw, dropped) {
+    return raw.split(",").map((c) => c.trim().toLowerCase()).flatMap((c) => {
+      let m = c.match(/^(?:text|size)-(\d+(?:-\d+)?)(?:em)?$/);
+      if (m && SIZE_WORDS[m[1]]) return [SIZE_WORDS[m[1]]];
+      if (m && m[1] === "1") return [];
+      if (m && /^\d+(-\d+)?$/.test(m[1])) {
+        const n = Number(m[1].replace("-", "."));
+        const steps = Object.keys(SIZE_WORDS).map((k) => [Number(String(k).replace("-", ".")), SIZE_WORDS[k]]);
+        const off = ([v]) => Math.abs(Math.log(v / n));
+        return [steps.reduce((a, b) => off(b) < off(a) ? b : a)[1]];
+      }
+      m = c.match(/^(?:headline-(\d+(?:-\d+)?)|size-(\d+(?:-\d+)?)-?vw)$/);
+      if (m) return [headlineWord(Number((m[1] || m[2]).replace("-", ".")))];
+      m = c.match(/^color-([a-z-]+)$/);
+      if (m && COLOURS.includes(m[1])) return [m[1]];
+      if (c === "serif") return ["serif"];
+      if (c === "body-font") return ["body"];
+      if (c === "futura-bold") return ["sans"];
+      if (LOOKS.includes(c)) return [c];
+      dropped.add(c);
+      return [];
+    });
+  }
+  var INLINE = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
+  var TOKEN = /\[\[([^\][]+)\]|\]/g;
+  var containerOf = (node) => {
+    let el = node.parentElement;
+    while (el && INLINE.has(el.tagName) && el.parentElement) el = el.parentElement;
+    return el;
+  };
+  function convertContainer(nodes, dropped) {
+    const tokens = [];
+    let offset = 0;
+    let all = "";
+    nodes.forEach((node) => {
+      const value = node.nodeValue;
+      TOKEN.lastIndex = 0;
+      let m = TOKEN.exec(value);
+      while (m) {
+        const end = m.index + m[0].length;
+        tokens.push({
+          node,
+          start: m.index,
+          end,
+          at: offset + m.index,
+          to: offset + end,
+          raw: m[1]
+        });
+        m = TOKEN.exec(value);
+      }
+      offset += value.length;
+      all += value;
+    });
+    const stack = [];
+    const pairs = [];
+    tokens.forEach((t) => {
+      if (t.raw !== void 0) {
+        stack.push(t);
+      } else if (stack.length) {
+        const open = stack.pop();
+        open.close = t;
+        t.pair = open;
+        pairs.push(open);
+      } else {
+        t.literal = true;
+      }
+    });
+    stack.forEach((t) => {
+      t.literal = true;
+    });
+    const gap = (a, b) => all.slice(a.to, b.at).trim() === "";
+    pairs.sort((a, b) => a.at - b.at).forEach((p) => {
+      p.words = markerWords(p.raw, dropped);
+    });
+    pairs.forEach((inner) => {
+      const outer = pairs.find((o) => o !== inner && !o.merged && o.at < inner.at && o.close.at > inner.close.at && gap(o, inner) && gap(inner.close, o.close));
+      if (!outer) return;
+      let target = outer;
+      while (target.into) target = target.into;
+      target.words.push(...inner.words);
+      inner.merged = true;
+      inner.into = target;
+    });
+    tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
+      const open = t.raw !== void 0 ? t : t.pair;
+      const unique = [...new Set(oneSize(open.words))];
+      const words = [...unique.filter((w) => !/\d/.test(w)), ...unique.filter((w) => /\d/.test(w))];
+      let out = "";
+      if (!open.merged && words.length) out = t.raw !== void 0 ? `:start-${words.join("-")}:` : ":end:";
+      t.node.nodeValue = t.node.nodeValue.slice(0, t.start) + out + t.node.nodeValue.slice(t.end);
+    });
+  }
+  function bracketsToMarkers(main) {
+    const doc = main.ownerDocument;
+    const walker = doc.createTreeWalker(
+      main,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    const byContainer = /* @__PURE__ */ new Map();
+    let node = walker.nextNode();
+    while (node) {
+      if (node.nodeValue.includes("[") || node.nodeValue.includes("]")) {
+        const container = containerOf(node);
+        if (container && !container.closest("code, pre, script, style")) {
+          if (!byContainer.has(container)) byContainer.set(container, []);
+        }
+      }
+      node = walker.nextNode();
+    }
+    const dropped = /* @__PURE__ */ new Set();
+    byContainer.forEach((_, container) => {
+      const texts = [];
+      const tw = doc.createTreeWalker(container, 4);
+      let t = tw.nextNode();
+      while (t) {
+        if (containerOf(t) === container) texts.push(t);
+        t = tw.nextNode();
+      }
+      if (texts.some((x) => x.nodeValue.includes("[["))) convertContainer(texts, dropped);
+    });
+    return [...dropped];
+  }
+  function transform(hookName, element, payload) {
+    if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
+    const dropped = bracketsToMarkers(element);
+    if (payload && dropped.length) payload.textMarkersDropped = dropped;
+  }
+
+  // tools/importer/slide-position.js
+  var SLIDE_SIDES = { "text-left": [6, 50], "text-right": [55, 5], "text-wide": [5, 5] };
+  var SLIDE_HEIGHTS = {
+    "text-top": 5,
+    "text-upper": 18,
+    "text-middle": 30,
+    "text-lower": 45
+  };
+  function slidePosition(left, right, top) {
+    const options = [];
+    let shift = 0;
+    if (left !== null && right !== null) {
+      const [side, [l, r]] = Object.entries(SLIDE_SIDES).map((entry) => [entry, Math.abs(entry[1][0] - left) + Math.abs(entry[1][1] - right)]).sort((a, b) => a[1] - b[1])[0][0];
+      options.push(side);
+      shift = Math.max(shift, Math.abs(l - left), Math.abs(r - right));
+    }
+    if (top !== null) {
+      const [height, t] = Object.entries(SLIDE_HEIGHTS).sort((a, b) => Math.abs(a[1] - top) - Math.abs(b[1] - top))[0];
+      options.push(height);
+      shift = Math.max(shift, Math.abs(t - top));
+    }
+    return { options, shift };
+  }
+
+  // tools/importer/hero-corp-std-import.js
+  var BOXES = {
+    "bg-white": "box-white",
+    "bg-gold": "box-gold",
+    "bg-blue": "box-blue",
+    "bg-light-gray": "box-gray",
+    "bg-dark-gray": "box-dark",
+    "bg-golden-gradient": "box-gold-gradient",
+    "bg-dark-purple-gradient": "box-purple-gradient",
+    "bg-dark-blue-gradient": "box-blue-gradient"
+  };
+  var COLOURS2 = [
+    [/^(#ffb500|rgba?\(\s*255\s*,\s*181\s*,\s*0\s*(,\s*1\s*)?\))$/i, "gold"],
+    [/^(#fff(fff)?|white|rgba?\(\s*255\s*,\s*255\s*,\s*255\s*(,\s*1\s*)?\))$/i, "white"],
+    [/^(#edeeec|rgba?\(\s*237\s*,\s*238\s*,\s*236\s*(,\s*1\s*)?\))$/i, "light-gray"],
+    [/^(#1c5687|rgba?\(\s*28\s*,\s*86\s*,\s*135\s*(,\s*1\s*)?\))$/i, "blue"]
+  ];
+  var CLASS_COLOURS = {
+    "color-gold": "gold",
+    "color-white": "white",
+    "color-light-gray": "light-gray",
+    "color-blue": "blue"
+  };
+  function colourOf(node, stop) {
+    let el = node.nodeType === 1 ? node : node.parentElement;
+    while (el && el !== stop) {
+      const style = el.getAttribute && el.getAttribute("style") || "";
+      const m = style.match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+      if (m) {
+        const value = m[1].trim();
+        const hit = COLOURS2.find(([re]) => re.test(value));
+        return hit ? hit[1] : "other";
+      }
+      const cls = [...el.classList || []].find((c) => CLASS_COLOURS[c]);
+      if (cls) return CLASS_COLOURS[cls];
+      el = el.parentElement;
+    }
+    return "";
+  }
+  function colourOptions(headline2) {
+    const counts = { title: {}, subline: {} };
+    const doc = headline2.ownerDocument;
+    const walker = doc.createTreeWalker(headline2, 4);
+    let node = walker.nextNode();
+    while (node) {
+      const len = node.textContent.trim().length;
+      if (len) {
+        const bold = !!node.parentElement.closest(".futura-bold, b, strong");
+        const role = bold ? "title" : "subline";
+        const colour = colourOf(node, headline2) || "black";
+        counts[role][colour] = (counts[role][colour] || 0) + len;
+      }
+      node = walker.nextNode();
+    }
+    return ["title", "subline"].flatMap((role) => {
+      const [top] = Object.entries(counts[role]).sort((a, b) => b[1] - a[1]);
+      return top && ["gold", "white", "light-gray", "blue"].includes(top[0]) ? [`${role}-${top[0]}`] : [];
+    });
+  }
+  function sizeBrackets(root) {
+    const doc = root.ownerDocument;
+    root.querySelectorAll('span[class*="fontsize-"]').forEach((span) => {
+      if (!span.textContent.trim()) return;
+      const cls = [...span.classList].find((c) => /^fontsize-/.test(c));
+      let tag = "";
+      let m = cls.match(/^fontsize-(\d+(?:-\d+)?)-?vw$/);
+      if (m) tag = `size-${m[1]}-vw`;
+      m = cls.match(/^fontsize-(\d+(?:-\d+)?)em$/);
+      if (m) tag = `text-${m[1]}`;
+      if (!tag || span.querySelector('span[class*="fontsize-"]')) return;
+      span.prepend(doc.createTextNode(`[[${tag}]`));
+      span.append(doc.createTextNode("]"));
+    });
+  }
+  function slideOptions({
+    left,
+    right,
+    top,
+    overlay,
+    headline: headline2
+  }) {
+    const options = [...slidePosition(left, right, top).options];
+    const boxed = headline2 && headline2.querySelector('.has-background[class*="bg-"]');
+    const bg = boxed && [...boxed.classList].find((c) => BOXES[c]);
+    if (bg) options.push(BOXES[bg]);
+    if (headline2) options.push(...colourOptions(headline2));
+    if (overlay && overlay.classList.contains("mobile_Bottom")) options.push("mobile-below");
+    if (overlay && (overlay.classList.contains("mobile-text-black") || overlay.querySelector(".mobile-text-black"))) options.push("mobile-text-black");
+    return options;
+  }
+
   // tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
@@ -64,6 +353,7 @@ var CustomImportScript = (() => {
       const el = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : "p");
       const box = document.createElement("div");
       box.innerHTML = line.innerHTML;
+      if (STD_DRAFT_IMPORT) sizeBrackets(box);
       box.querySelectorAll("span.futura-bold, b").forEach((span) => {
         const strong = document.createElement("strong");
         while (span.firstChild) strong.append(span.firstChild);
@@ -140,6 +430,20 @@ var CustomImportScript = (() => {
           else variants.push(token);
         }
       }
+    }
+    if (STD_DRAFT_IMPORT && overlay) {
+      const style = overlay.getAttribute("style") || "";
+      const num = (re) => {
+        const m = style.match(re);
+        return m ? parseFloat(m[1]) : null;
+      };
+      variants.splice(1, variants.length - 1, ...slideOptions({
+        left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
+        right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
+        top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
+        overlay,
+        headline: overlay.querySelector(".c-largeheadline") || overlay
+      }));
     }
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
       name: `Hero Corp (${variants.join(", ")})`,
@@ -1819,7 +2123,7 @@ var CustomImportScript = (() => {
     const block = WebImporter.Blocks.createBlock(doc, { name, cells: [cells.map((c) => c.length ? c : "")] });
     return { block, style };
   }
-  function transform(hookName, element, payload) {
+  function transform2(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
     const templateName = payload && payload.template && payload.template.name;
     if (templateName !== "news-detail" && templateName !== "news-detail-xf") return;
@@ -2398,7 +2702,7 @@ var CustomImportScript = (() => {
   var SIZE_STYLES2 = { "1-25": "lead", "1-75": "p-1-75" };
   var SIZES = ["1-25", "1-5", "1-75", "2", "2-5", "8"];
   var GOLD_MARK = "gold-text";
-  var COLOURS = {
+  var COLOURS3 = {
     ffb500: "color-gold",
     "1c5687": "color-blue",
     "85458a": "color-purple",
@@ -2498,7 +2802,7 @@ var CustomImportScript = (() => {
     trimInside(h);
     const doc = h.ownerDocument;
     const u = doc.createElement("u");
-    const gold = COLOURS[divider] === "color-gold";
+    const gold = COLOURS3[divider] === "color-gold";
     if (gold) u.append(doc.createTextNode("[[rule-gold]"));
     u.append(...h.childNodes);
     if (gold) u.append(doc.createTextNode("]"));
@@ -2656,7 +2960,7 @@ var CustomImportScript = (() => {
     const coloured = [...root.querySelectorAll('.c-rich-text-editor [style*="color"], .c-largeheadline [style*="color"], font[color]')];
     const own = new Map(coloured.map((el) => [el, inlineColour(el)]));
     coloured.forEach((el) => {
-      const cls = COLOURS[own.get(el)];
+      const cls = COLOURS3[own.get(el)];
       clearColour(el);
       if (!cls) return;
       const freeText = (node) => {
@@ -2747,7 +3051,7 @@ var CustomImportScript = (() => {
       if (hasFollowing(meta, root) && ((_b = meta.nextElementSibling) == null ? void 0 : _b.tagName) !== "HR") meta.after(doc.createElement("hr"));
     });
   }
-  function transform2(hookName, element, payload) {
+  function transform3(hookName, element, payload) {
     const template = payload && payload.template && payload.template.name;
     if (template && !template.includes("news")) return;
     const root = element;
@@ -2799,7 +3103,7 @@ var CustomImportScript = (() => {
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
-  function transform3(hookName, element, payload) {
+  function transform4(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
     const isNewsDetail = !!(payload && payload.template && [
@@ -2966,164 +3270,6 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/corp-text-markers.js
-  var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
-  var SIZE_WORDS = {
-    "0-8": "s",
-    "1-25": "l",
-    "1-5": "xl",
-    "1-75": "xxl",
-    2: "xxxl",
-    "2-5": "xxxxl"
-  };
-  var COLOURS2 = ["gold", "white", "blue", "purple", "teal", "navy", "grey", "light-gray"];
-  var LOOKS = [
-    "rule-gold",
-    "box-white",
-    "box-gray",
-    "box-gold",
-    "box-blue",
-    "box-purple",
-    "box-teal",
-    "box-dark",
-    "box-dark-blue-gradient",
-    "box-dark-purple-gradient"
-  ];
-  var HEADLINE_STEPS = [1.5, 2, 3, 4.5];
-  var headlineWord = (n) => {
-    const off = (step2) => Math.abs(Math.log(step2 / n));
-    const step = HEADLINE_STEPS.reduce((a, b) => off(b) < off(a) ? b : a);
-    return `hl${String(step).replace(".", "")}`;
-  };
-  function markerWords(raw, dropped) {
-    return raw.split(",").map((c) => c.trim().toLowerCase()).flatMap((c) => {
-      let m = c.match(/^(?:text|size)-(\d+(?:-\d+)?)(?:em)?$/);
-      if (m && SIZE_WORDS[m[1]]) return [SIZE_WORDS[m[1]]];
-      if (m && m[1] === "1") return [];
-      if (m && /^\d+(-\d+)?$/.test(m[1])) {
-        const n = Number(m[1].replace("-", "."));
-        const steps = Object.keys(SIZE_WORDS).map((k) => [Number(String(k).replace("-", ".")), SIZE_WORDS[k]]);
-        const off = ([v]) => Math.abs(Math.log(v / n));
-        return [steps.reduce((a, b) => off(b) < off(a) ? b : a)[1]];
-      }
-      m = c.match(/^(?:headline-(\d+(?:-\d+)?)|size-(\d+(?:-\d+)?)-?vw)$/);
-      if (m) return [headlineWord(Number((m[1] || m[2]).replace("-", ".")))];
-      m = c.match(/^color-([a-z-]+)$/);
-      if (m && COLOURS2.includes(m[1])) return [m[1]];
-      if (c === "serif") return ["serif"];
-      if (c === "body-font") return ["body"];
-      if (c === "futura-bold") return ["sans"];
-      if (LOOKS.includes(c)) return [c];
-      dropped.add(c);
-      return [];
-    });
-  }
-  var INLINE = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
-  var TOKEN = /\[\[([^\][]+)\]|\]/g;
-  var containerOf = (node) => {
-    let el = node.parentElement;
-    while (el && INLINE.has(el.tagName) && el.parentElement) el = el.parentElement;
-    return el;
-  };
-  function convertContainer(nodes, dropped) {
-    const tokens = [];
-    let offset = 0;
-    let all = "";
-    nodes.forEach((node) => {
-      const value = node.nodeValue;
-      TOKEN.lastIndex = 0;
-      let m = TOKEN.exec(value);
-      while (m) {
-        const end = m.index + m[0].length;
-        tokens.push({
-          node,
-          start: m.index,
-          end,
-          at: offset + m.index,
-          to: offset + end,
-          raw: m[1]
-        });
-        m = TOKEN.exec(value);
-      }
-      offset += value.length;
-      all += value;
-    });
-    const stack = [];
-    const pairs = [];
-    tokens.forEach((t) => {
-      if (t.raw !== void 0) {
-        stack.push(t);
-      } else if (stack.length) {
-        const open = stack.pop();
-        open.close = t;
-        t.pair = open;
-        pairs.push(open);
-      } else {
-        t.literal = true;
-      }
-    });
-    stack.forEach((t) => {
-      t.literal = true;
-    });
-    const gap = (a, b) => all.slice(a.to, b.at).trim() === "";
-    pairs.sort((a, b) => a.at - b.at).forEach((p) => {
-      p.words = markerWords(p.raw, dropped);
-    });
-    pairs.forEach((inner) => {
-      const outer = pairs.find((o) => o !== inner && !o.merged && o.at < inner.at && o.close.at > inner.close.at && gap(o, inner) && gap(inner.close, o.close));
-      if (!outer) return;
-      let target = outer;
-      while (target.into) target = target.into;
-      target.words.push(...inner.words);
-      inner.merged = true;
-      inner.into = target;
-    });
-    tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
-      const open = t.raw !== void 0 ? t : t.pair;
-      const unique = [...new Set(open.words)];
-      const words = [...unique.filter((w) => !/\d/.test(w)), ...unique.filter((w) => /\d/.test(w))];
-      let out = "";
-      if (!open.merged && words.length) out = t.raw !== void 0 ? `:start-${words.join("-")}:` : ":end:";
-      t.node.nodeValue = t.node.nodeValue.slice(0, t.start) + out + t.node.nodeValue.slice(t.end);
-    });
-  }
-  function bracketsToMarkers(main) {
-    const doc = main.ownerDocument;
-    const walker = doc.createTreeWalker(
-      main,
-      4
-      /* NodeFilter.SHOW_TEXT */
-    );
-    const byContainer = /* @__PURE__ */ new Map();
-    let node = walker.nextNode();
-    while (node) {
-      if (node.nodeValue.includes("[") || node.nodeValue.includes("]")) {
-        const container = containerOf(node);
-        if (container && !container.closest("code, pre, script, style")) {
-          if (!byContainer.has(container)) byContainer.set(container, []);
-        }
-      }
-      node = walker.nextNode();
-    }
-    const dropped = /* @__PURE__ */ new Set();
-    byContainer.forEach((_, container) => {
-      const texts = [];
-      const tw = doc.createTreeWalker(container, 4);
-      let t = tw.nextNode();
-      while (t) {
-        if (containerOf(t) === container) texts.push(t);
-        t = tw.nextNode();
-      }
-      if (texts.some((x) => x.nodeValue.includes("[["))) convertContainer(texts, dropped);
-    });
-    return [...dropped];
-  }
-  function transform4(hookName, element, payload) {
-    if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
-    const dropped = bracketsToMarkers(element);
-    if (payload && dropped.length) payload.textMarkersDropped = dropped;
-  }
-
   // tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
@@ -3223,12 +3369,12 @@ var CustomImportScript = (() => {
     "cards-corp-teaser": parse2
   };
   var transformers = [
-    transform,
     transform2,
     transform3,
+    transform4,
     transform5,
     // last: the bracket text tags → Text style markers
-    transform4
+    transform
   ];
   function executeTransformers(hookName, element, payload) {
     const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });

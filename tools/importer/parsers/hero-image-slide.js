@@ -1,5 +1,9 @@
 /* eslint-disable */
 /* global WebImporter */
+import { STD_DRAFT_IMPORT } from '../transformers/corp-text-markers.js';
+import {
+  dropColourTags, sizeBrackets, slideOptions, slideVideo, takeStripe,
+} from '../hero-corp-std-import.js';
 
 /**
  * Parser: www.stryker.com single-slide `.c-autocarousel` → `Hero Corp (image-slide)`.
@@ -51,6 +55,8 @@ function headline(overlay, document) {
     const el = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : 'p');
     const box = document.createElement('div');
     box.innerHTML = line.innerHTML;
+    // in review (staging build only): the run sizes as bracket tags → Text style markers
+    if (STD_DRAFT_IMPORT) sizeBrackets(box);
     box.querySelectorAll('span.futura-bold, b').forEach((span) => {
       const strong = document.createElement('strong');
       while (span.firstChild) strong.append(span.firstChild);
@@ -144,6 +150,36 @@ export default function parse(element, { document }) {
         if (i >= 0) variants[i] = token; else variants.push(token);
       }
     }
+  }
+
+  // in review (staging build only, docs/standardisation/hero-corp.md): the named options
+  // instead of the free values
+  if (STD_DRAFT_IMPORT && overlay) {
+    const style = overlay.getAttribute('style') || '';
+    const num = (re) => { const m = style.match(re); return m ? parseFloat(m[1]) : null; };
+    const options = slideOptions({
+      left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
+      right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
+      top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
+      overlay,
+      headline: overlay.querySelector('.c-largeheadline') || overlay,
+    });
+    // colour tags that repeat the title / subline colour, or white on a dark box, go
+    const colours = new Set(options.map((o) => (o.match(/^(?:title|subline)-(.+)$/) || [])[1]).filter(Boolean));
+    if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add('white');
+    const copy = cells[cells.length - 1];
+    if (copy && Array.isArray(copy[0])) dropColourTags(copy[0], colours);
+    const video = slideVideo(slide);
+    if (video) {
+      const a = document.createElement('a');
+      a.setAttribute('href', video);
+      a.textContent = video;
+      cells.unshift([a]);
+      options.push('video-background');
+    }
+    const stripe = takeStripe(element);
+    if (stripe) options.push(stripe);
+    variants.splice(1, variants.length - 1, ...options);
   }
 
   element.replaceWith(WebImporter.Blocks.createBlock(document, {
