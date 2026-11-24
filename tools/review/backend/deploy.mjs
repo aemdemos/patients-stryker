@@ -102,7 +102,17 @@ const names = Object.keys(ACTIONS).filter((n) => !only || only.includes(n));
 // the package: its parameters kept as they are (the database credential, __ims_oauth_s2s, set
 // once by a developer, see DATABASE.md; never printed or changed here)
 if (!dry) {
-  const had = await call('GET', `/packages/${PACKAGE}`).catch(() => null);
+  // only a namespace the credential opens (another one answers empty lists, not an error)
+  const visible = await (await fetch('https://adobeioruntime.net/api/v1/namespaces')).json().catch(() => []);
+  if (!Array.isArray(visible) || !visible.includes(ns)) {
+    throw new Error(`the namespace ${ns} is not open to the credential (it opens: ${[].concat(visible).join(', ') || 'none'}): nothing deployed`);
+  }
+  // a package that isn't there yet: created; any other failure to read it stops the deploy (it
+  // would otherwise be written again without its parameters)
+  const had = await call('GET', `/packages/${PACKAGE}`).catch((e) => {
+    if (/: 404 /.test(e.message)) return null;
+    throw e;
+  });
   await call('PUT', `/packages/${PACKAGE}?overwrite=true`, { publish: false, parameters: had?.parameters || [] });
 }
 for (const name of names) {
