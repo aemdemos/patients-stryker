@@ -10,11 +10,14 @@ const args = process.argv.slice(2);
 const i = args.indexOf('--ns');
 const ns = i >= 0 ? args[i + 1] : '892544-strykerstdreview-stage';
 const WEB = `https://${ns}.adobeioruntime.net/api/v1/web/std-review`;
+// (--api: the Runtime API host whose Settings key opens --ns: Production runtime.adobe.io)
+const j = args.indexOf('--api');
+const HOST = j >= 0 ? args[j + 1] : 'adobeioruntime.net';
 const PAGE = '/test/backend';
 const ORIGIN = 'https://standardise-v3--stryker-com--strykerenterprise.aem.page';
 
 async function admin(params) {
-  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${ns}/actions/std-review/admin?blocking=true&result=true`, {
+  const resp = await fetch(`https://${HOST}/api/v1/namespaces/${ns}/actions/std-review/admin?blocking=true&result=true`, {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(params),
   });
   return (await resp.json()).body;

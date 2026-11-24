@@ -11,7 +11,7 @@
  *                                           sendBack: also the page status "waiting for the customer"
  *   revoke { id }                           the invitation stops working at once
  *   invites                                 every invitation (no tokens)
- *   forget-test-invites                     removes revoked test invitations (tool test …, zz-test-…)
+ *   forget-test-invites                     removes revoked test invitations (tool test …, zz-test-…, backend test …)
  *   schedule { cron, enabled }              the capture action every 15 minutes (cron), the live
  *                                           warm-up, the daily backup (or all off)
  *   backup                                  every key of both reviews to Files (backups/<day>), dated,
@@ -155,7 +155,7 @@ async function run(params) {
     if (op === 'forget-test-invites') {
       // revoked test invitations (names "tool test …", "zz-test-…") out of the lists for good;
       // never anyone else's
-      const test = (await listInvites(state)).filter((i) => i.revoked && /^(tool test |zz-test-)/.test(i.name || ''));
+      const test = (await listInvites(state)).filter((i) => i.revoked && /^(tool test |zz-test-|backend test( \(|$))/.test(i.name || ''));
       await Promise.all(test.map((i) => state.delete(`i.${i.id}`)));
       return ok({ forgotten: test.length });
     }
