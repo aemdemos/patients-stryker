@@ -75,6 +75,17 @@ r = await save(T, [{
   item: 'note:t1', kind: 'note', value: JSON.stringify({ id: 't1', text: 'a test note', status: 'open' }), rev: 0,
 }]);
 check('two changes in one save', r.json?.results.every((x) => x.ok), JSON.stringify(r.json));
+// the rev check inside the database's write: saves of one entry at the same moment, one wins
+for (const from of [0, 1]) {
+  const race = await Promise.all([1, 2, 3, 4, 5, 6].map((n) => save(T, [{
+    item: 's9b9', kind: 'variant', value: `"race-${from}-${n}"`, rev: from,
+  }])));
+  const won = race.filter((x) => x.json?.results?.[0]?.ok);
+  const lost = race.filter((x) => x.json?.results?.[0]?.conflict === true);
+  check(`6 saves at once from rev ${from}: one written, 5 conflicts`, won.length === 1 && lost.length === 5 && won[0].json.results[0].rev === from + 1, JSON.stringify(race.map((x) => x.json?.results?.[0] || x.status)));
+}
+r = await state(T);
+check('the entry raced: rev 2, the winner\'s value', r.json?.rows.some((x) => x.page === PAGE && x.item === 's9b9' && x.rev === 2 && /^"race-1-/.test(x.value)), JSON.stringify(r.json?.rows.filter((x) => x.item === 's9b9')));
 r = await save(T, [{
   page: '*', item: 'group:test|backend', kind: 'variant', value: '"card-grid"', rev: 0,
 }]);

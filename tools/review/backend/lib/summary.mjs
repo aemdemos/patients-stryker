@@ -11,7 +11,8 @@
  *   newer one per page, so a save and a rebuild at the same time don't undo each other.
  * { built, pages: { <page>: { page, state, …, _at } } }
  */
-import { readAll, pagePattern, keysOf, readKeys } from './core.mjs';
+import { readAll } from './core.mjs';
+import { pageRows } from './dbstate.mjs';
 import { pageState, pageStates } from './states.mjs';
 import { ORG_KINDS } from '../../threads.js';
 
@@ -107,7 +108,7 @@ export async function updateSummary({ state, files }, space, changes) {
     const part = list.slice(i, i + 10);
     // (the store allows a limited number of parallel requests)
     const got = await Promise.all(part.map(async (page) => {
-      const rows = await readKeys(state, await keysOf(state, pagePattern(page, space)));
+      const rows = await pageRows(state.client, space, page);
       return [page, rows.length ? { page, ...pageState(rows), _at: at } : null];
     }));
     got.forEach(([page, s]) => { pages[page] = s; });

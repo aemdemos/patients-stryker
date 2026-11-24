@@ -325,14 +325,18 @@ The source URLs come from the export file names (letter case kept), never from E
 
 ## Storage and speed
 
-The backend stores nothing in a database; App Builder gives it two stores:
-- **State** (Adobe I/O State, a key–value store): every saved item is one key with a small
-  JSON value (a comment, a reply, a page status, a batch number…), e.g.
-  `main.p.<page>.page.batch` = `{ v: "2", by, at, rev }`. No queries, no bulk reads or
-  writes: one call per key (~35 ms), and it takes **~80 operations a second** at most however
-  many are sent at once (measured 24 Nov 2026). Keys expire after a year at most.
+The backend keeps the review in two App Builder stores:
+- **App Builder Database** (Data Services: Amazon DocumentDB, every write kept on several
+  storage nodes; `backend/lib/dbstate.mjs`, `backend/DATABASE.md`): **one document per page**
+  of a review, its saved items as fields (a comment, a reply, a page status, a batch number…,
+  each `{ v, by, at, rev }`); one document for the group choices, one per invitation. A page is
+  read with one request from the primary (it always shows what was just saved), a save writes
+  its items in place, and the rev check (someone else changed it meanwhile → a conflict) is done
+  by the database inside the write. No end date. Since 24 Nov 2026 (the old State store held
+  test data only: copied over, no longer used).
 - **Files** (blob storage): what must stay or is large: the audit, the shot history and its
-  images, the capture's record, the Live copies, the signing key, and the **review's summary**.
+  images, the capture's record, the Live copies, the signing key, the daily backups and the
+  **review's summary**.
 
 **The review's summary** (`backend/lib/summary.mjs`, `<space>/summary/overview.json`): every
 page's state in one file, so the overview (status page, the tool's batches and groups) reads one
@@ -342,24 +346,21 @@ entry when missing, after admin operations that change entries, on the status pa
 **Refresh**, and every 15 minutes by the capture's schedule. Each page's part carries the time
 it was computed; writers merge by keeping the newer part.
 
-**The database copy (moving to App Builder Database, `backend/DATABASE.md`):** every write to
-State is also made in the App Builder Database (replicated: several storage nodes), compared key
-by key with State every night and put right from it. State is still what everything reads.
+**Backups (the data must not be lost):** Adobe restores deleted database data only
+best-effort, so every day at 02:15 UTC (schedule `review-backup`, admin `backup`, ~0.5 s) the
+backend writes a full copy of every entry and invitation of both reviews to Files,
+`backups/<YYYY-MM-DD>/state.json`, kept. `admin.mjs backups` lists them,
+`restore-check --json '{"day":"…"}'` compares one with the store (missing, changed),
+`restore --json '{"day":"…","only":["main.p."]}'` puts back the entries missing now (never over
+an existing one; audited). The audit (every change with its value before) stays the second
+record. `admin.mjs db-stats`: page documents per review, invitations.
 
-**Backups (the data must not be lost):** State keeps a key a year at most and has no backups
-of its own. Every day at 02:15 UTC (schedule `review-backup`, admin `backup`) the backend writes
-a full copy of every key of both reviews (entries and invitations) to Files,
-`backups/<YYYY-MM-DD>/state.json`, kept; entries within 90 days of their end get their full year
-again. `admin.mjs backups` lists them, `restore-check --json '{"day":"…"}'` compares one with
-the store (missing, changed), `restore --json '{"day":"…","only":["main.p."]}'` puts back the
-keys missing now (never over an existing one; audited). Tested 24 Nov 2026 (a deleted entry
-put back as it was). The audit (every change with its value before) stays the second record.
-
-**Saving:** changes are written 20 at a time (the changes to one key in their order);
-organisation changes are written without reading each key first (their value before, for the
-audit, comes from the summary) and go in one request (up to 3,000). Measured: 220 pages moved to
-a batch in ~3 s (was ~8.5 s plus a 5–8 s reload), a single change ~0.2 s, the status page shown
-again at once (only the review's state is read again, the page list kept).
+**Saving:** changes are written 20 at a time (the changes to one item in their order), each
+with its rev check; organisation changes (batches, groups, representatives: the newest wins) go
+to the database in bulk, 500 a call, without reading first (their value before, for the audit,
+comes from the summary), up to 3,000 a request. Measured 24 Nov 2026: 220 pages moved to a batch
+in ~0.5 s (State: ~3 s, at first ~8.5 s), a single change ~0.15 s, the overview ~0.1 s; six
+saves of one item at the same moment: one written, five conflicts.
 
 ## Tests
 
@@ -369,7 +370,7 @@ node tools/review/backend/test/spaces.test.mjs        # the space keys (link bac
 node tools/review/backend/test/spaces-live.test.mjs   # deployed: a main invitation sees only main (test page, cleans up)
 node tools/review/backend/test/backend.test.mjs       # the actions (std space, test page)
 node tools/review/backend/test/shots-live.test.mjs    # deployed: shot history and requests (test page, cleans up)
-node tools/review/backend/test/shots-tool.test.mjs <dev server>   # the tool's Source shot box (read only on a real page; test page)
+node tools/review/backend/test/shots-tool.test.mjs <dev server>   # the tool's Source shot box (read only on a real page; test page); the client review's dev server (its shots)
 node tools/review/backend/test/invites-live.test.mjs  # deployed: the AOE team's invitations (test invitations, forgotten after)
 node tools/review/backend/test/invites-tool.test.mjs <dev server> # the Invitations page and its links
 node tools/review/backend/test/scope-live.test.mjs    # deployed: scope pages, a capture by the backend, tiles, group approval (test pages)

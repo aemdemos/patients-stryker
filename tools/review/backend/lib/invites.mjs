@@ -7,7 +7,7 @@
  */
 import crypto from 'crypto';
 import {
-  secretOf, sign, TTL, SPACES,
+  secretOf, sign, SPACES,
 } from './core.mjs';
 
 const HOST = /^[a-z0-9-]+--stryker-com--strykerenterprise\.aem\.page$/;
@@ -44,7 +44,7 @@ export async function createInvite({ state, files }, {
   const invite = {
     name: String(name).trim().slice(0, 80), scope, exp, created: new Date().toISOString(), revoked: false, ...(createdBy ? { createdBy } : {}),
   };
-  await state.put(`i.${id}`, JSON.stringify(invite), { ttl: Math.min(TTL, d * 86400 + 86400) });
+  await state.put(`i.${id}`, JSON.stringify(invite));
   const token = sign({ id, exp }, await secretOf(files));
   const tool = toolOf(space, host);
   const link = `${tool}?${new URLSearchParams({ ...(typeof page === 'string' && page ? { page } : {}), invite: token })}`;
@@ -84,6 +84,6 @@ export async function revokeInvite(state, id, revokedBy) {
   const invite = {
     ...before, revoked: true, revokedAt: new Date().toISOString(), ...(revokedBy ? { revokedBy } : {}),
   };
-  await state.put(`i.${id}`, JSON.stringify(invite), { ttl: TTL });
+  await state.put(`i.${id}`, JSON.stringify(invite));
   return invite;
 }

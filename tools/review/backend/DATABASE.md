@@ -1,13 +1,34 @@
 # The review backend on App Builder Database
 
-Status (24 Nov 2026): **step 1 of the move running**: the database is a second, live copy of
-State. Every write of the backend to State is made in the database too (`lib/mirror.mjs`,
-collection `kv`, one document per State key: the key, its value as it is, its parts); all 667
-existing keys were copied and compared equal; the write-heavy tests left both copies equal; every
-night after the backup the two are compared key by key and the database put right from State
-(report in Files `mirror/compare/<day>.json`; failed mirrored writes in `mirror/failures/`, none
-so far). State is still what everything reads. Saves with the mirror: 220 changes ~3.4 s (2.9 s
-without), one change ~0.25 s. Admin: `db-compare`, `db-sync`.
+Status (24 Nov 2026): **the database is the review's only store** (both reviews, std and
+main). State held test data only: all 675 keys (entries and invitations) were copied over once
+(`admin.mjs migrate-from-state`, `lib/migrate.mjs`) and compared key by key (0 missing, 0
+different); State is no longer read or written, and can be emptied at any time.
+
+**How it is stored** (`lib/dbstate.mjs`):
+
+- collection `pages`: one document per page of a review, `_id` = `<space>|<page>` (page `*`: the
+  group choices), fields `space`, `page`, and `e`: its entries, one field per item + kind
+  (`<item>~<kind>`, the names base64url): `{ v, by, at, rev, inv, role }`. Index on `space`.
+  A page is read with one `findOne` from the primary (always the newest write).
+- collection `invites`: one document per invitation, `_id` = its id, `value` its record (JSON).
+- **A save** writes each entry in place; the rev check is in the write itself: `findOneAndUpdate`
+  whose filter names the rev the change started from (rev 0: the entry must not exist), so
+  someone else's change in between is refused by the database. Tested: six saves of one entry at
+  the same moment, one written and five conflicts (twice). Organisation entries (batches,
+  groups, representatives: the newest wins) go in bulk, 500 a call (`bulkWrite`).
+- **Lists** (the export, the summary rebuild, backups) read every document of a space with
+  `find`: they can be a moment behind (~1%, below), which the summary's per-page merge (the
+  newer part wins) and the next rebuild absorb.
+- The rest of the backend (admin operations, invitations, backups) keeps its key–value naming
+  through `kv(client)`: `p.<page>.<item>.<kind>`, `g.…`, `i.<id>`, the space as prefix.
+- A page document whose last entry is deleted is removed; `admin.mjs db-stats` counts the
+  documents per review (and removes any empty one).
+
+**Measured 24 Nov 2026 after the move:** 220 organisation changes in one save ~0.5 s (State ~3 s),
+100 ~0.3 s, one change ~0.15 s (first call of a cold action ~1.1 s), the overview ~0.1 s, the
+summary built again from every entry ~0.6 s, a backup ~0.5 s. Both reviews' summaries equal a
+full rebuild.
 
 **Measured 24 Nov 2026 (Stage, amer):** a write ~20–90 ms, a read ~20–50 ms, **200 documents in
 one call ~30–60 ms** (State: 220 changes ~3 s). **Reads must ask for the primary**
@@ -56,7 +77,7 @@ Project "Stryker std review", workspace **Stage** (Runtime namespace
 
 Production: the same with the Production workspace when the backend moves there.
 
-## 2. The move (done by the maintainer once db-check passes), without losing anything
+## 2. The move (how it was planned; done 24 Nov 2026, steps 2 and 4 shortened: the data was test data)
 
 1. **Measure:** db-check's timings; a test collection with the review's real volume.
 2. **Write to both:** every save writes State (still the store everything reads) and the
@@ -91,5 +112,6 @@ Production: the same with the Production workspace when the backend moves there.
    database to Files.
 5. **Shots, audit, Live copies, tiles** stay in Files (blobs: not database documents).
 
-Every step can be undone by reading from State again; nothing is deleted from State until the
-database has been the store for a few weeks with clean comparisons and backups.
+(Done differently at the end: as State held only test data, the user chose to move at once,
+without State as a fallback: no mirror, no weeks of both. The mirror of step 2, `lib/mirror.mjs`,
+ran for a day with no difference and was then removed.)

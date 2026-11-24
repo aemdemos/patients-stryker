@@ -211,7 +211,7 @@ async function health(stores, space) {
 
 export async function main(params) {
   const started = Date.now();
-  const stores = await open();
+  const stores = await open(params);
   const { files } = stores;
   const space = SPACES[params.space] ? params.space : 'main';
   const op = params.op || 'run';

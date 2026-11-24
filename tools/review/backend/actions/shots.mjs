@@ -19,7 +19,7 @@ import { startCapture } from '../lib/runtime.mjs';
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
   try {
-    const stores = await open();
+    const stores = await open(params);
     const { invite, error } = await checkInvite(stores, inviteOf(params));
     if (error) return fail(params, 401, error, 'This review link is not valid (any more): ask for a new one.');
     const page = String(params.page || '');
