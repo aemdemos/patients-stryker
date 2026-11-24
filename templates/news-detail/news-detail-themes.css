@@ -1208,3 +1208,16 @@ body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6):has(> :is(em, i) 
 body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6) :is(:is(em, i) > u, u:has(> :is(em, i))) {
   text-decoration: none;
 }
+
+@media (width >= 600px) {
+  /* news-xf-body: a columns-67-33 row splits 62% / 38% (instead of two thirds / one third).
+     A cell that is a box with margins of its own (boxed-last / gold-last last cell, gold-first
+     first cell) keeps taking what the other cell leaves, so it still fits beside it */
+  body.news-detail.news-xf-body .columns.columns-67-33:not(.gold-first) > div > div:first-child {
+    flex: 0 0 62%;
+  }
+
+  body.news-detail.news-xf-body .columns.columns-67-33:not(.boxed-last, .gold-last) > div > div:last-child {
+    flex: 0 0 38%;
+  }
+}
