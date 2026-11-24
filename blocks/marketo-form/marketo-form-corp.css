@@ -10,8 +10,8 @@
  * - from 600px (source 480px): 420px fields with 14px text, two side by side (430px
  *   apart) only where the form has room for both, else one per line.
  * It also holds the corp rules for every form (textarea height, rich-text rows), for
- * the `stacked` variant from 600px (the nurses nomination form) and for `with-aside` (the
- * form 2/3 beside the section's text 1/3).
+ * the `stacked` variant from 600px (the nurses nomination form), for `with-aside` (the
+ * form 2/3 beside the section's text 1/3) and `two-thirds` (the form alone in the left 2/3).
  * The .mkto* class names are Marketo's, so kebab-case linting is disabled below.
  */
 
@@ -131,12 +131,14 @@ body.corp .marketo-form .mktoForm .mktoCheckboxList label::after {
   content: none;
 }
 
-/* with-aside: the form in the left two thirds, the section's text after it (a contact or
+/* two-thirds: the form in the left two thirds from 600px, its fields as the default form (two
+   per row where they fit; stryker.com col-sm-8: spine medical education on-demand webinars).
+   with-aside: the form in the left two thirds, the section's text after it (a contact or
    social media column) in the right third, side by side from 600px (stryker.com col-sm-8 /
    col-sm-4: spine medical education contact), 30px under the section above (15px more than
    the section gap); its fields one per line */
 @media (width >= 600px) {
-  body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form.with-aside) {
+  body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form:is(.with-aside, .two-thirds)) {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     align-items: start;
@@ -145,14 +147,17 @@ body.corp .marketo-form .mktoForm .mktoCheckboxList label::after {
     padding-top: var(--space-block);
   }
 
-  body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form.with-aside) > div {
+  body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form:is(.with-aside, .two-thirds)) > div {
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  body.corp .marketo-form:is(.with-aside, .two-thirds) {
     max-width: none;
     margin-inline: 0;
   }
 
   body.corp .marketo-form.with-aside {
-    max-width: none;
-    margin-inline: 0;
     padding-block: 0 calc(var(--space-section) + var(--space-inset-m));
   }
 
