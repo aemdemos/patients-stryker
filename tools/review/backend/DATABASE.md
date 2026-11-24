@@ -1,7 +1,14 @@
 # The review backend on App Builder Database
 
-Status (24 Nov 2026): **prepared, waiting for the credential** (step 1 below). The backend still
-stores its entries in State (key–value), with daily backups to Files (README, *Backups*).
+Status (24 Nov 2026): **connected** (the credential is on the package; `admin.mjs db-check`
+passes). The backend still stores its entries in State (key–value), with daily backups to Files
+(README, *Backups*); the move (section 2) is next.
+
+**Measured 24 Nov 2026 (Stage, amer):** a write ~20–90 ms, a read ~20–50 ms, **200 documents in
+one call ~30–60 ms** (State: 220 changes ~3 s). **Reads must ask for the primary**
+(`readPreference: 'primary'`, `lib/db.mjs` PRIMARY): a read right after its write missed it 9 of
+40 and 94 of 200 times by default (served by a replica not yet up to date), never on the primary
+(0 of 240). The credential survives our deploys (`deploy.mjs` keeps the package's parameters).
 
 ## Why
 
