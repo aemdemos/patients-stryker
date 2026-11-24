@@ -57,9 +57,10 @@ async function scheduleOne({
 }
 
 /**
- * the backend's schedules: the capture (first shots, every 15 minutes) and the live copies'
+ * the backend's schedules: the capture (first shots, every 15 minutes), the live copies'
  * warm-up (every 5 minutes a container of the live action keeps its browser running, so a
- * reviewer's first Live copy doesn't wait for a container and a browser to start)
+ * reviewer's first Live copy doesn't wait for a container and a browser to start) and the
+ * daily backup of every entry
  */
 export async function schedule({ cron = '*/15 * * * *', warm = '*/5 * * * *', enabled = true, space = 'main' } = {}) {
   return [
@@ -68,6 +69,10 @@ export async function schedule({ cron = '*/15 * * * *', warm = '*/5 * * * *', en
     }),
     ...await scheduleOne({
       name: 'review-live-warm', action: 'live', cron: warm, payload: { op: 'warm' }, enabled,
+    }),
+    // every day at 02:15 UTC: every entry of both reviews to Files (lib/backup.mjs)
+    ...await scheduleOne({
+      name: 'review-backup', action: 'admin', cron: '15 2 * * *', payload: { op: 'backup' }, enabled,
     }),
   ];
 }

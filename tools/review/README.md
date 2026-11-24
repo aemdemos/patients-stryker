@@ -554,6 +554,15 @@ entry when missing, after admin operations that change entries, on the status pa
 **Refresh**, and every 15 minutes by the capture's schedule. Each page's part carries the time
 it was computed; writers merge by keeping the newer part.
 
+**Backups (the data must not be lost):** State keeps a key a year at most and has no backups
+of its own. Every day at 02:15 UTC (schedule `review-backup`, admin `backup`) the backend writes
+a full copy of every key of both reviews (entries and invitations) to Files,
+`backups/<YYYY-MM-DD>/state.json`, kept; entries within 90 days of their end get their full year
+again. `admin.mjs backups` lists them, `restore-check --json '{"day":"…"}'` compares one with
+the store (missing, changed), `restore --json '{"day":"…","only":["main.p."]}'` puts back the
+keys missing now (never over an existing one; audited). Tested 24 Nov 2026 (a deleted entry
+put back as it was). The audit (every change with its value before) stays the second record.
+
 **Saving:** changes are written 20 at a time (the changes to one key in their order);
 organisation changes are written without reading each key first (their value before, for the
 audit, comes from the summary) and go in one request (up to 3,000). Measured: 220 pages moved to
