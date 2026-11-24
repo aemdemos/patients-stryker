@@ -1907,7 +1907,15 @@ body.corp .columns.course-boxes.block > div > div > p a:any-link:not(.button) {
   text-decoration: none;
 }
 
-/* media-text "• " product links (top of the file): the link at its line's 11.2px */
-body.corp .columns.stack.media-text p > strong > a.link-inline:any-link {
+/* media-text "• " product links (top of the file): the link and its underlined text at the
+   line's 11.2px (the bold + underline link look sets 14px on the text), and the arrow the
+   source's 9.52px icon size, as the list links above */
+body.corp .columns.stack.media-text p > strong > a.link-inline:any-link,
+body.corp .columns.stack.media-text p > strong > a.link-inline:any-link > u {
   font-size: inherit;
+}
+
+body.corp .columns.stack.media-text p > strong > a.link-inline:any-link > u::after {
+  border-width: 5px 0 5px 5px;
+  vertical-align: -0.5px;
 }
