@@ -342,6 +342,10 @@ entry when missing, after admin operations that change entries, on the status pa
 **Refresh**, and every 15 minutes by the capture's schedule. Each page's part carries the time
 it was computed; writers merge by keeping the newer part.
 
+**The database copy (moving to App Builder Database, `backend/DATABASE.md`):** every write to
+State is also made in the App Builder Database (replicated: several storage nodes), compared key
+by key with State every night and put right from it. State is still what everything reads.
+
 **Backups (the data must not be lost):** State keeps a key a year at most and has no backups
 of its own. Every day at 02:15 UTC (schedule `review-backup`, admin `backup`) the backend writes
 a full copy of every key of both reviews (entries and invitations) to Files,

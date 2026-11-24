@@ -16,6 +16,7 @@
  *   backup                                  every key of both reviews to Files (backups/<day>), dated,
  *                                           kept; entries within 90 days of their end renewed
  *   backups                                 the days with a backup
+ *   db-compare / db-sync                    every State key against the database copy (sync: put right)
  *   db-check                                the App Builder Database: credential there, connect, write,
  *                                           read, 200 at once (DATABASE.md)
  *   restore-check { day }                   a backup against the store: keys missing now, changed since
@@ -46,9 +47,10 @@ import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
 import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
 import {
-  backup, listBackups, restoreCheck, restore,
+  backup, listBackups, restoreCheck, restore, readEverything,
 } from '../lib/backup.mjs';
 import { dbCheck, dbConsistency } from '../lib/db.mjs';
+import { compareAndRepair, mirrorFailures } from '../lib/mirror.mjs';
 
 // operations that change entries: the review's summary is built again after them
 const WRITES = ['status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
@@ -63,7 +65,7 @@ export async function main(params) {
   const out = await run(params);
   // (built again now, so no reader waits for it)
   if (WRITES.includes(params.op)) {
-    const stores = await open();
+    const stores = await open(params);
     const space = SPACES[params.space] ? params.space : 'std';
     await rebuildSummary(stores, space).catch(() => dropSummary(stores.files, space));
   }
@@ -71,7 +73,7 @@ export async function main(params) {
 }
 
 async function run(params) {
-  const stores = await open();
+  const stores = await open(params);
   const { state, files } = stores;
   const op = params.op || '';
   // the review this call works in (std when none is named); its keys' prefix and audit folder
@@ -109,7 +111,16 @@ async function run(params) {
       return ok({ steps: await schedule({ cron: params.cron, enabled: params.enabled !== false, space: params.space || 'main' }) });
     }
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
-    if (op === 'backup') return ok(await backup(stores));
+    if (op === 'backup') {
+      // the day's backup, then the database copy compared with State and put right
+      const { all, ...b } = await backup(stores);
+      const db = await compareAndRepair(params, files, all, { state }).catch((e) => ({ error: String(e.message || e).slice(0, 200) }));
+      return ok({ ...b, database: db, mirrorFailures: await mirrorFailures(files, b.day) });
+    }
+    if (op === 'db-compare' || op === 'db-sync') {
+      const all = await readEverything(state);
+      return ok(await compareAndRepair(params, files, all, { repair: op === 'db-sync', state }));
+    }
     if (op === 'db-check') return ok(await dbCheck(params));
     if (op === 'db-consistency') return ok(await dbConsistency(params, Number(params.n) || 30));
     if (op === 'backups') return ok({ days: await listBackups(files) });

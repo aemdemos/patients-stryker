@@ -16,6 +16,7 @@ import crypto from 'crypto';
 import stateLib from '@adobe/aio-lib-state';
 import { STATES_BY_ROLE, ANSWER_STATES, stateAllowed } from '../../threads.js';
 import filesLib from '@adobe/aio-lib-files';
+import { mirrored } from './mirror.mjs';
 
 export const TTL = stateLib.MAX_TTL;
 export const SECRET_FILE = 'secrets/signing.json';
@@ -144,9 +145,13 @@ export function inScope(scope, page) {
 
 /* ---------- storage ---------- */
 
-export async function open() {
+/**
+ * the stores; with the action's params (the actions that write), State is mirrored to the App
+ * Builder Database (lib/mirror.mjs: a second copy, State stays what everything reads)
+ */
+export async function open(params = null) {
   const [state, files] = await Promise.all([stateLib.init(), filesLib.init()]);
-  return { state, files };
+  return { state: params ? mirrored(state, files, params) : state, files };
 }
 
 /** the signing key (created once by the admin action's `setup`, never leaves the project) */
