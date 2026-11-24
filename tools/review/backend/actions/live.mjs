@@ -43,6 +43,20 @@ function copyOf(finalUrl) {
   doc.querySelectorAll('script, noscript, link[rel="modulepreload"], link[rel="preload"][as="script"], meta[http-equiv], base')
     .forEach((n) => n.remove());
   doc.querySelectorAll('#onetrust-consent-sdk, #onetrust-banner-sdk').forEach((n) => n.remove());
+  // videos played by the page's scripts from an in-browser stream (blob:, Dynamic Media) can't
+  // play in the copy: their poster image, at the player's size, instead of an empty box
+  doc.querySelectorAll('video').forEach((v) => {
+    const src = v.getAttribute('src') || v.querySelector('source')?.getAttribute('src') || '';
+    if (!src.startsWith('blob:') && src) return;
+    const player = v.closest('.s7dm-dynamic-media, .s7videoviewer') || v;
+    const live = document.getElementById(v.id);
+    const box = (live?.closest('.s7dm-dynamic-media, .s7videoviewer') || live || v).getBoundingClientRect?.() || { width: 0, height: 0 };
+    const img = document.createElement('img');
+    img.src = v.getAttribute('poster') || '';
+    img.alt = '';
+    img.setAttribute('style', `display: block; width: 100%; ${box.height ? `aspect-ratio: ${Math.round(box.width)} / ${Math.round(box.height)};` : ''} object-fit: cover;`);
+    if (img.src) player.replaceWith(img);
+  });
   // (inline handlers never run without scripts; they go too, so nothing looks clickable that isn't)
   doc.querySelectorAll('*').forEach((n) => [...n.attributes].filter((a) => /^on/i.test(a.name)).forEach((a) => n.removeAttribute(a.name)));
   const base = document.createElement('base');
@@ -100,7 +114,9 @@ export async function main(params) {
     const tab = await openPage(b, vp, { lite });
     let out;
     try {
-      const status = await loadSource(tab, source, lite ? { wait: 600, pause: 40, waitUntil: 'domcontentloaded' } : { wait: 1500 });
+      const status = await loadSource(tab, source, lite ? {
+        wait: 300, pause: 40, waitUntil: 'domcontentloaded', settle: 4000,
+      } : { wait: 1500, settle: 4000 });
       mark('loaded');
       const finalUrl = tab.url();
       const html = await tab.evaluate(copyOf, finalUrl);

@@ -109,6 +109,19 @@ synced by text like the as-is page.
   starts), ~3 s with a warm browser, instant when kept.
 - The source: the migration scope table's (client review), else the newest shot's, else the
   tool's snapshot facts (standard review).
+- **How close it is** (measured 24 Nov 2026, `backend/test/live-fidelity.mjs`: the real page in a
+  browser vs its copy, 7 pages of 6 templates at 1440 and 375): the same page height and text on
+  every page, 0% of pixels different on all but the home page at 1440 (5%: its banner video
+  shows its poster frame). Two causes were found and fixed: count-up numbers caught mid-count
+  (the backend now waits until the page's text stops changing, at most 4 s: pages with count-ups
+  take ~4 s) and videos played from an in-browser stream (now their poster image).
+- **What can still differ:** anything moving (videos show their poster, carousels the slide at
+  render time, animations their end state); embedded players and widgets in frames (videos,
+  maps, Marketo forms) that need their own scripts; parts that depend on the window's height
+  (the Live frame is as tall as the pane); content stryker.com varies by visitor (location,
+  personalisation: the backend is a first-time visitor without cookies); the page changing
+  after the copy was made (kept 10 minutes: Render again). A source that redirects is refused
+  (never another page than the one in the table).
 
 ## Source shots taken by the backend
 

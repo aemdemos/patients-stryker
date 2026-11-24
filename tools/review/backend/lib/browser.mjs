@@ -68,7 +68,9 @@ const sameUrl = (a, b) => {
  * with source: true, the reason for the AOE team), the cookie banner hidden, scrolled through
  * (lazy images, count-ups), back at the top → the response's status
  */
-export async function loadSource(page, url, { wait = 2500, pause = 150, waitUntil = 'load' } = {}) {
+export async function loadSource(page, url, {
+  wait = 2500, pause = 150, waitUntil = 'load', settle = 0,
+} = {}) {
   const resp = await page.goto(url, { waitUntil, timeout: 90000 });
   const status = resp ? resp.status() : 0;
   if (status !== 200) throw Object.assign(new Error(`the source answers ${status || 'nothing'}`), { source: true });
@@ -83,5 +85,27 @@ export async function loadSource(page, url, { wait = 2500, pause = 150, waitUnti
     window.scrollTo(0, 0);
   }, pause);
   await new Promise((r) => { setTimeout(r, wait); });
+  // settle: until the page's text stops changing (count-ups, content loaded late), at most settle ms
+  if (settle) {
+    await page.evaluate(async (max) => {
+      // (video players' clocks and progress keep changing: left out)
+      const PLAYER = 'video, .vjs-control-bar, .vjs-time-control, [class*="s7controlbar"], [class*="s7videotime"], [class*="time-display"], [class*="progress"]';
+      const text = () => {
+        let t = document.body.innerText;
+        document.querySelectorAll(PLAYER).forEach((e) => {
+          if (e.innerText) t = t.split(e.innerText).join('');
+        });
+        return t;
+      };
+      const started = Date.now();
+      let last = text();
+      for (;;) {
+        await new Promise((r) => { setTimeout(r, 400); });
+        const now = text();
+        if (now === last || Date.now() - started > max) break;
+        last = now;
+      }
+    }, settle);
+  }
   return status;
 }
