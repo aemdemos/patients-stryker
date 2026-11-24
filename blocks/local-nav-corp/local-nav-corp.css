@@ -204,11 +204,12 @@
   }
 }
 
-/* overlay (see the top): the band over the hero's top edge, the text 25px down */
+/* overlay (see the top): the band over the hero's top edge, its text 15px down (the parent
+   link 14px and the links 18px below the band's top, as on stryker.com) */
 @media (width >= 600px) {
   .local-nav-corp.overlay .local-nav-corp-nav {
     height: var(--corp-local-nav-overlay-height);
-    padding-top: var(--space-inset-m);
+    padding-top: var(--space-block-l);
     border: 0;
     background: var(--corp-local-nav-overlay-bg);
     box-shadow: 0 0 0 100vmax var(--corp-local-nav-overlay-bg);

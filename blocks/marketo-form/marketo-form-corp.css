@@ -133,7 +133,8 @@ body.corp .marketo-form .mktoForm .mktoCheckboxList label::after {
 
 /* with-aside: the form in the left two thirds, the section's text after it (a contact or
    social media column) in the right third, side by side from 600px (stryker.com col-sm-8 /
-   col-sm-4: spine medical education contact); its fields one per line */
+   col-sm-4: spine medical education contact), 30px under the section above (15px more than
+   the section gap); its fields one per line */
 @media (width >= 600px) {
   body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form.with-aside) {
     display: grid;
@@ -141,6 +142,7 @@ body.corp .marketo-form .mktoForm .mktoCheckboxList label::after {
     align-items: start;
     max-width: var(--container-max);
     margin-inline: auto;
+    padding-top: var(--space-block);
   }
 
   body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form.with-aside) > div {
