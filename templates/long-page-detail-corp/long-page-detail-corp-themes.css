@@ -18,6 +18,44 @@ body.long-page-detail-corp.large-copy main > .section:not(.disclaimer, .full-ble
   font-size: var(--body-font-size-m);
 }
 
+/* ---- one-off theme `te-vlc` (approved 2026-11-24): the TE Virtual Learning Center upper
+   extremities hero. From 600px its text a column 35% wide, 5% in and 7% down, centred: the
+   9vw "TEACH" title, and under it, overlapping it, the line in a dark purple gradient box
+   (20px padding): "Trauma & Extremities" 2.5vw Futura bold gold, "Academic Course for
+   Healthcare" 2vw Egyptienne white (stryker.com large headlines .fontsize-9vw / 2-5-vw / 2vw,
+   bg-dark-purple-gradient) ---- */
+body.long-page-detail-corp.te-vlc main .hero-corp {
+  --hero-corp-title-size: 9;
+}
+
+body.long-page-detail-corp.te-vlc main .hero-corp > div:last-child,
+body.long-page-detail-corp.te-vlc main .hero-corp > div:last-child > :is(h1, p) {
+  text-align: center;
+}
+
+body.long-page-detail-corp.te-vlc main .hero-corp > div:last-child > p {
+  margin-top: calc(-3 * var(--hero-corp-title-unit));
+  padding: var(--space-block-l);
+  background: var(--corp-dark-purple-gradient);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: calc(2 * var(--hero-corp-title-unit));
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp.te-vlc main .hero-corp > div:last-child > p strong {
+  font-family: var(--display-font-family);
+  font-size: calc(2.5 * var(--hero-corp-title-unit));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.te-vlc main .hero-corp > div:last-child {
+    top: 7%;
+    left: 5%;
+    width: 35%;
+  }
+}
+
 /* ---- theme `xlarge-copy`: the page's own text in 21px copy (stryker.com .fontsize-1-5em on
    the rich text of the Mako surgeon campaign), as the Columns `xlarge-copy` variant; tab panels'
    text too (nse heavy duty cutting accessories); not the small print ---- */

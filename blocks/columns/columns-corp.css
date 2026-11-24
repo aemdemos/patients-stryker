@@ -12,6 +12,33 @@
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
+/* course-boxes: each cell a soft-shadowed colour box holding its link, in cell order blue, teal,
+   orange, purple (stryker.com TE Virtual Learning Center "SHOULDER ARTHROPLASTY" … "BLUEPRINT"
+   dimensional boxes, 10px around them): 8% of the cell above the white Futura bold link,
+   centred, 72px tall */
+body.corp .columns.course-boxes > div > :where(div:nth-child(4n + 1)) { --columns-course-box: var(--color-navy-bright); }
+body.corp .columns.course-boxes > div > :where(div:nth-child(4n + 2)) { --columns-course-box: var(--color-primary); }
+body.corp .columns.course-boxes > div > :where(div:nth-child(4n + 3)) { --columns-course-box: var(--color-accent-link-hover); }
+body.corp .columns.course-boxes > div > :where(div:nth-child(4n + 4)) { --columns-course-box: var(--color-purple); }
+
+body.corp .columns.course-boxes > div > div > :where(p) {
+  margin: var(--space-block-xs) var(--space-block-s) 0;
+  padding: 8% var(--space-block-s) calc(var(--space-block) + var(--space-block-s));
+  background-color: var(--columns-course-box);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+/* …20px apart where they stack (5px above each, the row's 15px gap), the source's 10px all
+   round from 600px */
+@media (width >= 600px) {
+  body.corp .columns.course-boxes > div > div > :where(p) {
+    margin: var(--space-block-s);
+  }
+}
+
+
+
 /* ---- corp text: the corp body style instead of the patients 17.5px column copy ---- */
 
 body.corp .columns p,
@@ -1863,4 +1890,10 @@ body.corp .columns.stack.media-text li a:any-link::after {
   border-width: 5px 0 5px 5px;
   border-color: transparent transparent transparent currentcolor;
   vertical-align: -0.5px;
+}
+
+/* course-boxes (top of the file): the link white, not underlined */
+body.corp .columns.course-boxes.block > div > div > p a:any-link:not(.button) {
+  color: var(--color-white);
+  text-decoration: none;
 }
