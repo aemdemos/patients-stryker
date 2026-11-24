@@ -10,9 +10,10 @@ import webinar from './base/webinar.js';
 import people from './base/people.js';
 import footnotes from './base/footnotes.js';
 import events from './base/events.js';
+import forms from './base/forms.js';
 
 const BUILDERS = {
-  legal, patents, webinar, people, footnotes, events,
+  legal, patents, webinar, people, footnotes, events, forms,
 };
 
 export default {

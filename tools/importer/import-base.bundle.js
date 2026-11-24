@@ -15606,17 +15606,62 @@ var CustomImportScript = (() => {
     "/us/en/neurovascular/c/linnc-paris/index",
     "/us/en/training-and-education/orthopaedics/trauma-extremities"
   ]);
+  var FORM_PAGES = /* @__PURE__ */ new Set([
+    "/us/en/acute-care/c/empowered-to-care-safe-patient-handling-and-nurse-protection",
+    "/us/en/acute-care/c/hands-free-communication-nursing-care-eguide",
+    "/us/en/acute-care/c/leading-the-digital-shift-nurse-executives-driving-future-care",
+    "/us/en/acute-care/c/smart-communication-to-enhance-school-safety",
+    "/us/en/acute-care/c/smart-emergency-communication-that-goes-beyond-the-panic-button",
+    "/us/en/care-settings/asc/events",
+    "/us/en/care-settings/asc/events/aahks-2025",
+    "/us/en/emergency-care/c/mini-pro-pediatric-restraints",
+    "/us/en/emergency-care/webinars/empowering-nurses-and-rapid-response-teams",
+    "/us/en/emergency-care/webinars/ems1-webinar_with-or-without-capnography",
+    "/us/en/emergency-care/webinars/improving-cognitive-offloading-for-nurses",
+    "/us/en/services-and-solutions/hospital-supply-chain-solutions/events/ahrmm",
+    "/us/en/services-and-solutions/hospital-supply-chain-solutions/events/enterprise-product-showcase-cleveland",
+    "/us/en/services-and-solutions/hospital-supply-chain-solutions/events/enterprise-product-showcase-orlando",
+    "/us/en/services-and-solutions/hospital-supply-chain-solutions/events/enterprise-product-showcase",
+    "/us/en/services-and-solutions/hospital-supply-chain-solutions/events/healthtrust-university",
+    "/us/en/services-and-solutions/hospital-supply-chain-solutions/events/premier-breakthroughs",
+    "/us/en/services-and-solutions/hospital-supply-chain-solutions/events/vizient-connections",
+    "/us/en/smart-care/c/reclaiming-time-for-care-human-centered-workflows-in-healthcare",
+    "/us/en/sustainability/events",
+    "/us/en/about/governance/product-security",
+    "/us/en/acute-care/medical-information-request",
+    "/us/en/acute-care/tools/falls-reduction-tool-calculator",
+    "/us/en/acute-care/tools/pressure-injury-tool-calculator",
+    "/us/en/c/2019/global-power-tools/contact-us",
+    "/us/en/care-settings/asc/contact",
+    "/us/en/emergency-care/device-registration",
+    "/us/en/emergency-care/device-registration/lifepak-form",
+    "/us/en/emergency-care/medical-information-request",
+    "/us/en/endoscopy/recalls/1688-ccu",
+    "/us/en/endoscopy/recalls/1688-ccu/customer",
+    "/us/en/endoscopy/recalls/1688-ccu/sales-representative",
+    "/us/en/endoscopy/recalls/fiber-optic-light-cables",
+    "/us/en/sage/clinical-research-support",
+    "/us/en/sage/medical-information-request",
+    "/us/en/services-and-solutions/procare/medical",
+    "/us/en/training-and-education/calendar"
+  ]);
   var pathOf = (url) => new URL(url, "https://www.stryker.com").pathname.replace(/\/$/, "").replace(/\.html?$/, "");
   function groupOf(url) {
     const path = pathOf(url);
     if (/^\/us\/en\/about\/(patents|trademarks)(\/|$)/.test(path)) return "patents";
+    if (FORM_PAGES.has(path.toLowerCase())) return "forms";
     if (/^\/us\/en\/(sage\/webinars|emergency-care\/webinars|sage\/videos\/sage-mp-mats-2-demo)/.test(path)) return "webinar";
     if (/^\/us\/en\/about\/(our-management\/leaders|our-board-of-directors\/directors)/.test(path)) return "people";
     if (path.startsWith("/us/en/interventional-spine/footnotes")) return "footnotes";
     if (EVENT_PAGES.has(path.toLowerCase())) return "events";
     return "legal";
   }
-  var PAGE_THEME = { legal: "legal", footnotes: "", events: "" };
+  var PAGE_THEME = {
+    legal: "legal",
+    footnotes: "",
+    events: "",
+    forms: ""
+  };
   function applyBaseMeta(meta, url, group) {
     meta.template = "base";
     const path = pathOf(url);
@@ -16388,12 +16433,12 @@ var CustomImportScript = (() => {
       return p;
     }).filter(Boolean);
   }
-  function whiteBox(headline) {
-    return !!headline.querySelector(".has-background.bg-white");
+  function whiteBox(headline2) {
+    return !!headline2.querySelector(".has-background.bg-white");
   }
-  function boxStyles(headline) {
-    if (whiteBox(headline)) return "headline-box";
-    const box = headline.querySelector(".has-background");
+  function boxStyles(headline2) {
+    if (whiteBox(headline2)) return "headline-box";
+    const box = headline2.querySelector(".has-background");
     const bg = (box && box.className.match(/\bbg-([a-z-]+)\b/) || [])[1] || "";
     if (/^(gold|golden-gradient)$/.test(bg)) return "headline-box, gold";
     if (bg === "gray-gradient") return "headline-box, gray-gradient";
@@ -16404,12 +16449,12 @@ var CustomImportScript = (() => {
     if (/^dark$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return "headline-box, dark";
     return "";
   }
-  function centredHeadline(headline) {
-    const lines = [...headline.querySelectorAll(".line")].filter((line) => text(line));
+  function centredHeadline(headline2) {
+    const lines = [...headline2.querySelectorAll(".line")].filter((line) => text(line));
     return lines.length > 0 && lines.every(centredLine);
   }
-  function headlineStyles(headline) {
-    return [boxStyles(headline), centredHeadline(headline) ? "center" : ""].filter(Boolean).join(", ");
+  function headlineStyles(headline2) {
+    return [boxStyles(headline2), centredHeadline(headline2) ? "center" : ""].filter(Boolean).join(", ");
   }
   function titleHeading(lines, doc) {
     const h1 = doc.createElement("h1");
@@ -16432,11 +16477,11 @@ var CustomImportScript = (() => {
     const row = col && col.parentElement;
     const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
     const aside = row && [...row.children].find((el3) => el3 !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el3.className));
-    const headline = aside && aside.querySelector(".c-largeheadline");
-    return headline && text(headline) ? headline : null;
+    const headline2 = aside && aside.querySelector(".c-largeheadline");
+    return headline2 && text(headline2) ? headline2 : null;
   }
-  function headlineVideo(headline) {
-    const col = headline.closest('[class*="col-sm-6"]');
+  function headlineVideo(headline2) {
+    const col = headline2.closest('[class*="col-sm-6"]');
     const row = col && col.parentElement;
     const videoCol = row && [...row.children].find((el3) => el3 !== col && /\bcol-sm-6\b/.test(el3.className));
     const video2 = videoCol && videoCol.querySelector(".c-standalone-video");
@@ -16461,9 +16506,9 @@ var CustomImportScript = (() => {
       cells: [[media, nodes]]
     });
   }
-  function quoteNodes(headline, doc) {
+  function quoteNodes(headline2, doc) {
     const box = doc.createElement("div");
-    box.innerHTML = headline.innerHTML;
+    box.innerHTML = headline2.innerHTML;
     box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
       const bold = span.closest(".futura-bold");
       if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text(span)) || text(bold) === text(span)) return;
@@ -16540,17 +16585,17 @@ var CustomImportScript = (() => {
     }));
     return out;
   }
-  function videoHeadlineColumns(video2, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
+  function videoHeadlineColumns(video2, headline2, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
     const link3 = videoLink(video2, doc);
-    const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
-    const quotes = boxed ? asideQuotes : [headline, ...asideQuotes];
-    const lines = boxed ? headlineNodes(headline, doc) : [];
+    const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
+    const quotes = boxed ? asideQuotes : [headline2, ...asideQuotes];
+    const lines = boxed ? headlineNodes(headline2, doc) : [];
     if (!link3 || boxed && !lines.length) return null;
     const media = doc.createElement("p");
     media.append(link3);
     const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
-    const firstLine = headline.querySelector(".line") || headline;
-    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+    const firstLine = headline2.querySelector(".line") || headline2;
+    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
     const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
     const half = /\bcol-sm-6\b/.test((video2.closest('[class*="col-sm-"]') || video2).className);
     return WebImporter.Blocks.createBlock(doc, {
@@ -17881,8 +17926,8 @@ var CustomImportScript = (() => {
       const slash = path.length > 1 && path.endsWith("/") ? "/" : "";
       const bare = path.replace(/\/$/, "");
       if (!bare) return;
-      const clean5 = WebImporter.FileUtils.sanitizePath(bare);
-      if (clean5 && clean5 !== bare) a.setAttribute("href", `${clean5}${slash}${suffix}`);
+      const clean6 = WebImporter.FileUtils.sanitizePath(bare);
+      if (clean6 && clean6 !== bare) a.setAttribute("href", `${clean6}${slash}${suffix}`);
     });
   }
   var CENTRED_COLUMN = ":is(.aem-GridColumn--default--10, .aem-GridColumn--default--11).aem-GridColumn--offset--default--1";
@@ -18042,7 +18087,10 @@ var CustomImportScript = (() => {
       ["Munchkin ID", form.getAttribute("data-marketo-munchkin-id") || ""],
       ["Form ID", form.getAttribute("data-marketo-form-id") || ""]
     ];
-    return WebImporter.Blocks.createBlock(doc, { name: "Marketo Form", cells });
+    const block = WebImporter.Blocks.createBlock(doc, { name: "Marketo Form", cells });
+    const style = (container.matches("[data-form-style]") ? container : container.querySelector("[data-form-style]"))?.getAttribute("data-form-style");
+    if (style) block.setAttribute("data-section-style", style);
+    return block;
   }
   var CELL_COMPONENTS = [
     ".c-rich-text-editor",
@@ -18584,10 +18632,10 @@ var CustomImportScript = (() => {
       });
       lines.push(line);
     });
-    const clean5 = lines.map((line) => line.replace(/\s+/g, " ").trim()).filter(Boolean);
-    if (!clean5.length) return null;
+    const clean6 = lines.map((line) => line.replace(/\s+/g, " ").trim()).filter(Boolean);
+    if (!clean6.length) return null;
     const p = doc.createElement("p");
-    clean5.forEach((line, i) => {
+    clean6.forEach((line, i) => {
       if (i) p.append(doc.createElement("br"));
       p.append(line);
     });
@@ -18597,8 +18645,8 @@ var CustomImportScript = (() => {
   function mapLink(contactus, doc) {
     const map = contactus.querySelector("[data-address]");
     if (!map) return null;
-    const clean5 = (html) => html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
-    const lines = map.getAttribute("data-address").split(/<\/p>/i).filter((paragraph) => !CONTACT_LINE.test(clean5(paragraph))).flatMap((paragraph) => paragraph.split(/<br\s*\/?>/i)).map((line) => clean5(line).replace(/[\s,]+$/, "")).filter(Boolean);
+    const clean6 = (html) => html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+    const lines = map.getAttribute("data-address").split(/<\/p>/i).filter((paragraph) => !CONTACT_LINE.test(clean6(paragraph))).flatMap((paragraph) => paragraph.split(/<br\s*\/?>/i)).map((line) => clean6(line).replace(/[\s,]+$/, "")).filter(Boolean);
     if (!lines.length) return null;
     const address = lines.join(", ");
     return el(doc, "p", link(doc, `https://www.google.com/maps?q=${encodeURIComponent(address)}`, address));
@@ -18659,6 +18707,7 @@ var CustomImportScript = (() => {
     if (value.startsWith("/") && !value.startsWith("//")) rest = value;
     else if (hostRe.test(value)) rest = value.replace(hostRe, "") || "/";
     else return null;
+    rest = rest.replace(/^\/{2,}/, "/");
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
@@ -19255,7 +19304,7 @@ var CustomImportScript = (() => {
     keepHeadlineBlankLines(document);
     if (document.querySelector("#publishedDate.hidden")) document.body.setAttribute("data-date-hidden", "");
   }
-  function transformPage(payload, group) {
+  function transformPage(payload, group, built) {
     const { document, url, params } = payload;
     const main = document.body;
     const hcp = !!document.querySelector(".g-hcpbanner");
@@ -19270,6 +19319,7 @@ var CustomImportScript = (() => {
     contacts(main, document, contactReport);
     splitStandaloneLinks(main, document);
     executeTransformers("beforeTransform", main, payload);
+    built?.(main, document);
     executeTransformers("afterTransform", main, payload);
     const bracketStyles = stripBrackets(main, document);
     committeeColumns(main, document, url);
@@ -20450,21 +20500,235 @@ var CustomImportScript = (() => {
       keepIconSize(nested);
     });
   }
+  function transformEventPage(payload, group, before, built) {
+    const { document } = payload;
+    decodeAlts(document);
+    fixTypos(document);
+    singleFullWidthImages(document);
+    relatedProducts(document);
+    heroTitle(document);
+    carousel(document);
+    before?.(document);
+    const result = transformPage(payload, group, built);
+    placeTitle(result[0].element);
+    hoistNestedBlocks(result[0].element);
+    return result;
+  }
   var events_default = {
     preprocess,
-    transform: (payload) => {
-      const { document } = payload;
-      decodeAlts(document);
-      fixTypos(document);
-      singleFullWidthImages(document);
-      relatedProducts(document);
-      heroTitle(document);
-      carousel(document);
-      const result = transformPage(payload, "events");
-      placeTitle(result[0].element);
-      hoistNestedBlocks(result[0].element);
-      return result;
+    transform: (payload) => transformEventPage(payload, "events")
+  };
+
+  // tools/importer/parsers/hero-image-slide.js
+  function copyImage(source, document) {
+    const img = document.createElement("img");
+    img.setAttribute("src", source.getAttribute("src"));
+    img.setAttribute("alt", source.getAttribute("alt") || "");
+    return img;
+  }
+  function clean5(text10) {
+    return (text10 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
+  }
+  function headline(overlay, document) {
+    const out = [];
+    const headings = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6")];
+    const lineEls = [...overlay.querySelectorAll(".line")];
+    let lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
+    if (headings.length && lineEls.length) {
+      lines = lineEls.map((line) => line.querySelector("h1, h2, h3, h4, h5, h6") || line);
     }
+    lines.forEach((line) => {
+      if (!clean5(line.textContent)) return;
+      const el3 = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : "p");
+      const box = document.createElement("div");
+      box.innerHTML = line.innerHTML;
+      box.querySelectorAll("span.futura-bold, b").forEach((span) => {
+        const strong = document.createElement("strong");
+        while (span.firstChild) strong.append(span.firstChild);
+        span.replaceWith(strong);
+      });
+      box.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
+      box.querySelectorAll("a").forEach((a) => {
+        if (!(a.getAttribute("href") || "").trim()) a.replaceWith(...a.childNodes);
+      });
+      box.querySelectorAll("strong strong").forEach((s) => s.replaceWith(...s.childNodes));
+      box.querySelectorAll("*").forEach((node) => {
+        [...node.attributes].forEach((attr) => {
+          if (!(node.tagName === "A" && attr.name === "href")) node.removeAttribute(attr.name);
+        });
+      });
+      while (box.firstChild && box.firstChild.nodeType === 3 && !box.firstChild.textContent.trim()) box.firstChild.remove();
+      while (box.lastChild && box.lastChild.nodeType === 3 && !box.lastChild.textContent.trim()) box.lastChild.remove();
+      while (box.firstChild) el3.append(box.firstChild);
+      out.push(el3);
+    });
+    return out;
+  }
+  function percent(style, re) {
+    const m = style.match(re);
+    return m ? String(parseFloat(m[1])).replace(".", "-") : null;
+  }
+  function parse3(element, { document }) {
+    const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
+    const desktop = slide.querySelector(".experienceFragment-ef img");
+    const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
+    const overlay = slide.querySelector(".overlayparsys");
+    const first = desktop || mobile || slide.querySelector("img");
+    if (!first) return;
+    const variants = ["image-slide"];
+    const cells = [[copyImage(first, document)]];
+    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+    if (overlay) {
+      const lines = headline(overlay, document);
+      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        const a = document.createElement("a");
+        a.setAttribute("href", btn.getAttribute("href"));
+        a.textContent = clean5(btn.textContent);
+        strong.append(a);
+        p.append(strong);
+        lines.push(p);
+      });
+      if (lines.length) cells.push([lines]);
+      const style = overlay.getAttribute("style") || "";
+      const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
+      const left = percent(style, /margin-left:\s*(\d+(?:\.\d+)?)%/i);
+      const right = percent(style, /width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
+      if (top !== null) variants.push(`top-${top}`);
+      if (left !== null) variants.push(`left-${left}`);
+      if (right !== null) variants.push(`right-${right}`);
+      const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
+      const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
+      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+      if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
+      if (overlay.querySelector(".has-background.bg-white")) variants.push("white-box");
+      if (overlay.querySelector(".has-background.bg-blue")) variants.push("blue-box");
+      const gold = overlay.querySelector(".has-background.bg-gold");
+      if (gold) {
+        variants.push("gold-box");
+        const margin = parseFloat(percent(gold.getAttribute("style") || "", /margin-right:\s*(\d+(?:\.\d+)?)%/i) || "0");
+        if (margin) {
+          const l = parseFloat((left || "0").replace("-", "."));
+          const r = parseFloat((right || "0").replace("-", "."));
+          const inset = Math.round((r + (100 - l - r) * margin / 100) * 10) / 10;
+          const i = variants.findIndex((v) => v.startsWith("right-"));
+          const token = `right-${String(inset).replace(".", "-")}`;
+          if (i >= 0) variants[i] = token;
+          else variants.push(token);
+        }
+      }
+    }
+    element.replaceWith(WebImporter.Blocks.createBlock(document, {
+      name: `Hero Corp (${variants.join(", ")})`,
+      cells
+    }));
+  }
+
+  // tools/importer/base/forms.js
+  var WIDTH = /\bcol-sm-(\d+)\b/;
+  function formLayouts(document) {
+    document.querySelectorAll(".c-marketo-form").forEach((component) => {
+      const col = component.closest('[class*="col-sm-"]');
+      const cols = col ? [...col.parentElement.children].filter((c) => WIDTH.test(c.className)) : [];
+      if (cols.length !== 2 || Number(col.className.match(WIDTH)[1]) !== 8) return;
+      component.setAttribute("data-form-style", cols[0] === col ? "flex, flex-67-33" : "flex, flex-33-67");
+    });
+  }
+  function placeholder(document, type, name, href) {
+    const holder = document.createElement("div");
+    holder.className = "c-rich-text-editor";
+    const p = document.createElement("p");
+    const label = document.createElement("strong");
+    label.textContent = "Embedded form placeholder:";
+    p.append(label, ` ${type}${name ? ` (${name})` : ""} is not migrated.`);
+    if (href) {
+      const a = document.createElement("a");
+      a.href = href;
+      a.textContent = "Source embed";
+      p.append(" ", a);
+    }
+    holder.append(p);
+    return holder;
+  }
+  var outermost = (el3, selector) => !el3.parentElement.closest(selector);
+  function embeds(document) {
+    document.querySelectorAll(".adobesignwebform").forEach((el3) => {
+      if (!outermost(el3, ".adobesignwebform")) return;
+      const href = el3.querySelector("iframe[src]")?.getAttribute("src");
+      if (href) el3.replaceWith(placeholder(document, "Adobe Sign form", "", href));
+    });
+    document.querySelectorAll(".remotecomponent").forEach((el3) => {
+      const [name, href] = (el3.querySelector("input.hdnSelComp")?.getAttribute("value") || "").split("|");
+      el3.replaceWith(placeholder(document, "Stryker remote component", name, href));
+    });
+    document.querySelectorAll(".cventcomponent").forEach((el3) => {
+      el3.replaceWith(placeholder(document, "Cvent calendar widget", "", ""));
+    });
+  }
+  function videos(document) {
+    document.querySelectorAll(".c-standalone-video").forEach((component) => {
+      const a = videoLink(component, document);
+      if (!a) return;
+      const name = component.classList.contains("hide-border") ? "Video" : "Video (border)";
+      const block = WebImporter.Blocks.createBlock(document, { name, cells: [[a]] });
+      block.setAttribute("data-keep", "section");
+      const caption = component.querySelector(".desc-content");
+      (component.closest(".standalonevideo") || component).replaceWith(block);
+      if (caption && caption.textContent.trim()) {
+        const holder = document.createElement("div");
+        holder.className = "c-rich-text-editor";
+        holder.append(...[...caption.querySelectorAll("p")].map((p) => {
+          const copy = document.createElement("p");
+          copy.textContent = p.textContent.trim();
+          return copy;
+        }));
+        block.after(holder);
+      }
+    });
+  }
+  var lineText = (el3) => (el3.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
+  function videoCarousels(document) {
+    document.querySelectorAll(".c-autocarousel").forEach((carousel2) => {
+      const slides = [...carousel2.querySelectorAll(".carouselslide:not(.slick-cloned)")];
+      const links = [];
+      const parts = [];
+      slides.forEach((slide) => {
+        const video2 = slide.querySelector(".experienceFragment-ef .c-standalone-video");
+        const a = video2 && videoLink(video2, document);
+        if (a && !links.includes(a.href)) {
+          links.push(a.href);
+          const block = WebImporter.Blocks.createBlock(document, { name: "Video", cells: [[a]] });
+          block.setAttribute("data-keep", "section");
+          parts.push(block);
+        }
+      });
+      if (!parts.length) return;
+      const lines = slides.flatMap((slide) => [...slide.querySelectorAll(".overlayparsys .line")]).filter((line) => lineText(line));
+      if (lines.length) {
+        const holder = document.createElement("div");
+        holder.className = "c-rich-text-editor";
+        lines.forEach((line) => {
+          const el3 = document.createElement(line.querySelector("h1, h2, h3, h4, h5, h6") ? "h2" : "p");
+          el3.textContent = lineText(line);
+          holder.append(el3);
+        });
+        parts.push(holder);
+      }
+      carousel2.replaceWith(...parts);
+    });
+  }
+  function heroSlides(main, document) {
+    main.querySelectorAll(".c-autocarousel").forEach((el3) => parse3(el3, { document }));
+  }
+  var forms_default = {
+    preprocess,
+    transform: (payload) => transformEventPage(payload, "forms", (document) => {
+      videoCarousels(document);
+      videos(document);
+      formLayouts(document);
+      embeds(document);
+    }, heroSlides)
   };
 
   // tools/importer/import-base.js
@@ -20474,7 +20738,8 @@ var CustomImportScript = (() => {
     webinar: webinar_default,
     people: people_default,
     footnotes: footnotes_default,
-    events: events_default
+    events: events_default,
+    forms: forms_default
   };
   var import_base_default = {
     preprocess: (payload) => BUILDERS[groupOf(payload.url)].preprocess?.(payload),

@@ -430,7 +430,7 @@ export function preprocess({ document }) {
 }
 
 // the page of `group` (legal, or events: the same builder, no legal theme)
-export function transformPage(payload, group) {
+export function transformPage(payload, group, built) {
   const { document, url, params } = payload;
   const main = document.body;
   const hcp = !!document.querySelector('.g-hcpbanner');
@@ -446,6 +446,8 @@ export function transformPage(payload, group) {
   contacts(main, document, contactReport);
   splitStandaloneLinks(main, document);
   executeTransformers('beforeTransform', main, payload);
+  // the page is built; its images are not yet Dynamic Media links
+  built?.(main, document);
   executeTransformers('afterTransform', main, payload);
   const bracketStyles = stripBrackets(main, document);
   committeeColumns(main, document, url);

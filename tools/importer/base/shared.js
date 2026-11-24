@@ -4,7 +4,7 @@
  */
 import PAGE_TAGS from '../page-tags.json';
 
-export const GROUPS = ['legal', 'patents', 'webinar', 'people', 'footnotes', 'events'];
+export const GROUPS = ['legal', 'patents', 'webinar', 'people', 'footnotes', 'events', 'forms'];
 
 // The empty news-archive and global-events pages and the 2018/2019 event and LINNC pages (#527),
 // scattered over the site, so listed one by one (lower case: the EDS path)
@@ -22,6 +22,48 @@ const EVENT_PAGES = new Set([
   '/us/en/training-and-education/orthopaedics/trauma-extremities',
 ]);
 
+// The gated-content, event and form pages (#520, #521) built around a Marketo form or an embedded
+// tool, scattered over the site, so listed one by one (lower case: the EDS path)
+const FORM_PAGES = new Set([
+  '/us/en/acute-care/c/empowered-to-care-safe-patient-handling-and-nurse-protection',
+  '/us/en/acute-care/c/hands-free-communication-nursing-care-eguide',
+  '/us/en/acute-care/c/leading-the-digital-shift-nurse-executives-driving-future-care',
+  '/us/en/acute-care/c/smart-communication-to-enhance-school-safety',
+  '/us/en/acute-care/c/smart-emergency-communication-that-goes-beyond-the-panic-button',
+  '/us/en/care-settings/asc/events',
+  '/us/en/care-settings/asc/events/aahks-2025',
+  '/us/en/emergency-care/c/mini-pro-pediatric-restraints',
+  '/us/en/emergency-care/webinars/empowering-nurses-and-rapid-response-teams',
+  '/us/en/emergency-care/webinars/ems1-webinar_with-or-without-capnography',
+  '/us/en/emergency-care/webinars/improving-cognitive-offloading-for-nurses',
+  '/us/en/services-and-solutions/hospital-supply-chain-solutions/events/ahrmm',
+  '/us/en/services-and-solutions/hospital-supply-chain-solutions/events/enterprise-product-showcase-cleveland',
+  '/us/en/services-and-solutions/hospital-supply-chain-solutions/events/enterprise-product-showcase-orlando',
+  '/us/en/services-and-solutions/hospital-supply-chain-solutions/events/enterprise-product-showcase',
+  '/us/en/services-and-solutions/hospital-supply-chain-solutions/events/healthtrust-university',
+  '/us/en/services-and-solutions/hospital-supply-chain-solutions/events/premier-breakthroughs',
+  '/us/en/services-and-solutions/hospital-supply-chain-solutions/events/vizient-connections',
+  '/us/en/smart-care/c/reclaiming-time-for-care-human-centered-workflows-in-healthcare',
+  '/us/en/sustainability/events',
+  '/us/en/about/governance/product-security',
+  '/us/en/acute-care/medical-information-request',
+  '/us/en/acute-care/tools/falls-reduction-tool-calculator',
+  '/us/en/acute-care/tools/pressure-injury-tool-calculator',
+  '/us/en/c/2019/global-power-tools/contact-us',
+  '/us/en/care-settings/asc/contact',
+  '/us/en/emergency-care/device-registration',
+  '/us/en/emergency-care/device-registration/lifepak-form',
+  '/us/en/emergency-care/medical-information-request',
+  '/us/en/endoscopy/recalls/1688-ccu',
+  '/us/en/endoscopy/recalls/1688-ccu/customer',
+  '/us/en/endoscopy/recalls/1688-ccu/sales-representative',
+  '/us/en/endoscopy/recalls/fiber-optic-light-cables',
+  '/us/en/sage/clinical-research-support',
+  '/us/en/sage/medical-information-request',
+  '/us/en/services-and-solutions/procare/medical',
+  '/us/en/training-and-education/calendar',
+]);
+
 const pathOf = (url) => new URL(url, 'https://www.stryker.com').pathname
   .replace(/\/$/, '').replace(/\.html?$/, '');
 
@@ -33,6 +75,7 @@ const pathOf = (url) => new URL(url, 'https://www.stryker.com').pathname
 export function groupOf(url) {
   const path = pathOf(url);
   if (/^\/us\/en\/about\/(patents|trademarks)(\/|$)/.test(path)) return 'patents';
+  if (FORM_PAGES.has(path.toLowerCase())) return 'forms';
   if (/^\/us\/en\/(sage\/webinars|emergency-care\/webinars|sage\/videos\/sage-mp-mats-2-demo)/.test(path)) return 'webinar';
   if (/^\/us\/en\/about\/(our-management\/leaders|our-board-of-directors\/directors)/.test(path)) return 'people';
   if (path.startsWith('/us/en/interventional-spine/footnotes')) return 'footnotes';
@@ -41,7 +84,9 @@ export function groupOf(url) {
 }
 
 // Pages whose theme the bulk metadata sheet does not assign (see the PR): legal pages and one video
-const PAGE_THEME = { legal: 'legal', footnotes: '', events: '' };
+const PAGE_THEME = {
+  legal: 'legal', footnotes: '', events: '', forms: '',
+};
 
 /** Page metadata of every `base` page: template, theme (when the sheet has none) and tags. */
 export function applyBaseMeta(meta, url, group) {

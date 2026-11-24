@@ -252,19 +252,23 @@ function hoistNestedBlocks(main) {
   });
 }
 
+/** The page of `group` built like the event pages (the page-specific steps run in `before`). */
+export function transformEventPage(payload, group, before, built) {
+  const { document } = payload;
+  decodeAlts(document);
+  fixTypos(document);
+  singleFullWidthImages(document);
+  relatedProducts(document);
+  heroTitle(document);
+  carousel(document);
+  before?.(document);
+  const result = transformPage(payload, group, built);
+  placeTitle(result[0].element);
+  hoistNestedBlocks(result[0].element);
+  return result;
+}
+
 export default {
   preprocess,
-  transform: (payload) => {
-    const { document } = payload;
-    decodeAlts(document);
-    fixTypos(document);
-    singleFullWidthImages(document);
-    relatedProducts(document);
-    heroTitle(document);
-    carousel(document);
-    const result = transformPage(payload, 'events');
-    placeTitle(result[0].element);
-    hoistNestedBlocks(result[0].element);
-    return result;
-  },
+  transform: (payload) => transformEventPage(payload, 'events'),
 };

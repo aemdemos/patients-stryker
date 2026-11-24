@@ -43,6 +43,7 @@ var CustomImportScript = (() => {
     if (value.startsWith("/") && !value.startsWith("//")) rest = value;
     else if (hostRe.test(value)) rest = value.replace(hostRe, "") || "/";
     else return null;
+    rest = rest.replace(/^\/{2,}/, "/");
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
@@ -514,6 +515,31 @@ var CustomImportScript = (() => {
     if (!entry) return null;
     return entry.fragment || xfToFragmentPath(xf);
   }
+
+  // tools/importer/base/shared.js
+  var EVENT_PAGES = /* @__PURE__ */ new Set([
+    ...["2011", "2012", "2013", "2014", "2015", "2016", "2017", "features", "press-kit"].map((n) => `/us/en/about/news/${n}`),
+    ...[
+      "2018/acfas",
+      "2018/aofas2018",
+      "2018/ormanagers",
+      "2019/2019-post-ota-newsletter-page",
+      "2019/acfas",
+      "2019/asbrs-2019",
+      "2019/assh",
+      "2019/global-power-tools",
+      "2019/iahcsmm-2019",
+      "2019/rebuild-lives"
+    ].map((n) => `/us/en/c/${n}`),
+    "/us/en/global-events",
+    "/us/en/global-events/sports-medicine",
+    "/us/en/global-events/sports-medicine/association-meetings",
+    "/us/en/global-events/sports-medicine/training",
+    "/us/en/global-events/trauma-and-extremities/association-meetings/2018/ota-2018",
+    "/us/en/neurovascular/c/linnc-paris",
+    "/us/en/neurovascular/c/linnc-paris/index",
+    "/us/en/training-and-education/orthopaedics/trauma-extremities"
+  ]);
 
   // tools/importer/transformers/long-page-detail-corp-components.js
   var COMPONENT = '[class^="c-"], [class*=" c-"]';

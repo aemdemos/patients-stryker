@@ -360,7 +360,12 @@ function marketoBlock(container, doc) {
     ['Munchkin ID', form.getAttribute('data-marketo-munchkin-id') || ''],
     ['Form ID', form.getAttribute('data-marketo-form-id') || ''],
   ];
-  return WebImporter.Blocks.createBlock(doc, { name: 'Marketo Form', cells });
+  const block = WebImporter.Blocks.createBlock(doc, { name: 'Marketo Form', cells });
+  // a page builder may ask for the section style of the form (`data-form-style`)
+  const style = (container.matches('[data-form-style]') ? container : container.querySelector('[data-form-style]'))
+    ?.getAttribute('data-form-style');
+  if (style) block.setAttribute('data-section-style', style);
+  return block;
 }
 
 const CELL_COMPONENTS = [
