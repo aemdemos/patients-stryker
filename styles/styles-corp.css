@@ -35,6 +35,8 @@
   --corp-heading-font-size-h1-1-5: 42px; /* measured: a 1.5em span in a 28px source h1 (AED buying guide) */
   --corp-heading-font-size-h1-0-8: 22.4px; /* measured: a 0.8em span in a 28px source h1 (subtitle line) */
   --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
+  --corp-page-title-line-height-s: 22.26px; /* measured: source page hero h1.title lines below 841px (TEACH thank-you) */
+  --corp-page-title-margin-top: 28px; /* measured: source page hero h1.title top margin (TEACH thank-you) */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
   --corp-paragraph-indent: 40px; /* measured: source rich-text paragraph style margin-left: 40px (BACS banner item lines) */
