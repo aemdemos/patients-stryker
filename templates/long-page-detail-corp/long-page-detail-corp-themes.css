@@ -675,3 +675,17 @@ body.long-page-detail-corp.skill main .hero-corp.banner.half-text > div:last-chi
 body.long-page-detail-corp.skill main .accordion-item + .accordion-item {
   margin-top: var(--space-block);
 }
+
+/* theme `spine-meded` (above): in a row of labelled cells (resources lab locations), a cell
+   without a label (stryker.com: an empty first line,
+   "Mako Education Center" beside "Bioskills Lab") starts one line lower, level with the other
+   cells' text */
+body.long-page-detail-corp.spine-meded main .columns.stack.serif > div:has(> div > p.columns-bold:first-child) > div:not(:has(> p.columns-bold:first-child)) {
+  padding-top: calc(var(--corp-blank-line) + var(--space-block-xs));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.spine-meded main .columns.stack.serif > div:has(> div > p.columns-bold:first-child) > div:not(:has(> p.columns-bold:first-child)) {
+    display: block;
+  }
+}
