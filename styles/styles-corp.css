@@ -44,6 +44,32 @@
   --local-nav-title-line-height: 1.15; /* 17.5px / 20.125px */
   --local-nav-links-end: 55px; /* from 600px: the pages end 55px before the right edge (the source keeps room for its overflow button) */
 
+  /* charts (blocks/chart) — measured: stryker.com Google charts (modular dual mobility, ULTRA
+     registry, Surpass Evolve) */
+  --chart-font-family: cambo, var(--heading-font-family); /* the charts' text font on stryker.com */
+  --chart-grid-color: #edeeec; /* a line at each step */
+  --chart-grid-minor-color: #f8f8f7; /* a lighter line half way */
+  --chart-legend-color: #222;
+  --chart-plot-height: 124px; /* column charts: 200px with 38px above and below */
+  --chart-plot-top: 38px;
+  --chart-label-space: 38px; /* column charts: the category labels under the bars (2 lines) */
+  --chart-plot-inset: max(64px, 12.4cqw); /* column charts: the axis left, the same space right */
+  --chart-bar-inset: max(70px, 13.3cqw); /* bar charts: the category labels left of the bars */
+  --chart-bar-top: 59px; /* bar charts: space above the first bar's row */
+  --chart-bar-bottom: 34px; /* bar charts: the ticks under the bars, to the axis title */
+  --chart-bar-row: 61px; /* bar charts: one bar (30px) and its space */
+  --chart-text-gap: 8px; /* tick labels to the plot */
+  --chart-value-gap: 9px; /* a value above its column */
+  --chart-axis-title-space: 28px; /* column charts: the turned axis title left of the ticks */
+  --chart-pie-size: min(360px, 55cqw);
+  --chart-pie-inset: 5.5cqw; /* pies: space left of the pie */
+  --chart-pie-label-radius: 43.5%; /* a slice's value from the centre, of the pie's width (7/8 of its radius) */
+  --chart-pie-height: 400px;
+  --chart-legend-gap: 40px; /* pie to legend */
+  --chart-legend-line: 23px;
+  --chart-text-line: 18px; /* bar charts: the lines of a label left of its bar */
+  --chart-legend-swatch: 7px;
+
   /* carousel (blocks/carousel-corp) — measured: stryker.com slick carousels, augment (image
      slides) and Malis / ACFAS 2018 (split slides) */
   --carousel-corp-speed: 300ms; /* slide / fade transition (slick speed 300) */

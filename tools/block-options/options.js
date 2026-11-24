@@ -10,7 +10,8 @@
  * 'cells-3+', 'cells-4', 'images', 'caption' (a photo with text under it), 'image-first' (an
  * image in the first cell, text beside it), 'links', 'link-lists', 'text', 'box' (a cell box
  * chosen), 'gradient-box' (a gradient box colour chosen), 'video' / 'dm-video' (a video link / a
- * Dynamic Media one) or 'rows-2+' / 'rows-4+' / 'rows-6+' (that many rows). The panel greys out
+ * Dynamic Media one), 'rows-2+' / 'rows-4+' / 'rows-6+' (that many rows) or 'bars' (a column or
+ * bar chart, not a pie). The panel greys out
  * a choice that doesn't fit, with the reason; `hint` says what the choice does.
  *
  * Keep in step with the block (its header comment lists the options) and its Block Library
@@ -265,6 +266,30 @@ export const BLOCK_OPTIONS = {
           ['open', 'Panels start open', { hint: 'Every panel starts open; a click still closes it' }],
           ['divided', 'Line under each label', { hint: 'A grey line under each closed label' }],
           ['gray-list', 'Lists in a light grey box', { needs: ['lists'], hint: 'The list in each panel sits in a light grey box' }],
+        ],
+      },
+    ],
+  },
+  // stryker.com charts (docs/standardisation/chart.md): the chart type, and the values written
+  // on the columns or bars. The colours are the rows' own (exact stryker.com colours).
+  chart: {
+    label: 'Chart',
+    groups: [
+      {
+        id: 'type',
+        label: 'Chart type',
+        required: true,
+        options: [
+          ['column', 'Columns', { hint: 'Vertical bars, the axis on the left' }],
+          ['bar', 'Bars', { hint: 'Horizontal bars, the labels on the left' }],
+          ['pie', 'Pie', { hint: 'Slices with their values, the legend on the right' }],
+        ],
+      },
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['data-labels', 'Values on the bars', { needs: ['bars'], hint: 'Each value above its column or at the end of its bar' }],
         ],
       },
     ],

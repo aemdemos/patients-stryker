@@ -961,9 +961,86 @@ function microApps(main, doc) {
   });
 }
 
+// in review (staging build only, STD_DRAFT_IMPORT; docs/standardisation/chart.md): a
+// stryker.com Google chart (.c-animated-bar-chart: Column / Bar; [data-widget="pie-chart"])
+// → `Chart (column | bar | pie[, data-labels])`: the title, a row per bar or slice (label,
+// value, its exact colour), the axis title and maximum. Value formats (percent, currency) only
+// show in stryker.com's tooltips and are not carried over.
+const hexOf = (rgba) => {
+  const m = String(rgba).match(/(\d+)\D+(\d+)\D+(\d+)/);
+  return m ? `#${m.slice(1, 4).map((c) => Number(c).toString(16).padStart(2, '0')).join('')}` : '';
+};
+
+function chartBlock(component, doc) {
+  const value = (cls) => {
+    const input = component.querySelector(`input.${cls}`);
+    return input ? (input.value || input.getAttribute('value') || '').trim() : '';
+  };
+  const pie = component.matches('[data-widget="pie-chart"]');
+  const rows = [];
+  const title = value('chartTitle');
+  if (title) {
+    const cell = doc.createElement('div');
+    if (/<p[\s>]/.test(title)) {
+      const parsed = new DOMParser().parseFromString(title, 'text/html');
+      // the title's sizes and fonts → bracket tags (Text style markers, corp-text-markers.js);
+      // Futura bold → bold
+      [...parsed.body.querySelectorAll('span')].reverse().forEach((span) => {
+        const size = (span.className.match(/\bfontsize-(\d+(?:-\d+)?)em\b/) || [])[1];
+        const tags = [size ? `text-${size}` : '', /\burw-egyptienne\b/.test(span.className) ? 'serif' : '']
+          .filter(Boolean);
+        const inner = [...span.childNodes];
+        if (/\bfutura-bold\b/.test(span.className)) {
+          const strong = doc.createElement('strong');
+          strong.append(...inner);
+          span.replaceWith(strong);
+          return;
+        }
+        if (tags.length) span.replaceWith(doc.createTextNode(`[[${tags.join(',')}]`), ...inner, doc.createTextNode(']'));
+        else span.replaceWith(...inner);
+      });
+      cell.append(...parsed.body.childNodes);
+    } else {
+      const p = doc.createElement('p');
+      p.textContent = title;
+      cell.append(p);
+    }
+    rows.push([cell]);
+  }
+  [...component.querySelectorAll('select option')].forEach((option) => {
+    const raw = option.textContent.trim();
+    // bars: "rgba(…)|label|true"; slices: "label + value +rgba(…)"
+    const parts = pie ? raw.split(/\s*\+\s*/) : raw.split('|');
+    const label = pie ? parts[0] : parts[1];
+    const colour = hexOf(pie ? parts[2] : parts[0]);
+    if (label === undefined) return;
+    rows.push([label.trim(), option.getAttribute('value') || '', colour]);
+  });
+  if (!pie && value('yAxisTitle')) rows.push(['Axis title', value('yAxisTitle')]);
+  if (!pie && value('maxValue')) rows.push(['Axis maximum', value('maxValue')]);
+  let type = value('chartType').toLowerCase() === 'bar' ? 'bar' : 'column';
+  if (pie) type = 'pie';
+  const options = [type];
+  if (!pie && value('dataLabelDisplay') === 'true') options.push('data-labels');
+  return WebImporter.Blocks.createBlock(doc, { name: `Chart (${options.join(', ')})`, cells: rows });
+}
+
+function charts(main, doc) {
+  main.querySelectorAll('.c-animated-bar-chart, [data-widget="pie-chart"]').forEach((component) => {
+    if (!component.querySelector('select option')) return;
+    const from = component.closest('.animatedbarchart, .pieChart') || component;
+    const block = chartBlock(component, doc);
+    // in a column row it is a part of a side-by-side section, as a Table (long-page-detail-corp-
+    // sections.js): no block inside Columns
+    block.setAttribute('data-std-table', '');
+    from.replaceWith(keepBlock(block, from));
+  });
+}
+
 function numberCounters(main, doc, h) {
   if (STD_DRAFT_IMPORT) microApps(main, doc);
   if (STD_DRAFT_IMPORT) statisticsBlocks(main, doc);
+  if (STD_DRAFT_IMPORT) charts(main, doc);
   main.querySelectorAll('.numbercounter').forEach((component) => {
     const widget = component.querySelector('[data-widget="numbercounter"]');
     if (!widget) return;

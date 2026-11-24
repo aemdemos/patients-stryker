@@ -212,6 +212,7 @@ function unfit(needs, facts) {
       ? '' : `pick a ${def().groups.find((g) => g.id === 'box')?.label || 'box'} first`,
     'gradient-box': def().groups.some((g) => g.id === 'box' && /-gradient$/.test(selectedIn(g, draft)))
       ? '' : 'needs a gradient box colour',
+    bars: draft.includes('pie') ? 'needs a column or bar chart (a pie always shows its values)' : '',
   };
   return needs.map((n) => reasons[n]).find(Boolean) || '';
 }
