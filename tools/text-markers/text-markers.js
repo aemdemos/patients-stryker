@@ -30,7 +30,7 @@ const LABELS = {
   l: 'Large (1.25×)',
   xl: 'X-large (1.5×)',
   xxl: 'XX-large (1.75×)',
-  'rule-gold': 'Gold rule (underlined heading)',
+  'rule-gold': 'Gold rule under a heading',
   'box-gold': 'Box: gold',
   'box-blue': 'Box: blue',
   'box-purple': 'Box: purple',
@@ -214,14 +214,67 @@ function choiceGroup(title, options, current, onPick, { swatch = false } = {}) {
       'data-value': value,
       'aria-checked': String(value === current),
       title: value ? `${label} — word “${value}”` : 'No change',
-      onclick: () => select(value),
+      // a choice that doesn't fit the selection (special looks) is greyed out with its reason
+      onclick: () => { if (button.getAttribute('aria-disabled') !== 'true') select(value); },
     }, swatch && value ? el('span', { class: 'tm-dot', 'aria-hidden': 'true' }) : null, label);
     if (swatch && value) button.dataset.colour = value;
     buttons.push(button);
     row.append(button);
   });
   group.append(row);
+  group.select = select;
   return group;
+}
+
+/*
+ * Special looks fit only some text, as Block options fit only some blocks: the gold rule draws
+ * a rule under a heading, and a box goes around a whole line (on part of a sentence it would
+ * break the sentence apart). The panel greys out a look that doesn't fit the selection, with
+ * the reason and what the look does on hover; a look the words already have stays available.
+ */
+const LOOK_HINTS = {
+  'rule-gold': 'A gold rule under the heading (stryker.com feature titles)',
+};
+const boxHint = (word) => `The whole line in a ${(LABELS[word] || labelOf(word)).replace(/^Box: /, '').replace(/ \(.*\)$/, '').toLowerCase()} box`;
+
+// what the panel knows about the selection: its line's tag, whether it is the whole line
+// (null when the document can't be read), and the marker words it already has
+let selectionFacts = null;
+let lookGroup;
+
+/**
+ * Why a look doesn't fit the selection, or '' when it does.
+ * @param {string} word The look's marker word
+ * @returns {string} The reason
+ */
+function lookUnfit(word) {
+  if (!selectionFacts) return 'select the words in the document first';
+  if (`-${selectionFacts.old}-`.includes(`-${word}-`)) return '';
+  if (word === 'rule-gold' && !/^H[1-6]$/.test(selectionFacts.tag)) return 'it goes under a heading (the selection is in a paragraph or list)';
+  if (word.startsWith('box-') && selectionFacts.whole === false) return 'select the whole line: the box goes around the whole line';
+  return '';
+}
+
+/** greys out the looks that don't fit the selection, and drops a picked look that no longer fits */
+function updateLooks() {
+  if (!lookGroup) return;
+  let reasons = 0;
+  const buttons = [...lookGroup.querySelectorAll('.tm-choice')].filter((b) => b.dataset.value);
+  buttons.forEach((button) => {
+    const word = button.dataset.value;
+    const reason = lookUnfit(word);
+    const label = button.textContent.trim();
+    const hint = LOOK_HINTS[word] || (word.startsWith('box-') ? boxHint(word) : '');
+    button.classList.toggle('tm-unfit', !!reason);
+    if (reason) button.setAttribute('aria-disabled', 'true');
+    else button.removeAttribute('aria-disabled');
+    button.title = [reason ? `Not available here: ${reason}.` : '', hint ? `${hint}.` : '', `${label} — word “${word}”`]
+      .filter(Boolean).join(' ');
+    if (reason) reasons += 1;
+    if (reason && state.look === word) lookGroup.select('');
+  });
+  const note = lookGroup.querySelector('.tm-reason');
+  note.hidden = reasons !== buttons.length;
 }
 
 // containers the editor wraps a selection in (a selection inside a block comes back inside
@@ -389,6 +442,22 @@ async function findBlock(words) {
   const sectionStyles = styleRow
     ? styleRow.children[1].textContent.split(',').map(toClassName).filter(Boolean) : [];
   return { block: block.outerHTML, sectionStyles, name: block.classList[0] };
+}
+
+/**
+ * Whether the selected words are their whole line, from the document (null when unknown).
+ * @param {string} words The selected words
+ * @returns {Promise<boolean|null>} The answer
+ */
+async function isWholeLine(words) {
+  const html = await documentHtml();
+  const target = plain(words);
+  if (!html || !target) return null;
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const lines = [...doc.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')]
+    .filter((line) => plain(line.textContent).includes(target));
+  if (!lines.length) return null;
+  return lines.some((line) => plain(line.textContent) === target);
 }
 
 /*
@@ -665,14 +734,16 @@ function render() {
   }, name === 'desktop' ? 'Desktop' : 'Phone'));
   viewToggle = el('div', { class: 'tm-choices', role: 'radiogroup', 'aria-label': 'Preview width' }, ...viewButtons);
 
+  lookGroup = choiceGroup('Special look', lists.look, state.look, (v) => { state.look = v; });
+  lookGroup.append(el('p', { class: 'tm-hint tm-reason', hidden: true }, 'Greyed out: select the words in the document first.'));
   const choices = el(
     'div',
     { class: 'tm-choices-wrap' },
     choiceGroup('Colour', lists.colour, state.colour, (v) => { state.colour = v; }, { swatch: true }),
     choiceGroup('Font', lists.font, state.font, (v) => { state.font = v; }),
     choiceGroup('Size (relative to the text around it)', lists.size, state.size, (v) => { state.size = v; }),
-    choiceGroup('Special look', lists.look, state.look, (v) => { state.look = v; }),
-    el('p', { class: 'tm-hint' }, 'A box look puts the whole line in a box. Bold and italic stay normal editor formatting; spacing around a box is set in Block options.'),
+    lookGroup,
+    el('p', { class: 'tm-hint' }, 'The gold rule goes under a heading; a box goes around a whole line. Looks that don’t fit the selection are greyed out: hover for why. Bold and italic stay normal editor formatting.'),
   );
 
   const apply = el('button', { type: 'button', class: 'tm-primary', onclick: applyToSelection }, 'Style selected text');
@@ -703,6 +774,7 @@ function render() {
   );
   listenToPreview(choices);
   window.addEventListener('resize', sizePreview);
+  updateLooks();
   updatePreview();
 }
 
@@ -728,7 +800,10 @@ function watchSelection() {
     }
     previewLine = line && line.words.trim() ? line : null;
     previewBlock = previewLine ? await findBlock(previewLine.words) : null;
+    const whole = previewLine ? await isWholeLine(previewLine.words) : null;
     if (html !== lastSelection) return; // the selection moved on while the block was read
+    selectionFacts = previewLine ? { tag: previewLine.tag, whole, old: previewLine.old || '' } : null;
+    updateLooks();
     updatePreview();
   };
   setInterval(check, 1000);

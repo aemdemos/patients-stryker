@@ -476,6 +476,14 @@ body.corp.std-draft main strong:has(> a.link-inline:any-link) {
   font-size: var(--heading-font-size-xxl);
 }
 
+/* gold rule (Text style look rule-gold, in review on draft pages): the heading draws a gold
+   rule under it, the title keeping its own colour (stryker.com feature titles: a Futura title
+   over a gold rule), whether or not the heading is underlined */
+:where(body.corp.std-draft) main :is(h1, h2, h3, h4, h5, h6):has(span.text-marker.rule-gold) {
+  padding-bottom: var(--heading-underline-gap);
+  border-bottom: 1px solid var(--color-accent);
+}
+
 /* h-serif section style: the section's h2 / h3 in Egyptienne Light (live h2 / h3 without
    span.futura-bold) instead of Futura bold; h4 stays Futura, as live */
 :where(body.corp) main > .section.h-serif > div :is(h2, h3) {

@@ -272,6 +272,10 @@ Only the package's limited sets are offered; every stryker.com value joins the n
 | Font | body, serif (Egyptienne), sans (Futura bold) | the 6 font looks of stryker.com |
 | Text colour | the 7 brand colours stryker.com text uses (blue, gold, purple, teal, grey, white, light grey) and 4 more Stryker colours: black, mid grey #b2b4ae, dark gold #af6d04, pale grey #dfe1de | exact values only, never blended; the same colour written two ways counts once. A charcoal (#323232, 93 uses) is a code typed by authors, not a component colour, so it is not a choice (section 7) |
 | Line box | the 6 colours stryker.com puts around a single line: gold, blue, purple, teal, dark grey, dark purple gradient | exact values |
+| Gold rule | a gold rule under a heading (stryker.com feature titles) | the heading's own rule, in gold |
+
+The panel greys out a look that doesn't fit the selection, with the reason on hover: the gold rule
+needs a heading, a line box needs the whole line selected.
 
 Two fixes make the text read as on stryker.com:
 

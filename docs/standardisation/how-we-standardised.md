@@ -73,6 +73,10 @@ of text): capitals (0 runs), navy (0 runs; still a box and number colour), spaci
 (padding and margin belong to the box: Block options, or the block's standard gap), and boxes around a
 line in white, light grey or dark blue gradient (those are cell and card box colours).
 
+**Special looks fit only some text.** The gold rule goes under a **heading**; a line box goes around a
+**whole line**. The Text style panel greys out a look that doesn't fit the selected words and says why on
+hover ("it goes under a heading", "select the whole line"), as Block options do for blocks.
+
 # 4. How values were grouped
 
 | Setting | Rule | Example |
