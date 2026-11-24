@@ -1,0 +1,150 @@
+/*
+ * News List (docs/standardisation/news-list.md), in review: rendered on draft pages only
+ * (news-list.js). Measured on stryker.com (Acute Care newsroom, News and features), 1440 / 390:
+ * - tabs: Futura 14px capitals, black, 12px above and 7px below, the selected one with a 1px
+ *   gold line under it, labels 61px apart; 35px to "Showing n of N" (Humanist 14px);
+ * - an article every 30px (20px on phones) with a 1px light grey line under it: from 900px the
+ *   image in the first third (its gutter 30px), the text beside it; on phones stacked;
+ * - date (show-dates) Futura bold 14px; title Egyptienne 24.5px (21px on phones); description
+ *   Humanist 14px; READ MORE in teal Futura bold 14px with a chevron; LOAD MORE a teal button.
+ */
+body.corp.std-draft .news-list {
+  --news-list-gap: var(--space-block-l);
+
+  margin-bottom: var(--space-block-l);
+}
+
+body.corp.std-draft .news-list .news-list-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--corp-news-tab-gap);
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+  padding-inline-start: var(--space-block-xs);
+}
+
+body.corp.std-draft .news-list .news-list-tabs button {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  padding: var(--corp-news-tab-padding);
+  background: transparent;
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+body.corp.std-draft .news-list .news-list-tabs button[aria-selected="true"] {
+  border-bottom-color: var(--color-accent);
+}
+
+body.corp.std-draft .news-list .news-list-count {
+  margin: 0 0 var(--space-block);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp.std-draft .news-list .news-list-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.corp.std-draft .news-list .news-list-item {
+  display: grid;
+  margin: var(--news-list-gap) 0 0;
+  border-bottom: 1px solid var(--color-surface);
+  padding-bottom: var(--news-list-gap);
+}
+
+body.corp.std-draft .news-list .news-list-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 666 / 392;
+  object-fit: cover;
+}
+
+body.corp.std-draft .news-list .news-list-body > * {
+  margin: 0 0 var(--space-block);
+}
+
+body.corp.std-draft .news-list .news-list-date {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp.std-draft .news-list .news-list-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height);
+  color: var(--color-black);
+}
+
+body.corp.std-draft .news-list .news-list-body p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp.std-draft .news-list .news-list-more:any-link {
+  display: inline-block;
+  margin: 0;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--body-line-height);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body.corp.std-draft .news-list .news-list-more:any-link::after {
+  content: var(--corp-chevron-glyph);
+  padding-inline-start: 0.5em;
+  font-family: var(--corp-icon-font-family);
+  font-size: 0.85em;
+  font-weight: var(--font-weight-regular);
+}
+
+body.corp.std-draft .news-list .news-list-load {
+  margin: var(--news-list-gap) 0 0;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: var(--corp-news-button-padding);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--corp-font-weight-light);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+body.corp.std-draft .news-list .news-list-load[hidden] {
+  display: none;
+}
+
+@media (width >= 900px) {
+  body.corp.std-draft .news-list {
+    --news-list-gap: var(--corp-news-gap);
+  }
+
+  body.corp.std-draft .news-list .news-list-item {
+    grid-template-columns: calc((100% + var(--corp-news-gap)) / 3 - var(--corp-news-gap)) minmax(0, 1fr);
+    column-gap: var(--corp-news-gap);
+    align-items: start;
+  }
+
+  body.corp.std-draft .news-list .news-list-body h3 {
+    font-size: var(--heading-font-size-xl);
+  }
+}

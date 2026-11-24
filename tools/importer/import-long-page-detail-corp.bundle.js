@@ -2563,12 +2563,55 @@ var CustomImportScript = (() => {
       (component.closest(".engagementcta") || component).replaceWith(h.richText(doc, nodes));
     });
   }
+  function hotspotsOf(path) {
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", `https://media-assets.stryker.com/is/image/${encodeURI(path)}?req=set,json`, false);
+      xhr.send();
+      if (xhr.status !== 200) return [];
+      const text5 = xhr.responseText;
+      const { item } = JSON.parse(text5.slice(text5.indexOf("{"), text5.lastIndexOf("}") + 1)).set || {};
+      const areas = item && item.map && [].concat(item.map.area || []);
+      if (!areas || !Number(item.dx) || !Number(item.dy)) return [];
+      const pct = (v, of) => Math.round(v / of * 1e3) / 10;
+      return areas.map((area) => {
+        const c = String(area.coords || "").split(",").map(Number);
+        const xs = c.filter((_, i) => i % 2 === 0);
+        const ys = c.filter((_, i) => i % 2 === 1);
+        if (!xs.length || !area.href) return null;
+        return {
+          label: area.alt || "",
+          x: pct((Math.min(...xs) + Math.max(...xs)) / 2, Number(item.dx)),
+          y: pct((Math.min(...ys) + Math.max(...ys)) / 2, Number(item.dy)),
+          href: area.href
+        };
+      }).filter(Boolean);
+    } catch (e) {
+      return [];
+    }
+  }
   function interactiveImages(main, doc) {
     main.querySelectorAll(".interactivemedia").forEach((component) => {
       const asset = component.querySelector("[data-asset-path]");
       const path = asset && asset.getAttribute("data-asset-path");
       if (!path) {
         component.remove();
+        return;
+      }
+      const spots = STD_DRAFT_IMPORT ? hotspotsOf(path) : [];
+      if (spots.length) {
+        const image2 = doc.createElement("a");
+        image2.href = `https://media-assets.stryker.com/is/image/${encodeURI(path)}?$max_width_1440$`;
+        image2.textContent = image2.href;
+        const rows = [[image2], ...spots.map((s) => {
+          const a = doc.createElement("a");
+          a.href = s.href;
+          a.textContent = s.label ? `${s.label}` : s.href;
+          return [s.label, `${s.x}, ${s.y}`, a];
+        })];
+        const block = WebImporter.Blocks.createBlock(doc, { name: "Interactive Image", cells: rows });
+        block.setAttribute("data-std-table", "");
+        component.replaceWith(keepBlock(block, component));
         return;
       }
       const img = doc.createElement("img");
@@ -2816,7 +2859,32 @@ var CustomImportScript = (() => {
       component.replaceWith(keepBlock(block, component));
     });
   }
+  function newsLists(main, doc) {
+    main.querySelectorAll(".c-newsandannouncements").forEach((component) => {
+      const canonical = doc.querySelector('link[rel="canonical"]');
+      let folder = "";
+      try {
+        folder = new URL(canonical ? canonical.href : doc.location.href).pathname.replace(/\/index\.html$/, "").replace(/\.html$/, "");
+      } catch (e) {
+        folder = "";
+      }
+      if (!folder) return;
+      const labels = [...component.querySelectorAll(".tab-link")].map((t) => t.textContent.trim());
+      const rows = [["Folder", folder]];
+      if (labels[0]) rows.push(["All", labels[0]]);
+      labels.slice(1).forEach((label) => rows.push(["Tab", label, label]));
+      const dates = !!component.querySelector(".news h5");
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: dates ? "News List (show-dates)" : "News List",
+        cells: rows
+      });
+      block.setAttribute("data-std-table", "");
+      const from = component.closest(".newsandannouncements") || component;
+      from.replaceWith(keepBlock(block, from));
+    });
+  }
   function numberCounters(main, doc, h) {
+    if (STD_DRAFT_IMPORT) newsLists(main, doc);
     if (STD_DRAFT_IMPORT) mediaGalleries(main, doc);
     if (STD_DRAFT_IMPORT) microApps(main, doc);
     if (STD_DRAFT_IMPORT) statisticsBlocks(main, doc);

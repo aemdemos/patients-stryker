@@ -314,6 +314,21 @@ export const BLOCK_OPTIONS = {
       },
     ],
   },
+  // stryker.com newsroom lists (docs/standardisation/news-list.md): built from the query index;
+  // the tabs, "Showing n of N", 20 articles and Load More are always on. stryker.com's list
+  // sizes (5, 8, 10, 20, 40) are one standard size (20).
+  'news-list': {
+    label: 'News list',
+    groups: [
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['show-dates', 'Show dates', { hint: 'Each article’s date above its title' }],
+        ],
+      },
+    ],
+  },
   // stryker.com local page navigation (docs/standardisation/local-nav.md):
   // the grey rule above it is the default; stryker.com's "hide bottom line" has no visible effect
   // there, so it is not a choice.

@@ -160,6 +160,18 @@
   --corp-gallery-thumb-gap: 10px; /* between two thumbnails (66px apart) */
   --corp-gallery-thumb-selected: #666; /* the selected thumbnail's 1px frame (others #ddd) */
   --corp-gallery-spin-button: 28px; /* the spin viewer's left / right arrows */
+
+  /* interactive image hotspots (blocks/interactive-image): Dynamic Media's touch hotspot icon */
+  --corp-hotspot-size: 56px;
+  --corp-hotspot-ring: rgb(255 255 255 / 85%); /* the icon's white ring (alpha 217); 100% on hover */
+  --corp-hotspot-halo: rgb(57 57 57 / 4%); /* the faint dark edge round the ring */
+
+  /* news list (blocks/news-list), measured on stryker.com's newsrooms */
+  --corp-news-tab-gap: 61px; /* between two tab labels (All News 35-102, the next from 163) */
+  --corp-news-tab-padding: 12px 0 7px;
+  --corp-news-gap: 30px; /* between two articles, and the image beside its text (20px on phones) */
+  --corp-news-button-padding: 9px 12px; /* LOAD MORE (source .btn) */
+  --corp-font-weight-light: 300; /* Futura light: the source buttons' label */
 }
 
 /* the HCP notice band text fits on one line from 600px (stryker.com 95px band from 599px,
