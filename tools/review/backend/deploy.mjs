@@ -54,7 +54,9 @@ const ACTIONS = {
   },
 };
 
-if (!existsSync(join(deps, 'node_modules', '@adobe', 'aio-lib-state'))) {
+// (installed again when any library of package.json is missing)
+const wanted = Object.keys(JSON.parse(readFileSync(join(HERE, 'package.json'), 'utf8')).dependencies);
+if (wanted.some((lib) => !existsSync(join(deps, 'node_modules', ...lib.split('/'))))) {
   mkdirSync(deps, { recursive: true });
   copyFileSync(join(HERE, 'package.json'), join(deps, 'package.json'));
   console.log(`installing the libraries into ${deps} …`);
@@ -97,7 +99,12 @@ function browserFolder() {
 }
 
 const names = Object.keys(ACTIONS).filter((n) => !only || only.includes(n));
-if (!dry) await call('PUT', `/packages/${PACKAGE}?overwrite=true`, { publish: false });
+// the package: its parameters kept as they are (the database credential, __ims_oauth_s2s, set
+// once by a developer, see DATABASE.md; never printed or changed here)
+if (!dry) {
+  const had = await call('GET', `/packages/${PACKAGE}`).catch(() => null);
+  await call('PUT', `/packages/${PACKAGE}?overwrite=true`, { publish: false, parameters: had?.parameters || [] });
+}
 for (const name of names) {
   const a = ACTIONS[name];
   const out = await esbuild.build({
