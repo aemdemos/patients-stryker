@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 /*
  * Builds and deploys the review backend's actions to App Builder (I/O Runtime) with the OpenWhisk
- * REST API; the workspace's runtime credential is added by the environment (Settings, host
- * adobeioruntime.net), never passed here. Each action is bundled into one file with esbuild; the
+ * REST API; the workspace's runtime credential is added by the environment (Settings: Stage's
+ * for adobeioruntime.net, Production's for runtime.adobe.io, the same API: --api), never passed
+ * here. Each action is bundled into one file with esbuild; the
  * libraries are installed outside the project (--deps, default /tmp/run-outputs/review-backend-deps)
  * from this folder's package.json.
  * The capture action is a zip: its bundle plus the browser (browser/package.json, installed in
  * --browser-deps) and Debian 10's NSS / NSPR (browser/debian-libs.json, checked by SHA-256).
- * usage: node tools/review/backend/deploy.mjs [--ns 892544-strykerstdreview-stage] [--deps <dir>]
+ * usage: node tools/review/backend/deploy.mjs [--ns 892544-strykerstdreview-stage]
+ *   [--api adobeioruntime.net | runtime.adobe.io (Production)] [--deps <dir>]
  *   [--browser-deps <dir>] [--only state,save,results,overview,admin,capture] [--dry-run]
  */
 import {
@@ -30,7 +32,8 @@ const deps = opt('--deps', '/tmp/run-outputs/review-backend-deps');
 const browserDeps = opt('--browser-deps', '/tmp/run-outputs/review-capture-deps');
 const only = opt('--only', '') ? opt('--only').split(',') : null;
 const dry = args.includes('--dry-run');
-const API = `https://adobeioruntime.net/api/v1/namespaces/${ns}`;
+const HOST = opt('--api', 'adobeioruntime.net');
+const API = `https://${HOST}/api/v1/namespaces/${ns}`;
 const PACKAGE = 'std-review';
 
 // web: reviewer-facing (invitation token); private: only with the project's credential
@@ -103,9 +106,9 @@ const names = Object.keys(ACTIONS).filter((n) => !only || only.includes(n));
 // once by a developer, see DATABASE.md; never printed or changed here)
 if (!dry) {
   // only a namespace the credential opens (another one answers empty lists, not an error)
-  const visible = await (await fetch('https://adobeioruntime.net/api/v1/namespaces')).json().catch(() => []);
+  const visible = await (await fetch(`https://${HOST}/api/v1/namespaces`)).json().catch(() => []);
   if (!Array.isArray(visible) || !visible.includes(ns)) {
-    throw new Error(`the namespace ${ns} is not open to the credential (it opens: ${[].concat(visible).join(', ') || 'none'}): nothing deployed`);
+    throw new Error(`the namespace ${ns} is not open to the credential of ${HOST} (it opens: ${[].concat(visible).join(', ') || 'none'}): nothing deployed`);
   }
   // a package that isn't there yet: created; any other failure to read it stops the deploy (it
   // would otherwise be written again without its parameters)

@@ -78,20 +78,28 @@ Project "Stryker std review", workspace **Stage** (Runtime namespace
 3. Tell the review's maintainer; `node tools/review/backend/admin.mjs db-check` then connects,
    writes, reads and writes 200 documents at once, and answers `ok: true` with the timings.
 
-**Production** (asked 24 Nov 2026: the whole backend deployed there, idle):
+**Production** (done 24 Nov 2026: the whole backend deployed there, idle), namespace
+**`892544-strykerstdreview`**:
 
 1. The developer: steps 1 and 2 above with the **Production** workspace selected (`aio app
    use` → Stryker std review → Production; its own database and its own OAuth Server-to-Server
    credential). `aio runtime package update std-review …` creates the package if it isn't
    there yet.
-2. Settings: the Production workspace's Runtime auth as a credential for `adobeioruntime.net`
-   (`curl https://adobeioruntime.net/api/v1/namespaces` must list the Production namespace;
-   `deploy.mjs` refuses a namespace the credential doesn't open, and stops rather than write the
-   package again when it can't read its parameters).
-3. The maintainer: `node tools/review/backend/deploy.mjs --ns <production namespace>`, then
-   `admin.mjs setup --ns …` (signing key, page index) and `admin.mjs db-check --ns …`.
-   **Idle:** no schedules (`admin schedule` not run there), the tool keeps using Stage
-   (`config.js` backend URL) until the review moves.
+2. Settings holds one credential per host, and Stage's is on `adobeioruntime.net`; the same
+   Runtime API answers on **`runtime.adobe.io`**, where Settings holds **Production's** Runtime
+   auth (Basic: `AIO_RUNTIME_AUTH` of the workspace's `.env`, before / after the colon). So every
+   script takes `--api runtime.adobe.io --ns 892544-strykerstdreview` for Production
+   (`curl https://runtime.adobe.io/api/v1/namespaces` lists it). `deploy.mjs` refuses a
+   namespace the host's credential doesn't open, and stops rather than write the package again
+   when it can't read its parameters.
+3. The maintainer: `node tools/review/backend/deploy.mjs --api runtime.adobe.io --ns
+   892544-strykerstdreview`, then `admin.mjs setup …` (signing key, page index) and
+   `admin.mjs db-check …`. Done: db-check ok (write ~100 ms, read ~120 ms, 200 at once ~180 ms),
+   `backend.test.mjs --api runtime.adobe.io --ns 892544-strykerstdreview` 48 checks passed
+   (twice), its test invitations forgotten after; 0 entries, 0 invitations.
+   **Idle:** no schedules (no triggers or rules there: `admin schedule` not run), the tool keeps
+   using Stage (`config.js` backend URL) until the review moves. Web actions answer at
+   `https://892544-strykerstdreview.adobeioruntime.net/api/v1/web/std-review/<name>`.
 
 ## 2. The move (how it was planned; done 24 Nov 2026, steps 2 and 4 shortened: the data was test data)
 

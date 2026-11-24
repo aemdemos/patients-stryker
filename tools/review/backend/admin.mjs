@@ -5,6 +5,8 @@
  * usage: node tools/review/backend/admin.mjs <op> [--name "…"] [--paths /us/en/a,/us/en/b]
  *   [--days 30] [--no-groups] [--results] [--role aoe] [--page /us/en/…] [--id <invite id>] [--json '<params>' | --json-file <file>]
  *   [--space std|main] [--host <branch>--stryker-com--strykerenterprise.aem.page] [--ns 892544-strykerstdreview-stage]
+ *   [--api adobeioruntime.net | runtime.adobe.io] (the Runtime API host whose Settings key opens --ns:
+ *   Stage adobeioruntime.net, Production runtime.adobe.io)
  * --space: the review the op works in (std, the standard pages, the default; main, the client
  * review of the migrated pages on main); --host: the invitation links to the tool on that preview
  * ops: setup | invite | revoke | invites | export | status | import | purge-invite | purge-test |
@@ -19,6 +21,7 @@ const opt = (name, fallback) => {
   return i >= 0 ? args[i + 1] : fallback;
 };
 const ns = opt('--ns', '892544-strykerstdreview-stage');
+const HOST = opt('--api', 'adobeioruntime.net');
 if (!op) {
   console.error('usage: admin.mjs <setup|invite|revoke|invites|export|status|import|purge-invite|purge-test> [options]');
   process.exit(2);
@@ -39,7 +42,7 @@ if (opt('--host')) params.host = opt('--host');
 
 /** the admin action's answer (blocking call; long ones are fetched by activation id) */
 export async function admin(p, namespace = ns) {
-  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${namespace}/actions/std-review/admin?blocking=true&result=true`, {
+  const resp = await fetch(`https://${HOST}/api/v1/namespaces/${namespace}/actions/std-review/admin?blocking=true&result=true`, {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });
   const text = await resp.text();
