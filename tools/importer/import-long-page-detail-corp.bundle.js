@@ -1726,7 +1726,12 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-largeheadline") && !isFirst && !text3(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-        sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer` : "spacer", nodes: [] });
+        const anchor = STD_DRAFT_IMPORT ? component.getAttribute("data-anchor") : null;
+        sections.push(__spreadValues({
+          kind: "spacer",
+          style: separatorNext ? `${separatorNext}, spacer` : "spacer",
+          nodes: []
+        }, anchor ? { anchor } : {}));
         separatorNext = false;
         current = null;
         return;
@@ -1939,6 +1944,8 @@ var CustomImportScript = (() => {
       let n = 1;
       while (sections[i].kind === "spacer" && sections[i].style === "spacer" && sections[i + n] && sections[i + n].kind === "spacer" && sections[i + n].style === "spacer" && n < 4) n += 1;
       if (n > 1) {
+        const anchors = sections.slice(i, i + n).map((sec) => sec.anchor).filter(Boolean);
+        if (anchors.length) sections[i].anchor = anchors.join(", ");
         sections.splice(i + 1, n - 1);
         sections[i].style = `spacer, ${SIZES[n - 1]}`;
       }
@@ -1959,11 +1966,10 @@ var CustomImportScript = (() => {
       section.nodes.forEach((node) => {
         if (node.nodeType === 1) node.removeAttribute("data-keep");
       });
-      if (section.style) {
-        out.push(WebImporter.Blocks.createBlock(doc, {
-          name: "Section Metadata",
-          cells: { style: section.style }
-        }));
+      if (section.style || section.anchor) {
+        const cells = section.style ? { style: section.style } : {};
+        if (section.anchor) cells.anchor = section.anchor;
+        out.push(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells }));
       }
     });
     element.replaceChildren(...out);
@@ -3141,6 +3147,8 @@ var CustomImportScript = (() => {
       if (!nodes.length) {
         const spacer = doc.createElement("div");
         spacer.className = "c-largeheadline";
+        const label = STD_DRAFT_IMPORT && (title.getAttribute("data-title") || "").trim();
+        if (label) spacer.setAttribute("data-anchor", label.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, ""));
         title.replaceWith(spacer);
         return;
       }

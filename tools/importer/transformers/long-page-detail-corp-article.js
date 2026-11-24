@@ -1376,7 +1376,11 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     if (component.matches('.c-largeheadline') && !isFirst && !text(component)
       && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
       && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-      sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer` : 'spacer', nodes: [] });
+      // review build: a hidden section title (a jump bar target) keeps its anchor on the spacer
+      const anchor = STD_DRAFT_IMPORT ? component.getAttribute('data-anchor') : null;
+      sections.push({
+        kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer` : 'spacer', nodes: [], ...(anchor ? { anchor } : {}),
+      });
       separatorNext = false;
       current = null;
       return;
@@ -1660,6 +1664,9 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     while (sections[i].kind === 'spacer' && sections[i].style === 'spacer'
       && sections[i + n] && sections[i + n].kind === 'spacer' && sections[i + n].style === 'spacer' && n < 4) n += 1;
     if (n > 1) {
+      // the anchors of merged spacers (review build) stay on the one section
+      const anchors = sections.slice(i, i + n).map((sec) => sec.anchor).filter(Boolean);
+      if (anchors.length) sections[i].anchor = anchors.join(', ');
       sections.splice(i + 1, n - 1);
       sections[i].style = `spacer, ${SIZES[n - 1]}`;
     }
@@ -1685,11 +1692,10 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     });
     marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
     section.nodes.forEach((node) => { if (node.nodeType === 1) node.removeAttribute('data-keep'); });
-    if (section.style) {
-      out.push(WebImporter.Blocks.createBlock(doc, {
-        name: 'Section Metadata',
-        cells: { style: section.style },
-      }));
+    if (section.style || section.anchor) {
+      const cells = section.style ? { style: section.style } : {};
+      if (section.anchor) cells.anchor = section.anchor;
+      out.push(WebImporter.Blocks.createBlock(doc, { name: 'Section Metadata', cells }));
     }
   });
   element.replaceChildren(...out);

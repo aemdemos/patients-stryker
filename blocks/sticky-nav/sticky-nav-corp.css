@@ -1,0 +1,21 @@
+/*
+ * Sticky Nav on stryker.com (corp) pages, in review on draft pages
+ * (docs/standardisation/sticky-nav.md): the bar already matches the source jump bar
+ * (sticky-nav.css). On phones stryker.com hides the bar and shows a floating "⋮" button
+ * that opens the sections in a grey panel: the block builds it, hidden by default.
+ */
+body.corp.std-draft .sticky-nav-mobile {
+  display: block;
+}
+
+@media (width >= 600px) {
+  body.corp.std-draft .sticky-nav-mobile {
+    display: none;
+  }
+}
+
+/* the labels sit in the middle of the bar, as on stryker.com (four 193px labels from 334px at
+   1440), not at the left of the five-label cluster */
+body.corp.std-draft .sticky-nav .sticky-nav-list {
+  justify-content: center;
+}

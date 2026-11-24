@@ -200,9 +200,13 @@ export default function decorate(block) {
   // Click / keyboard: scroll to the section via native scrollIntoView, which
   // scrolls the correct container automatically in any environment. The bar-height
   // offset comes from the `scroll-margin-top` set in applyScrollOffset().
+  // stryker.com pages in review (draft pages): the section is still hidden when the block is
+  // decorated, so the offset is 0 until a resize; measure it again before each jump
+  const stdDraft = document.body.classList.contains('corp') && document.body.classList.contains('std-draft');
   const goTo = (item, href) => {
     const target = resolveTarget(href);
     if (!target) return;
+    if (stdDraft) applyScrollOffset();
     const region = target.closest('.section') || target;
     clickedItem = item;
     setCurrent(item);

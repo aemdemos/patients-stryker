@@ -284,6 +284,10 @@ function sectionTitles(main, doc) {
     if (!nodes.length) {
       const spacer = doc.createElement('div');
       spacer.className = 'c-largeheadline';
+      // review build: its title (data-title) is the jump bar target, the section's `anchor`
+      // (blocks/sticky-nav reads .section[data-anchor]); the id the jump bar links to
+      const label = STD_DRAFT_IMPORT && (title.getAttribute('data-title') || '').trim();
+      if (label) spacer.setAttribute('data-anchor', label.toLowerCase().replace(/[^0-9a-z]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''));
       title.replaceWith(spacer);
       return;
     }
