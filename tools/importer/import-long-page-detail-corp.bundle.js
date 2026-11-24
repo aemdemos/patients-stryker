@@ -1622,7 +1622,37 @@ var CustomImportScript = (() => {
     out.converted = out.some((node) => node.tagName === "OL" && !nodes.includes(node));
     return out;
   }
-  function buildArticle(element, { keep = "", spacer = true, componentStyle = null } = {}) {
+  function stdFragmentText(sections) {
+    const sizes = new Map(SIZE_STYLES.filter(([, style]) => /^p-\d/.test(style)).map(([cls, style]) => [style, (SIZE_TAGS.find(([c]) => c === cls) || [])[1]]));
+    sections.forEach((section) => {
+      const styles = (section.style || "").split(", ").filter(Boolean);
+      const size = styles.find((st) => sizes.get(st));
+      if (!size) return;
+      section.nodes.filter((n) => n.nodeType === 1).forEach((node) => {
+        const lines = node.matches("p, li") ? [node] : [...node.querySelectorAll("p, li")];
+        lines.filter((line) => text3(line) && !line.querySelector("p, li")).forEach((line) => bracketTag([...line.childNodes], sizes.get(size), line));
+      });
+      section.style = styles.filter((st) => st !== size).join(", ") || void 0;
+    });
+    const isIcon = (section) => /^image-link(, center)?$/.test(section.style || "") && section.nodes.length === 2 && /\b(icon|logo)\b/i.test(text3(section.nodes[1]));
+    for (let i = 0; i < sections.length - 1; i += 1) {
+      if (isIcon(sections[i]) && isIcon(sections[i + 1])) {
+        let n = i + 1;
+        while (sections[n] && isIcon(sections[n])) {
+          sections[i].nodes.push(...sections[n].nodes);
+          n += 1;
+        }
+        sections.splice(i + 1, n - i - 1);
+        sections[i].style = "flex, flex-row-mobile, image-link";
+      }
+    }
+  }
+  function buildArticle(element, {
+    keep = "",
+    spacer = true,
+    componentStyle = null,
+    stdText = false
+  } = {}) {
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
     const selector = keep ? `${COMPONENTS}, ${keep}` : COMPONENTS;
@@ -1950,6 +1980,7 @@ var CustomImportScript = (() => {
         sections[i].style = `spacer, ${SIZES[n - 1]}`;
       }
     }
+    if (stdText) stdFragmentText(sections);
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
@@ -4079,7 +4110,9 @@ var CustomImportScript = (() => {
     buildArticle(element, {
       keep: ".c-resourcesanddownload, [data-keep]",
       spacer: false,
-      componentStyle: columnStyle
+      componentStyle: columnStyle,
+      // review build of the shared fragments: Text style sizes, icon rows side by side
+      stdText: STD_DRAFT_IMPORT && payload.template.name === "long-page-detail-corp-fragments"
     });
     if (nav) element.prepend(nav, doc.createElement("hr"));
   }

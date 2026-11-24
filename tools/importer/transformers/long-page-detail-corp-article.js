@@ -1239,7 +1239,48 @@ function footnoteList(nodes, doc) {
  *   sections built from that component ('' for none); a component with another style than
  *   the current section's starts a new section (e.g. `column-10-12`, long-page-detail-corp)
  */
-export default function buildArticle(element, { keep = '', spacer = true, componentStyle = null } = {}) {
+/**
+ * Review build of the shared fragments (docs/standardisation/fragment.md): the copy size of a
+ * section (`p-1-25` …) becomes a Text style size on each of its paragraphs and list items, as
+ * a fragment can't count on a section style of the page it is placed in; consecutive linked
+ * icons (a social icon row, each its own `image-link` section) become one row that stays side
+ * by side (`flex, flex-row-mobile, image-link`, the Section layout style).
+ * @param {Object[]} sections The article sections
+ */
+function stdFragmentText(sections) {
+  const sizes = new Map(SIZE_STYLES.filter(([, style]) => /^p-\d/.test(style))
+    .map(([cls, style]) => [style, (SIZE_TAGS.find(([c]) => c === cls) || [])[1]]));
+  sections.forEach((section) => {
+    const styles = (section.style || '').split(', ').filter(Boolean);
+    const size = styles.find((st) => sizes.get(st));
+    if (!size) return;
+    section.nodes.filter((n) => n.nodeType === 1).forEach((node) => {
+      const lines = node.matches('p, li') ? [node] : [...node.querySelectorAll('p, li')];
+      lines.filter((line) => text(line) && !line.querySelector('p, li'))
+        .forEach((line) => bracketTag([...line.childNodes], sizes.get(size), line));
+    });
+    section.style = styles.filter((st) => st !== size).join(', ') || undefined;
+  });
+  // an icon: the image's alt, repeated as the text of its link line, names an icon or logo
+  const isIcon = (section) => /^image-link(, center)?$/.test(section.style || '')
+    && section.nodes.length === 2
+    && /\b(icon|logo)\b/i.test(text(section.nodes[1]));
+  for (let i = 0; i < sections.length - 1; i += 1) {
+    if (isIcon(sections[i]) && isIcon(sections[i + 1])) {
+      let n = i + 1;
+      while (sections[n] && isIcon(sections[n])) {
+        sections[i].nodes.push(...sections[n].nodes);
+        n += 1;
+      }
+      sections.splice(i + 1, n - i - 1);
+      sections[i].style = 'flex, flex-row-mobile, image-link';
+    }
+  }
+}
+
+export default function buildArticle(element, {
+  keep = '', spacer = true, componentStyle = null, stdText = false,
+} = {}) {
   const doc = element.ownerDocument;
   const main = doc.querySelector('[role="main"]') || element;
   const selector = keep ? `${COMPONENTS}, ${keep}` : COMPONENTS;
@@ -1671,6 +1712,8 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       sections[i].style = `spacer, ${SIZES[n - 1]}`;
     }
   }
+
+  if (stdText) stdFragmentText(sections);
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a
   // `spacer` section is the metadata alone)

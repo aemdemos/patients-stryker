@@ -1267,6 +1267,8 @@ export default function transform(hookName, element, payload) {
     keep: '.c-resourcesanddownload, [data-keep]',
     spacer: false,
     componentStyle: columnStyle,
+    // review build of the shared fragments: Text style sizes, icon rows side by side
+    stdText: STD_DRAFT_IMPORT && payload.template.name === 'long-page-detail-corp-fragments',
   });
   // the local navigation: a section of its own above the page
   if (nav) element.prepend(nav, doc.createElement('hr'));
