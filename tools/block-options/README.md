@@ -61,7 +61,16 @@ shows the name with a capital, "orange" → "Orange"):
   `['box-white shadow', 'White with soft shadow']`). The panel adds and removes them together and
   shows the choice as selected when all of them are on the block.
 - **Dependent group:** `when` may name another group instead of a layout (e.g. `when: 'box'`): the
-  group shows only while that group has a choice, and its option goes when that choice is cleared.
+  group is greyed out ("pick a Cell box first") until that group has a choice, and its option goes
+  when that choice is cleared.
+- **What a choice needs:** `needs` on a group, or a choice's third item `{ needs, hint }` (e.g.
+  `['caption-tight', 'Caption right under the photo', { needs: ['caption'], hint: '…' }]`). The
+  panel reads the selected block (cells per row, images, captions, an image in the first cell,
+  links, lists of links, text) and greys out a choice that would do nothing, with the reason under
+  the group ("needs images in the row", "needs 3 cells (this row has 2 cells)"). A choice the block
+  already has stays available, so it can be removed. The `hint` shows when hovering the choice.
+  Needs: `cells-2`, `cells-2+`, `cells-3`, `cells-3+`, `cells-4`, `images`, `caption`, `image-first`,
+  `links`, `link-lists`, `text`, `box` (a cell box chosen). Library sheet rows keep them.
 - **Older names:** a block's `aliases` map an old class to its new choices (e.g.
   `'gray-last': ['box-gray']`). The panel shows the new choices; the block is rewritten with them
   when the author changes something.

@@ -331,6 +331,24 @@ asks otherwise.
 | Cards | the block for rows of the same unit (tiles, boxes, image rows) |
 | Side-by-side section | a section that places a block next to other content (`flex`) |
 
+## Which choices fit which row
+
+The Block options panel reads the selected row and greys out the choices that would do nothing,
+with the reason ("needs images in the row", "needs 3 cells (this row has 2 cells)", "pick a Cell box
+first"); hovering a choice shows what it does. A choice the row already has stays available.
+
+| Needs | Choices |
+|---|---|
+| A cell box chosen first | Which cell, Text spacing in a box |
+| Images in the row | Image border, Linked images, Images centred, Photo two thirds wide on phones |
+| A photo with a caption under it | Serif captions, Caption right under the photo |
+| An image in the first cell, text beside it | Icon beside text, Page title beside a photo, Large pull quote beside a photo |
+| Exactly 2 cells | the two-cell layouts, First cell right-aligned, Rule under the first cell |
+| 2 or more cells | Pull quote in the last cell |
+| 3 cells / 3 or more / 4 cells | Three equal, Quarter + quarter + half, Numbered quotes / One per row on phones / Four equal |
+| Links / lists of links | Related links / Link groups |
+| Any text | Centred, the first-line bars, Large headline, Serif lead paragraph |
+
 ## Review status (draft pages only)
 
 While the standardisation is reviewed, the new rendering applies **only on draft pages** (`/drafts/…`)

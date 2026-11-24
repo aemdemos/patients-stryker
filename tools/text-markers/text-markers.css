@@ -158,6 +158,17 @@ body {
   align-items: center;
 }
 
+/* Block options: a choice the selected block can't use (its reason under the group) */
+.tm-check.tm-unfit {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.tm-hint.tm-reason {
+  margin-top: 6px;
+  font-style: italic;
+}
+
 .tm-hint {
   margin: 0;
   color: var(--s2-gray-700, #505050);

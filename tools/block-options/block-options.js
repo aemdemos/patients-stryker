@@ -119,13 +119,79 @@ function selectedIn(group, options) {
     .sort((a, b) => tokensOf(b).length - tokensOf(a).length)[0] || '';
 }
 
-/** `when` names a layout, or another group whose choice must be set (e.g. a box colour) */
+/** `when` names a layout (the group shows only with it) or another group (shown, greyed out
+ * until that group has a choice, e.g. which cell holds the box) */
 function shown(group) {
   if (!group.when) return true;
   const other = def().groups.find((g) => g.id === group.when && g.options);
-  return other ? !!selectedIn(other, draft) : group.when === layoutOf(draft);
+  return other ? true : group.when === layoutOf(draft);
 }
 const visibleGroups = () => def().groups.filter(shown);
+
+/* ---------------------------------------------------------------- fit */
+
+const DM_IMAGE = /media-assets\.stryker\.com\/is\/image\//i;
+const isImage = (n) => n.matches?.('picture, img') || (n.matches?.('a[href]') && DM_IMAGE.test(n.getAttribute('href')))
+  || !!n.querySelector?.('picture, img, a[href*="media-assets.stryker.com/is/image/"]');
+
+/**
+ * What the selected block holds, for the `needs` of the options: its cells per row, images,
+ * captions (text right under an image in a cell), an image in the first cell with text beside
+ * it, links and lists of links, text.
+ * @param {string} html The block's markup
+ */
+function factsOf(html) {
+  const facts = {
+    cells: 0,
+    images: false,
+    caption: false,
+    imageFirst: false,
+    links: false,
+    linkLists: false,
+    text: false,
+  };
+  if (!html) return null;
+  const block = new DOMParser().parseFromString(html, 'text/html').body.firstElementChild;
+  if (!block) return null;
+  [...block.children].forEach((row) => {
+    const cells = [...row.children];
+    facts.cells = Math.max(facts.cells, cells.length);
+    cells.forEach((cell, i) => {
+      const parts = [...cell.childNodes].filter((n) => n.nodeType === 1 || n.textContent.trim());
+      const imageAt = parts.findIndex((n) => n.nodeType === 1 && isImage(n));
+      if (imageAt >= 0) facts.images = true;
+      const isText = (n) => n.textContent.trim() && !(n.nodeType === 1 && isImage(n));
+      if (imageAt >= 0 && parts.slice(imageAt + 1).some(isText)) facts.caption = true;
+      const besides = cells.slice(1).some((c) => c.textContent.trim());
+      if (i === 0 && imageAt >= 0 && besides) facts.imageFirst = true;
+    });
+  });
+  facts.links = [...block.querySelectorAll('a[href]')].some((a) => !DM_IMAGE.test(a.getAttribute('href')));
+  facts.linkLists = !!block.querySelector('li a[href]');
+  facts.text = !!block.textContent.trim();
+  return facts;
+}
+
+/** why a choice can't apply to the selected block ('' when it fits) */
+function unfit(needs, facts) {
+  if (!needs || !facts) return '';
+  const cells = facts.cells === 1 ? '1 cell' : `${facts.cells} cells`;
+  const reasons = {
+    'cells-2': facts.cells === 2 ? '' : `needs 2 cells (this row has ${cells})`,
+    'cells-2+': facts.cells >= 2 ? '' : 'needs 2 or more cells',
+    'cells-3': facts.cells === 3 ? '' : `needs 3 cells (this row has ${cells})`,
+    'cells-3+': facts.cells >= 3 ? '' : `needs 3 or more cells (this row has ${cells})`,
+    'cells-4': facts.cells === 4 ? '' : `needs 4 cells (this row has ${cells})`,
+    images: facts.images ? '' : 'needs images in the row',
+    caption: facts.caption ? '' : 'needs a photo with a caption under it',
+    'image-first': facts.imageFirst ? '' : 'needs an image in the first cell and text beside it',
+    links: facts.links ? '' : 'needs links in the row',
+    'link-lists': facts.linkLists ? '' : 'needs a list of links',
+    text: facts.text ? '' : 'needs text in the row',
+    box: def().groups.some((g) => g.id === 'box' && selectedIn(g, draft)) ? '' : 'pick a Cell box first',
+  };
+  return needs.map((n) => reasons[n]).find(Boolean) || '';
+}
 
 /** the options no group knows (older free values, or ones the panel has no choice for) */
 function otherOptions(options) {
@@ -206,31 +272,60 @@ function renderGroups() {
   }
   titleEl.textContent = `${def().label} (${current.name})`;
   frameBox.hidden = !current.html;
+  const facts = factsOf(current.html);
   visibleGroups().forEach((group) => {
     const fieldset = el('fieldset', { class: 'tm-group' }, el('legend', {}, group.label));
     const row = el('div', { class: 'tm-choices', role: group.flags ? 'group' : 'radiogroup', 'aria-label': group.label });
+    // the whole group: what it needs, or the group it follows (which cell holds the box)
+    const after = group.when && def().groups.find((g) => g.id === group.when && g.options);
+    const groupReason = (after && !selectedIn(after, draft) ? `pick a ${after.label} first` : '')
+      || unfit(group.needs, facts);
+    const greyed = [];
+    const reasonOf = (value, meta, on) => {
+      if (!value || on) return ''; // 'none' and a choice the block already has stay available
+      const reason = groupReason || unfit(meta?.needs, facts);
+      return reason;
+    };
+    const titleOf = (value, meta, reason) => [meta?.hint, reason ? `Not for this block: ${reason}` : '',
+      value ? `Option “${value}”` : 'No option'].filter(Boolean).join('\n');
     if (group.flags) {
-      group.flags.forEach(([value, label]) => {
-        row.append(el('label', { class: 'tm-check' }, el('input', {
+      group.flags.forEach(([value, label, meta]) => {
+        const on = draft.includes(value);
+        const reason = reasonOf(value, meta, on);
+        if (reason) greyed.push([label, reason]);
+        row.append(el('label', { class: `tm-check${reason ? ' tm-unfit' : ''}`, title: titleOf(value, meta, reason) }, el('input', {
           type: 'checkbox',
-          checked: draft.includes(value),
+          checked: on,
+          disabled: !!reason,
           onchange: (e) => { toggle(value, e.target.checked); renderGroups(); updatePreview(); },
         }), label));
       });
     } else {
       const selected = selectedIn(group, draft);
-      group.options.forEach(([value, label]) => {
+      group.options.forEach(([value, label, meta]) => {
+        const reason = reasonOf(value, meta, value === selected);
+        if (reason) greyed.push([label, reason]);
         row.append(el('button', {
           type: 'button',
           role: 'radio',
-          class: 'tm-choice',
+          class: `tm-choice${reason ? ' tm-unfit' : ''}`,
           'aria-checked': String(value === selected),
-          title: value ? `Option “${value}”` : 'No option',
+          disabled: !!reason,
+          title: titleOf(value, meta, reason),
           onclick: () => { pick(group, value); renderGroups(); updatePreview(); },
         }, label));
       });
     }
     fieldset.append(row);
+    // why the greyed choices don't apply, one line per reason
+    const byReason = new Map();
+    greyed.forEach(([label, reason]) => {
+      byReason.set(reason, [...(byReason.get(reason) || []), label]);
+    });
+    byReason.forEach((labels, reason) => {
+      const all = labels.length === (group.flags || group.options).filter(([v]) => v).length;
+      fieldset.append(el('p', { class: 'tm-hint tm-reason' }, all ? `Greyed out: ${reason}.` : `${labels.join(', ')}: ${labels.length > 1 ? reason.replace(/^needs /, 'need ') : reason}.`));
+    });
     groupsEl.append(fieldset);
   });
   const others = otherOptions(draft);
@@ -254,7 +349,12 @@ function setBlock(next) {
   const same = current && next && current.name === next.name
     && current.options.join(',') === next.options.join(',') && current.from === next.from;
   if (same) {
-    if (next.html && next.html !== current.html) { current = next; updatePreview(); }
+    // the content changed (e.g. an image added): what fits may change too
+    if (next.html && next.html !== current.html) {
+      current = next;
+      renderGroups();
+      updatePreview();
+    }
     return;
   }
   current = next;

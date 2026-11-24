@@ -5,6 +5,12 @@
  * older free-value options a group supersedes, which are removed when the author picks in it.
  * `clears` lists another group's options that can't go with this group's choice (all its
  * choices, or only those in `clearsWhen`): picking one removes them.
+ * `needs` (on a group, or a choice's third item `{ needs, hint }`) is what the selected block
+ * must hold for the choice to do something: 'cells-2' (exactly 2 cells), 'cells-2+', 'cells-3',
+ * 'cells-3+', 'cells-4', 'images', 'caption' (a photo with text under it), 'image-first' (an
+ * image in the first cell, text beside it), 'links', 'link-lists', 'text', or 'box' (a cell box
+ * chosen). The panel greys out a choice that doesn't fit, with the reason; `hint` says what the
+ * choice does.
  *
  * Keep in step with the block (its header comment lists the options) and its Block Library
  * entry. The Block Library sheet `panel-options` can replace a group's choices, add groups, or
@@ -167,16 +173,16 @@ export const BLOCK_OPTIONS = {
         label: 'Layout',
         required: true,
         options: [
-          ['columns-50-50', 'Two equal'],
-          ['columns-33-67', 'Narrow + wide'],
-          ['columns-67-33', 'Wide + narrow'],
-          ['columns-3-cols', 'Three equal'],
-          ['columns-4-cols', 'Four equal'],
-          ['columns-75-25', 'Three quarters + quarter'],
-          ['columns-25-75', 'Quarter + three quarters'],
-          ['columns-70-30', 'Wide + narrow (70 / 30)'],
-          ['columns-20-80', 'Icon + text (1/5, 4/5)'],
-          ['columns-25-25-50', 'Quarter + quarter + half'],
+          ['columns-50-50', 'Two equal', { needs: ['cells-2'] }],
+          ['columns-33-67', 'Narrow + wide', { needs: ['cells-2'] }],
+          ['columns-67-33', 'Wide + narrow', { needs: ['cells-2'] }],
+          ['columns-3-cols', 'Three equal', { needs: ['cells-3'] }],
+          ['columns-4-cols', 'Four equal', { needs: ['cells-4'] }],
+          ['columns-75-25', 'Three quarters + quarter', { needs: ['cells-2'] }],
+          ['columns-25-75', 'Quarter + three quarters', { needs: ['cells-2'] }],
+          ['columns-70-30', 'Wide + narrow (70 / 30)', { needs: ['cells-2'] }],
+          ['columns-20-80', 'Icon + text (1/5, 4/5)', { needs: ['cells-2'] }],
+          ['columns-25-25-50', 'Quarter + quarter + half', { needs: ['cells-3'] }],
         ],
       },
       {
@@ -211,6 +217,7 @@ export const BLOCK_OPTIONS = {
       {
         id: 'space',
         label: 'Text spacing in a box',
+        needs: ['box'],
         options: [
           ['', 'Medium (5%)'],
           ['space-none', 'None'],
@@ -221,6 +228,7 @@ export const BLOCK_OPTIONS = {
       {
         id: 'image-border',
         label: 'Image border',
+        needs: ['images'],
         options: [
           ['', 'None'],
           ['image-border', 'Grey'],
@@ -232,7 +240,7 @@ export const BLOCK_OPTIONS = {
         id: 'align',
         label: 'Text',
         flags: [
-          ['text-center', 'Centred'],
+          ['text-center', 'Centred', { needs: ['text'], hint: 'All text in the row centred' }],
         ],
       },
       {
@@ -240,10 +248,10 @@ export const BLOCK_OPTIONS = {
         label: 'First line of the text',
         options: [
           ['', 'As written'],
-          ['gray-lead', 'In a light grey box'],
-          ['gold-lead', 'In a gold bar'],
-          ['dark-lead', 'In a dark grey bar'],
-          ['blue-lead', 'In a blue bar'],
+          ['gray-lead', 'In a light grey box', { needs: ['text'], hint: 'The first line of the text cell in a light grey box' }],
+          ['gold-lead', 'In a gold bar', { needs: ['text'], hint: 'The first line of the text cell in a gold bar, centred' }],
+          ['dark-lead', 'In a dark grey bar', { needs: ['text'], hint: 'The first line of the text cell in a dark grey bar, centred' }],
+          ['blue-lead', 'In a blue bar', { needs: ['text'], hint: 'The first line of each cell in a blue bar, centred' }],
         ],
         // the bars are the cell's box, so they clear a cell box
         clears: /^(box-.+|shadow)$/,
@@ -254,30 +262,30 @@ export const BLOCK_OPTIONS = {
         id: 'text-look',
         label: 'Text look',
         flags: [
-          ['large-headline', 'Large headline'],
-          ['serif-lead', 'Serif lead paragraph'],
-          ['caption-serif', 'Serif captions'],
-          ['quote-last', 'Pull quote in the last cell'],
-          ['quote-3vw', 'Large pull quote beside a photo'],
-          ['number-quote', 'Numbered quotes'],
+          ['large-headline', 'Large headline', { needs: ['text'], hint: 'The row’s headings and text in the large headline sizes' }],
+          ['serif-lead', 'Serif lead paragraph', { needs: ['text'], hint: 'The text cell opens with a 21px serif lead paragraph' }],
+          ['caption-serif', 'Serif captions', { needs: ['caption'], hint: 'Captions under the photos in the serif' }],
+          ['quote-last', 'Pull quote in the last cell', { needs: ['cells-2+'], hint: 'The last cell is a pull quote in a white shadow box' }],
+          ['quote-3vw', 'Large pull quote beside a photo', { needs: ['image-first'], hint: 'A large pull quote beside a photo' }],
+          ['number-quote', 'Numbered quotes', { needs: ['cells-3'], hint: 'A number, a photo and a quote side by side' }],
         ],
       },
       {
         id: 'looks',
         label: 'Row looks',
         flags: [
-          ['media-pair', 'Linked images'],
-          ['stack', 'One per row on phones'],
-          ['related-links', 'Related links'],
-          ['link-groups', 'Link groups'],
-          ['icon-text', 'Icon beside text'],
-          ['title-row', 'Page title beside a photo'],
-          ['caption-tight', 'Caption right under the photo'],
-          ['image-centre', 'Images centred at their size'],
-          ['phone-image-2-3', 'Photo two thirds wide on phones'],
-          ['left-border-bottom', 'Rule under the first cell'],
-          ['border-bottom', 'Line below the row'],
-          ['label-right', 'First cell right-aligned (labels)'],
+          ['media-pair', 'Linked images', { needs: ['images'], hint: 'Each image links to the link on the line below it' }],
+          ['stack', 'One per row on phones', { needs: ['cells-3+'], hint: 'On phones each cell takes the full width' }],
+          ['related-links', 'Related links', { needs: ['links'], hint: 'Titles with a short text and a More link' }],
+          ['link-groups', 'Link groups', { needs: ['link-lists'], hint: 'Lists of links in groups' }],
+          ['icon-text', 'Icon beside text', { needs: ['image-first'], hint: 'A small icon beside its text' }],
+          ['title-row', 'Page title beside a photo', { needs: ['image-first'], hint: 'The page title in a white box beside a photo' }],
+          ['caption-tight', 'Caption right under the photo', { needs: ['caption'], hint: 'No gap between a photo and its caption' }],
+          ['image-centre', 'Images centred at their size', { needs: ['images'], hint: 'Images at their own size, centred in the cell' }],
+          ['phone-image-2-3', 'Photo two thirds wide on phones', { needs: ['images'], hint: 'On phones the photo is two thirds of the width' }],
+          ['left-border-bottom', 'Rule under the first cell', { needs: ['cells-2'], hint: 'A grey rule under the first cell’s text' }],
+          ['border-bottom', 'Line below the row', { hint: 'A grey line under the whole row' }],
+          ['label-right', 'First cell right-aligned (labels)', { needs: ['cells-2'], hint: 'The first cell’s text right-aligned beside the second (labels)' }],
         ],
       },
     ],
@@ -312,8 +320,11 @@ export function withLibrary(defs, sheet) {
     groups.forEach((values, key) => {
       const group = merged[name].groups.find((g) => g.id === key);
       const choices = values.filter(([v]) => v);
-      const named = (list) => choices
-        .map(([v, l]) => [v, l || list.find(([x]) => x === v)?.[1] || labelOf(v)]);
+      // a sheet row names and orders the choices; what a built-in choice needs and its hint stay
+      const named = (list) => choices.map(([v, l]) => {
+        const base = list.find(([x]) => x === v);
+        return [v, l || base?.[1] || labelOf(v), ...(base?.[2] ? [base[2]] : [])];
+      });
       if (group && values.label) group.label = values.label;
       if (group?.flags) {
         group.flags = named(group.flags);
