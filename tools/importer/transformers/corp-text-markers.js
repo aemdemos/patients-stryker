@@ -28,6 +28,20 @@ const LOOKS = ['rule-gold', 'box-white', 'box-gray', 'box-gold', 'box-blue', 'bo
 // the package's four headline sizes (S, M, L, XL); every stryker.com size (17 values) takes the
 // nearest, by ratio: 1 → S, 2.5 → L, 3.5 → L, 4 → XL, 5 and up → XL
 const HEADLINE_STEPS = [1.5, 2, 3, 4.5];
+// the text steps by word; two size tags right inside each other multiply on stryker.com (1.25em in
+// 1.5em = 1.875×), so one merged marker takes the step nearest to the product
+const STEP_OF = {
+  s: 0.8, l: 1.25, xl: 1.5, xxl: 1.75, xxxl: 2, xxxxl: 2.5,
+};
+const stepOff = (w, n) => Math.abs(Math.log(STEP_OF[w] / n));
+const nearestStep = (n) => Object.keys(STEP_OF)
+  .reduce((a, b) => (stepOff(b, n) < stepOff(a, n) ? b : a));
+const oneSize = (words) => {
+  const sizes = words.filter((w) => STEP_OF[w]);
+  if (sizes.length < 2) return words;
+  const step = nearestStep(sizes.reduce((p, w) => p * STEP_OF[w], 1));
+  return [...words.filter((w) => !STEP_OF[w]), step];
+};
 const headlineWord = (n) => {
   const off = (step) => Math.abs(Math.log(step / n));
   const step = HEADLINE_STEPS.reduce((a, b) => (off(b) < off(a) ? b : a));
@@ -132,7 +146,7 @@ function convertContainer(nodes, dropped) {
     const open = t.raw !== undefined ? t : t.pair;
     // a word with digits (hl15 …) goes last: EDS reads `:name:` as a marker only when its
     // digits end the name
-    const unique = [...new Set(open.words)];
+    const unique = [...new Set(oneSize(open.words))];
     const words = [...unique.filter((w) => !/\d/.test(w)), ...unique.filter((w) => /\d/.test(w))];
     let out = '';
     if (!open.merged && words.length) out = t.raw !== undefined ? `:start-${words.join('-')}:` : ':end:';

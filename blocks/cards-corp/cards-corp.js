@@ -100,6 +100,9 @@ async function hydrateLinkRows(block) {
  * text variant: the first cell holds the title (gold band) instead of an image.
  * video variant: a cell holding only a YouTube/Dynamic Media link is an inline player.
  * A row holding only a page link is built from that page's query-index entry.
+ * Options (docs/standardisation/cards-corp.md; styled in review on draft pages): `title-above`
+ * puts each card's title above its image; `no-text` shows only the images, each linked to the
+ * card's link (then the image link is the card's only visible link, so it stays focusable).
  * @param {Element} block The block element
  */
 export default async function decorate(block) {
@@ -110,6 +113,7 @@ export default async function decorate(block) {
 
   const isText = block.classList.contains('text');
   const isVideo = block.classList.contains('video');
+  const imageOnly = block.classList.contains('no-text');
 
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
@@ -121,7 +125,7 @@ export default async function decorate(block) {
         // lift the player out of the editor wrapper so the canvas can't re-render over it
         div.className = 'cards-corp-card-video';
         div.replaceChildren(video);
-      } else if (isText && i === 0) div.className = 'cards-corp-card-title';
+      } else if (isText && i === 0 && li.children.length > 1) div.className = 'cards-corp-card-title';
       else if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-corp-card-image';
       else div.className = 'cards-corp-card-body';
     });
@@ -140,7 +144,15 @@ export default async function decorate(block) {
     if (!picture) return;
     let link = picture.closest('a');
     const cta = [...li.querySelectorAll('.cards-corp-card-body a[href]')].pop();
-    if (!link && cta) {
+    if (!link && cta && imageOnly) {
+      link = document.createElement('a');
+      link.href = cta.getAttribute('href');
+      if (cta.target) link.target = cta.target;
+      const img = picture.querySelector('img');
+      if (!img?.alt) link.setAttribute('aria-label', cta.textContent.trim());
+      picture.replaceWith(link);
+      link.append(picture);
+    } else if (!link && cta) {
       // duplicate of the card's CTA: keep it out of the tab order and the a11y tree
       link = document.createElement('a');
       link.href = cta.getAttribute('href');
@@ -152,6 +164,18 @@ export default async function decorate(block) {
     // lift the image out of the editor wrapper so the canvas can't re-render over it
     cell.replaceChildren(link || picture);
   });
+
+  if (block.classList.contains('title-above')) {
+    ul.querySelectorAll('li').forEach((li) => {
+      const image = li.querySelector('.cards-corp-card-image, .cards-corp-card-video');
+      const title = li.querySelector('.cards-corp-card-body > :is(h1, h2, h3, h4, h5, h6, p):first-child');
+      if (!image || !title) return;
+      const above = document.createElement('div');
+      above.className = 'cards-corp-card-title-above';
+      above.append(title);
+      image.before(above);
+    });
+  }
 
   block.replaceChildren(ul);
 }

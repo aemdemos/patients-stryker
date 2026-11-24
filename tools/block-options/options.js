@@ -352,6 +352,103 @@ export const BLOCK_OPTIONS = {
       },
     ],
   },
+  // stryker.com card rows (stryker-aemcoder-package, docs/standardisation/cards-corp.md): the card
+  // types (one row per card: an image or video cell and a text cell), cards per row, the same image
+  // borders as Columns and the same box colours as Panel for the card text, title above the image,
+  // image only, and the teaser's no-description. Text in the cards is Text style. The cards-corp
+  // branch's gray-box / white-box show as the box choices.
+  'cards-corp': {
+    label: 'Cards (corp)',
+    aliases: {
+      'gray-box': ['box-gray'],
+      'white-box': ['box-white', 'shadow'],
+    },
+    groups: [
+      {
+        id: 'layout',
+        label: 'Cards',
+        required: true,
+        options: [
+          ['', 'Image', { hint: 'An image (or a page link) with a title, text and a link' }],
+          ['video', 'Video', { needs: ['links'], hint: 'A video link with a title and text' }],
+          ['teaser', 'Teaser', { hint: 'Related products or news: image, serif title, description, Learn more' }],
+          ['resources', 'Resources', { needs: ['images'], hint: 'Downloads: a cover image with its file title' }],
+          ['product-item', 'Product grid', { needs: ['images'], hint: 'A product image above a grey rule and the product name' }],
+          ['category', 'Category tiles', { needs: ['images'], hint: 'A large image with a teal label bar and arrow' }],
+          ['text', 'Text only', { needs: ['text'], hint: 'Text cards: a title and text, no image' }],
+          ['one-up', 'One wide card', { needs: ['images'], hint: 'One product per row: image beside its title and text' }],
+        ],
+      },
+      {
+        id: 'per-row',
+        label: 'Cards per row',
+        options: [
+          ['', 'Four'],
+          ['two-up', 'Two'],
+          ['three-up', 'Three'],
+          ['five-up', 'Five'],
+          ['six-up', 'Six'],
+        ],
+      },
+      {
+        id: 'image-border',
+        label: 'Image border',
+        needs: ['images'],
+        options: [
+          ['', 'None'],
+          ['image-border', 'Grey'],
+          ['image-border-teal', 'Teal'],
+          ['image-border-black', 'Black'],
+        ],
+      },
+      {
+        id: 'box',
+        label: 'Card box',
+        needs: ['text'],
+        options: [
+          ['', 'None'],
+          ['box-white', 'White', { hint: 'The card text in a white box (add the soft shadow to set it off the page)' }],
+          ['box-gold', 'Gold'],
+          ['box-gray', 'Light grey'],
+          ['box-blue', 'Blue', { hint: 'White text by default' }],
+          ['box-teal', 'Teal', { hint: 'White text by default' }],
+          ['box-purple', 'Purple', { hint: 'White text by default' }],
+          ['box-dark', 'Dark grey', { hint: 'White text by default' }],
+        ],
+        replaces: /^(gray-box|white-box)$/,
+      },
+      {
+        id: 'space',
+        label: 'Text spacing in a box',
+        needs: ['box'],
+        options: [
+          ['', 'Medium (5%)'],
+          ['space-none', 'None'],
+          ['space-s', 'Small (3%)'],
+          ['space-l', 'Large (10%)'],
+        ],
+      },
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['shadow', 'Soft shadow', { needs: ['box'], hint: 'The stryker.com dimensional box: a soft shadow around the card text' }],
+          ['text-center', 'Centred text', { needs: ['text'], hint: 'All text in the cards centred' }],
+          ['title-above', 'Title above the image', { needs: ['images', 'text'], hint: 'Each card’s title sits above its image' }],
+          ['no-text', 'Image only', { needs: ['images'], hint: 'Images at their own size, centred, linked to the link of the card; no text shown' }],
+          ['border', 'Card text in a box', { needs: ['images', 'text'], hint: 'A white soft-shadow box with the text, overlapping the image' }],
+        ],
+      },
+      {
+        id: 'teaser',
+        label: 'Teaser',
+        when: 'teaser',
+        flags: [
+          ['no-description', 'No description', { hint: 'Image, title and Learn more only' }],
+        ],
+      },
+    ],
+  },
 };
 
 /** every option name a block's groups know, so the rest can be kept as "other options" */

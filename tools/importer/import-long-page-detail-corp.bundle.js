@@ -382,6 +382,22 @@ var CustomImportScript = (() => {
     "box-dark-purple-gradient"
   ];
   var HEADLINE_STEPS = [1.5, 2, 3, 4.5];
+  var STEP_OF = {
+    s: 0.8,
+    l: 1.25,
+    xl: 1.5,
+    xxl: 1.75,
+    xxxl: 2,
+    xxxxl: 2.5
+  };
+  var stepOff = (w, n) => Math.abs(Math.log(STEP_OF[w] / n));
+  var nearestStep = (n) => Object.keys(STEP_OF).reduce((a, b) => stepOff(b, n) < stepOff(a, n) ? b : a);
+  var oneSize = (words) => {
+    const sizes = words.filter((w) => STEP_OF[w]);
+    if (sizes.length < 2) return words;
+    const step = nearestStep(sizes.reduce((p, w) => p * STEP_OF[w], 1));
+    return [...words.filter((w) => !STEP_OF[w]), step];
+  };
   var headlineWord = (n) => {
     const off = (step2) => Math.abs(Math.log(step2 / n));
     const step = HEADLINE_STEPS.reduce((a, b) => off(b) < off(a) ? b : a);
@@ -472,7 +488,7 @@ var CustomImportScript = (() => {
     });
     tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
       const open = t.raw !== void 0 ? t : t.pair;
-      const unique = [...new Set(open.words)];
+      const unique = [...new Set(oneSize(open.words))];
       const words = [...unique.filter((w) => !/\d/.test(w)), ...unique.filter((w) => /\d/.test(w))];
       let out = "";
       if (!open.merged && words.length) out = t.raw !== void 0 ? `:start-${words.join("-")}:` : ":end:";
@@ -2943,6 +2959,60 @@ var CustomImportScript = (() => {
       if (last) mark(last);
     });
   }
+  var TILE_MEDIA = 'img, picture, video, iframe, a[href*="/is/content/"], a[href*="/is/image/"], a[href*="youtube.com/"], a[href*="youtu.be/"]';
+  var TILE_VIDEO = 'a[href*="/is/content/"], a[href*="youtube.com/"], a[href*="youtu.be/"]';
+  var nodeText = (n) => (n.textContent || "").trim();
+  var holdsMedia = (n) => n.nodeType === 1 && (n.matches(TILE_MEDIA) || !!n.querySelector(TILE_MEDIA));
+  var isTileMedia = (n) => holdsMedia(n) && [...n.querySelectorAll("a")].every((a) => a.matches(TILE_MEDIA)) && !n.querySelector("h1, h2, h3, h4, h5, h6, ul, ol") && (n.matches(TILE_MEDIA) || n.children.length === 1);
+  var tileParts = (nodes) => nodes.filter((n) => nodeText(n) || holdsMedia(n));
+  var unitOf = (nodes) => {
+    const kinds = tileParts(nodes).map((n) => isTileMedia(n) ? "m" : "t");
+    return kinds.filter((k, i) => k !== kinds[i - 1]).join("");
+  };
+  var hrefOf = (n) => {
+    const a = n.nodeType === 1 && (n.matches("a[href]") ? n : n.querySelector("a[href]"));
+    return a ? a.getAttribute("href").split("#")[0] : "";
+  };
+  var TILE_KEEP = new RegExp("^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a-z]+|image-border(-[a-z]+)?|text-center)$");
+  var TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
+  function tileCards(cells, variant, doc) {
+    const filled = cells.filter((c) => tileParts(c).length);
+    const units = filled.map(unitOf);
+    const names = variant.split(", ").filter(Boolean);
+    const boxed = names.some((v) => v.startsWith("box-") && v !== "box-first");
+    const same = units.length > 0 && units.every((u) => u === units[0]);
+    if (!same || filled.length < 3 && !(filled.length === 2 && boxed)) return null;
+    if (!/^t?m?t?$/.test(units[0]) || names.some((v) => TILE_NOT.test(v))) return null;
+    const rows = filled.map((nodes) => {
+      const parts = tileParts(nodes);
+      const at = parts.findIndex(isTileMedia);
+      if (at < 0) return [parts];
+      const media = parts[at];
+      const next = parts[at + 1];
+      let rest = parts.filter((n) => n !== media);
+      const others = rest.filter((n) => n !== next).map(hrefOf).filter(Boolean);
+      if (next && next.nodeType === 1 && hrefOf(next) && !next.querySelector("strong, u") && others.includes(hrefOf(next))) {
+        rest = rest.filter((n) => n !== next);
+      }
+      return [[media], rest];
+    });
+    const textCards = rows.every((r) => r.length === 1);
+    const video = units[0].includes("m") && filled.every((c) => c.some((n) => n.nodeType === 1 && (n.matches(TILE_VIDEO) || !!n.querySelector(TILE_VIDEO))));
+    const perRow = { 2: "two-up", 3: "three-up" }[cells.length] || "";
+    const imageOnly = units[0] === "m" || names.includes("media-pair") && rows.every((r) => r.length === 2 && r[1].length === 1 && hrefOf(r[1][0]) && nodeText(r[1][0]) === nodeText(r[1][0].querySelector("a") || r[1][0]));
+    const options = [
+      textCards ? "text" : "",
+      video ? "video" : "",
+      perRow,
+      ...names.filter((v) => TILE_KEEP.test(v)),
+      units[0].startsWith("tm") ? "title-above" : "",
+      imageOnly ? "no-text" : ""
+    ].filter(Boolean);
+    return WebImporter.Blocks.createBlock(doc, {
+      name: options.length ? `Cards Corp (${options.join(", ")})` : "Cards Corp",
+      cells: rows
+    });
+  }
   function columnRows(main, doc) {
     [...main.querySelectorAll(".colctrl")].reverse().forEach((colctrl) => {
       const all = rowColumns(colctrl);
@@ -3005,7 +3075,7 @@ var CustomImportScript = (() => {
       ].filter(Boolean).join(", ");
       const cells = columns.map((col) => cellNodes(col, doc));
       const style = rowCopyStyle(cells, doc);
-      const block = WebImporter.Blocks.createBlock(doc, {
+      const block = STD_DRAFT_IMPORT && tileCards(cells, variant, doc) || WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : "Columns",
         cells: [cells]
       });

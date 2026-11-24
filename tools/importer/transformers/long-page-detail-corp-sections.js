@@ -697,6 +697,76 @@ function markRowEnds(main) {
   });
 }
 
+/*
+ * In review (staging build only, STD_DRAFT_IMPORT; docs/standardisation/cards-corp.md): a row of
+ * tiles is Cards (corp), one card per cell (its image or video, then its text), as the business
+ * decided: 3 or more cells holding the same unit (an image and text, text only, or an image only),
+ * or 2 cells with the same unit in a box. The row's choices carry over: cards per row, the box
+ * colour (with its shadow and spacing), image borders, centred text; a title before the image is
+ * `title-above`, images without text `no-text`. The media-pair link under an image is the card's
+ * link (the image links to it), so it is dropped when the text links to the same page.
+ */
+const TILE_MEDIA = 'img, picture, video, iframe, a[href*="/is/content/"], a[href*="/is/image/"], '
+  + 'a[href*="youtube.com/"], a[href*="youtu.be/"]';
+const TILE_VIDEO = 'a[href*="/is/content/"], a[href*="youtube.com/"], a[href*="youtu.be/"]';
+const nodeText = (n) => (n.textContent || '').trim();
+const holdsMedia = (n) => n.nodeType === 1
+  && (n.matches(TILE_MEDIA) || !!n.querySelector(TILE_MEDIA));
+const isTileMedia = (n) => holdsMedia(n)
+  && [...n.querySelectorAll('a')].every((a) => a.matches(TILE_MEDIA))
+  && !n.querySelector('h1, h2, h3, h4, h5, h6, ul, ol')
+  && (n.matches(TILE_MEDIA) || n.children.length === 1);
+const tileParts = (nodes) => nodes.filter((n) => nodeText(n) || holdsMedia(n));
+const unitOf = (nodes) => {
+  const kinds = tileParts(nodes).map((n) => (isTileMedia(n) ? 'm' : 't'));
+  return kinds.filter((k, i) => k !== kinds[i - 1]).join('');
+};
+const hrefOf = (n) => {
+  const a = n.nodeType === 1 && (n.matches('a[href]') ? n : n.querySelector('a[href]'));
+  return a ? a.getAttribute('href').split('#')[0] : '';
+};
+const TILE_KEEP = new RegExp('^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a-z]+'
+  + '|image-border(-[a-z]+)?|text-center)$');
+const TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
+
+function tileCards(cells, variant, doc) {
+  const filled = cells.filter((c) => tileParts(c).length);
+  const units = filled.map(unitOf);
+  const names = variant.split(', ').filter(Boolean);
+  const boxed = names.some((v) => v.startsWith('box-') && v !== 'box-first');
+  const same = units.length > 0 && units.every((u) => u === units[0]);
+  if (!same || (filled.length < 3 && !(filled.length === 2 && boxed))) return null;
+  if (!/^t?m?t?$/.test(units[0]) || names.some((v) => TILE_NOT.test(v))) return null;
+  const rows = filled.map((nodes) => {
+    const parts = tileParts(nodes);
+    const at = parts.findIndex(isTileMedia);
+    if (at < 0) return [parts];
+    const media = parts[at];
+    const next = parts[at + 1];
+    let rest = parts.filter((n) => n !== media);
+    const others = rest.filter((n) => n !== next).map(hrefOf).filter(Boolean);
+    if (next && next.nodeType === 1 && hrefOf(next) && !next.querySelector('strong, u')
+      && others.includes(hrefOf(next))) {
+      rest = rest.filter((n) => n !== next);
+    }
+    return [[media], rest];
+  });
+  const textCards = rows.every((r) => r.length === 1);
+  const video = units[0].includes('m') && filled.every((c) => c.some((n) => n.nodeType === 1
+    && (n.matches(TILE_VIDEO) || !!n.querySelector(TILE_VIDEO))));
+  const perRow = { 2: 'two-up', 3: 'three-up' }[cells.length] || '';
+  // linked images whose only text is their link (media-pair): images only
+  const imageOnly = units[0] === 'm' || (names.includes('media-pair') && rows.every((r) => r.length === 2
+    && r[1].length === 1 && hrefOf(r[1][0]) && nodeText(r[1][0]) === nodeText(r[1][0].querySelector('a') || r[1][0])));
+  const options = [textCards ? 'text' : '', video ? 'video' : '', perRow,
+    ...names.filter((v) => TILE_KEEP.test(v)),
+    units[0].startsWith('tm') ? 'title-above' : '', imageOnly ? 'no-text' : ''].filter(Boolean);
+  return WebImporter.Blocks.createBlock(doc, {
+    name: options.length ? `Cards Corp (${options.join(', ')})` : 'Cards Corp',
+    cells: rows,
+  });
+}
+
 /**
  * Source column rows (.colctrl) with two or more columns that have content, innermost
  * first:
@@ -785,10 +855,11 @@ function columnRows(main, doc) {
       .filter(Boolean).join(', ');
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = rowCopyStyle(cells, doc);
-    const block = WebImporter.Blocks.createBlock(doc, {
-      name: variant ? `Columns (${variant})` : 'Columns',
-      cells: [cells],
-    });
+    const block = (STD_DRAFT_IMPORT && tileCards(cells, variant, doc))
+      || WebImporter.Blocks.createBlock(doc, {
+        name: variant ? `Columns (${variant})` : 'Columns',
+        cells: [cells],
+      });
     block.setAttribute('data-keep', 'section');
     if (style) block.setAttribute('data-section-style', style);
     if (wrapper.hasAttribute('data-row-end')) block.setAttribute('data-row-end', wrapper.getAttribute('data-row-end'));

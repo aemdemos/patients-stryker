@@ -188,7 +188,8 @@ function unfit(needs, facts) {
     links: facts.links ? '' : 'needs links in the row',
     'link-lists': facts.linkLists ? '' : 'needs a list of links',
     text: facts.text ? '' : 'needs text in the row',
-    box: def().groups.some((g) => g.id === 'box' && selectedIn(g, draft)) ? '' : 'pick a Cell box first',
+    box: def().groups.some((g) => g.id === 'box' && selectedIn(g, draft))
+      ? '' : `pick a ${def().groups.find((g) => g.id === 'box')?.label || 'box'} first`,
     'gradient-box': def().groups.some((g) => g.id === 'box' && /-gradient$/.test(selectedIn(g, draft)))
       ? '' : 'needs a gradient box colour',
   };

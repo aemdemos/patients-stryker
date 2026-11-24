@@ -517,3 +517,156 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
+
+/* ---- standard choices (Block options panel, docs/standardisation/cards-corp.md) ----
+   In review: draft pages only (body.std-draft, scripts/corp.js); real corp pages render as
+   before. The card box takes the Panel colours (exact stryker.com values) behind the card's
+   text, with the Text spacing step (space-none / -s / -m default / -l, % of the card) and the
+   dimensional box's soft shadow; the box sets the default text colour (white on blue, teal,
+   purple, dark grey). Image borders as in Columns. Text inside the cards is Text style. */
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) {
+  --cards-corp-box-padding: 5%;
+  --cards-corp-box-text: var(--text-color);
+}
+
+body.corp.std-draft .cards-corp.box-white { --cards-corp-box-bg: var(--color-white); }
+body.corp.std-draft .cards-corp.box-gold { --cards-corp-box-bg: var(--color-accent); }
+body.corp.std-draft .cards-corp.box-gray { --cards-corp-box-bg: var(--color-surface); }
+
+body.corp.std-draft .cards-corp.box-blue {
+  --cards-corp-box-bg: var(--color-navy-bright);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft .cards-corp.box-teal {
+  --cards-corp-box-bg: var(--color-primary);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft .cards-corp.box-purple {
+  --cards-corp-box-bg: var(--color-purple);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft .cards-corp.box-dark {
+  --cards-corp-box-bg: var(--color-secondary);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft .cards-corp.space-none { --cards-corp-box-padding: 0; }
+body.corp.std-draft .cards-corp.space-s { --cards-corp-box-padding: 3%; }
+body.corp.std-draft .cards-corp.space-m { --cards-corp-box-padding: 5%; }
+body.corp.std-draft .cards-corp.space-l { --cards-corp-box-padding: 10%; }
+
+/* image only: no text shown (the image links to the card's link) */
+body.corp.std-draft .cards-corp.no-text .cards-corp-card-body {
+  display: none;
+}
+
+/* a text card (one cell) as on stryker.com: the text alone, no gold title band or grey body */
+body.corp.std-draft .cards-corp.text .cards-corp-card-body:only-child {
+  padding: 0;
+  background-color: transparent;
+}
+
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) .cards-corp-card-body:nth-child(n) {
+  flex: 1;
+  padding: var(--cards-corp-box-padding);
+  background: var(--cards-corp-box-bg);
+  color: var(--cards-corp-box-text);
+}
+
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) .cards-corp-card-body :is(h2, h3, h4, h5, h6, p) {
+  color: inherit;
+}
+
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) .cards-corp-card-body > :last-child {
+  margin-bottom: 0;
+}
+
+/* the dimensional box: a soft shadow, 10px around the card text */
+body.corp.std-draft .cards-corp.shadow:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) .cards-corp-card-body:nth-child(n) {
+  margin: var(--space-block-s);
+  box-shadow: var(--shadow-soft);
+}
+
+body.corp.std-draft .cards-corp.text-center :is(.cards-corp-card-body, .cards-corp-card-title-above) {
+  text-align: center;
+}
+
+body.corp.std-draft .cards-corp:is(.image-border, .image-border-teal, .image-border-black) .cards-corp-card-image img {
+  box-sizing: border-box;
+  border: 1px solid var(--cards-corp-image-border);
+}
+
+body.corp.std-draft .cards-corp.image-border { --cards-corp-image-border: var(--color-surface-muted); }
+body.corp.std-draft .cards-corp.image-border-teal { --cards-corp-image-border: var(--color-primary); }
+body.corp.std-draft .cards-corp.image-border-black { --cards-corp-image-border: var(--color-black); }
+
+/* title above the image: the title keeps its gap to the image */
+body.corp.std-draft .cards-corp .cards-corp-card-title-above > * {
+  margin: 0 0 var(--space-block);
+}
+
+/* image only: each image at its own size (at most the card width), centred; no text */
+body.corp.std-draft .cards-corp.no-text .cards-corp-card-image {
+  text-align: center;
+}
+
+body.corp.std-draft .cards-corp.no-text .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+/* teaser without description: image, title and Learn more */
+body.corp.std-draft .cards-corp.teaser.no-description .cards-corp-card-body > p:not(:has(a)) {
+  display: none;
+}
+
+/* cards per row: the chosen number wins over a card type's own column count (video, text,
+   category, product grid) from 900px, as on stryker.com (col-md-6 / col-md-4) */
+@media (width >= 900px) {
+  body.corp.std-draft .cards-corp.two-up.block > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.corp.std-draft .cards-corp.three-up.block > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* the text sizes are Text style on draft pages: bold words keep the size of their text (the
+   larger bold copy size applies to real pages only) */
+body.corp.std-draft .cards-corp .cards-corp-card-body p strong:not(:has(a)) {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* text cards: a linked title stays in the title's colour, as on stryker.com */
+body.corp.std-draft .cards-corp.text .cards-corp-card-body :is(h2, h3, h4, h5, h6) a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* resources: 2 per row on phones, as on stryker.com (col-xs-6); 4 from 600px, 6 from 900px */
+body.corp.std-draft .cards-corp.resources > ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (width >= 600px) {
+  body.corp.std-draft .cards-corp.resources > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 900px) {
+  body.corp.std-draft .cards-corp.resources.six-up > ul {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
