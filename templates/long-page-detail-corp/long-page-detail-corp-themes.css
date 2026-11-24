@@ -317,6 +317,18 @@ body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box {
   margin-right: 0;
 }
 
+/* stacked over the image (below 900px): 35px from the last line to the image (the source's
+   last paragraph margin + its text box's 20px padding); from 900px the banner's own 20px */
+body.long-page-detail-corp.bacs main .hero-corp.banner.half-text > div:last-child {
+  padding-bottom: calc(var(--space-block) + var(--space-block-l));
+}
+
+@media (width >= 900px) {
+  body.long-page-detail-corp.bacs main .hero-corp.banner.half-text > div:last-child {
+    padding-bottom: var(--space-block-l);
+  }
+}
+
 body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box > h1 {
   margin: var(--space-block) 0 0;
   line-height: var(--heading-line-height);
