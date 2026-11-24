@@ -18,13 +18,16 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
   scope (path prefixes; group choices only with the group right).
 - **The private action** can only be called with the workspace's credential, which the
   environment adds (Settings, host `adobeioruntime.net`, Basic).
-- **Storage** (`lib/core.mjs`): State store entries `p.<page>.<item>.<kind>` / `g.<item>.<kind>`
-  (parts base64url), value `{ v, by, at, rev, inv }`, written with the one-year expiry; invitations
-  `i.<id>`. Files: the signing key (`secrets/signing.json`, created by `setup`, never returned)
-  and the audit, one file per save batch (`audit/<date>/…`): the durable record the store can be
-  rebuilt from.
+- **Storage** (`lib/core.mjs`, `lib/dbstate.mjs`, `DATABASE.md`): App Builder Database, one
+  document per page of a review (`pages`, `_id` `<space>|<page>`, page `*` the group choices),
+  each entry a field `{ v, by, at, rev, inv, role }`; invitations in `invites`. The backend still
+  names entries `p.<page>.<item>.<kind>` / `g.<item>.<kind>` (parts base64url, space as prefix)
+  and invitations `i.<id>` (exports, backups, admin). Files: the signing key
+  (`secrets/signing.json`, created by `setup`, never returned), the audit, one file per save
+  batch (`audit/<date>/…`), and the daily backups.
 - **Conflicts:** a change carries the `rev` it started from; another stored `rev` = someone else
-  changed it meanwhile: refused, the tool drops the change and asks to reload.
+  changed it meanwhile: refused (by the database, inside the write), the tool drops the change
+  and asks to reload.
 - **Roles:** an invitation is for a reviewer (default) or the AOE team (`role: aoe`: answers
   threads with a status, results on); every entry records its writer's role.
 - **Chats:** messages `reply:<comment|note>:<id>` are written once; only the AOE role gives a

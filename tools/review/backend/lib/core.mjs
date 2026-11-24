@@ -1,11 +1,12 @@
 /*
- * Review backend (App Builder): what the actions share. Entries in the State store (the live
- * state, renewed on every change), the durable record in Files (one audit file per save batch,
- * the signing key), invitation tokens, CORS. See tools/review/backend-plan.md.
+ * Review backend (App Builder): what the actions share. Entries and invitations in App Builder
+ * Database (page documents, lib/dbstate.mjs, DATABASE.md), the durable record in Files (one audit
+ * file per save batch, the signing key, the daily backups), invitation tokens, CORS.
  *
- * An entry: key `p.<page>.<item>.<kind>` (page `*`, a group's choice: `g.<item>.<kind>`), the
- * parts base64url-encoded (keys allow letters, digits, - _ . only); value JSON
+ * An entry, as the backend names it: key `p.<page>.<item>.<kind>` (page `*`, a group's choice:
+ * `g.<item>.<kind>`), the parts base64url-encoded, the space as prefix; value JSON
  * { v: <the tool's value, a JSON string>, by, at, rev, inv, role }. Invitations: `i.<id>`.
+ * Stored: one document per page (its entries as fields), one per invitation.
  * Threads: a comment or QA note opens one; every message is its own entry, kind
  * `reply:<comment|note>:<id>`, value { text, status? }, written once; `done:<comment|note>` ticks a
  * thread done. The page status (kind `state` on item `page`) says whose turn it is. Roles:
@@ -13,12 +14,13 @@
  * tools/review/threads.js.
  */
 import crypto from 'crypto';
-import stateLib from '@adobe/aio-lib-state';
 import { STATES_BY_ROLE, ANSWER_STATES, stateAllowed } from '../../threads.js';
 import filesLib from '@adobe/aio-lib-files';
-import { mirrored } from './mirror.mjs';
+import { dbClient, hasCredential } from './db.mjs';
+import {
+  kv, pageRows, allRows, saveEntry, saveMany,
+} from './dbstate.mjs';
 
-export const TTL = stateLib.MAX_TTL;
 export const SECRET_FILE = 'secrets/signing.json';
 // what reviewers may save; `status:*` rows are the AOE team's (admin action only)
 export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note', 'batch', 'group', 'representative'];
@@ -66,7 +68,7 @@ export function replyProblem(value, role) {
 export const MAX_CHANGES = 100;
 // (organisation only, e.g. a batch for many pages: more at once)
 export const MAX_ORG_CHANGES = 3000;
-// keys written at the same time by a save (the store allows a limited number of parallel requests)
+// entries written at the same time by a save
 const SAVE_PARALLEL = 20;
 export const TOOL = 'https://standardise-v3--stryker-com--strykerenterprise.aem.page/tools/review/index.html';
 // the reviews kept apart in this backend: std (the standard pages, the default and the keys of
@@ -146,12 +148,20 @@ export function inScope(scope, page) {
 /* ---------- storage ---------- */
 
 /**
- * the stores; with the action's params (the actions that write), State is mirrored to the App
- * Builder Database (lib/mirror.mjs: a second copy, State stays what everything reads)
+ * the stores: the database (its token from the package's credential in params; the key–value
+ * view `state` and the client) and Files
  */
 export async function open(params = null) {
-  const [state, files] = await Promise.all([stateLib.init(), filesLib.init()]);
-  return { state: params ? mirrored(state, files, params) : state, files };
+  const files = await filesLib.init();
+  if (!hasCredential(params)) {
+    // (Files only: an action that reads no entries, or a call without the package's parameters)
+    const none = () => { throw new Error('the database needs the action\'s params (its credential)'); };
+    return { state: new Proxy({}, { get: none }), files, client: null };
+  }
+  const client = await dbClient(params);
+  const state = kv(client);
+  state.client = client;
+  return { state, files, client };
 }
 
 /** the signing key (created once by the admin action's `setup`, never leaves the project) */
@@ -184,92 +194,75 @@ export async function checkInvite({ state, files }, token) {
   };
 }
 
-const decodeEntry = (key, stored) => {
-  const where = parseKey(key);
-  if (!where || !stored) return null;
-  const e = JSON.parse(stored.value);
-  return {
-    ...where, value: e.v, reviewer: e.by, time: e.at, rev: e.rev, role: e.role || (e.by === 'AOE' ? 'aoe' : 'reviewer'),
-  };
-};
-
-export async function keysOf(state, match) {
-  const keys = [];
-  // (the library returns an async iterator of key batches)
-  const it = state.list({ match });
-  for (let r = await it.next(); !r.done; r = await it.next()) keys.push(...r.value.keys);
-  return keys;
-}
-
-export async function readKeys(state, keys) {
-  const out = [];
-  for (let i = 0; i < keys.length; i += 25) {
-    const batch = keys.slice(i, i + 25);
-    // (a batch at a time: the store allows a limited number of parallel requests)
-    const got = await Promise.all(batch.map((k) => state.get(k)));
-    batch.forEach((k, j) => {
-      const e = decodeEntry(k, got[j]);
-      if (e) out.push(e);
-    });
-  }
-  return out;
-}
-
-/** a page's entries and every group choice of a space, as rows ({ page, item, kind, value, reviewer, time, rev }) */
+/**
+ * a page's entries and every group choice of a space, as rows ({ page, item, kind, value,
+ * reviewer, time, rev }): two documents, each read from the primary (always the newest write)
+ */
 export async function readPage(state, page, space = 'std') {
-  const [own, groups] = await Promise.all([keysOf(state, pagePattern(page, space)), keysOf(state, groupPattern(space))]);
-  return readKeys(state, [...own, ...groups]);
+  const [own, groups] = await Promise.all([pageRows(state.client, space, page), pageRows(state.client, space, '*')]);
+  return [...own, ...groups];
 }
 
-/** every entry of a space (the admin export) */
+/** every entry of a space (the admin export, the summary): a list, may be a moment behind */
 export async function readAll(state, space = 'std') {
-  const pre = prefixOf(space);
-  const [pages, groups] = await Promise.all([keysOf(state, `${pre}p.*`), keysOf(state, groupPattern(space))]);
-  return readKeys(state, [...pages, ...groups]);
+  return allRows(state.client, space);
 }
 
 /**
- * Saves changes: each one only when the stored rev is the rev it started from (else a conflict:
- * someone else changed it). One audit file per batch (the durable record).
+ * Saves changes: each one only when its entry is still at the rev it started from (else a
+ * conflict: someone else changed it), checked by the database inside the write; organisation
+ * entries (the newest wins) many at a time. One audit file per batch (the durable record).
  */
 export async function saveChanges({ state, files }, {
   page, changes, by, inv, role = 'reviewer', space = 'std', orgBefore = null,
 }) {
+  const { client } = state;
   const at = new Date().toISOString();
   const results = new Array(changes.length);
   const audits = new Array(changes.length);
-  // one change: its key read, its rev checked, written (organisation entries: the newest wins)
+  const entryOf = (c, rev) => ({
+    v: c.value, by, at, rev, inv, role,
+  });
+  // organisation: one bulk write; its values before from the review's summary (for the audit)
+  const org = changes.map((c, i) => [c, i]).filter(([c]) => c.org);
+  if (org.length) {
+    await saveMany(client, org.map(([c]) => ({
+      space, page: c.page || page, item: c.item, kind: c.kind, entry: entryOf(c, 1),
+    })));
+    org.forEach(([c, i]) => {
+      const p = c.page || page;
+      const known = orgBefore ? orgBefore(p, c.kind) : undefined;
+      results[i] = {
+        page: p, item: c.item, kind: c.kind, ok: true, rev: 1,
+      };
+      audits[i] = {
+        page: p, item: c.item, kind: c.kind, before: known === undefined || known === null ? null : { v: JSON.stringify(known), from: 'summary' }, after: c.value, rev: 1,
+      };
+    });
+  }
+  // the others: each with its rev check, SAVE_PARALLEL at once; the changes to one entry in order
   const one = async (c, i) => {
     const p = c.page || page;
-    const key = entryKey(p, c.item, c.kind, space);
-    // (organisation, the newest wins: not read first when its value before is known otherwise,
-    // e.g. from the review's summary; the store takes ~80 operations a second)
-    const known = c.org && orgBefore ? orgBefore(p, c.kind) : undefined;
-    const stored = known === undefined ? await state.get(key) : null;
-    const current = stored ? JSON.parse(stored.value) : null;
-    const rev = current ? current.rev : 0;
-    if ((c.rev ?? 0) !== rev && !c.org) {
+    const started = c.rev ?? 0;
+    const r = await saveEntry(client, {
+      space, page: p, item: c.item, kind: c.kind, entry: entryOf(c, started + 1), rev: started,
+    });
+    if (!r.ok) {
       results[i] = {
-        page: p, item: c.item, kind: c.kind, ok: false, conflict: true, rev, by: current?.by, at: current?.at,
+        page: p, item: c.item, kind: c.kind, ok: false, conflict: true, rev: r.rev, by: r.by, at: r.at,
       };
       return;
     }
-    const next = {
-      v: c.value, by, at, rev: rev + 1, inv, role,
-    };
-    await state.put(key, JSON.stringify(next), { ttl: TTL });
     results[i] = {
-      page: p, item: c.item, kind: c.kind, ok: true, rev: next.rev,
+      page: p, item: c.item, kind: c.kind, ok: true, rev: r.rev,
     };
-    let before = current ? { v: current.v, by: current.by, at: current.at } : null;
-    if (known !== undefined) before = known === null ? null : { v: JSON.stringify(known), from: 'summary' };
     audits[i] = {
-      page: p, item: c.item, kind: c.kind, before, after: c.value, rev: next.rev,
+      page: p, item: c.item, kind: c.kind, before: r.before ? { v: r.before.v, by: r.before.by, at: r.before.at } : null, after: c.value, rev: r.rev,
     };
   };
-  // different keys at the same time, SAVE_PARALLEL at once; the changes to one key in their order
   const byKey = new Map();
   changes.forEach((c, i) => {
+    if (c.org) return;
     const key = entryKey(c.page || page, c.item, c.kind, space);
     if (!byKey.has(key)) byKey.set(key, []);
     byKey.get(key).push(i);

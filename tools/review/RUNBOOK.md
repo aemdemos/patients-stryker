@@ -192,8 +192,10 @@ report before any upload.
   computed on the copy the reviewer saw (see the migration in `backend-plan.md`, phase 3).
 - **The tool shows "not valid / withdrawn":** the invitation expired or was revoked: create a new
   one.
-- **The State store only keeps entries a year:** they are renewed on every change; the audit files
-  are the durable record.
+- **Where entries live:** since 24 Nov 2026 in App Builder Database, one document per page
+  (`backend/DATABASE.md`); the old State store is no longer used (it held test data only). Daily
+  backups go to Files (`admin backups`, `restore-check`, `restore`); the audit files are the
+  second record. `admin db-stats` counts the documents.
 
 ## 10. Rules and lessons that are easy to miss
 

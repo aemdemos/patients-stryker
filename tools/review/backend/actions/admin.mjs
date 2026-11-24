@@ -14,11 +14,13 @@
  *   schedule { cron, enabled }              the capture action every 15 minutes (cron), the live
  *                                           warm-up, the daily backup (or all off)
  *   backup                                  every key of both reviews to Files (backups/<day>), dated,
- *                                           kept; entries within 90 days of their end renewed
+ *                                           kept
  *   backups                                 the days with a backup
- *   db-compare / db-sync                    every State key against the database copy (sync: put right)
+ *   migrate-from-state { apply }            once: every key of the old State store into the database
+ *                                           (apply false: only the comparison)
  *   db-check                                the App Builder Database: credential there, connect, write,
  *                                           read, 200 at once (DATABASE.md)
+ *   db-stats                                page documents per space, invitations (empty pages removed)
  *   restore-check { day }                   a backup against the store: keys missing now, changed since
  *   restore { day, only: [key prefixes] }   the keys of a backup missing now put back (never over one)
  *   capture-state                           the capture's record (first seen, sources to correct, runs)
@@ -40,22 +42,22 @@
  */
 import crypto from 'crypto';
 import {
-  open, secretOf, readAll, saveChanges, entryKey, pagePattern, groupPattern, parseKey, TTL, replyProblem, SPACES,
+  open, secretOf, readAll, saveChanges, entryKey, pagePattern, groupPattern, parseKey, replyProblem, SPACES,
 } from '../lib/core.mjs';
 import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
 import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
 import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
 import {
-  backup, listBackups, restoreCheck, restore, readEverything,
+  backup, listBackups, restoreCheck, restore,
 } from '../lib/backup.mjs';
 import {
   dbCheck, dbConsistency, dbListTest, dbListChangeTest,
 } from '../lib/db.mjs';
-import { compareAndRepair, mirrorFailures } from '../lib/mirror.mjs';
+import { migrateFromState } from '../lib/migrate.mjs';
 
 // operations that change entries: the review's summary is built again after them
-const WRITES = ['status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
+const WRITES = ['migrate-from-state', 'status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
 import {
   listRequests, readHistory, addVersions, failRequest, historyFile, requestFile,
 } from '../lib/shots.mjs';
@@ -114,16 +116,19 @@ async function run(params) {
     }
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
     if (op === 'backup') {
-      // the day's backup, then the database copy compared with State and put right
-      const { all, ...b } = await backup(stores);
-      const db = await compareAndRepair(params, files, all, { state }).catch((e) => ({ error: String(e.message || e).slice(0, 200) }));
-      return ok({ ...b, database: db, mirrorFailures: await mirrorFailures(files, b.day) });
+      return ok(await backup(stores));
     }
-    if (op === 'db-compare' || op === 'db-sync') {
-      const all = await readEverything(state);
-      return ok(await compareAndRepair(params, files, all, { repair: op === 'db-sync', state }));
-    }
+    if (op === 'migrate-from-state') return ok(await migrateFromState(state, { apply: params.apply === true }));
     if (op === 'db-check') return ok(await dbCheck(params));
+    if (op === 'db-stats') {
+      // the documents per space and invitations; pages left without entries removed
+      const pages = state.client.collection('pages');
+      const emptied = await pages.deleteMany({ e: {} });
+      const docs = await pages.find({}, { projection: { space: 1 } }).toArray();
+      const bySpace = {};
+      docs.forEach((d) => { bySpace[d.space] = (bySpace[d.space] || 0) + 1; });
+      return ok({ pages: bySpace, invites: await state.client.collection('invites').countDocuments({}), emptyRemoved: emptied?.deletedCount ?? emptied });
+    }
     if (op === 'db-listchange') return ok(await dbListChangeTest(params, Number(params.n) || 150));
     if (op === 'db-listtest') return ok(await dbListTest(params, Number(params.n) || 40));
     if (op === 'db-consistency') return ok(await dbConsistency(params, Number(params.n) || 30));
@@ -179,7 +184,7 @@ async function run(params) {
           if (!current || current.at < r.time) {
             await state.put(key, JSON.stringify({
               v: r.value, by: r.reviewer, at: r.time, rev: (current?.rev || 0) + 1, inv: r.inv || 'import', role: r.role === 'aoe' ? 'aoe' : 'reviewer',
-            }), { ttl: TTL });
+            }));
             n += 1;
           }
         }
@@ -230,7 +235,7 @@ async function run(params) {
           const value = JSON.parse((await state.get(key)).value);
           const target = entryKey(page, move.to, e.kind, space);
           const there = await state.get(target);
-          if (!there || JSON.parse(there.value).at < value.at) await state.put(target, JSON.stringify(value), { ttl: TTL });
+          if (!there || JSON.parse(there.value).at < value.at) await state.put(target, JSON.stringify(value));
           await state.delete(key);
           done.push({ from: e.item, to: move.to, kind: e.kind });
         }

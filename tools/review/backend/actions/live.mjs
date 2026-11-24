@@ -86,7 +86,7 @@ export async function main(params) {
     return reply(params, 200, { warm: true, cold, since: warmSince, took: Date.now() - t0 });
   }
   try {
-    const stores = await open();
+    const stores = await open(params);
     const { files } = stores;
     const { invite, error } = await checkInvite(stores, inviteOf(params));
     if (error) return fail(params, 401, error, 'This review link is not valid (any more): ask for a new one.');
