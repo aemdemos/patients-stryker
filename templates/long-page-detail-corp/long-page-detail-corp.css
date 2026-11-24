@@ -669,6 +669,11 @@ body.long-page-detail-corp main > .section.spacer:not(.separator) {
   }
 }
 
+/* `spacer, small`: 20px at every width (the shared variant, styles.css), no margins */
+body.long-page-detail-corp main > .section.spacer.small:not(.separator) {
+  height: var(--space-block-l);
+}
+
 /* `spacer, large / xlarge / xxlarge`: two, three or four rows' spacing (a source row nested in
    other rows) */
 body.long-page-detail-corp main > .section.spacer.large:not(.separator) {

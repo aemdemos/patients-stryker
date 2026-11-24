@@ -664,6 +664,12 @@ var CustomImportScript = (() => {
         h4.textContent = text2(title);
         nodes.push(h4);
       });
+      component.querySelectorAll(".c-standalone-image-content > p.u-white-space-pre").forEach((caption) => {
+        if (!text2(caption)) return;
+        const p = doc.createElement("p");
+        p.textContent = text2(caption);
+        nodes.push(p);
+      });
     }
     return nodes;
   }
@@ -1214,6 +1220,7 @@ var CustomImportScript = (() => {
     };
     let rowEnds = 0;
     components.forEach((component) => {
+      var _a;
       if (consumed.has(component)) return;
       rowSpacers(rowEnds);
       rowEnds = Number(component.getAttribute("data-row-end") || 0);
@@ -1249,7 +1256,7 @@ var CustomImportScript = (() => {
         current.nodes.push(component);
         return;
       }
-      if (component.matches(".c-largeheadline") && (!isFirst || component.hasAttribute("data-spacer")) && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
+      if (component.matches(".c-largeheadline") && (!isFirst || component.hasAttribute("data-spacer")) && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && (!component.closest('[class*="col-sm-"], [class*="col-md-"]') || component.hasAttribute("data-spacer-wide") && ((_a = component.closest(".row").parentElement.closest(".row")) == null ? void 0 : _a.querySelectorAll(':scope > [class*="col-"]').length) === 1)) {
         const wide = component.hasAttribute("data-spacer-wide") ? ", wide" : "";
         sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer${wide}` : `spacer${wide}`, nodes: [] });
         separatorNext = false;
@@ -1994,6 +2001,13 @@ var CustomImportScript = (() => {
       el.prepend(doc.createTextNode("[[color-white]"));
       el.append(doc.createTextNode("]"));
       el.setAttribute("data-white-tag", "");
+      el.querySelectorAll('[style*="color"]').forEach((c) => {
+        const colour = ((c.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i) || [])[1];
+        if (!colour || !BLACK.test(colour.trim()) || !h.text(c)) return;
+        if (c.parentElement.closest('[style*="color"]') !== el) return;
+        c.prepend(doc.createTextNode("[[color-black]"));
+        c.append(doc.createTextNode("]"));
+      });
     });
   }
   function eventCalendars(main) {
@@ -2426,7 +2440,6 @@ var CustomImportScript = (() => {
     ".buttonset",
     "table"
   ].join(", ");
-  var YOUTUBE_LINK = /^https?:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i;
   var CELL_BOXES = {
     "golden-gradient": "box-gold-gradient",
     "gray-gradient": "box-gray-gradient",
@@ -2555,8 +2568,7 @@ var CustomImportScript = (() => {
           a.textContent = link.querySelector("img").getAttribute("alt") || text3(link) || a.getAttribute("href");
           const p = doc.createElement("p");
           p.append(a);
-          if (YOUTUBE_LINK.test(a.getAttribute("href"))) nodes.splice(0, 1, p);
-          else nodes.splice(1, 0, p);
+          nodes.splice(1, 0, p);
         }
         out.push(...nodes);
       } else if (c.matches(".c-standalone-video")) {
@@ -2743,7 +2755,9 @@ var CustomImportScript = (() => {
         return;
       }
       const key = columns.map(columnWidth).join(",");
-      const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some((c) => linkedImage(c) && !YOUTUBE_LINK.test(linkedImage(c).getAttribute("href"))));
+      const linkedImages = filled.flatMap((col) => [...col.querySelectorAll(".c-standalone-image")].filter((c) => linkedImage(c)));
+      const linked = linkedImages.length > 0;
+      const captioned = linkedImages.some((c) => [...c.querySelectorAll(".c-standalone-image-content > p.u-white-space-pre")].some((caption) => text3(caption)));
       const boxes = boxVariant(columns);
       if (!boxes) markTitleBars(columns, colctrl);
       if (!boxes) {
@@ -2762,6 +2776,7 @@ var CustomImportScript = (() => {
       const variant = [
         COLUMN_VARIANTS[key],
         linked ? "media-pair" : "",
+        captioned ? "image-captions" : "",
         stackRow(columns) ? "stack" : "",
         stackRow(columns) && mediaTextRow(columns) ? "media-text" : "",
         boxes,
@@ -2769,7 +2784,7 @@ var CustomImportScript = (() => {
         filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? "right-last" : "",
         borderedImages(columns, colctrl) ? "image-border" : ""
       ].filter(Boolean).join(", ");
-      const centred = filled.every(centredColumn);
+      const centred = !captioned && filled.every(centredColumn);
       const padded = filled.every((col) => paddedColumn(col, colctrl));
       const cells = columns.map((col) => cellNodes(col, doc));
       const style = [rowCopyStyle(cells, doc), centred ? "center" : "", padded ? "cell-padding" : ""].filter(Boolean).join(", ");
@@ -3071,6 +3086,7 @@ var CustomImportScript = (() => {
     if (value.startsWith("/") && !value.startsWith("//")) rest = value;
     else if (hostRe.test(value)) rest = value.replace(hostRe, "") || "/";
     else return null;
+    rest = rest.replace(/^\/{2,}/, "/");
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
@@ -3575,16 +3591,8 @@ var CustomImportScript = (() => {
   ];
   var PAGE_SPACERS = [
     [/\/care-settings\/asc\/build-your-asc(\.html)?$/i, [
-      ["You only get one chance", "spacer, wide"],
-      // under the hero: 58px (27px on phones)
-      ["ASC New Build Playbook", "spacer, wide"],
-      // under the icon row: 61px
       ["Phase 1", "spacer"]
       // above the phase boxes: 59px (49px on phones)
-    ]],
-    [/\/care-settings\/asc\/implants-and-disposables(\.html)?$/i, [
-      ["Joint replacement", "spacer, wide"]
-      // under the hero: 58px (27px on phones)
     ]]
   ];
   function pageSpacers(doc, main, url) {
@@ -3788,27 +3796,58 @@ var CustomImportScript = (() => {
           if (i) h1.append(doc.createElement("br"));
           h1.append(...l.childNodes);
         });
+        const fromHeading = /^H\d$/.test(title[0].tagName);
         title[0].replaceWith(h1);
         title.slice(1).forEach((l) => l.remove());
         while (h1.firstChild && (h1.firstChild.nodeName === "BR" || h1.firstChild.nodeType === 3 && !h1.firstChild.textContent.trim())) h1.firstChild.remove();
         while (h1.lastChild && (h1.lastChild.nodeName === "BR" || h1.lastChild.nodeType === 3 && !h1.lastChild.textContent.trim())) h1.lastChild.remove();
-        const em = /^text-/.test(spansIn(h1).flatMap(tagsOf).find((t) => tagSize(t) === max) || "");
-        if (max >= 5 && !em) addVariant(table, "xlarge");
-        else if (max >= 3) addVariant(table, "large");
+        const rendered = (n) => {
+          let emSize = 0;
+          for (let el = n.parentElement; el && el !== h1.parentElement; el = el.parentElement) {
+            const list = tagsOf(el).filter((x) => tagSize(x)).reverse();
+            for (let i = 0; i < list.length; i += 1) {
+              if (/^headline-/.test(list[i])) return [(emSize || 1) * tagSize(list[i]), false];
+              emSize = Math.max(emSize, tagSize(list[i]));
+            }
+          }
+          return [emSize || 1, true];
+        };
+        const sizes = [];
+        const w = doc.createTreeWalker(h1, 4);
+        while (w.nextNode()) if (w.currentNode.nodeValue.trim()) sizes.push(rendered(w.currentNode));
+        const [size, em] = sizes.reduce((a, b) => b[0] > a[0] ? b : a, [0, false]);
+        const tagged = (n, tag) => {
+          for (let el = n.parentElement; el && el !== h1.parentElement; el = el.parentElement) {
+            if (tagsOf(el).includes(tag)) return true;
+          }
+          return false;
+        };
+        const goldSerif = [];
+        const gw = doc.createTreeWalker(h1, 4);
+        while (gw.nextNode()) {
+          const n = gw.currentNode;
+          if (n.nodeValue.trim() && tagged(n, "color-gold")) goldSerif.push(tagged(n, "serif"));
+        }
+        if (!em && size === 3.5 && goldSerif.length && goldSerif.every(Boolean)) addVariant(table, "serif-gold-title");
+        else if (size >= 5 && !em) addVariant(table, "xlarge");
+        else if (size >= 3 && (size < 3.5 || em && size === 3.5 && !fromHeading)) addVariant(table, "medium");
+        else if (size >= 3) addVariant(table, "large");
       }
       const copy = cells.flatMap((c) => [...c.querySelectorAll(":scope > p")]).filter((p) => norm(p.textContent) && !(p.querySelector("a") && norm(p.textContent) === norm(p.querySelector("a").textContent)));
       const most = (test) => copy.length && copy.filter(test).length * 2 > copy.length;
       if (most((p) => wholeSize(p) === "text-1-25")) addVariant(table, "large-copy");
       else if (most((p) => wholeSize(p) === "text-1-5")) addVariant(table, "xlarge-copy");
+      else if (most((p) => spansIn(p).some((sp) => tagsOf(sp).includes("headline-1-5") && norm(sp.textContent) === norm(p.textContent)))) addVariant(table, "headline-copy");
       if (most((p) => spansIn(p).some((s) => tagsOf(s).includes("serif") && norm(s.textContent) === norm(p.textContent)))) addVariant(table, "serif");
       const existing = (_a = sectionsOf(main).find((s) => s.nodes.includes(table))) == null ? void 0 : _a.meta;
       const box = norm(((_c = (_b = metaRow(existing, "text box")) == null ? void 0 : _b.children[1]) == null ? void 0 : _c.textContent) || "").toLowerCase();
-      const count = (tag) => cells.flatMap(spansIn).filter((s) => tagsOf(s).includes(tag) && !s.parentElement.closest(`span[data-tag~="${tag}"]`)).reduce((n, s) => n + norm(s.textContent).length, 0);
+      const count = (tag) => cells.flatMap(spansIn).filter((s) => tagsOf(s).includes(tag) && !s.parentElement.closest(`span[data-tag~="${tag}"]`)).reduce((n, s) => n + norm(s.textContent).replace(/\s/g, "").length, 0);
       const white = count("color-white");
       const gray = count("color-light-gray");
+      const all = cells.reduce((n, c) => n + norm(c.textContent).replace(/\s/g, "").length, 0);
       let colour = "";
       if (gray) colour = "light-gray";
-      else if (white && !/purple|teal|blue/.test(box)) colour = "white";
+      else if (white * 2 >= all && !/purple|teal|blue/.test(box)) colour = "white";
       const meta = colour ? metaTableOf(doc, main, table) : null;
       if (meta) setMetaRow(doc, meta, "Text colour", colour);
     });
@@ -3961,6 +4000,109 @@ var CustomImportScript = (() => {
         t.querySelectorAll("td p").forEach((p) => {
           if (p.querySelector('span[data-tag~="color-gold"]')) rename2(doc, p, "h2");
         });
+      });
+    });
+  }
+  function variantsOf(table) {
+    var _a;
+    const m = norm(((_a = table.querySelector("tr")) == null ? void 0 : _a.textContent) || "").match(/^([^(]+?)\s*(?:\((.*)\))?$/);
+    return { name: m[1], list: (m[2] || "").split(",").map((o) => o.trim()).filter(Boolean) };
+  }
+  function setVariants(table, name, list) {
+    const cell = table.querySelector("tr").firstElementChild;
+    cell.textContent = list.length ? `${name} (${list.join(", ")})` : name;
+  }
+  function heroVariants(doc, main) {
+    blocksNamed(main, /^hero corp\b/).forEach((table) => {
+      const section = sectionsOf(main).find((s) => s.nodes.includes(table));
+      const meta = section == null ? void 0 : section.meta;
+      if (!meta) return;
+      const read = (key) => {
+        var _a;
+        const row = metaRow(meta, key);
+        if (!row) return "";
+        const value = norm(((_a = row.children[1]) == null ? void 0 : _a.textContent) || "");
+        row.remove();
+        return value;
+      };
+      const { name, list } = variantsOf(table);
+      const banner = list.includes("banner");
+      const [top, left, right] = read("text position").split(",").map((v) => parseFloat(v));
+      const width = parseFloat(read("text width"));
+      const phones = read("text on phones").toLowerCase();
+      const imageRow = (tr) => {
+        const a = tr.querySelector("a");
+        return !!a && /\/is\/image\//.test(a.getAttribute("href") || "") && norm(tr.textContent) === norm(a.textContent);
+      };
+      const over = !phones && [...table.querySelectorAll("tr")].slice(1).filter(imageRow).length >= 2;
+      const phoneColour = read("text colour on phones").toLowerCase().replace(/[\s_]+/g, "-");
+      const colour = read("text colour").toLowerCase();
+      const box = read("text box").toLowerCase().replace(/\s+/g, "-");
+      let placement = "";
+      if (!Number.isNaN(left) && left >= 40) placement = "right";
+      else if (!banner && !Number.isNaN(top)) {
+        if (top >= 45) placement = "bottom-left";
+        else if (right <= 15) placement = "wide";
+        else if (top <= 12 || right <= 52) placement = "top-left";
+        else placement = "left";
+      }
+      if (placement) list.push(over && ["top-left", "left"].includes(placement) ? `${placement}-over` : placement);
+      if (banner && placement !== "right" && !Number.isNaN(width) && width <= 50) list.push("half-text");
+      setVariants(table, name, list);
+      const styles = [
+        colour && `${colour}-text`,
+        box && `box-${box}`,
+        phoneColour === "dark-gray" && "phone-dark-gray-text"
+      ].filter(Boolean);
+      if (styles.length) {
+        const row = metaRow(meta, "style");
+        const now = row ? row.children[1].textContent.split(",").map((s) => s.trim()).filter(Boolean) : [];
+        setMetaRow(doc, meta, "style", [...now, ...styles].join(", "));
+      }
+      if (meta.querySelectorAll("tr").length <= 1) meta.remove();
+    });
+  }
+  var BUNDLES = [
+    [["large-copy", "serif"], "large-serif-copy"],
+    [["xlarge-copy", "serif"], "xlarge-serif-copy"],
+    [["headline-copy", "serif"], "headline-serif-copy"],
+    [["gray-last", "large-subtitles", "plain-bold"], "faculty"],
+    [["label-bold", "plain-bold"], "chapter-labels"],
+    [["gray-all", "plain-bold"], "gray-cards"]
+  ];
+  function bundleVariants(main, warn) {
+    [...main.querySelectorAll("table")].forEach((table) => {
+      var _a;
+      const head = norm(((_a = table.querySelector("tr")) == null ? void 0 : _a.textContent) || "");
+      if (!/^[a-z][a-z -]*\([^()]*\)$/i.test(head) || /^(section )?metadata\b/i.test(head)) return;
+      const { name, list: raw } = variantsOf(table);
+      const list = raw.map((v) => v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""));
+      let out = [...list];
+      BUNDLES.forEach(([parts, bundle]) => {
+        if (!parts.every((p) => out.includes(p))) return;
+        const at = out.indexOf(parts[0]);
+        out = out.filter((v) => !parts.includes(v));
+        out.splice(Math.min(at, out.length), 0, bundle);
+      });
+      if (out.join() !== list.join()) setVariants(table, name, out);
+      if (out.length > 3) warn.push(`more than 3 variants: ${name} (${out.join(", ")})`);
+    });
+  }
+  var GOLD_BOX = /^panel\b.*\bgold(-gradient)?\b|^columns\b.*\bgold-lead\b/;
+  function whiteOnGold(doc, main) {
+    blocksNamed(main, GOLD_BOX).forEach((table) => {
+      const nodes = [];
+      const w = doc.createTreeWalker(table, 4);
+      while (w.nextNode()) if (w.currentNode.nodeValue.trim()) nodes.push(w.currentNode);
+      nodes.forEach((n) => {
+        let el = n.parentElement;
+        while (el && el !== table && !tagsOf(el).some((t) => /^color-(white|black)$/.test(t))) {
+          el = el.parentElement;
+        }
+        if (!el || el === table || !tagsOf(el).includes("color-white")) return;
+        const span = tagSpan(doc, ["color-gold"]);
+        n.before(span);
+        span.append(n);
       });
     });
   }
@@ -4128,6 +4270,14 @@ var CustomImportScript = (() => {
     const group = ((_a = PAGE_THEMES.find(([re]) => re.test(url))) == null ? void 0 : _a[1]) || "";
     if (group) addTheme(main, group);
     tagsToSpans(doc, main);
+    blocksNamed(main, /^columns\b/).filter((t) => !/large-headline/.test(blockName(t))).forEach((t) => {
+      t.querySelectorAll("td h2").forEach((h) => {
+        const kids = [...h.childNodes].filter((n) => n.nodeType !== 3 || n.textContent.trim());
+        const plain = kids.some((n) => n.nodeType === 3);
+        const onlyBold = kids.every((n) => n.nodeType === 3 || n.nodeName === "STRONG" || n.nodeName === "B" || n.nodeName === "SPAN" && !n.querySelector("em, i") && !tagsOf(n).includes("color-gold"));
+        if (plain && onlyBold && h.querySelector("strong, b")) italicPlainWords(doc, h);
+      });
+    });
     if (group === "asc") ascHeadlines(doc, main, warn);
     largeHeadlines(doc, main, warn);
     heroes(doc, main);
@@ -4136,11 +4286,14 @@ var CustomImportScript = (() => {
     pageCopy(main);
     sizeLines(doc, main);
     displayLines(doc, main);
+    whiteOnGold(doc, main);
     finishSpans(doc, main, warn);
     dropTypographyStyles(doc, main, warn, group);
     pageSpacers(doc, main, url);
     main.querySelectorAll("[data-blank-before]").forEach((a) => a.removeAttribute("data-blank-before"));
     tidyEmphasis(doc, main);
+    heroVariants(doc, main);
+    bundleVariants(main, warn);
     const left = main.textContent.match(/\[\[[^\]]*\]/g);
     if (left) warn.push(`bracket text left: ${left.slice(0, 5).join(" ")}`);
     return warn;

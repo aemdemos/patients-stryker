@@ -210,7 +210,7 @@ body.news-detail main > .section.date-above > .default-content-wrapper > h5.firs
 /* a `spacer` section (the importer's, e.g. after the title) is the source component gap:
    20px on phones, 30px from 600px — the article starts 36px / 46px below the date, as on
    the source (the SHEA CAUTI article, Taking action, Caregiver James Bamber) */
-body.news-detail main > .section.spacer:not(.large, .xlarge, .xxlarge) {
+body.news-detail main > .section.spacer:not(.small, .large, .xlarge, .xxlarge) {
   height: var(--space-block-l);
 }
 
@@ -245,8 +245,6 @@ body.news-detail main > .section.h2-1-25 > .default-content-wrapper > h2 {
 body.news-detail main > .section:not(.cards-corp-container, .bu-resources, .connect-band) > .default-content-wrapper h2:not(.underline) {
   padding-bottom: 0;
   border-bottom: 0;
-  font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-medium);
 }
 
 /* bold inside running text keeps the body font; a bold line on its own stays Futura
@@ -257,10 +255,18 @@ body.news-detail main > .section > .default-content-wrapper :is(p, li)
 }
 
 /* …in a `serif` section the running font is Egyptienne, so its bold is too (stryker.com
-   <b> inside span.urw-egyptienne) */
+   <b> inside span.urw-egyptienne) — except underlined text, below */
 body.news-detail main > .section.serif > .default-content-wrapper :is(p, li)
-  :is(strong:not(.standalone, em strong, :has(em)), b:not(i b, :has(i))) {
+  :is(strong:not(.standalone, .body-bold, em strong, :has(em)), b:not(i b, :has(i))) {
   font-family: var(--heading-font-family);
+}
+
+/* authoring convention: underlined text (not a link) is Humanist bold, also on a line of its
+   own and in blocks (news-detail.js turns the <u> into strong.body-bold), e.g. the "For
+   investor inquiries please contact:" label of the Vocera acquisition release */
+body.news-detail main :is(p, li) strong.body-bold {
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-bold);
 }
 
 /* a `serif, p-1-5` news intro keeps the 21px headline lines, 1.06 (stryker.com
@@ -279,9 +285,11 @@ body.news-detail main > .section > .default-content-wrapper :is(p, li)
 }
 
 /* …except in a `bold-body` section: a paragraph that is plain <b><i> as a whole on the
-   source (e.g. a press release subtitle) stays Humanist bold italic */
+   source (e.g. a press release subtitle) stays black Humanist bold italic, not the gold
+   Bold + Italic */
 body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
-  :is(strong em, em strong, b i, i b) {
+  :is(strong em, em strong, b i, i b):not(a *) {
+  color: var(--text-color);
   font-family: var(--body-font-family);
   font-style: italic;
 }
@@ -294,24 +302,35 @@ body.news-detail main > .section.bold-italic > .default-content-wrapper :is(p, l
   font-style: italic;
 }
 
-/* body colour instead of the global gold label — except inside a bracket colour tag
-   ([[color-gold]***text***], scripts/span-tags.js) or a link, whose color must win */
-body.news-detail main > .section > .default-content-wrapper :is(p, li)
-  :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *) {
-  color: var(--text-color);
-}
-
-/* article h3: Futura Bold (the live h3 wraps span.futura-bold on 16 of 19 pages); the h-serif
-   section style (styles/styles-corp.css) keeps the Egyptienne ones */
-body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3 {
+/* article headings: Futura Bold by default (h2–h6; the h1 is the corp light serif on phones,
+   Futura Bold from 600px, below); words authored in italic are the Egyptienne serif (the
+   rule below), and the h-serif section style (styles/styles-corp.css) keeps its Egyptienne
+   h2 / h3 */
+body.news-detail main > .section > .default-content-wrapper > :is(h2, h3, h4, h5, h6) {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
 }
 
-/* italic inside an article heading stays italic (live <i> in h2); the global heading rule only
-   means to straighten the bold + italic gold marker */
-body.news-detail main > .section > .default-content-wrapper > :is(h2, h3, h4) em:not(strong em, :has(strong)) {
-  font-style: italic;
+body.news-detail main > .section.h-serif > .default-content-wrapper > :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
+/* italic inside an article heading (live <i> in the heading, e.g. the "Stryker's navigation
+   system offers surgeons…" subtitle of the Q Guidance System release: Egyptienne Light,
+   weight 500) is the serif heading font, upright; the gold Bold + Italic keeps its Futura */
+body.news-detail main > .section > .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) em:not(strong em, :has(strong)) {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+}
+
+/* an h3 authored in italic (not the gold Bold + Italic) is 21px from phones up (the plain
+   h3 reaches it from 600px); the h3 size section styles (h3-0-8, h3-1-25) still scale it */
+body.news-detail main > .section > .default-content-wrapper > h3:where(:has(em):not(:has(strong))) {
+  --news-h3-size: var(--heading-font-size-l);
+
+  font-size: var(--news-h3-size);
 }
 
 /* join: a section the importer split off the same live text component (a component that mixes
@@ -332,6 +351,12 @@ body.news-detail main > .section > .default-content-wrapper > h4 {
   font-weight: var(--font-weight-bold);
 }
 
+/* …an h4 authored in italic (not the gold Bold + Italic) is 17.5px from phones up, the size
+   the plain h4 reaches from 600px; the `h4-1-25` section style keeps its own sizes */
+body.news-detail main > .section > .default-content-wrapper > h4:where(:has(em):not(:has(strong))) {
+  font-size: var(--heading-font-size-m);
+}
+
 /* the small-print section (`disclaimer`: references and document code) sits directly
    above the "Last Updated" line, as on the source — also across the empty (hidden) section
    the page metadata leaves between them */
@@ -339,6 +364,15 @@ body.news-detail main > .section.disclaimer:has(+ .last-modified-section, + .sec
 body.news-detail main > .section.compact:has(+ .last-modified-section, + .section:empty + .last-modified-section),
 body.news-detail main > .section.compact > .default-content-wrapper > :last-child {
   margin-bottom: 0;
+}
+
+/* bold small print stays in the body font, as the text around it — also a bold line on its
+   own (stryker.com .c-disclaimer <b>: Humanist 712 bold, e.g. the "DFHD 17934 Rev A" code
+   of the flexible ureteroscope release); buttons, bold + underline CTAs and the gold
+   Bold + Italic keep their own fonts */
+body.news-detail main > .section.disclaimer :is(p, li) :is(strong, b):not(em strong, i b, :has(em, i, a.link-strong)),
+body.news-detail .accordion-item-body > .section.disclaimer :is(p, li) :is(strong, b):not(em strong, i b, :has(em, i, a.link-strong)) {
+  font-family: var(--body-font-family);
 }
 
 /* `separator` section (source .c-section-separator, e.g. above "About AVS"): the section
@@ -650,14 +684,6 @@ body.news-detail main span.box-gold a:any-link > strong {
 }
 
 
-/* …a bold h3 is that live h3 > span.futura-bold: the h3 keeps the Egyptienne line and only
-   its bold words are Futura, so the line is as tall as the source's mixed-font one (28px for
-   a 21px h3 at 1440px instead of 22px, e.g. the five steps of the workplace violence article
-   and the SHEA CAUTI practice updates) */
-body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3:has(strong) {
-  font-family: var(--heading-font-family);
-}
-
 body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3 strong {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
@@ -881,13 +907,12 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
     margin-bottom: var(--space-section);
   }
 
-
-  /* two-tone title: a title with Bold words keeps its plain words in the light serif, as
-     on phones (stryker.com futura-bold + urw-egyptienne title, the surgical smoke feature) */
-  body.news-detail main > .section:nth-child(1 of :not(:empty)) h1:has(strong) {
-    font-family: var(--heading-font-family);
-    font-weight: var(--font-weight-medium);
+  /* the article h1: Futura Bold from 600px (the corp light serif on phones) */
+  body.news-detail main > .section > .default-content-wrapper > h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
   }
+
 
   body.news-detail main > .section > .default-content-wrapper > h4 {
     font-size: var(--heading-font-size-m);
@@ -901,7 +926,7 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
     margin-bottom: calc(var(--space-section) + var(--space-block));
   }
 
-  body.news-detail main > .section.spacer:not(.large, .xlarge, .xxlarge) {
+  body.news-detail main > .section.spacer:not(.small, .large, .xlarge, .xxlarge) {
     height: var(--space-section);
   }
 
@@ -1703,19 +1728,6 @@ body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .def
   body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) {
     --corp-headline-vw: 1vw;
   }
-}
-
-/* Columns: a Bold + Italic lead-in on a line of its own (Bold + Italic text, then a line
-   break and the paragraph's text) is the news Bold + Italic — black upright Futura bold
-   (authoring conventions) — not the corp gold label (stryker.com span.futura-bold
-   questions, e.g. "When did you start running?" of "Going the distance for front-line
-   heroes") */
-body.news-detail main .columns.block > div > div > p > :is(em:has(> strong:only-child), strong:has(> em:only-child)):first-child:has(+ br):nth-child(n):nth-child(n),
-body.news-detail main .columns.block > div > div > p > :is(em:has(> strong:only-child), strong:has(> em:only-child)):first-child:has(+ br):nth-child(n):nth-child(n) > * {
-  color: var(--text-color);
-  font-family: var(--display-font-family);
-  font-style: normal;
-  font-weight: var(--font-weight-bold);
 }
 
 /* Columns 50/50 in a `serif` section: the text column beside an image keeps the cell's 15px

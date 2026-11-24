@@ -61,6 +61,9 @@ function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
   if (value.startsWith('/') && !value.startsWith('//')) rest = value;
   else if (hostRe.test(value)) rest = value.replace(hostRe, '') || '/';
   else return null;
+  // a path typed with a doubled slash after the host (https://www.stryker.com//us/en/…, e.g.
+  // the CD NXT release) is the same page: one slash, not a protocol-relative //us/en/… link
+  rest = rest.replace(/^\/{2,}/, '/');
 
   const [, path, suffix = ''] = rest.match(/^([^?#]*)([?#].*)?$/);
   if (!/\.html?$/i.test(path) || path.startsWith('/content/dam/')) return null;
