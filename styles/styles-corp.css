@@ -154,6 +154,12 @@
   --corp-gradient-purple: linear-gradient(-90deg, var(--color-secondary), var(--corp-color-plum)); /* the purple tagline band */
   --corp-page-hero-top: 28px; /* stryker.com page hero: its title starts 28px below the top */
   --corp-people-image-width: 300px;
+
+  /* media gallery (blocks/media-gallery), measured on stryker.com's Dynamic Media viewers */
+  --corp-gallery-thumb-size: 56px; /* thumbnails and the scroll arrows */
+  --corp-gallery-thumb-gap: 10px; /* between two thumbnails (66px apart) */
+  --corp-gallery-thumb-selected: #666; /* the selected thumbnail's 1px frame (others #ddd) */
+  --corp-gallery-spin-button: 28px; /* the spin viewer's left / right arrows */
 }
 
 /* the HCP notice band text fits on one line from 600px (stryker.com 95px band from 599px,

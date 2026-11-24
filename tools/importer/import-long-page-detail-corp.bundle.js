@@ -2778,7 +2778,46 @@ var CustomImportScript = (() => {
       from.replaceWith(keepBlock(block, from));
     });
   }
+  function dmSetImages(path) {
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", `https://media-assets.stryker.com/is/image/${path}?req=set,json`, false);
+      xhr.send();
+      if (xhr.status !== 200) return [];
+      const text5 = xhr.responseText;
+      const json = JSON.parse(text5.slice(text5.indexOf("{"), text5.lastIndexOf("}") + 1));
+      return [].concat(json.set && json.set.item || []).map((item) => item.i && item.i.n).filter(Boolean);
+    } catch (e) {
+      return [];
+    }
+  }
+  function mediaGalleries(main, doc) {
+    main.querySelectorAll(".mixedmediagallery").forEach((component) => {
+      const asset = component.querySelector("[data-asset-path]");
+      const path = asset && asset.getAttribute("data-asset-path");
+      if (!path) {
+        component.remove();
+        return;
+      }
+      const type = (asset.getAttribute("data-asset-type") || "").toLowerCase();
+      const link2 = (name) => {
+        const a = doc.createElement("a");
+        a.href = `https://media-assets.stryker.com/is/image/${name.replace(/ /g, "%20")}`;
+        a.textContent = a.href;
+        return a;
+      };
+      const images = dmSetImages(path);
+      const rows = (images.length ? images : [path]).map((name) => [link2(name)]);
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: type === "spinset" ? "Media Gallery (spin-set)" : "Media Gallery",
+        cells: rows
+      });
+      block.setAttribute("data-std-table", "");
+      component.replaceWith(keepBlock(block, component));
+    });
+  }
   function numberCounters(main, doc, h) {
+    if (STD_DRAFT_IMPORT) mediaGalleries(main, doc);
     if (STD_DRAFT_IMPORT) microApps(main, doc);
     if (STD_DRAFT_IMPORT) statisticsBlocks(main, doc);
     if (STD_DRAFT_IMPORT) charts(main, doc);

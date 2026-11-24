@@ -1,0 +1,153 @@
+/*
+ * Media Gallery (docs/standardisation/media-gallery.md), in review: rendered on draft pages only
+ * (media-gallery.js). Measured on stryker.com's Dynamic Media viewers (caregiver stories, SAFE,
+ * RISE): the image the width of its column; 20px below it a strip of 56px square thumbnails
+ * 66px apart (1px frame #ddd, #666 on the selected one), centred; when they don't fit, a grey
+ * 56px chevron at each end, 2px in, and the thumbnails that fit between them.
+ * The spin view: the frame the width of its column, two 28px arrows centred under it.
+ */
+body.corp.std-draft .media-gallery {
+  --media-gallery-thumb: var(--corp-gallery-thumb-size);
+  --media-gallery-gap: var(--corp-gallery-thumb-gap);
+
+  margin-bottom: var(--space-block-l);
+}
+
+body.corp.std-draft .media-gallery .media-gallery-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* thumbnails: the whole photo in its square */
+body.corp.std-draft .media-gallery .media-gallery-thumbs img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* the stage keeps the first image's shape, so it doesn't jump between images */
+body.corp.std-draft .media-gallery .media-gallery-stage[style*="--media-gallery-ratio"] {
+  aspect-ratio: var(--media-gallery-ratio);
+}
+
+body.corp.std-draft .media-gallery .media-gallery-stage[style*="--media-gallery-ratio"] img {
+  height: 100%;
+  object-fit: contain;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-strip {
+  display: grid;
+  grid-template-columns: var(--media-gallery-thumb) minmax(0, 1fr) var(--media-gallery-thumb);
+  align-items: center;
+  margin-top: var(--space-block-l);
+  padding-inline: 2px;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-view {
+  grid-column: 2;
+  justify-self: center;
+  overflow: hidden;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-thumbs {
+  display: flex;
+  gap: var(--media-gallery-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 0.3s ease;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-thumbs li {
+  flex: none;
+  margin: 0;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-thumbs button {
+  display: block;
+  box-sizing: border-box;
+  width: var(--media-gallery-thumb);
+  height: var(--media-gallery-thumb);
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 0;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-thumbs button[aria-current="true"] {
+  border-color: var(--corp-gallery-thumb-selected);
+}
+
+/* the scroll arrows: a grey chevron, light grey at the ends */
+body.corp.std-draft .media-gallery :is(.media-gallery-prev, .media-gallery-next, .media-gallery-spin-left, .media-gallery-spin-right) {
+  position: relative;
+  width: var(--media-gallery-thumb);
+  height: var(--media-gallery-thumb);
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+body.corp.std-draft .media-gallery :is(.media-gallery-prev, .media-gallery-next) {
+  display: none;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-scrolls :is(.media-gallery-prev, .media-gallery-next) {
+  display: block;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-next {
+  grid-column: 3;
+}
+
+body.corp.std-draft .media-gallery :is(.media-gallery-prev, .media-gallery-next, .media-gallery-spin-left, .media-gallery-spin-right)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 25%;
+  height: 25%;
+  margin: auto;
+  border-top: 2px solid currentcolor;
+  border-left: 2px solid currentcolor;
+  transform: translateX(15%) rotate(-45deg);
+}
+
+body.corp.std-draft .media-gallery :is(.media-gallery-next, .media-gallery-spin-right)::before {
+  transform: translateX(-15%) rotate(135deg);
+}
+
+body.corp.std-draft .media-gallery :is(.media-gallery-prev, .media-gallery-next):disabled {
+  color: var(--color-surface-muted);
+  cursor: default;
+}
+
+/* ---- spin-set: drag the frame or use the arrows */
+body.corp.std-draft .media-gallery .media-gallery-spin {
+  cursor: ew-resize;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-spin img[hidden] {
+  display: none;
+}
+
+body.corp.std-draft .media-gallery .media-gallery-spin-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-block);
+  margin-top: var(--space-block-l);
+}
+
+body.corp.std-draft .media-gallery :is(.media-gallery-spin-left, .media-gallery-spin-right) {
+  width: var(--corp-gallery-spin-button);
+  height: var(--corp-gallery-spin-button);
+}

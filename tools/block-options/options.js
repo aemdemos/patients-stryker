@@ -294,6 +294,26 @@ export const BLOCK_OPTIONS = {
       },
     ],
   },
+  // stryker.com Dynamic Media galleries (docs/standardisation/media-gallery.md): the gallery
+  // (stryker.com mixed media sets and image sets look the same) or the 360° spin. Older imported
+  // names: `mixed-media` and `image-set` are the gallery.
+  'media-gallery': {
+    label: 'Media gallery',
+    aliases: {
+      'mixed-media': [],
+      'image-set': [],
+    },
+    groups: [
+      {
+        id: 'type',
+        label: 'Type',
+        options: [
+          ['', 'Gallery', { hint: 'The selected image with a strip of thumbnails under it' }],
+          ['spin-set', '360° spin', { needs: ['images'], hint: 'One product photographed all round: drag or use the arrows to turn it' }],
+        ],
+      },
+    ],
+  },
   // stryker.com local page navigation (docs/standardisation/local-nav.md):
   // the grey rule above it is the default; stryker.com's "hide bottom line" has no visible effect
   // there, so it is not a choice.
