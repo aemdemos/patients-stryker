@@ -234,9 +234,14 @@ body.long-page-detail-corp main > .section .columns .columns-img-col img {
   width: auto;
 }
 
-/* section style `spaced-items`: a blank line after each list item but the last (stryker.com
+/* section style `spaced-items`: the section's list as in the source's padded white rich-text
+   box, 10px in on every side, with a blank line after each item but the last (stryker.com
    line breaks at the end of the items: spine resources BioSkills "Offering six stations…";
    line breaks at the end of a list item do not render on Edge Delivery) */
+body.long-page-detail-corp main > .section.spaced-items :is(ul, ol) {
+  margin: var(--space-block-s);
+}
+
 body.long-page-detail-corp main > .section.spaced-items li:not(:last-child) {
   margin-bottom: 1lh;
 }
