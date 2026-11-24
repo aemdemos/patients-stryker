@@ -44,6 +44,8 @@
 
   /* local-nav-corp: the local page navigation (measured: giving-back, TEACH talks) */
   --corp-local-nav-height: 40px;
+  --corp-engagement-cta-width: 200px; /* measured: stryker.com engagement CTA buttons (spine medical education "Follow us"), 200px wide */
+  --corp-engagement-cta-height: 43px; /* measured: those buttons, 43px tall */
   --corp-local-nav-overlay-height: 55px; /* measured: stryker.com .localpagenavigation.localpage_nav_Overlay bar (spine medical education) */
   --corp-local-nav-overlay-bg: rgb(223 225 222 / 75%); /* measured: that bar's see-through light grey over the hero image */
   --corp-meded-title-indent: 0.87em; /* measured: the white backslash spacer before the spine MedEd banner title (62px at 70px, 34px at 39px) */
