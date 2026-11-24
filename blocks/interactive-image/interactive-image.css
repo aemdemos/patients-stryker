@@ -1,0 +1,47 @@
+/*
+ * Interactive Image (docs/standardisation/interactive-image.md), in review: rendered on draft
+ * pages only (interactive-image.js). Measured on stryker.com (operating room, pre- and
+ * post-operative rooms): the image the width of its column; each hotspot a 56px white ring
+ * (Dynamic Media's touch hotspot icon) centred on its place, brighter on hover.
+ */
+body.corp.std-draft .interactive-image {
+  margin-bottom: var(--space-block-l);
+}
+
+body.corp.std-draft .interactive-image .interactive-image-figure {
+  position: relative;
+}
+
+body.corp.std-draft .interactive-image .interactive-image-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.corp.std-draft .interactive-image .interactive-image-hotspots {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.corp.std-draft .interactive-image .interactive-image-hotspots li {
+  position: absolute;
+  top: var(--hotspot-y);
+  left: var(--hotspot-x);
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+body.corp.std-draft .interactive-image .interactive-image-hotspot {
+  display: block;
+  box-sizing: border-box;
+  width: var(--corp-hotspot-size);
+  height: var(--corp-hotspot-size);
+  border: 2px solid var(--corp-hotspot-ring);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--corp-hotspot-halo), inset 0 0 0 1px var(--corp-hotspot-halo);
+}
+
+body.corp.std-draft .interactive-image .interactive-image-hotspot:is(:hover, :focus-visible) {
+  border-color: var(--color-white);
+}
