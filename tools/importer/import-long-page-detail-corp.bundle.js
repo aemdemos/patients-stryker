@@ -2078,6 +2078,19 @@ var CustomImportScript = (() => {
       }));
       items.forEach(({ body }) => tagPanelCopy(body, doc, h));
       const target = group.closest(".c-accordion") || group;
+      const subheading = STD_DRAFT_IMPORT && [...target.querySelectorAll(".component-subheading")].find((el) => !el.closest(".panel") && h.text(el));
+      const title = subheading ? doc.createElement("h3") : null;
+      if (title) {
+        const bold = doc.createElement("strong");
+        bold.textContent = h.text(subheading);
+        title.append(bold);
+      }
+      const keepWithTitle = (block2) => {
+        if (!title) return [block2];
+        title.setAttribute("data-keep", "section");
+        block2.setAttribute("data-keep", "join");
+        return [title, block2];
+      };
       const nested = items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches("table") || n.querySelector("table"))));
       if (nested && target.closest(".tab-content")) {
         items.forEach((item) => {
@@ -2090,14 +2103,16 @@ var CustomImportScript = (() => {
           return [p, body];
         });
         const block2 = WebImporter.Blocks.createBlock(doc, { name, cells: rows2 });
-        target.replaceWith(keepBlock(block2, target));
+        target.replaceWith(...keepWithTitle(keepBlock(block2, target)));
         return;
       }
       if (nested) {
+        if (title) target.before(keepNodes(doc, [title]));
+        const style = STD_DRAFT_IMPORT && options.split(", ").includes("open") ? "accordion-panel, accordion-open" : "accordion-panel";
         items.forEach(({ label, body }) => {
           const heading = doc.createElement("h4");
           heading.textContent = label;
-          target.before(keepNodes(doc, [heading, ...body], "accordion-panel"));
+          target.before(keepNodes(doc, [heading, ...body], style));
         });
         target.remove();
         return;
@@ -2108,7 +2123,7 @@ var CustomImportScript = (() => {
         return [p, body];
       });
       const block = WebImporter.Blocks.createBlock(doc, { name, cells: rows });
-      target.replaceWith(keepBlock(block, target));
+      target.replaceWith(...keepWithTitle(keepBlock(block, target)));
     });
   }
   function headingId(label) {

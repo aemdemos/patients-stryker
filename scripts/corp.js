@@ -158,6 +158,12 @@ function buildAccordionSections(main) {
 
     const block = buildBlock('accordion', rows);
     block.classList.add('with-nested-blocks');
+    // in review (draft pages, docs/standardisation/accordion.md): `accordion-open` on the panel
+    // sections starts every panel open, as the Accordion's `open`
+    if (document.body.classList.contains('std-draft') && run.some((s) => s.classList.contains('accordion-open'))) {
+      block.classList.add('open');
+      run.forEach((s) => s.classList.remove('accordion-open'));
+    }
     const wrapper = document.createElement('div');
     wrapper.append(block);
 

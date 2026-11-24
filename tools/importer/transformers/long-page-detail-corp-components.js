@@ -223,6 +223,23 @@ function accordions(main, doc, h) {
     }));
     items.forEach(({ body }) => tagPanelCopy(body, doc, h));
     const target = group.closest('.c-accordion') || group;
+    // in review (staging build only, docs/standardisation/accordion.md): the accordion's title
+    // (heading-above, 16 accordions) is a Heading 3 right before it, in the same section
+    const subheading = STD_DRAFT_IMPORT && [...target.querySelectorAll('.component-subheading')]
+      .find((el) => !el.closest('.panel') && h.text(el));
+    // (Futura bold on stryker.com: a bold Heading 3)
+    const title = subheading ? doc.createElement('h3') : null;
+    if (title) {
+      const bold = doc.createElement('strong');
+      bold.textContent = h.text(subheading);
+      title.append(bold);
+    }
+    const keepWithTitle = (block) => {
+      if (!title) return [block];
+      title.setAttribute('data-keep', 'section');
+      block.setAttribute('data-keep', 'join');
+      return [title, block];
+    };
     const nested = items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches('table') || n.querySelector('table'))));
     // in a tab, panels can't be sections: the blocks in a panel (Columns rows, e.g. the Mako
     // surgeon campaign clinical studies: image | text) give their cells' content, so the
@@ -238,14 +255,19 @@ function accordions(main, doc, h) {
         return [p, body];
       });
       const block = WebImporter.Blocks.createBlock(doc, { name, cells: rows });
-      target.replaceWith(keepBlock(block, target));
+      target.replaceWith(...keepWithTitle(keepBlock(block, target)));
       return;
     }
     if (nested) {
+      if (title) target.before(keepNodes(doc, [title]));
+      // in review (staging build only, docs/standardisation/accordion.md): panels that all start
+      // open keep it, `accordion-open` on the panel sections (scripts/corp.js)
+      const style = STD_DRAFT_IMPORT && options.split(', ').includes('open')
+        ? 'accordion-panel, accordion-open' : 'accordion-panel';
       items.forEach(({ label, body }) => {
         const heading = doc.createElement('h4');
         heading.textContent = label;
-        target.before(keepNodes(doc, [heading, ...body], 'accordion-panel'));
+        target.before(keepNodes(doc, [heading, ...body], style));
       });
       target.remove();
       return;
@@ -256,7 +278,7 @@ function accordions(main, doc, h) {
       return [p, body];
     });
     const block = WebImporter.Blocks.createBlock(doc, { name, cells: rows });
-    target.replaceWith(keepBlock(block, target));
+    target.replaceWith(...keepWithTitle(keepBlock(block, target)));
   });
 }
 
