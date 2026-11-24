@@ -7,6 +7,37 @@ Project "Stryker std review": the live review on the **Production** workspace
 (below). The scripts and tests on this machine find it in
 `target.mjs`; the move itself: `move.mjs` (DATABASE.md, "The move to Production").
 
+## Source change history (pilot on Stage, 24 Nov 2026)
+
+What the capture does today on Production: every 15 minutes, the **first** shot of a page just
+published (none yet) and the AOE team's Refresh requests; a page with its shot is never shot
+again by itself. A set (1440 / 860 / 375) is ~0.2 MB (max 0.3).
+
+The pilot of a **daily change check** (the user's request: a history of every change to the
+sources, to tell a source change from a migration fault): every day each source page's
+**content fingerprint** (`lib/fingerprint.mjs`), screenshots only for a confirmed change.
+Measured on 50 pages of every template (`test/change-bench.mjs`, capture op `bench`, results
+archived in `.cbr/archives/change-pilot-2026-11-24.tar.gz`):
+
+| Per page | Content check (lite: no images, media, fonts) | Full load | + visual fingerprint |
+|---|---|---|---|
+| Real time (5 runs in parallel, 4 pages each) | ~0.3 s | ~0.8 s | 1.4 – 7.5 s |
+| Backend time | ~0.95 s | ~1.9 s | 2.8 – 9 s |
+| GB-seconds (2 GB) | ~1.9 | ~3.8 | 5.6 – 18 |
+
+- JavaScript off (~0.5 s) misses content some pages build in the browser: not used.
+- **Noise:** two loads of a page differed on 2–5 of 49 pages, every cause found and fixed:
+  Dynamic Media players' `blob:` addresses, their own menus, their asset name (taken from the
+  component's `data-asset-path` instead), Marketo forms arriving late (counted by form number).
+  What remains is absorbed by **variants** (the first check loads a page 3 times, every
+  version of a part seen counts as known) and a **confirming load** (a part counts as changed
+  only when never seen and the same on a second load): 0 false changes in 196 daily checks.
+- **Capture runs one per container** (`concurrency: 1`): runs sharing a container shared its
+  CPU (~10x slower per page); the browser is unpacked once per container (several runs
+  unpacking it at once: `spawn ETXTBSY`).
+- The visual fingerprint needs every image and video: at 20 pages at once stryker.com slowed
+  down (one page timed out after 90 s), and it showed 1 false difference in 40 pages.
+
 ## Two workspaces: Production (the live review) and Stage (tests)
 
 Since 24 Nov 2026 (`target.mjs`):

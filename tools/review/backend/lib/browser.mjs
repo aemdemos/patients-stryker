@@ -13,14 +13,27 @@ const BLOCK_PATH = /altcha|captcha/i;
 const BLOCK_HOST = /altcha|captcha|cookielaw|onetrust|googletagmanager|google-analytics|doubleclick|facebook|licdn|linkedin|qualtrics|zoominfo|zi-scripts|stackadapt|demdex|omtrdc|serving-sys|tribalfusion|quantserve|mathtag|intentsify|dpmsrv|usbrowserspeed|contextweb|smtrk|domdex|quantcount|adobedtm/;
 const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36';
 
+// the browser unpacked once per container: runs at the same time in one container (the platform
+// may run several there) share it (each unpacking it again: "spawn ETXTBSY")
+let unpacked = null;
+function executable(chromium) {
+  if (!unpacked) {
+    // (a warm container may keep another version's browser in /tmp: removed once, first)
+    rmSync('/tmp/chromium', { force: true });
+    unpacked = chromium.executablePath(PACK).catch((e) => {
+      unpacked = null;
+      throw e;
+    });
+  }
+  return unpacked;
+}
+
 export async function launch() {
-  // (the pack's Amazon Linux 2 libraries: unpacked only "on Lambda with Node 18"; a warm
-  // container may keep another version's browser in /tmp)
+  // (the pack's Amazon Linux 2 libraries: unpacked only "on Lambda with Node 18")
   process.env.AWS_EXECUTION_ENV = 'AWS_Lambda_nodejs18.x';
-  rmSync('/tmp/chromium', { force: true });
   const chromium = (await import('@sparticuz/chromium-min')).default;
   const puppeteer = (await import('puppeteer-core')).default;
-  const exe = await chromium.executablePath(PACK);
+  const exe = await executable(chromium);
   // Debian 10's NSS / NSPR (shipped with the action), before Amazon Linux 2's
   process.env.LD_LIBRARY_PATH = `${join(__dirname, 'libs')}:${process.env.LD_LIBRARY_PATH || ''}`;
   return puppeteer.launch({
@@ -69,14 +82,14 @@ const sameUrl = (a, b) => {
  * (lazy images, count-ups), back at the top → the response's status
  */
 export async function loadSource(page, url, {
-  wait = 2500, pause = 150, waitUntil = 'load', settle = 0,
+  wait = 2500, pause = 150, waitUntil = 'load', settle = 0, scroll = true,
 } = {}) {
   const resp = await page.goto(url, { waitUntil, timeout: 90000 });
   const status = resp ? resp.status() : 0;
   if (status !== 200) throw Object.assign(new Error(`the source answers ${status || 'nothing'}`), { source: true });
   if (!sameUrl(page.url(), url)) throw Object.assign(new Error(`the source redirects to ${page.url()}`), { source: true });
   await page.addStyleTag({ content: '#onetrust-consent-sdk, #onetrust-banner-sdk { display: none !important; }' });
-  await page.evaluate(async (ms) => {
+  if (scroll) await page.evaluate(async (ms) => {
     const step = Math.round(window.innerHeight * 0.8);
     for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
       window.scrollTo(0, y);

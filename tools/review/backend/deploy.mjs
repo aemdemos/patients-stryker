@@ -50,9 +50,10 @@ const ACTIONS = {
   pages: { web: true },
   tile: { web: true },
   admin: { web: false, timeout: 300000 },
-  // the browser: 2 GB, 5 minutes (a run stops starting pages after 3.5)
+  // the browser: 2 GB, 5 minutes (a run stops starting pages after 3.5); one run per container
+  // (runs at the same time in one container share its CPU: each page then takes ~10x longer)
   capture: {
-    web: false, timeout: 300000, memory: 2048, browser: true,
+    web: false, timeout: 300000, memory: 2048, browser: true, concurrency: 1,
   },
   // a live copy of a source page for the tool (the browser; a web action answers within 60 s)
   live: {
@@ -153,7 +154,7 @@ for (const name of names) {
     exec: {
       kind: 'nodejs:20', code, main: 'main', ...(binary ? { binary: true } : {}),
     },
-    limits: { timeout: a.timeout || 60000, memory: a.memory || 256 },
+    limits: { timeout: a.timeout || 60000, memory: a.memory || 256, ...(a.concurrency ? { concurrency: a.concurrency } : {}) },
     annotations,
   };
   if (dry) console.log(`(dry run) ${name}: ${(code.length / 1024).toFixed(0)} KB, ${a.web ? 'web' : 'private'}`);

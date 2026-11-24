@@ -10,6 +10,10 @@
  *                  correct (tried again when its row changes, or after a day)
  *   test { page, source }   one shot of a test page (/test/… only), for the tests
  *   health                  loads one known page (nothing kept): the browser still works
+ *   bench { pages: [{ page, source }], mode, tabs }   the change check's pilot (nothing kept):
+ *                  each page loaded in a mode (js, lite, waitUntil, wait, pause, settle, scroll,
+ *                  visual), tabs at once in one browser → timings, content fingerprints
+ *                  (lib/fingerprint.mjs) and, with visual, an image fingerprint per screen
  * Every shot: every width (1440, 860, 375), JPEG tiles of 4000 px (SHA-256 each) in Files, the
  * text / image anchors, the status, final URL and title, into the page's shot history
  * (lib/shots.mjs: never replaced, never removed).
@@ -25,6 +29,7 @@ import {
   readCaptureState, writeCaptureState, pagesWithShots, tileFile, lockFile,
 } from '../lib/capture-state.mjs';
 import { rebuildSummary } from '../lib/summary.mjs';
+import { pageContent, fingerprintOf } from '../lib/fingerprint.mjs';
 
 const WIDTHS = [1440, 860, 375];
 const TILE = 4000;
@@ -209,8 +214,106 @@ async function health(stores, space) {
   return result;
 }
 
+// an image fingerprint of the page at 1440: a difference hash (64 bits) per screen of 900 px,
+// from a screenshot at 1/16 scale with moving things hidden (videos, embeds, carousels); decoded
+// in a blank page of its own (the source's content security policy may refuse data: images)
+async function visualHash(page, scratch) {
+  await page.addStyleTag({ content: 'video, iframe, embed, object, .slick-slider, .swiper, [class*="carousel"] { visibility: hidden !important; }' });
+  const height = Math.min(await page.evaluate(() => document.documentElement.scrollHeight), 20000);
+  // (as base64: the library answers bytes, not a Buffer)
+  const b64 = await page.screenshot({
+    type: 'jpeg', quality: 80, encoding: 'base64', captureBeyondViewport: true, clip: { x: 0, y: 0, width: 1440, height, scale: 1 / 16 },
+  });
+  return scratch.evaluate(async (b64) => {
+    const img = new Image();
+    img.src = `data:image/jpeg;base64,${b64}`;
+    await img.decode();
+    const W = 9;
+    const H = 8;
+    const band = Math.round(900 / 16);
+    const c = document.createElement('canvas');
+    c.width = W;
+    c.height = H;
+    const ctx = c.getContext('2d');
+    const out = [];
+    for (let y = 0; y < img.height; y += band) {
+      ctx.drawImage(img, 0, y, img.width, Math.min(band, img.height - y), 0, 0, W, H);
+      const d = ctx.getImageData(0, 0, W, H).data;
+      const lum = (i) => d[i] * 0.3 + d[i + 1] * 0.59 + d[i + 2] * 0.11;
+      let bits = '';
+      for (let r = 0; r < H; r += 1) {
+        for (let col = 0; col < W - 1; col += 1) bits += lum((r * W + col) * 4) > lum((r * W + col + 1) * 4) ? '1' : '0';
+      }
+      out.push(BigInt(`0b${bits}`).toString(16).padStart(16, '0'));
+    }
+    return out;
+  }, b64);
+}
+
+// the pilot of the daily change check: pages in a mode, tabs at once, nothing kept
+async function bench(params) {
+  const pages = [].concat(params.pages || []).filter((p) => p && /^https:\/\/www\.stryker\.com\//.test(p.source || '')).slice(0, 40);
+  const mode = {
+    js: true, lite: false, waitUntil: 'load', wait: 1500, pause: 150, settle: 4000, scroll: true, visual: false, ...(params.mode || {}),
+  };
+  const tabs = Math.max(1, Math.min(8, Number(params.tabs) || 1));
+  const t0 = Date.now();
+  const browser = await launch();
+  const launchMs = Date.now() - t0;
+  const out = [];
+  let next = 0;
+  const worker = async () => {
+    const scratch = mode.visual ? await browser.newPage() : null;
+    while (next < pages.length) {
+      const p = pages[next];
+      next += 1;
+      const s = Date.now();
+      let page;
+      try {
+        page = await openPage(browser, 1440, { lite: mode.lite });
+        if (!mode.js) await page.setJavaScriptEnabled(false);
+        await loadSource(page, p.source, {
+          wait: mode.wait, pause: mode.pause, waitUntil: mode.waitUntil, settle: mode.js ? mode.settle : 0, scroll: mode.scroll,
+        });
+        const loadMs = Date.now() - s;
+        const content = await page.evaluate(pageContent);
+        // (the pilot's probe: elements whose attributes match a pattern, with their attributes)
+        if (params.probe) {
+          content.probe = await page.evaluate((re) => [...document.querySelectorAll('*')]
+            .filter((el) => [...el.attributes].some((a) => new RegExp(re, 'i').test(a.value)))
+            .slice(0, 12)
+            .map((el) => `<${el.tagName.toLowerCase()} ${[...el.attributes].map((a) => `${a.name}="${a.value.slice(0, 120)}"`).join(' ')}>`), params.probe);
+        }
+        const fp = fingerprintOf(content);
+        const v0 = Date.now();
+        const visual = mode.visual ? await visualHash(page, scratch) : null;
+        out.push({
+          page: p.page, ms: Date.now() - s, loadMs, visualMs: mode.visual ? Date.now() - v0 : 0, fp, visual, ...(params.raw ? { content } : {}),
+        });
+      } catch (e) {
+        out.push({ page: p.page, ms: Date.now() - s, error: String(e.message || e).slice(0, 150) });
+      } finally {
+        await page?.close().catch(() => null);
+      }
+    }
+    await scratch?.close().catch(() => null);
+  };
+  await Promise.all(Array.from({ length: tabs }, worker));
+  await browser.close().catch(() => null);
+  return {
+    mode, tabs, launchMs, took: Date.now() - t0, pages: out,
+  };
+}
+
 export async function main(params) {
   const started = Date.now();
+  if (params.op === 'bench') {
+    try {
+      return { body: await bench(params) };
+    } catch (e) {
+      return { body: { error: { code: 'bench', message: String(e.message || e).slice(0, 300) } } };
+    }
+  }
   const stores = await open(params);
   const { files } = stores;
   const space = SPACES[params.space] ? params.space : 'main';
