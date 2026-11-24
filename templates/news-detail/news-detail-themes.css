@@ -1197,11 +1197,12 @@ body.news-detail.news-xf-body main > .section > .default-content-wrapper picture
   text-align: start;
 }
 
-/* news-xf-body: a heading with an Italic + Underline part (e.g. "Improving safety" / "Spreading
-   truth about surgical smoke") keeps the rule the underline draws below the heading, in gold
-   (--color-accent) instead of grey; the underlined words show no underline of their own and
-   stay Egyptienne (italic in a news heading) */
-body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6):has(> :is(em, i) > u, > u > :is(em, i)) {
+/* news-xf-body: the rule an underlined heading draws below itself is gold (--color-accent)
+   instead of grey — a heading underlined as a whole (scripts.js .underline, e.g. "A valued
+   partner" of "Restoring spines and hope") or in part (e.g. the Italic + Underline "Spreading
+   truth about surgical smoke" under "Improving safety"). Italic + Underline words show no
+   underline of their own and stay Egyptienne (italic in a news heading) */
+body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6):is(.underline, :has(> u, > :is(strong, b, em, i) > u, > u > :is(em, i))) {
   border-bottom-color: var(--color-accent);
 }
 
