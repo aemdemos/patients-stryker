@@ -1357,7 +1357,12 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     if (component.matches('.c-largeheadline') && !isFirst && !text(component)
       && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
       && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-      sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer` : 'spacer', nodes: [] });
+      sections.push({
+        kind: 'spacer',
+        style: separatorNext ? `${separatorNext}, spacer` : 'spacer',
+        nodes: [],
+        id: component.getAttribute('data-section-id') || undefined,
+      });
       separatorNext = false;
       current = null;
       return;
@@ -1641,6 +1646,7 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     while (sections[i].kind === 'spacer' && sections[i].style === 'spacer'
       && sections[i + n] && sections[i + n].kind === 'spacer' && sections[i + n].style === 'spacer' && n < 4) n += 1;
     if (n > 1) {
+      sections[i].id = sections.slice(i, i + n).map((section) => section.id).find(Boolean);
       sections.splice(i + 1, n - 1);
       sections[i].style = `spacer, ${SIZES[n - 1]}`;
     }
@@ -1666,10 +1672,13 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     });
     marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
     section.nodes.forEach((node) => { if (node.nodeType === 1) node.removeAttribute('data-keep'); });
-    if (section.style) {
+    if (section.style || section.id) {
       out.push(WebImporter.Blocks.createBlock(doc, {
         name: 'Section Metadata',
-        cells: { style: section.style },
+        cells: {
+          ...(section.style ? { style: section.style } : {}),
+          ...(section.id ? { id: section.id } : {}),
+        },
       }));
     }
   });

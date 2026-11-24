@@ -16738,7 +16738,12 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-largeheadline") && !isFirst && !text(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-        sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer` : "spacer", nodes: [] });
+        sections.push({
+          kind: "spacer",
+          style: separatorNext ? `${separatorNext}, spacer` : "spacer",
+          nodes: [],
+          id: component.getAttribute("data-section-id") || void 0
+        });
         separatorNext = false;
         current = null;
         return;
@@ -16951,6 +16956,7 @@ var CustomImportScript = (() => {
       let n = 1;
       while (sections[i].kind === "spacer" && sections[i].style === "spacer" && sections[i + n] && sections[i + n].kind === "spacer" && sections[i + n].style === "spacer" && n < 4) n += 1;
       if (n > 1) {
+        sections[i].id = sections.slice(i, i + n).map((section) => section.id).find(Boolean);
         sections.splice(i + 1, n - 1);
         sections[i].style = `spacer, ${SIZES[n - 1]}`;
       }
@@ -16971,10 +16977,13 @@ var CustomImportScript = (() => {
       section.nodes.forEach((node) => {
         if (node.nodeType === 1) node.removeAttribute("data-keep");
       });
-      if (section.style) {
+      if (section.style || section.id) {
         out.push(WebImporter.Blocks.createBlock(doc, {
           name: "Section Metadata",
-          cells: { style: section.style }
+          cells: {
+            ...section.style ? { style: section.style } : {},
+            ...section.id ? { id: section.id } : {}
+          }
         }));
       }
     });
@@ -18024,6 +18033,7 @@ var CustomImportScript = (() => {
       if (!nodes.length) {
         const spacer = doc.createElement("div");
         spacer.className = "c-largeheadline";
+        if (title.hasAttribute("data-section-id")) spacer.setAttribute("data-section-id", title.getAttribute("data-section-id"));
         title.replaceWith(spacer);
         return;
       }
@@ -18087,6 +18097,12 @@ var CustomImportScript = (() => {
       ["Munchkin ID", form.getAttribute("data-marketo-munchkin-id") || ""],
       ["Form ID", form.getAttribute("data-marketo-form-id") || ""]
     ];
+    if (container.matches("[data-captcha]") || container.querySelector("[data-captcha]")) {
+      cells.push(
+        ["Captcha Script", "https://www.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js"],
+        ["Captcha Challenge URL", "https://www.stryker.com/bin/stryker/captcha/challenge"]
+      );
+    }
     const block = WebImporter.Blocks.createBlock(doc, { name: "Marketo Form", cells });
     const style = (container.matches("[data-form-style]") ? container : container.querySelector("[data-form-style]"))?.getAttribute("data-form-style");
     if (style) block.setAttribute("data-section-style", style);
@@ -20627,12 +20643,153 @@ var CustomImportScript = (() => {
 
   // tools/importer/base/forms.js
   var WIDTH = /\bcol-sm-(\d+)\b/;
+  var lineText = (el3) => (el3.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
   function formLayouts(document) {
     document.querySelectorAll(".c-marketo-form").forEach((component) => {
       const col = component.closest('[class*="col-sm-"]');
       const cols = col ? [...col.parentElement.children].filter((c) => WIDTH.test(c.className)) : [];
       if (cols.length !== 2 || Number(col.className.match(WIDTH)[1]) !== 8) return;
       component.setAttribute("data-form-style", cols[0] === col ? "flex, flex-67-33" : "flex, flex-33-67");
+    });
+  }
+  function captchas(document) {
+    document.querySelectorAll(".c-marketo-form").forEach((component) => {
+      component.setAttribute("data-captcha", "");
+    });
+  }
+  function formCopy(document) {
+    document.querySelectorAll(".c-marketo-form").forEach((component) => {
+      const col = component.closest('[class*="col-sm-"]');
+      const colctrl = col && col.closest(".colctrl");
+      if (!colctrl) return;
+      const own = component.closest(".marketoform") || component;
+      const row = own.parentElement;
+      if (!row || row === col.parentElement || !col.contains(row)) return;
+      const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+      const siblings = [...row.children];
+      const at = siblings.indexOf(own);
+      const filled = (el3) => lineText(el3) || el3.querySelector("img, [data-asset-path]");
+      siblings.slice(0, at).filter(filled).forEach((el3) => wrapper.before(el3));
+      siblings.slice(at + 1).filter(filled).reverse().forEach((el3) => wrapper.after(el3));
+    });
+  }
+  function jumpTargets(document) {
+    document.querySelectorAll(".c-section-title[id]").forEach((title) => {
+      if (!lineText(title)) title.setAttribute("data-section-id", title.id);
+    });
+  }
+  function mergeLists(document) {
+    document.querySelectorAll(".colctrl .c-rich-text-editor").forEach((editor) => {
+      const holders = /* @__PURE__ */ new Set([editor, ...editor.querySelectorAll("div")]);
+      holders.forEach((holder) => {
+        let list = null;
+        [...holder.children].forEach((child) => {
+          if (child.tagName !== "UL") {
+            list = null;
+          } else if (list) {
+            list.append(...child.children);
+            child.remove();
+          } else {
+            list = child;
+          }
+        });
+      });
+    });
+  }
+  function latestNews(document) {
+    document.querySelectorAll(".c-latestnews").forEach((news) => {
+      const cells = [...news.querySelectorAll(".item")].map((item) => {
+        const cell = [];
+        const h3 = item.querySelector("h3");
+        if (h3 && lineText(h3)) {
+          const heading2 = document.createElement("h3");
+          heading2.textContent = lineText(h3);
+          cell.push(heading2);
+        }
+        const link3 = item.querySelector("a[href]");
+        if (link3 && lineText(link3)) {
+          const a = document.createElement("a");
+          a.href = link3.getAttribute("href");
+          const u = document.createElement("u");
+          u.textContent = lineText(link3);
+          a.append(u);
+          const strong = document.createElement("strong");
+          strong.append(a);
+          const p = document.createElement("p");
+          p.append(strong);
+          cell.push(p);
+        }
+        return cell;
+      }).filter((cell) => cell.length);
+      const parts = [];
+      if (cells.length) {
+        const block = WebImporter.Blocks.createBlock(document, { name: "Columns", cells: [cells] });
+        block.setAttribute("data-keep", "flow");
+        parts.push(block);
+      }
+      const all = news.querySelector(".c-latestnews-btn a[href]");
+      if (all && lineText(all)) {
+        const holder = document.createElement("div");
+        holder.className = "c-rich-text-editor";
+        const a = document.createElement("a");
+        a.href = all.getAttribute("href");
+        a.textContent = lineText(all);
+        const strong = document.createElement("strong");
+        strong.append(a);
+        const p = document.createElement("p");
+        p.append(strong);
+        holder.append(p);
+        parts.push(holder);
+      }
+      (news.closest(".latestnews") || news).replaceWith(...parts);
+    });
+  }
+  function heroContent(document) {
+    document.querySelectorAll(".c-hero-content").forEach((hero2) => {
+      const h1 = hero2.querySelector("h1");
+      const hold = hero2.closest(".hero") || hero2;
+      if (h1 && lineText(h1)) {
+        const title = document.createElement("div");
+        title.className = "h1-title";
+        const heading2 = document.createElement("h1");
+        heading2.textContent = lineText(h1);
+        title.append(heading2);
+        hold.before(title);
+      }
+      const first = [];
+      const subhead = hero2.querySelector(".subhead");
+      if (subhead && lineText(subhead)) {
+        const h2 = document.createElement("h2");
+        h2.textContent = lineText(subhead);
+        first.push(h2);
+      }
+      const content = hero2.querySelector("p.content");
+      if (content && lineText(content)) {
+        const p = document.createElement("p");
+        p.textContent = lineText(content);
+        first.push(p);
+      }
+      const second = [];
+      const img = hero2.querySelector("picture img, img");
+      if (img) {
+        const source = hero2.querySelector("picture source[srcset]");
+        const copy = document.createElement("img");
+        copy.setAttribute("src", (source || img).getAttribute(source ? "srcset" : "src"));
+        copy.setAttribute("alt", (img.getAttribute("alt") || "").trim());
+        const p = document.createElement("p");
+        p.append(copy);
+        second.push(p);
+      }
+      if (first.length && second.length) {
+        const block = WebImporter.Blocks.createBlock(document, {
+          name: "Columns (columns-50-50)",
+          cells: [[first, second]]
+        });
+        block.setAttribute("data-keep", "section");
+        hold.replaceWith(block);
+      } else {
+        hold.remove();
+      }
     });
   }
   function placeholder(document, type, name, href) {
@@ -20687,7 +20844,6 @@ var CustomImportScript = (() => {
       }
     });
   }
-  var lineText = (el3) => (el3.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
   function videoCarousels(document) {
     document.querySelectorAll(".c-autocarousel").forEach((carousel2) => {
       const slides = [...carousel2.querySelectorAll(".carouselslide:not(.slick-cloned)")];
@@ -20727,6 +20883,12 @@ var CustomImportScript = (() => {
       videoCarousels(document);
       videos(document);
       formLayouts(document);
+      formCopy(document);
+      captchas(document);
+      jumpTargets(document);
+      mergeLists(document);
+      latestNews(document);
+      heroContent(document);
       embeds(document);
     }, heroSlides)
   };

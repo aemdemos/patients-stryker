@@ -282,6 +282,8 @@ function sectionTitles(main, doc) {
     if (!nodes.length) {
       const spacer = doc.createElement('div');
       spacer.className = 'c-largeheadline';
+      // a jump target (`data-section-id`, set by a page builder) stays the Section Metadata `Id`
+      if (title.hasAttribute('data-section-id')) spacer.setAttribute('data-section-id', title.getAttribute('data-section-id'));
       title.replaceWith(spacer);
       return;
     }
@@ -360,6 +362,13 @@ function marketoBlock(container, doc) {
     ['Munchkin ID', form.getAttribute('data-marketo-munchkin-id') || ''],
     ['Form ID', form.getAttribute('data-marketo-form-id') || ''],
   ];
+  // a page builder may ask for the Altcha captcha rows (`data-captcha`) the corp form pages carry
+  if (container.matches('[data-captcha]') || container.querySelector('[data-captcha]')) {
+    cells.push(
+      ['Captcha Script', 'https://www.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js'],
+      ['Captcha Challenge URL', 'https://www.stryker.com/bin/stryker/captcha/challenge'],
+    );
+  }
   const block = WebImporter.Blocks.createBlock(doc, { name: 'Marketo Form', cells });
   // a page builder may ask for the section style of the form (`data-form-style`)
   const style = (container.matches('[data-form-style]') ? container : container.querySelector('[data-form-style]'))
