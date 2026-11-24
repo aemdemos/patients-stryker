@@ -58,7 +58,7 @@ import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
 import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
 import {
-  readScope, readSite, readPageState, writeJson, scopeFile, pageFile as changesPageFile,
+  readScope, readSite, readPageState, writeJson, scopeFile, pageFile as changesPageFile, siteFile as changesSiteFile,
 } from '../lib/changes.mjs';
 import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
 import {
@@ -381,8 +381,14 @@ async function run(params) {
       // and the tiles the backend took of it
       const tiles = await files.list(`${space === 'std' ? '' : `${space}/`}shot-tiles/${Buffer.from(page).toString('base64url')}/`);
       await Promise.all(tiles.map((f) => files.delete(f.name).catch(() => null)));
-      // and its record in the daily change check
-      await files.delete(changesPageFile(space === 'std' ? 'main' : space, page)).catch(() => null);
+      // and its record in the daily change check, and its place in the design-change shot queue
+      const csp = space === 'std' ? 'main' : space;
+      await files.delete(changesPageFile(csp, page)).catch(() => null);
+      const site = await readSite(files, csp);
+      if ((site.pendingShots || []).some((j) => j.page === page)) {
+        site.pendingShots = site.pendingShots.filter((j) => j.page !== page);
+        await writeJson(files, changesSiteFile(csp), site);
+      }
       return ok({ deleted: r.keys, groups, page });
     }
     return bad(`unknown op "${op}"`);

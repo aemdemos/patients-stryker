@@ -54,10 +54,17 @@ check's list (`admin changes-scope`) not checked today, one at a time, ~1 page a
     release stamp in their address (`clientlibs-<n>`) and their size (the first part of the
     Apache ETag "size-mtime": the mtime part differs from server to server for the same file).
     A new version seen on two pages of a run = the site's design changed: one entry in the
-    site's log, and one page per template shot again in the next runs.
+    site's log, and **every page of the check** queued for a new shot (the user, 24 Nov 2026:
+    stryker.com's templates are business units, not one structure, and any page can leave its
+    template any day; no page is shot in place of another).
 - **Screenshots** (the usual three widths, in the page's shot history, labelled in the tool):
-  when the page's history starts and it has none yet, on a confirmed change, and for the
-  template pages after a design change. No blanket visual check.
+  when the page's history starts and it has none yet, on a confirmed change, and of every page
+  after a design change. No blanket visual check. The design-change shots run after the day's
+  checks, in the time they leave (none started after 255 s of a run), so the checks are never
+  pushed aside; a page shot since the change (its content changed too) is not shot again; a
+  second change while pages wait queues every page again, once; a 404 stops them for the run.
+  For all 2,553 pages: ~15 s a page, ~10–11 hours of shots (~76,000 GB-s, ~0.5 GB) per design
+  release, so about 3–4 nights in the schedule's 01:00–04:00 UTC window (wider if needed).
 - **Records**: each page's `changes/pages/<b64>.json` (one log line a day: baseline, unchanged,
   variant, changed, unreachable, gone after 3 days), the site's `changes/site.json` (code, design
   changes, the runs with their timings). `admin changes-page {page}` / `changes-site`.
