@@ -10,12 +10,11 @@
  *                  correct (tried again when its row changes, or after a day)
  *   test { page, source }   one shot of a test page (/test/… only), for the tests
  *   health                  loads one known page (nothing kept): the browser still works
- *   check { pages?, force?, testDesign? }  the daily source change check (lib/changes.mjs): the
- *                  pages of the check's list not checked today, one at a time, gently; screenshots
- *                  for a confirmed change, and of every page after a change of the site's design
- *                  (queued, in the time the checks leave) (pages: a list instead of the check's
- *                  own, for tests; force: checked again today; testDesign: a pretend design change,
- *                  /test/ pages only)
+ *   check { pages?, force?, forceLook? }  the daily source change check (lib/changes.mjs): the
+ *                  pages of the check's list not checked today, one at a time, gently: the content
+ *                  every day, the look once a week (spread out); screenshots only for a confirmed
+ *                  change (pages: a list instead of the check's own, for tests; force: checked
+ *                  again today; forceLook: the visual check today)
  *   bench { pages: [{ page, source }], mode, tabs }   the change check's pilot (nothing kept):
  *                  each page loaded in a mode (js, lite, waitUntil, wait, pause, settle, scroll,
  *                  visual), tabs at once in one browser → timings, content fingerprints
@@ -38,7 +37,7 @@ import { rebuildSummary } from '../lib/summary.mjs';
 import { pageContent, fingerprintOf } from '../lib/fingerprint.mjs';
 import {
   readScope, readSite, readPageState, writeJson, readJson, pageFile, siteFile, checkLockFile, dayOf,
-  codeVersion, differences, confirm, addLog, GONE_AFTER,
+  differences, confirm, looksDifferent, lookDue, addLog, GONE_AFTER,
 } from '../lib/changes.mjs';
 
 const WIDTHS = [1440, 860, 375];
@@ -345,142 +344,126 @@ async function bench(params) {
 }
 
 // ---------- the daily source change check ----------
-const CHECK_MS = 200000;
-// the design-change shots: in the time the day's checks leave, none started after this (a shot
-// of three widths takes ~15-25 s; the action stops at 300 s)
-const SHOTS_UNTIL_MS = 255000;
+const CHECK_MS = 210000;
 const CHECK_PAUSE = 700;
 const sleep = (ms) => new Promise((r) => { setTimeout(r, ms); });
 
-/** one gentle load of a source → its content fingerprint, its images' dates and the site's code */
+/** one gentle lite load of a source → its content fingerprint */
 async function readSource(browser, source) {
   const page = await openPage(browser, 1440, { lite: true });
-  const code = {};
-  page.on('response', (r) => {
-    if (!['stylesheet', 'script'].includes(r.request().resourceType())) return;
-    let u;
-    try {
-      u = new URL(r.url());
-    } catch (e) {
-      return;
-    }
-    if (u.hostname !== 'www.stryker.com' || r.status() !== 200) return;
-    const v = codeVersion(r.url(), r.headers().etag);
-    code[v.key] = { stamp: v.stamp, size: v.size };
-  });
   try {
     await loadSource(page, source, {
       wait: 300, pause: 40, waitUntil: 'domcontentloaded', settle: 2000,
     });
-    const fp = fingerprintOf(await page.evaluate(pageContent));
-    // the images' dates, asked with HEAD (no download), 4 at a time, at most 40 a page; by
-    // address without its query (the size a page asks for may differ from visit to visit)
-    const images = await page.evaluate(async () => {
-      const urls = new Map();
-      document.querySelectorAll('img').forEach((i) => {
-        const u = i.currentSrc || i.getAttribute('src') || i.getAttribute('data-src');
-        if (!u || u.startsWith('data:') || u.startsWith('blob:')) return;
-        try {
-          const abs = new URL(u, window.location.href);
-          const key = `${abs.host}${abs.pathname}`;
-          if (!urls.has(key)) urls.set(key, abs.href);
-        } catch (e) {
-          // not an address
-        }
-      });
-      const list = [...urls.entries()].slice(0, 40);
-      const out = {};
-      for (let i = 0; i < list.length; i += 4) {
-        await Promise.all(list.slice(i, i + 4).map(async ([key, href]) => {
-          try {
-            const r = await fetch(href, { method: 'HEAD', mode: 'cors', credentials: 'omit' });
-            if (r.ok && r.headers.get('last-modified')) out[key] = r.headers.get('last-modified');
-          } catch (e) {
-            // refused: not counted
-          }
-        }));
-      }
-      return out;
-    });
-    return { fp, images, code };
+    return { fp: fingerprintOf(await page.evaluate(pageContent)) };
   } finally {
     await page.close().catch(() => null);
   }
 }
 
-/** this run's code observations: per file, each version and how many pages loaded it */
-function noteCode(seen, code) {
-  Object.entries(code).forEach(([k, v]) => {
-    const id = `${v.stamp}|${v.size}`;
-    seen[k] = seen[k] || {};
-    seen[k][id] = (seen[k][id] || 0) + 1;
-  });
+/** one full load of a source (images and all) → its visual fingerprint (a hash per screen) */
+async function readLook(browser, scratch, source) {
+  const page = await openPage(browser, 1440);
+  try {
+    await loadSource(page, source, { wait: 1500, settle: 4000 });
+    return await visualHash(page, scratch);
+  } finally {
+    await page.close().catch(() => null);
+  }
 }
 
+/** a fresh state for a page new to the check */
+const freshState = (p) => ({
+  page: p.page, source: p.source, known: [], look: null, log: [], misses: 0,
+});
+
 /** one page of the check → its record written, the result */
-async function checkPage(stores, browser, space, p, today) {
+async function checkPage(stores, browser, scratch, space, p, today, { forceLook = false } = {}) {
   const { files } = stores;
-  let state = await readPageState(files, space, p.page) || {
-    page: p.page, source: p.source, known: [], images: {}, log: [], misses: 0,
-  };
+  let state = await readPageState(files, space, p.page) || freshState(p);
   const at = new Date().toISOString();
   const a = await readSource(browser, p.source);
-  const out = { code: a.code };
+  const out = {};
+  let entry;
+  const shotNow = async (extra) => {
+    const shot = await shoot(stores, browser, space, p.page, p.source, extra);
+    // (the look the shot shows: the next visual check compares with it)
+    state.look = { hash: await readLook(browser, scratch, p.source), day: today };
+    return shot;
+  };
   if (!state.known.length) {
     // the history starts: 3 loads, every version of a part seen is known; a shot when the page
     // has none yet (the state the history starts from)
     const b = await readSource(browser, p.source);
     const c = await readSource(browser, p.source);
     state.known = [...new Set([a, b, c].flatMap((x) => x.fp.parts.map((q) => q.hash)))];
-    state.images = a.images;
     let shot = null;
-    if (!(await readHistory(files, space, p.page)).versions.length) {
-      shot = await shoot(stores, browser, space, p.page, p.source, { by: 'change history: start' });
-    }
-    state = addLog(state, {
-      day: today, at, result: 'baseline', parts: a.fp.parts.length, images: Object.keys(a.images).length, shot,
-    });
-    out.result = 'baseline';
+    if (!(await readHistory(files, space, p.page)).versions.length) shot = await shotNow({ by: 'change history: start' });
+    entry = {
+      day: today, at, result: 'baseline', parts: a.fp.parts.length, shot, ...(shot ? { look: 'baseline' } : {}),
+    };
     out.shot = shot;
   } else {
-    const d = differences(state, a.fp, a.images);
-    if (!d.parts.length && !d.images.length) {
-      state = addLog(state, { day: today, at, result: 'unchanged' });
-      out.result = 'unchanged';
+    const d = differences(state, a.fp);
+    if (!d.parts.length) {
+      entry = { day: today, at, result: 'unchanged' };
     } else {
       // a confirming load a little later: only what is new on both counts
       await sleep(3000);
       const b = await readSource(browser, p.source);
-      const c = confirm(d, b.fp, b.images, state);
-      if (c.parts.length || c.images.length || c.unsteady.length) {
-        const change = { parts: [...c.parts, ...c.unsteady].map((x) => x.key), images: c.images, ...(c.unsteady.length ? { unsteady: true } : {}) };
-        const shot = await shoot(stores, browser, space, p.page, p.source, { by: 'change history: changed', change });
+      const c = confirm(d, b.fp, state);
+      if (c.parts.length || c.unsteady.length) {
+        const change = { parts: [...c.parts, ...c.unsteady].map((x) => x.key), ...(c.unsteady.length ? { unsteady: true } : {}) };
+        const shot = await shotNow({ by: 'change history: changed', change });
         state.known = [...new Set([...a.fp.parts, ...b.fp.parts].map((q) => q.hash))];
-        state.images = b.images;
-        state = addLog(state, {
+        entry = {
           day: today, at, result: 'changed', ...change, shot,
-        });
-        out.result = 'changed';
+        };
         out.shot = shot;
       } else {
         // seen once, not on the confirming load: a dynamic part's variant, learned
         state.known = [...new Set([...state.known, ...a.fp.parts.map((q) => q.hash), ...b.fp.parts.map((q) => q.hash)])];
-        state = addLog(state, { day: today, at, result: 'variant', parts: d.parts.map((x) => x.key) });
-        out.result = 'variant';
+        entry = { day: today, at, result: 'variant', parts: d.parts.map((x) => x.key) };
       }
     }
   }
+  // the weekly visual check (its night, or a week since the last), unless a shot was just taken
+  if (!out.shot && (forceLook || lookDue(state, p.page, today))) {
+    const look = await readLook(browser, scratch, p.source);
+    if (!state.look?.hash) {
+      state.look = { hash: look, day: today };
+      entry.look = 'baseline';
+    } else if (!looksDifferent(state.look.hash, look)) {
+      state.look.day = today;
+      entry.look = 'same';
+    } else {
+      await sleep(3000);
+      const again = await readLook(browser, scratch, p.source);
+      if (looksDifferent(state.look.hash, again)) {
+        // looks different on both loads: a new shot, its look the one to compare with next
+        const shot = await shotNow({ by: 'change history: changed', change: { look: true } });
+        entry = {
+          ...entry, day: today, at, result: 'changed', look: true, shot,
+        };
+        out.shot = shot;
+      } else {
+        state.look.day = today;
+        entry.look = 'noise';
+      }
+    }
+  }
+  state = addLog(state, entry);
   state.misses = 0;
   state.source = p.source;
   await writeJson(files, pageFile(space, p.page), state);
+  out.result = entry.result;
+  out.look = entry.look || null;
   return out;
 }
 
 /** a page that could not be read today: unreachable, gone after GONE_AFTER days in a row */
 async function unreachable(files, space, p, today, reason) {
-  let state = await readPageState(files, space, p.page) || {
-    page: p.page, source: p.source, known: [], images: {}, log: [], misses: 0,
-  };
+  let state = await readPageState(files, space, p.page) || freshState(p);
   if (state.day !== today) state.misses = (state.misses || 0) + 1;
   state = addLog(state, {
     day: today, at: new Date().toISOString(), result: state.misses >= GONE_AFTER ? 'gone' : 'unreachable', reason,
@@ -493,38 +476,44 @@ async function check(stores, space, started, params) {
   const today = dayOf();
   const scope = Array.isArray(params.pages) ? { pages: params.pages } : await readScope(files, space);
   const site = await readSite(files, space);
-  site.pendingShots = site.pendingShots || [];
   const stats = {
-    checked: 0, baseline: 0, unchanged: 0, variant: 0, changed: 0, unreachable: 0, shots: 0, siteShots: 0, siteSkipped: 0, blocked: false, errors: [],
+    checked: 0, baseline: 0, unchanged: 0, variant: 0, changed: 0, unreachable: 0, shots: 0, looks: 0, blocked: false, errors: [],
   };
   // the pages not checked today, the longest unchecked first
   const states = await Promise.all(scope.pages.map(async (p) => ({ p, s: await readPageState(files, space, p.page) })));
   const due = states.filter(({ s }) => params.force || !s || s.day !== today)
     .sort((x, y) => String(x.s?.log?.slice(-1)[0]?.at || '').localeCompare(String(y.s?.log?.slice(-1)[0]?.at || '')))
     .map(({ p }) => p);
-  const seen = {};
   const suspects = [];
   let in404 = 0;
   let browser = await launch();
+  let scratch = await browser.newPage();
+  const restart = async () => {
+    await browser.close().catch(() => null);
+    browser = await launch();
+    scratch = await browser.newPage();
+  };
+  const one = async (p) => {
+    const r = await checkPage(stores, browser, scratch, space, p, today, { forceLook: !!params.forceLook });
+    stats[r.result] += 1;
+    if (r.shot) stats.shots += 1;
+    if (r.look) stats.looks += 1;
+  };
   try {
     for (const p of due) {
       if (Date.now() - started > CHECK_MS) break;
       try {
-        const r = await checkPage(stores, browser, space, p, today);
-        noteCode(seen, r.code);
-        stats[r.result] += 1;
-        if (r.shot) stats.shots += 1;
+        await one(p);
         in404 = 0;
       } catch (e) {
         const reason = String(e.message || e).slice(0, 200);
         if (!e.source) {
           stats.errors.push(`${p.page}: ${reason}`);
-          await browser.close().catch(() => null);
-          browser = await launch();
+          await restart();
         } else if (/answers 404/.test(reason)) {
           // a 404: maybe stryker.com refusing the backend for a while; tried again at the end,
           // and three in a row stop the run (the pages stay due)
-          suspects.push({ p, reason });
+          suspects.push(p);
           in404 += 1;
           if (in404 >= 3) {
             stats.blocked = true;
@@ -539,90 +528,21 @@ async function check(stores, space, started, params) {
       await sleep(CHECK_PAUSE);
     }
     if (!stats.blocked) {
-      for (const { p } of suspects) {
+      for (const p of suspects) {
         if (Date.now() - started > CHECK_MS + 40000) break;
         await sleep(2000);
         try {
-          const r = await checkPage(stores, browser, space, p, today);
-          noteCode(seen, r.code);
-          stats[r.result] += 1;
-          if (r.shot) stats.shots += 1;
+          await one(p);
         } catch (e) {
           await unreachable(files, space, p, today, String(e.message || e).slice(0, 200));
           stats.unreachable += 1;
         }
       }
     }
-    // the site's design changed (an earlier run): EVERY page of the check gets a new shot (a
-    // page can look like no other: none is taken for another), after the day's checks, in the
-    // time left, so the checks are never pushed aside; a page shot since the change (its content
-    // changed too) is not shot again; a 404 stops the shots for this run (the page stays queued)
-    while (!stats.blocked && site.pendingShots.length && Date.now() - started < SHOTS_UNTIL_MS) {
-      const job = site.pendingShots[0];
-      const history = await readHistory(files, space, job.page);
-      const newest = history.versions[history.versions.length - 1];
-      if (newest && newest.captured >= job.at) {
-        site.pendingShots.shift();
-        stats.siteSkipped += 1;
-        continue;
-      }
-      try {
-        const shot = await shoot(stores, browser, space, job.page, job.source, { by: 'change history: site design changed', site: job.day });
-        let state = await readPageState(files, space, job.page);
-        if (state) {
-          state = addLog(state, {
-            day: today, at: new Date().toISOString(), result: 'changed', parts: [], images: [], site: job.day, shot,
-          });
-          await writeJson(files, pageFile(space, job.page), state);
-        }
-        stats.siteShots += 1;
-        site.pendingShots.shift();
-      } catch (e) {
-        const reason = String(e.message || e).slice(0, 120);
-        if (/answers 404/.test(reason)) {
-          stats.blocked = true;
-          break;
-        }
-        stats.errors.push(`${job.page} (design shot): ${reason}`);
-        site.pendingShots.shift();
-        if (!e.source) {
-          await browser.close().catch(() => null);
-          browser = await launch();
-        }
-      }
-    }
   } finally {
     await browser.close().catch(() => null);
   }
-  // the site's code: each file's version seen on at least two pages of this run; a known file
-  // in another version: the site's design changed → every page of the check queued for a shot
-  // (testDesign: a test run's pretend change, test pages only)
-  const changedCode = [];
-  Object.entries(seen).forEach(([file, versions]) => {
-    const [id, n] = Object.entries(versions).sort((x, y) => y[1] - x[1])[0];
-    if (n < 2 && Object.keys(seen).length > 1) return;
-    const [stamp, size] = id.split('|');
-    const now = { stamp: stamp === 'null' ? null : stamp, size: size === 'null' ? null : size };
-    const before = site.code[file];
-    if (before && (before.stamp !== now.stamp || before.size !== now.size)) changedCode.push({ file, from: before, to: now });
-    site.code[file] = now;
-  });
-  if (params.testDesign && Array.isArray(params.pages) && params.pages.every((p) => p.page.startsWith('/test/'))) {
-    changedCode.push({ file: 'test', from: null, to: null });
-  }
-  if (changedCode.length) {
-    const at = new Date().toISOString();
-    if (!params.testDesign) site.log = [...(site.log || []), { day: today, at, changed: changedCode, pages: scope.pages.length }];
-    // (a second change while pages still wait: every page queued again, once)
-    const queued = new Map(site.pendingShots.map((j) => [j.page, j]));
-    scope.pages.forEach((p) => queued.set(p.page, {
-      page: p.page, source: p.source, day: today, at,
-    }));
-    site.pendingShots = [...queued.values()];
-  }
-  site.lastRun = {
-    at: new Date(started).toISOString(), took: Date.now() - started, ...stats, codeChanged: changedCode.length, shotsWaiting: site.pendingShots.length,
-  };
+  site.lastRun = { at: new Date(started).toISOString(), took: Date.now() - started, ...stats };
   site.runs = [...(site.runs || []), site.lastRun].slice(-500);
   await writeJson(files, siteFile(space), site);
   return site.lastRun;

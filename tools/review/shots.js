@@ -9,7 +9,9 @@ import { call } from './store.js';
 export async function loadShots(page) {
   try {
     const { status, body } = await call(`shots?page=${encodeURIComponent(page)}`);
-    return status === 200 ? { versions: body.versions || [], request: body.request || null, changes: body.changes || null } : null;
+    if (status !== 200) return null;
+    const { versions = [], request = null, changes = null } = body;
+    return { versions, request, changes };
   } catch (e) {
     return null;
   }
@@ -39,7 +41,6 @@ export async function requestShot(page) {
 const WHY = {
   'change history: start': 'change history starts',
   'change history: changed': 'source changed',
-  'change history: site design changed': 'site design changed',
 };
 
 /** a version's place in the history and why it was taken, for its label */
@@ -53,5 +54,6 @@ export function changesText(c) {
   const last = c.last ? {
     unchanged: 'unchanged', variant: 'unchanged', baseline: 'its history started', changed: 'changed (a new shot was taken)', unreachable: `not reachable (${c.last.reason || 'tried again tomorrow'})`, gone: 'gone (not reachable for 3 days in a row)',
   }[c.last.result] || c.last.result : '';
-  return `The source is checked every day since ${c.since}${last ? `; on ${c.last.day} it was ${last}` : ''}. ${changed ? `${changed} change${changed > 1 ? 's' : ''} recorded, each with its shot.` : 'No change recorded so far.'}`;
+  const look = c.lookChecked ? ` Its look is compared once a week (last on ${c.lookChecked}).` : ' Its look is compared once a week.';
+  return `The source's content is checked every day since ${c.since}${last ? `; on ${c.last.day} it was ${last}` : ''}.${look} ${changed ? `${changed} change${changed > 1 ? 's' : ''} recorded, each with its shot.` : 'No change recorded so far.'}`;
 }

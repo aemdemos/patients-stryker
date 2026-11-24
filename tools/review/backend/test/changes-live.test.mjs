@@ -6,9 +6,9 @@
  * 2. checked again: unchanged, no new shot;
  * 3. one test page's source switched to another real page (its content really changes):
  *    changed, a new shot labelled "change history: changed"; the other page unchanged;
- * 4. the shots action gives the tool the record; the site's code is recorded;
- * 5. a (pretend) change of the site's design: EVERY page of the check queued, and the next run
- *    shoots each one ("change history: site design changed"), none left waiting.
+ * 4. the shots action gives the tool the record;
+ * 5. the weekly visual check (forced today): each page's look compared with the one its last
+ *    shot showed: the same, no new shot.
  * Test pages only (/test/…), purged after (entries, shots, change records). Gentle: 2 sources.
  * usage: node tools/review/backend/test/changes-live.test.mjs
  */
@@ -44,10 +44,8 @@ try {
   let r = await run([{ page: A, source: SRC[0], template: 't1' }, { page: B, source: SRC[1], template: 't2' }]);
   check('1. first check: both pages start their history', r.baseline === 2 && !r.blocked, JSON.stringify(r));
   let a = await record(A);
-  check('1. the record: baseline, parts known, images dated', a?.log?.[0]?.result === 'baseline' && a.known.length > 0 && Object.keys(a.images).length > 0, JSON.stringify(a).slice(0, 300));
+  check('1. the record: baseline, parts known, the look of its first shot', a?.log?.[0]?.result === 'baseline' && a.known.length > 0 && a.look?.hash?.length > 0, JSON.stringify(a).slice(0, 300));
   check('1. a shot to start from (the page had none)', (await history(A)).some((v) => v.by === 'change history: start'));
-  const site = await admin({ op: 'changes-site' });
-  check('1. the site\'s code recorded (CSS / JS by stamp and size)', Object.keys(site.code || {}).length > 0, JSON.stringify(site.code).slice(0, 200));
 
   r = await run([{ page: A, source: SRC[0], template: 't1' }, { page: B, source: SRC[1], template: 't2' }]);
   check('2. checked again: unchanged (or a learned variant), no shot', r.unchanged + r.variant === 2 && r.shots === 0, JSON.stringify(r));
@@ -70,22 +68,16 @@ try {
   await admin({ op: 'revoke', id: inv.id });
   await admin({ op: 'forget-test-invites' });
 
-  const pages = [{ page: A, source: SRC[2], template: 't1' }, { page: B, source: SRC[1], template: 't1' }];
+  const pages = [{ page: A, source: SRC[2], template: 't1' }, { page: B, source: SRC[1], template: 't2' }];
   r = await call('capture', {
-    op: 'check', space: 'main', force: true, pages, testDesign: true,
+    op: 'check', space: 'main', force: true, pages, forceLook: true,
   });
-  check('5. a design change: every page of the check queued (2 pages, same template too)', r.codeChanged >= 1 && r.shotsWaiting >= 2, JSON.stringify(r));
-  const counts = await Promise.all([A, B].map(async (p) => (await history(p)).length));
-  r = await run(pages);
-  check('5. the next run shoots every queued page', r.siteShots === 2 && r.shotsWaiting === 0, JSON.stringify(r));
-  const after = await Promise.all([A, B].map(history));
-  check('5. each page: one new shot, labelled "site design changed"', after.every((h, i) => h.length === counts[i] + 1 && h[h.length - 1].by === 'change history: site design changed'), JSON.stringify(after.map((h) => h.slice(-1).map((v) => v.by))));
-  const site2 = await admin({ op: 'changes-site' });
-  check('5. a pretend change is not in the site\'s design log', !(site2.log || []).some((l) => l.changed?.some((c) => c.file === 'test')), JSON.stringify(site2.log).slice(0, 200));
+  check('5. the visual check: both looks compared, the same, no shot', r.looks === 2 && r.shots === 0 && r.changed === 0, JSON.stringify(r));
+  const b = await record(B);
+  check('5. B\'s day: the look the same as its shot\'s', ['same', 'noise'].includes(b.log[b.log.length - 1].look) && b.look.day === b.log[b.log.length - 1].day, JSON.stringify(b.log.slice(-1)));
 } finally {
   for (const p of [A, B]) await admin({ op: 'purge-test', page: p });
-  const site3 = await admin({ op: 'changes-site' });
-  check('clean-up: no change record left, nothing queued', !(await record(A)) && !(await record(B)) && !(site3.pendingShots || []).some((j) => j.page.startsWith('/test/')));
+  check('clean-up: no change record left', !(await record(A)) && !(await record(B)));
 }
 console.log(failed ? `${failed} FAILED` : 'all passed');
 process.exit(failed ? 1 : 0);

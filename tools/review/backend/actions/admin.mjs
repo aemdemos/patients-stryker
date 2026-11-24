@@ -32,7 +32,7 @@
  *   restore { day, only: [key prefixes] }   the keys of a backup missing now put back (never over one)
  *   capture-state                           the capture's record (first seen, sources to correct, runs)
  *   changes-scope { pages? }                the change check's pages (set them: [{ page, source, template }])
- *   changes-page { page } / changes-site    a page's change record / the site's (code, design changes, runs)
+ *   changes-page { page } / changes-site    a page's change record / the check's runs
  *   schedule { only: ['check'], enabled }    the change check's own schedule (on or off) alone
  *   (invitations: lib/invites.mjs, shared with the AOE team's web action invites)
  *   export                                  every entry, as rows (summary, apply, tests)
@@ -58,7 +58,7 @@ import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
 import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
 import {
-  readScope, readSite, readPageState, writeJson, scopeFile, pageFile as changesPageFile, siteFile as changesSiteFile,
+  readScope, readSite, readPageState, writeJson, scopeFile, pageFile as changesPageFile,
 } from '../lib/changes.mjs';
 import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
 import {
@@ -381,14 +381,8 @@ async function run(params) {
       // and the tiles the backend took of it
       const tiles = await files.list(`${space === 'std' ? '' : `${space}/`}shot-tiles/${Buffer.from(page).toString('base64url')}/`);
       await Promise.all(tiles.map((f) => files.delete(f.name).catch(() => null)));
-      // and its record in the daily change check, and its place in the design-change shot queue
-      const csp = space === 'std' ? 'main' : space;
-      await files.delete(changesPageFile(csp, page)).catch(() => null);
-      const site = await readSite(files, csp);
-      if ((site.pendingShots || []).some((j) => j.page === page)) {
-        site.pendingShots = site.pendingShots.filter((j) => j.page !== page);
-        await writeJson(files, changesSiteFile(csp), site);
-      }
+      // and its record in the daily change check
+      await files.delete(changesPageFile(space === 'std' ? 'main' : space, page)).catch(() => null);
       return ok({ deleted: r.keys, groups, page });
     }
     return bad(`unknown op "${op}"`);
