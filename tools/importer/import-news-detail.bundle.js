@@ -329,6 +329,78 @@ var CustomImportScript = (() => {
     if (overlay && (overlay.classList.contains("mobile-text-black") || overlay.querySelector(".mobile-text-black"))) options.push("mobile-text-black");
     return options;
   }
+  function dropColourTags(lines, colours) {
+    if (!colours.size) return;
+    const TOKEN2 = /\[\[([^\][]+)\]|\]/g;
+    lines.forEach((line) => {
+      const doc = line.ownerDocument;
+      const walker = doc.createTreeWalker(line, 4);
+      const nodes = [];
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+      const stack = [];
+      const edits = [];
+      nodes.forEach((node) => {
+        TOKEN2.lastIndex = 0;
+        let m = TOKEN2.exec(node.nodeValue);
+        while (m) {
+          if (m[1] !== void 0) {
+            const classes = m[1].split(",").map((c) => c.trim());
+            const kept = classes.filter((c) => !colours.has((c.match(/^color-(.+)$/) || [])[1]));
+            const token = {
+              node,
+              start: m.index,
+              end: m.index + m[0].length,
+              kept,
+              changed: kept.length !== classes.length
+            };
+            stack.push(token);
+            if (token.changed) edits.push(token);
+          } else if (stack.length) {
+            const open = stack.pop();
+            if (open.changed && !open.kept.length) {
+              edits.push({
+                node,
+                start: m.index,
+                end: m.index + 1,
+                kept: null,
+                changed: true
+              });
+            }
+          }
+          m = TOKEN2.exec(node.nodeValue);
+        }
+      });
+      edits.reverse().forEach((e) => {
+        let out = "";
+        if (e.kept && e.kept.length) out = `[[${e.kept.join(",")}]`;
+        e.node.nodeValue = e.node.nodeValue.slice(0, e.start) + out + e.node.nodeValue.slice(e.end);
+      });
+    });
+  }
+  function takeStripe(element) {
+    let el = element;
+    for (let i = 0; el && i < 6; i += 1) {
+      const next = el.nextElementSibling;
+      if (next) {
+        const panel = next.matches(".fullbleedpanel") ? next.querySelector(".c-full-bleed-panel") : null;
+        if (!panel || panel.textContent.replace(/[\s\u00a0]+/g, "") || panel.querySelector("img, iframe")) return "";
+        let stripe = "";
+        if (panel.classList.contains("bg-gold")) stripe = "stripe-gold";
+        else if (panel.classList.contains("bg-golden-gradient")) stripe = "stripe-gradient";
+        if (stripe) next.remove();
+        return stripe;
+      }
+      el = el.parentElement;
+    }
+    return "";
+  }
+  function slideVideo(slide) {
+    const asset = slide.querySelector('.c-standalone-video [data-asset-path], [data-asset-type^="video"][data-asset-path]');
+    const path = asset && asset.getAttribute("data-asset-path");
+    if (!path || path.startsWith("/content/dam/")) return "";
+    const base = "https://media-assets.stryker.com/is";
+    return `${base}/content/${path}.m3u8?poster=${base}/image/${path}?fit=constrain,1&wid=909&hei=511`;
+  }
 
   // tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
@@ -437,13 +509,28 @@ var CustomImportScript = (() => {
         const m = style.match(re);
         return m ? parseFloat(m[1]) : null;
       };
-      variants.splice(1, variants.length - 1, ...slideOptions({
+      const options = slideOptions({
         left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
         right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
         top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
         overlay,
         headline: overlay.querySelector(".c-largeheadline") || overlay
-      }));
+      });
+      const colours = new Set(options.map((o) => (o.match(/^(?:title|subline)-(.+)$/) || [])[1]).filter(Boolean));
+      if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add("white");
+      const copy = cells[cells.length - 1];
+      if (copy && Array.isArray(copy[0])) dropColourTags(copy[0], colours);
+      const video = slideVideo(slide);
+      if (video) {
+        const a = document.createElement("a");
+        a.setAttribute("href", video);
+        a.textContent = video;
+        cells.unshift([a]);
+        options.push("video-background");
+      }
+      const stripe = takeStripe(element);
+      if (stripe) options.push(stripe);
+      variants.splice(1, variants.length - 1, ...options);
     }
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
       name: `Hero Corp (${variants.join(", ")})`,
@@ -583,11 +670,23 @@ var CustomImportScript = (() => {
     a.textContent = iframe.getAttribute("title") || a.href;
     return a;
   }
+  function videoOptions(element) {
+    var _a;
+    const box = element.closest(".c-standalone-video") || element.querySelector(".c-standalone-video") || element;
+    const options = [];
+    if (box.matches(".black-border, .gray-border") && !box.matches(".hide-border")) options.push("border");
+    const modifiers = ((_a = element.querySelector("[data-viewermodifiers]")) == null ? void 0 : _a.getAttribute("data-viewermodifiers")) || "";
+    if (/(?:^|&)VideoPlayer\.autoplay=1/i.test(modifiers)) options.push("autoplay");
+    if (/(?:^|&)VideoPlayer\.loop=1/i.test(modifiers)) options.push("loop");
+    return options;
+  }
   function parse4(element, { document }) {
     const link2 = videoLink(element, document);
     if (!link2) return;
     const cells = [[link2]];
-    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
+    const options = STD_DRAFT_IMPORT ? videoOptions(element) : [];
+    const name = options.length ? `Video (${options.join(", ")})` : "Video";
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells }));
   }
 
   // tools/importer/parsers/news-detail/marketo-form.js

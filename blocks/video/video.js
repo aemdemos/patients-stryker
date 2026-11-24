@@ -115,11 +115,41 @@ export function videoPlayerFor(link) {
 }
 
 /**
+ * The playback options of a Dynamic Media video: `loop` repeats it; `autoplay` starts it
+ * muted once it comes into view (as stryker.com's VideoPlayer.autoplay + mutevolume). The
+ * control bar stays, so a visitor can pause or turn the sound on.
+ * @param {Element} block The video block
+ * @param {Element} player The rendered player
+ */
+function setPlayback(block, player) {
+  const video = player.querySelector('video');
+  if (!video) return;
+  if (block.classList.contains('loop')) video.loop = true;
+  if (!block.classList.contains('autoplay')) return;
+  video.muted = true;
+  video.setAttribute('muted', '');
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    // the play button attaches the streaming source before playing
+    player.querySelector('.dm-video-play')?.click();
+  });
+  observer.observe(player);
+}
+
+/**
  * loads and decorates the video block
  * @param {Element} block The block element
  */
 export default function decorate(block) {
   const link = block.querySelector('a[href]');
+  const std = document.body.classList.contains('std-draft');
+  // a Dynamic Media link is already a player (scripts/dm-support.js runs on the whole page)
+  const rendered = !link && block.querySelector('.dm-video-wrapper');
+  if (std && rendered) {
+    setPlayback(block, rendered);
+    return;
+  }
   if (!link) {
     // In the EW canvas the block content (the video link) can be injected after
     // decorate() first runs, so there's no link yet. Watch for it to appear, then
@@ -140,5 +170,9 @@ export default function decorate(block) {
   }
 
   const player = videoPlayerFor(link);
-  if (player) block.replaceChildren(player);
+  if (!player) return;
+  block.replaceChildren(player);
+  // in review (docs/standardisation/video.md): the `autoplay` (muted) and `loop` options,
+  // on draft pages only for now
+  if (std) setPlayback(block, player);
 }

@@ -32,7 +32,7 @@ import previewTextMarkers from './span-markers-canvas.js';
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = ['accordion', 'columns', 'marketo-form', 'panel'];
+const CORP_BLOCK_STYLES = ['accordion', 'columns', 'marketo-form', 'panel', 'video'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.

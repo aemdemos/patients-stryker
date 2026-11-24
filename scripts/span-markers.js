@@ -183,6 +183,27 @@ function wrapPair(start, end, container) {
 }
 
 /**
+ * A heading's id is made from its text when the page is rendered, so a heading holding
+ * markers gets the marker words in its id (`start-xl-serifour-teamend`). Once the markers
+ * are gone, the id is made again from the text that shows, the same way (lowercase words
+ * joined by hyphens), keeping it unique on the page.
+ * @param {Element} container The element whose markers were removed
+ */
+function fixHeadingId(container) {
+  if (!/^H[1-6]$/.test(container.tagName) || !/start-|end$/.test(container.id)) return;
+  const base = container.textContent.toLowerCase().trim()
+    .replace(/[^\p{L}\p{N}\s-]/gu, '').replace(/\s/g, '-');
+  if (!base) return;
+  let id = base;
+  const taken = (value) => {
+    const other = document.getElementById(value);
+    return other && other !== container;
+  };
+  for (let n = 1; taken(id); n += 1) id = `${base}-${n}`;
+  container.id = id;
+}
+
+/**
  * Turns `:start-…:` / `:end:` marker pairs into styled spans and removes the markers.
  * @param {Element} main The container element
  */
@@ -209,5 +230,6 @@ export default function decorateSpanMarkers(main) {
       else removeMarker(marker, container);
     });
     open.forEach((marker) => removeMarker(marker, container));
+    fixHeadingId(container);
   });
 }

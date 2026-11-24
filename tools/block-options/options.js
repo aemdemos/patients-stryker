@@ -175,6 +175,26 @@ export const BLOCK_OPTIONS = {
       },
     ],
   },
+  // stryker.com standalone videos (stryker-aemcoder-package, docs/standardisation/video.md):
+  // the player comes from the link (Dynamic Media or YouTube); the 1px black frame round it
+  // (stryker.com's grey frame joins black) and the Dynamic Media playback switches. A poster
+  // goes with the link (`?poster=`), a caption is the text after the block. Older imported
+  // names: `no-border` is the default (no frame).
+  video: {
+    label: 'Video',
+    groups: [
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['border', 'Black border', { hint: 'A thin black frame round the player' }],
+          ['autoplay', 'Autoplay (muted)', { needs: ['dm-video'], hint: 'Starts on its own, without sound, when it comes into view' }],
+          ['loop', 'Loop', { needs: ['dm-video'], hint: 'Starts again when it ends' }],
+        ],
+        replaces: /^no-border$/,
+      },
+    ],
+  },
   // stryker.com column rows (stryker-aemcoder-package, docs/standardisation/columns.md): the five
   // source layouts (and the other widths the corp styles have), a cell box (one colour list for
   // every block) in the first / last / every cell, the spacing inside it, image borders, centred

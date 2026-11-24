@@ -1,0 +1,22 @@
+/*
+ * Video on www.stryker.com (corp) pages. Loaded by scripts/corp.js (CORP_BLOCK_STYLES) on
+ * `site: corp` pages only.
+ *
+ * The standard choices (Block options panel, docs/standardisation/video.md): `border` (the
+ * stryker.com 1px black frame round the player; its grey frame joins black), `autoplay`
+ * (muted) and `loop` (blocks/video/video.js). Without `border` the player has no frame, as
+ * on most stryker.com videos (hide-border).
+ *
+ * In review: draft pages only (body.std-draft, scripts/corp.js). Real corp pages render as
+ * before.
+ */
+
+body.corp.std-draft .video .dm-video {
+  border: 0;
+}
+
+body.corp.std-draft .video.border .dm-video,
+body.corp.std-draft .video.border .video-embed {
+  box-sizing: border-box;
+  border: 1px solid var(--color-black);
+}

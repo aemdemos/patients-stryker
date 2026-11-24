@@ -41,145 +41,6 @@ var CustomImportScript = (() => {
     default: () => import_long_page_detail_corp_default
   });
 
-  // tools/importer/parsers/video.js
-  var DM_HOST = "https://media-assets.stryker.com";
-  function encodePath(path) {
-    return path.split("/").map((part) => encodeURIComponent(part)).join("/");
-  }
-  function videoLink(element, document) {
-    const a = document.createElement("a");
-    const dm = element.querySelector("[data-asset-path]");
-    if (dm) {
-      const assetPath = dm.getAttribute("data-asset-path");
-      const videoServer = dm.getAttribute("data-videoserver") || `${DM_HOST}/is/content/`;
-      const imageServer = dm.getAttribute("data-imageserver") || `${DM_HOST}/is/image/`;
-      const modifiers = dm.getAttribute("data-viewermodifiers") || "";
-      const modifierPoster = (modifiers.match(/(?:^|&)VideoPlayer\.posterimage=([^&]+)/i) || [])[1];
-      const poster = dm.getAttribute("data-posterimage") || modifierPoster && decodeURIComponent(modifierPoster.replace(/\+/g, " ")).trim() || assetPath;
-      a.href = `${videoServer}${encodePath(assetPath)}.m3u8?poster=${imageServer}${encodePath(poster)}?fit=constrain,1&wid=909&hei=511`;
-      a.textContent = (dm.getAttribute("data-asset-name") || assetPath.split("/").pop()).replace(/\.[a-z0-9]+$/i, "");
-      return a;
-    }
-    const iframe = element.querySelector('iframe[src*="youtube"], iframe[data-src*="youtube"]');
-    const src = iframe && (iframe.getAttribute("src") || iframe.getAttribute("data-src"));
-    const id = src && (src.match(/(?:embed\/|v=|youtu\.be\/)([\w-]{11})/) || [])[1];
-    if (!id) return null;
-    a.href = `https://www.youtube.com/watch?v=${id}`;
-    a.textContent = iframe.getAttribute("title") || a.href;
-    return a;
-  }
-  function parse(element, { document }) {
-    const link2 = videoLink(element, document);
-    if (!link2) return;
-    const cells = [[link2]];
-    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
-  }
-
-  // tools/importer/parsers/cards-corp-resources.js
-  var SOURCE_ORIGIN = "https://www.stryker.com";
-  function text(el) {
-    return (el && el.textContent ? el.textContent : "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
-  }
-  function absolute(href) {
-    return href && href.startsWith("/") && !href.startsWith("//") ? `${SOURCE_ORIGIN}${href}` : href;
-  }
-  function newTab(source, href) {
-    if (!href || href.includes("#")) return href;
-    const isPdf = /\.pdf(\?|$)/i.test(href);
-    const blank = (source.getAttribute("target") || "").toLowerCase() === "_blank";
-    return isPdf || blank ? `${href}#_blank` : href;
-  }
-  function parse2(element, { document }) {
-    const items = [...element.querySelectorAll(".item")];
-    const rows = items.map((item) => {
-      const title = item.querySelector(".title, h5, h4");
-      const link2 = title && title.closest("a[href]") || item.querySelector("a[href]");
-      const img = item.querySelector("img");
-      if (!img || !link2 && !text(title)) return null;
-      const src = absolute(img.getAttribute("src"));
-      const cover = document.createElement("a");
-      cover.href = src;
-      const alt = img.getAttribute("alt") || "";
-      cover.textContent = alt.trim() ? alt : src;
-      const h5 = document.createElement("h5");
-      if (!link2) {
-        h5.textContent = text(title);
-        return [cover, h5];
-      }
-      const a = document.createElement("a");
-      a.href = newTab(link2, absolute(link2.getAttribute("href")));
-      a.textContent = text(title) || text(link2);
-      h5.append(a);
-      return [cover, h5];
-    }).filter(Boolean);
-    if (!rows.length) {
-      element.remove();
-      return;
-    }
-    const sixUp = items.some((item) => /\bcol-md-2\b/.test(item.className));
-    const name = sixUp ? "Cards Corp (resources, six-up)" : "Cards Corp (resources)";
-    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
-  }
-
-  // tools/importer/parsers/cards-corp-teaser.js
-  function clean(text5) {
-    return (text5 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
-  }
-  function link(document, source, text5) {
-    const a = document.createElement("a");
-    a.setAttribute("href", source.getAttribute("href"));
-    a.textContent = text5;
-    return a;
-  }
-  function imageCell(item, document) {
-    const source = item.querySelector(".img-cont img, img");
-    if (!source) return "";
-    const img = document.createElement("img");
-    img.setAttribute("src", source.getAttribute("src"));
-    img.setAttribute("alt", source.getAttribute("alt") || "");
-    return [img];
-  }
-  function textCell(item, document) {
-    const body = [];
-    const title = item.querySelector("h3");
-    if (title && clean(title.textContent)) {
-      const h3 = document.createElement("h3");
-      const titleLink = title.querySelector("a[href]");
-      if (titleLink) h3.append(link(document, titleLink, clean(titleLink.textContent)));
-      else h3.textContent = clean(title.textContent);
-      body.push(h3);
-    }
-    item.querySelectorAll(".desc-container > p, :scope > p.description").forEach((source) => {
-      if (!clean(source.textContent)) return;
-      const p = document.createElement("p");
-      p.textContent = clean(source.textContent);
-      body.push(p);
-    });
-    const cta = item.querySelector("a.action-link[href]");
-    if (cta && clean(cta.textContent)) {
-      const a = link(document, cta, "");
-      const u = document.createElement("u");
-      u.textContent = clean(cta.textContent);
-      a.append(u);
-      const strong = document.createElement("strong");
-      strong.append(a);
-      const p = document.createElement("p");
-      p.append(strong);
-      body.push(p);
-    }
-    return body;
-  }
-  function parse3(element, { document }) {
-    const items = [...element.querySelectorAll(".item")].filter((item) => item.querySelector("img, h3"));
-    if (!items.length) return;
-    const cells = items.map((item) => [imageCell(item, document), textCell(item, document)]);
-    const cols = items[0].className;
-    let variant = "";
-    if (/\bcol-sm-4\b/.test(cols)) variant = ", three-up";
-    else if (/\bcol-sm-6\b/.test(cols)) variant = ", two-up";
-    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: `Cards Corp (teaser${variant})`, cells }));
-  }
-
   // tools/importer/transformers/corp-text-markers.js
   var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
   var SIZE_WORDS = {
@@ -352,6 +213,157 @@ var CustomImportScript = (() => {
     if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
     const dropped = bracketsToMarkers(element);
     if (payload && dropped.length) payload.textMarkersDropped = dropped;
+  }
+
+  // tools/importer/parsers/video.js
+  var DM_HOST = "https://media-assets.stryker.com";
+  function encodePath(path) {
+    return path.split("/").map((part) => encodeURIComponent(part)).join("/");
+  }
+  function videoLink(element, document) {
+    const a = document.createElement("a");
+    const dm = element.querySelector("[data-asset-path]");
+    if (dm) {
+      const assetPath = dm.getAttribute("data-asset-path");
+      const videoServer = dm.getAttribute("data-videoserver") || `${DM_HOST}/is/content/`;
+      const imageServer = dm.getAttribute("data-imageserver") || `${DM_HOST}/is/image/`;
+      const modifiers = dm.getAttribute("data-viewermodifiers") || "";
+      const modifierPoster = (modifiers.match(/(?:^|&)VideoPlayer\.posterimage=([^&]+)/i) || [])[1];
+      const poster = dm.getAttribute("data-posterimage") || modifierPoster && decodeURIComponent(modifierPoster.replace(/\+/g, " ")).trim() || assetPath;
+      a.href = `${videoServer}${encodePath(assetPath)}.m3u8?poster=${imageServer}${encodePath(poster)}?fit=constrain,1&wid=909&hei=511`;
+      a.textContent = (dm.getAttribute("data-asset-name") || assetPath.split("/").pop()).replace(/\.[a-z0-9]+$/i, "");
+      return a;
+    }
+    const iframe = element.querySelector('iframe[src*="youtube"], iframe[data-src*="youtube"]');
+    const src = iframe && (iframe.getAttribute("src") || iframe.getAttribute("data-src"));
+    const id = src && (src.match(/(?:embed\/|v=|youtu\.be\/)([\w-]{11})/) || [])[1];
+    if (!id) return null;
+    a.href = `https://www.youtube.com/watch?v=${id}`;
+    a.textContent = iframe.getAttribute("title") || a.href;
+    return a;
+  }
+  function videoOptions(element) {
+    var _a;
+    const box = element.closest(".c-standalone-video") || element.querySelector(".c-standalone-video") || element;
+    const options = [];
+    if (box.matches(".black-border, .gray-border") && !box.matches(".hide-border")) options.push("border");
+    const modifiers = ((_a = element.querySelector("[data-viewermodifiers]")) == null ? void 0 : _a.getAttribute("data-viewermodifiers")) || "";
+    if (/(?:^|&)VideoPlayer\.autoplay=1/i.test(modifiers)) options.push("autoplay");
+    if (/(?:^|&)VideoPlayer\.loop=1/i.test(modifiers)) options.push("loop");
+    return options;
+  }
+  function parse(element, { document }) {
+    const link2 = videoLink(element, document);
+    if (!link2) return;
+    const cells = [[link2]];
+    const options = STD_DRAFT_IMPORT ? videoOptions(element) : [];
+    const name = options.length ? `Video (${options.join(", ")})` : "Video";
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells }));
+  }
+
+  // tools/importer/parsers/cards-corp-resources.js
+  var SOURCE_ORIGIN = "https://www.stryker.com";
+  function text(el) {
+    return (el && el.textContent ? el.textContent : "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function absolute(href) {
+    return href && href.startsWith("/") && !href.startsWith("//") ? `${SOURCE_ORIGIN}${href}` : href;
+  }
+  function newTab(source, href) {
+    if (!href || href.includes("#")) return href;
+    const isPdf = /\.pdf(\?|$)/i.test(href);
+    const blank = (source.getAttribute("target") || "").toLowerCase() === "_blank";
+    return isPdf || blank ? `${href}#_blank` : href;
+  }
+  function parse2(element, { document }) {
+    const items = [...element.querySelectorAll(".item")];
+    const rows = items.map((item) => {
+      const title = item.querySelector(".title, h5, h4");
+      const link2 = title && title.closest("a[href]") || item.querySelector("a[href]");
+      const img = item.querySelector("img");
+      if (!img || !link2 && !text(title)) return null;
+      const src = absolute(img.getAttribute("src"));
+      const cover = document.createElement("a");
+      cover.href = src;
+      const alt = img.getAttribute("alt") || "";
+      cover.textContent = alt.trim() ? alt : src;
+      const h5 = document.createElement("h5");
+      if (!link2) {
+        h5.textContent = text(title);
+        return [cover, h5];
+      }
+      const a = document.createElement("a");
+      a.href = newTab(link2, absolute(link2.getAttribute("href")));
+      a.textContent = text(title) || text(link2);
+      h5.append(a);
+      return [cover, h5];
+    }).filter(Boolean);
+    if (!rows.length) {
+      element.remove();
+      return;
+    }
+    const sixUp = items.some((item) => /\bcol-md-2\b/.test(item.className));
+    const name = sixUp ? "Cards Corp (resources, six-up)" : "Cards Corp (resources)";
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
+  }
+
+  // tools/importer/parsers/cards-corp-teaser.js
+  function clean(text5) {
+    return (text5 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
+  }
+  function link(document, source, text5) {
+    const a = document.createElement("a");
+    a.setAttribute("href", source.getAttribute("href"));
+    a.textContent = text5;
+    return a;
+  }
+  function imageCell(item, document) {
+    const source = item.querySelector(".img-cont img, img");
+    if (!source) return "";
+    const img = document.createElement("img");
+    img.setAttribute("src", source.getAttribute("src"));
+    img.setAttribute("alt", source.getAttribute("alt") || "");
+    return [img];
+  }
+  function textCell(item, document) {
+    const body = [];
+    const title = item.querySelector("h3");
+    if (title && clean(title.textContent)) {
+      const h3 = document.createElement("h3");
+      const titleLink = title.querySelector("a[href]");
+      if (titleLink) h3.append(link(document, titleLink, clean(titleLink.textContent)));
+      else h3.textContent = clean(title.textContent);
+      body.push(h3);
+    }
+    item.querySelectorAll(".desc-container > p, :scope > p.description").forEach((source) => {
+      if (!clean(source.textContent)) return;
+      const p = document.createElement("p");
+      p.textContent = clean(source.textContent);
+      body.push(p);
+    });
+    const cta = item.querySelector("a.action-link[href]");
+    if (cta && clean(cta.textContent)) {
+      const a = link(document, cta, "");
+      const u = document.createElement("u");
+      u.textContent = clean(cta.textContent);
+      a.append(u);
+      const strong = document.createElement("strong");
+      strong.append(a);
+      const p = document.createElement("p");
+      p.append(strong);
+      body.push(p);
+    }
+    return body;
+  }
+  function parse3(element, { document }) {
+    const items = [...element.querySelectorAll(".item")].filter((item) => item.querySelector("img, h3"));
+    if (!items.length) return;
+    const cells = items.map((item) => [imageCell(item, document), textCell(item, document)]);
+    const cols = items[0].className;
+    let variant = "";
+    if (/\bcol-sm-4\b/.test(cols)) variant = ", three-up";
+    else if (/\bcol-sm-6\b/.test(cols)) variant = ", two-up";
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: `Cards Corp (teaser${variant})`, cells }));
   }
 
   // tools/importer/slide-position.js

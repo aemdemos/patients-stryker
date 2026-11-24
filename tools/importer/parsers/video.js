@@ -1,5 +1,6 @@
 /* eslint-disable */
 /* global WebImporter */
+import { STD_DRAFT_IMPORT } from '../transformers/corp-text-markers.js';
 
 /**
  * Parser: www.stryker.com `.c-standalone-video` → `Video` block.
@@ -53,9 +54,28 @@ export function videoLink(element, document) {
   return a;
 }
 
+/**
+ * The video's Block options (docs/standardisation/video.md), staging build only: `border`
+ * when the source shows its frame (black-border or gray-border without hide-border; grey
+ * joins black), `autoplay` (muted) and `loop` from the Dynamic Media viewer settings.
+ * @param {Element} element The .c-standalone-video component
+ * @returns {string[]} The option names
+ */
+export function videoOptions(element) {
+  const box = element.closest('.c-standalone-video') || element.querySelector('.c-standalone-video') || element;
+  const options = [];
+  if (box.matches('.black-border, .gray-border') && !box.matches('.hide-border')) options.push('border');
+  const modifiers = element.querySelector('[data-viewermodifiers]')?.getAttribute('data-viewermodifiers') || '';
+  if (/(?:^|&)VideoPlayer\.autoplay=1/i.test(modifiers)) options.push('autoplay');
+  if (/(?:^|&)VideoPlayer\.loop=1/i.test(modifiers)) options.push('loop');
+  return options;
+}
+
 export default function parse(element, { document }) {
   const link = videoLink(element, document);
   if (!link) return;
   const cells = [[link]];
-  element.replaceWith(WebImporter.Blocks.createBlock(document, { name: 'Video', cells }));
+  const options = STD_DRAFT_IMPORT ? videoOptions(element) : [];
+  const name = options.length ? `Video (${options.join(', ')})` : 'Video';
+  element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells }));
 }

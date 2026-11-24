@@ -193,6 +193,7 @@ function unfit(needs, facts) {
     'link-lists': facts.linkLists ? '' : 'needs a list of links',
     text: facts.text ? '' : 'needs text in the row',
     video: facts.video ? '' : 'needs a video link in the first row',
+    'dm-video': facts.video ? '' : 'needs a Dynamic Media video (a YouTube video plays as YouTube sets it)',
     box: def().groups.some((g) => g.id === 'box' && selectedIn(g, draft))
       ? '' : `pick a ${def().groups.find((g) => g.id === 'box')?.label || 'box'} first`,
     'gradient-box': def().groups.some((g) => g.id === 'box' && /-gradient$/.test(selectedIn(g, draft)))
@@ -226,9 +227,14 @@ function pick(group, value) {
   }
 }
 
-function toggle(flag, on) {
+function toggle(flag, on, group) {
   draft = draft.filter((o) => o !== flag);
   if (on) draft.push(flag);
+  // a switch group's older names (e.g. a video's `no-border`) go once the author uses it
+  if (group?.replaces) {
+    touched.add(group.id);
+    draft = draft.filter((o) => !group.replaces.test(o));
+  }
 }
 
 /** the options in a stable order: the groups' order, then the others as authored */
@@ -308,7 +314,11 @@ function renderGroups() {
           checked: on,
           ...unavailable(reason),
           onclick: (e) => { if (reason) e.preventDefault(); },
-          onchange: (e) => { toggle(value, e.target.checked); renderGroups(); updatePreview(); },
+          onchange: (e) => {
+            toggle(value, e.target.checked, group);
+            renderGroups();
+            updatePreview();
+          },
         }), label));
       });
     } else {
