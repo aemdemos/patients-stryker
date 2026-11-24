@@ -54,6 +54,8 @@
 
 import { videoLink } from '../parsers/video.js';
 import xfFragmentPath from '../xf-fragment-path.js';
+import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
+import shareRowBlock from '../social-share-std-import.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -85,6 +87,8 @@ const COMPONENTS = [
   // a Curated Link List (e.g. the "Learn more" links under the police car AED article)
   '.c-curated-link-list',
   '.xf-fragment',
+  // in review (staging build only): the share row (social-share-std-import.js)
+  ...(STD_DRAFT_IMPORT ? ['.c-socialsharing'] : []),
 ].join(', ');
 
 // Shared Experience Fragments: the delivered HTML has no XF path, so each is recognised by
@@ -1972,6 +1976,12 @@ export default function transform(hookName, element, payload) {
   let fullWidthLead = false;
   components.forEach((component) => {
     if (consumed.has(component)) return;
+    // in review (staging build only): the share row, in the article text where it stands
+    if (component.matches('.c-socialsharing')) {
+      if (!current || current === title) startSection('body');
+      current.nodes.push(shareRowBlock(component, doc));
+      return;
+    }
     const isFirst = current === title;
     // a photo (and its caption) beside article text in a 1/3 + 2/3 or 1/2 + 1/2 row:
     // Columns (33-67 / 67-33 / 50-50), the photo and caption in one cell, the text in the

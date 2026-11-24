@@ -314,6 +314,21 @@ export const BLOCK_OPTIONS = {
       },
     ],
   },
+  // the stryker.com share row (docs/standardisation/social-share-corp.md): brand-coloured icons,
+  // left-aligned, by default; the two switches the source component has
+  'social-share-corp': {
+    label: 'Social share (corp)',
+    groups: [
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['gray', 'Grey icons', { hint: 'All four icons in mid grey instead of their brand colours' }],
+          ['right', 'Right aligned', { hint: 'The icons at the right edge of the column' }],
+        ],
+      },
+    ],
+  },
   // stryker.com newsroom lists (docs/standardisation/news-list.md): built from the query index;
   // the tabs, "Showing n of N", 20 articles and Load More are always on. stryker.com's list
   // sizes (5, 8, 10, 20, 40) are one standard size (20).

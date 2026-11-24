@@ -452,7 +452,30 @@ var CustomImportScript = (() => {
     const m = style.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
   }
-  function parse(element, { document }) {
+  function parse(element, context) {
+    const { document } = context;
+    const slides = [...element.querySelectorAll(".carouselslide:not(.slick-cloned)")];
+    if (STD_DRAFT_IMPORT && slides.length > 1 && !element.hasAttribute("data-std-slide")) {
+      const settings = element.querySelector(".slider-wrapper") || element;
+      const styles = ["carousel"];
+      if (settings.getAttribute("data-autoplay") === "true") styles.push("autoplay");
+      if (settings.getAttribute("data-transition") === "true") styles.push("fade");
+      const out = [document.createElement("hr")];
+      slides.forEach((one) => {
+        const holder = document.createElement("div");
+        const single = document.createElement("div");
+        single.setAttribute("data-std-slide", "");
+        single.append(one.cloneNode(true));
+        holder.append(single);
+        parse(single, context);
+        out.push(...holder.childNodes, WebImporter.Blocks.createBlock(document, {
+          name: "Section Metadata",
+          cells: { style: styles.join(", ") }
+        }), document.createElement("hr"));
+      });
+      element.replaceWith(...out);
+      return;
+    }
     const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
     const desktop = slide.querySelector(".experienceFragment-ef img");
     const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
@@ -1101,6 +1124,25 @@ var CustomImportScript = (() => {
     return entry.fragment || xfToFragmentPath(xf);
   }
 
+  // tools/importer/social-share-std-import.js
+  var ICONS = {
+    facebook: "facebook",
+    linkedin: "linkedin",
+    email: "email",
+    "copy-url": "copy-link"
+  };
+  function shareRowBlock(component, doc) {
+    const icons = [...component.querySelectorAll("a.social-icon, .social-icon")].map((a) => Object.keys(ICONS).find((name) => a.classList.contains(name))).filter(Boolean).map((name) => [`:${ICONS[name]}:`]);
+    const options = [
+      component.classList.contains("syk-social-share-g") ? "gray" : "",
+      component.classList.contains("syk-social-share-ra") ? "right" : ""
+    ].filter(Boolean);
+    return WebImporter.Blocks.createBlock(doc, {
+      name: options.length ? `Social Share Corp (${options.join(", ")})` : "Social Share Corp",
+      cells: icons.length ? icons : [[":facebook:"], [":linkedin:"], [":email:"], [":copy-link:"]]
+    });
+  }
+
   // tools/importer/transformers/news-detail-sections.js
   var SOURCE_ORIGIN2 = "https://www.stryker.com";
   var COMPONENTS = [
@@ -1130,7 +1172,9 @@ var CustomImportScript = (() => {
     ".c-accordion:not(.edit-header)",
     // a Curated Link List (e.g. the "Learn more" links under the police car AED article)
     ".c-curated-link-list",
-    ".xf-fragment"
+    ".xf-fragment",
+    // in review (staging build only): the share row (social-share-std-import.js)
+    ...STD_DRAFT_IMPORT ? [".c-socialsharing"] : []
   ].join(", ");
   var SHARED_XF_SIGNATURES = [
     ["Connect with us Have feedback", "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master"],
@@ -2525,6 +2569,11 @@ var CustomImportScript = (() => {
     let fullWidthLead = false;
     components.forEach((component) => {
       if (consumed.has(component)) return;
+      if (component.matches(".c-socialsharing")) {
+        if (!current || current === title) startSection("body");
+        current.nodes.push(shareRowBlock(component, doc));
+        return;
+      }
       const isFirst = current === title;
       const split = component.matches(".c-standalone-image, .c-rich-text-editor") && photoTextRow(component);
       if (split) {
