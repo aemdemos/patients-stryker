@@ -1,19 +1,23 @@
 /*
- * The daily source change check (pilot on Stage from 24 Nov 2026; backend README, "Source change
- * history"): every day each source page in the check's list is loaded once, gently, and three
- * signals tell whether it changed: its content fingerprint (lib/fingerprint.mjs), its images'
- * dates (Last-Modified, asked with HEAD: no download) and the site's code (the CSS / JS files,
- * by release stamp and size). Screenshots only for a confirmed change. In Files:
+ * The daily source change check (pilot on Stage from 25 Nov 2026; backend README, "Source change
+ * history"). Two checks, screenshots only for a confirmed change:
+ * - every day, each source page's content fingerprint (lib/fingerprint.mjs), from one gentle
+ *   lite load: every version of a part seen is known (variants), a part never seen counts only
+ *   when a confirming load shows the same new content;
+ * - once a week, spread out (each night about 1/7 of the pages, by a hash of the path), its
+ *   visual fingerprint (a difference hash per screen of 900 px at 1440, moving things hidden):
+ *   a look that differs from the last one counts only when a confirming load differs too.
+ * (Not used: the site's CSS / JS versions as a trigger, 24 Nov 2026: a file changes with any
+ * edit, even a comment, and says nothing about which pages look different.)
+ * In Files:
  *   <space>/changes/scope.json            { pages: [{ page, source, template }] }: the pages checked
- *   <space>/changes/pages/<b64 page>.json { page, source, known: [part hashes seen], images:
- *        { <image>: <last-modified> }, day, misses, log: [{ day, at, result, … }] }
- *   <space>/changes/site.json             { code: { <file>: { stamp, size } }, log (design changes),
- *        pendingShots (after a design change: EVERY page of the check, a new shot each; stryker.com
- *        has no templates that guarantee the same look, and a page can leave its own any day),
- *        lastRun, runs }
+ *   <space>/changes/pages/<b64 page>.json { page, source, known: [part hashes seen], look: {
+ *        hash: [per screen], day }, day, misses, log: [{ day, at, result, … }] }
+ *   <space>/changes/site.json             { lastRun, runs }
  * A page's log results: baseline (the history starts: 3 loads, every version of a part seen is
- * known), unchanged, variant (a part seen once and not on the confirming load: dynamic, learned),
- * changed { parts, images, shot, unsteady }, unreachable { reason }, gone (3 days unreachable).
+ * known), unchanged, variant (a part seen once, not on the confirming load: dynamic, learned),
+ * changed { parts, look, shot, unsteady }, unreachable { reason }, gone (3 days unreachable);
+ * a day's line also says what the weekly visual check found (look: baseline | same | noise).
  */
 export const pre = (space) => (!space || space === 'std' ? '' : `${space}/`);
 export const scopeFile = (space) => `${pre(space)}changes/scope.json`;
@@ -22,6 +26,11 @@ export const siteFile = (space) => `${pre(space)}changes/site.json`;
 export const checkLockFile = (space) => `${pre(space)}changes/lock.json`;
 export const dayOf = (iso = new Date().toISOString()) => iso.slice(0, 10);
 export const GONE_AFTER = 3;
+// the visual check: a screen counts as different above this many bits of its 64 (the pilot:
+// two loads of an unchanged page stay within it), or when the page's height changes by more
+// than a screen
+export const LOOK_BITS = 10;
+export const LOOK_EVERY_DAYS = 7;
 
 export async function readJson(files, name, fallback) {
   try {
@@ -33,43 +42,55 @@ export async function readJson(files, name, fallback) {
 export const writeJson = (files, name, value) => files.write(name, JSON.stringify(value));
 
 export const readScope = (files, space) => readJson(files, scopeFile(space), { pages: [] });
-export const readSite = (files, space) => readJson(files, siteFile(space), { code: {}, log: [], pendingShots: [] });
+export const readSite = (files, space) => readJson(files, siteFile(space), { runs: [] });
 export const readPageState = (files, space, page) => readJson(files, pageFile(space, page), null);
 
-/**
- * a CSS / JS file of the site → its key (the release stamp out: clientlibs-<n>) and version:
- * the stamp and the size (the first part of the Apache ETag "size-mtime": the mtime part
- * differs from server to server for the same file)
- */
-export function codeVersion(url, etag) {
-  const u = new URL(url);
-  const stamp = (u.pathname.match(/clientlibs-(\d+)/) || [])[1] || null;
-  const size = String(etag || '').replace(/^W\//, '').replace(/"/g, '').split('-')[0] || null;
-  return { key: u.pathname.replace(/clientlibs-\d+/, 'clientlibs-*'), stamp, size };
-}
-
-/** a page's record and one load → the parts never seen and the images whose date changed */
-export function differences(state, fp, images) {
+/** a page's record and one load → the parts never seen */
+export function differences(state, fp) {
   const known = new Set(state?.known || []);
-  return {
-    parts: fp.parts.filter((p) => !known.has(p.hash)),
-    images: Object.keys(images).filter((u) => state?.images?.[u] && images[u] && state.images[u] !== images[u]),
-  };
+  return { parts: fp.parts.filter((p) => !known.has(p.hash)) };
 }
 
 /**
- * the first load's differences against a confirming load → what is confirmed: a part whose new
- * content is the same on both loads; an image whose new date is the same on both; unsteady: a
- * part (same position) new on both loads but different each time (changed, and moving)
+ * the first load's new parts against a confirming load → confirmed: a part whose new content is
+ * the same on both loads; unsteady: a part (same position) new on both loads but different each
+ * time (changed, and moving)
  */
-export function confirm(first, fp2, images2, state) {
+export function confirm(first, fp2, state) {
   const second = new Set(fp2.parts.map((p) => p.hash));
   const known = new Set(state?.known || []);
   const parts = first.parts.filter((p) => second.has(p.hash));
   const unsteady = first.parts.filter((p) => !second.has(p.hash)
     && fp2.parts.some((q) => q.key === p.key && !known.has(q.hash) && q.hash !== p.hash));
-  const images = first.images.filter((u) => images2[u] && images2[u] !== state.images[u]);
-  return { parts, unsteady, images };
+  return { parts, unsteady };
+}
+
+/** two visual fingerprints (a hash per screen) → whether the page looks different */
+export function looksDifferent(a, b) {
+  if (!a?.length || !b?.length) return false;
+  if (Math.abs(a.length - b.length) > 1) return true;
+  const bits = (x, y) => {
+    let v = BigInt(`0x${x}`) ^ BigInt(`0x${y}`);
+    let n = 0;
+    while (v) {
+      n += Number(v & 1n);
+      v >>= 1n;
+    }
+    return n;
+  };
+  for (let i = 0; i < Math.min(a.length, b.length); i += 1) {
+    if (bits(a[i], b[i]) > LOOK_BITS) return true;
+  }
+  return false;
+}
+
+/** whether a page's weekly visual check is due today: its night of the week (by its path), or a week since the last */
+export function lookDue(state, page, today) {
+  const dayNumber = Math.floor(Date.parse(`${today}T00:00:00Z`) / 86400000);
+  if (state?.look?.day) return dayNumber - Math.floor(Date.parse(`${state.look.day}T00:00:00Z`) / 86400000) >= LOOK_EVERY_DAYS;
+  let h = 0;
+  for (const c of page) h = (h * 31 + c.charCodeAt(0)) % 1000003;
+  return h % LOOK_EVERY_DAYS === dayNumber % LOOK_EVERY_DAYS;
 }
 
 /** a log line (one per day per page; the newest kept last) */
@@ -87,10 +108,11 @@ export function historyOf(state) {
   return {
     since: log[0]?.day || null,
     last: last && { day: last.day, result: last.result, reason: last.reason || null },
+    lookChecked: state.look?.day || null,
     changes: log.filter((l) => l.result === 'changed' || l.result === 'baseline').map((l) => ({
-      day: l.day, at: l.at, result: l.result, parts: l.parts?.length || 0, images: l.images?.length || 0, shot: l.shot || null, unsteady: !!l.unsteady, site: l.site || null,
+      day: l.day, at: l.at, result: l.result, parts: l.parts?.length || 0, look: !!l.look, shot: l.shot || null, unsteady: !!l.unsteady,
     })),
     unreachable: state.misses || 0,
-    gone: log.some((l) => l.result === 'gone') && last?.result !== 'unchanged',
+    gone: last?.result === 'gone',
   };
 }

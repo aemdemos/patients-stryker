@@ -36,46 +36,48 @@ archived in `.cbr/archives/change-pilot-2026-11-24.tar.gz`):
   CPU (~10x slower per page); the browser is unpacked once per container (several runs
   unpacking it at once: `spawn ETXTBSY`).
 - The visual fingerprint needs every image and video: at 20 pages at once stryker.com slowed
-  down (one page timed out after 90 s), and it showed 1 false difference in 40 pages. Not used:
-  the user's idea of the files' ETags / dates covers design changes and replaced images (below).
+  down (one page timed out after 90 s), and it showed 1 false difference in 40 pages: so it
+  runs once a week, spread out, one page at a time, and a difference is confirmed by a second
+  load (below).
+- **Tried and dropped (24 Nov 2026): the files' ETags / dates as triggers.** The CSS / JS files'
+  versions (release stamp, size) change with any edit, even a comment, and say nothing about
+  which pages look different: as a trigger they would mark every page using a file as changed.
+  (Measured on the way: every HTML / CSS / JS file and image answers with an ETag; the same CSS /
+  JS file has a different ETag on each stryker.com server, only its size part steady; Dynamic
+  Media images' ETags change when a rendition is regenerated, their dates don't.)
 
 ### The daily check (built 24 Nov 2026; pilot on Stage, 50 pages, from the night of 25 Nov)
 
 `lib/changes.mjs`, capture op `check`, schedule `review-check` (Stage only: every 5 minutes from
 01:00 to 03:55 UTC; `admin schedule {"only":["check"]}`). Each run checks the pages of the
-check's list (`admin changes-scope`) not checked today, one at a time, ~1 page a second:
+check's list (`admin changes-scope`) not checked today, one at a time, with a pause:
 
-- **Three signals**, from one lite load:
-  - the page's **content fingerprint** (variants learned, a confirming load);
-  - its **images' dates**: Last-Modified, asked with HEAD (no download). Not their ETags:
-    Dynamic Media's change when it regenerates a rendition (6 of 197 between two loads, the
-    date the same);
-  - the **site's code**: the CSS / JS files on www.stryker.com (16 for the whole site), by the
-    release stamp in their address (`clientlibs-<n>`) and their size (the first part of the
-    Apache ETag "size-mtime": the mtime part differs from server to server for the same file).
-    A new version seen on two pages of a run = the site's design changed: one entry in the
-    site's log, and **every page of the check** queued for a new shot (the user, 24 Nov 2026:
-    stryker.com's templates are business units, not one structure, and any page can leave its
-    template any day; no page is shot in place of another).
-- **Screenshots** (the usual three widths, in the page's shot history, labelled in the tool):
-  when the page's history starts and it has none yet, on a confirmed change, and of every page
-  after a design change. No blanket visual check. The design-change shots run after the day's
-  checks, in the time they leave (none started after 255 s of a run), so the checks are never
-  pushed aside; a page shot since the change (its content changed too) is not shot again; a
-  second change while pages wait queues every page again, once; a 404 stops them for the run.
-  For all 2,553 pages: ~15 s a page, ~10–11 hours of shots (~76,000 GB-s, ~0.5 GB) per design
-  release, so about 3–4 nights in the schedule's 01:00–04:00 UTC window (wider if needed).
+- **Every day: the content.** One lite load (no images, media or fonts, ~1 s): the content
+  fingerprint; a part never seen counts only when a confirming load shows the same new content
+  (the variants of dynamic parts are learned). For all 2,553 pages: ~45–60 minutes a night.
+- **Once a week, spread out: the look.** Each night the pages whose night it is (a hash of the
+  path picks one of 7; then every 7 days): one full load at 1440 (~3–5 s) and its visual
+  fingerprint (a difference hash per screen of 900 px, videos / embeds / carousels hidden),
+  compared with the look of the page's last shot; different above 10 bits of 64 in a screen (or
+  a height change of more than a screen) on a confirming load too = a change. About 365 pages a
+  night for the full scope: ~20–30 minutes more.
+- **Screenshots** (the usual three widths, ~15 s a page, in the page's shot history, labelled in
+  the tool): only when the page's history starts and it has none yet, and on a confirmed change
+  (content or look). With each shot its look is stored, the one the next visual check compares.
 - **Records**: each page's `changes/pages/<b64>.json` (one log line a day: baseline, unchanged,
-  variant, changed, unreachable, gone after 3 days), the site's `changes/site.json` (code, design
-  changes, the runs with their timings). `admin changes-page {page}` / `changes-site`.
+  variant, changed, unreachable, gone after 3 days; the day's visual result: baseline, same,
+  noise), the runs in `changes/site.json` (timings, counts). `admin changes-page {page}` /
+  `changes-site`.
 - **Gentle with stryker.com:** after many hundreds of loads in one afternoon (up to 20 at once),
   stryker.com answered 404 to about half of the pages on Stage, on and off (Production's loads
   were fine). So: one page at a time with a pause; a 404 is tried again at the end of the run
   and only then counts as unreachable; three 404s in a row stop the run (the pages stay due).
-- The tool: the Source shot box says since when the source is checked daily, what the last
-  check found and how many changes were recorded; each shot is labelled with why it was taken.
-- Test: `test/changes-live.test.mjs` (two test pages: history starts, unchanged, a real change
-  by switching one test page's source; purged after).
+- The tool: the Source shot box says since when the content is checked daily, when the look was
+  last compared, what the last check found and how many changes were recorded; each shot is
+  labelled with why it was taken.
+- Test: `test/changes-live.test.mjs` (two test pages: history starts with a shot and its look,
+  unchanged, a real change by switching one test page's source, the visual check forced: the
+  same, no shot; purged after).
 
 ## Two workspaces: Production (the live review) and Stage (tests)
 
