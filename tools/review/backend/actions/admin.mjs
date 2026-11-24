@@ -11,7 +11,13 @@
  *   revoke { id }                           the invitation stops working at once
  *   invites                                 every invitation (no tokens)
  *   forget-test-invites                     removes revoked test invitations (tool test …, zz-test-…)
- *   schedule { cron, enabled }              the capture action every 15 minutes (cron), or off
+ *   schedule { cron, enabled }              the capture action every 15 minutes (cron), the live
+ *                                           warm-up, the daily backup (or all off)
+ *   backup                                  every key of both reviews to Files (backups/<day>), dated,
+ *                                           kept; entries within 90 days of their end renewed
+ *   backups                                 the days with a backup
+ *   restore-check { day }                   a backup against the store: keys missing now, changed since
+ *   restore { day, only: [key prefixes] }   the keys of a backup missing now put back (never over one)
  *   capture-state                           the capture's record (first seen, sources to correct, runs)
  *   (invitations: lib/invites.mjs, shared with the AOE team's web action invites)
  *   export                                  every entry, as rows (summary, apply, tests)
@@ -37,9 +43,12 @@ import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
 import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
 import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
+import {
+  backup, listBackups, restoreCheck, restore,
+} from '../lib/backup.mjs';
 
 // operations that change entries: the review's summary is built again after them
-const WRITES = ['status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test'];
+const WRITES = ['status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
 import {
   listRequests, readHistory, addVersions, failRequest, historyFile, requestFile,
 } from '../lib/shots.mjs';
@@ -97,6 +106,16 @@ async function run(params) {
       return ok({ steps: await schedule({ cron: params.cron, enabled: params.enabled !== false, space: params.space || 'main' }) });
     }
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
+    if (op === 'backup') return ok(await backup(stores));
+    if (op === 'backups') return ok({ days: await listBackups(files) });
+    if (op === 'restore-check') {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(params.day || '')) return bad('day: YYYY-MM-DD (admin backups lists them)');
+      return ok(await restoreCheck(stores, params.day));
+    }
+    if (op === 'restore') {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(params.day || '')) return bad('day: YYYY-MM-DD');
+      return ok(await restore(stores, params.day, { only: Array.isArray(params.only) ? params.only : null }));
+    }
     if (op === 'rebuild-summary') {
       const s = await rebuildSummary(stores, space);
       return ok({ space, built: s.built, pages: Object.keys(s.pages).length });
