@@ -1384,7 +1384,7 @@ body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::afte
    the block's 2vw default (stryker.com hero overlays and banner text boxes); the title of a
    `large` / `xlarge` hero keeps the variant's size, the copy of a `large-copy` hero its 17.5px */
 body.long-page-detail-corp main .hero-corp:not(.large-copy, .xlarge-copy, .headline-copy) > div:last-child > :not(h1, h2),
-body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge, .serif-gold-title) > div:last-child > :is(h1, h2) {
+body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge, .serif-gold-title, .fixed-xlarge-title) > div:last-child > :is(h1, h2) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
@@ -1461,7 +1461,7 @@ body.long-page-detail-corp main .hero-corp > div:last-child > :is(h1, h2) + .but
    instruments, environmental programs, SKILL), Egyptienne light, Bold words Futura bold.
    `large` / `xlarge` (blocks/hero-corp) set 4vw / 5.5vw. A title that still holds size tags
    (pages not yet re-imported) keeps their sizes ---- */
-body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge, .serif-gold-title) > div:last-child :is(h1, h2):not(:has(span[class*="text-"], span[class*="headline-"])) {
+body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge, .serif-gold-title, .fixed-xlarge-title) > div:last-child :is(h1, h2):not(:has(span[class*="text-"], span[class*="headline-"])) {
   font-family: var(--heading-font-family);
   font-size: calc(2.5 * var(--hero-corp-title-unit));
   font-weight: var(--font-weight-regular);
@@ -1613,8 +1613,11 @@ body.long-page-detail-corp main .statistics .statistics-desc strong {
 }
 
 /* a banner with `shadow` (stryker.com .imgBoxId.bg-shadow: rep-portal, e-Lab): the soft
-   shadow around the banner, at every width */
-body.long-page-detail-corp main > .section.shadow .hero-corp.banner {
+   shadow around the banner, at every width; a `half-text` banner has it around its image only,
+   not the gold text box stacked above the image on phones (e-Lab: the source's shadow is on the
+   image box) */
+body.long-page-detail-corp main > .section.shadow .hero-corp.banner:not(.half-text),
+body.long-page-detail-corp main > .section.shadow .hero-corp.banner.half-text > div:first-child {
   box-shadow: var(--shadow-soft);
 }
 
