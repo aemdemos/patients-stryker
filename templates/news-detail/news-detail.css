@@ -375,6 +375,22 @@ body.news-detail main > .section.compact > .default-content-wrapper > :last-chil
   margin-bottom: 0;
 }
 
+/* section styles `serif-futura-bold, compact`: small print in Egyptienne Light at 11.2px
+   (not serif-futura-bold's 17.5px), on the small-print lines; the text block is as wide as
+   its longest line (at most the article column) and centred on the page, its lines left-
+   aligned */
+body.news-detail main > .section.serif-futura-bold.compact > .default-content-wrapper {
+  width: fit-content;
+  margin-inline: auto;
+  text-align: start;
+}
+
+body.news-detail main > .section.serif-futura-bold.compact > div :is(p, li) {
+  font-family: var(--heading-font-family);
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
 /* bold small print stays in the body font, as the text around it — also a bold line on its
    own (stryker.com .c-disclaimer <b>: Humanist 712 bold, e.g. the "DFHD 17934 Rev A" code
    of the flexible ureteroscope release); buttons, bold + underline CTAs and the gold
