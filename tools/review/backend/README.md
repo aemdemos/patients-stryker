@@ -3,7 +3,7 @@
 The review tool's store for the final scope (plan: `../backend-plan.md`): reviewers without an
 Adobe ID save with an **invitation link**; the state per page and block lives in App Builder.
 Project "Stryker std review", **Production** workspace `892544-strykerstdreview` (since 24 Nov 2026; Stage,
-`892544-strykerstdreview-stage`, ran it before and is frozen: it refuses writes with "moved"). The scripts and tests on this machine find it in
+`892544-strykerstdreview-stage`, ran it before: emptied, every call there answers "moved"). The scripts and tests on this machine find it in
 `target.mjs`; the move itself: `move.mjs` (DATABASE.md, "The move to Production").
 
 | Action | Kind | What |

@@ -21,6 +21,8 @@
  *                                           (apply false: only the comparison)
  *   files-list / files-presign { names }    moving: the files to copy, short-lived read links
  *   files-pull { items: [{ name, url }] }   moving: each link fetched and written under its name
+ *   empty-moved { apply }                   a workspace the review has left (REVIEW_MOVED_TO set
+ *                                           only): every document and file deleted
  *   empty-state { apply }                   the old State store: a final copy to Files
  *                                           (backups/state-final/), then every key deleted
  *   db-check                                the App Builder Database: credential there, connect, write,
@@ -60,7 +62,9 @@ import {
   dbCheck, dbConsistency, dbListTest, dbListChangeTest,
 } from '../lib/db.mjs';
 import { migrateFromState, emptyState } from '../lib/migrate.mjs';
-import { filesList, filesPresign, filesPull } from '../lib/move.mjs';
+import {
+  filesList, filesPresign, filesPull, emptyMoved,
+} from '../lib/move.mjs';
 
 // operations that change entries: the review's summary is built again after them
 const WRITES = ['migrate-from-state', 'status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
@@ -134,6 +138,7 @@ async function run(params) {
     if (op === 'files-list') return ok({ files: await filesList(files) });
     if (op === 'files-presign') return ok({ links: await filesPresign(files, [].concat(params.names || [])) });
     if (op === 'files-pull') return ok(await filesPull(files, [].concat(params.items || [])));
+    if (op === 'empty-moved') return ok(await emptyMoved(params, stores, { apply: params.apply === true }));
     if (op === 'db-check') return ok(await dbCheck(params));
     if (op === 'db-stats') {
       // the documents per space and invitations; pages left without entries removed

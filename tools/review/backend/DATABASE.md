@@ -124,7 +124,13 @@ the rest; also used for the shot history, which will pass 1,000 pages); several 
 new page document at the same moment collided on its id (`lib/dbstate.mjs` writes again once).
 The tool and the scripts point at Production (`config.js` backend, `backend/target.mjs`); all
 tests of both reviews passed there. Speed as on Stage (220 changes ~0.56 s, overview ~0.1 s).
-Stage keeps its copy, frozen, as a fallback; nothing reads it.
+Stage kept its copy, frozen, until it was **emptied the same day** (admin `empty-moved`, which
+runs only where `REVIEW_MOVED_TO` is set): its last backup (916 keys) first archived on
+Production as `stage-final/backups/2026-11-24/state.json` (every other Stage file was already on
+Production, same name and size), then 829 page documents, 41 invitations and 1,803 files
+deleted (0 left). Stage keeps the deployed actions and its database credential: every web
+action there answers 410 "moved" (reads too), so a tab left open on the old tool is told to
+reload.
 
 ## 2. The move (how it was planned; done 24 Nov 2026, steps 2 and 4 shortened: the data was test data)
 

@@ -14,6 +14,7 @@
 import {
   open, checkInvite, inScope, reply, fail, isPreflight, inviteOf, spaceOf,
 } from '../lib/core.mjs';
+import { movedMessage } from '../lib/move.mjs';
 import { loadScope } from '../lib/scope.mjs';
 import { readHistory } from '../lib/shots.mjs';
 import { launch, openPage, loadSource } from '../lib/browser.mjs';
@@ -77,6 +78,7 @@ async function sourceOf(files, space, page, given) {
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
+  if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
   const t0 = Date.now();
   const timing = {};
   const mark = (k) => { timing[k] = Date.now() - t0; };
