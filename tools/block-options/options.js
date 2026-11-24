@@ -126,7 +126,9 @@ export const BLOCK_OPTIONS = {
   // stryker.com column rows (stryker-aemcoder-package, docs/standardisation/columns.md): the five
   // source layouts (and the other widths the corp styles have), a cell box (one colour list for
   // every block) in the first / last / every cell, the spacing inside it, image borders, centred
-  // text, and the other corp looks imported pages use (first-line bars, row looks, tile looks).
+  // text, and the other corp looks imported pages use (first-line bars, row looks). Rows of tiles
+  // (challenge, icon, colour profile cards, product / CTA tiles, icon grid) are Cards (package);
+  // pages that carry those names render as before.
   // Old combined names (boxed-last, gold-first …) show as the new pair in the panel and are
   // replaced when the author picks a box; pages that keep them render as before.
   columns: {
@@ -269,19 +271,6 @@ export const BLOCK_OPTIONS = {
           ['left-border-bottom', 'Rule under the first cell'],
           ['border-bottom', 'Line below the row'],
           ['label-right', 'First cell right-aligned (labels)'],
-        ],
-      },
-      {
-        id: 'tiles',
-        label: 'Tile look',
-        options: [
-          ['', 'None'],
-          ['challenge-cards', 'Challenge cards'],
-          ['icon-cards', 'Icon cards'],
-          ['color-cards', 'Colour profile cards'],
-          ['product-tiles', 'Product tiles'],
-          ['cta-tiles', 'CTA tiles'],
-          ['columns-icon-grid', 'Icon grid'],
         ],
       },
     ],

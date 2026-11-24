@@ -220,7 +220,17 @@ pages (not package numbers).*
 | More widths (Layout) | three quarters + quarter, quarter + three quarters, 70 / 30, icon + text (1/5, 4/5), quarter + quarter + half | 8, 8, 1, 0, 1 |
 | First line of the text | in a light grey box, a gold bar, a dark grey bar, a **blue bar** (stryker.com coloured heads), serif lead paragraph | 79, 2, 1, 1, 1 |
 | Row looks (switches) | large headline type, linked images, one per row on phones, related links, link groups, icon beside text, numbered quotes, page title beside a photo, pull quote in the last cell, large pull quote beside a photo, serif captions, caption right under the photo, images centred at their size, photo two thirds wide on phones, rule under the first cell, **line below the row**, **first cell right-aligned (labels)** | 479, 315, 72, 11, 1, 4, 4, 1, 1, 1, 3, 1, 1, 3, 3, **750**, **7** |
-| Tile look | challenge cards, icon cards, colour profile cards, product tiles, CTA tiles, icon grid | 7, 1, 1, 3, 2, 0 |
+
+**Moved to Cards:** the six tile looks (challenge cards 7 rows, icon cards 1, colour profile cards 1,
+product tiles 3, CTA tiles 2, icon grid 0) are rows of tiles, which the package puts in Cards. They are
+no longer Columns choices; pages that carry those names render as before until the Cards session.
+
+**Proposed, to approve: row-wide text looks in Block options.** Large headline type (479 rows), serif
+lead paragraph, serif captions and the pull quotes style a whole row's text on stryker.com (one
+component style). The proposal keeps them as one choice in a *Text look* group of Block options, using
+the same sizes and fonts as the Text style panel, while words inside a line stay with the Text style
+panel. This departs from the package rule "fonts and sizes of text are never block options" for
+row-wide looks only.
 
 **Imported names that are existing choices** (no new variant; the panel shows them as these choices):
 
