@@ -1,0 +1,129 @@
+/*
+ * Panel on www.stryker.com (corp) pages: the stryker.com text box (a rich text with a
+ * background colour and/or the dimensional box's soft shadow). Loaded by scripts/corp.js
+ * (CORP_BLOCK_STYLES) on `site: corp` pages only.
+ *
+ * The standard choices (Block options panel, docs/standardisation/panel.md): a box colour
+ * (box-white, box-gold, box-gray, box-gold-gradient, box-blue, box-blue-gradient, box-teal,
+ * box-purple, box-dark, box-purple-gradient), the gradient direction (gradient-reverse,
+ * gradient-up), the inner spacing step (space-none, space-s, space-m default, space-l: the
+ * source's padding % of the box), the soft shadow (shadow) and centred text (text-center).
+ * Text colours, fonts and sizes inside are the Text style panel (span-markers); the box sets
+ * the default text colour (white on the dark colours, as the stryker.com boxes' text).
+ *
+ * In review: draft pages only (body.std-draft, scripts/corp.js). Real corp pages use the
+ * patients names (left, gold, gold-gradient, gray) and render as before.
+ */
+
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) {
+  --panel-corp-angle: 90deg;
+  --panel-corp-padding: 5%;
+  --panel-corp-text: var(--text-color);
+}
+
+body.corp.std-draft .panel.box-white { --panel-corp-bg: var(--color-white); }
+body.corp.std-draft .panel.box-gold { --panel-corp-bg: var(--color-accent); }
+body.corp.std-draft .panel.box-gray { --panel-corp-bg: var(--color-surface); }
+
+/* stryker.com bg-golden-gradient: dark gold into gold over the first fifth */
+body.corp.std-draft .panel.box-gold-gradient {
+  --panel-corp-bg: linear-gradient(var(--panel-corp-angle), var(--color-accent-link-hover), var(--color-accent) 20%);
+}
+
+body.corp.std-draft .panel.box-blue {
+  --panel-corp-bg: var(--color-navy-bright);
+  --panel-corp-text: var(--color-white);
+}
+
+/* stryker.com bg-dark-blue-gradient: dark grey into slate */
+body.corp.std-draft .panel.box-blue-gradient {
+  --panel-corp-bg: linear-gradient(var(--panel-corp-angle), var(--color-secondary), var(--corp-color-slate));
+  --panel-corp-text: var(--color-white);
+}
+
+body.corp.std-draft .panel.box-teal {
+  --panel-corp-bg: var(--color-primary);
+  --panel-corp-text: var(--color-white);
+}
+
+body.corp.std-draft .panel.box-purple {
+  --panel-corp-bg: var(--color-purple);
+  --panel-corp-text: var(--color-white);
+}
+
+body.corp.std-draft .panel.box-dark {
+  --panel-corp-bg: var(--color-secondary);
+  --panel-corp-text: var(--color-white);
+}
+
+/* stryker.com bg-dark-purple-gradient: dark grey into plum */
+body.corp.std-draft .panel.box-purple-gradient {
+  --panel-corp-bg: linear-gradient(var(--panel-corp-angle), var(--color-secondary), var(--corp-color-plum));
+  --panel-corp-text: var(--color-white);
+}
+
+/* gradient direction (stryker.com `inverse`, `top-to-bottom inverse`) */
+body.corp.std-draft .panel.gradient-reverse { --panel-corp-angle: -90deg; }
+body.corp.std-draft .panel.gradient-up { --panel-corp-angle: 0deg; }
+
+/* inner spacing: the steps of the box width (stryker.com padding %) */
+body.corp.std-draft .panel.space-none { --panel-corp-padding: 0; }
+body.corp.std-draft .panel.space-s { --panel-corp-padding: 3%; }
+body.corp.std-draft .panel.space-m { --panel-corp-padding: 5%; }
+body.corp.std-draft .panel.space-l { --panel-corp-padding: 10%; }
+
+/* the box: the full width of its place, the text as the page's text (the patients panel's
+   centred white shadow box and its type sizes don't apply) */
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body {
+  margin: 0;
+  padding: var(--panel-corp-padding);
+  background: var(--panel-corp-bg);
+  box-shadow: none;
+  color: var(--panel-corp-text);
+  text-align: left;
+}
+
+/* the dimensional box: a soft shadow, 10px around the box */
+body.corp.std-draft .panel.shadow:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body {
+  margin: var(--space-block-s);
+  box-shadow: var(--shadow-soft);
+}
+
+body.corp.std-draft .panel.text-center:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body {
+  text-align: center;
+}
+
+/* stryker.com rich text in a box: paragraphs at the page's size with their 15px gap, the last
+   one too (inside the box's bottom spacing) */
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body :is(p, p:last-child) {
+  margin: 0 0 var(--space-block);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body :is(h1, h2, h3, h4, h5, h6) {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  color: inherit;
+}
+
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+}
+
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body h3 :is(em, i) {
+  color: inherit;
+}
+
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body li :is(strong, b) {
+  font-family: var(--display-font-family);
+}
+
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body :is(strong > a:any-link:has(u), a:any-link > strong:has(u), strong > a:any-link:has(u) u, a:any-link > strong:has(u) u) {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

@@ -29,6 +29,8 @@
  *   - event calendars (.c-event): dropped (the events load in the browser on stryker.com)
  */
 
+import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
+
 const COMPONENT = '[class^="c-"], [class*=" c-"]';
 // the components a Columns cell takes (rich text, images, videos, headlines, CTAs, button
 // sets, tables) and blocks already built
@@ -319,6 +321,193 @@ function fullBleedPanels(main, doc, h) {
   });
 }
 
+// in review (staging build only, STD_DRAFT_IMPORT): a source box → the Panel choices of the
+// package (docs/standardisation/panel.md): the box colour (the rare ones take the nearest),
+// the soft shadow of a dimensional box, the gradient direction, the inner spacing step and
+// centred text
+const PANEL_BOX_COLOURS = {
+  white: 'box-white',
+  gold: 'box-gold',
+  orange: 'box-gold',
+  'light-gray': 'box-gray',
+  gray: 'box-gray',
+  'golden-gradient': 'box-gold-gradient',
+  'dark-orange-gradient': 'box-gold-gradient',
+  blue: 'box-blue',
+  'dark-blue-gradient': 'box-blue-gradient',
+  'dark-teal-gradient': 'box-blue-gradient',
+  teal: 'box-teal',
+  purple: 'box-purple',
+  'dark-gray': 'box-dark',
+  'dark-purple-gradient': 'box-purple-gradient',
+};
+// the source padding % per side → the nearest step (the median of the sides; 5% the default);
+// a box without one keeps the rich text's own 10px: the small step
+const PANEL_SPACE_STEPS = [[0, 'space-none'], [3, 'space-s'], [5, ''], [10, 'space-l']];
+
+/**
+ * The Panel options of a source box, or '' when it isn't a box (a white box without the
+ * dimensional shadow reads as the page).
+ * @param {Element} box The .has-background / .dimensional-box element
+ * @param {Element} component Its rich text component
+ */
+export function panelOptions(box, component) {
+  const bg = (box.className.match(/\bbg-([a-z-]+)/) || [])[1] || '';
+  const shadow = box.classList.contains('dimensional-box');
+  const colour = PANEL_BOX_COLOURS[bg] || (shadow ? 'box-white' : '');
+  if (!colour || (colour === 'box-white' && !shadow)) return '';
+  let gradient = '';
+  if (colour.endsWith('-gradient') && box.classList.contains('inverse')) {
+    gradient = box.classList.contains('top-to-bottom') ? 'gradient-up' : 'gradient-reverse';
+  }
+  const values = ['top', 'right', 'bottom', 'left']
+    .map((side) => (box.getAttribute('style') || '').match(new RegExp(`padding-${side}\\s*:\\s*([\\d.]+)%`)))
+    .filter(Boolean).map((m) => Number(m[1])).sort((a, b) => a - b);
+  let space = 'space-s';
+  if (values.length) {
+    const median = values[Math.floor(values.length / 2)];
+    [, space] = PANEL_SPACE_STEPS.reduce((best, step) => (Math.abs(step[0] - median)
+      < Math.abs(best[0] - median) ? step : best));
+  }
+  const items = [...component.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')]
+    .filter((el) => el.textContent.trim());
+  const centred = items.length > 0 && items.every((el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]'));
+  return [colour, shadow ? 'shadow' : '', gradient, space, centred ? 'text-center' : '']
+    .filter(Boolean).join(', ');
+}
+
+// a source copy or heading size style → its size tag (Text style marker), relative to the
+// text it sits in (a Heading 2 enlarged 1.5 times: `text-1-5`)
+const PANEL_SIZE_TAGS = {
+  'p-1-25': 'text-1-25',
+  'p-1-5': 'text-1-5',
+  'p-1-75': 'text-1-75',
+  'p-2': 'text-2',
+  'p-2-5': 'text-2-5',
+  disclaimer: 'text-0-8',
+  'h2-0-8': 'text-0-8',
+  'h2-1-5': 'text-1-5',
+  'h1-1-25': 'text-1-25',
+};
+
+/**
+ * In review (staging build): the text of a Panel keeps its source sizes and fonts as Text
+ * style markers (a page's section styles can't style one block), each paragraph, list or
+ * heading with its own. On the boxes whose default text is white (blue, teal, purple, dark
+ * grey and the blue and purple gradients) a white colour tag says nothing: it is dropped, so
+ * a gold label (Bold + Italic) inside keeps its gold, as on stryker.com.
+ */
+function panelCopy(cellNodes, options, doc, h, component) {
+  const parts = (style) => (style || '').split(',').map((x) => x.trim()).filter(Boolean);
+  const squash = (value) => value.replace(/\[\[[^\][]+\]|\]/g, '').replace(/[\s\u00a0]+/g, '');
+  // text that is not in a paragraph (a rich text without <p>) becomes one, as the editor writes it
+  const nodes = [];
+  cellNodes.forEach((n) => {
+    const inline = n.nodeType === 3 || (n.nodeType === 1 && n.matches('a, b, br, em, i, span, strong, sub, sup, u'));
+    if (!inline) {
+      nodes.push(n);
+      return;
+    }
+    let last = nodes[nodes.length - 1];
+    if (!last || !last.panelParagraph) {
+      if (n.nodeType === 3 && !n.textContent.trim()) return;
+      last = doc.createElement('p');
+      last.panelParagraph = true;
+      last.copyStyle = n.copyStyle;
+      nodes.push(last);
+    }
+    last.append(n);
+  });
+  // the source paragraphs and headings of the box, by their text
+  const sources = new Map([...component.querySelectorAll('p, h1, h2, h3, h4, h5, h6')]
+    .map((el) => [squash(el.textContent), el]));
+  // the size of a source text all in size spans (nested ones multiply: 1.5em in 1.75em is
+  // 2.625, the TEACH Talks titles) → the nearest size tag
+  const STEPS = [[0.8, 'text-0-8'], [1.25, 'text-1-25'], [1.5, 'text-1-5'], [1.75, 'text-1-75'], [2, 'text-2'], [2.5, 'text-2-5']];
+  const sizeOf = (el) => {
+    const factor = [...el.querySelectorAll('[class*="fontsize-"]')]
+      .filter((span) => squash(span.textContent) === squash(el.textContent))
+      .map((span) => (span.className.match(/fontsize-(\d+)(?:-(\d+))?em/) || []))
+      .filter((m) => m[1])
+      .reduce((f, m) => f * (m[1] === '8' && !m[2] ? 0.8 : Number(`${m[1]}.${m[2] || 0}`)), 1);
+    if (Math.abs(factor - 1) < 0.05) return '';
+    const off = ([step]) => Math.abs(Math.log(step / factor));
+    return STEPS.reduce((a, b) => (off(b) < off(a) ? b : a))[1];
+  };
+  // serif: all the text outside Futura bold runs is in span.urw-egyptienne
+  const serifPlain = (el) => {
+    const walker = el.ownerDocument.createTreeWalker(el, 4);
+    let plain = 0;
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      // (bracket tags an earlier step wrote around the text don't count)
+      if (squash(t.nodeValue) && !t.parentElement.closest('.futura-bold, b, strong')) {
+        if (!t.parentElement.closest('.urw-egyptienne')) return false;
+        plain += 1;
+      }
+    }
+    return plain > 0;
+  };
+  // tags the element's text: one tag around it all, or, when bold words must stay Futura in a
+  // serif text or the text already has tags, each piece between the tags already there (so
+  // the tags stay paired), the serif only outside Bold and nothing a tag around it already sets
+  const TOKENS = /(\[\[[^\][]+\]|\])/;
+  const SIZE = /^text-\d/;
+  const tagRuns = (el, size, serif) => {
+    if (!size && !serif) return;
+    // one text node per run of text (the cleanup leaves the source's pieces apart)
+    el.normalize();
+    const hasTags = el.textContent.includes('[[');
+    const hasBold = [...el.querySelectorAll('strong, b')].some((b) => b.textContent.trim());
+    if (!hasTags && !(serif && hasBold)) {
+      if (!el.firstChild) return;
+      el.firstChild.before(doc.createTextNode(`[[${[size, serif ? 'serif' : ''].filter(Boolean).join(',')}]`));
+      el.lastChild.after(doc.createTextNode(']'));
+      return;
+    }
+    const walker = doc.createTreeWalker(el, 4);
+    const texts = [];
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) texts.push(t);
+    const open = [];
+    texts.forEach((t) => {
+      const b = t.parentElement.closest('strong, b');
+      const inBold = !!b && el.contains(b);
+      t.nodeValue = t.nodeValue.split(TOKENS).map((x, i) => {
+        if (i % 2 === 1) {
+          if (x === ']') open.pop();
+          else open.push(x.slice(2, -1).split(',').map((c) => c.trim()));
+          return x;
+        }
+        if (!x.trim()) return x;
+        const has = (test) => open.some((tags) => tags.some(test));
+        const tags = [size && !has((c) => SIZE.test(c)) ? size : '',
+          serif && !inBold && !has((c) => c === 'serif') ? 'serif' : ''].filter(Boolean);
+        return tags.length ? `[[${tags.join(',')}]${x}]` : x;
+      }).join('');
+    });
+  };
+  nodes.filter((n) => n.nodeType === 1).forEach((n) => {
+    const heading = /^H\d$/.test(n.tagName);
+    const style = heading ? parts(n.headingStyle) : parts(n.copyStyle);
+    const src = sources.get(squash(n.textContent));
+    const size = (src && sizeOf(src)) || style.map((x) => PANEL_SIZE_TAGS[x]).find(Boolean) || '';
+    const serif = (heading ? n.serifHeading : style.includes('serif')) || (!!src && serifPlain(src));
+    if (n.matches('ul, ol')) {
+      if (size || serif) h.tagCopy(n, [size, serif ? 'serif' : ''].filter(Boolean).join(','), doc);
+    } else tagRuns(n, size, serif);
+  });
+  if (!/\bbox-(blue|teal|purple|dark|blue-gradient|purple-gradient)\b/.test(options)) return nodes;
+  nodes.forEach((n) => {
+    const walker = doc.createTreeWalker(n, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      t.nodeValue = t.nodeValue.replace(/\[\[([^\][]+)\]/g, (all, raw) => {
+        const kept = raw.split(',').map((c) => c.trim()).filter((c) => c !== 'color-white');
+        return `[[${kept.length ? kept.join(',') : 'panel-text'}]`;
+      });
+    }
+  });
+  return nodes;
+}
+
 /** A rich-text component whose content is a box (dimensional box, coloured box): `Panel`. */
 function textBoxes(main, doc, h) {
   main.querySelectorAll('.c-rich-text-editor').forEach((component) => {
@@ -330,7 +519,10 @@ function textBoxes(main, doc, h) {
     const row = col && col.parentElement;
     if (row && [...row.children].filter((c) => c !== col && h.text(c)).length) return;
     let variant = '';
-    if (box.classList.contains('dimensional-box')) variant = 'left';
+    if (STD_DRAFT_IMPORT) {
+      variant = panelOptions(box, component);
+      if (!variant) return;
+    } else if (box.classList.contains('dimensional-box')) variant = 'left';
     else {
       const colour = colourStyle(box);
       variant = {
@@ -338,8 +530,9 @@ function textBoxes(main, doc, h) {
       }[colour] || '';
       if (!variant) return;
     }
-    const nodes = contentNodes(component, doc, h);
+    let nodes = contentNodes(component, doc, h);
     if (!nodes.length) return;
+    if (STD_DRAFT_IMPORT) nodes = panelCopy(nodes, variant, doc, h, component);
     const name = variant ? `Panel (${variant})` : 'Panel';
     (component.closest('.text') || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells: [[nodes]] })));
   });

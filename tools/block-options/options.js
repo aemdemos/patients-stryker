@@ -8,9 +8,9 @@
  * `needs` (on a group, or a choice's third item `{ needs, hint }`) is what the selected block
  * must hold for the choice to do something: 'cells-2' (exactly 2 cells), 'cells-2+', 'cells-3',
  * 'cells-3+', 'cells-4', 'images', 'caption' (a photo with text under it), 'image-first' (an
- * image in the first cell, text beside it), 'links', 'link-lists', 'text', or 'box' (a cell box
- * chosen). The panel greys out a choice that doesn't fit, with the reason; `hint` says what the
- * choice does.
+ * image in the first cell, text beside it), 'links', 'link-lists', 'text', 'box' (a cell box
+ * chosen) or 'gradient-box' (a gradient box colour chosen). The panel greys out a choice that
+ * doesn't fit, with the reason; `hint` says what the choice does.
  *
  * Keep in step with the block (its header comment lists the options) and its Block Library
  * entry. The Block Library sheet `panel-options` can replace a group's choices, add groups, or
@@ -286,6 +286,68 @@ export const BLOCK_OPTIONS = {
           ['left-border-bottom', 'Rule under the first cell', { needs: ['cells-2'], hint: 'A grey rule under the first cell’s text' }],
           ['border-bottom', 'Line below the row', { hint: 'A grey line under the whole row' }],
           ['label-right', 'First cell right-aligned (labels)', { needs: ['cells-2'], hint: 'The first cell’s text right-aligned beside the second (labels)' }],
+        ],
+      },
+    ],
+  },
+  // stryker.com text boxes (stryker-aemcoder-package, docs/standardisation/panel.md): a box in
+  // one of the ten colours (the same names as hero-corp), the soft shadow of the dimensional
+  // box, the direction of a gradient box, the inner spacing step and centred text. Text colour,
+  // fonts and sizes inside are the Text style panel; the box sets a default text colour (white
+  // on the dark colours). Imported pages' older names show as their new choice.
+  panel: {
+    label: 'Panel',
+    aliases: {
+      left: ['box-white', 'shadow'],
+      gold: ['box-gold'],
+      gray: ['box-gray'],
+      'gold-gradient': ['box-gold-gradient'],
+    },
+    groups: [
+      {
+        id: 'box',
+        label: 'Box colour',
+        required: true,
+        options: [
+          ['box-white', 'White', { hint: 'A white box (add the soft shadow to set it off the page)' }],
+          ['box-gold', 'Gold'],
+          ['box-gray', 'Light grey'],
+          ['box-gold-gradient', 'Gold gradient', { hint: 'Gold, darkening to dark gold over the first fifth' }],
+          ['box-blue', 'Blue', { hint: 'White text by default' }],
+          ['box-blue-gradient', 'Blue gradient', { hint: 'Dark grey into slate blue; white text by default' }],
+          ['box-teal', 'Teal', { hint: 'White text by default' }],
+          ['box-purple', 'Purple', { hint: 'White text by default' }],
+          ['box-dark', 'Dark grey', { hint: 'White text by default' }],
+          ['box-purple-gradient', 'Purple gradient', { hint: 'Dark grey into plum; white text by default' }],
+        ],
+        replaces: /^(gold|gray|blue|dark|light|left|gold-gradient|colored-border)$/,
+      },
+      {
+        id: 'gradient',
+        label: 'Gradient direction',
+        needs: ['gradient-box'],
+        options: [
+          ['', 'Left to right'],
+          ['gradient-reverse', 'Right to left', { hint: 'The darker end on the right' }],
+          ['gradient-up', 'Bottom to top', { hint: 'The darker end at the bottom' }],
+        ],
+      },
+      {
+        id: 'space',
+        label: 'Inner spacing',
+        options: [
+          ['', 'Medium (5%)'],
+          ['space-none', 'None'],
+          ['space-s', 'Small (3%)'],
+          ['space-l', 'Large (10%)'],
+        ],
+      },
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['shadow', 'Soft shadow', { hint: 'The stryker.com dimensional box: a soft shadow, 10px around' }],
+          ['text-center', 'Centred text', { needs: ['text'], hint: 'All text in the box centred' }],
         ],
       },
     ],
