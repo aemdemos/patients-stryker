@@ -56,3 +56,26 @@ export async function filesPull(files, items) {
 export function movedMessage(params) {
   return params.REVIEW_MOVED_TO ? 'The review has moved: reload the page to continue (nothing was saved).' : null;
 }
+
+/**
+ * a workspace the review has left, emptied (admin empty-moved): every page document and
+ * invitation of the database, then every file. Only where REVIEW_MOVED_TO is set: never the
+ * workspace the review runs in. apply false → the counts only.
+ */
+export async function emptyMoved(params, { client, files }, { apply = false } = {}) {
+  if (!params.REVIEW_MOVED_TO) throw new Error('this workspace is where the review runs (no REVIEW_MOVED_TO): nothing emptied');
+  const count = async () => ({
+    pages: await client.collection('pages').countDocuments({}),
+    invites: await client.collection('invites').countDocuments({}),
+    files: (await listAll(files, '')).length,
+  });
+  const before = await count();
+  if (!apply) return { before };
+  await client.collection('pages').deleteMany({});
+  await client.collection('invites').deleteMany({});
+  const names = (await listAll(files, '')).map((f) => f.name);
+  for (let i = 0; i < names.length; i += 25) {
+    await Promise.all(names.slice(i, i + 25).map((n) => files.delete(n)));
+  }
+  return { before, after: await count() };
+}

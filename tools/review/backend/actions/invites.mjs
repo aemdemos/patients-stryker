@@ -47,6 +47,7 @@ async function audit(files, space, at, entry) {
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
+  if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
   try {
     const stores = await open(params);
     const { state, files } = stores;
@@ -60,7 +61,6 @@ export async function main(params) {
       const all = (await listInvites(state)).filter((i) => i.space === space);
       return reply(params, 200, { me: invite.id, space, invites: all.map((i) => shown(i, invite.id)).reverse() });
     }
-    if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
     const at = new Date().toISOString();
     if (params.op === 'create') {
       const name = String(params.name || '').trim();

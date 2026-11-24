@@ -19,6 +19,7 @@ import { startCapture } from '../lib/runtime.mjs';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
+  if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
   try {
     const stores = await open(params);
     const { invite, error } = await checkInvite(stores, inviteOf(params));
@@ -30,7 +31,6 @@ export async function main(params) {
     const { files } = stores;
     const method = (params.__ow_method || 'get').toLowerCase();
     if (method === 'post') {
-      if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
       if (invite.role !== 'aoe') return fail(params, 403, 'aoe-only', 'Only the AOE team asks for new source shots.');
       const history = await readHistory(files, space, page);
       if (!history.versions.length) {

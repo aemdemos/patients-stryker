@@ -6,10 +6,12 @@
  * GET ?space=main&page=/us/en/…&version=s-YYYYMMDD-HHMMSS&vp=1440&file=0.jpg → 302
  */
 import { open, fail, isPreflight, reply, SPACES } from '../lib/core.mjs';
+import { movedMessage } from '../lib/move.mjs';
 import { tileFile } from '../lib/capture-state.mjs';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
+  if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
   try {
     const space = SPACES[params.space] ? params.space : 'main';
     const page = String(params.page || '');

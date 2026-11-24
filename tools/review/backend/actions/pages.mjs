@@ -12,11 +12,13 @@
 import {
   open, checkInvite, inScope, reply, fail, isPreflight, inviteOf, spaceOf,
 } from '../lib/core.mjs';
+import { movedMessage } from '../lib/move.mjs';
 import { pageList } from '../lib/scope.mjs';
 import { readCaptureState, pagesWithShots } from '../lib/capture-state.mjs';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
+  if (movedMessage(params)) return fail(params, 410, 'moved', movedMessage(params));
   try {
     const stores = await open(params);
     const { invite, error } = await checkInvite(stores, inviteOf(params));
