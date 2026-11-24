@@ -16,6 +16,8 @@
  *   backup                                  every key of both reviews to Files (backups/<day>), dated,
  *                                           kept; entries within 90 days of their end renewed
  *   backups                                 the days with a backup
+ *   db-check                                the App Builder Database: credential there, connect, write,
+ *                                           read, 200 at once (DATABASE.md)
  *   restore-check { day }                   a backup against the store: keys missing now, changed since
  *   restore { day, only: [key prefixes] }   the keys of a backup missing now put back (never over one)
  *   capture-state                           the capture's record (first seen, sources to correct, runs)
@@ -46,6 +48,7 @@ import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
 import {
   backup, listBackups, restoreCheck, restore,
 } from '../lib/backup.mjs';
+import { dbCheck } from '../lib/db.mjs';
 
 // operations that change entries: the review's summary is built again after them
 const WRITES = ['status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
@@ -107,6 +110,7 @@ async function run(params) {
     }
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
     if (op === 'backup') return ok(await backup(stores));
+    if (op === 'db-check') return ok(await dbCheck(params));
     if (op === 'backups') return ok({ days: await listBackups(files) });
     if (op === 'restore-check') {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(params.day || '')) return bad('day: YYYY-MM-DD (admin backups lists them)');
