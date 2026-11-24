@@ -527,10 +527,11 @@ body.long-page-detail-corp.skill.large-headlines main > .section.headline-box:ha
   }
 }
 
-/* the banner's gold text box: a blank line above the title (the source's empty 17.5px line, 35px
+/* the banner's gold text box (to the column's right edge, no right margin): a blank line above the title (the source's empty 17.5px line, 35px
    with its margin), 10% of the box in on the left, 2.5% below the title's own 15px margin
    (stryker.com SKILL banners .bg-gold: padding-left 10%, padding-bottom 2.5%) */
 body.long-page-detail-corp.skill main .hero-corp.banner .hero-corp-text-box {
+  margin-right: 0;
   padding: calc(var(--space-block) + var(--space-block-l)) var(--space-block-s) 2.5% 10%;
 }
 

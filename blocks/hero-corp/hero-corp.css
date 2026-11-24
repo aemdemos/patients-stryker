@@ -152,6 +152,12 @@
   --hero-banner-text-width: 50%;
 }
 
+/* `third-text`: the text column a third of the banner (stryker.com textBoxId col-sm-4: SKILL
+   e-Lab), laid out as `half-text` (hero-corp.js) */
+.hero-corp.banner.third-text {
+  --hero-banner-text-width: 33.333%;
+}
+
 .hero-corp.banner.right {
   --hero-slide-left: 50%;
 }

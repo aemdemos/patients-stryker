@@ -197,8 +197,12 @@ function readSectionOptions(block) {
   // gold words and the button label too (stryker.com build-your-ASC on phones)
   const phoneStyle = styles.find((name) => /^phone-(dark-gray|black)-text$/.test(name));
   if (!phoneColour && phoneStyle) block.dataset.phoneText = phoneStyle.replace(/^phone-|-text$/g, '');
-  // a banner with its text in the right half (`right`: bunion, total ankle replacement)
+  // a banner with its text in the right half (`right`: bunion, total ankle replacement) or in a
+  // third (`third-text`: SKILL e-Lab) lays out as a half-text banner
   if (block.classList.contains('banner') && block.classList.contains('right')) {
+    block.classList.add('half-text');
+  }
+  if (block.classList.contains('banner') && block.classList.contains('third-text')) {
     block.classList.add('half-text');
   }
   const width = parseFloat(data.textWidth);
