@@ -333,9 +333,10 @@ asks otherwise.
 
 ## Which choices fit which row
 
-The Block options panel reads the selected row and greys out the choices that would do nothing,
-with the reason ("needs images in the row", "needs 3 cells (this row has 2 cells)", "pick a Cell box
-first"); hovering a choice shows what it does. A choice the row already has stays available.
+The Block options panel reads the selected row and greys out the choices that would do nothing.
+Hovering a greyed choice shows why ("Not available here: needs images in the row.", "needs 3 cells
+(this row has 2 cells)") and what it does; a whole group greyed out says it once under the group
+("pick a Cell box first"). A choice the row already has stays available.
 
 | Needs | Choices |
 |---|---|

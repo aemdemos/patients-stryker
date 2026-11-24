@@ -280,23 +280,26 @@ function renderGroups() {
     const after = group.when && def().groups.find((g) => g.id === group.when && g.options);
     const groupReason = (after && !selectedIn(after, draft) ? `pick a ${after.label} first` : '')
       || unfit(group.needs, facts);
-    const greyed = [];
     const reasonOf = (value, meta, on) => {
       if (!value || on) return ''; // 'none' and a choice the block already has stay available
-      const reason = groupReason || unfit(meta?.needs, facts);
-      return reason;
+      return groupReason || unfit(meta?.needs, facts);
     };
-    const titleOf = (value, meta, reason) => [meta?.hint, reason ? `Not for this block: ${reason}` : '',
+    // the tooltip: why it is greyed out first, then what it does, then the option name
+    const titleOf = (value, meta, reason) => [reason ? `Not available here: ${reason}.` : '', meta?.hint,
       value ? `Option “${value}”` : 'No option'].filter(Boolean).join('\n');
+    // greyed out but not `disabled`, so the tooltip shows in every browser; clicks are ignored
+    const unavailable = (reason) => (reason ? { 'aria-disabled': 'true' } : {});
+    let greyed = 0;
     if (group.flags) {
       group.flags.forEach(([value, label, meta]) => {
         const on = draft.includes(value);
         const reason = reasonOf(value, meta, on);
-        if (reason) greyed.push([label, reason]);
+        if (reason) greyed += 1;
         row.append(el('label', { class: `tm-check${reason ? ' tm-unfit' : ''}`, title: titleOf(value, meta, reason) }, el('input', {
           type: 'checkbox',
           checked: on,
-          disabled: !!reason,
+          ...unavailable(reason),
+          onclick: (e) => { if (reason) e.preventDefault(); },
           onchange: (e) => { toggle(value, e.target.checked); renderGroups(); updatePreview(); },
         }), label));
       });
@@ -304,28 +307,30 @@ function renderGroups() {
       const selected = selectedIn(group, draft);
       group.options.forEach(([value, label, meta]) => {
         const reason = reasonOf(value, meta, value === selected);
-        if (reason) greyed.push([label, reason]);
+        if (reason) greyed += 1;
         row.append(el('button', {
           type: 'button',
           role: 'radio',
           class: `tm-choice${reason ? ' tm-unfit' : ''}`,
           'aria-checked': String(value === selected),
-          disabled: !!reason,
+          ...unavailable(reason),
           title: titleOf(value, meta, reason),
-          onclick: () => { pick(group, value); renderGroups(); updatePreview(); },
+          onclick: () => {
+            if (reason) return;
+            pick(group, value);
+            renderGroups();
+            updatePreview();
+          },
         }, label));
       });
     }
     fieldset.append(row);
-    // why the greyed choices don't apply, one line per reason
-    const byReason = new Map();
-    greyed.forEach(([label, reason]) => {
-      byReason.set(reason, [...(byReason.get(reason) || []), label]);
-    });
-    byReason.forEach((labels, reason) => {
-      const all = labels.length === (group.flags || group.options).filter(([v]) => v).length;
-      fieldset.append(el('p', { class: 'tm-hint tm-reason' }, all ? `Greyed out: ${reason}.` : `${labels.join(', ')}: ${labels.length > 1 ? reason.replace(/^needs /, 'need ') : reason}.`));
-    });
+    // a whole group greyed out for one reason (e.g. "pick a Cell box first"): said once under it;
+    // single choices say why in their tooltip
+    const choices = (group.flags || group.options).filter(([v]) => v).length;
+    if (groupReason && greyed && greyed === choices) {
+      fieldset.append(el('p', { class: 'tm-hint tm-reason' }, `Greyed out: ${groupReason}.`));
+    }
     groupsEl.append(fieldset);
   });
   const others = otherOptions(draft);
