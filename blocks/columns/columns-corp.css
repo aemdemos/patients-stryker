@@ -2013,3 +2013,26 @@ body.corp main .columns.gray-2.block > div > div:nth-child(2) > .columns-box:fir
     margin-top: var(--space-block);
   }
 }
+
+/* large-box-copy: the box variants' text box holds the source's 1.75em light serif copy
+   (stryker.com jr45 August, September, seasons 2 and 3: span.fontsize-1-75em in a
+   bg-light-gray rich text box): 24.5px Egyptienne Light on 1.06 lines at every width, the
+   box padded 5% of its width (22px at 440px), 25px at the bottom (10px and the text's 15px
+   paragraph margin) */
+body.corp main .columns.large-box-copy.block > div > div > .columns-box:nth-child(n):nth-child(n) {
+  padding: 5% 5% calc(var(--space-block-s) + var(--space-block));
+}
+
+body.corp main .columns.large-box-copy.block > div > div > .columns-box > :is(p, li):nth-child(n):nth-child(n):nth-child(n) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+/* …on phones the box follows the faculty without the faculty row's extra 10px above and 20px
+   below it (stryker.com jr45 season 2 December: 18px under the last fellowship line, 41px
+   above "On-demand learning" at 390px) */
+body.corp main .columns.large-box-copy.block > div > :where(div:has(> .columns-box)) {
+  padding-block: 0;
+}
