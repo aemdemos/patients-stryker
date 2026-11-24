@@ -331,6 +331,10 @@ var CustomImportScript = (() => {
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
+    if (hostRe === CORP_HOST_RE) {
+      edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+      edsPath = edsPath.split("/").map((seg) => seg.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")).join("/");
+    }
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
@@ -342,7 +346,12 @@ var CustomImportScript = (() => {
       "news-detail-xf",
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
-      "event-detail"
+      "event-detail",
+      "contact-division",
+      "people",
+      "people-fragments",
+      "ivs-footnotes",
+      "ivs-footnotes-fragments"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
@@ -496,6 +505,69 @@ var CustomImportScript = (() => {
     }
   }
 
+  // tools/importer/transformers/corp-text-markers.js
+  var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
+
+  // tools/importer/event-calendar-std-import.js
+  var TAG_TITLES = {
+    "stryker:event-type/bioskills": "Bioskills",
+    "stryker:event-type/lab": "Lab",
+    "stryker:event-type/associationmeetings": "Association meetings",
+    "stryker:event-type/medical_education": "Medical Education",
+    "stryker:event-type/symposium": "Symposium",
+    "stryker:event-type/Trade_Show": "Trade Show",
+    "stryker:audience/medical_professionals": "Medical professionals",
+    "stryker:audience/trainees": "Residents, fellows and surgical trainees",
+    "stryker:audience/nurses": "Nurses",
+    "stryker:audience/or-professionals": "OR professionals",
+    "stryker:business-unit/ems": "Emergency care",
+    "stryker:business-unit/surgical": "Surgical",
+    "stryker:business-unit/SAGE": "SAGE",
+    "stryker:business-unit/sports-medicine": "Sports medicine",
+    "stryker:business-unit/acute-care": "Acute care",
+    "stryker:business-unit/medical": "Medical",
+    "stryker:business-unit/surgical_technologies": "Surgical Technologies",
+    "stryker:business-unit/endoscopy": "Endoscopy",
+    "stryker:custom/endoscopy": "Endoscopy",
+    "stryker:capability/temperature-management": "Temperature management",
+    "stryker:specialty/precision-temperature-management": "Precision temperature management",
+    "stryker:services/procare/acute-care/temperature-management": "Temperature management",
+    "stryker:event-speciailty/sports-medicine": "Sports medicine",
+    "stryker:specialty/surgical-visualization": "Surgical Visualization"
+  };
+  var tagTitle = (tag) => TAG_TITLES[tag] || String(tag).split("/").pop().replace(/[_-]+/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+  function calendarFeed(searchPath) {
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", `/bin/stryker/calevent?searchPath=${encodeURIComponent(searchPath)}`, false);
+      xhr.send();
+      if (xhr.status !== 200) return [];
+      return JSON.parse(xhr.responseText).data || [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function eventFacets(pathname) {
+    const folder = `/content/stryker${pathname.replace(/\/[^/]*$/, "")}`;
+    const event = calendarFeed(folder).find((e) => {
+      try {
+        return new URL(e.url, "https://www.stryker.com").pathname.endsWith(pathname);
+      } catch (err) {
+        return false;
+      }
+    });
+    if (!event) return {};
+    const titles = (tags) => [...new Set([].concat(tags || []).map(tagTitle))].join("; ");
+    return {
+      "event-city": event.cities || "",
+      "event-state": event.stateProvinces || "",
+      "event-type": titles(event.eventTypes),
+      audience: titles(event.audiences),
+      "business-unit": titles(event.bus),
+      specialty: titles(event.specialities)
+    };
+  }
+
   // tools/importer/import-event-detail.js
   var PAGE_TEMPLATE = {
     name: "event-detail",
@@ -585,6 +657,7 @@ var CustomImportScript = (() => {
         "event-contact-name": facts.contactName,
         "event-contact-email": facts.contactEmail
       };
+      if (STD_DRAFT_IMPORT) Object.assign(rows, eventFacets(new URL(params.originalURL).pathname));
       Object.entries(rows).forEach(([k, v]) => {
         if (v) meta[k] = v;
       });

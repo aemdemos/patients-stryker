@@ -172,6 +172,17 @@
   --corp-news-gap: 30px; /* between two articles, and the image beside its text (20px on phones) */
   --corp-news-button-padding: 9px 12px; /* LOAD MORE (source .btn) */
   --corp-font-weight-light: 300; /* Futura light: the source buttons' label */
+
+  /* event calendar (blocks/event-calendar), measured on stryker.com's calendars (FullCalendar) */
+  --corp-cal-day-bg: #fafafa; /* the day cells and the DAY / WEEK rows */
+  --corp-cal-today-bg: #fcf8e3; /* today's cell */
+  --corp-cal-agenda-head-bg: #eee; /* the day headings of the DAY / WEEK lists */
+  --corp-cal-event-teal: #008080; /* association meetings (the source's `teal`) */
+  --corp-cal-event-gray: #808080; /* the other events (the source's `gray`) */
+  --corp-cal-cell-height: 140px;
+  --corp-cal-head-height: 40px; /* the Sun … Sat row */
+  --corp-cal-date-width: 100px; /* the gold date and dark year of the list view */
+  --corp-cal-icon-size: 28px; /* the calendar / list view switches */
 }
 
 /* the HCP notice band text fits on one line from 600px (stryker.com 95px band from 599px,

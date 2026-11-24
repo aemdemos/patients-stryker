@@ -5,6 +5,8 @@ import eventDetailParser, { normalizeHref } from './parsers/event-detail/event-d
 
 // TRANSFORMER IMPORTS
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
+import { STD_DRAFT_IMPORT } from './transformers/corp-text-markers.js';
+import { eventFacets } from './event-calendar-std-import.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
@@ -123,6 +125,8 @@ export default {
       'event-contact-name': facts.contactName,
       'event-contact-email': facts.contactEmail,
     };
+    // in review (staging build only): the facts the Event Calendar's filters use
+    if (STD_DRAFT_IMPORT) Object.assign(rows, eventFacets(new URL(params.originalURL).pathname));
     Object.entries(rows).forEach(([k, v]) => { if (v) meta[k] = v; });
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

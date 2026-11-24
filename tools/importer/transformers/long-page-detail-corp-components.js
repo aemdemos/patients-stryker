@@ -30,6 +30,7 @@
  */
 
 import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
+import { eventCalendarBlocks } from '../event-calendar-std-import.js';
 
 const COMPONENT = '[class^="c-"], [class*=" c-"]';
 // the components a Columns cell takes (rich text, images, videos, headlines, CTAs, button
@@ -1221,7 +1222,13 @@ function whiteText(main, doc, h) {
   });
 }
 
-function eventCalendars(main) {
+// the events calendar is left out of the page; in review (staging build only) it becomes an
+// Event Calendar block (event-calendar-std-import.js)
+function eventCalendars(main, doc) {
+  if (STD_DRAFT_IMPORT) {
+    eventCalendarBlocks(main, doc);
+    return;
+  }
   main.querySelectorAll('.c-event').forEach((component) => (component.closest('.event') || component).remove());
 }
 
@@ -1240,7 +1247,7 @@ export function convertBeforeRows(main, doc, h) {
   interactiveImages(main, doc);
   numberCounters(main, doc, h);
   accordionsInColumns(main, doc, h);
-  eventCalendars(main);
+  eventCalendars(main, doc);
   pageHeroes(main, doc, h);
   engagementCtas(main, doc, h);
   groupLists(main, doc, h);

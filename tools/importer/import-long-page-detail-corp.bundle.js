@@ -1975,6 +1975,38 @@ var CustomImportScript = (() => {
     element.replaceChildren(...out);
   }
 
+  // tools/importer/event-calendar-std-import.js
+  function sitePath(aemPath) {
+    const path = String(aemPath || "").replace(/^\/content\/stryker/, "").replace(/\.html?$/, "");
+    return path.split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")).join("/");
+  }
+  function eventCalendarBlocks(main, doc) {
+    main.querySelectorAll(".c-event").forEach((component) => {
+      const sp = component.querySelector("[data-sp]");
+      const from = component.closest(".event") || component;
+      if (!sp) {
+        from.remove();
+        return;
+      }
+      const parts = [];
+      const title = component.querySelector(".title-container h2");
+      if (title && title.textContent.trim()) {
+        const h2 = doc.createElement("h2");
+        h2.textContent = title.textContent.trim();
+        h2.setAttribute("data-keep", "section");
+        parts.push(h2);
+      }
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: "Event Calendar",
+        cells: [["Folder", sitePath(sp.getAttribute("data-sp"))]]
+      });
+      block.setAttribute("data-std-table", "");
+      block.setAttribute("data-keep", "section");
+      parts.push(block);
+      from.replaceWith(...parts);
+    });
+  }
+
   // tools/importer/transformers/long-page-detail-corp-components.js
   var COMPONENT = '[class^="c-"], [class*=" c-"]';
   var UNIT = `[data-keep], ${COMPONENT}, .buttonset, table`;
@@ -2928,7 +2960,11 @@ var CustomImportScript = (() => {
       el.setAttribute("data-white-tag", "");
     });
   }
-  function eventCalendars(main) {
+  function eventCalendars(main, doc) {
+    if (STD_DRAFT_IMPORT) {
+      eventCalendarBlocks(main, doc);
+      return;
+    }
     main.querySelectorAll(".c-event").forEach((component) => (component.closest(".event") || component).remove());
   }
   function convertBeforeRows(main, doc, h) {
@@ -2937,7 +2973,7 @@ var CustomImportScript = (() => {
     interactiveImages(main, doc);
     numberCounters(main, doc, h);
     accordionsInColumns(main, doc, h);
-    eventCalendars(main);
+    eventCalendars(main, doc);
     pageHeroes(main, doc, h);
     engagementCtas(main, doc, h);
     groupLists(main, doc, h);
