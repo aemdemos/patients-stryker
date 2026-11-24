@@ -39,7 +39,8 @@ export const REVIEW = {
   // where the tool runs for reviewers (links in the summary)
   toolHost: 'standardise-v3--stryker-com--strykerenterprise.aem.page',
   // the review backend (App Builder web actions, Stage workspace), shared by both reviews
-  backend: 'https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review',
+  // (the review's backend, App Builder workspace Production since 24 Nov 2026; Stage before)
+  backend: 'https://892544-strykerstdreview.adobeioruntime.net/api/v1/web/std-review',
 };
 
 /** the browser storage keys of this review (std keeps the names it had: std-review-…) */

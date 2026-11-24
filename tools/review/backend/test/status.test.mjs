@@ -6,10 +6,11 @@
  * (answered first), filtering by a state tile; an AOE answer later shows the page as new and
  * answered; the AOE team's view words and orders it for them. Everything is removed at the end.
  * usage: node tools/review/backend/test/status.test.mjs [--base http://localhost:3000]
- *   [--ns 892544-strykerstdreview-stage] [--shot <png>: a screenshot of the reviewer's view]
+ *   [--ns <namespace, default Production: backend/target.mjs>] [--shot <png>: a screenshot of the reviewer's view]
  */
 import { readFileSync } from 'fs';
 import { createRequire } from 'module';
+import { NS, actionUrl } from '../target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
@@ -19,10 +20,10 @@ const opt = (name, fallback) => {
   return i >= 0 ? args[i + 1] : fallback;
 };
 const base = opt('--base', 'http://localhost:3000');
-const ns = opt('--ns', '892544-strykerstdreview-stage');
+const ns = opt('--ns', NS);
 
 async function admin(params) {
-  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${ns}/actions/std-review/admin?blocking=true&result=true`, {
+  const resp = await fetch(actionUrl(ns), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(params),
   });
   return (await resp.json()).body;

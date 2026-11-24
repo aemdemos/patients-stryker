@@ -4,11 +4,12 @@
 // usage: node tools/review/backend/test/live-fidelity.mjs <std token file> <out dir> <url> …
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { chromium } from '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/node_modules/playwright/index.mjs';
+import { webBase } from '../target.mjs';
 
 const [tokFile, out, ...urls] = process.argv.slice(2);
 mkdirSync(out, { recursive: true });
 const token = JSON.parse(readFileSync(tokFile, 'utf8')).token;
-const B = 'https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review/live';
+const B = `${webBase()}/live`;
 const BLOCK = (u) => /altcha|captcha/i.test(u.pathname) || /altcha|captcha|cookielaw|onetrust|googletagmanager|google-analytics|doubleclick|facebook|licdn|linkedin|qualtrics|zoominfo|adobedtm|demdex|omtrdc/.test(u.hostname);
 const norm = (s) => s.replace(/\s+/g, ' ').trim();
 const facts = () => ({

@@ -107,6 +107,7 @@ const MESSAGES = {
   revoked: 'Your review link was withdrawn: ask for a new one',
   'out-of-scope': 'This page is not part of your review',
   'no-results': 'Your review link does not include the results',
+  moved: 'The review has moved: reload the page to continue (nothing was saved)',
 };
 
 export function createStore(onStatus = () => {}) {

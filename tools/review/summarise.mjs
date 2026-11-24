@@ -15,6 +15,7 @@ import {
 } from 'fs';
 import { createRequire } from 'module';
 import { REVIEW } from './config.js';
+import { NS, actionUrl } from './backend/target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
@@ -31,14 +32,14 @@ const csvFile = opt('--csv', null);
 const includeTests = args.includes('--include-tests');
 const prefix = /localhost|127\.0\.0\.1|preview-aemcoder/.test(base) ? '/content' : '';
 
-const ns = opt('--ns', '892544-strykerstdreview-stage');
+const ns = opt('--ns', NS);
 // the rows: a CSV file (tests: test/sample-rows.csv), else every entry of the review backend
 // (its private admin action; the workspace credential is added by the environment)
 let csv = null;
 let backendRows = null;
 if (csvFile) csv = readFileSync(csvFile, 'utf8');
 else {
-  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${ns}/actions/std-review/admin?blocking=true&result=true`, {
+  const resp = await fetch(actionUrl(ns), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ op: 'export', space: REVIEW.space }),
   });
   const body = resp.ok ? (await resp.json()).body : null;

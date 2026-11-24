@@ -7,6 +7,7 @@
  * restoreCheck compares a backup with the store; restore puts back the keys missing now, never
  * over a key that exists.
  */
+import { listAll } from './listall.mjs';
 const fileOf = (day) => `backups/${day}/state.json`;
 
 async function allKeys(state) {
@@ -45,7 +46,7 @@ export async function backup({ state, files }) {
 
 /** the backups kept (days) */
 export async function listBackups(files) {
-  const list = await files.list('backups/');
+  const list = await listAll(files, 'backups/');
   return [...new Set(list.map((f) => f.name.split('/')[1]).filter(Boolean))].sort();
 }
 

@@ -8,7 +8,7 @@
  * from this folder's package.json.
  * The capture action is a zip: its bundle plus the browser (browser/package.json, installed in
  * --browser-deps) and Debian 10's NSS / NSPR (browser/debian-libs.json, checked by SHA-256).
- * usage: node tools/review/backend/deploy.mjs [--ns 892544-strykerstdreview-stage]
+ * usage: node tools/review/backend/deploy.mjs [--ns <namespace, default Production: backend/target.mjs>]
  *   [--api adobeioruntime.net | runtime.adobe.io (Production)] [--deps <dir>]
  *   [--browser-deps <dir>] [--only state,save,results,overview,admin,capture] [--dry-run]
  */
@@ -20,6 +20,7 @@ import { execFileSync } from 'child_process';
 import { createRequire } from 'module';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { NS, apiOf } from './target.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
@@ -27,12 +28,12 @@ const opt = (name, fallback) => {
   const i = args.indexOf(name);
   return i >= 0 ? args[i + 1] : fallback;
 };
-const ns = opt('--ns', '892544-strykerstdreview-stage');
+const ns = opt('--ns', NS);
 const deps = opt('--deps', '/tmp/run-outputs/review-backend-deps');
 const browserDeps = opt('--browser-deps', '/tmp/run-outputs/review-capture-deps');
 const only = opt('--only', '') ? opt('--only').split(',') : null;
 const dry = args.includes('--dry-run');
-const HOST = opt('--api', 'adobeioruntime.net');
+const HOST = opt('--api', apiOf(ns));
 const API = `https://${HOST}/api/v1/namespaces/${ns}`;
 const PACKAGE = 'std-review';
 

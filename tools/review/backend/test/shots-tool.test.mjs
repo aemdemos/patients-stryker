@@ -8,12 +8,13 @@
  * usage: node tools/review/backend/test/shots-tool.test.mjs <base, e.g. http://localhost:3220> [real page]
  */
 import { createRequire } from 'module';
+import { NS, actionUrl } from '../target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
 
-async function admin(p, namespace = '892544-strykerstdreview-stage') {
-  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${namespace}/actions/std-review/admin?blocking=true&result=true`, {
+async function admin(p, namespace = NS) {
+  const resp = await fetch(actionUrl(namespace), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });
   const text = await resp.text();

@@ -4,15 +4,16 @@
  * loading, saving, conflicts, limits, CORS, AOE statuses, revocation. Works on the test page
  * /test/backend and a test group (`group:test|backend`) only, and removes both at the end; the
  * test invitation is revoked. Tokens are never printed.
- * usage: node tools/review/backend/test/backend.test.mjs [--ns 892544-strykerstdreview-stage]
+ * usage: node tools/review/backend/test/backend.test.mjs [--ns <namespace, default Production: backend/target.mjs>]
  */
+import { NS, apiOf, webBase } from '../target.mjs';
 const args = process.argv.slice(2);
 const i = args.indexOf('--ns');
-const ns = i >= 0 ? args[i + 1] : '892544-strykerstdreview-stage';
-const WEB = `https://${ns}.adobeioruntime.net/api/v1/web/std-review`;
+const ns = i >= 0 ? args[i + 1] : NS;
+const WEB = webBase(ns);
 // (--api: the Runtime API host whose Settings key opens --ns: Production runtime.adobe.io)
 const j = args.indexOf('--api');
-const HOST = j >= 0 ? args[j + 1] : 'adobeioruntime.net';
+const HOST = j >= 0 ? args[j + 1] : apiOf(ns);
 const PAGE = '/test/backend';
 const ORIGIN = 'https://standardise-v3--stryker-com--strykerenterprise.aem.page';
 

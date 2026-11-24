@@ -368,8 +368,8 @@ invitations (names `tool test …`, `zz-test-…`) are removed from the lists af
 ### The review backend and its spaces
 
 
-One App Builder backend (project "Stryker std review", Stage workspace
-`892544-strykerstdreview-stage`) serves both reviews. An invitation's scope names its **space**;
+One App Builder backend (project "Stryker std review", **Production** workspace `892544-strykerstdreview` (since 24 Nov 2026; Stage,
+`892544-strykerstdreview-stage`, ran it before and is frozen: it refuses writes with "moved")) serves both reviews. An invitation's scope names its **space**;
 the actions read and write only that space's entries:
 
 - `std` (no space named, the invitations of before): keys `p.…` / `g.…`, audit files `audit/…`.
