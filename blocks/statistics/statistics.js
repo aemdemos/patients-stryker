@@ -67,7 +67,7 @@ function setupCountUp(block) {
   // collect only the stats that actually contain a number
   const stats = [...block.querySelectorAll('.statistics-value')]
     .map((el) => {
-      const target = el.querySelector('p') || el;
+      const target = el.querySelector('.statistics-number') || el.querySelector('p') || el;
       const parsed = parseStatNumber(target.textContent.trim());
       return parsed ? { target, parsed } : null;
     })
@@ -118,10 +118,48 @@ function setupCountUp(block) {
 }
 
 /**
+ * A stryker.com (corp) row, in review on draft pages (docs/standardisation/statistics.md):
+ * [number, text] with an optional colour keyword first and an optional image cell anywhere
+ * (shown where it is authored). In the number cell, the paragraph with the number is the
+ * number; other lines (stryker.com's "in", "served by") are small lines above or below it.
+ * A row without a keyword takes the block's Number colour option.
+ * @param {Element} row The authored row
+ * @param {Element} item The list item to fill
+ */
+function decorateStdRow(row, item) {
+  const cells = [...row.children];
+  const first = cells[0];
+  const keyword = first && !first.querySelector('picture') && cells.length >= 3
+    && COLOR_CLASSES[first.textContent.trim().toLowerCase()];
+  if (keyword) {
+    item.classList.add(keyword);
+    cells.shift().remove();
+  }
+  let texts = 0;
+  cells.forEach((cell) => {
+    if (cell.querySelector('picture') && !cell.textContent.trim()) {
+      cell.className = 'statistics-image';
+    } else {
+      cell.className = texts === 0 ? 'statistics-value' : 'statistics-desc';
+      texts += 1;
+    }
+    item.append(cell);
+  });
+  const value = item.querySelector('.statistics-value');
+  const paragraphs = value ? [...value.querySelectorAll(':scope > p')] : [];
+  const number = paragraphs.find((p) => /\d/.test(p.textContent));
+  if (number && paragraphs.length > 1) {
+    number.classList.add('statistics-number');
+    paragraphs.filter((p) => p !== number).forEach((p) => p.classList.add('statistics-line'));
+  }
+}
+
+/**
  * loads and decorates the statistics block
  * @param {Element} block The block element
  */
 export default function decorate(block) {
+  const std = document.body.classList.contains('corp') && document.body.classList.contains('std-draft');
   block.style.setProperty('--statistics-columns', readColumns(block));
 
   const list = document.createElement('ul');
@@ -130,6 +168,11 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const item = document.createElement('li');
     item.className = 'statistics-item';
+    if (std) {
+      decorateStdRow(row, item);
+      list.append(item);
+      return;
+    }
 
     const cells = [...row.children];
     // A full stat row is [color, value, description] (3 cells). The first cell is
@@ -160,5 +203,7 @@ export default function decorate(block) {
   block.replaceChildren(list);
 
   // optional count-up animation, enabled via the `count-up` authoring variant
-  if (block.classList.contains('count-up')) setupCountUp(block);
+  // (always on for the stryker.com numbers in review, except numbers beside their text)
+  const countUp = block.classList.contains('count-up') || (std && !block.classList.contains('inline'));
+  if (countUp) setupCountUp(block);
 }

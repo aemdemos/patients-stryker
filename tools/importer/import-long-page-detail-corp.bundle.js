@@ -2368,6 +2368,24 @@ var CustomImportScript = (() => {
     });
   }
   function fastFacts(main, doc, h) {
+    if (STD_DRAFT_IMPORT) {
+      main.querySelectorAll(".c-fastfacts").forEach((component) => {
+        const items = [...component.querySelectorAll(".c-fastfacts-item")].map((item) => [item.querySelector(".c-fastfacts-number"), item.querySelector(".c-fastfacts-text")]).filter(([n]) => n && h.text(n));
+        if (!items.length) return;
+        const title = component.querySelector(".c-fastfacts-title");
+        const out = [];
+        if (title && h.text(title)) {
+          const h2 = doc.createElement("h2");
+          h2.textContent = h.text(title);
+          out.push(h.richText(doc, [h2]));
+        }
+        const cells = items.map(([n, t]) => [n.textContent.trim(), t ? t.textContent.trim() : ""]);
+        const options = [items.length !== 3 ? `cols-${Math.min(items.length, 6)}` : "", "inline"].filter(Boolean);
+        const from = component.closest(".fastfacts") || component;
+        out.push(keepBlock(WebImporter.Blocks.createBlock(doc, { name: `Statistics (${options.join(", ")})`, cells }), from));
+        from.replaceWith(...out);
+      });
+    }
     main.querySelectorAll(".c-fastfacts").forEach((component) => {
       const nodes = [...component.querySelectorAll("h2, h3, h4, p, li")].filter((el) => h.text(el) && !el.querySelector("h2, h3, h4, p, li")).map((el) => {
         const copy = doc.createElement(el.matches(".c-fastfacts-title") ? "h2" : "p");
@@ -2511,7 +2529,110 @@ var CustomImportScript = (() => {
       component.replaceWith(box);
     });
   }
+  var STAT_COLOURS = {
+    "255,181,0": "gold",
+    "175,109,4": "gold",
+    "28,86,135": "navy",
+    "133,69,138": "purple",
+    "76,125,122": "teal",
+    "255,255,255": "white"
+  };
+  var TEXT_COLOURS = {
+    "255,181,0": "gold",
+    "28,86,135": "blue",
+    "133,69,138": "purple",
+    "76,125,122": "teal",
+    "255,255,255": "white"
+  };
+  var rgbOf = (el) => {
+    var _a;
+    return (_a = (el && el.getAttribute("style") || "").replace(/\s/g, "").match(/color:rgba?\((\d+,\d+,\d+)/i)) == null ? void 0 : _a[1];
+  };
+  function statFigure(widget) {
+    const end = widget.getAttribute("data-numbercounter-end-number") || "";
+    const type = widget.getAttribute("data-numbercounter-number-type");
+    const currency = widget.getAttribute("data-numbercounter-currency-type") || "";
+    if (type === "3") return `${end}%`;
+    if (type === "2") return `${currency}${end}`;
+    return end;
+  }
+  function statLine(line, doc) {
+    const p = doc.createElement("p");
+    const classes = [line, ...line.querySelectorAll("span[class]")].flatMap((s) => [...s.classList]);
+    const tags = [];
+    const vw = classes.map((c) => c.match(/^fontsize-(\d+(?:-\d+)?)-?vw$/)).find(Boolean);
+    const em = classes.map((c) => c.match(/^fontsize-(\d+(?:-\d+)?)em$/)).find(Boolean);
+    if (vw) tags.push(`size-${vw[1]}-vw`);
+    else if (em) tags.push(`text-${em[1]}`);
+    if (classes.includes("urw-egyptienne")) tags.push("serif");
+    const bold = classes.includes("futura-bold");
+    const coloured = [line, ...line.querySelectorAll('[style*="color"]')].find((el) => rgbOf(el));
+    const colour = TEXT_COLOURS[rgbOf(coloured)];
+    if (colour) tags.push(`color-${colour}`);
+    const copy = line.cloneNode(true);
+    copy.querySelectorAll("sup span").forEach((s) => s.replaceWith(...s.childNodes));
+    const sups = [...copy.querySelectorAll("sup")];
+    sups.forEach((s) => s.remove());
+    const text5 = copy.textContent.replace(/\s+/g, " ").trim();
+    if (!text5) return null;
+    const run = doc.createTextNode(tags.length ? `[[${tags.join(",")}]${text5}]` : text5);
+    if (bold) {
+      const strong = doc.createElement("strong");
+      strong.append(run);
+      p.append(strong, ...sups);
+    } else p.append(run, ...sups);
+    return p;
+  }
+  function statCell(component, doc) {
+    const widget = component.querySelector('[data-widget="numbercounter"]');
+    const number = widget.querySelector(".numbercounter-number");
+    const value = doc.createElement("p");
+    value.textContent = statFigure(widget);
+    const label = [...widget.children].find((el) => !el.querySelector(".numbercounter-number") && el.textContent.trim());
+    const lines = label ? [...label.children].filter((c) => c.textContent.trim()) : [];
+    const desc = (lines.length ? lines : [label].filter(Boolean)).map((l) => statLine(l, doc)).filter(Boolean);
+    const vw = (number.className.match(/fontsize-(\d+(?:-\d+)?)-?vw/) || [])[1];
+    return {
+      value,
+      desc,
+      colour: STAT_COLOURS[rgbOf(number)] || "gold",
+      size: vw ? Number(vw.replace("-", ".")) : 0,
+      centred: !!widget.querySelector(".text-center")
+    };
+  }
+  function statisticsBlocks(main, doc) {
+    const done = /* @__PURE__ */ new Set();
+    main.querySelectorAll(".numbercounter").forEach((component) => {
+      if (done.has(component) || !component.querySelector('[data-widget="numbercounter"]')) return;
+      const row = component.closest(".colctrl");
+      const parts = row ? [...row.querySelectorAll(':scope > .row > [class*="col-"] > .row > *')] : [component];
+      const counters = parts.filter((p) => p.matches(".numbercounter"));
+      const others = parts.filter((p) => !p.matches(".numbercounter") && p.textContent.trim());
+      if (row && (others.length || counters.length < 2)) return;
+      counters.forEach((c) => done.add(c));
+      const stats = counters.map((c) => statCell(c, doc));
+      const colours = [...new Set(stats.map((s) => s.colour))];
+      const options = [];
+      if (counters.length !== 3) options.push(`cols-${Math.min(counters.length, 6)}`);
+      if (colours.length === 1 && colours[0] !== "gold") options.push(`stat-${colours[0]}`);
+      const sizes = stats.map((s) => s.size).filter(Boolean);
+      const size = sizes.length ? sizes.sort((a, b) => a - b)[Math.floor(sizes.length / 2)] : 5;
+      if (size <= 4) options.push("stat-s");
+      else if (size >= 6.5) options.push("stat-l");
+      if (stats.some((s) => s.centred)) options.push("text-center");
+      const cells = stats.map((s) => {
+        const desc = doc.createElement("div");
+        desc.append(...s.desc);
+        const keyword = colours.length > 1 ? [s.colour === "white" ? "gold" : s.colour] : [];
+        return [...keyword, s.value, desc];
+      });
+      const name = options.length ? `Statistics (${options.join(", ")})` : "Statistics";
+      const from = row ? row.closest('[class^="cols"]') || row : component;
+      from.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells }), from));
+    });
+  }
   function numberCounters(main, doc, h) {
+    if (STD_DRAFT_IMPORT) statisticsBlocks(main, doc);
     main.querySelectorAll(".numbercounter").forEach((component) => {
       const widget = component.querySelector('[data-widget="numbercounter"]');
       if (!widget) return;

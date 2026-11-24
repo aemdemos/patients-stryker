@@ -144,6 +144,7 @@ const isImage = (n) => n.matches?.('picture, img') || (n.matches?.('a[href]') &&
 function factsOf(html) {
   const facts = {
     cells: 0,
+    rows: 0,
     images: false,
     caption: false,
     imageFirst: false,
@@ -155,6 +156,7 @@ function factsOf(html) {
   if (!html) return null;
   const block = new DOMParser().parseFromString(html, 'text/html').body.firstElementChild;
   if (!block) return null;
+  facts.rows = block.children.length;
   [...block.children].forEach((row) => {
     const cells = [...row.children];
     facts.cells = Math.max(facts.cells, cells.length);
@@ -193,6 +195,9 @@ function unfit(needs, facts) {
     'link-lists': facts.linkLists ? '' : 'needs a list of links',
     text: facts.text ? '' : 'needs text in the row',
     video: facts.video ? '' : 'needs a video link in the first row',
+    'rows-2+': facts.rows >= 2 ? '' : 'needs 2 or more numbers (rows)',
+    'rows-4+': facts.rows >= 4 ? '' : `needs 4 or more numbers (this block has ${facts.rows})`,
+    'rows-6+': facts.rows >= 6 ? '' : `needs 6 or more numbers (this block has ${facts.rows})`,
     'dm-video': facts.video ? '' : 'needs a Dynamic Media video (a YouTube video plays as YouTube sets it)',
     box: def().groups.some((g) => g.id === 'box' && selectedIn(g, draft))
       ? '' : `pick a ${def().groups.find((g) => g.id === 'box')?.label || 'box'} first`,

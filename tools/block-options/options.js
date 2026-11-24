@@ -9,8 +9,9 @@
  * must hold for the choice to do something: 'cells-2' (exactly 2 cells), 'cells-2+', 'cells-3',
  * 'cells-3+', 'cells-4', 'images', 'caption' (a photo with text under it), 'image-first' (an
  * image in the first cell, text beside it), 'links', 'link-lists', 'text', 'box' (a cell box
- * chosen) or 'gradient-box' (a gradient box colour chosen). The panel greys out a choice that
- * doesn't fit, with the reason; `hint` says what the choice does.
+ * chosen), 'gradient-box' (a gradient box colour chosen), 'video' / 'dm-video' (a video link / a
+ * Dynamic Media one) or 'rows-2+' / 'rows-4+' / 'rows-6+' (that many rows). The panel greys out
+ * a choice that doesn't fit, with the reason; `hint` says what the choice does.
  *
  * Keep in step with the block (its header comment lists the options) and its Block Library
  * entry. The Block Library sheet `panel-options` can replace a group's choices, add groups, or
@@ -192,6 +193,61 @@ export const BLOCK_OPTIONS = {
           ['loop', 'Loop', { needs: ['dm-video'], hint: 'Starts again when it ends' }],
         ],
         replaces: /^no-border$/,
+      },
+    ],
+  },
+  // stryker.com number counters and fast facts (stryker-aemcoder-package,
+  // docs/standardisation/statistics.md): the number colour, the number size (10 stryker.com vw
+  // sizes in three steps), numbers per row, centred text and the fast facts' number beside its
+  // text. The count-up runs always (not for numbers beside their text). Older imported names:
+  // `left` is the default, `count-up` / `count-once` are always on, `fast-facts` is inline.
+  statistics: {
+    label: 'Statistics',
+    aliases: {
+      left: [],
+      'count-up': [],
+      'count-once': [],
+      'fast-facts': ['inline'],
+    },
+    groups: [
+      {
+        id: 'colour',
+        label: 'Number colour',
+        options: [
+          ['', 'Gold'],
+          ['stat-navy', 'Navy', { hint: 'The stryker.com blue (#1c5687)' }],
+          ['stat-purple', 'Purple'],
+          ['stat-teal', 'Teal'],
+          ['stat-white', 'White', { hint: 'For a dark section' }],
+        ],
+      },
+      {
+        id: 'size',
+        label: 'Number size',
+        options: [
+          ['', 'Medium'],
+          ['stat-s', 'Small'],
+          ['stat-l', 'Large'],
+        ],
+      },
+      {
+        id: 'columns',
+        label: 'Numbers per row',
+        options: [
+          ['', 'Three'],
+          ['cols-1', 'One'],
+          ['cols-2', 'Two', { needs: ['rows-2+'] }],
+          ['cols-4', 'Four', { needs: ['rows-4+'] }],
+          ['cols-6', 'Six', { needs: ['rows-6+'] }],
+        ],
+      },
+      {
+        id: 'extras',
+        label: 'Options',
+        flags: [
+          ['text-center', 'Centred', { hint: 'Numbers and texts centred (left by default)' }],
+          ['inline', 'Number and text on one line', { needs: ['text'], hint: 'Each number beside its text, in the serif (stryker.com fast facts)' }],
+        ],
       },
     ],
   },

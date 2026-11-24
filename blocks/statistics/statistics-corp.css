@@ -1,0 +1,138 @@
+/*
+ * Statistics on www.stryker.com (corp) pages: the stryker.com number counters (big coloured
+ * numbers with a text, 1 to 6 per row) and fast facts. Loaded by scripts/corp.js
+ * (CORP_BLOCK_STYLES) on `site: corp` pages only.
+ *
+ * The standard choices (Block options panel, docs/standardisation/statistics.md): the number
+ * colour (gold default, stat-navy, stat-purple, stat-teal, stat-white), the number size
+ * (stat-s, medium default, stat-l: 3.25, 5 and 7.5 of the page width's hundredths, as the
+ * stryker.com vw sizes, twice that share on phones), numbers per row (cols-1 … cols-6),
+ * centred text (left by default) and `inline` (each number beside its text, the fast facts).
+ * An image cell in a row shows where it is authored. The text's own sizes and colours are
+ * Text style markers.
+ *
+ * In review: draft pages only (body.std-draft, scripts/corp.js). Real corp pages render as
+ * before.
+ */
+
+body.corp.std-draft .statistics {
+  --statistics-corp-number: var(--color-accent);
+  --statistics-corp-size: 5;
+  --statistics-number-size: calc(var(--statistics-corp-size) * var(--corp-headline-unit));
+}
+
+body.corp.std-draft .statistics.stat-navy { --statistics-corp-number: var(--color-navy-bright); }
+body.corp.std-draft .statistics.stat-purple { --statistics-corp-number: var(--color-purple); }
+body.corp.std-draft .statistics.stat-teal { --statistics-corp-number: var(--color-primary); }
+body.corp.std-draft .statistics.stat-white { --statistics-corp-number: var(--color-white); }
+body.corp.std-draft .statistics.stat-s { --statistics-corp-size: 3.25; }
+body.corp.std-draft .statistics.stat-l { --statistics-corp-size: 7.5; }
+
+/* the stryker.com columns: each number at the start of its column, one per row on phones */
+body.corp.std-draft .statistics ul.statistics-list {
+  gap: var(--space-block) 0;
+}
+
+body.corp.std-draft .statistics .statistics-item {
+  align-items: flex-start;
+  padding: 0 var(--container-gutter);
+  text-align: start;
+}
+
+body.corp.std-draft .statistics.text-center .statistics-item {
+  align-items: center;
+  text-align: center;
+}
+
+body.corp.std-draft .statistics :is(.statistics-value, .statistics-value p) {
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp.std-draft .statistics .statistics-value {
+  margin-bottom: 0;
+}
+
+/* a row without a colour keyword takes the block's number colour */
+body.corp.std-draft .statistics .statistics-item:not(.statistics-teal, .statistics-gold, .statistics-dark-gold, .statistics-navy, .statistics-sage, .statistics-purple) .statistics-value {
+  color: var(--statistics-corp-number);
+}
+
+/* the small lines above or below the number ("in", "served by"): text, not the number */
+body.corp.std-draft .statistics .statistics-value p.statistics-line {
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+/* the text under the number: the page's body text; Text style sets its look */
+body.corp.std-draft .statistics :is(.statistics-desc, .statistics-desc p) {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  color: inherit;
+}
+
+/* bold words: the Futura bold of stryker.com's labels (the patients block keeps them serif) */
+body.corp.std-draft .statistics .statistics-desc :is(strong, b) {
+  font-family: var(--display-font-family);
+}
+
+body.corp.std-draft .statistics .statistics-image {
+  margin-block: var(--space-block);
+}
+
+body.corp.std-draft .statistics .statistics-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body.corp.std-draft .statistics.text-center .statistics-image img {
+  margin-inline: auto;
+}
+
+/* inline (fast facts): the number beside its text from 600px (above it on phones, as on
+   stryker.com), both in the serif, white on the dark section */
+
+body.corp.std-draft .statistics.inline :is(.statistics-value, .statistics-value p) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--body-line-height);
+  white-space: nowrap;
+}
+
+body.corp.std-draft .statistics.inline .statistics-item:not(.statistics-teal, .statistics-gold, .statistics-dark-gold, .statistics-navy, .statistics-sage, .statistics-purple) .statistics-value,
+body.corp.std-draft .statistics.inline :is(.statistics-desc, .statistics-desc p) {
+  color: inherit;
+}
+
+body.corp.std-draft .statistics.inline :is(.statistics-desc, .statistics-desc p) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  /* the authored number per row from 600px (stryker.com's 841px), not two */
+  body.corp.std-draft .statistics ul.statistics-list {
+    grid-template-columns: repeat(var(--statistics-columns, 3), 1fr);
+  }
+
+  body.corp.std-draft .statistics.inline .statistics-item {
+    flex-direction: row;
+    gap: var(--container-gutter);
+    align-items: flex-start;
+  }
+
+  body.corp.std-draft .statistics.inline :is(.statistics-value, .statistics-value p) {
+    font-size: var(--statistics-corp-inline-size);
+    line-height: 1;
+  }
+
+  body.corp.std-draft .statistics.inline :is(.statistics-desc, .statistics-desc p) {
+    line-height: var(--heading-line-height-h4);
+  }
+}
