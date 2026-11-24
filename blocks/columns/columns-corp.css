@@ -1951,3 +1951,36 @@ body.corp .columns.page-title.block > div > div > h2:nth-child(n):nth-child(n) {
     line-height: var(--heading-line-height);
   }
 }
+
+/* faculty (jr45, bundles gray-last): only the text box is grey, not the cell around it (and the
+   episode video under it), 15px in from the row edges on phones, 20px from 600px (stryker.com
+   jr45 April: a 360px box at 390px, 440px beside the faculty at 1440px). On phones the box
+   sits 10px under the faculty above it and 20px above what follows; a video under it is 20px
+   below it (30px from 600px: December); its lines are 25px apart on phones (the source's
+   21px Large Headline line around its 3vw text) */
+body.corp main .columns.faculty.block > div > :where(div:last-child:has(> .columns-box)) {
+  padding: var(--space-block-s) var(--space-block) var(--space-block-l);
+  background: none;
+}
+
+body.corp main .columns.faculty.block > div > div > .columns-box + :where(*) {
+  margin-top: var(--space-block-l);
+}
+
+body.corp main .columns.faculty.block > div > div:last-child > .columns-box > :is(p, li):nth-child(n):nth-child(n) {
+  line-height: var(--corp-faculty-box-line-height-s);
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.faculty.block > div > :where(div:last-child:has(> .columns-box)) {
+    padding: 0 var(--space-block-l);
+  }
+
+  body.corp main .columns.faculty.block > div > div > .columns-box + :where(*) {
+    margin-top: var(--space-section);
+  }
+
+  body.corp main .columns.faculty.block > div > div:last-child > .columns-box > :is(p, li):nth-child(n):nth-child(n) {
+    line-height: var(--heading-line-height-hero);
+  }
+}
