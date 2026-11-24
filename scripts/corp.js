@@ -32,7 +32,7 @@ import previewTextMarkers from './span-markers-canvas.js';
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = ['accordion', 'columns', 'marketo-form', 'panel', 'video', 'statistics', 'table'];
+const CORP_BLOCK_STYLES = ['accordion', 'columns', 'marketo-form', 'panel', 'video', 'statistics', 'table', 'tabs'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.
@@ -103,6 +103,51 @@ export function decorateMain(main) {
     block.closest('.section')?.classList.add('hero-container');
   });
   decorateIconLinks(main);
+}
+
+// section styles of a tab-panel section that lay out its own panel (they stay on the panel, as
+// for `tabbed` sections, scripts.js)
+const TAB_PANEL_LAYOUT = ['side-by-side'];
+
+/**
+ * In review (draft pages, docs/standardisation/tabs.md): turns each run of consecutive
+ * `tab-panel` sections into one `tabs` block, as accordion panels are (buildAccordionSections).
+ * Each section is one tab: the heading at its top is the tab label, the rest of the section
+ * (text, blocks) is the tab's panel, handed to the tabs block as an inline section with the
+ * section's panel layout style (side-by-side). The other section
+ * styles stay on the tabs' section. A single tab-panel section is a one-tab tabs block.
+ * @param {Element} main The container element
+ */
+function buildTabPanelSections(main) {
+  const runs = [];
+  main.querySelectorAll(':scope > .section.tab-panel').forEach((section) => {
+    const run = runs[runs.length - 1];
+    if (run && run[run.length - 1].nextElementSibling === section) run.push(section);
+    else runs.push([section]);
+  });
+  runs.forEach((run) => {
+    const rows = run.map((section, i) => {
+      const nodes = [...section.children].flatMap((wrapper) => [...wrapper.children]);
+      const heading = /^H[1-6]$/.test(nodes[0]?.tagName) ? nodes.shift() : null;
+      const label = document.createElement('p');
+      label.textContent = heading ? heading.textContent.trim() : `Tab ${i + 1}`;
+      const panel = document.createElement('div');
+      panel.dataset.tabsSection = '';
+      panel.classList.add(...TAB_PANEL_LAYOUT.filter((cls) => section.classList.contains(cls)));
+      panel.append(...nodes);
+      return [{ elems: [label] }, { elems: [panel] }];
+    });
+    const block = buildBlock('tabs', rows);
+    const wrapper = document.createElement('div');
+    wrapper.append(block);
+    const [host, ...rest] = run;
+    rest.forEach((section) => {
+      host.classList.add(...section.classList);
+      section.remove();
+    });
+    host.classList.remove('tab-panel', ...TAB_PANEL_LAYOUT);
+    host.replaceChildren(wrapper);
+  });
 }
 
 /**
@@ -326,6 +371,7 @@ export function decorateLayout(main) {
  * @param {Element} main The container element
  */
 export function decorateSections(main) {
+  if (document.body.classList.contains('std-draft')) buildTabPanelSections(main);
   buildAccordionSections(main);
   decorateImageLinks(main);
   joinSplitHeadingUnderlines(main);

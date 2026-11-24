@@ -1,0 +1,15 @@
+/*
+ * Tabs on www.stryker.com (corp) pages. Loaded by scripts/corp.js (CORP_BLOCK_STYLES) on
+ * `site: corp` pages only.
+ *
+ * docs/standardisation/tabs.md: the tab labels are 40px high as on stryker.com (the label's
+ * 12px / 7px around its text and the gold line under the active one); the shared tab button
+ * repeats that spacing around the label, which made corp tabs 58px high.
+ *
+ * In review: draft pages only (body.std-draft, scripts/corp.js). Real corp pages render as
+ * before.
+ */
+
+body.corp.std-draft .tabs .tabs-tab {
+  padding-block: 0;
+}

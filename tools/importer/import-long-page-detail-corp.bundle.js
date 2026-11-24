@@ -2022,13 +2022,20 @@ var CustomImportScript = (() => {
       const deepest = Math.max(0, ...contents.flat().map(headingLevel));
       const level = Math.min(6, Math.max(2, deepest + 1));
       const nodes = [];
+      const panelSections = [];
       contents.forEach((content, i) => {
         if (!content.length) return;
         const heading = doc.createElement(`h${level}`);
         heading.textContent = labels[i] || `Tab ${i + 1}`;
         nodes.push(heading, ...content);
+        panelSections.push([heading, ...content]);
       });
       if (!nodes.length) return;
+      if (STD_DRAFT_IMPORT) {
+        const style2 = ["tab-panel", component.hasAttribute("data-image-aside") ? "image-aside" : ""].filter(Boolean).join(", ");
+        (component.closest(".tabs") || component).replaceWith(...panelSections.map((panel) => keepNodes(doc, panel, style2)));
+        return;
+      }
       const style = component.hasAttribute("data-image-aside") ? "tabbed, image-aside" : "tabbed";
       (component.closest(".tabs") || component).replaceWith(keepNodes(doc, nodes, style));
     });
