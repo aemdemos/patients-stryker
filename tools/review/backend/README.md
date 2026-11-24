@@ -2,9 +2,44 @@
 
 The review tool's store for the final scope (plan: `../backend-plan.md`): reviewers without an
 Adobe ID save with an **invitation link**; the state per page and block lives in App Builder.
-Project "Stryker std review", **Production** workspace `892544-strykerstdreview` (since 24 Nov 2026; Stage,
-`892544-strykerstdreview-stage`, ran it before: emptied, every call there answers "moved"). The scripts and tests on this machine find it in
+Project "Stryker std review": the live review on the **Production** workspace
+`892544-strykerstdreview` (since 24 Nov 2026), tests on **Stage** `892544-strykerstdreview-stage`
+(below). The scripts and tests on this machine find it in
 `target.mjs`; the move itself: `move.mjs` (DATABASE.md, "The move to Production").
+
+## Two workspaces: Production (the live review) and Stage (tests)
+
+Since 24 Nov 2026 (`target.mjs`):
+
+| | Production `892544-strykerstdreview` | Stage `892544-strykerstdreview-stage` |
+|---|---|---|
+| What | the live review: customers, the AOE team, real data | the test workspace: test data only |
+| Runtime key in Settings | host `runtime.adobe.io` | host `adobeioruntime.net` |
+| Signing key | its own (every real invitation) | its own: a Stage invitation is refused on Production and the other way round |
+| Schedules | capture every 15 min, live warm-up, daily backup | none (a test starts a capture itself) |
+| Shots | the real history | a copy of Production's (`seed-stage.mjs`, run again to refresh) |
+| Tool | the reviews' branch previews and main (`client-review-v3`, `standardise-v3`, `main` on .aem.page / .aem.live) | every other host: feature-branch previews, the local preview; a small "Stage backend: test data" label on every page |
+
+The tool chooses by host (`config.js`); `?backend=stage` or `?backend=production` chooses for this
+browser on that host until changed (the host's own choice again clears it). Invitations made on
+Stage carry `backend=stage` in their link, so they open the tool on Stage from any host.
+
+The scripts: **deploys and the test suites go to Stage** by default; the everyday operations
+(`admin.mjs`, `set-status.mjs`, `summarise.mjs`, the shot scripts) act on **Production**.
+`REVIEW_TARGET=stage|production` points them all at one workspace; `--ns` names one.
+
+### Releasing a change
+
+1. Build it on a branch; `node tools/review/backend/deploy.mjs` (Stage).
+2. Both reviews' tests on Stage (the client review's on its local preview, the standard
+   review's on its own; README "Tests"), and a look in the tool on a feature-branch preview or
+   with `?backend=stage`.
+3. `node tools/review/backend/deploy.mjs --production`: the same code to the live review.
+4. A smoke test there: `REVIEW_TARGET=production node tools/review/backend/test/backend.test.mjs`
+   and `… spaces-live.test.mjs` (test pages and test invitations only, cleaned up after), then
+   `admin.mjs forget-test-invites`.
+5. Tool-side changes (the tool's own files) reach reviewers when the branch is pushed; push the
+   backend first when the tool needs the new backend.
 
 | Action | Kind | What |
 |---|---|---|

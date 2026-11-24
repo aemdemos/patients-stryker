@@ -10,12 +10,12 @@
  * usage: node tools/review/backend/test/invites-tool.test.mjs <base, e.g. http://localhost:3220>
  */
 import { createRequire } from 'module';
-import { NS, actionUrl } from '../target.mjs';
+import { TEST, actionUrl } from '../target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
 
-async function admin(p, namespace = NS) {
+async function admin(p, namespace = TEST.ns) {
   const resp = await fetch(actionUrl(namespace), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });
@@ -74,7 +74,8 @@ try {
     await p.click('.iv-create');
     await p.waitForFunction(() => /Invitation for tool test inv ui made/.test(document.querySelector('.iv-made').textContent));
     const link = await p.$eval('.iv-link input', (i) => i.value);
-    check('create: the link shown once, with Copy', /\/tools\/review\/index\.html\?invite=/.test(link) && !!(await p.$('.iv-link button')));
+    // (on Stage the link also names Stage's backend: ?backend=stage&invite=…)
+    check('create: the link shown once, with Copy', /\/tools\/review\/index\.html\?(backend=stage&)?invite=/.test(link) && !!(await p.$('.iv-link button')));
     await p.waitForFunction(() => [...document.querySelectorAll('.iv-table tbody tr')].some((tr) => tr.cells[0].textContent === 'tool test inv ui made'));
     r = await rows(p);
     check('create: listed, made by the AOE', r.some((x) => x.name === 'tool test inv ui made' && /by tool test inv ui aoe/.test(x.made) && x.state === 'Active'), JSON.stringify(r));

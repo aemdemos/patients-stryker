@@ -8,10 +8,10 @@
  * usage: node tools/review/backend/test/spaces-live.test.mjs
  */
 import { REVIEW } from '../../config.js';
-import { NS, actionUrl } from '../target.mjs';
+import { TEST, actionUrl, webBase } from '../target.mjs';
 
 // the private admin action (as admin.mjs calls it; the credential is added by the environment)
-async function admin(p, namespace = NS) {
+async function admin(p, namespace = TEST.ns) {
   const resp = await fetch(actionUrl(namespace), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });
@@ -27,7 +27,7 @@ const check = (what, ok, detail = '') => {
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}${ok ? '' : ` ${detail}`}`);
 };
 const call = async (path, token, body) => {
-  const resp = await fetch(`${REVIEW.backend}/${path}`, {
+  const resp = await fetch(`${webBase()}/${path}`, {
     method: body ? 'POST' : 'GET',
     headers: { 'x-review-invite': token, ...(body ? { 'content-type': 'application/json' } : {}) },
     body: body ? JSON.stringify(body) : undefined,
