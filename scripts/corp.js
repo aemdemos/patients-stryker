@@ -86,7 +86,8 @@ function decorateIconLinks(main) {
  * columns-corp.css); `product-intro`: nse product rows, the Egyptienne copy with a 2vw title;
  * `product-details`: an nse product's intro beside a grey box of 14px details; `event-cards`:
  * neurosurgical events, a 21px Egyptienne subtitle under each title; `gold-lead-copy`: SKILL
- * NeuroElite, a gold lead bar over 17.5px copy.
+ * NeuroElite, a gold lead bar over 17.5px copy; `gold-headline-first`: spine resources, a gold
+ * box of 1.5vw copy beside the row's other cell.
  * `*-serif-copy`: a copy size with the Egyptienne copy.
  */
 const VARIANT_BUNDLES = {
@@ -102,6 +103,7 @@ const VARIANT_BUNDLES = {
   'product-details': ['gray-last', 'plain-bold'],
   'event-cards': ['large-subtitles'],
   'gold-lead-copy': ['gold-lead', 'large-copy'],
+  'gold-headline-first': ['gold-first'],
 };
 
 function expandVariantBundles(main) {

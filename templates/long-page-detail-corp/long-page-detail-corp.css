@@ -138,6 +138,13 @@ body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .
   background-clip: padding-box;
 }
 
+/* on a gold headline box the Bold + Italic words are white (stryker.com white Futura bold on
+   .bg-gold: spine resources "The goal of this program is to provide physicians…"), as on the
+   gold panels */
+body.long-page-detail-corp main > .section.headline-box.gold > .default-content-wrapper :is(strong em, em strong) {
+  color: var(--color-white);
+}
+
 body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) > :last-child {
   margin-bottom: 0;
 }

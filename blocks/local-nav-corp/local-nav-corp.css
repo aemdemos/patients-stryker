@@ -4,7 +4,9 @@
    and all the links. From
    600px (stryker.com 840px): a 40px bar, the parent link (bold black, 17.5px) on the left,
    the section's links (grey, "|" between them) on the right, then the "•••" more menu.
-   `border`: a 1px rule under the bar. */
+   `border`: a 1px rule under the bar. `overlay`: from 600px the bar a see-through light grey
+   band the page's full width, laid over the top of the hero below it, its links black
+   (stryker.com localpage_nav_Overlay: spine medical education). */
 
 .local-nav-corp .local-nav-corp-nav {
   position: relative;
@@ -201,3 +203,31 @@
     padding: var(--space-block-s);
   }
 }
+
+/* overlay (see the top): the band over the hero's top edge, the text 25px down */
+@media (width >= 600px) {
+  .local-nav-corp.overlay .local-nav-corp-nav {
+    height: var(--corp-local-nav-overlay-height);
+    padding-top: var(--space-inset-m);
+    border: 0;
+    background: var(--corp-local-nav-overlay-bg);
+    box-shadow: 0 0 0 100vmax var(--corp-local-nav-overlay-bg);
+    clip-path: inset(0 -100vmax);
+  }
+
+  .local-nav-corp.overlay .local-nav-corp-links a:any-link {
+    color: var(--color-black);
+  }
+
+  main > .section:has(> .local-nav-corp-wrapper > .local-nav-corp.overlay) {
+    position: relative;
+    z-index: 1;
+    margin-bottom: calc(-1 * var(--corp-local-nav-overlay-height));
+  }
+
+  /* …right under the page header, as on stryker.com: no top padding on the page */
+  main:has(> .section:first-child > .local-nav-corp-wrapper > .local-nav-corp.overlay) {
+    padding-top: 0;
+  }
+}
+

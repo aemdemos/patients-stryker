@@ -21,7 +21,7 @@ body.long-page-detail-corp.large-copy main > .section:not(.disclaimer, .full-ble
 /* ---- theme `xlarge-copy`: the page's own text in 21px copy (stryker.com .fontsize-1-5em on
    the rich text of the Mako surgeon campaign), as the Columns `xlarge-copy` variant; tab panels'
    text too (nse heavy duty cutting accessories); not the small print ---- */
-body.long-page-detail-corp.xlarge-copy main .section:not(.disclaimer) > .default-content-wrapper :is(p, ul, li) {
+body.long-page-detail-corp.xlarge-copy main .section:not(.disclaimer, .p-2) > .default-content-wrapper :is(p, ul, li) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
 }
@@ -305,6 +305,46 @@ body.long-page-detail-corp.mako-campaign main > .section:has(+ .section.disclaim
   body.long-page-detail-corp.mako-campaign main > .section:not(.full-bleed) > .default-content-wrapper > h2 {
     font-size: calc(1.875 * var(--body-font-size-m));
   }
+}
+
+/* ---- theme `spine-meded`: the Spine medical education pages with 4.5vw hero titles (contact,
+   events, resources; stryker.com .fontsize-4-5vw: 63px at 1440, 35px at 390; on-demand
+   webinars keeps the `large` 4vw), the MedEd banner title 5vw; the hero's line under the
+   title sits right under it, its Bold words Futura bold ---- */
+body.long-page-detail-corp.spine-meded main .hero-corp.large {
+  --hero-corp-title-size: 4.5;
+}
+
+body.long-page-detail-corp.spine-meded main .hero-corp.xlarge {
+  --hero-corp-title-size: 5;
+}
+
+/* the MedEd banner title starts in by the source's white backslash spacer before it, three
+   blank 14px lines below the banner's top (the source's line breaks before it) */
+body.long-page-detail-corp.spine-meded main .hero-corp.banner.xlarge > div:last-child > :is(h1, h2) {
+  margin-top: calc(3 * var(--body-font-size-m) * var(--paragraph-line-height));
+  text-indent: var(--corp-meded-title-indent);
+}
+
+body.long-page-detail-corp.spine-meded main .hero-corp.image-slide > div:last-child > :where(h1 + p) {
+  margin-top: 0;
+}
+
+body.long-page-detail-corp.spine-meded main .hero-corp.image-slide > div:last-child > p strong {
+  font-family: var(--display-font-family);
+}
+
+/* a Bold + Italic link inside a sentence is the gold Futura bold text of the line, not a gold
+   button (stryker.com contact "Questions? Contact spine.meded@stryker.com", 28px) */
+body.long-page-detail-corp.spine-meded main .default-content-wrapper p a.link-inline:any-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  text-transform: none;
 }
 
 /* ---- theme `bacs`: the Spine BACS product pages (assure, assist, accelerate). The banner's
