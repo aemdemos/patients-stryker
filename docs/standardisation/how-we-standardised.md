@@ -247,7 +247,8 @@ between two steps, which joins the next step up, as the grouping intends.
 
 **To approve:**
 
-1. The named choices per block (sections 3 and 7) and the pages listed to move more.
+1. The named choices per block (sections 3, 7 and 10) and the pages listed to move more; each
+   block chapter lists its own decisions.
 2. **Text look** in Block options: whole-row text looks (large headline, serif lead, serif captions,
    pull quotes) are one choice per row, instead of styling every paragraph. This departs slightly
    from the rule "fonts and sizes are never block options", for row-wide looks only.
@@ -264,6 +265,50 @@ between two steps, which joins the next step up, as the grouping intends.
   migration stops enlarging them on every page.
 - Bold and underlined links inside a sentence: teal as on stryker.com, or gold as the authoring
   rules show them today.
+
+# 10. Every block at a glance
+
+The same exercise was done for all 22 blocks in Stryker's package, in its order. Each block has its own
+chapter with the numbers, the choices, the pages that move more and the open points, and its own
+review page with real stryker.com content (`/drafts/astha/blocks/<block>`). Text inside every block
+uses Text style with the same limited sets as Columns. Only Columns has a *Text look* group.
+
+| Block | What authors choose | How close (review page against stryker.com) |
+|---|---|---|
+| Columns | 5 layouts (+3 widths), cell box colour and cell, spacing, image border, centred, Text look, row looks | 48 of 50 rows exact; 2 move one headline step |
+| Panel (text box) | 10 box colours, gradient direction, 4 spacing steps, soft shadow, centred | every box's background and shadow exact; 25 of 27 text lines |
+| Cards | 9 card types, cards per row, card box colour, image border, spacing, shadow, centred and 4 looks | 28 of 33 rows exact; layout and phone stacking on every row |
+| Hero | 5 layouts incl. the new page intro, headline box, column, height, title and subline colour, stripe, band, phone options | every box, band and gradient colour; page intro, tagline, large header and long text exact |
+| Section layout | side by side (equal, 67/33, 33/67), side by side on phones | column edges exact at desktop; stacking as today |
+| Video | black border, autoplay (muted), loop | 10 of 10 frames and playback |
+| Statistics | number colour, 3 sizes, numbers per row, centred, number and text on one line | colours and rows exact; numbers between sizes move one step |
+| Table | header row, stacked on phones, rows from a sheet | fonts, stripes, spacing and widths exact |
+| Accordion | all open, divided, grey list | labels, spacing, open and closed states |
+| Tabs | none (one look) | labels, widths and the gold line |
+| Carousel | autoplay (one speed), fade, split slides with 3 band colours | slide size, arrows, dots, colours and fonts |
+| Widget | the micro-app type (embedded as it is) | explorers and calculators at the same heights |
+| Form | the existing Marketo form, as it is | fields, labels, inputs and button |
+| Sticky navigation | none (one bar) | labels, colours, jumps and phone menu |
+| Local navigation | without the top line | place, fonts and colours |
+| Chart | column, bar, pie; values on the bars | bar chart to the pixel; colours exact |
+| Media gallery | gallery or 360° spin | thumbnails, spacing and arrows |
+| Interactive image | none | rings on the hotspots |
+| News list | show dates | tabs, rows and Load more to the pixel |
+| Event calendar | none | filters, month grid, bars and list |
+| Social share | grey icons, right aligned | pixel-exact |
+| Fragment | none | the three shared parts checked look as on stryker.com |
+
+**Still safe:** a last check compared 16 real stryker.com pages and 5 patients pages, element by
+element on desktop and phone, with the site before this work: **no difference**.
+
+**Tasks outside the authors' hands, found along the way:**
+
+- An administrator adds publish dates, tags and event details to the site's page index, so news
+  lists sort by date and event calendars fill.
+- Stryker allows the new site's addresses to show the map and medical information request apps, and
+  keeps the micro-app server running.
+- Some shared fragments are older imports: re-import them with today's migration.
+- Stryker decides on the division contact, corporate contact and Adobe Sign forms (as before).
 
 # Glossary
 
