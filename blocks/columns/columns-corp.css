@@ -672,12 +672,13 @@ body.corp .columns.gold-first > div > div:first-child strong {
 
 /* gold-headline-first (bundles gold-first: scripts/corp.js): the gold box's text at the Large
    Headline 1.5vw size, 2N vw on phones, never under 12px (stryker.com spine resources
-   "Located within our headquarters…": 21px at 1440, 11.7px at 390), lines 1.35 apart, the
-   paragraphs one after the other as the source's line breaks */
+   "Located within our headquarters…": 21px at 1440, 11.7px at 390) on the source paragraph's
+   28.875px lines at every width (a 21px paragraph's line height), the paragraphs one after
+   the other as the source's line breaks */
 body.corp .columns.gold-headline-first.block > div > div:first-child :is(p, li) {
   margin-bottom: 0;
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
-  line-height: var(--heading-line-height-hero);
+  line-height: calc(var(--body-font-size-xl) * var(--paragraph-line-height));
 }
 
 /* …and the Bold name that opens the text under an image, its sizes on the next line (stryker.com

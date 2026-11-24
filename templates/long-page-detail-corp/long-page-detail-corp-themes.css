@@ -334,6 +334,42 @@ body.long-page-detail-corp.spine-meded main .hero-corp.image-slide > div:last-ch
   font-family: var(--display-font-family);
 }
 
+/* list items 23px apart (the source's 17.5px Egyptienne line in a 14px item: resources BioSkills,
+   Mobile lab, S2S lists) */
+body.long-page-detail-corp.spine-meded main .columns.serif.large-copy li {
+  line-height: calc(var(--body-font-size-m) * var(--corp-serif-item-line-height));
+}
+
+/* the location and contact cells: a fully Bold label on the 14px copy's 19.25px line (not the
+   serif copy's 22.4px), and on phones, where the cells stack, 15px between them (the row gap
+   alone, as on stryker.com) */
+body.long-page-detail-corp.spine-meded main .columns.stack.serif p.columns-bold {
+  line-height: var(--paragraph-line-height);
+}
+
+/* the S2S title cells: 10px further in on both sides (the source's padded white rich-text box) */
+body.long-page-detail-corp.spine-meded main .columns.large-titles.serif > div > div {
+  padding-inline: calc(var(--space-block) + var(--space-block-s));
+}
+
+body.long-page-detail-corp.spine-meded main .columns.stack.serif > div > div > :last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.spine-meded main .columns.stack.serif > div > div > :last-child {
+    margin-bottom: var(--space-block);
+  }
+}
+
+/* a cell's Heading 3 (21px Futura bold) on 25.6px lines (resources "The mobile lab is used for a
+   variety of events:", two lines 50px tall on stryker.com), in Futura so the line keeps that
+   height (a serif heading around Futura bold words sets taller lines) */
+body.long-page-detail-corp.spine-meded main .columns.serif.large-copy h3 {
+  font-family: var(--display-font-family);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
 /* a Bold + Italic link inside a sentence is the gold Futura bold text of the line, not a gold
    button (stryker.com contact "Questions? Contact spine.meded@stryker.com", 28px) */
 body.long-page-detail-corp.spine-meded main .default-content-wrapper p a.link-inline:any-link {
