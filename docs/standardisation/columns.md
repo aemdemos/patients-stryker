@@ -225,12 +225,14 @@ pages (not package numbers).*
 product tiles 3, CTA tiles 2, icon grid 0) are rows of tiles, which the package puts in Cards. They are
 no longer Columns choices; pages that carry those names render as before until the Cards session.
 
-**Proposed, to approve: row-wide text looks in Block options.** Large headline type (479 rows), serif
+**Text look (in Block options, to approve by the business).** Large headline type (479 rows), serif
 lead paragraph, serif captions and the pull quotes style a whole row's text on stryker.com (one
 component style). The proposal keeps them as one choice in a *Text look* group of Block options, using
 the same sizes and fonts as the Text style panel, while words inside a line stay with the Text style
-panel. This departs from the package rule "fonts and sizes of text are never block options" for
-row-wide looks only.
+panel. Like every Block option it is a name on the block (`Columns (columns-50-50, large-headline)`),
+not a marker in the text; switches, as rows combine them (large headline + numbered quotes). This
+departs from the package rule "fonts and sizes of text are never block options" for row-wide looks
+only.
 
 **Imported names that are existing choices** (no new variant; the panel shows them as these choices):
 

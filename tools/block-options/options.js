@@ -244,27 +244,34 @@ export const BLOCK_OPTIONS = {
           ['gold-lead', 'In a gold bar'],
           ['dark-lead', 'In a dark grey bar'],
           ['blue-lead', 'In a blue bar'],
-          ['serif-lead', 'Serif lead paragraph'],
         ],
-        // the bars are the cell's box, so they clear a cell box (the serif paragraph doesn't)
+        // the bars are the cell's box, so they clear a cell box
         clears: /^(box-.+|shadow)$/,
-        clearsWhen: ['gray-lead', 'gold-lead', 'dark-lead', 'blue-lead'],
+      },
+      {
+        // the whole row's text, as one stryker.com component style (Text style words are for
+        // a few words); switches, as rows combine them (large headline + numbered quotes)
+        id: 'text-look',
+        label: 'Text look',
+        flags: [
+          ['large-headline', 'Large headline'],
+          ['serif-lead', 'Serif lead paragraph'],
+          ['caption-serif', 'Serif captions'],
+          ['quote-last', 'Pull quote in the last cell'],
+          ['quote-3vw', 'Large pull quote beside a photo'],
+          ['number-quote', 'Numbered quotes'],
+        ],
       },
       {
         id: 'looks',
         label: 'Row looks',
         flags: [
-          ['large-headline', 'Large headline type'],
           ['media-pair', 'Linked images'],
           ['stack', 'One per row on phones'],
           ['related-links', 'Related links'],
           ['link-groups', 'Link groups'],
           ['icon-text', 'Icon beside text'],
-          ['number-quote', 'Numbered quotes'],
           ['title-row', 'Page title beside a photo'],
-          ['quote-last', 'Pull quote in the last cell'],
-          ['quote-3vw', 'Large pull quote beside a photo'],
-          ['caption-serif', 'Serif captions'],
           ['caption-tight', 'Caption right under the photo'],
           ['image-centre', 'Images centred at their size'],
           ['phone-image-2-3', 'Photo two thirds wide on phones'],
