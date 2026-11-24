@@ -15,7 +15,7 @@ import {
 } from 'fs';
 import { createRequire } from 'module';
 import { REVIEW } from './config.js';
-import { NS, actionUrl } from './backend/target.mjs';
+import { LIVE, actionUrl } from './backend/target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
@@ -32,7 +32,7 @@ const csvFile = opt('--csv', null);
 const includeTests = args.includes('--include-tests');
 const prefix = /localhost|127\.0\.0\.1|preview-aemcoder/.test(base) ? '/content' : '';
 
-const ns = opt('--ns', NS);
+const ns = opt('--ns', LIVE.ns);
 // the rows: a CSV file (tests: test/sample-rows.csv), else every entry of the review backend
 // (its private admin action; the workspace credential is added by the environment)
 let csv = null;

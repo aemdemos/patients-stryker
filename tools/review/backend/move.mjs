@@ -14,6 +14,8 @@
  *   7. the summaries built again on the new one, its schedules on
  * usage: node tools/review/backend/move.mjs [--from stage] [--to production] [--apply]
  *   (without --apply: steps 1 and the file list only)
+ *   node tools/review/backend/move.mjs --reopen stage   a workspace the review left, usable again
+ *   (REVIEW_MOVED_TO removed, its other parameters kept; then admin setup there: a key of its own)
  */
 import { WORKSPACES, actionUrl, apiOf, webBase } from './target.mjs';
 
@@ -51,6 +53,16 @@ const countsOf = async (w) => {
   for (const space of ['std', 'main']) rows[space] = ((await admin(w, { op: 'export', space })).rows || []).length;
   return { pages: s.pages, invites: s.invites, rows };
 };
+
+if (args.includes('--reopen')) {
+  const w = WORKSPACES[opt('--reopen')];
+  if (!w || w.name === 'production') throw new Error('--reopen stage (the workspace the review left)');
+  const pkg = await api(w, 'GET', '/packages/std-review');
+  const parameters = (pkg.parameters || []).filter((p) => p.key !== 'REVIEW_MOVED_TO');
+  await api(w, 'PUT', '/packages/std-review?overwrite=true', { publish: false, parameters });
+  log('reopened', w.ns, '; package parameters now', JSON.stringify((await api(w, 'GET', '/packages/std-review')).parameters.map((p) => p.key)));
+  process.exit(0);
+}
 
 // 1.
 for (const w of [FROM, TO]) {

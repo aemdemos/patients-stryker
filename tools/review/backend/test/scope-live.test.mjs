@@ -13,10 +13,10 @@
  */
 import { createHash } from 'crypto';
 import { REVIEW } from '../../config.js';
-import { NS, actionUrl } from '../target.mjs';
+import { TEST, actionUrl, webBase } from '../target.mjs';
 
 async function runtime(action, p) {
-  const resp = await fetch(actionUrl(NS, action), {
+  const resp = await fetch(actionUrl(TEST.ns, action), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });
   const text = await resp.text();
@@ -33,7 +33,7 @@ const check = (what, ok, detail = '') => {
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}${ok ? '' : ` ${detail}`}`);
 };
 const call = async (path, token, body) => {
-  const resp = await fetch(`${REVIEW.backend}/${path}`, {
+  const resp = await fetch(`${webBase()}/${path}`, {
     method: body ? 'POST' : 'GET',
     headers: { 'x-review-invite': token, ...(body ? { 'content-type': 'application/json' } : {}) },
     body: body ? JSON.stringify(body) : undefined,
@@ -66,7 +66,7 @@ try {
   check('capture: in the history, every width, hashes', v?.store === 'files' && ['1440', '860', '375'].every((w) => v.widths[w]?.status === 200 && v.widths[w].tiles.every((t) => /^[0-9a-f]{64}$/.test(t.sha256))), JSON.stringify(v).slice(0, 200));
   check('capture: title and final URL kept', /Search/.test(v?.title || '') && v.widths[1440].finalUrl === 'https://www.stryker.com/us/en/search.html');
   const t = v.widths[860].tiles[0];
-  const tile = await fetch(`${REVIEW.backend}/tile?${new URLSearchParams({
+  const tile = await fetch(`${webBase()}/tile?${new URLSearchParams({
     space: SPACE, page: SHOT, version: v.id, vp: '860', file: t.file,
   })}`);
   const buf = Buffer.from(await tile.arrayBuffer());

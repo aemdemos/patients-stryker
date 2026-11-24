@@ -8,12 +8,12 @@
  * usage: node tools/review/backend/test/shots-tool.test.mjs <base, e.g. http://localhost:3220> [real page]
  */
 import { createRequire } from 'module';
-import { NS, actionUrl } from '../target.mjs';
+import { TEST as WORKSPACE, actionUrl } from '../target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
 
-async function admin(p, namespace = NS) {
+async function admin(p, namespace = WORKSPACE.ns) {
   const resp = await fetch(actionUrl(namespace), {
     method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(p),
   });

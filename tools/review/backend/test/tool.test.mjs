@@ -10,7 +10,7 @@
  * is sent again; a revoked link is refused. Everything the test wrote is removed at the end and
  * the invitations revoked. Tokens are never printed.
  * usage: node tools/review/backend/test/tool.test.mjs [--base http://localhost:3000]
- *   [--page /us/en/…] [--ns <namespace, default Production: backend/target.mjs>]
+ *   [--page /us/en/…] [--ns <namespace, default Stage (tests): backend/target.mjs>]
  * Also: unsaved changes and Undo changes.
  */
 import { createRequire } from 'module';
@@ -18,7 +18,7 @@ import { execFileSync } from 'child_process';
 import { mkdtempSync, readFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
-import { NS, actionUrl } from '../target.mjs';
+import { TEST, actionUrl } from '../target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
@@ -28,7 +28,7 @@ const opt = (name, fallback) => {
   return i >= 0 ? args[i + 1] : fallback;
 };
 const base = opt('--base', 'http://localhost:3000');
-const ns = opt('--ns', NS);
+const ns = opt('--ns', TEST.ns);
 const COMMENT = `backend tool test ${new Date().toISOString()}`;
 const out = mkdtempSync(join(tmpdir(), 'review-loop-'));
 

@@ -8,7 +8,7 @@
  * the thread, the results page in its AOE column, the next summary per row ("partly" when mixed).
  * usage: node tools/review/set-status.mjs --item <work item id> --state done|progress|wontdo|open
  *   [--release r1] [--reason "…"] [--refs <ref>,<ref>] [--work migration-work/review-summary/work-items.json]
- *   [--by "name"] [--send-back] [--dry-run] [--ns <namespace, default Production: backend/target.mjs>]
+ *   [--by "name"] [--send-back] [--dry-run] [--ns <namespace, default Production (the live review): backend/target.mjs>]
  * --send-back: also set those pages' status to "Waiting for the customer".
  * --refs: only these rows of the item (refs as in work-items.json: <page>#<item>|<kind>).
  * Decisions are not given a status here: the apply step records what it applied.
@@ -16,7 +16,7 @@
 import { readFileSync } from 'fs';
 import { execFileSync } from 'child_process';
 import { REVIEW } from './config.js';
-import { NS, actionUrl } from './backend/target.mjs';
+import { LIVE, actionUrl } from './backend/target.mjs';
 
 const args = process.argv.slice(2);
 const opt = (name, fallback) => {
@@ -29,7 +29,7 @@ const state = opt('--state');
 const work = opt('--work', `migration-work/review-summary${REVIEW.space === 'std' ? '' : `-${REVIEW.space}`}/work-items.json`);
 const refs = opt('--refs', '') ? opt('--refs').split(',').map((r) => r.trim()) : null;
 const dry = args.includes('--dry-run');
-const ns = opt('--ns', NS);
+const ns = opt('--ns', LIVE.ns);
 
 if (!id || !STATES.includes(state)) {
   console.error(`usage: --item <work item id> --state ${STATES.join('|')} [--release r1] [--reason "…"] [--refs …] [--dry-run]`);

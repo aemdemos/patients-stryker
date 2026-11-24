@@ -47,7 +47,9 @@ export async function createInvite({ state, files }, {
   await state.put(`i.${id}`, JSON.stringify(invite));
   const token = sign({ id, exp }, await secretOf(files));
   const tool = toolOf(space, host);
-  const link = `${tool}?${new URLSearchParams({ ...(typeof page === 'string' && page ? { page } : {}), invite: token })}`;
+  // (made on Stage, the test workspace: the link opens the tool on Stage's backend, whatever host)
+  const stage = /-stage$/.test(process.env.__OW_NAMESPACE || '');
+  const link = `${tool}?${new URLSearchParams({ ...(typeof page === 'string' && page ? { page } : {}), ...(stage ? { backend: 'stage' } : {}), invite: token })}`;
   return {
     id,
     name: invite.name,

@@ -130,7 +130,9 @@ Production as `stage-final/backups/2026-11-24/state.json` (every other Stage fil
 Production, same name and size), then 829 page documents, 41 invitations and 1,803 files
 deleted (0 left). Stage keeps the deployed actions and its database credential: every web
 action there answers 410 "moved" (reads too), so a tab left open on the old tool is told to
-reload.
+reload. **Reopened the same evening as the test workspace** (`move.mjs --reopen stage`:
+the marker removed; `admin setup`: a signing key of its own; `seed-stage.mjs`: Production's
+shots), backend/README.md "Two workspaces".
 
 ## 2. The move (how it was planned; done 24 Nov 2026, steps 2 and 4 shortened: the data was test data)
 

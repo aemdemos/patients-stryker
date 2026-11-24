@@ -4,12 +4,12 @@
  * loading, saving, conflicts, limits, CORS, AOE statuses, revocation. Works on the test page
  * /test/backend and a test group (`group:test|backend`) only, and removes both at the end; the
  * test invitation is revoked. Tokens are never printed.
- * usage: node tools/review/backend/test/backend.test.mjs [--ns <namespace, default Production: backend/target.mjs>]
+ * usage: node tools/review/backend/test/backend.test.mjs [--ns <namespace, default Stage (tests): backend/target.mjs>]
  */
-import { NS, apiOf, webBase } from '../target.mjs';
+import { TEST, apiOf, webBase } from '../target.mjs';
 const args = process.argv.slice(2);
 const i = args.indexOf('--ns');
-const ns = i >= 0 ? args[i + 1] : NS;
+const ns = i >= 0 ? args[i + 1] : TEST.ns;
 const WEB = webBase(ns);
 // (--api: the Runtime API host whose Settings key opens --ns: Production runtime.adobe.io)
 const j = args.indexOf('--api');

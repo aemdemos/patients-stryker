@@ -38,10 +38,56 @@ export const REVIEW = {
   edit: 'https://da.live/edit#/strykerenterprise/stryker-com',
   // where the tool runs for reviewers (links in the summary)
   toolHost: 'standardise-v3--stryker-com--strykerenterprise.aem.page',
-  // the review backend (App Builder web actions, Stage workspace), shared by both reviews
-  // (the review's backend, App Builder workspace Production since 24 Nov 2026; Stage before)
-  backend: 'https://892544-strykerstdreview.adobeioruntime.net/api/v1/web/std-review',
+  // the review backend: `backend` and `backendEnv`, chosen below (by host)
 };
+
+// The review backend (App Builder web actions, shared by both reviews; backend/target.mjs):
+// Production for the real review (the reviews' branch previews and main), Stage, the test
+// workspace (test data), everywhere else: feature-branch previews, the local preview.
+// ?backend=stage|production chooses (kept in this browser for this host; the host's own choice
+// again clears it); outside a browser Stage (the backend tests take their address from
+// backend/target.mjs, like their admin calls).
+const BACKENDS = {
+  production: 'https://892544-strykerstdreview.adobeioruntime.net/api/v1/web/std-review',
+  stage: 'https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review',
+};
+const LIVE_HOSTS = /^(main|client-review-v3|standardise-v3)--stryker-com--strykerenterprise\.aem\.(page|live)$/;
+const BACKEND_KEY = 'review-backend';
+
+function backendEnv() {
+  if (typeof window === 'undefined') return 'stage';
+  const w = window;
+  const own = LIVE_HOSTS.test(w.location.hostname) ? 'production' : 'stage';
+  const asked = new URLSearchParams(w.location.search).get('backend');
+  try {
+    if (asked === own) w.localStorage.removeItem(BACKEND_KEY);
+    else if (BACKENDS[asked]) w.localStorage.setItem(BACKEND_KEY, asked);
+    const kept = w.localStorage.getItem(BACKEND_KEY);
+    if (BACKENDS[kept]) return kept;
+  } catch (e) {
+    if (BACKENDS[asked]) return asked;
+  }
+  return own;
+}
+REVIEW.backendEnv = backendEnv();
+REVIEW.backend = BACKENDS[REVIEW.backendEnv];
+
+// on Stage, a label on every page of the tool (test data, not the real review)
+if (typeof document !== 'undefined' && REVIEW.backendEnv === 'stage') {
+  const label = () => {
+    const el = document.createElement('div');
+    el.className = 'review-backend-label';
+    el.textContent = LIVE_HOSTS.test(window.location.hostname)
+      ? 'Stage backend: test data (?backend=production to switch back)'
+      : 'Stage backend: test data';
+    el.style.cssText = 'position:fixed;left:50%;bottom:4px;transform:translateX(-50%);z-index:9999;'
+      + 'padding:2px 10px;border-radius:10px;font:12px/1.5 sans-serif;color:#fff;background:#b35c00;'
+      + 'pointer-events:none;opacity:0.9';
+    document.body.append(el);
+  };
+  if (document.body) label();
+  else document.addEventListener('DOMContentLoaded', label);
+}
 
 /** the browser storage keys of this review (std keeps the names it had: std-review-…) */
 export const storageKey = (name) => `${REVIEW.space}-review-${name}`;
