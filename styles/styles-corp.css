@@ -37,6 +37,8 @@
   --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
+  --corp-paragraph-indent: 40px; /* measured: source rich-text paragraph style margin-left: 40px (BACS banner item lines) */
+  --corp-banner-title-indent: 24px; /* measured: the leading spaces before a BACS banner title / subtitle (79px text at a 55px box edge) */
   --corp-serif-copy-line-height: 1.6; /* measured: a 14px Egyptienne span in a 14px / 19.25px source paragraph renders 22.4px lines */
   --corp-serif-item-line-height: 1.643; /* the same in a 20px source list item: 23px */
 

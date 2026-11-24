@@ -307,6 +307,49 @@ body.long-page-detail-corp.mako-campaign main > .section:has(+ .section.disclaim
   }
 }
 
+/* ---- theme `bacs`: the Spine BACS product pages (assure, assist, accelerate). The banner's
+   coloured box: to the column's right edge, the title and the 17.5px Egyptienne light subtitle
+   under it each 24px in on their first line (the source's leading spaces), the title one
+   blank line below the box top. Under the box the copy starts level with the box, an empty
+   line below it; its "- …" item lines 40px further in, an empty line above the first one
+   (stryker.com BACS banners: textBoxId col-sm-6, rich text margin-left 40px) ---- */
+body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box {
+  margin-right: 0;
+}
+
+body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box > h1 {
+  margin: var(--space-block) 0 0;
+  line-height: var(--heading-line-height);
+  text-indent: var(--corp-banner-title-indent);
+}
+
+/* the subtitle is the title's next line on the source (one paragraph): 10px up into the title's
+   line box */
+body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box > p {
+  margin-top: calc(-1 * var(--space-block-s));
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--paragraph-line-height-l-nested);
+  text-indent: var(--corp-banner-title-indent);
+}
+
+body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box ~ p {
+  margin-left: var(--space-block);
+}
+
+body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box + p {
+  margin-top: calc(1lh + var(--space-block));
+}
+
+body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box ~ :where(p ~ p) {
+  padding-left: var(--corp-paragraph-indent);
+}
+
+body.long-page-detail-corp.bacs main .hero-corp.banner .hero-corp-text-box + p + :where(p) {
+  margin-top: calc(1lh + 2 * var(--space-block));
+}
+
 /* ---- theme `large-headlines`: the page's Large Headlines are plain text in its white `headline-box`
    sections, sized like stryker.com's Large Headline (.c-largeheadline span.fontsize-Nvw: N% of
    the content width, capped at N x 14px, twice the % below 600px; measured on the endoscopy
