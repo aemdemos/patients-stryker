@@ -2849,7 +2849,8 @@ var CustomImportScript = (() => {
     });
     tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
       const open = t.raw !== void 0 ? t : t.pair;
-      const words = [...new Set(open.words)];
+      const unique = [...new Set(open.words)];
+      const words = [...unique.filter((w) => !/\d/.test(w)), ...unique.filter((w) => /\d/.test(w))];
       let out = "";
       if (!open.merged && words.length) out = t.raw !== void 0 ? `:start-${words.join("-")}:` : ":end:";
       t.node.nodeValue = t.node.nodeValue.slice(0, t.start) + out + t.node.nodeValue.slice(t.end);

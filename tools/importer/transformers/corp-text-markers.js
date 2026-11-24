@@ -116,7 +116,10 @@ function convertContainer(nodes, dropped) {
   // replace, last first so the offsets in each node stay valid
   tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
     const open = t.raw !== undefined ? t : t.pair;
-    const words = [...new Set(open.words)];
+    // a word with digits (hl15 …) goes last: EDS reads `:name:` as a marker only when its
+    // digits end the name
+    const unique = [...new Set(open.words)];
+    const words = [...unique.filter((w) => !/\d/.test(w)), ...unique.filter((w) => /\d/.test(w))];
     let out = '';
     if (!open.merged && words.length) out = t.raw !== undefined ? `:start-${words.join('-')}:` : ':end:';
     t.node.nodeValue = t.node.nodeValue.slice(0, t.start) + out + t.node.nodeValue.slice(t.end);

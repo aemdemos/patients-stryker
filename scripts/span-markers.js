@@ -9,7 +9,8 @@
  *   :start-blue-serif-l:Our mission:end:
  *   → <span class="text-marker color-blue ts-serif ts-l">Our mission</span>
  *
- * Words (any order, joined by "-"):
+ * Words (any order, joined by "-"; a word with digits, e.g. hl15, goes last: EDS turns
+ * `:name:` into a marker only when its digits end the name):
  *   colour   blue, gold, purple, teal, navy, grey / gray, white, light-gray (the color-* classes)
  *   font     serif (Egyptienne), sans (Futura), body (Humanist), upper (capitals)
  *   size     s, l, xl, xxl: 0.8 / 1.25 / 1.5 / 1.75 times the surrounding text (the sheet adds
