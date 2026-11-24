@@ -498,6 +498,136 @@ placed on every page by the Fragment block; nothing to choose. **How close:** th
 checked match stryker.com. **To do:** re-import the older shared fragment documents with today's
 migration, so all 1,390 placements look right.
 
+# 12. Variants and properties: the full list
+
+A **variant** is a different layout or content structure (the first choice when adding a block). A
+**property** is a named choice on top of it: a colour, a position, a switch. Most are set in the
+**Block options panel**; a few are section styles (marked). Fonts, sizes and coloured words are not
+counted here: they are the shared **Text style** set, the same in every block (section 12.2).
+
+## 12.1 The count
+
+| Block | Variants on stryker.com (package) | Variants now | Property groups | Named choices |
+|---|---|---|---|---|
+| Columns | 6 | **10** layouts (5 main + 5 widths real pages use) | 8 | 45 |
+| Panel | 1 | **1** | 4 | 19 |
+| Cards | 12 | **8** card types | 6 | 27 |
+| Hero | 9 | **5** layouts | 11 | 43 |
+| Section layout | 4 | **4** section styles | none | 0 |
+| Video | 3 | **1** (the player follows the link) | 1 | 3 |
+| Statistics | 5 | **1** | 4 | 15 |
+| Table | 3 | **1** | 2 | 4 |
+| Accordion | 2 | **1** | 1 | 3 |
+| Tabs | 1 | **1** | none | 0 |
+| Carousel | 2 | **2** (image slides, split slides) | (section styles) | 5 |
+| Widget | 5 | **5** app types | none | 0 |
+| Form | 4 | **1** (Marketo); 3 wait for Stryker | none | 0 |
+| Sticky navigation | 1 | **1** | none | 0 |
+| Local navigation | 1 | **1** | 1 | 1 |
+| Chart | 3 | **3** chart types | 1 | 1 |
+| Media gallery | 3 | **2** | none | 0 |
+| Interactive image | 1 | **1** | none | 0 |
+| News list | 1 | **1** | 1 | 1 |
+| Event calendar | 1 | **1** | none | 0 |
+| Social share | 1 | **1** | 1 | 2 |
+| Fragment | 1 | **1** | none | 0 |
+| **Total** | **70** | **53** | | **169** |
+
+*Named choices* counts every choice except the variants themselves, including the default of each
+group (for example *Medium (5%)*). Six blocks have nothing to choose at all, because stryker.com uses one
+look: Tabs, Form, Sticky navigation, Interactive image, Event calendar and Fragment.
+
+## 12.2 Shared by every block: Text style
+
+| Property | Choices |
+|---|---|
+| Text size | normal, 0.8×, 1.25×, 1.5×, 1.75×, 2×, 2.5× |
+| Headline size (grows with the screen) | S (1.5), M (2), L (3), XL (4.5) |
+| Font | body (Humanist), serif (Egyptienne), sans (Futura bold) |
+| Text colour | gold, white, blue, purple, teal, navy, grey, light grey, black, mid grey, dark gold, pale grey |
+| Line box (a box around one line) | the 9 box colours of Columns: white, light grey, gold, blue, purple, teal, dark grey, dark blue gradient, dark purple gradient |
+
+## 12.3 Block by block
+
+**Columns**
+
+- *Layout (variant):* two equal, narrow + wide, wide + narrow, three equal, four equal; three quarters +
+  quarter, quarter + three quarters, wide + narrow (70 / 30), icon + text (1/5, 4/5), quarter + quarter +
+  half.
+- *Cell box:* none, white with soft shadow, light grey, gold, blue, purple, teal, dark blue gradient, dark
+  grey, dark purple gradient. *Which cell:* last, first, every cell. *Text spacing in a box:* none, small
+  (3%), medium (5%), large (10%).
+- *Image border:* none, grey, teal, black. *Text:* centred.
+- *First line of the text:* as written, in a light grey box, a gold bar, a dark grey bar, a blue bar.
+- *Text look (switches):* large headline, serif lead paragraph, serif captions, pull quote in the last
+  cell, large pull quote beside a photo, numbered quotes.
+- *Row looks (switches):* linked images, one per row on phones, related links, link groups, icon beside
+  text, page title beside a photo, caption right under the photo, images centred at their size, photo two
+  thirds wide on phones, rule under the first cell, line below the row, first cell right-aligned (labels).
+
+**Panel**
+
+- *Box colour:* white, gold, light grey, gold gradient, blue, blue gradient, teal, purple, dark grey,
+  purple gradient. *Gradient direction:* left to right, right to left, bottom to top (gradient boxes only).
+- *Inner spacing:* none, small, medium, large. *Switches:* soft shadow, centred text.
+
+**Cards**
+
+- *Card type (variant):* image, video, teaser, resources, product grid, category tiles, text only, one wide
+  card.
+- *Cards per row:* two, three, four, five, six. *Image border:* none, grey, teal, black.
+- *Card box:* none, white, gold, light grey, blue, teal, purple, dark grey. *Text spacing in a box:* none,
+  small, medium, large.
+- *Switches:* soft shadow, centred text, title above the image, image only, card text in a box; for
+  teasers: no description.
+
+**Hero**
+
+- *Layout (variant):* image slide, page intro (text + image), tagline band, large header, long text.
+- *Image slide:* headline box (none + 8 colours: white, gold, blue, light grey, dark grey, gold
+  gradient, purple gradient, blue gradient); headline column (left, right, wide); headline height (top,
+  upper, middle, lower); title colour and subline colour (as written, gold, white, light grey, blue);
+  stripe under the slide (none, gold, gold gradient); framed with shadow; video background; on phones
+  (text over, below or above the image); black text on phones.
+- *Tagline band:* band colour (gold, purple gradient, gold gradient).
+- *Page intro:* no image, no grey rule, black title.
+
+**Section layout** (section styles): side by side in equal parts; wide + narrow (67/33); narrow +
+wide (33/67); side by side on phones too.
+
+**Video:** black border, autoplay (muted), loop.
+
+**Statistics**
+
+- *Number colour:* gold, navy, purple, teal, white. *Number size:* small, medium, large.
+- *Numbers per row:* one, two, three, four, six. *Switches:* centred, number and text on one line.
+
+**Table:** header row or none; rows as lines on phones; data from a sheet.
+
+**Accordion:** panels start open, line under each label, lists in a light grey box.
+
+**Tabs:** none (one look; each tab is a section).
+
+**Carousel** (section styles on the slides): autoplay, fade; split slides with a band colour (purple
+gradient, blue gradient, dark grey). Image slides take the Hero's image-slide properties.
+
+**Widget:** the app type (product explorer, calculator, map, medical information request, Cvent
+calendar); no properties.
+
+**Form:** the Marketo form as it is; no properties.
+
+**Sticky navigation, Interactive image, Event calendar, Fragment:** no properties.
+
+**Local navigation:** no top line.
+
+**Chart:** chart type (columns, bars, pie); values on the bars (not for pies).
+
+**Media gallery:** gallery or 360° spin.
+
+**News list:** show dates.
+
+**Social share:** grey icons, right aligned.
+
 # Glossary
 
 | Term | Meaning |
