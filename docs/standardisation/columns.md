@@ -40,7 +40,7 @@ that is one of the named colours.
 | Outer spacing, right | **8** | 43 | 0 (standard) | **98%** | 4 (14), 5 (9), 2 (6), 3 (5) |
 | Font size | **39** | 8,473 | 6 + 4 | **97%** | 1.25× (4,580), 1.5× (1,432), 1.75× (489), 2× (430) |
 | Font | **6** | 4,905 | 3 | **99%** | Futura bold (3,040), Egyptienne (1,827) |
-| Text colour | **22** | 2,087 | 8 + 4 | **98%** | gold (703 + 401 written differently), black (195), white (147) |
+| Text colour | **22** | 2,087 | 11 | **98%** | gold (703 + 401 written differently), black (195), white (147) |
 | Box / background colour | **6** | 74 | 10 | **100%** | light grey (52 + 8), gold (8 + 3) |
 | Image border colour | **9** | 161 | 3 | **96%** | grey (93 + 10), black (38), teal (6) |
 | Video border colour | **1** | 1 | 1 | **100%** | black (1) |
@@ -270,8 +270,8 @@ Only the package's limited sets are offered; every stryker.com value joins the n
 | Text size | normal, 0.8×, 1.25×, 1.5×, 1.75×, 2×, 2.5× | within about 10% of a step. 2.5× is kept (753 uses, mostly big figures in boxes); 3.5× was dropped and joins 2.5× |
 | Headline size (grows with the screen) | **S 1.5**, **M 2**, **L 3**, **XL 4.5** (% of the width) | 17 values today, each joins the nearest by proportion: 1–1.5 → S (862 uses), 2 → M (787), 2.5–3.5 → L (1,245), 4–9 → XL (690). 73% are within 12.5% of their step, 96% within a quarter step |
 | Font | body, serif (Egyptienne), sans (Futura bold) | the 6 font looks of stryker.com |
-| Text colour | the 8 brand colours (blue, gold, purple, teal, navy, grey, white, light grey) and 4 Stryker colours its own components use: black, mid grey #b2b4ae, dark gold #af6d04, pale grey #dfe1de | exact values only, never blended; the same colour written two ways counts once. A charcoal (#323232, 93 uses) is a code typed by authors, not a component colour, so it is not a choice (section 7) |
-| Line box | the 9 cell box colours | exact values |
+| Text colour | the 7 brand colours stryker.com text uses (blue, gold, purple, teal, grey, white, light grey) and 4 more Stryker colours: black, mid grey #b2b4ae, dark gold #af6d04, pale grey #dfe1de | exact values only, never blended; the same colour written two ways counts once. A charcoal (#323232, 93 uses) is a code typed by authors, not a component colour, so it is not a choice (section 7) |
+| Line box | the 6 colours stryker.com puts around a single line: gold, blue, purple, teal, dark grey, dark purple gradient | exact values |
 
 Two fixes make the text read as on stryker.com:
 
@@ -354,7 +354,7 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 | Imported pages keep working: the old option names are read as the new ones | The old names stay readable for existing pages, so two spellings exist until those pages are re-saved |
 | Phones behave exactly as today | |
 | The panel greys out choices that don't fit the selected row and says why, so authors don't pick options that do nothing | Authors learn one rule: whole row in Block options, a few words in Text style |
-| Text keeps stryker.com's colours, sizes and fonts with normal and 6 text sizes, 4 headline sizes and 12 colours | Headlines between two steps (and 3.5× text) move by one step |
+| Text keeps stryker.com's colours, sizes and fonts with normal and 6 text sizes, 4 headline sizes and 11 colours | Headlines between two steps (and 3.5× text) move by one step |
 
 ---
 
@@ -365,7 +365,8 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 1. **Text look** in Block options (section 5.6): whole-row text looks as one choice per row, a small
    departure from the package rule "fonts and sizes are never block options".
 2. The **limited text sets** (section 5.7): normal and 6 text sizes, headline sizes S 1.5 / M 2 / L 3 / XL 4.5,
-   the 8 brand colours plus black, mid grey, dark gold and pale grey. Charcoal is not a choice.
+   11 colours (7 brand colours plus black, mid grey, dark gold and pale grey). Charcoal and navy are
+   not text choices.
 3. Removing the review-only gate (section *Review status*), so real pages get the new rendering and
    the migration writes Text style markers for every page.
 

@@ -42,7 +42,7 @@ a colour that is one of the named colours.
 | Outer spacing, right | **11** | 19 | 0 (standard) | **32%** | 40 (4), 1 (3), 30 (2), 20 (2) |
 | Font size | **30** | 1,067 | 6 + 4 | **87%** | 1.5× (171), 1.25× (145), 1.5% of the width (133), 3% of the width (113) |
 | Font | **4** | 872 | 3 | **100%** | Futura bold (585), Egyptienne (285) |
-| Text colour | **19** | 862 | 8 + 4 | **97%** | gold (222 + 166 written differently), black (124), white (122) |
+| Text colour | **19** | 862 | 11 | **97%** | gold (222 + 166 written differently), black (124), white (122) |
 | Box / background colour | **10** | 52 | 10 | **100%** | gold (35 + 1), dark grey (7), dark gold (3) |
 | Video border colour | **2** | 6 | 1 | **83%** | black (5), grey (1) |
 | Text alignment | **4** | 506 | 2 | **99%** | left (480 + 14), centred (7), right (5) |

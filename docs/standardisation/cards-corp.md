@@ -40,7 +40,7 @@ one of the named colours.
 | Outer spacing, right | **5** | 66 | 0 (standard) | **100%** | 5 (33), 0 (16), 2 (7), 10 (5) |
 | Font size | **26** | 4,535 | 6 + 4 | **95%** | 1.25× (2,000), 1.5× (1,352), 1.75× (367), 0.8× (278) |
 | Font | **7** | 3,678 | 3 | **99%** | Futura bold (2,787), Egyptienne (869), Roboto (15) |
-| Text colour | **23** | 1,692 | 8 + 4 | **97%** | gold (483), pale grey #edeeec (240), black (234), white (144) |
+| Text colour | **23** | 1,692 | 11 | **97%** | gold (483), pale grey #edeeec (240), black (234), white (144) |
 | Box / background colour | **19** | 150 | 10 | **95%** | light grey (25 + 19 written differently), gold (24 + 19) |
 | Image border colour | **10** | 252 | 3 | **95%** | black (93), teal (61), grey (36), a lighter grey (19) |
 | Text alignment | **3** | 3,533 | 2 | **100%** | left (2,506 + 84), centred (943) |

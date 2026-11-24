@@ -9,7 +9,7 @@
  * words the site understands.
  */
 import {
-  COLOURS, FONTS, SIZES, STEPS, DECORATIONS, SPACING,
+  COLOURS, FONTS, SIZES, DECORATIONS, SPACING,
 } from '../../scripts/span-markers.js';
 import libraryOptions, { labelOf } from '../library-options.js';
 
@@ -20,7 +20,6 @@ const LABELS = {
   gold: 'Gold',
   purple: 'Purple',
   teal: 'Teal',
-  navy: 'Navy',
   grey: 'Grey',
   white: 'White',
   'light-gray': 'Light grey',
@@ -32,22 +31,25 @@ const LABELS = {
   xl: 'X-large (1.5×)',
   xxl: 'XX-large (1.75×)',
   'rule-gold': 'Gold rule (underlined heading)',
-  'box-white': 'Box: white',
-  'box-gray': 'Box: light grey',
   'box-gold': 'Box: gold',
   'box-blue': 'Box: blue',
   'box-purple': 'Box: purple',
   'box-teal': 'Box: teal',
   'box-dark': 'Box: dark grey (news: dark quote box)',
-  'box-dark-blue-gradient': 'Box: dark blue gradient',
   'box-dark-purple-gradient': 'Box: dark purple gradient',
 };
+// words the site still reads (older content) but the panel doesn't offer: they style no text on
+// stryker.com (content export, styled runs): navy and capitals have no use, and no single line
+// sits in a white, light grey or dark blue gradient box (those are cell or card boxes)
+const NOT_OFFERED = new Set(['navy', 'upper', 'box-white', 'box-gray', 'box-dark-blue-gradient']);
+const offered = (words) => words.filter((w) => !NOT_OFFERED.has(w));
+
 // the choices per group: built in, or set by the library sheet (tools/library-options.js)
 const lists = {
-  colour: [...COLOURS],
-  font: FONTS.filter((f) => f !== 'upper'),
-  size: [...SIZES],
-  look: [...DECORATIONS],
+  colour: offered(COLOURS),
+  font: offered(FONTS),
+  size: offered(SIZES),
+  look: offered(DECORATIONS),
 };
 const BUILT_IN = {
   colour: COLOURS, font: FONTS, size: SIZES, look: DECORATIONS,
@@ -62,29 +64,18 @@ async function loadLists() {
   const groups = await libraryOptions('text-style');
   Object.keys(lists).forEach((key) => {
     if (!groups.has(key)) return;
-    const words = groups.get(key).filter(([word]) => BUILT_IN[key].includes(word)
-      || (/^[a-z0-9]+$/.test(word) && !SPACING[word]));
+    const words = groups.get(key).filter(([word]) => !NOT_OFFERED.has(word)
+      && (BUILT_IN[key].includes(word) || (/^[a-z0-9]+$/.test(word) && !SPACING[word])));
     if (!words.length) return;
     lists[key] = words.map(([word]) => word);
     words.forEach(([word, label]) => { if (label) LABELS[word] = label; });
   });
 }
 
-const STEP_LABELS = {
-  xs: 'XS (5px)', s: 'S (10px)', m: 'M (15px)', l: 'L (20px)', xl: 'XL (30px)',
-};
-const SIDES = [
-  ['', 'All sides'],
-  ['t', 'Top'],
-  ['r', 'Right'],
-  ['b', 'Bottom'],
-  ['l', 'Left'],
-  ['x', 'Left and right'],
-  ['y', 'Top and bottom'],
-];
-
+// spacing (padding, margin) is not a Text style choice: on stryker.com it belongs to the box
+// (Block options) or the block's standard gap; the site still reads older spacing words
 const state = {
-  colour: '', font: '', upper: false, size: '', look: '', padding: { side: 'x', step: '' }, margin: { side: 'y', step: '' },
+  colour: '', font: '', size: '', look: '',
 };
 
 const el = (tag, attrs = {}, ...children) => {
@@ -103,13 +94,9 @@ function markerWords() {
   const words = [];
   if (state.colour) words.push(state.colour);
   if (state.font) words.push(state.font);
-  if (state.upper) words.push('upper');
   const digits = /\d/.test(state.size || '');
   if (state.size && !digits) words.push(state.size);
   if (state.look) words.push(state.look);
-  [['p', state.padding], ['m', state.margin]].forEach(([kind, { side, step }]) => {
-    if (step) words.push(`${kind}${side}`, step);
-  });
   // a word with digits (the headline sizes hl15, hl2, hl3, hl45) goes last: EDS reads `:name:` as a
   // marker only when its digits end the name
   if (state.size && digits) words.push(state.size);
@@ -235,16 +222,6 @@ function choiceGroup(title, options, current, onPick, { swatch = false } = {}) {
   });
   group.append(row);
   return group;
-}
-
-function spacingGroup(title, kind) {
-  const value = state[kind];
-  const sideSelect = el('select', { 'aria-label': `${title} side`, onchange: (e) => { value.side = e.target.value; updatePreview(); } });
-  SIDES.forEach(([v, label]) => sideSelect.append(el('option', { value: v, selected: v === value.side }, label)));
-  const stepSelect = el('select', { 'aria-label': `${title} size`, onchange: (e) => { value.step = e.target.value; updatePreview(); } });
-  stepSelect.append(el('option', { value: '' }, 'None'));
-  Object.keys(STEPS).forEach((step) => stepSelect.append(el('option', { value: step }, STEP_LABELS[step] || step)));
-  return el('fieldset', { class: 'tm-group' }, el('legend', {}, title), el('div', { class: 'tm-row' }, sideSelect, stepSelect));
 }
 
 // containers the editor wraps a selection in (a selection inside a block comes back inside
@@ -692,13 +669,10 @@ function render() {
     'div',
     { class: 'tm-choices-wrap' },
     choiceGroup('Colour', lists.colour, state.colour, (v) => { state.colour = v; }, { swatch: true }),
-    choiceGroup('Font', lists.font.filter((f) => f !== 'upper'), state.font, (v) => { state.font = v; }),
-    el('label', { class: 'tm-check' }, el('input', { type: 'checkbox', onchange: (e) => { state.upper = e.target.checked; updatePreview(); } }), 'Capitals (word “upper”)'),
+    choiceGroup('Font', lists.font, state.font, (v) => { state.font = v; }),
     choiceGroup('Size (relative to the text around it)', lists.size, state.size, (v) => { state.size = v; }),
     choiceGroup('Special look', lists.look, state.look, (v) => { state.look = v; }),
-    spacingGroup('Padding', 'padding'),
-    spacingGroup('Margin', 'margin'),
-    el('p', { class: 'tm-hint' }, 'Top and bottom spacing applies when the whole line is styled; inside a line only left and right show. Bold and italic stay normal editor formatting.'),
+    el('p', { class: 'tm-hint' }, 'A box look puts the whole line in a box. Bold and italic stay normal editor formatting; spacing around a box is set in Block options.'),
   );
 
   const apply = el('button', { type: 'button', class: 'tm-primary', onclick: applyToSelection }, 'Style selected text');

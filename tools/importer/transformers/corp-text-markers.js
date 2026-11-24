@@ -22,9 +22,15 @@ export const STD_DRAFT_IMPORT = typeof STD_DRAFT !== 'undefined' && STD_DRAFT ==
 const SIZE_WORDS = {
   '0-8': 's', '1-25': 'l', '1-5': 'xl', '1-75': 'xxl', 2: 'xxxl', '2-5': 'xxxxl',
 };
-const COLOURS = ['gold', 'white', 'blue', 'purple', 'teal', 'navy', 'grey', 'light-gray'];
-const LOOKS = ['rule-gold', 'box-white', 'box-gray', 'box-gold', 'box-blue', 'box-purple', 'box-teal',
-  'box-dark', 'box-dark-blue-gradient', 'box-dark-purple-gradient'];
+// only the words the Text style panel offers (tools/text-markers): no navy (no stryker.com text
+// uses it), and line boxes only in the colours stryker.com puts around a single line
+const COLOURS = ['gold', 'white', 'blue', 'purple', 'teal', 'grey', 'light-gray'];
+// the Stryker colours the Text style panel adds (library sheet words, class ts-<word>)
+const EXTRA_COLOURS = {
+  black: 'black', 'dark-gold': 'darkgold', 'mid-grey': 'midgrey', 'pale-grey': 'palegrey',
+};
+const LOOKS = ['rule-gold', 'box-gold', 'box-blue', 'box-purple', 'box-teal', 'box-dark',
+  'box-dark-purple-gradient'];
 // the package's four headline sizes (S, M, L, XL); every stryker.com size (17 values) takes the
 // nearest, by ratio: 1 → S, 2.5 → L, 3.5 → L, 4 → XL, 5 and up → XL
 const HEADLINE_STEPS = [1.5, 2, 3, 4.5];
@@ -70,6 +76,7 @@ export function markerWords(raw, dropped) {
     if (m) return [headlineWord(Number((m[1] || m[2]).replace('-', '.')))];
     m = c.match(/^color-([a-z-]+)$/);
     if (m && COLOURS.includes(m[1])) return [m[1]];
+    if (m && EXTRA_COLOURS[m[1]]) return [EXTRA_COLOURS[m[1]]];
     if (c === 'serif') return ['serif'];
     if (c === 'body-font') return ['body'];
     if (c === 'futura-bold') return ['sans'];

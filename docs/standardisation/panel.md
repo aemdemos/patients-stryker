@@ -39,7 +39,7 @@ the named colours.
 | Outer spacing, right | **14** | 84 | 0 (standard) | **82%** | 0 (28), 5 (20), 4 (9), 10 (8) |
 | Font size | **12** | 1,447 | 6 + 4 | **96%** | 1.5× (653), 1.25× (494), 1.75× (108), 2× (94) |
 | Font | **4** | 1,313 | 3 | **100%** | Futura bold (986), Egyptienne (323) |
-| Text colour | **12** | 837 | 8 + 4 | **99%** | gold (356), black (190), white (179), purple (51) |
+| Text colour | **12** | 837 | 11 | **99%** | gold (356), black (190), white (179), purple (51) |
 | Box / background colour | **22** | 670 | 10 | **99%** | gold (411 + 77 written differently), light grey (33 + 26) |
 | Text alignment | **4** | 863 | 2 | **100%** | left (742 + 29), centred (91), right (1) |
 
@@ -155,7 +155,7 @@ Only the limited sets agreed for Columns are offered; every stryker.com value jo
 | Text size | normal, 0.8×, 1.25×, 1.5×, 1.75×, 2×, 2.5× (relative to the text it sits in, so a 1.5× heading is 1.5 times the heading size) |
 | Headline size (grows with the screen) | S 1.5, M 2, L 3, XL 4.5 (% of the width) |
 | Font | body, serif (Egyptienne), sans (Futura bold) |
-| Text colour | the 8 brand colours (blue, gold, purple, teal, navy, grey, white, light grey) and black, mid grey, dark gold, pale grey |
+| Text colour | 11: blue, gold, purple, teal, grey, white, light grey, black, mid grey, dark gold, pale grey |
 
 **The box colour sets the text colour.** On blue, teal, purple, dark grey and the blue and purple
 gradients the text is white, as stryker.com's boxes set it (179 white text uses in boxes); on white,

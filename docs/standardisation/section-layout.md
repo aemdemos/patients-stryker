@@ -40,7 +40,7 @@ within about 10% of a size step, a colour that is one of the named colours.
 | Outer spacing, right | **2** | 4 | 0 (standard) | **100%** | 2 (3), 5 (1) |
 | Font size | **11** | 143 | 6 + 4 | **98%** | 1.25× (84), 1.5× (36), 1.75× (8), 1× (6) |
 | Font | **2** | 73 | 3 | **100%** | Futura bold (60), Egyptienne (13) |
-| Text colour | **8** | 31 | 8 + 4 | **100%** | gold (9), purple (9), black (7), white (2) |
+| Text colour | **8** | 31 | 11 | **100%** | gold (9), purple (9), black (7), white (2) |
 | Box / background colour | **2** | 2 | 10 | **100%** | gold (1 + 1 written differently) |
 | Image border colour | **2** | 2 | 3 | **50%** | dark grey (1), black (1) |
 | Video border colour | **1** | 1 | 1 | **100%** | black (1) |

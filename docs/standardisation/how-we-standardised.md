@@ -12,7 +12,7 @@ date: "November 24, 2026"
 | Outer spacing values (margin, per side) | **18 to 35** | **0**: one standard gap |
 | Font sizes | **49** | **11**: normal, 6 text sizes, 4 headline sizes |
 | Fonts | **9** ways of writing them | **3** |
-| Text colours | **27** | **12** |
+| Text colours | **27** | **11** |
 | Box and background colours | **25** | **10** |
 | Image border colours | **12** | **3** |
 | Block variants | **70** | **53** |
@@ -37,7 +37,7 @@ accordions opened: 2,340 live pages. Only what the live site shows is counted.*
 | Font size | 49 | 16,907 | 11 (normal + 6 text + 4 headline) | −78% | 96% |
 | Headline size (grows with the screen) | 17 | 3,584 | 4 (S, M, L, XL) | −76% | 96% within a quarter step |
 | Font | 9 | 11,648 | 3 | −67% | 99% |
-| Text colour | 27 | 5,867 | 12 | −56% | 97% |
+| Text colour | 27 | 5,867 | 11 | −59% | 97% |
 | Box / background colour | 25 | 959 | 10 | −60% | 98% |
 | Image border colour | 12 | 415 | 3 | −75% | 95% |
 | Video border colour | 5 | 875 | 1 (black) | −80% | 99% |
@@ -60,12 +60,18 @@ section 4).
 | Text size | normal, 0.8×, 1.25×, 1.5×, 1.75×, 2×, 2.5× | Text style |
 | Headline size | S (1.5), M (2), L (3), XL (4.5), in % of the screen width | Text style |
 | Font | body (Humanist), serif (Egyptienne), sans (Futura bold) | Text style |
-| Text colour | the 8 brand colours: gold, white, blue, purple, teal, navy, grey, light grey; plus 4 Stryker colours: black, mid grey #b2b4ae, dark gold #af6d04, pale grey #dfe1de | Text style |
+| Text colour | gold, white, blue, purple, teal, grey, light grey (brand colours), black, mid grey #b2b4ae, dark gold #af6d04, pale grey #dfe1de | Text style |
+| Box around one line | gold, blue, purple, teal, dark grey, dark purple gradient | Text style |
 | Box colour | white, light grey, gold, blue, purple, teal, dark grey, gold gradient, blue gradient, purple gradient | Block options |
 | Image border | grey, teal, black | Block options |
 | Text alignment | left (default), centred | Block options |
 
 Every colour is the exact stryker.com value: no colour was blended or approximated.
+
+**Not offered in Text style, because no stryker.com text uses it** (content export, 50,437 styled runs
+of text): capitals (0 runs), navy (0 runs; still a box and number colour), spacing around words
+(padding and margin belong to the box: Block options, or the block's standard gap), and boxes around a
+line in white, light grey or dark blue gradient (those are cell and card box colours).
 
 # 4. How values were grouped
 
@@ -98,7 +104,7 @@ left / right.*
 | Outer spacing | 27 / 17 / 7 / 8 values | standard gap | 82 / 97 / 61 / 98% |
 | Font size | 39 | 11 | 97% |
 | Font | 6 | 3 | 99% |
-| Text colour | 22 | 12 | 98% |
+| Text colour | 22 | 11 | 98% |
 | Box colour | 6 | 9 + none | 100% |
 | Image border colour | 9 | 3 | 96% |
 | Text alignment | 4 | 2 | 99% |
@@ -112,7 +118,7 @@ left / right.*
 | Outer spacing | 18 / 11 / 5 / 5 values | standard gap | 64 / 97 / 100 / 100% |
 | Font size | 26 | 11 | 95% |
 | Font | 7 | 3 | 99% |
-| Text colour | 23 | 12 | 97% |
+| Text colour | 23 | 11 | 97% |
 | Box colour | 19 | 7 + none | 95% |
 | Image border colour | 10 | 3 | 95% |
 | Text alignment | 3 | 2 | 100% |
@@ -126,7 +132,7 @@ left / right.*
 | Outer spacing | 23 / 15 / 15 / 14 values | standard gap | 77 / 93 / 94 / 82% |
 | Font size | 12 | 11 | 96% |
 | Font | 4 | 3 | 100% |
-| Text colour | 12 | 12 | 99% |
+| Text colour | 12 | 11 | 99% |
 | Box colour | 22 | 10 | 99% |
 | Gradient direction | 4 | 3 | 97% |
 | Text alignment | 4 | 2 | 100% |
@@ -139,7 +145,7 @@ left / right.*
 | Outer spacing | 12 / 9 / 9 / 11 values | standard gap | 95 / 99 / 91 / 32% |
 | Font size | 30 | 11 | 87% |
 | Font | 4 | 3 | 100% |
-| Text colour | 19 | 12 | 97% |
+| Text colour | 19 | 11 | 97% |
 | Box colour | 10 | 8 + none | 100% |
 | Headline position | 189 | 12 | 93% within 10% |
 | Text alignment | 4 | 2 | 99% |
@@ -152,7 +158,7 @@ left / right.*
 | Outer spacing | 4 / 2 values | standard gap | 70 / 100% |
 | Font size | 9 | 11 | 100% |
 | Font | 4 | 3 | 99% |
-| Text colour | 11 | 12 | 97% |
+| Text colour | 11 | 11 | 97% |
 | Box colour | 2 | 10 | 36% (pale grey lists become *Lists in a light grey box*) |
 | Text alignment | 4 | 2 | 99% |
 
@@ -164,7 +170,7 @@ left / right.*
 | Outer spacing (top) | 1 value | standard gap | 100% |
 | Font size | 9 | 11 | 100% |
 | Font | 2 | 3 | 100% |
-| Text colour | 14 | 12 | 97% |
+| Text colour | 14 | 11 | 97% |
 | Text alignment | 4 | 2 | 99% |
 
 **Section layout** (side-by-side rows, 1,054)
@@ -174,7 +180,7 @@ left / right.*
 | Inner spacing | 6 / 4 / 5 / 3 values | 4 steps | 88 / 100 / 92 / 100% |
 | Outer spacing | 6 / 4 / 2 / 2 values | standard gap | 95 / 86 / 0 / 100% |
 | Font size | 11 | 11 | 98% |
-| Text colour | 8 | 12 | 100% |
+| Text colour | 8 | 11 | 100% |
 | Column widths | any | 4 section styles | 100% |
 
 **Carousel** (30)
@@ -183,7 +189,7 @@ left / right.*
 |---|---|---|---|
 | Font size | 14 | 11 | 82% |
 | Font | 2 | 3 | 100% |
-| Text colour | 8 | 12 | 100% |
+| Text colour | 8 | 11 | 100% |
 | Speed | 6 (2.5 to 10 seconds) | 1 (5 seconds) | by design |
 
 **Statistics** (82)
@@ -193,7 +199,7 @@ left / right.*
 | Number colour | 6 | 5 | 99% (dark gold joins gold) |
 | Number size | 10 | 3 (2.5–4 → small 11, 4.5–6 → medium 42, 6.5–9 → large 17) | nearest step |
 | Label font size | 6 | 11 | 68% |
-| Label colour | 9 | 12 | 88% |
+| Label colour | 9 | 11 | 88% |
 | Alignment | 2 | 2 | 100% |
 
 **Video** (1,255)

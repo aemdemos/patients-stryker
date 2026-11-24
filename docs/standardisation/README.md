@@ -56,7 +56,7 @@ Three principles:
 
 ## 4. Part 1: styling words inside a line (Text style panel)
 
-**What it is for:** a gold word in a white headline, a larger serif phrase, a label in capitals.
+**What it is for:** a gold word in a white headline, a larger serif phrase, a box around one line.
 
 ![Text style panel: the selected words previewed inside their banner](img/text-style-panel.jpg)
 
@@ -71,8 +71,8 @@ Three principles:
 
 | Choice | Options |
 |---|---|
-| Colour | Blue, gold, purple, teal, navy, grey, white, light grey (brand colours) |
-| Font | Serif (Egyptienne), Sans (Futura), Body (Humanist), Capitals |
+| Colour | Blue, gold, purple, teal, grey, white, light grey, black, mid grey, dark gold, pale grey |
+| Font | Serif (Egyptienne), Sans (Futura), Body (Humanist) |
 | Size | Small 0.8×, Large 1.25×, X-large 1.5×, XX-large 1.75× (relative to the text around it) |
 | Spacing | 5, 10, 15, 20 or 30 px of padding or margin, on any side |
 
