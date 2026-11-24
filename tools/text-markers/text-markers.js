@@ -173,7 +173,8 @@ function paintSwatches(container) {
   container.querySelectorAll('[data-colour]').forEach((button) => {
     const probe = doc.createElement('span');
     const { colour } = button.dataset;
-    probe.className = COLOURS.includes(colour) ? `color-${colour}` : `text-marker ts-${colour}`;
+    // styled like a marked word on the page: the corp colours apply to span.text-marker only
+    probe.className = `text-marker ${COLOURS.includes(colour) ? `color-${colour}` : `ts-${colour}`}`;
     probe.textContent = 'x';
     doc.querySelector('main').append(probe);
     button.style.setProperty('--swatch', doc.defaultView.getComputedStyle(probe).color);
