@@ -681,6 +681,18 @@ body.corp .columns.gold-headline-first.block > div > div:first-child :is(p, li) 
   line-height: calc(var(--body-font-size-xl) * var(--paragraph-line-height));
 }
 
+/* …on phones, where the cells stack, 20px between the gold box and
+   the cell under it */
+body.corp .columns.gold-headline-first.block > div > :where(div:first-child) {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.gold-headline-first.block > div > :where(div:first-child) {
+    margin-bottom: 0;
+  }
+}
+
 /* …and the Bold name that opens the text under an image, its sizes on the next line (stryker.com
    MIS cutting accessories "Precision round" / "2.0 mm, 3.0 mm…"): Futura bold */
 body.corp .columns.product-names .columns-img-col + p:not(.columns-bold) > strong:first-child {
