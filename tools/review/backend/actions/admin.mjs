@@ -48,7 +48,7 @@ import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
 import {
   backup, listBackups, restoreCheck, restore,
 } from '../lib/backup.mjs';
-import { dbCheck } from '../lib/db.mjs';
+import { dbCheck, dbConsistency } from '../lib/db.mjs';
 
 // operations that change entries: the review's summary is built again after them
 const WRITES = ['status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test', 'restore'];
@@ -111,6 +111,7 @@ async function run(params) {
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
     if (op === 'backup') return ok(await backup(stores));
     if (op === 'db-check') return ok(await dbCheck(params));
+    if (op === 'db-consistency') return ok(await dbConsistency(params, Number(params.n) || 30));
     if (op === 'backups') return ok({ days: await listBackups(files) });
     if (op === 'restore-check') {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(params.day || '')) return bad('day: YYYY-MM-DD (admin backups lists them)');
