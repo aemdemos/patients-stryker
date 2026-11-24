@@ -16,20 +16,35 @@ import { loadScript } from '../../scripts/aem.js';
 export const MICROAPP_HOST = 'microapp.stryker.com';
 const CVENT_HOST = 'www.cvent.com';
 
+// the micro-app server lets its apps show only in pages on *.stryker.com (and local test
+// machines): it refuses the aem.page / aem.live review addresses, so there the app is a link
+const FRAMING_HOST = /(^|\.)stryker\.com$|^localhost$|^127\.0\.0\.1$/;
+
 let count = 0;
 
 /**
  * The app as a link, when it can't be shown in the page.
  * @param {Element} widget The widget block
  * @param {URL} url The app address
+ * @param {string} [note] Why it isn't shown in the page
  */
-function fallback(widget, url) {
+function fallback(widget, url, note) {
+  const box = document.createElement('div');
+  box.className = 'widget-fallback';
+  if (note) {
+    const why = document.createElement('p');
+    why.textContent = note;
+    box.append(why);
+  }
   const p = document.createElement('p');
   const a = document.createElement('a');
   a.href = url.href;
-  a.textContent = url.href;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.textContent = `Open the app: ${url.href}`;
   p.append(a);
-  widget.replaceChildren(p);
+  box.append(p);
+  widget.replaceChildren(box);
 }
 
 /**
@@ -51,6 +66,10 @@ function appTag(url) {
  * @param {URL} url The app address
  */
 async function renderMicroApp(widget, url) {
+  if (!FRAMING_HOST.test(window.location.hostname)) {
+    fallback(widget, url, 'This Stryker app shows in the page only on www.stryker.com: its server refuses review addresses.');
+    return;
+  }
   await loadScript(`${window.hlx.codeBasePath}/blocks/widget/vendor/zoid.min.js`);
   const tag = appTag(url);
   count += 1;
@@ -98,7 +117,9 @@ async function renderCvent(widget, url) {
   await loadScript(`https://${CVENT_HOST}/g/mobile/javascript/calendar-widget-loader.js?version=${version}`);
   // a calendar that doesn't render (the widget's inline handlers are refused by the site's
   // content security policy) becomes a link to the calendar
-  setTimeout(() => { if (!container.offsetHeight) fallback(widget, url); }, 15000);
+  setTimeout(() => {
+    if (!container.offsetHeight) fallback(widget, url, 'The Cvent calendar could not be shown in the page.');
+  }, 15000);
 }
 
 /**

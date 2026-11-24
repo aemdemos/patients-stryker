@@ -1,3 +1,17 @@
 .widget {
   display: block;
 }
+
+/* an app that can't be shown in the page (review addresses): a light grey box with its link */
+.widget .widget-fallback {
+  padding: var(--space-block-l);
+  background-color: var(--color-surface);
+}
+
+.widget .widget-fallback p {
+  margin: 0;
+}
+
+.widget .widget-fallback p + p {
+  margin-top: var(--space-block-s);
+}

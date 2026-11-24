@@ -16,7 +16,7 @@ Only the 30 apps shown on the live site are counted.*
 | **The situation** | Some stryker.com pages show a small application inside the page: product and procedure explorers, savings calculators, maps, medical information request forms and the training events calendar. They are not AEM content: the apps live on their own server (microapp.stryker.com) or at Cvent, and AEM only places them in the page. |
 | **The risk** | Rebuilding them would be a project of its own, and the apps must keep working when AEM goes away. |
 | **What we did** | Following the business decision, every app is **embedded as it is** through the **Widget** block. The author places the block with the app's address; the block shows the app in the page and lets it set its own height, as AEM did. The variant names what the app is. |
-| **The result** | On the review page the product explorers and calculators run exactly as on stryker.com, at the same heights on desktop and phone (900px explorers; 750px and 488px calculators on desktop, 853px fall calculator on phones). The maps and medical information requests only allow being shown on stryker.com addresses, so on the review (preview) site they show as a link to the app; they will show in the page once the site runs on www.stryker.com (section 7). |
+| **The result** | Checked on a local test machine, the product explorers and calculators run exactly as on stryker.com, at the same heights on desktop and phone (900px explorers; 750px and 488px calculators on desktop, 853px fall calculator on phones). Stryker's app server only lets its apps show inside pages on stryker.com addresses (and local test machines): it refuses the review (preview) site, so there **every app shows as a grey box with a link to the app**. They show in the page once the site runs on www.stryker.com, or on the preview site once Stryker allows its addresses (section 7). |
 
 ---
 
@@ -111,13 +111,13 @@ text inside an app belongs to the app.
 
 Checked on the review page against the live pages at 1440 and 390 wide.
 
-| App | stryker.com | Review page |
-|---|---|---|
-| Trauma skeleton, bunion and Gamma4 explorers | 900px high, the app running | 900px, the app running (desktop and phones) |
-| Pressure injury calculator | 750px (desktop), 1,416px (phones) | 750px, 1,431px |
-| Falls reduction calculator | 488px (desktop), 853px (phones) | 488px, 853px |
-| Mobile lab map, medical information requests | the app in the page | a link to the app on the preview site (the app allows framing only from stryker.com addresses) |
-| Cvent calendar | the calendar in the page | a link to the calendar on the preview site (section 7) |
+| App | stryker.com | Local test machine | Review page on the preview site |
+|---|---|---|---|
+| Trauma skeleton, bunion and Gamma4 explorers | 900px high, the app running | 900px, the app running (desktop and phones) | a link to the app |
+| Pressure injury calculator | 750px (desktop), 1,416px (phones) | 750px, 1,431px | a link to the app |
+| Falls reduction calculator | 488px (desktop), 853px (phones) | 488px, 853px | a link to the app |
+| Mobile lab map, medical information requests | the app in the page | a link (these allow only stryker.com addresses) | a link to the app |
+| Cvent calendar | the calendar in the page | a link to the calendar (section 7) | a link to the calendar |
 
 The apps keep the content width of the page (1,380px at 1440, 15px from each edge on phones), as on
 stryker.com.
@@ -129,7 +129,7 @@ stryker.com.
 | What | Apps | Example pages | Proposal |
 |---|---|---|---|
 | A page pointing to the stage app server (microapp-stage) | 1 | [Gamma4](https://www.stryker.com/us/en/trauma-and-extremities/products/gamma4.html) | the live app, at migration (done in the review build) |
-| Apps that allow framing only from stryker.com addresses (maps, medical information requests) | 5 | [Mobile lab](https://www.stryker.com/us/en/acute-care/mobile-lab.html), [Sage](https://www.stryker.com/us/en/sage/medical-information-request.html) | they work once the site runs on www.stryker.com; for review on the preview site, Stryker can add the preview addresses (aem.page, aem.live) to the apps' allowed list |
+| The app server shows its apps only in pages on stryker.com addresses (and local test machines); it refuses the preview addresses (aem.page, aem.live) | all 29 apps; the maps and medical information requests (5) also refuse local test machines | [Mobile lab](https://www.stryker.com/us/en/acute-care/mobile-lab.html), [Sage](https://www.stryker.com/us/en/sage/medical-information-request.html) | they work once the site runs on www.stryker.com; for review on the preview site, Stryker can add the preview addresses (aem.page, aem.live) to the apps' allowed list |
 | The Cvent calendar | 1 | [Calendar](https://www.stryker.com/us/en/training-and-education/calendar.html) | the calendar script uses inline handlers that the new site's security policy refuses; to decide: allow it for that page, or link to the Cvent calendar |
 | The micro-app server itself | all 29 apps | | must stay in place after the move off AEM (the apps are not AEM content) |
 
@@ -150,7 +150,7 @@ stryker.com.
 | Pros | Cons |
 |---|---|
 | Every app keeps working, unchanged, without AEM | The apps depend on the micro-app server and on Cvent staying in place |
-| One block, five names that say what the app is | 5 apps and the calendar can't be shown on the preview addresses until their hosts allow it |
+| One block, five names that say what the app is | No app or calendar can be shown on the preview addresses until Stryker allows them; there they are links |
 | The apps size themselves as today | |
 
 ---
@@ -164,8 +164,8 @@ stryker.com.
 
 **Still open:**
 
-- Ask Stryker's micro-app team to allow the preview addresses (aem.page / aem.live) for the maps and
-  medical information requests, so they can be reviewed before the move to www.stryker.com.
+- Ask Stryker's micro-app team to allow the preview addresses (aem.page / aem.live) for all apps,
+  so they can be reviewed in the page before the move to www.stryker.com.
 - The Cvent calendar: allow its script on that page, or link to the Cvent calendar.
 - Confirm the micro-app server stays after the migration.
 
