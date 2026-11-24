@@ -12,6 +12,15 @@
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
+/* media-text in a stack: a Bold "• " product link line under "View more information" is the
+   source's small print link, the bullet and link 11.2px on 13.66px lines (stryker.com TEACH
+   talks "• STAR", "• RSA", "• ReUnion RFX": 0.8em) */
+body.corp :where(.columns.stack.media-text.block p > strong:has(> a:any-link)) {
+  font-size: var(--footnote-font-size);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+
 /* course-boxes: each cell a soft-shadowed colour box holding its link, in cell order blue, teal,
    orange, purple (stryker.com TE Virtual Learning Center "SHOULDER ARTHROPLASTY" … "BLUEPRINT"
    dimensional boxes, 10px around them): 8% of the cell above the white Futura bold link,
@@ -1896,4 +1905,9 @@ body.corp .columns.stack.media-text li a:any-link::after {
 body.corp .columns.course-boxes.block > div > div > p a:any-link:not(.button) {
   color: var(--color-white);
   text-decoration: none;
+}
+
+/* media-text "• " product links (top of the file): the link at its line's 11.2px */
+body.corp .columns.stack.media-text p > strong > a.link-inline:any-link {
+  font-size: inherit;
 }
