@@ -105,9 +105,10 @@ async function renderBlock(main, {
   main.replaceChildren(section);
   decorateDMAssets(main);
   decorateSpanMarkers(main);
+  // a shared block's corp styles are its <name>-corp.css; a corp block (hero-corp …) has none
   await Promise.all([
     loadCSS(`/blocks/${name}/${name}.css`),
-    loadCSS(`/blocks/${name}/${name}-corp.css`),
+    ...(name.endsWith('-corp') ? [] : [loadCSS(`/blocks/${name}/${name}-corp.css`)]),
   ]);
   try {
     const mod = await import(`/blocks/${name}/${name}.js`);
