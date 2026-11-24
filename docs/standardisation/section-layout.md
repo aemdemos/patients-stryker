@@ -200,7 +200,7 @@ replaces.
 | The 12-column names (`cols-8-4`, `cols-6-6`, `cols-4-8`, `cols-4-4-4`) | the existing section names `flex-67-33`, `flex`, `flex-33-67`, already used by 330 imported sections |
 | Inner and outer spacing of the cells | each block's own spacing; the standard gutter |
 | Font size, font and text colour in the cells | the site-wide **text layer** (Text style panel) |
-| A choice in the Block options panel | the Section Metadata *Style*: the panel edits one block, the layout is the section's |
+| A block option | the Section Metadata *Style*, offered in the *Section* area of the Block options panel: the layout is the section's, not the block's |
 
 ---
 
@@ -208,7 +208,7 @@ replaces.
 
 | Pros | Cons |
 |---|---|
-| Three widths and one phone rule instead of 12-column combinations | Authors pick the layout in the Section Metadata, not in the Block options panel |
+| Three widths and one phone rule instead of 12-column combinations | The panel copies the section's Style; the author pastes it into the Section Metadata |
 | The names already exist on imported pages (form rows) | With more than two parts, the author must know which part is the narrow column (the last for wide + narrow, the first for narrow + wide) |
 | Forms, accordions, boxes and fragments stay beside their text, as today | From 600 to 840px rows stand side by side where stryker.com stacks them (the agreed breakpoint) |
 | Phones behave as today | |
@@ -231,8 +231,12 @@ replaces.
 - The 420 forms with the shared contact aside: a **Marketo Form** block beside a **Fragment** (proposal,
   as the import already does), or the aside as part of the form block?
 - The 24 number counter rows: **Statistics** (proposal) or a section layout?
-- The section styles in the **Block options panel**: today the panel edits one block; offering the
-  section's style there too would be a new panel feature.
+- The section styles in the **Block options panel**: built (in review). Below a block's options, a
+  *Section* area offers side by side (equal, wide + narrow, narrow + wide, on phones too) and the
+  section's role (tab, accordion panel, carousel slide), greyed out with the reason when they don't fit
+  ("needs 2 or more parts in the section"). It copies the new Style to paste into the section's Section
+  Metadata (or a whole Section Metadata table when the section has none): the editor lets an extension
+  replace only the block at the cursor, not the section's metadata table.
 
 ---
 

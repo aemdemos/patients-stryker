@@ -208,8 +208,8 @@ one step, as everywhere.
 
 **Proposed, still open:**
 
-- Offer the carousel switches (autoplay, fade, split, band colour) in the Block options panel once it can
-  set section styles (see the section layout chapter).
+- The carousel switches (autoplay, fade, split, band colour) are now in the *Section* area of the Block
+  options panel (in review): it copies them to paste into each slide's Section Metadata.
 - The migration of split slides: today's import already writes them as `carousel` sections with a band
   colour; the review build does not yet read the stryker.com hero-large-carousel itself.
 

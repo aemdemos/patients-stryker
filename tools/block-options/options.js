@@ -710,6 +710,73 @@ export const BLOCK_OPTIONS = {
   },
 };
 
+/*
+ * The section holding the selected block: the standardised section styles (Section Metadata
+ * "Style"), docs/standardisation/section-layout.md, tabs.md, accordion.md, carousel-corp.md.
+ * Same shape as a block's groups; `needs` are read from the section: 'parts-2+' (two or more
+ * parts: blocks, or the text between them), 'heading-first' (the section opens with a heading,
+ * the tab or panel label), 'slide-block' (a Hero (corp) or Columns block), 'columns-block', and
+ * the section's own choices 'flex', 'accordion-panel', 'carousel', 'split'. Other styles on the
+ * section (full-bleed, dark …) are kept as they are.
+ */
+export const SECTION_OPTIONS = {
+  label: 'Section',
+  groups: [
+    {
+      id: 'side',
+      label: 'Side by side',
+      options: [
+        ['', 'No (one under the other)'],
+        ['flex', 'Equal parts', { needs: ['parts-2+'], hint: 'The parts of the section side by side in equal widths from 600px' }],
+        ['flex flex-67-33', 'Wide + narrow (2/3 + 1/3)', { needs: ['parts-2+'], hint: 'The first parts two thirds wide, the last part one third' }],
+        ['flex flex-33-67', 'Narrow + wide (1/3 + 2/3)', { needs: ['parts-2+'], hint: 'The first part one third wide, the others two thirds' }],
+      ],
+    },
+    {
+      id: 'side-phones',
+      label: 'On phones',
+      flags: [
+        ['flex-row-mobile', 'Side by side on phones too', { needs: ['flex'], hint: 'The row never stacks (e.g. social icons)' }],
+      ],
+    },
+    {
+      id: 'role',
+      label: 'Section is',
+      options: [
+        ['', 'A normal section'],
+        ['tab-panel', 'A tab', { needs: ['heading-first'], hint: 'Its first heading is the tab label; tab sections in a row make one tab set' }],
+        ['accordion-panel', 'An accordion panel', { needs: ['heading-first'], hint: 'Its heading is the label; panel sections in a row make one accordion' }],
+        ['carousel', 'A carousel slide', { needs: ['slide-block'], hint: 'Slide sections in a row make one carousel' }],
+      ],
+    },
+    {
+      id: 'accordion',
+      label: 'Accordion panel',
+      flags: [
+        ['accordion-open', 'Starts open', { needs: ['accordion-panel'], hint: 'The panel is open when the page loads' }],
+      ],
+    },
+    {
+      id: 'carousel',
+      label: 'Carousel',
+      flags: [
+        ['autoplay', 'Autoplay (5 seconds)', { needs: ['carousel'], hint: 'The slides move on by themselves; set on the slides of one carousel' }],
+        ['fade', 'Cross-fade', { needs: ['carousel'], hint: 'The slides fade instead of sliding' }],
+        ['split', 'Split slide', { needs: ['carousel', 'columns-block'], hint: 'An image beside a title on a coloured band (a Columns row)' }],
+      ],
+    },
+    {
+      id: 'band',
+      label: 'Split slide band',
+      options: [
+        ['', 'Purple gradient (default)'],
+        ['box-blue-gradient', 'Blue gradient', { needs: ['split'] }],
+        ['box-dark', 'Dark grey', { needs: ['split'] }],
+      ],
+    },
+  ],
+};
+
 /** every option name a block's groups know, so the rest can be kept as "other options" */
 export function knownOptions(def) {
   return new Set(def.groups.flatMap((g) => (g.options || g.flags)

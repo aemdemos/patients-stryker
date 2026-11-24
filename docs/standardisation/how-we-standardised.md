@@ -320,7 +320,7 @@ until the business approves.
 |---|---|---|
 | Variant | the structure of a block | Columns *two equal* |
 | Block options | how a block looks | box colour, spacing, border, alignment |
-| Section style | a whole section | side by side, tab panel, carousel slide |
+| Section style | a whole section | side by side, tab panel, carousel slide: picked in **Block options → Section**, which copies the Style to paste into the section's Section Metadata |
 | Text style | a few words inside a text | a gold name, a serif sentence, a 2× size |
 
 Rule for authors: the whole block → Block options; a few words → Text style.
@@ -347,7 +347,7 @@ Every page concerned is listed by address in its block chapter.
 | Panel | the 232 gold "Connect with us" bars; the 809 boxes in column cells; the 46 overlapping boxes |
 | Cards | one box colour per row (21 rows colour each card differently); building the filtered product grid |
 | Hero | page intro replacing the columns rows; framed banners, text above on phones, video backgrounds |
-| Section layout | whether the Block options panel should also offer section styles |
+| Section layout | approve the *Section* area of Block options (side by side, tab, accordion panel, carousel slide), greyed out when it doesn't fit |
 | Statistics | the 22 number rows next to images or video |
 | Table | legal lists from a sheet or in the page (Trademarks: 1,322 rows) |
 | Event calendar | keep the 2018–2021 events as an archive, or retire the pages |

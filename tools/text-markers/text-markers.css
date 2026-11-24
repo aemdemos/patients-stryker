@@ -184,3 +184,34 @@ body {
   margin: 0;
   font-weight: 700;
 }
+
+/* outside the review pages (tools/review-pages.js): the new looks don't show there yet */
+.tm-hint.tm-notice {
+  padding: 8px;
+  border-left: 3px solid var(--s2-blue-900, #3b63fb);
+  border-radius: 4px;
+  background: var(--s2-blue-100, #eef4ff);
+}
+
+/* Block options: the section that holds the block (Section Metadata style) */
+.tm-section {
+  display: grid;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--s2-gray-200, #dadada);
+}
+
+.tm-section[hidden],
+.tm-code[hidden] {
+  display: none;
+}
+
+.tm .tm-section-title {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* the pointer to the other panel */
+.tm-hint.tm-pointer {
+  font-style: italic;
+}

@@ -55,6 +55,26 @@ shows the name with a capital, "orange" → "Orange"):
   with a colour token. Until then the option is saved on the block but changes nothing.
 - Preview the sheet after editing it; the panel reads it when it opens.
 
+## The section (Section Metadata style)
+
+Below the block's options, the **Section** area edits the style of the section that holds the
+block (`SECTION_OPTIONS` in `options.js`): side by side (`flex`, `flex, flex-67-33`,
+`flex, flex-33-67`, `flex-row-mobile`) and the section's role (`tab-panel`, `accordion-panel` with
+`accordion-open`, `carousel` with `autoplay`, `fade`, `split` and the split band colour). Other
+styles on the section (e.g. `full-bleed`) are kept. Choices that don't fit are greyed out with the
+reason (two or more parts for side by side, a heading first for a tab or accordion panel, a Hero
+(corp) or Columns block for a slide, a Columns block for a split slide), and a choice that depends on
+another one goes when that one is cleared.
+
+**Copy section style** copies the result: the Style text when the section has a Section Metadata
+table (paste it over the Style row), or a whole Section Metadata table (paste it at the end of the
+section). The panel doesn't write the section itself, in either editor: the editor's guarded replace
+changes only the block at the cursor, and the section's metadata table is not a block it can
+address. The preview shows the block with the new section styles.
+
+Outside the review pages (`/drafts/…`) both panels say that the new looks show only on review pages
+until the standardisation is approved (`tools/review-pages.js`).
+
 ## Choices with several classes, dependent groups, older names
 
 - **Several classes:** a choice may set more than one class, separated by a space (e.g.

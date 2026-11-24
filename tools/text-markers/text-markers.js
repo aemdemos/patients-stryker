@@ -12,6 +12,7 @@ import {
   COLOURS, FONTS, SIZES, DECORATIONS, SPACING,
 } from '../../scripts/span-markers.js';
 import libraryOptions, { labelOf } from '../library-options.js';
+import { REVIEW_NOTE, documentPath, outsideReview } from '../review-pages.js';
 
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
 
@@ -114,6 +115,9 @@ let applyButtons = [];
 let endButton;
 let previewNote;
 let moreOptions;
+let noticeEl;
+let removeButton;
+let columnsNote;
 
 function setStatus(text, kind = 'info') {
   statusEl.textContent = text;
@@ -158,6 +162,7 @@ function updatePreview() {
   if (previewLine) note = `Previewing your selection (${kind}${previewBlock ? ` in ${previewBlock.name}` : ''}).`;
   if (previewLine?.old) note = `${note.slice(0, -1)}, now styled :start-${previewLine.old}:.`;
   previewNote.textContent = note;
+  if (columnsNote) columnsNote.hidden = previewBlock?.name !== 'columns';
   if (!previewReady) return;
   const message = { action: 'tm-preview-render', marker, words: previewLine?.words || '' };
   if (previewLine && previewBlock) Object.assign(message, previewBlock, { tag: previewLine.tag });
@@ -595,6 +600,97 @@ async function replaceInLive(find, words, marker) {
   return sendLive(live);
 }
 
+/*
+ * Remove style: the selected words lose their markers and keep their words and formatting.
+ * Experience Workspace: both markers of the run are cut out of the live document (a guarded
+ * replace, as a restyle swaps its start marker). Elsewhere, a selection of the whole run
+ * (markers and words, one formatting) is retyped as its words; otherwise the panel says which
+ * two markers to delete.
+ */
+const cut = (value, at, length) => `${value.slice(0, at)}${value.slice(at + length)}`;
+const TAGS = /<[^>]+>/g;
+
+/** why Remove style can't be used for the selection ('' when it can) */
+function removeUnfit() {
+  if (!selectionFacts) return 'select the styled words in the document first';
+  if (!selectionFacts.old) return 'the selected words have no Text style';
+  return '';
+}
+
+function updateRemove() {
+  if (!removeButton) return;
+  const reason = removeUnfit();
+  removeButton.classList.toggle('tm-unfit', !!reason);
+  if (reason) removeButton.setAttribute('aria-disabled', 'true');
+  else removeButton.removeAttribute('aria-disabled');
+  removeButton.title = reason
+    ? `Not available here: ${reason}.`
+    : `Takes :start-${selectionFacts.old}: and :end: off the words; the words and their bold or italic stay.`;
+}
+
+async function unwrapInLive(oldName, words) {
+  const oldMarker = `:start-${oldName}:`;
+  const run = `${oldMarker}${words}${END_MARKER}`;
+  const live = liveTarget(run);
+  if (!live) return false;
+  const text = live.target.textContent;
+  const pos = text.indexOf(run);
+  if (pos < 0 || text.indexOf(run, pos + 1) >= 0) return false;
+  // the end marker first: cutting it leaves the start marker's place as it was
+  const end = textAt(live.target, pos + oldMarker.length + words.length);
+  if (!end || !end.node.textContent.startsWith(END_MARKER, end.offset)) return false;
+  end.node.textContent = cut(end.node.textContent, end.offset, END_MARKER.length);
+  const start = textAt(live.target, pos);
+  if (!start || !start.node.textContent.startsWith(oldMarker, start.offset)) return false;
+  start.node.textContent = cut(start.node.textContent, start.offset, oldMarker.length);
+  return sendLive(live);
+}
+
+async function removeStyle() {
+  if (!sdk || removeButton.getAttribute('aria-disabled') === 'true') return;
+  const selected = await readSelection();
+  const line = selected ? readLine(selected) : null;
+  if (!line || !line.html.replace(TAGS, '').trim()) {
+    setStatus('Select the styled words (with or without their markers), then “Remove style”.', 'error');
+    return;
+  }
+  const { text, ok, markersApart } = analyseSelection(line.html);
+  const inSelection = text.match(/:start-([a-z0-9-]+):/);
+  const words = text.replace(MARKER_TEXT, '');
+  const old = inSelection ? inSelection[1] : styleAround(words, liveText || await documentText());
+  if (!old) {
+    setStatus('These words have no Text style to remove.', 'error');
+    return;
+  }
+  if (!words.trim()) {
+    setStatus('Select the styled words too, not only the marker.', 'error');
+    return;
+  }
+  const finish = () => {
+    setStatus(`Removed the style :start-${old}: from “${words.trim()}”. The words keep their formatting.`, 'ok');
+    previewLine = null;
+    previewBlock = null;
+    selectionFacts = null;
+    lastSelection = '';
+    updateLooks();
+    updateRemove();
+    updatePreview();
+  };
+  if (await unwrapInLive(old, words)) {
+    finish();
+    return;
+  }
+  // the whole run selected, markers inside one formatting: typing its words over it keeps them
+  const trimmed = text.trim();
+  const whole = inSelection && trimmed.startsWith(`:start-${old}:`) && trimmed.endsWith(END_MARKER);
+  if (whole && ok && !markersApart && (text.match(MARKER_TEXT) || []).length === 2) {
+    sdk.actions.sendText(words);
+    finish();
+    return;
+  }
+  setStatus(`To remove the style, delete “:start-${old}:” before the words and “:end:” after them. The words keep their formatting.`, 'info');
+}
+
 async function applyToSelection() {
   const marker = startMarker();
   if (!marker || !sdk) return;
@@ -752,6 +848,9 @@ function render() {
   const start = el('button', { type: 'button', onclick: insertStart }, 'Insert start');
   const end = el('button', { type: 'button', onclick: insertEnd }, 'Insert end');
   const copy = el('button', { type: 'button', onclick: copyCode }, 'Copy code');
+  removeButton = el('button', { type: 'button', class: 'tm-remove', onclick: removeStyle }, 'Remove style');
+  noticeEl = el('p', { class: 'tm-hint tm-notice', hidden: true }, REVIEW_NOTE);
+  columnsNote = el('p', { class: 'tm-hint tm-pointer', hidden: true }, 'In Columns, a look for the whole row’s text (large headline, serif lead, pull quotes) is in Block options → Text look.');
   applyButtons = [apply, insert, start];
   endButton = end;
   // the less common ways in: opened by the panel when it points the author to one of them
@@ -767,15 +866,19 @@ function render() {
 
   root.append(
     el('h1', {}, 'Text style'),
+    noticeEl,
     el('div', { class: 'tm-result' }, codeEl, previewNote, viewToggle, frameBox),
-    el('div', { class: 'tm-actions' }, apply),
+    el('div', { class: 'tm-actions' }, apply, removeButton),
     statusEl,
     moreOptions,
     choices,
+    el('p', { class: 'tm-hint tm-pointer' }, 'Changing the whole block (box colour, layout, spacing)? Use Block options.'),
+    columnsNote,
   );
   listenToPreview(choices);
   window.addEventListener('resize', sizePreview);
   updateLooks();
+  updateRemove();
   updatePreview();
 }
 
@@ -795,7 +898,9 @@ function watchSelection() {
     const line = html ? readLine(html) : null;
     if (line) {
       // a selection that includes old markers is previewed without them
-      line.old = (line.html.match(/:start-([a-z0-9-]+):/) || [])[1] || styleAround(line.html.replace(/<[^>]+>/g, '')) || '';
+      const selectedText = line.html.replace(/<[^>]+>/g, '');
+      line.old = (line.html.match(/:start-([a-z0-9-]+):/) || [])[1]
+        || styleAround(selectedText, liveText || await documentText()) || '';
       line.html = line.html.replace(MARKER_TEXT, '');
       line.words = new DOMParser().parseFromString(`<p>${line.html}</p>`, 'text/html').body.textContent;
     }
@@ -805,6 +910,7 @@ function watchSelection() {
     if (html !== lastSelection) return; // the selection moved on while the block was read
     selectionFacts = previewLine ? { tag: previewLine.tag, whole, old: previewLine.old || '' } : null;
     updateLooks();
+    updateRemove();
     updatePreview();
   };
   setInterval(check, 1000);
@@ -826,6 +932,7 @@ async function connect() {
       return;
     }
     sdk = resolved;
+    noticeEl.hidden = !outsideReview(documentPath(sdk));
     // Experience Workspace shares the document: used to spot words that already have a style
     if (sdk.capabilities?.liveDocument === 1 && typeof sdk.actions.subscribeLiveDocument === 'function') {
       sdk.actions.subscribeLiveDocument(({ html, selection, editable }) => {

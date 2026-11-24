@@ -11,8 +11,11 @@
  * DA editor: it shares no document, so the author selects the block's name row
  * ("hero-corp (image-slide, …)") and the panel rewrites that text.
  */
-import { BLOCK_OPTIONS, knownOptions, withLibrary } from './options.js';
+import {
+  BLOCK_OPTIONS, SECTION_OPTIONS, knownOptions, withLibrary,
+} from './options.js';
 import { allLibraryOptions } from '../library-options.js';
+import { REVIEW_NOTE, documentPath, outsideReview } from '../review-pages.js';
 
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
 const PREVIEW = '/tools/text-markers/preview.html';
@@ -36,9 +39,11 @@ let blockOptions = BLOCK_OPTIONS;
 let sdk = null;
 let live = null; // Experience Workspace: { html, selection: { blockIndex }, editable }
 let sourceCache = { at: 0, html: '' };
-// the block being edited: { name, options: [...], html, sectionStyles, from: 'live' | 'header' }
+// the block being edited: { name, options: [...], html, sectionStyles, sectionHtml, hasMeta,
+// from: 'live' | 'header' }
 let current = null;
 let draft = []; // the options as the author is changing them
+let sectionDraft = []; // the section's styles as the author is changing them
 const touched = new Set(); // groups the author changed (their older free values are dropped)
 let view = 'desktop';
 let previewReady = false;
@@ -52,6 +57,10 @@ let otherEl;
 let applyButton;
 let previewFrame;
 let frameBox;
+let noticeEl;
+let sectionEl;
+// re-renders the block's groups and the section's (set below, once both renderers exist)
+let renderGroups = () => {};
 
 function setStatus(text, kind = 'info') {
   statusEl.textContent = text;
@@ -70,6 +79,17 @@ function sectionStylesOf(block) {
   const row = meta && [...meta.children]
     .find((r) => r.children[0]?.textContent.trim().toLowerCase() === 'style');
   return row ? row.children[1].textContent.split(',').map(toClassName).filter(Boolean) : [];
+}
+
+/** the section holding a block: its styles, markup and whether it has a Section Metadata table */
+function sectionOf(block) {
+  const section = block?.parentElement;
+  if (!section) return { sectionStyles: [], sectionHtml: '', hasMeta: false };
+  return {
+    sectionStyles: sectionStylesOf(block),
+    sectionHtml: section.outerHTML,
+    hasMeta: !!section.querySelector(':scope > .section-metadata'),
+  };
 }
 
 /** a block's name row as authored: "hero-corp (image-slide, box-gold)" → name + options */
@@ -278,13 +298,196 @@ function updatePreview() {
   block.className = [current.name, ...ordered(draft)].join(' ');
   sizePreview();
   previewFrame.contentWindow.postMessage({
-    action: 'tm-preview-render', block: block.outerHTML, sectionStyles: current.sectionStyles, words: '', marker: '',
+    action: 'tm-preview-render', block: block.outerHTML, sectionStyles: sectionDraft, words: '', marker: '',
   }, window.location.origin);
+}
+
+/* ---------------------------------------------------------------- the section */
+
+const SECTION_CHOICE_NEEDS = ['flex', 'accordion-panel', 'carousel', 'split'];
+
+/**
+ * What the section holding the block has, for the section choices' `needs`: its parts (each
+ * block, and each run of text between blocks), whether it opens with a heading, its blocks.
+ * @param {string} html The section's markup
+ */
+function sectionFactsOf(html) {
+  if (!html) return null;
+  const section = new DOMParser().parseFromString(html, 'text/html').body.firstElementChild;
+  if (!section) return null;
+  const children = [...section.children].filter((c) => !c.matches('.section-metadata'));
+  let parts = 0;
+  let inText = false;
+  children.forEach((c) => {
+    const isBlock = c.tagName === 'DIV' && c.classList.length;
+    if (isBlock || !inText) parts += 1;
+    inText = !isBlock;
+  });
+  return {
+    parts,
+    headingFirst: /^H[1-6]$/.test(children[0]?.tagName || ''),
+    slideBlock: !!section.querySelector(':scope > .hero-corp, :scope > .columns'),
+    columnsBlock: !!section.querySelector(':scope > .columns'),
+  };
+}
+
+/** why a section choice can't apply ('' when it fits) */
+function sectionUnfit(needs, facts) {
+  if (!needs) return '';
+  if (!facts) return 'the section can’t be read: click in the block again';
+  const parts = facts.parts === 1 ? '1 part' : `${facts.parts} parts`;
+  const reasons = {
+    'parts-2+': facts.parts >= 2 ? '' : `needs 2 or more parts in the section (blocks, or the text between them): this section has ${parts}`,
+    'heading-first': facts.headingFirst ? '' : 'needs a heading at the top of the section (it becomes the label)',
+    'slide-block': facts.slideBlock ? '' : 'needs a Hero (corp) block in the section (or a Columns block for a split slide)',
+    'columns-block': facts.columnsBlock ? '' : 'needs a Columns block in the section (the image and the title)',
+    flex: sectionDraft.includes('flex') ? '' : 'pick Side by side first',
+    'accordion-panel': sectionDraft.includes('accordion-panel') ? '' : 'make the section an accordion panel first',
+    carousel: sectionDraft.includes('carousel') ? '' : 'make the section a carousel slide first',
+    split: sectionDraft.includes('split') ? '' : 'turn on Split slide first',
+  };
+  return needs.map((n) => reasons[n]).find(Boolean) || '';
+}
+
+const sectionChoices = () => SECTION_OPTIONS.groups.flatMap((g) => g.options || g.flags);
+
+/** a section choice that is on although its own condition (another section choice) is off */
+function unmetChoice() {
+  return sectionChoices().find(([value, , meta]) => {
+    const tokens = tokensOf(value);
+    const needs = (meta?.needs || []).filter((n) => SECTION_CHOICE_NEEDS.includes(n));
+    const on = tokens.length && tokens.every((t) => sectionDraft.includes(t));
+    return on && sectionUnfit(needs, {});
+  });
+}
+
+/** drops the section choices whose condition no longer holds (phones without side by side …) */
+function pruneSection() {
+  for (let unmet = unmetChoice(); unmet; unmet = unmetChoice()) {
+    const tokens = tokensOf(unmet[0]);
+    sectionDraft = sectionDraft.filter((o) => !tokens.includes(o));
+  }
+}
+
+function pickSection(group, value) {
+  const values = group.options.flatMap(([v]) => tokensOf(v));
+  sectionDraft = sectionDraft.filter((o) => !values.includes(o));
+  if (value) sectionDraft.push(...tokensOf(value));
+  pruneSection();
+}
+
+function toggleSection(flag, on) {
+  sectionDraft = sectionDraft.filter((o) => o !== flag);
+  if (on) sectionDraft.push(flag);
+  pruneSection();
+}
+
+/** the section styles in a stable order: the others as authored, then the choices' order */
+function orderedSection(styles) {
+  const order = sectionChoices().flatMap(([v]) => tokensOf(v));
+  const others = styles.filter((o) => !order.includes(o));
+  const known = styles.filter((o) => order.includes(o))
+    .sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  return [...new Set([...others, ...known])];
+}
+
+/**
+ * Copies the section's new styles to paste into its Section Metadata: the Style text when the
+ * section has a Section Metadata table, otherwise a whole Section Metadata table. The panel
+ * doesn't write the section itself: the editor's guarded replace changes only the block at the
+ * cursor, and the Section Metadata table is not a block it can address.
+ */
+async function copySection() {
+  const text = orderedSection(sectionDraft).join(', ');
+  const codeEl = sectionEl.querySelector('.tm-code');
+  if (current.hasMeta && !text) {
+    setStatus('No section style left: clear the Style row of this section’s Section Metadata (delete the table if Style is its only row).', 'info');
+    return;
+  }
+  try {
+    if (current.hasMeta) {
+      await navigator.clipboard.writeText(text);
+      setStatus(`Copied “${text}”. In this section’s Section Metadata table, select the text of the Style row and paste over it.`, 'ok');
+    } else {
+      const table = el('table', {}, el('tr', {}, el('td', { colspan: '2' }, 'Section Metadata')), el('tr', {}, el('td', {}, 'style'), el('td', {}, text)));
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([table.outerHTML], { type: 'text/html' }),
+        'text/plain': new Blob([`Section Metadata\nstyle\t${text}`], { type: 'text/plain' }),
+      })]);
+      setStatus(`Copied a Section Metadata table with the style “${text}”. Click at the end of this section (after its last block or text, before the section break) and paste.`, 'ok');
+    }
+  } catch {
+    codeEl.textContent = text;
+    codeEl.hidden = false;
+    setStatus(`Copy this into the Style row of the section’s Section Metadata: ${text}`, 'info');
+  }
+}
+
+function renderSection() {
+  sectionEl.replaceChildren();
+  sectionEl.hidden = !current;
+  if (!current) return;
+  const facts = sectionFactsOf(current.sectionHtml);
+  sectionEl.append(el('h2', { class: 'tm-section-title' }, 'Section'), el('p', { class: 'tm-hint' }, 'The section that holds this block: its layout and role (Section Metadata → Style).'));
+  SECTION_OPTIONS.groups.forEach((group) => {
+    const fieldset = el('fieldset', { class: 'tm-group' }, el('legend', {}, group.label));
+    const row = el('div', { class: 'tm-choices', role: group.flags ? 'group' : 'radiogroup', 'aria-label': group.label });
+    const titleOf = (value, meta, reason) => [reason ? `Not available here: ${reason}.` : '', meta?.hint,
+      value ? `Style “${value.replace(' ', ', ')}”` : 'No style'].filter(Boolean).join('\n');
+    const unavailable = (reason) => (reason ? { 'aria-disabled': 'true' } : {});
+    if (group.flags) {
+      group.flags.forEach(([value, label, meta]) => {
+        const on = sectionDraft.includes(value);
+        const reason = on ? '' : sectionUnfit(meta?.needs, facts);
+        row.append(el('label', { class: `tm-check${reason ? ' tm-unfit' : ''}`, title: titleOf(value, meta, reason) }, el('input', {
+          type: 'checkbox',
+          checked: on,
+          ...unavailable(reason),
+          onclick: (e) => { if (reason) e.preventDefault(); },
+          onchange: (e) => {
+            toggleSection(value, e.target.checked);
+            renderGroups();
+            updatePreview();
+          },
+        }), label));
+      });
+    } else {
+      const selected = selectedIn(group, sectionDraft);
+      group.options.forEach(([value, label, meta]) => {
+        const reason = !value || value === selected ? '' : sectionUnfit(meta?.needs, facts);
+        row.append(el('button', {
+          type: 'button',
+          role: 'radio',
+          class: `tm-choice${reason ? ' tm-unfit' : ''}`,
+          'aria-checked': String(value === selected),
+          ...unavailable(reason),
+          title: titleOf(value, meta, reason),
+          onclick: () => {
+            if (reason) return;
+            pickSection(group, value);
+            renderGroups();
+            updatePreview();
+          },
+        }, label));
+      });
+    }
+    fieldset.append(row);
+    sectionEl.append(fieldset);
+  });
+  const changed = orderedSection(sectionDraft).join(',') !== orderedSection(current.sectionStyles).join(',');
+  const copy = el('button', { type: 'button', onclick: copySection, disabled: !changed }, changed ? 'Copy section style' : 'No section changes');
+  sectionEl.append(
+    el('div', { class: 'tm-actions' }, copy),
+    el('code', { class: 'tm-code', hidden: true }),
+    el('p', { class: 'tm-hint' }, current.hasMeta
+      ? 'Copies the new Style text: paste it over the Style row of the section’s Section Metadata.'
+      : 'Copies a Section Metadata table: paste it at the end of the section.'),
+  );
 }
 
 /* ---------------------------------------------------------------- panel */
 
-function renderGroups() {
+function renderBlockGroups() {
   groupsEl.replaceChildren();
   otherEl.replaceChildren();
   if (!current) {
@@ -383,13 +586,23 @@ function renderGroups() {
   applyButton.textContent = changed ? 'Apply options' : 'No changes';
 }
 
+renderGroups = () => {
+  renderBlockGroups();
+  renderSection();
+};
+
 function setBlock(next) {
   const same = current && next && current.name === next.name
     && current.options.join(',') === next.options.join(',') && current.from === next.from;
   if (same) {
-    // the content changed (e.g. an image added): what fits may change too
-    if (next.html && next.html !== current.html) {
+    // the content changed (e.g. an image added, or the section's style pasted): what fits may
+    // change too
+    const styles = next.sectionStyles.join(',') !== current.sectionStyles.join(',');
+    const content = (next.html && next.html !== current.html)
+      || next.sectionHtml !== current.sectionHtml;
+    if (content || styles) {
       current = next;
+      if (styles) sectionDraft = [...next.sectionStyles];
       renderGroups();
       updatePreview();
     }
@@ -397,6 +610,7 @@ function setBlock(next) {
   }
   current = next;
   draft = next ? normalised(next.name, next.options) : [];
+  sectionDraft = next ? [...next.sectionStyles] : [];
   touched.clear();
   renderGroups();
   updatePreview();
@@ -410,7 +624,7 @@ function onLiveDocument(value) {
   if (!block) { setBlock(null); return; }
   const [name, ...options] = [...block.classList];
   setBlock({
-    name, options, html: block.outerHTML, sectionStyles: sectionStylesOf(block), from: 'live',
+    name, options, html: block.outerHTML, ...sectionOf(block), from: 'live',
   });
 }
 
@@ -433,7 +647,7 @@ async function readHeaderSelection() {
   const block = sourceBlocks(doc).find((b) => b.classList[0] === header.name
     && [...b.classList].slice(1).join(',') === header.options.join(','));
   setBlock({
-    ...header, html: block?.outerHTML || '', sectionStyles: block ? sectionStylesOf(block) : [], from: 'header',
+    ...header, html: block?.outerHTML || '', ...sectionOf(block), from: 'header',
   });
 }
 
@@ -481,6 +695,8 @@ function render() {
   applyButton = el('button', { type: 'button', class: 'tm-primary', onclick: apply }, 'No changes');
   previewFrame = el('iframe', { class: 'tm-preview', title: 'Preview', src: `${PREVIEW}?v=${Date.now()}` });
   frameBox = el('div', { class: 'tm-frame' }, previewFrame);
+  noticeEl = el('p', { class: 'tm-hint tm-notice', hidden: true }, REVIEW_NOTE);
+  sectionEl = el('div', { class: 'tm-section', hidden: true });
   const viewButtons = Object.keys(VIEWS).map((name) => el('button', {
     type: 'button',
     class: 'tm-choice',
@@ -495,6 +711,7 @@ function render() {
   }, name === 'desktop' ? 'Desktop' : 'Phone'));
   root.append(
     el('h1', {}, 'Block options'),
+    noticeEl,
     titleEl,
     el('div', { class: 'tm-choices', role: 'radiogroup', 'aria-label': 'Preview width' }, ...viewButtons),
     frameBox,
@@ -502,6 +719,8 @@ function render() {
     statusEl,
     groupsEl,
     otherEl,
+    sectionEl,
+    el('p', { class: 'tm-hint tm-pointer' }, 'Styling a few words? Select them and use Text style.'),
   );
   window.addEventListener('message', (e) => {
     if (e.origin !== window.location.origin || e.source !== previewFrame.contentWindow) return;
@@ -528,6 +747,7 @@ async function connect() {
       return;
     }
     sdk = resolved;
+    noticeEl.hidden = !outsideReview(documentPath(sdk));
     if (sdk.capabilities?.liveDocument === 1 && sdk.capabilities?.sendHTMLReplace === 1) {
       sdk.actions.subscribeLiveDocument(onLiveDocument);
       setStatus('Click in a block to see its options.');
