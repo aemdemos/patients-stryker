@@ -16,6 +16,9 @@ import {
 import { createNotes, CATEGORIES } from './notes.js';
 import { keepFresh } from './live.js';
 import { mountBar } from './bar.js';
+import {
+  picturesOf, picturesIn, prepare, upload, MAX_PICTURES, TYPES as PICTURE_TYPES,
+} from './pictures.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl } from './pages.js';
 import {
@@ -516,6 +519,10 @@ const sendingOf = (item, kind) => store.pendingOf(item.startsWith('group:') ? '*
 
 // the chats shown open (kept across redraws; the page's own chat is always open)
 const openChats = new Set();
+// pictures in a chat's box, not sent yet (kept across redraws, not across reloads): key → [picture]
+const attached = new Map();
+// a chat whose pictures are on their way: key → what to show ('Sending picture 1 of 2…', an error)
+const picturesSending = new Map();
 
 /** the message box of a chat, once its panel is drawn again (the block list redraws late) */
 function focusChat(key, tries = 20) {
@@ -600,6 +607,7 @@ function chatParts(item, kind) {
       status ? el('p', { class: `rv-aoe rv-aoe-${statusOf.state}` }, el('b', {}, `AOE: ${status}`), statusOf.release ? ` in ${statusOf.release}` : '') : null,
       gone ? el('p', { class: 'rv-msg-text rv-msg-gone' }, 'Message withdrawn') : null,
       text ? el('p', { class: 'rv-msg-text' }, text) : null,
+      !gone && Array.isArray(v.images) && v.images.length ? picturesOf(v.images) : null,
     ));
   });
   if (!messages.length) list.append(el('p', { class: 'rv-chat-empty' }, kind === 'note' ? 'No messages about this note yet.' : 'No comments yet: write the first one below.'));
@@ -612,30 +620,138 @@ function chatParts(item, kind) {
   const release = me.role === 'aoe' ? el('input', {
     class: 'rv-reply-release', placeholder: 'release', 'aria-label': 'Release', size: '7',
   }) : null;
-  const send = () => {
-    const words = area.value.trim();
-    if (!words && !pick?.value) return;
-    // (the first message on a block, section or the page is the comment itself)
-    if (kind === 'comment' && !savedOf(item, 'comment')?.value) saveRow(item, 'comment', words);
-    else {
+  // pictures (a screenshot of what a page shows after a click): the Picture button, pasting into
+  // the box, dropping onto it; they go with the next message
+  const strip = el('div', { class: 'pv-attach', 'aria-label': 'Pictures to send' });
+  const progress = el('span', { class: `pv-progress${/^(Sending|Making)/.test(picturesSending.get(key) || '') ? '' : ' pv-error'}`, 'aria-live': 'polite' }, picturesSending.get(key) || '');
+  const drawStrip = () => strip.replaceChildren(...(attached.get(key) || []).map((pic, i) => el(
+    'div',
+    { class: 'pv-attach-item' },
+    el('img', { src: pic.url, alt: `Picture ${i + 1} to send` }),
+    el('button', {
+      type: 'button',
+      class: 'pv-attach-remove',
+      title: 'Remove this picture',
+      'aria-label': 'Remove this picture',
+      onclick: () => {
+        attached.set(key, (attached.get(key) || []).filter((x) => x !== pic));
+        URL.revokeObjectURL(pic.url);
+        drawStrip();
+      },
+    }, '×'),
+  )));
+  drawStrip();
+  const addPictures = async (files) => {
+    const room = MAX_PICTURES - (attached.get(key) || []).length;
+    if (!files.length) return;
+    if (room <= 0) {
+      progress.textContent = `Up to ${MAX_PICTURES} pictures in one message.`;
+      progress.className = 'pv-progress pv-error';
+      return;
+    }
+    progress.textContent = 'Making the picture ready…';
+    progress.className = 'pv-progress';
+    try {
+      const prepared = await Promise.all(files.slice(0, room).map(prepare));
+      attached.set(key, [...(attached.get(key) || []), ...prepared]);
+      progress.textContent = files.length > room ? `Up to ${MAX_PICTURES} pictures in one message: the others were left out.` : '';
+    } catch (e) {
+      progress.textContent = 'This picture could not be read.';
+      progress.className = 'pv-progress pv-error';
+    }
+    drawStrip();
+    area.focus();
+  };
+  area.addEventListener('paste', (e) => {
+    const files = picturesIn(e.clipboardData?.files);
+    if (!files.length) return;
+    e.preventDefault();
+    addPictures(files);
+  });
+  const file = el('input', {
+    type: 'file', accept: PICTURE_TYPES.join(','), multiple: true, 'aria-label': 'Add a picture',
+  });
+  file.addEventListener('change', () => {
+    addPictures(picturesIn(file.files));
+    file.value = '';
+  });
+  const pickPicture = el('label', { class: 'rv-btn-light pv-pick', title: 'Add a picture (or paste one into the message box, or drop it here)' }, file, 'Picture');
+  const sendNow = (words, images, status) => {
+    // (the first message on a block, section or the page is the comment itself: its pictures
+    // follow it as the chat's next message)
+    if (kind === 'comment' && !savedOf(item, 'comment')?.value) {
+      saveRow(item, 'comment', words || 'Picture');
+      if (images) addMessage(item, kind, { images });
+    } else {
       const value = { text: words || undefined };
-      if (pick?.value) {
-        value.status = { state: pick.value, release: release.value.trim() || undefined };
-      }
+      if (images) value.images = images;
+      if (status) value.status = status;
       addMessage(item, kind, value);
     }
     typing.set(key, '');
-    area.value = '';
     openChats.add(key);
-    focusChat(key);
   };
-  area.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-      e.preventDefault();
-      send();
+  const send = async () => {
+    const words = area.value.trim();
+    const pics = attached.get(key) || [];
+    if (picturesSending.has(key) && /^Sending/.test(picturesSending.get(key))) return;
+    if (!words && !pick?.value && !pics.length) return;
+    const status = pick?.value
+      ? { state: pick.value, release: release.value.trim() || undefined } : undefined;
+    if (!pics.length) {
+      sendNow(words, null, status);
+      area.value = '';
+      focusChat(key);
+      return;
     }
+    // the pictures first (in parts), then the message that shows them
+    const show = (text) => {
+      picturesSending.set(key, text);
+      document.querySelectorAll(`[data-chat="${CSS.escape(key)}"] .pv-progress`).forEach((x) => {
+        x.textContent = text;
+        x.className = `pv-progress${/^Sending/.test(text) ? '' : ' pv-error'}`;
+      });
+    };
+    try {
+      const images = [];
+      await pics.reduce(async (before, pic, i) => {
+        await before;
+        show(`Sending picture ${i + 1} of ${pics.length}…`);
+        images.push({ id: await upload(state.page, pic), w: pic.w, h: pic.h });
+      }, Promise.resolve());
+      picturesSending.delete(key);
+      attached.delete(key);
+      pics.forEach((pic) => URL.revokeObjectURL(pic.url));
+      sendNow(words, images, status);
+      document.querySelectorAll(`[data-chat="${CSS.escape(key)}"] textarea`).forEach((x) => { x.value = ''; });
+      threadHooks.redraw();
+      focusChat(key);
+    } catch (e) {
+      show(`${e.message} Nothing was sent: try Send again.`);
+    }
+  };
+  const composer = el(
+    'div',
+    { class: 'rv-composer' },
+    area,
+    strip,
+    el('div', { class: 'rv-reply-actions' }, pickPicture, pick, release, el('button', { type: 'button', class: 'rv-btn-light rv-primary', onclick: send }, 'Send'), progress),
+  );
+  composer.addEventListener('dragover', (e) => {
+    if (![...(e.dataTransfer?.types || [])].includes('Files')) return;
+    e.preventDefault();
+    composer.classList.add('pv-drop');
   });
-  const composer = el('div', { class: 'rv-composer' }, area, el('div', { class: 'rv-reply-actions' }, pick, release, el('button', { type: 'button', class: 'rv-btn-light rv-primary', onclick: send }, 'Send')));
+  composer.addEventListener('dragleave', (e) => {
+    if (!composer.contains(e.relatedTarget)) composer.classList.remove('pv-drop');
+  });
+  composer.addEventListener('drop', (e) => {
+    composer.classList.remove('pv-drop');
+    const files = picturesIn(e.dataTransfer?.files);
+    if (!files.length) return;
+    e.preventDefault();
+    addPictures(files);
+  });
   return [head, el('div', { class: 'rv-chat-box', 'data-chat': key }, list, composer)];
 }
 
