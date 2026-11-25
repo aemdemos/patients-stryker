@@ -41,7 +41,7 @@ export const KINDS = {
   variant: 'Variant changes (design CSS, every instance)',
   conversion: 'Conversion fixes (rules, then re-run)',
   page: 'Single-page fixes',
-  question: 'Questions back to the customer',
+  question: 'Questions back to the reviewers',
 };
 export const STATES = {
   open: 'open', progress: 'in progress', done: 'done', wontdo: "won't do", resolved: 'resolved',

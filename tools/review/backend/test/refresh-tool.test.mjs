@@ -108,18 +108,34 @@ try {
     const r = await l.p.evaluate(() => ({
       hello: document.querySelector('.ln-hello').textContent,
       tiles: [...document.querySelectorAll('.ln-tile-n')].map((x) => x.textContent),
+      labels: [...document.querySelectorAll('.ln-tile-label')].map((x) => x.textContent),
+      buttons: [...document.querySelectorAll('.ln-cta a')].map((a) => `${a.textContent} ${a.getAttribute('href')}`),
+      role: getComputedStyle(document.querySelector('.ln-role')).backgroundColor,
+      who: [...document.querySelectorAll('.ln-step')].map((x) => `${x.querySelector('.ln-step-who').textContent}:${getComputedStyle(x.querySelector('.ln-step-n')).backgroundColor}`),
+      customer: /customer/i.test(document.body.innerText),
       cards: [...document.querySelectorAll('.ln-card-title')].map((x) => x.textContent),
       steps: document.querySelectorAll('.ln-step').length,
       legend: document.querySelectorAll('.ln-legend .ln-chip').length,
     }));
     check(`start page for the ${who}: greeting with the role, numbers, the way of working`, r.hello.includes(aoeSide ? 'AOE team' : 'Reviewer') && r.tiles.length === 5 && r.tiles.every((t) => /^\d+$/.test(t)) && r.steps === 5 && r.legend === 7, JSON.stringify(r));
+    check(`… the same sides for everyone: tiles, AOE team in red and reviewers in blue, no "customer"`, r.labels.join('|') === 'Pages in the review|Waiting for the AOE team|Waiting for the reviewer|In review|Approved'
+      && r.role === (aoeSide ? 'rgb(235, 16, 0)' : 'rgb(9, 105, 218)')
+      && r.who.join() === 'AOE team:rgb(235, 16, 0),Reviewer:rgb(9, 105, 218),Reviewer:rgb(9, 105, 218),AOE team:rgb(235, 16, 0),Reviewer:rgb(9, 105, 218)'
+      && !r.customer, JSON.stringify(r));
+    check('… the buttons in the order of the work: summary, pages, review tool', r.buttons.join('|') === `Get the Summary ./summary.html|${aoeSide ? 'See every page' : 'See my pages'} ./status.html|Open the review tool ./index.html`, JSON.stringify(r.buttons));
     check(`… the cards: Invitations ${aoeSide ? 'for the AOE team' : 'not for a reviewer'}`, r.cards.some((c) => c.startsWith('Invitations')) === aoeSide && r.cards.some((c) => c.startsWith('Review tool')), JSON.stringify(r.cards));
     await l.p.click('.hp-info');
     const h = await l.p.evaluate(() => {
       const d = document.querySelector('.hp-dialog');
-      return { open: d.open, side: d.querySelector('.hp-for').textContent, theirs: !!d.querySelector('.hp-theirs') };
+      d.querySelector('.hp-part').dataset.mark = 'kept';
+      return {
+        open: d.open, side: d.querySelector('.hp-for').textContent, theirs: !!d.querySelector('.hp-theirs'), text: d.textContent,
+      };
     });
-    check(`… its ⓘ: the help for the ${who}'s side`, h.open && h.side === (aoeSide ? 'For the AOE team' : 'For reviewers') && h.theirs === aoeSide, JSON.stringify(h));
+    check(`… its ⓘ: the help for the ${who}'s side, no "null", no "customer"`, h.open && h.side === (aoeSide ? 'For the AOE team' : 'For reviewers') && h.theirs === aoeSide && !/null|customer/i.test(h.text), JSON.stringify({ ...h, text: h.text.slice(0, 200) }));
+    // (an open help is not drawn again by the page's updates: that made it flicker)
+    await l.p.waitForTimeout(17000);
+    check('… the open help is not drawn again by the 15 s update', await l.p.evaluate(() => document.querySelector('.hp-dialog .hp-part').dataset.mark === 'kept'));
     await l.ctx.close();
   }
   for (const path of ['status.html', 'summary.html', `index.html?page=${encodeURIComponent(PAGE)}`]) {

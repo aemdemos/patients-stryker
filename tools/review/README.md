@@ -67,9 +67,12 @@ keeps the invitation, later visits need no link.
   allows it to the invitation that wrote it only.
 - **The start page** (`launch.html`, 25 Nov 2026): where new invitation links open (a link to one
   page still opens the review tool on it; older links keep opening the tool). The viewer's name
-  and role, the review in numbers (pages in the review, waiting for you, waiting for the other
-  side, in review, approved, % done; kept up to date), a card per page (Review tool, Status page,
+  and role, the review in numbers (pages in the review, waiting for the AOE team, waiting for the
+  reviewer, in review, approved, % done; the same for both sides, kept up to date), buttons in
+  the order of the work (summary, pages, review tool), a card per page (Review tool, Status page,
   Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
+  Colours: everything of the AOE team (Adobe) red, everything of the reviewers blue; the word is
+  always "reviewer" (never "customer") on every page of the tool.
 - **Help on every page** (`help.js`): "Start" and an ⓘ at the right end of every top bar; the
   ⓘ opens a dialog about the page for the viewer's side (customer or AOE team). The texts live
   in `help.js` (`HELP`): keep them in step with the pages.

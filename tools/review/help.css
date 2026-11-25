@@ -2,6 +2,7 @@
 :root {
   --hp-red: #eb1000;
   --hp-red-dark: #b30c00;
+  --hp-blue: #0969da;
   --hp-ink: #1d1d1d;
   --hp-muted: #6e6e6e;
   --hp-font: adobe-clean, "Source Sans 3", "Source Sans Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -41,7 +42,7 @@
   box-shadow: 0 24px 64px rgb(0 0 0 / 35%);
   overflow: auto;
 }
-.hp-dialog::backdrop { background: rgb(20 20 20 / 55%); backdrop-filter: blur(3px); }
+.hp-dialog::backdrop { background: rgb(20 20 20 / 62%); }
 .hp-head {
   position: sticky;
   top: 0;
@@ -58,8 +59,8 @@
 .hp-close { flex: none; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgb(255 255 255 / 18%); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
 .hp-close:hover { background: rgb(255 255 255 / 30%); }
 .hp-intro { margin: 18px 26px 6px; font-size: 16px; }
-.hp-for { display: inline-block; margin: 6px 26px 0; padding: 2px 10px; border-radius: 999px; background: #ffe9e6; color: var(--hp-red-dark); font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
-.hp-for-aoe { background: #1d1d1d; color: #fff; }
+.hp-for { display: inline-block; margin: 6px 26px 0; padding: 2px 10px; border-radius: 999px; background: var(--hp-blue); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.hp-for-aoe { background: var(--hp-red); }
 .hp-part { margin: 14px 26px; }
 .hp-part h3 { margin: 0 0 6px; font-size: 17px; font-weight: 800; }
 .hp-part p { margin: 0 0 6px; }

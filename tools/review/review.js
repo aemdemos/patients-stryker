@@ -1054,7 +1054,7 @@ const STATUS_LABELS = {
   unreviewed: 'Not reviewed yet',
   'in-review': 'In review',
   'waiting-aoe': 'Waiting for the AOE team',
-  'waiting-customer': 'Waiting for the customer',
+  'waiting-customer': 'Waiting for the reviewer',
   approved: 'Approved as is',
   resolved: 'Resolved',
   skipped: 'Skipped: not migrated',
@@ -1062,7 +1062,7 @@ const STATUS_LABELS = {
 const STATUS_BUTTONS = {
   'in-review': 'In review',
   'waiting-aoe': 'Send to the AOE team',
-  'waiting-customer': 'Send back to the customer',
+  'waiting-customer': 'Send back to the reviewer',
   approved: 'Approve',
   skip: "Skip: don't migrate",
 };

@@ -1,7 +1,7 @@
 /*
  * Review tool: the help on every page (25 Nov 2026). At the right end of the page's top bar a
  * "Start" link (the launch page) and an ⓘ button; the button opens a dialog about the page: what
- * is on it and how to use it, for the viewer's side (the customer's reviewers, or the AOE team:
+ * is on it and how to use it, for the viewer's side (the reviewers, or the AOE team:
  * theirs first, the reviewers' part folded below). DOM only (no innerHTML).
  * mountHelp(page, bar) → { setRole(role) }; page: launch | review | status | summary | invites
  */
@@ -35,13 +35,13 @@ const widthButtons = REVIEW.widths.map((w) => w.label).join(' / ');
 export const HELP = {
   launch: {
     title: 'The start page',
-    intro: 'Where the review starts: the pages you use, where the review stands, and how the customer and the AOE team work through it together.',
+    intro: 'Where the review starts: the pages you use, where the review stands, and how the reviewers and the AOE team work through it together.',
     reviewer: [
-      ['What you see', P('Your name and role, from your review link.', 'The review in numbers, kept up to date while the page is open: pages in your review, pages waiting for you, pages waiting for the AOE team, pages approved.', 'A card for each page of the review, and the way of working, step by step, with the colours of each status.')],
+      ['What you see', P('Your name and role, from your review link.', 'The review in numbers, kept up to date while the page is open: the pages in the review, the pages waiting for the AOE team (red) and for the reviewer (blue), in review and approved.', 'A card for each page of the review, and the way of working, step by step, with the colours of each status.')],
       ['Where to begin', P(['Open the **Status page** to see which pages are yours to review (your batch, if the AOE team gave you one).', 'Open a page in the **Review tool**, compare it with the original, comment and approve.', 'The **Summary** gathers everything said and decided so far.'])],
     ],
     aoe: [
-      ['For the AOE team', P('The same page, with your numbers: pages waiting for the AOE team first.', ['The **Invitations** card: create review links for reviewers and AOE members, and withdraw them.', 'The way of working is the same for everyone: point new reviewers to this page.'])],
+      ['For the AOE team', P('The same page and the same numbers the reviewers see.', ['The **Invitations** card: create review links for reviewers and AOE members, and withdraw them.', 'The way of working is the same for everyone: point new reviewers to this page.'])],
     ],
   },
   review: {
@@ -53,7 +53,7 @@ export const HELP = {
       ['Deciding', P(['The status at the top of the right panel says whose turn it is.', '**Approve** when the page is right; **Send to the AOE team** when something must change; **Skip: don\'t migrate** for a page that should not be migrated; **In review** while you are at it. Pressing the current status clears it.', 'Everything is saved at once, and the page updates itself when someone else writes.'])],
     ],
     aoe: [
-      ['For the AOE team', P(['Answer in the chats; a message may carry a status (**in progress**, **done**, **won\'t do**, **open again**) and the release it ships in.', 'When the page is fixed: **Send back to the customer** (Waiting for the customer).', '**Edit in DA** (right panel) opens the page\'s document in Document Authoring.', '**Refresh source shot** takes a new snapshot of the stryker.com page; every earlier one is kept, with its date.', 'Where the source is checked every day for changes, the Source shot box says since when, and what the last check found.'])],
+      ['For the AOE team', P(['Answer in the chats; a message may carry a status (**in progress**, **done**, **won\'t do**, **open again**) and the release it ships in.', 'When the page is fixed: **Send back to the reviewer** (Waiting for the reviewer).', '**Edit in DA** (right panel) opens the page\'s document in Document Authoring.', '**Refresh source shot** takes a new snapshot of the stryker.com page; every earlier one is kept, with its date.', 'Where the source is checked every day for changes, the Source shot box says since when, and what the last check found.'])],
     ],
   },
   status: {
@@ -74,7 +74,7 @@ export const HELP = {
       ['What is on it', P(['**Progress**: pages approved, pages with activity, who reviewed what.', '**Comments** by page and block, and **QA notes** by category, each with the AOE team\'s answer and status; a note\'s link opens the review tool at its pin.', '**Download** the comments and the QA notes as CSV files for a spreadsheet.', 'You see the pages of your review only.'])],
     ],
     aoe: [
-      ['For the AOE team', P(['**Hide test entries** (yours only): leave it on to see the review as the customer does.', 'The same page the customer sees: use it to agree on what is left.'])],
+      ['For the AOE team', P(['**Hide test entries** (yours only): leave it on to see the review as the reviewers do.', 'The same page the reviewers see: use it to agree on what is left.'])],
     ],
   },
   invites: {
@@ -105,7 +105,7 @@ export function mountHelp(page, bar) {
   const draw = () => {
     const mine = role === 'aoe' ? h.aoe : h.reviewer;
     const theirs = role === 'aoe' ? h.reviewer : [];
-    dialog.replaceChildren(
+    dialog.replaceChildren(...[
       el(
         'div',
         { class: 'hp-head' },
@@ -119,7 +119,7 @@ export function mountHelp(page, bar) {
       ...mine.map(part),
       theirs.length ? el('details', { class: 'hp-theirs' }, el('summary', {}, 'What reviewers see and do'), ...theirs.map(part)) : null,
       el('p', { class: 'hp-foot' }, el('a', { href: './launch.html' }, 'The start page'), ': every page of the review and the way of working.'),
-    );
+    ].filter(Boolean));
   };
   draw();
   document.body.append(dialog);
@@ -142,7 +142,9 @@ export function mountHelp(page, bar) {
   if (!bar) tools.classList.add('hp-fixed');
   return {
     setRole(r) {
-      role = r === 'aoe' ? 'aoe' : 'reviewer';
+      const next = r === 'aoe' ? 'aoe' : 'reviewer';
+      if (next === role) return;
+      role = next;
       draw();
     },
   };
