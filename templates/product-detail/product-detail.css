@@ -19,3 +19,29 @@ body.product-detail.std-draft main > .section > .default-content-wrapper h2:not(
 body.product-detail.std-draft main .columns > div > div h1 {
   line-height: var(--heading-line-height-hero);
 }
+
+/* linked icons in a row (product-detail.js: the contact aside's social icons): side by side,
+   the standard icon-row size and gap (35px icons 30px apart on phones, 48px from 600px; as
+   stryker.com) */
+body.product-detail.std-draft main .product-detail-icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(2 * var(--container-gutter));
+  margin-block: var(--space-block);
+}
+
+body.product-detail.std-draft main .product-detail-icon-row > p {
+  margin: 0;
+}
+
+body.product-detail.std-draft main .product-detail-icon-row img {
+  display: block;
+  width: var(--corp-row-icon-size);
+  height: auto;
+}
+
+@media (width >= 600px) {
+  body.product-detail.std-draft main .product-detail-icon-row img {
+    width: var(--corp-social-icon-size-l);
+  }
+}

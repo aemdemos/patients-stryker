@@ -232,7 +232,7 @@ function buildAccordionSections(main) {
  * new tab.
  * @param {Element} main The container element
  */
-function linkImage(p) {
+export function linkImage(p) {
   const picture = p.querySelector(':scope > picture');
   if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
   const next = p.nextElementSibling;
@@ -242,7 +242,8 @@ function linkImage(p) {
   a.href = link.getAttribute('href');
   if (link.target) a.target = link.target;
   if (link.rel) a.rel = link.rel;
-  a.setAttribute('aria-label', link.textContent.trim());
+  // a label the link already has (e.g. "… (opens in a new tab)") is kept
+  a.setAttribute('aria-label', link.getAttribute('aria-label') || link.textContent.trim());
   a.append(picture);
   p.append(a);
   next.remove();
