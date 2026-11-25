@@ -19,3 +19,5 @@ tools/importer/reports/
 
 # business PDFs built from docs/standardisation/*.md: shared directly, never committed (the repo is served publicly)
 docs/standardisation/*.pdf
+# full-page comparison screenshots (large; used only in the business PDFs)
+docs/standardisation/img/pages/
