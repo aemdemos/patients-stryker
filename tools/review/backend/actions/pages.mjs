@@ -6,7 +6,7 @@
  *   the AOE team: { pages (every page of the scope, published or not), notInScope (published,
  *     not in the scope table), problems (rows of the table to correct), capture: { waiting
  *     (published, no shot yet, since), sources (sources to correct: 404, redirect), lastRun,
- *     health } }
+ *     health }, changes: { redirects, unreachable, lastRun } (the daily change check) }
  * Spaces without a scope table (std) answer { none: true }.
  */
 import {
@@ -15,6 +15,7 @@ import {
 import { movedMessage } from '../lib/move.mjs';
 import { pageList } from '../lib/scope.mjs';
 import { readCaptureState, pagesWithShots } from '../lib/capture-state.mjs';
+import { readSite } from '../lib/changes.mjs';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
@@ -28,7 +29,7 @@ export async function main(params) {
     if (list.none) return reply(params, 200, { none: true, pages: [] });
     const mine = list.pages.filter((p) => inScope(invite.scope, p.path));
     if (invite.role !== 'aoe') return reply(params, 200, { pages: mine.filter((p) => p.published) });
-    const [cs, shots] = await Promise.all([readCaptureState(stores.files, space), pagesWithShots(stores.files, space)]);
+    const [cs, shots, site] = await Promise.all([readCaptureState(stores.files, space), pagesWithShots(stores.files, space), readSite(stores.files, space)]);
     const waiting = mine.filter((p) => p.published && !shots.has(p.path))
       .map((p) => ({ path: p.path, source: p.source, since: cs.firstSeen[p.path] || null, problem: cs.problems[p.path] || null }));
     return reply(params, 200, {
@@ -37,6 +38,12 @@ export async function main(params) {
       problems: list.problems,
       capture: {
         waiting, lastRun: cs.lastRun, health: cs.health,
+      },
+      // the daily change check: sources that redirect, sources not reachable (within the invitation)
+      changes: {
+        redirects: Object.entries(site.sources?.redirects || {}).filter(([p]) => inScope(invite.scope, p)).map(([path, v]) => ({ path, ...v })),
+        unreachable: Object.entries(site.sources?.unreachable || {}).filter(([p]) => inScope(invite.scope, p)).map(([path, v]) => ({ path, ...v })),
+        lastRun: site.lastRun || null,
       },
     });
   } catch (e) {

@@ -54,6 +54,7 @@ export function changesText(c) {
   const last = c.last ? {
     unchanged: 'unchanged', variant: 'unchanged', baseline: 'its history started', changed: 'changed (a new shot was taken)', unreachable: `not reachable (${c.last.reason || 'tried again tomorrow'})`, gone: 'gone (not reachable for 3 days in a row)',
   }[c.last.result] || c.last.result : '';
+  if (c.redirect) return `The source redirects to ${c.redirect}${c.redirectSince ? ` (since ${c.redirectSince})` : ''}: checked every day, a change if the redirect changes or ends.`;
   const look = c.lookChecked ? ` Its look is compared once a week (last on ${c.lookChecked}).` : ' Its look is compared once a week.';
   return `The source's content is checked every day since ${c.since}${last ? `; on ${c.last.day} it was ${last}` : ''}.${look} ${changed ? `${changed} change${changed > 1 ? 's' : ''} recorded, each with its shot.` : 'No change recorded so far.'}`;
 }

@@ -341,9 +341,10 @@ function drawScope() {
   if (box.hidden) return;
   const published = all.filter((p) => p.published).length;
   const { waiting = [], lastRun, health } = f.capture || {};
+  const ch = f.changes || { redirects: [], unreachable: [] };
   const toCorrect = waiting.filter((w) => w.problem);
   const issues = f.notInScope.length + f.problems.length + toCorrect.length
-    + (health && !health.ok ? 1 : 0);
+    + ch.redirects.length + ch.unreachable.length + (health && !health.ok ? 1 : 0);
   box.open = box.open || issues > 0;
   const list = (title, items, row) => (items.length ? [el('h3', {}, `${title} (${items.length})`), el('ul', { class: 'st-scope-list' }, ...items.slice(0, 200).map((i) => el('li', {}, row(i))))] : []);
   $('.st-scope-sum').textContent = `Migration scope: ${all.length} pages, ${published} published${issues ? ` · ${issues} to look at` : ''}`;
@@ -351,7 +352,9 @@ function drawScope() {
     el('p', { class: 'rs-muted' }, 'The scope is the table review/migration-scope in Document Authoring (source, eds, template; preview it after a change). Reviewers see the published pages of the scope; a page joins when it is published, and the backend takes its first source shot within 15 minutes.'),
     ...list('Published, not in the scope table', f.notInScope, (i) => [el('a', { href: `./index.html?page=${encodeURIComponent(i.path)}`, target: '_blank', rel: 'noopener' }, i.path), ` ${i.title}`]),
     ...list('Rows of the scope table to correct', f.problems, (i) => `Row ${i.row}: ${i.eds || ''} ${i.source || ''}: ${i.detail}`),
-    ...list('Sources to correct (the first shot failed)', toCorrect, (i) => [el('b', {}, i.path), ` ${i.source}: ${i.problem.reason} (${when(i.problem.at)})`]),
+    ...list('No first shot possible (the source redirects or fails)', toCorrect, (i) => [el('b', {}, i.path), ` ${i.source}: ${i.problem.reason} (${when(i.problem.at)})`]),
+    ...list('Sources that redirect (daily change check)', ch.redirects, (i) => [el('b', {}, i.path), ` ${i.source} → ${i.to} (since ${i.since})`]),
+    ...list('Sources not reachable (daily change check)', ch.unreachable, (i) => [el('b', {}, i.path), ` ${i.source}: ${i.reason} (since ${i.since})`]),
     ...list('Waiting for their first shot', waiting.filter((w) => !w.problem), (i) => `${i.path} (published, seen ${when(i.since)})`),
     el('p', { class: 'rs-muted' }, [
       lastRun ? `Last capture ${when(lastRun.at)}: ${lastRun.done.length} shot${lastRun.done.length === 1 ? '' : 's'}, ${lastRun.failed.length} failed${lastRun.waiting ? `, ${lastRun.waiting} for the next run` : ''}.` : 'No capture run yet.',

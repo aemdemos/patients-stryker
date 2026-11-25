@@ -8,7 +8,10 @@
  *    changed, a new shot labelled "change history: changed"; the other page unchanged;
  * 4. the shots action gives the tool the record;
  * 5. the weekly visual check (forced today): each page's look compared with the one its last
- *    shot showed: the same, no new shot.
+ *    shot showed: the same, no new shot;
+ * 6. a source that redirects (news.html → news/index.html): its own state, "redirects", the
+ *    same the next day (no change), listed for the status page; its source a normal page again:
+ *    the redirect ended, a change with a shot, no longer listed.
  * Test pages only (/test/…), purged after (entries, shots, change records). Gentle: 2 sources.
  * usage: node tools/review/backend/test/changes-live.test.mjs
  */
@@ -16,6 +19,8 @@ import { TEST, actionUrl, webBase } from '../target.mjs';
 
 const A = '/test/changes-a';
 const B = '/test/changes-b';
+const C = '/test/changes-redirect';
+const REDIRECTS = 'https://www.stryker.com/us/en/about/news.html';
 const SRC = [
   'https://www.stryker.com/us/en/acute-care/products/eye-surgery.html',
   'https://www.stryker.com/us/en/craniomaxillofacial/products/3d-systems.html',
@@ -75,9 +80,25 @@ try {
   check('5. the visual check: both looks compared, the same, no shot', r.looks === 2 && r.shots === 0 && r.changed === 0, JSON.stringify(r));
   const b = await record(B);
   check('5. B\'s day: the look the same as its shot\'s', ['same', 'noise'].includes(b.log[b.log.length - 1].look) && b.look.day === b.log[b.log.length - 1].day, JSON.stringify(b.log.slice(-1)));
+
+  // 6. a redirect
+  r = await run([{ page: C, source: REDIRECTS, template: 't3' }]);
+  let c = await record(C);
+  check('6. a redirecting source: its own state, with its target', r.baseline === 1 && c.redirect?.includes('/about/news/index.html') && c.log[0].result === 'baseline', JSON.stringify({ r, log: c?.log }));
+  r = await run([{ page: C, source: REDIRECTS, template: 't3' }]);
+  c = await record(C);
+  check('6. the next check: "redirects", not a change, not unreachable', r.redirects === 1 && r.changed === 0 && c.log[c.log.length - 1].result === 'redirects' && !c.misses, JSON.stringify(c.log.slice(-1)));
+  let site = await admin({ op: 'changes-site' });
+  check('6. listed for the status page (redirects)', !!site.sources?.redirects?.[C], JSON.stringify(site.sources).slice(0, 200));
+  r = await run([{ page: C, source: SRC[1], template: 't3' }]);
+  c = await record(C);
+  const endedLog = c.log[c.log.length - 1];
+  check('6. a normal page again: the redirect ended, a change with a shot', endedLog.result === 'changed' && endedLog.redirectEnded?.includes('/about/news/index.html') && !!endedLog.shot && !c.redirect, JSON.stringify(endedLog));
+  site = await admin({ op: 'changes-site' });
+  check('6. no longer listed', !site.sources?.redirects?.[C] && !site.sources?.unreachable?.[C], JSON.stringify(site.sources).slice(0, 200));
 } finally {
-  for (const p of [A, B]) await admin({ op: 'purge-test', page: p });
-  check('clean-up: no change record left', !(await record(A)) && !(await record(B)));
+  for (const p of [A, B, C]) await admin({ op: 'purge-test', page: p });
+  check('clean-up: no change record left', !(await record(A)) && !(await record(B)) && !(await record(C)));
 }
 console.log(failed ? `${failed} FAILED` : 'all passed');
 process.exit(failed ? 1 : 0);

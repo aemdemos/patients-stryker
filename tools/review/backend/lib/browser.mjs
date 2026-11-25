@@ -89,7 +89,7 @@ export async function loadSource(page, url, {
   // the page shows from the browser's copy, as good as a 200)
   const status = resp ? resp.status() : 0;
   if (status !== 200 && status !== 304) throw Object.assign(new Error(`the source answers ${status || 'nothing'}`), { source: true });
-  if (!sameUrl(page.url(), url)) throw Object.assign(new Error(`the source redirects to ${page.url()}`), { source: true });
+  if (!sameUrl(page.url(), url)) throw Object.assign(new Error(`the source redirects to ${page.url()}`), { source: true, redirect: page.url() });
   await page.addStyleTag({ content: '#onetrust-consent-sdk, #onetrust-banner-sdk { display: none !important; }' });
   if (scroll) await page.evaluate(async (ms) => {
     const step = Math.round(window.innerHeight * 0.8);

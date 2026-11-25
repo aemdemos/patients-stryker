@@ -37,7 +37,10 @@ export default async function loadPages({ all = false } = {}) {
       const { status, body } = await call('pages');
       if (status === 200 && !body.none) {
         facts = body.capture ? {
-          notInScope: body.notInScope || [], problems: body.problems || [], capture: body.capture,
+          notInScope: body.notInScope || [],
+          problems: body.problems || [],
+          capture: body.capture,
+          changes: body.changes,
         } : null;
         return body.pages.filter((p) => all || p.published);
       }
