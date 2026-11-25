@@ -280,10 +280,11 @@ function productIconRows(main) {
     let run = [];
     const flush = () => {
       if (run.length > 1) {
-        const row = document.createElement('div');
+        // one paragraph holding the linked icons (a div here would be read as a block)
+        const row = document.createElement('p');
         row.className = 'product-detail-icon-row';
         run[0].before(row);
-        row.append(...run);
+        run.forEach((line) => { row.append(...line.childNodes); line.remove(); });
       }
       run = [];
     };
