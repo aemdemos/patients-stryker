@@ -37,7 +37,7 @@ import buildArticle, {
   richTextNodes, imageNodes, buttonNodes, headlineNodes, titleHeading, absoluteAsset, newTabHref,
 } from './long-page-detail-corp-article.js';
 import { videoLink } from '../parsers/video.js';
-import { convertBeforeRows, convertAfterRows } from './long-page-detail-corp-components.js';
+import { convertBeforeRows, convertAfterRows, panelOptions } from './long-page-detail-corp-components.js';
 import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
@@ -929,6 +929,61 @@ function columnRows(main, doc) {
           || (ratio && perColumn.length === 2 && narrow.length === 1);
         parts[0].setAttribute('data-keep', 'section');
         if (side) parts[0].setAttribute('data-section-style', ['flex', ratio].filter(Boolean).join(', '));
+        if (wrapper.hasAttribute('data-row-end')) parts[0].setAttribute('data-row-end', wrapper.getAttribute('data-row-end'));
+        wrapper.replaceWith(...parts);
+        return;
+      }
+    }
+    // in review (staging build only, docs/standardisation/panel.md): a column made only of
+    // coloured or shadow boxes beside a column without any (Isolibrium "Integrated and
+    // intuitive touch screen": a gold heading box over a white shadow box, the photo beside)
+    // is the package's "box beside other content": a side-by-side section of Panel blocks (one
+    // per box, stacked in their column, scripts/corp.js) and the other column's content — only
+    // where the Columns cell box can't carry it (a single box in a cell stays the cell box)
+    if (STD_DRAFT_IMPORT && columns.length === 2 && !boxVariant(columns)) {
+      const boxOf = (c) => c.querySelector(':scope > .dimensional-box, :scope > .has-background, :scope > div > .dimensional-box');
+      const squash = (v) => (v || '').replace(/[\s\u00a0]+/g, '');
+      const texts = columns.map((col) => [...col.querySelectorAll('.c-rich-text-editor')]
+        .filter((c) => c.closest('.colctrl') === colctrl && !c.parentElement.closest('.c-rich-text-editor') && text(c))
+        .map((c) => ({ c, box: boxOf(c) }))
+        .map((t) => ({ ...t, variant: t.box ? panelOptions(t.box, t.c) : '' })));
+      const onlyBoxes = (i) => texts[i].length > 0 && texts[i].every((t) => t.variant)
+        && squash(texts[i].map((t) => t.c.textContent).join('')) === squash(columns[i].textContent);
+      const at = [0, 1].find((i) => onlyBoxes(i) && !texts[1 - i].some((t) => t.variant));
+      if (at !== undefined) {
+        const panels = texts[at].map(({ c, variant }) => {
+          const holder = doc.createElement('div');
+          holder.append(c.cloneNode(true));
+          const nodes = cellNodes(holder, doc);
+          rowCopyStyle([nodes], doc);
+          // a heading of Futura bold words and Egyptienne ones (span.futura-bold beside plain
+          // text): the plain words keep the serif (Text style), the bold words stay Futura
+          nodes.filter((n) => n.nodeType === 1 && /^H[1-6]$/.test(n.tagName) && n.querySelector('strong'))
+            .forEach((h) => {
+              const walker = doc.createTreeWalker(h, 4);
+              const runs = [];
+              for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+                if (!t.parentElement.closest('strong') && t.nodeValue.replace(/\[\[[^\]]*\]|\]/g, '').trim()) runs.push(t);
+              }
+              runs.forEach((t) => {
+                const m = t.nodeValue.match(/^(\s*(?:\[\[[^\]]*\])*)([\s\S]*?)(\]*\s*)$/);
+                if (!m || !m[2].trim()) return;
+                t.nodeValue = `${m[1]}[[serif]${m[2]}]${m[3]}`;
+              });
+            });
+          const block = WebImporter.Blocks.createBlock(doc, { name: `Panel (${variant})`, cells: [[nodes]] });
+          block.setAttribute('data-keep', 'join');
+          return block;
+        });
+        const otherNodes = cellNodes(columns[1 - at], doc);
+        rowCopyStyle([otherNodes], doc);
+        const other = doc.createElement('div');
+        other.setAttribute('data-keep', 'join');
+        other.append(...otherNodes);
+        const parts = at === 0 ? [...panels, other] : [other, ...panels];
+        const ratio = { 8: 'flex-67-33', 4: 'flex-33-67' }[columnWidth(columns[0])];
+        parts[0].setAttribute('data-keep', 'section');
+        parts[0].setAttribute('data-section-style', ['flex', ratio].filter(Boolean).join(', '));
         if (wrapper.hasAttribute('data-row-end')) parts[0].setAttribute('data-row-end', wrapper.getAttribute('data-row-end'));
         wrapper.replaceWith(...parts);
         return;

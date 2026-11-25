@@ -216,3 +216,124 @@ export function slideVideo(slide) {
   const base = 'https://media-assets.stryker.com/is';
   return `${base}/content/${path}.m3u8?poster=${base}/image/${path}?fit=constrain,1&wid=909&hei=511`;
 }
+
+/*
+ * A single slide whose image is a product cut-out in the right half of the grid
+ * (.standaloneimage with aem-GridColumn--offset--default--6 / --default--6, on a white XF) and
+ * the text on the left: stryker.com's page intro, not a banner, so the Hero Corp (page-hero)
+ * layout, text left, image right (Isolibrium, LIFEPAK 35).
+ * @param {Element} slide The .carouselslide
+ * @param {Element|null} overlay Its .overlayparsys
+ * @returns {boolean} Whether it is a page intro
+ */
+export function productSlide(slide, overlay) {
+  const ef = slide.querySelector('.experienceFragment-ef');
+  const col = ef && ef.querySelector('.standaloneimage');
+  if (!overlay || !col) return false;
+  const offset = Number((col.className.match(/aem-GridColumn--offset--default--(\d+)/) || [])[1] || 0);
+  const width = Number((col.className.match(/aem-GridColumn--default--(\d+)/) || [])[1] || 0);
+  const dark = /\bbg-(?!white)[a-z-]+/.test(ef.className);
+  return offset >= 5 && width > 0 && offset + width <= 12 && !dark;
+}
+
+const cleanText = (value) => (value || '').replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+
+/**
+ * One line of the page intro: its words and inline formatting, and the size, serif and gold
+ * it has on stryker.com (a fontsize-<n>em span, or the size tag an earlier step wrote).
+ * @param {Element} el The source line
+ * @returns {{node: Element, size: string, serif: boolean, gold: boolean}} The line
+ */
+function introLine(el) {
+  const doc = el.ownerDocument;
+  const box = doc.createElement('div');
+  [...el.childNodes].forEach((n) => box.append(n.cloneNode(true)));
+  const sizeSpan = box.querySelector('[class*="fontsize-"]');
+  let size = sizeSpan ? ((sizeSpan.className.match(/fontsize-(\d+(?:-\d+)?)em/) || [])[1] || '') : '';
+  // a size tag an earlier step wrote counts from the 14px text, not from the line
+  let tagged = false;
+  let serif = !!box.querySelector('.urw-egyptienne');
+  let gold = !!box.querySelector('[style*="ffb500" i], [style*="255, 181, 0"], [style*="255,181,0"]');
+  // size / font / colour tags an earlier step wrote ([[text-1-5,serif]…]): read, then dropped
+  const walker = doc.createTreeWalker(box, 4);
+  const texts = [];
+  for (let t = walker.nextNode(); t; t = walker.nextNode()) texts.push(t);
+  let open = 0;
+  texts.forEach((t) => {
+    t.nodeValue = t.nodeValue.replace(/\[\[([^\]]+)\]/g, (m, raw) => {
+      open += 1;
+      raw.split(',').map((c) => c.trim()).forEach((c) => {
+        const s = c.match(/^(?:text|size)-(\d+(?:-\d+)?)$/);
+        if (s && !size) {
+          [, size] = s;
+          tagged = true;
+        }
+        if (c === 'serif') serif = true;
+        if (c === 'color-gold') gold = true;
+      });
+      return '';
+    });
+  });
+  for (let i = texts.length - 1; i >= 0 && open > 0; i -= 1) {
+    while (open > 0 && texts[i].nodeValue.includes(']')) {
+      const at = texts[i].nodeValue.lastIndexOf(']');
+      texts[i].nodeValue = texts[i].nodeValue.slice(0, at) + texts[i].nodeValue.slice(at + 1);
+      open -= 1;
+    }
+  }
+  box.querySelectorAll('span, font').forEach((span) => span.replaceWith(...span.childNodes));
+  box.querySelectorAll('*').forEach((node) => {
+    [...node.attributes].forEach((attr) => {
+      if (!(node.tagName === 'A' && attr.name === 'href')) node.removeAttribute(attr.name);
+    });
+  });
+  return {
+    node: box, size, serif, gold, tagged,
+  };
+}
+
+/**
+ * The page intro's copy rows: the title (h1, gold as bold + italic when gold on the source),
+ * the subhead (the next heading, h2) and the text, each sized once with its Text style tag.
+ * @param {Element} overlay The slide's .overlayparsys
+ * @returns {Element[]} The lines
+ */
+export function introCopy(overlay) {
+  const doc = overlay.ownerDocument;
+  const lines = [...overlay.querySelectorAll('h1, h2, h3, p')]
+    .filter((el) => !el.parentElement.closest('h1, h2, h3, p')
+      && !el.closest('.curatedcta, .buttonset, .c-curatedcta')
+      && cleanText(el.textContent.replace(/\[\[[^\]]+\]|\]/g, '')));
+  let title = false;
+  return lines.map((el) => {
+    const line = introLine(el);
+    let tag = 'p';
+    if (/^H[1-3]$/.test(el.tagName)) tag = title ? 'h2' : 'h1';
+    if (tag === 'h1') title = true;
+    const out = doc.createElement(tag);
+    if (tag === 'h1') {
+      // the title is bold (Futura); gold is the conventions' bold + italic
+      line.node.querySelectorAll('strong, b').forEach((s) => s.replaceWith(...s.childNodes));
+      const strong = doc.createElement('strong');
+      const inner = line.gold ? doc.createElement('em') : strong;
+      while (line.node.firstChild) inner.append(line.node.firstChild);
+      if (inner !== strong) strong.append(inner);
+      out.append(strong);
+    } else {
+      while (line.node.firstChild) out.append(line.node.firstChild);
+    }
+    // the size relative to the line's own size in the page intro (title 28px, subhead 24.5px,
+    // text 14px); a tag from an earlier step is relative to the 14px text
+    let size = Number((line.size || '1').replace('-', '.'));
+    if (line.tagged) size = (size * 14) / ({ h1: 28, h2: 24.5 }[tag] || 14);
+    const words = [];
+    if (Math.abs(size - 1) >= 0.1) words.push(`text-${String(Math.round(size * 100) / 100).replace('.', '-')}`);
+    // the subhead is serif already (page-hero); a serif text line keeps its serif
+    if (line.serif && tag === 'p') words.push('serif');
+    if (words.length) {
+      out.prepend(doc.createTextNode(`[[${words.join(',')}]`));
+      out.append(doc.createTextNode(']'));
+    }
+    return out;
+  });
+}

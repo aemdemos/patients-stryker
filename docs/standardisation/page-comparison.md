@@ -10,18 +10,18 @@ date: "November 25, 2026"
 |---|---|---|---|
 | stryker.com | [isolibrium](https://www.stryker.com/us/en/acute-care/products/isolibrium.html) | [lifepak-35](https://www.stryker.com/us/en/emergency-care/products/lifepak-35.html) | [safeair-smoke-evacuation](https://www.stryker.com/us/en/surgical-technologies/products/safeair-smoke-evacuation.html) |
 | New site (review page) | [/drafts/astha/pages/isolibrium](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/isolibrium) | [/drafts/astha/pages/lifepak-35](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/lifepak-35) | [/drafts/astha/pages/safeair-smoke-evacuation](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/safeair-smoke-evacuation) |
-| Blocks on the page | 17 | 14 (+ 3 carousel slides) | 22 |
+| Blocks on the page | 18 | 14 (+ 3 carousel slides) | 22 |
 | Main sections on stryker.com, all present on the new site | 14 | 11 | 15 |
-| Text pieces compared (font, size, colour) | 77 | 92 | 132 |
-| Same as stryker.com | 67 | 90 | 116 |
-| Different by design (standard steps) | 4 | 0 | 6 |
+| Text pieces compared (font, size, colour) | 76 | 92 | 132 |
+| Same as stryker.com | 70 | 90 | 116 |
+| Different by design (standard steps) | 3 | 0 | 6 |
 | Measuring artefacts | 1 | 1 | 2 |
-| **Matches as designed** | **72 of 77 (94%)** | **91 of 92 (99%)** | **124 of 132 (94%)** |
-| Open gaps (listed per page) | 5 text, 2 layout | 1 text, 3 content | 8 text, 3 layout |
+| **Matches as designed** | **74 of 76 (97%)** | **91 of 92 (99%)** | **124 of 132 (94%)** |
+| Open gaps (listed per page) | 3 text, 1 layout | 2 text, 2 content | 8 text, 3 layout |
 
 *Measured on desktop (1,440px) with the same method as the block review pages: every visible piece of text
 matched by its words on both sites, then its font, size (within 2%) and colour compared. Phones (390px):
-Isolibrium 64, LIFEPAK 35 91, SafeAir 112 exact matches of the same pieces.*
+Isolibrium 66, LIFEPAK 35 90, SafeAir 112 exact matches of the same pieces.*
 
 **How the pages were made:** the migration's review build (the standardised one) imported each page
 from stryker.com as it is; nothing was edited by hand. Real pages are not affected: the migration's
@@ -36,11 +36,11 @@ the same words.
 
 | Section on stryker.com | New site | Result |
 |---|---|---|
-| Top banner: title, subline, description, gold button, product image | Hero image slide | text, button and colours match; title 3× → 2.5× (by design); **image fills the slide behind the text** (stryker.com: right half) — gap |
+| Top banner: title, subline, description, gold button, product image | Hero **Page intro**: text left, product image right (fixed after review) | title 42px gold, subhead 30.6px, copy 21px serif and the gold button match; image 675px in the right half (stryker.com 732px from x 720), text from x 30 (stryker.com x 86); on phones the image shows under the text (stryker.com hides it) and the subhead is 30.6px (26.25px) — by design (standard Page intro) |
 | Jump bar (Features, Savings, Contact, Resources) | Sticky navigation | match |
 | Intro: image + title + text | Columns, two equal | match |
 | Feature rows A, B, C: image + title + text | Columns, narrow + wide (3 rows) | match (layout fixed in this test); the blue letter "A." is black — gap |
-| "Integrated and intuitive touch screen" box + image | Columns, two equal | text and image match; **heading size 1.5× and its serif words lost** — gap |
+| "Integrated and intuitive touch screen": gold heading box over a white shadow box, image beside | Side by side (equal): a gold Panel over a white Panel with soft shadow, the image (fixed after review) | heading 36.75px, Futura bold words and Egyptienne words as on stryker.com; white box 655px at x 40 with its 10px shadow, copy 17.5px, image 675 × 380px at x 735 — match; gold box 675px wide (stryker.com 653px, its own inset) |
 | Proven pressure injury prevention: 3 numbers | Statistics | match |
 | Video | Video, black border | match |
 | Support surface + 2 financial guarantees | Columns, two equal | match |
@@ -64,14 +64,14 @@ Humanist bold on stryker.com (authoring convention, to decide).
 
 **What the customer sees:** the same page, section for section: banner, jump bar, the three feature
 rows, the numbers, the video, the calculator, the contact form and the resources. The visible
-differences are the banner image (full width instead of the right half) and the larger Quick links
-icons.
+differences are the banner's position (the standard Page intro: text from the content edge, the image
+half the width) and the larger Quick links icons.
 
 # 3. LIFEPAK 35
 
 | Section on stryker.com | New site | Result |
 |---|---|---|
-| Top banner: title, subline, description, gold button, product image | Hero image slide | text sizes, colours and gold button match (fixed in this test); **image fills the slide** (stryker.com: right half) — gap |
+| Top banner: title, subline, description, gold button, product image | Hero **Page intro**: text left, product image right (fixed after review) | title 28px gold, subhead, copy and gold button match; image in the right half (675px, stryker.com 732px); on phones the image shows under the text and the subhead is 30.6px (stryker.com 26.25px) — by design |
 | Jump bar | Sticky navigation | match |
 | Built on a legacy of trust + 3 icon items | Cards, three per row | match; icons above the text (stryker.com: beside it; no block inside a block) |
 | Carousel: 3 slides, headline in a purple box | Carousel of Hero slides, purple gradient box | match (box fixed in this test) |
@@ -138,16 +138,16 @@ All in the migration's review build or on review pages only; real pages are unch
 | A slide's description paragraph is kept | the line under the banner title on Isolibrium and LIFEPAK | migration (hero slide) |
 | A gold slide button is a Bold + Italic link (authoring conventions: gold) | gold "Contact an expert" | migration (hero slide) |
 | A sized bold title line in a banner counts from 14px, as on stryker.com | LIFEPAK title 28px (was 49px) | Hero (review pages) |
+| A single slide with a product image in the right half of the grid (offset 6 of 12, white) is the **Page intro** (text left, image right), sized once from stryker.com | Isolibrium and LIFEPAK banners: two columns, title 42px / 28px as on stryker.com; both pages now have one H1 | migration (hero slide) |
+| A column of coloured or shadow boxes beside other content (that the Columns cell box can't carry) is a side-by-side section of Panels, stacked in their column | Isolibrium's gold heading box over the white shadow box, the image beside | migration (sections), Section layout (review pages) |
 | An icon-sized card image keeps its own size | LIFEPAK's 90px icons (were full card width) | Cards (review pages) |
 
 # 6. Open gaps (to fix in the migration or decide)
 
 | Gap | Pages | Proposal |
 |---|---|---|
-| Product-page banners put the image in the right half (stryker.com grid offset 6 of 12); the new site fills the slide | Isolibrium, LIFEPAK 35 | read the slide's grid position in the migration and use the *Page intro* layout (title and image side by side) — to approve |
 | Shared fragments are older imports (oversized social icons, Resources columns wrapping) | all three | re-import the shared fragments with today's migration |
 | Headline box (gold) half width on stryker.com | SafeAir | a *narrow* headline box choice, or the standard full width — to decide |
-| A heading in a box loses its size and mixed fonts | Isolibrium | migration: keep the sizes inside line boxes |
 | Futura bold words inside a serif line show as serif bold | SafeAir | migration: mark stryker.com's Futura words (sans) inside serif lines |
 | Bold words in running text: Futura bold (new site) vs Humanist bold (stryker.com) | all three | authoring convention: decide which bold applies in sentences |
 | Testimonial in a box loses its sizes | SafeAir | migration: Text style on the box's text |

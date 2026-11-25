@@ -556,6 +556,97 @@ var CustomImportScript = (() => {
     const base = "https://media-assets.stryker.com/is";
     return `${base}/content/${path}.m3u8?poster=${base}/image/${path}?fit=constrain,1&wid=909&hei=511`;
   }
+  function productSlide(slide, overlay) {
+    const ef = slide.querySelector(".experienceFragment-ef");
+    const col = ef && ef.querySelector(".standaloneimage");
+    if (!overlay || !col) return false;
+    const offset = Number((col.className.match(/aem-GridColumn--offset--default--(\d+)/) || [])[1] || 0);
+    const width = Number((col.className.match(/aem-GridColumn--default--(\d+)/) || [])[1] || 0);
+    const dark = /\bbg-(?!white)[a-z-]+/.test(ef.className);
+    return offset >= 5 && width > 0 && offset + width <= 12 && !dark;
+  }
+  var cleanText = (value) => (value || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  function introLine(el) {
+    const doc = el.ownerDocument;
+    const box = doc.createElement("div");
+    [...el.childNodes].forEach((n) => box.append(n.cloneNode(true)));
+    const sizeSpan = box.querySelector('[class*="fontsize-"]');
+    let size = sizeSpan ? (sizeSpan.className.match(/fontsize-(\d+(?:-\d+)?)em/) || [])[1] || "" : "";
+    let tagged = false;
+    let serif = !!box.querySelector(".urw-egyptienne");
+    let gold = !!box.querySelector('[style*="ffb500" i], [style*="255, 181, 0"], [style*="255,181,0"]');
+    const walker = doc.createTreeWalker(box, 4);
+    const texts = [];
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) texts.push(t);
+    let open = 0;
+    texts.forEach((t) => {
+      t.nodeValue = t.nodeValue.replace(/\[\[([^\]]+)\]/g, (m, raw) => {
+        open += 1;
+        raw.split(",").map((c) => c.trim()).forEach((c) => {
+          const s = c.match(/^(?:text|size)-(\d+(?:-\d+)?)$/);
+          if (s && !size) {
+            [, size] = s;
+            tagged = true;
+          }
+          if (c === "serif") serif = true;
+          if (c === "color-gold") gold = true;
+        });
+        return "";
+      });
+    });
+    for (let i = texts.length - 1; i >= 0 && open > 0; i -= 1) {
+      while (open > 0 && texts[i].nodeValue.includes("]")) {
+        const at = texts[i].nodeValue.lastIndexOf("]");
+        texts[i].nodeValue = texts[i].nodeValue.slice(0, at) + texts[i].nodeValue.slice(at + 1);
+        open -= 1;
+      }
+    }
+    box.querySelectorAll("span, font").forEach((span) => span.replaceWith(...span.childNodes));
+    box.querySelectorAll("*").forEach((node) => {
+      [...node.attributes].forEach((attr) => {
+        if (!(node.tagName === "A" && attr.name === "href")) node.removeAttribute(attr.name);
+      });
+    });
+    return {
+      node: box,
+      size,
+      serif,
+      gold,
+      tagged
+    };
+  }
+  function introCopy(overlay) {
+    const doc = overlay.ownerDocument;
+    const lines = [...overlay.querySelectorAll("h1, h2, h3, p")].filter((el) => !el.parentElement.closest("h1, h2, h3, p") && !el.closest(".curatedcta, .buttonset, .c-curatedcta") && cleanText(el.textContent.replace(/\[\[[^\]]+\]|\]/g, "")));
+    let title = false;
+    return lines.map((el) => {
+      const line = introLine(el);
+      let tag = "p";
+      if (/^H[1-3]$/.test(el.tagName)) tag = title ? "h2" : "h1";
+      if (tag === "h1") title = true;
+      const out = doc.createElement(tag);
+      if (tag === "h1") {
+        line.node.querySelectorAll("strong, b").forEach((s) => s.replaceWith(...s.childNodes));
+        const strong = doc.createElement("strong");
+        const inner = line.gold ? doc.createElement("em") : strong;
+        while (line.node.firstChild) inner.append(line.node.firstChild);
+        if (inner !== strong) strong.append(inner);
+        out.append(strong);
+      } else {
+        while (line.node.firstChild) out.append(line.node.firstChild);
+      }
+      let size = Number((line.size || "1").replace("-", "."));
+      if (line.tagged) size = size * 14 / ({ h1: 28, h2: 24.5 }[tag] || 14);
+      const words = [];
+      if (Math.abs(size - 1) >= 0.1) words.push(`text-${String(Math.round(size * 100) / 100).replace(".", "-")}`);
+      if (line.serif && tag === "p") words.push("serif");
+      if (words.length) {
+        out.prepend(doc.createTextNode(`[[${words.join(",")}]`));
+        out.append(doc.createTextNode("]"));
+      }
+      return out;
+    });
+  }
 
   // tools/importer/parsers/hero-full-width-image.js
   function text2(el) {
@@ -721,6 +812,28 @@ var CustomImportScript = (() => {
     const overlay = slide.querySelector(".overlayparsys");
     const first = desktop || mobile || slide.querySelector("img");
     if (!first) return;
+    if (STD_DRAFT_IMPORT && productSlide(slide, overlay)) {
+      const copy = introCopy(overlay);
+      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        const a = document.createElement("a");
+        a.setAttribute("href", btn.getAttribute("href"));
+        a.textContent = clean2(btn.textContent);
+        if (btn.classList.contains("btn-gold")) {
+          const em = document.createElement("em");
+          em.append(a);
+          strong.append(em);
+        } else strong.append(a);
+        p.append(strong);
+        copy.push(p);
+      });
+      element.replaceWith(WebImporter.Blocks.createBlock(document, {
+        name: "Hero Corp (page-hero, no-rule)",
+        cells: [[copy], [copyImage(desktop || first, document)]]
+      }));
+      return;
+    }
     const variants = ["image-slide"];
     const cells = [[copyImage(first, document)]];
     if (desktop && mobile) cells.push([copyImage(mobile, document)]);
@@ -3878,6 +3991,48 @@ var CustomImportScript = (() => {
           const side = perColumn.every((p) => p.length === 1) || ratio && perColumn.length === 2 && narrow.length === 1;
           parts2[0].setAttribute("data-keep", "section");
           if (side) parts2[0].setAttribute("data-section-style", ["flex", ratio].filter(Boolean).join(", "));
+          if (wrapper.hasAttribute("data-row-end")) parts2[0].setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
+          wrapper.replaceWith(...parts2);
+          return;
+        }
+      }
+      if (STD_DRAFT_IMPORT && columns.length === 2 && !boxVariant(columns)) {
+        const boxOf = (c) => c.querySelector(":scope > .dimensional-box, :scope > .has-background, :scope > div > .dimensional-box");
+        const squash = (v) => (v || "").replace(/[\s\u00a0]+/g, "");
+        const texts = columns.map((col) => [...col.querySelectorAll(".c-rich-text-editor")].filter((c) => c.closest(".colctrl") === colctrl && !c.parentElement.closest(".c-rich-text-editor") && text4(c)).map((c) => ({ c, box: boxOf(c) })).map((t) => __spreadProps(__spreadValues({}, t), { variant: t.box ? panelOptions(t.box, t.c) : "" })));
+        const onlyBoxes = (i) => texts[i].length > 0 && texts[i].every((t) => t.variant) && squash(texts[i].map((t) => t.c.textContent).join("")) === squash(columns[i].textContent);
+        const at = [0, 1].find((i) => onlyBoxes(i) && !texts[1 - i].some((t) => t.variant));
+        if (at !== void 0) {
+          const panels = texts[at].map(({ c, variant: variant2 }) => {
+            const holder = doc.createElement("div");
+            holder.append(c.cloneNode(true));
+            const nodes = cellNodes(holder, doc);
+            rowCopyStyle([nodes], doc);
+            nodes.filter((n) => n.nodeType === 1 && /^H[1-6]$/.test(n.tagName) && n.querySelector("strong")).forEach((h) => {
+              const walker = doc.createTreeWalker(h, 4);
+              const runs = [];
+              for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+                if (!t.parentElement.closest("strong") && t.nodeValue.replace(/\[\[[^\]]*\]|\]/g, "").trim()) runs.push(t);
+              }
+              runs.forEach((t) => {
+                const m = t.nodeValue.match(/^(\s*(?:\[\[[^\]]*\])*)([\s\S]*?)(\]*\s*)$/);
+                if (!m || !m[2].trim()) return;
+                t.nodeValue = `${m[1]}[[serif]${m[2]}]${m[3]}`;
+              });
+            });
+            const block2 = WebImporter.Blocks.createBlock(doc, { name: `Panel (${variant2})`, cells: [[nodes]] });
+            block2.setAttribute("data-keep", "join");
+            return block2;
+          });
+          const otherNodes = cellNodes(columns[1 - at], doc);
+          rowCopyStyle([otherNodes], doc);
+          const other = doc.createElement("div");
+          other.setAttribute("data-keep", "join");
+          other.append(...otherNodes);
+          const parts2 = at === 0 ? [...panels, other] : [other, ...panels];
+          const ratio = { 8: "flex-67-33", 4: "flex-33-67" }[columnWidth(columns[0])];
+          parts2[0].setAttribute("data-keep", "section");
+          parts2[0].setAttribute("data-section-style", ["flex", ratio].filter(Boolean).join(", "));
           if (wrapper.hasAttribute("data-row-end")) parts2[0].setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
           wrapper.replaceWith(...parts2);
           return;

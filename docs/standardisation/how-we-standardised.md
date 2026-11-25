@@ -483,12 +483,13 @@ with stryker.com on desktop and phone. Details, screenshots and the open gaps: *
 
 | Page | Blocks | Main sections present | Text as on stryker.com (as designed) |
 |---|---|---|---|
-| [Isolibrium](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/isolibrium) | 17 | 14 of 14 | 72 of 77 (94%) |
+| [Isolibrium](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/isolibrium) | 18 | 14 of 14 | 74 of 76 (97%) |
 | [LIFEPAK 35](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/lifepak-35) | 14 + 3 slides | 11 of 11 | 91 of 92 (99%) |
 | [SafeAir smoke evacuation](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/safeair-smoke-evacuation) | 22 | 15 of 15 | 124 of 132 (94%) |
 
-The main open items: product-page banners show their image across the slide instead of in the right
-half; shared fragments need re-importing; a few text sizes inside boxes and the Futura words in serif
+Fixed after the first review: product-page banners are now the Page intro (text left, product image
+right), and a gold heading box over a white shadow box beside an image is a side-by-side section of
+Panels. The main open items: shared fragments need re-importing; a few text sizes inside boxes and the Futura words in serif
 titles need migration fixes; whether bold words in a sentence are Futura or Humanist is to decide.
 
 # Glossary

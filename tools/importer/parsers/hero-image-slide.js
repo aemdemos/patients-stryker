@@ -2,7 +2,7 @@
 /* global WebImporter */
 import { STD_DRAFT_IMPORT } from '../transformers/corp-text-markers.js';
 import {
-  dropColourTags, sizeBrackets, slideOptions, slideVideo, takeStripe,
+  dropColourTags, introCopy, productSlide, sizeBrackets, slideOptions, slideVideo, takeStripe,
 } from '../hero-corp-std-import.js';
 
 /**
@@ -128,6 +128,30 @@ export default function parse(element, context) {
   const overlay = slide.querySelector('.overlayparsys');
   const first = desktop || mobile || slide.querySelector('img');
   if (!first) return;
+
+  if (STD_DRAFT_IMPORT && productSlide(slide, overlay)) {
+    const copy = introCopy(overlay);
+    overlay.querySelectorAll('.curatedcta a.btn[href]').forEach((btn) => {
+      const p = document.createElement('p');
+      const strong = document.createElement('strong');
+      const a = document.createElement('a');
+      a.setAttribute('href', btn.getAttribute('href'));
+      a.textContent = clean(btn.textContent);
+      if (btn.classList.contains('btn-gold')) {
+        const em = document.createElement('em');
+        em.append(a);
+        strong.append(em);
+      } else strong.append(a);
+      p.append(strong);
+      copy.push(p);
+    });
+    // no rule under it on stryker.com (the slide's bottom edge only)
+    element.replaceWith(WebImporter.Blocks.createBlock(document, {
+      name: 'Hero Corp (page-hero, no-rule)',
+      cells: [[copy], [copyImage(desktop || first, document)]],
+    }));
+    return;
+  }
 
   const variants = ['image-slide'];
   const cells = [[copyImage(first, document)]];

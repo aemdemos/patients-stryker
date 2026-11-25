@@ -347,6 +347,25 @@ function decorateExclaimButtons(main) {
  * @param {Element} main The container element
  */
 function groupFlexColumns(main) {
+  // consecutive Panel blocks are one part, stacked (stryker.com: a gold heading box over a
+  // white shadow box in one column, the photo beside them, Isolibrium)
+  main.querySelectorAll(':scope > .section.flex').forEach((section) => {
+    let run = [];
+    const stack = () => {
+      if (run.length > 1) {
+        const column = document.createElement('div');
+        column.className = 'flex-column';
+        run[0].before(column);
+        column.append(...run);
+      }
+      run = [];
+    };
+    [...section.children].forEach((part) => {
+      if (part.matches('.panel-wrapper')) run.push(part);
+      else stack();
+    });
+    stack();
+  });
   main.querySelectorAll(':scope > .section.flex:is(.flex-67-33, .flex-33-67)').forEach((section) => {
     const parts = [...section.children].filter((div) => div.matches('div') && div.childElementCount);
     if (parts.length < 3) return;
