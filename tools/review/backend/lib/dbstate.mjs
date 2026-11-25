@@ -72,6 +72,12 @@ export async function pageRows(client, space, page) {
   return rowsOfDoc(await client.collection('pages').findOne({ _id: pageId(space, page) }, PRIMARY).catch(() => null));
 }
 
+/** one stored entry as it is ({ v, by, at, rev, inv, role }), from the primary; null when none */
+export async function entryOf(client, space, page, item, kind) {
+  const doc = await client.collection('pages').findOne({ _id: pageId(space, page) }, PRIMARY).catch(() => null);
+  return doc?.e?.[fieldOf(item, kind)] || null;
+}
+
 /** every row of a space (a list: may be a moment behind; for exports, summaries, backups) */
 export async function allRows(client, space) {
   const docs = await client.collection('pages').find({ space: space || 'std' }).toArray();

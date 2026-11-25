@@ -34,7 +34,7 @@ keeps the invitation, later visits need no link.
 | File | What |
 |---|---|
 | `config.js` | What this copy of the tool reviews (above) and the browser storage keys (`main-review-…`) |
-| `index.html`, `review.css`, `review.js` | The shell: page, widths, compare, flip / overlay / side by side, sync; the Feedback panel (page status banner and buttons, comments on this page, QA notes, links); Save / Undo changes |
+| `index.html`, `review.css`, `review.js` | The shell: page, widths, compare, flip / overlay / side by side, sync; the Feedback panel (page status banner and buttons, comments on this page, QA notes, links); every change saved at once |
 | `pages.js` | The pages of the review for the tool, the status page and the results: the migration scope and the published pages through the backend (below), else the query index, else `pages.json` |
 | `scope-sheet.py` | The migration scope table's first content (from the migration catalog), written once to DA |
 | `batches.js` | Review batches, groups and representative pages, and the filters (batch, group, representatives, area) shared by the status page and the tool (below) |
@@ -51,6 +51,22 @@ keeps the invitation, later visits need no link.
 | `shots.js` | The page's source shots in the tool: the history, one version, the AOE team's request for a new one |
 | `shoot.mjs`, `snapshot-map.py`, `capture-snapshots.mjs`, `upload-snapshots.sh`, `record-shots.mjs`, `refresh-shots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/` | Source shots and their history (below) |
 | `backend/` | The review backend on App Builder (`backend/README.md`): invitations, state per page, audit; spaces |
+
+## Saving, chats and QA notes (since 25 Nov 2026)
+
+- **Saved at once**: no Save or Undo button. A message is saved on Send (Ctrl+Enter), the page
+  status, a Done tick or a QA note on click. Each message shows *sending…* until the backend has
+  it, *not sent* (Retry in the toolbar) when it failed; what is typed and not sent stays in the
+  browser; a change kept in the browser and not sent (the tab closed at once) is sent on the next
+  visit to the page.
+- **Withdraw**: a message sent is final, but its author may withdraw it (asked first): everyone
+  then sees "Message withdrawn", it counts for nothing, the audit keeps the original. The backend
+  allows it to the invitation that wrote it only.
+- **QA notes start their chat**: a new note asks for its first message (no subject of its own);
+  "Add note" saves the note and that message at once and opens the chat. A note is referred to by
+  its number ("note 4 on page X"): numbered by creation, deleted notes included, so a number never
+  moves. Edit changes the category or deletes the note. The rules: `threads.js` (`isWithdrawn`,
+  `firstText`), used by the backend, the tool, the results page and the summary.
 
 ## The status page (customer and AOE team)
 

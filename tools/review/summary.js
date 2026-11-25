@@ -17,7 +17,7 @@ import { REVIEW } from './config.js';
 import { keyOf } from './sync.js';
 import { pageKeys, toPosition } from './blockkeys.js';
 import {
-  threadState, roleOf, threadKindOf,
+  threadState, roleOf, threadKindOf, firstText,
 } from './threads.js';
 
 // the designs a block's content fits and its group (groups.js): only with the design panel
@@ -242,6 +242,10 @@ export function summarise({
     };
   };
   const statusOf = (page, item, kind) => threadOf(page, item, kind).status;
+  // a thread's first words (threads.js firstText: a comment's text, an older note's, else its
+  // first message not withdrawn; a QA note since 25 Nov 2026 has no text of its own)
+  const wordsOf = (page, item, kind) => firstText(located
+    .filter((r) => r.page === page && r.item === item && threadKindOf(r.kind) === kind));
   const evidence = (e, extra) => ({
     ref: `${e.page}#${stored(e.page, e.item)}|${e.kind}`,
     page: e.page,
@@ -435,12 +439,12 @@ export function summarise({
           reach: counts[key],
         }));
         v.evidence.push(evidence({ ...e, page }, {
-          where: `${typeName(target.block)} ${e.item}`, text: e.value, link: link(page, block ? { block: e.item } : { section: e.item }),
+          where: `${typeName(target.block)} ${e.item}`, text: wordsOf(page, e.item, 'comment'), link: link(page, block ? { block: e.item } : { section: e.item }),
         }));
       }
-      if (e.item === 'page' && e.kind === 'comment' && e.value) {
+      if (e.item === 'page' && e.kind === 'comment' && e.value && wordsOf(page, 'page', 'comment')) {
         const p = itemOf(`page:${page}`, () => ({ kind: 'page', title: titles[page] || page, target: { page } }));
-        p.evidence.push(evidence({ ...e, page }, { where: 'page', text: e.value, link: link(page) }));
+        p.evidence.push(evidence({ ...e, page }, { where: 'page', text: wordsOf(page, 'page', 'comment'), link: link(page) }));
       }
 
       // QA notes (open ones; resolved and deleted ones are counted only)
@@ -451,7 +455,7 @@ export function summarise({
         const s = at && !b ? model.sections[at] : null;
         const extra = {
           where: (b && `${typeName(b.name)} ${at}`) || (s && `Text ${at}`) || 'page',
-          text: n.text,
+          text: wordsOf(page, e.item, 'note'),
           category: CATEGORIES[n.cat] || n.cat,
           width: ({ 375: 'phone', 860: 'tablet' })[n.vp] || 'desktop',
           link: link(page, { vp: n.vp, note: n.id }),

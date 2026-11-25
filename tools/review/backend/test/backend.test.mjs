@@ -157,6 +157,20 @@ check('load: the messages with roles, visible to both sides', thread.length === 
   && thread.some((x) => x.role === 'reviewer'), JSON.stringify(thread.map((x) => [x.reviewer, x.role])));
 r = await state(aoe.token);
 check('the AOE team sees the reviewers\' messages too', (r.json?.rows || []).filter((x) => x.item === 's1b0' && x.kind.startsWith('reply:')).length === 2);
+// withdrawing (saved at once since 25 Nov 2026): the author only, the value { withdrawn: true }
+r = await rep(T, 'oops0001', { text: 'Sent by mistake.' });
+check('a message by mistake: sent', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+r = await rep(aoe.token, 'oops0001', { withdrawn: true }, 1);
+check('someone else cannot withdraw it', r.status === 403 && r.json?.error.code === 'not-yours', `${r.status} ${JSON.stringify(r.json)}`);
+r = await rep(T, 'oops0001', { text: 'changed' }, 1);
+check('its author cannot edit it either (written once)', r.status === 400 && r.json?.error.code === 'bad-reply', r.status);
+r = await rep(T, 'oops0001', { withdrawn: true }, 1);
+check('its author withdraws it', r.json?.results?.[0].ok === true && r.json.results[0].rev === 2, JSON.stringify(r.json));
+r = await state(T);
+const oops = (r.json?.rows || []).find((x) => x.kind === 'reply:comment:oops0001');
+check('withdrawn: its text gone from the review', oops && JSON.parse(oops.value).withdrawn === true && !JSON.parse(oops.value).text, JSON.stringify(oops));
+const audit = await admin({ op: 'audit', page: PAGE });
+check('the audit keeps the original', JSON.stringify(audit).includes('Sent by mistake.'), JSON.stringify(audit).slice(0, 200));
 const ans = await admin({ op: 'answer', rows: [{ page: PAGE, item: 's1b0', thread: 'comment', text: 'From the command line.', status: { state: 'progress' } }] });
 check('admin answer: an AOE message in the thread', ans.results?.[0].ok === true && /^reply:comment:/.test(ans.results[0].kind), JSON.stringify(ans));
 // page statuses: each side its own

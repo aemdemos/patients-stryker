@@ -1,9 +1,11 @@
 /*
  * Review tool: saving and loading the review state, in the review backend on App Builder
  * (tools/review/backend): reviewers open the tool with their invitation link (`?invite=`), which
- * the browser keeps; the reviewer's name comes from it. Changes are saved at once, each with the
- * rev it started from (a change someone else made meanwhile is a conflict, never overwritten).
- * Until the backend has a change it stays in the browser (pending) and counts as saved here.
+ * the browser keeps; the reviewer's name comes from it. Changes are saved at once (since 25 Nov
+ * 2026 the tool has no Save button: a message on Send, a status or a tick on click), each with
+ * the rev it started from (a change someone else made meanwhile is a conflict, never
+ * overwritten). Until the backend has a change it stays in the browser (pending: shown as
+ * "sending…", or "not sent" with Retry) and is sent again on the next visit.
  * Row: page, item (block id, section id, `page`, `note:<id>`, `group:<key>`), kind, value (JSON),
  * reviewer, time (ISO), rev. (The pilot's Google Sheet route was retired on 2026-11-17.)
  */
@@ -259,8 +261,15 @@ export function createStore(onStatus = () => {}) {
       .reduce((chain, rows) => chain.then(() => send(rows)), Promise.resolve());
   }
 
+  /** an entry's sending state: 'sending', 'failed' (not sent: Retry), or null (saved) */
+  function pendingOf(rowPage, item, kind) {
+    const r = pending().find((x) => x.page === rowPage && x.item === item && x.kind === kind);
+    if (!r) return null;
+    return r.failed ? 'failed' : 'sending';
+  }
+
   return {
-    load, save, retry, status, identity, busy: () => sending > 0 || queue.length > 0,
+    load, save, retry, status, identity, pendingOf, busy: () => sending > 0 || queue.length > 0,
   };
 }
 
