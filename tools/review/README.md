@@ -105,6 +105,14 @@ page and the summary.
 - **The design panel is off** (25 Nov 2026, `config.js` `designPanel: false`): it was not used,
   so the review is comments and QA notes only (nothing else to save); `design: true` stays, so the
   summary and the results still sort feedback by the standard pages' designs. The code stays.
+- **The start page** (`launch.html`, 25 Nov 2026): where new invitation links open (a link to one
+  page still opens the review tool on it; older links keep opening the tool). The viewer's name
+  and role, the review in numbers (pages in the review, waiting for you, waiting for the other
+  side, in review, approved, % done; kept up to date), a card per page (Review tool, Status page,
+  Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
+- **Help on every page** (`help.js`): "Start" and an ⓘ at the right end of every top bar; the
+  ⓘ opens a dialog about the page for the viewer's side (customer or AOE team). The texts live
+  in `help.js` (`HELP`): keep them in step with the pages.
 - **Kept up to date** (25 Nov 2026, `live.js`): the review page, the status page and the
   summary page ask the backend again every 15 s while their tab is visible (at once when it is
   shown again; nothing in a hidden tab). The review page draws its chats, notes and status again

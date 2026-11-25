@@ -66,7 +66,7 @@ try {
   if (c.status === 200) made.push(c.body.invite.id);
   // (made on Stage: the link also names Stage's backend; on Production it names none)
   const made1 = c.body.invite.link ? new URL(c.body.invite.link) : null;
-  check('create: the link on the origin\'s host, its backend named on Stage only, no token field', made1?.href.startsWith(`${ORIGIN}/tools/review/index.html?`) && made1.searchParams.get('invite')
+  check('create: the link on the origin\'s host, its backend named on Stage only, no token field', made1?.href.startsWith(`${ORIGIN}/tools/review/launch.html?`) && made1.searchParams.get('invite')
     && made1.searchParams.get('backend') === (TEST.name === 'stage' ? 'stage' : null) && !('token' in c.body.invite), c.body.invite.link?.replace(/invite=[^&]+/, 'invite=…'));
   const token = c.body.invite?.link ? new URL(c.body.invite.link).searchParams.get('invite') : '';
   const works = await call(`state?page=${encodeURIComponent('/test/x/page')}`, token);

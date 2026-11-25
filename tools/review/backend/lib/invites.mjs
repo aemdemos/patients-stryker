@@ -50,7 +50,11 @@ export async function createInvite({ state, files }, {
   // (made on Stage, the test workspace: the link opens the tool on Stage's backend, whatever host)
   const stage = /-stage$/.test(process.env.__OW_NAMESPACE || '');
   const backend = stage ? { backend: 'stage' } : {};
-  const link = `${tool}?${new URLSearchParams({ ...(typeof page === 'string' && page ? { page } : {}), ...backend, invite: token })}`;
+  // (the start page since 25 Nov 2026; a link to one page: the review tool on it)
+  const onPage = typeof page === 'string' && page;
+  const link = onPage
+    ? `${tool}?${new URLSearchParams({ page, ...backend, invite: token })}`
+    : `${tool.replace('index.html', 'launch.html')}?${new URLSearchParams({ ...backend, invite: token })}`;
   const summary = `${tool.replace('index.html', 'summary.html')}?${new URLSearchParams({ ...backend, invite: token })}`;
   return {
     id,
