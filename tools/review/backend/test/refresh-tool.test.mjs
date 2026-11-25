@@ -123,7 +123,7 @@ try {
       && r.who.join() === 'AOE team:rgb(235, 16, 0),Reviewer:rgb(9, 105, 218),Reviewer:rgb(9, 105, 218),AOE team:rgb(235, 16, 0),Reviewer:rgb(9, 105, 218)'
       && !r.customer, JSON.stringify(r));
     check('… the buttons in the order of the work: summary, pages, review tool', r.buttons.join('|') === `Get the Summary ./summary.html|${aoeSide ? 'See every page' : 'See my pages'} ./status.html|Open the review tool ./index.html`, JSON.stringify(r.buttons));
-    check(`… the cards: Invitations ${aoeSide ? 'for the AOE team' : 'not for a reviewer'}`, r.cards.some((c) => c.startsWith('Invitations')) === aoeSide && r.cards.some((c) => c.startsWith('Review tool')), JSON.stringify(r.cards));
+    check(`… the cards in the order of the work (Summary, Status page, Review tool), Invitations ${aoeSide ? 'last, for the AOE team' : 'not for a reviewer'}`, r.cards.map((c) => c.replace('AOE team', '')).join('|') === ['Summary', 'Status page', 'Review tool', ...(aoeSide ? ['Invitations'] : [])].join('|'), JSON.stringify(r.cards));
     await l.p.click('.hp-info');
     const h = await l.p.evaluate(() => {
       const d = document.querySelector('.hp-dialog');

@@ -1,6 +1,6 @@
 /*
  * The review's start page (launch.html, 25 Nov 2026): where invitation links open. Who you are
- * (from the link), where the review stands (kept up to date, live.js), the pages of the review
+ * (from the link), where the review stands (kept up to date, live.js), the tools of the review
  * with what each one is for, and the way of working between the reviewers and the AOE team, with
  * the statuses in their colours (the AOE team in Adobe red, reviewers in blue).
  * DOM only (no innerHTML).
@@ -58,11 +58,11 @@ const chip = (state) => el('span', { class: `ln-chip st-${state}` }, STATES[stat
 
 const CARDS = [
   {
-    key: 'review',
-    href: './index.html',
-    title: 'Review tool',
-    cta: 'Start reviewing',
-    text: 'One page at a time, next to the original stryker.com page (a snapshot, or rendered live), at every width. Comment, pin QA notes, approve.',
+    key: 'summary',
+    href: './summary.html',
+    title: 'Summary',
+    cta: 'Open the summary',
+    text: 'Everything said and decided so far, in one place: progress, comments, QA notes with the answers. Downloads for a spreadsheet.',
   },
   {
     key: 'status',
@@ -72,11 +72,11 @@ const CARDS = [
     text: 'Every page of the review with its status, its batch and group, and what happened last. Your list of what to review next.',
   },
   {
-    key: 'summary',
-    href: './summary.html',
-    title: 'Summary',
-    cta: 'Open the summary',
-    text: 'Everything said and decided so far, in one place: progress, comments, QA notes with the answers. Downloads for a spreadsheet.',
+    key: 'review',
+    href: './index.html',
+    title: 'Review tool',
+    cta: 'Start reviewing',
+    text: 'One page at a time, next to the original stryker.com page (a snapshot, or rendered live), at every width. Comment, pin QA notes, approve.',
   },
   {
     key: 'invites',
@@ -93,7 +93,7 @@ const FLOW = [
     who: 'aoe',
     title: 'Pages are published and organised',
     state: ['unreviewed'],
-    text: 'The AOE team publishes the migrated pages, puts them in review batches, groups the pages built exactly the same way (one representative each), and sends each reviewer a review link.',
+    text: 'The AOE team publishes the migrated pages, puts them in review batches, groups the pages built exactly the same way (one representative each), and sends each person taking part their own review link: one personal link per person (not one per page), which opens this start page and every page of the review they are invited to.',
   },
   {
     who: 'reviewer',

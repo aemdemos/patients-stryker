@@ -37,8 +37,8 @@ export const HELP = {
     title: 'The start page',
     intro: 'Where the review starts: the pages you use, where the review stands, and how the reviewers and the AOE team work through it together.',
     reviewer: [
-      ['What you see', P('Your name and role, from your review link.', 'The review in numbers, kept up to date while the page is open: the pages in the review, the pages waiting for the AOE team (red) and for the reviewer (blue), in review and approved.', 'A card for each page of the review, and the way of working, step by step, with the colours of each status.')],
-      ['Where to begin', P(['Open the **Status page** to see which pages are yours to review (your batch, if the AOE team gave you one).', 'Open a page in the **Review tool**, compare it with the original, comment and approve.', 'The **Summary** gathers everything said and decided so far.'])],
+      ['What you see', P('Your name and role, from your review link.', 'The review in numbers, kept up to date while the page is open: the pages in the review, the pages waiting for the AOE team (red) and for the reviewer (blue), in review and approved.', 'A card for each tool of the review (Summary, Status page, Review tool), and the way of working, step by step, with the colours of each status.')],
+      ['Where to begin', P(['The **Summary** gathers everything said and decided so far.', 'The **Status page** lists the pages that are yours to review (your batch, if the AOE team gave you one).', 'Open a page in the **Review tool**, compare it with the original, comment and approve.', 'Your review link is personal and covers every page you are invited to: keep it to yourself.'])],
     ],
     aoe: [
       ['For the AOE team', P('The same page and the same numbers the reviewers see.', ['The **Invitations** card: create review links for reviewers and AOE members, and withdraw them.', 'The way of working is the same for everyone: point new reviewers to this page.'])],
