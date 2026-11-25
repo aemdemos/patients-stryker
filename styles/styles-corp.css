@@ -1587,3 +1587,10 @@ body.corp.std-draft main .section.flex.flex-row-mobile img {
     padding-inline: 0;
   }
 }
+
+/* video frames (in review, draft pages): a Dynamic Media video has no frame unless its Video
+   block has the Black border option (docs/standardisation/video.md) — also inside Columns cells
+   and cards, where the site-wide default would draw one */
+body.corp.std-draft main .dm-video:not(.video.border .dm-video) {
+  border: 0;
+}
