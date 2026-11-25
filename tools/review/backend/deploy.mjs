@@ -55,6 +55,12 @@ const ACTIONS = {
   capture: {
     web: false, timeout: 300000, memory: 2048, browser: true, concurrency: 1,
   },
+  // the daily source change check: the capture action's code in a 1 GB container (what it
+  // loads is light: no images, media or fonts for the daily content check; App Builder counts
+  // memory x duration), its own action so the capture keeps its 2 GB
+  check: {
+    file: 'capture', web: false, timeout: 300000, memory: 1024, browser: true, concurrency: 1,
+  },
   // a live copy of a source page for the tool (the browser; a web action answers within 60 s)
   live: {
     web: true, timeout: 60000, memory: 2048, browser: true,
@@ -125,7 +131,7 @@ if (!dry) {
 for (const name of names) {
   const a = ACTIONS[name];
   const out = await esbuild.build({
-    entryPoints: [join(HERE, 'actions', `${name}.mjs`)],
+    entryPoints: [join(HERE, 'actions', `${a.file || name}.mjs`)],
     bundle: true,
     platform: 'node',
     target: 'node20',

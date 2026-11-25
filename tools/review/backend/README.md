@@ -68,6 +68,19 @@ check's list (`admin changes-scope`) not checked today, one at a time, with a pa
   variant, changed, unreachable, gone after 3 days; the day's visual result: baseline, same,
   noise), the runs in `changes/site.json` (timings, counts). `admin changes-page {page}` /
   `changes-site`.
+- **What changed:** each page's record keeps its latest content (the parts' text, images, links,
+  embeds); a change or a variant logs a short diff: per part, the text around the difference
+  before and after, images / links / embeds added and removed. (The pilot's first two "changes",
+  25 Nov, showed screenshots identical to the first ones: invisible differences, most likely a
+  link's address; without the content they could not be told. Kept from then on.)
+- **Cost** (App Builder counts memory x duration; one pack: 6 million GB-s a year, ~16,400 a
+  day; the user, 25 Nov 2026: the pack is this backend's alone, the Live warm-up stays 24/7 for
+  India, EU and US): the check runs in its own **1 GB** action `check` (the capture's code; the
+  capture and the Live copies keep 2 GB), **2 pages at a time** (each with its pause). Measured
+  on the 50 pilot pages: a quiet day 1.2 GB-s a page (50 in 60 s), with 3 first histories and 3
+  shots 2.15. For 2,553 pages: content ~3,100–3,500 a day, the weekly visual ~1,800, shots for
+  changes ~600, Production as it is ~2,100 (Live warm-up ~1,600, capture ~460): ~7,600–8,000 a
+  day, ~2.8 million a year, about half the pack; the histories' start ~57,000 once.
 - **Redirects:** a source that sends visitors to another address (e.g. `/us/en/about/news.html`
   → `/us/en/about/news/index.html`) is not a failure: its own state, `redirects`, kept daily; a
   redirect that starts (on a page that had content), changes target or ends is a change (an
