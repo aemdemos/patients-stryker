@@ -166,19 +166,18 @@ uses**.*
 |---|---|---|---|---|
 | Side by side and column widths | 29 | 6,071 | **4**: side by side (equal, wide + narrow, narrow + wide), side by side on phones | built |
 | Section roles: tab, accordion, carousel | 11 | 1,066 | **3** roles + 7 follow-up choices (starts open; autoplay, fade, split slide, 3 band colours) | built |
-| Background and boxes | 38 | 4,123 | **10** background colours (the box colours) + full width, soft shadow box, gradient direction | proposed |
-| Text look of the whole section (fonts, sizes, bold, centred) | 56 | 11,394 | **Text style** for the words, + **1** section style: centred text | Text style built; centred proposed |
+| Background and boxes | 38 | 4,123 | **10** background colours (the box colours) + full width, soft shadow, gradient direction | built (review pages) |
+| Text look of the whole section (fonts, sizes, bold, centred) | 56 | 11,394 | **Text style** for the words, + **1** section style: centred text | built |
 | Spacing (padding, margin, spacer sections) | 95 | 6,194 | **0**: the standard gap between sections | by design |
-| Lines between sections | 5 | 3,348 | **1**: line above the section | proposed |
+| Lines between sections | 5 | 3,348 | **1**: line above the section | built (review pages) |
 | Template and shared parts (disclaimer, contact aside, Connect band …) | 12 | 3,450 | **12** kept as they are, set by the migration with their template or fragment; not an author choice | kept |
-| Button colour | 2 | 96 | **2**: purple buttons, blue buttons | proposed (kept) |
-| Desktop or phone only | 2 | 28 | **2**: desktop only, phone only | proposed (kept) |
+| Button colour | 2 | 96 | **2**: purple buttons, blue buttons | built (names kept) |
+| Desktop or phone only | 2 | 28 | **2**: desktop only, phone only | built (names kept) |
 | Image looks (borders, linked images) | 5 | 47 | **0** section styles: Block options of the block (image border, linked images) | built |
-| **Total** | **255** | **35,817** | **35 author choices** (14 built, 21 proposed) **+ 12 template looks** | |
+| **Total** | **255** | **35,817** | **35 author choices**, all in Block options → Section (shown on review pages) **+ 12 template looks** | |
 
-
-The full list of built and proposed section styles, and how the Block options panel decides which to
-show, is in the business guide (how-we-standardised.md, section 9).
+The full list of the section styles (names, measured values, outliers), and how the Block options panel
+decides which to show, is in the business guide (how-we-standardised.md, section 9).
 
 ---
 

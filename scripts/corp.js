@@ -52,6 +52,8 @@ export async function loadEager(doc) {
   const base = window.hlx.codeBasePath;
   await Promise.all([
     loadCSS(`${base}/styles/styles-corp.css`),
+    // the section styles in review (Block options → Section): draft pages only
+    ...(doc.body.classList.contains('std-draft') ? [loadCSS(`${base}/styles/sections-std.css`)] : []),
     // all overlays up front, so blocks that arrive later (fragments, auto-blocks) are styled too
     ...CORP_BLOCK_STYLES.map((name) => loadCSS(`${base}/blocks/${name}/${name}-corp.css`)),
   ]);

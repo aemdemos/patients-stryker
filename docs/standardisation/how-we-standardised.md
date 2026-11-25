@@ -15,7 +15,7 @@ date: "November 24, 2026"
 | Text colours | **27** | **11** |
 | Box and background colours | **25** | **10** |
 | Image border colours | **12** | **3** |
-| Section style names | **255** | **35** author choices (14 built, 21 proposed) + 12 template looks |
+| Section style names | **255** | **35** author choices (in Block options → Section) + 12 template looks |
 | Block variants | **70** | **53** |
 | Uses that keep their look | | **95% to 100%** for spacing inside boxes, sizes, fonts and colours; **77% to 96%** for outer spacing |
 | Real pages changed during review | | **0** (checked element by element) |
@@ -321,7 +321,7 @@ until the business approves.
 |---|---|---|
 | Variant | the structure of a block | Columns *two equal* |
 | Block options | how a block looks | box colour, spacing, border, alignment |
-| Section style | a whole section | side by side, tab panel, carousel slide (built); background, line above, centred text (proposed): picked in **Block options → Section**, which copies the Style to paste into the section's Section Metadata (section 9) |
+| Section style | a whole section | side by side, tab panel, carousel slide, background, line above, centred text …: picked in **Block options → Section**, which copies the Style to paste into the section's Section Metadata (section 9) |
 | Text style | a few words inside a text | a gold name, a serif sentence, a 2× size |
 
 Rule for authors: the whole block → Block options; a few words → Text style.
@@ -342,19 +342,19 @@ uses**.*
 |---|---|---|---|---|
 | Side by side and column widths | 29 | 6,071 | **4**: side by side (equal, wide + narrow, narrow + wide), side by side on phones | built |
 | Section roles: tab, accordion, carousel | 11 | 1,066 | **3** roles + 7 follow-up choices (starts open; autoplay, fade, split slide, 3 band colours) | built |
-| Background and boxes | 38 | 4,123 | **10** background colours (the box colours) + full width, soft shadow box, gradient direction | proposed |
-| Text look of the whole section (fonts, sizes, bold, centred) | 56 | 11,394 | **Text style** for the words, + **1** section style: centred text | Text style built; centred proposed |
+| Background and boxes | 38 | 4,123 | **10** background colours (the box colours) + full width, soft shadow, gradient direction | built (review pages) |
+| Text look of the whole section (fonts, sizes, bold, centred) | 56 | 11,394 | **Text style** for the words, + **1** section style: centred text | built |
 | Spacing (padding, margin, spacer sections) | 95 | 6,194 | **0**: the standard gap between sections | by design |
-| Lines between sections | 5 | 3,348 | **1**: line above the section | proposed |
+| Lines between sections | 5 | 3,348 | **1**: line above the section | built (review pages) |
 | Template and shared parts (disclaimer, contact aside, Connect band …) | 12 | 3,450 | **12** kept as they are, set by the migration with their template or fragment; not an author choice | kept |
-| Button colour | 2 | 96 | **2**: purple buttons, blue buttons | proposed (kept) |
-| Desktop or phone only | 2 | 28 | **2**: desktop only, phone only | proposed (kept) |
+| Button colour | 2 | 96 | **2**: purple buttons, blue buttons | built (names kept) |
+| Desktop or phone only | 2 | 28 | **2**: desktop only, phone only | built (names kept) |
 | Image looks (borders, linked images) | 5 | 47 | **0** section styles: Block options of the block (image border, linked images) | built |
-| **Total** | **255** | **35,817** | **35 author choices** (14 built, 21 proposed) **+ 12 template looks** | |
+| **Total** | **255** | **35,817** | **35 author choices**, all in Block options → Section (shown on review pages) **+ 12 template looks** | |
 
 ## 9.2 The section styles
 
-**Built (Block options → Section)**
+**Layout and roles (Block options → Section)**
 
 | Choice | Style name | Replaces today | Fits when |
 |---|---|---|---|
@@ -374,19 +374,35 @@ uses**.*
 The column-width names (col-1-2, col-1-3, col-2-3, col-at-…, image-1-2 / 1-3 / 2-3, width-50 / 67, phone-full:
 about 860 uses) map to the nearest side-by-side choice by their widths; the pages are listed for review.
 
-**Proposed (to approve; would be added to Block options → Section)**
+**Backgrounds and the other section styles (Block options → Section, review pages)**
 
-| Choice | Replaces today (uses) | Note |
+| Choice | Style name | Replaces today (uses) | Measured on stryker.com → new site | Fits when |
+|---|---|---|---|---|
+| Background: white, light grey, gold, blue, purple, teal, dark grey, gold gradient, blue gradient, purple gradient | `box-white` … `box-purple-gradient` | bg-white 957, bg-gold 539, bg-light-gray 291, bg-dark-purple-gradient 218, bg-dark-blue-gradient 183, dark 127, bg-golden-gradient 92, bg-dark-gray 53, bg-blue 32, bg-purple 18, bg-teal 3 … (38 names) | exact colours (#ffb500, #edeeec, #1c5687, #85458a, #4c7d7a, #545857; gradients #af6d04 → #ffb500 20%, #545857 → #425361, #545857 → #594b61); a box at the content width (1380px from x 30 at 1440px, 360px at 390px), medium spacing above (5%), small at the sides and below (3%) (stryker.com 4% / 2% / 3%); white text on the dark colours | any section |
+| Full width (a band) | `full-bleed` | full-bleed 13; every bg-* band (today's look of the old names) | the background to the page edges, the content at the page width (stryker.com c-full-bleed-panel: text from x 30) | a background is picked |
+| Soft shadow | `shadow` | boxed 1,235, shadow-box 76 (with a colour: that colour's box) | the stryker.com dimensional box shadow (0 0 10px, 30% black) | a background is picked |
+| Gradient direction: right to left, bottom to top | `gradient-reverse`, `gradient-up` | gradient-inverse 37, gradient-top-to-bottom 19 (both together: bottom to top) | −90° / 0° | a gradient background is picked |
+| Centred text | `text-center` | center 644 | the section's text centred | any section |
+| Narrow column | `narrow` | col-8-centre 171, col-8 132; col-10 59, column-10-12 82 (outliers, below) | the centred 8/12 column from 600px (909px from x 265 at 1440px), full width on phones | any section |
+| Line above | `line-above` | divider 2,987, separator 325, separator-row 33, separator-wide 1 | 1px #b2b4ae across the page; the section gap above (30px, 20px on phones), 50px below it (20px on phones) | any section |
+| Buttons: purple, blue | `btn-purple`, `btn-blue` (names kept) | btn-purple 77, btn-blue 19 | stryker.com .btn-purple #85458a, .btn-blue #1c5687, darker on hover | the section has a button (a link alone on its line) |
+| Show on: desktop only, phones only | `desktop-only`, `mobile-only` (names kept) | desktop-only 15, mobile-only 13 | stryker.com switches at 840px (hidden-xs / visible-xs) → 600px; also on fragments that replace the section | any section |
+
+Old names keep rendering as today on real pages; the panel reads them as the standard choices (e.g.
+`bg-gold` = Gold + Full width, `bg-gold, boxed` = Gold + Soft shadow) and **Copy section style** writes
+the standard names. Each choice has an example with real stryker.com content on the Section layout
+review page.
+
+**Outliers (to review)**
+
+| What | Uses | Proposal |
 |---|---|---|
-| Background: white, light grey, gold, blue, purple, teal, dark grey, gold gradient, blue gradient, purple gradient | bg-white 957, bg-gold 539, bg-light-gray 291, bg-dark-purple-gradient 218, bg-dark-blue-gradient 183, dark 127, bg-golden-gradient 92, bg-dark-gray 53, bg-blue 32, bg-purple 18 … (38 names) | the same 10 colour names as every block's box; silver, orange and dark gold go to the nearest (listed) |
-| Full width background | full-bleed 13, gold-band 20 | the background runs to the page edges |
-| Soft shadow box | boxed 1,235, shadow-box 76, headline-box 58 | a white box with a soft shadow around the section's content |
-| Gradient direction: reversed, bottom to top | gradient-inverse 37, gradient-top-to-bottom 19 | gradient backgrounds only |
-| Centred text | center 644 | the whole section's text centred |
-| Narrow text column (centred) | col-8 132, col-8-centre 171, col-10 59, column-10-12 82 | to confirm against stryker.com: one width or two |
-| Line above the section | divider 2,987, separator 325, separator-row 33, line-above 2, separator-wide 1 | one grey line; full-width line to confirm |
-| Purple buttons, blue buttons | btn-purple 77, btn-blue 19 | buttons follow the authoring conventions (gold, teal) elsewhere |
-| Desktop only, phone only | desktop-only 15, mobile-only 13 | |
+| The 10/12 column (col-10, column-10-12): a second narrow width (1,150px at 1440px) | 141 | the narrow 8/12 column, or full width; to decide |
+| col-8 is left-aligned on stryker.com (910px from x 30); the narrow column is centred | 132 | centred |
+| Colours outside the list: bg-silver, bg-gray, gray-gradient → light grey; bg-dark-gold, bg-dark-orange-gradient → gold gradient | 33 | the nearest named colour |
+| `dark`: the migration's one name for stryker.com's dark grey and its dark teal / orange gradients | 127 | dark grey |
+| Spacing inside a box: stryker.com 4% / 2% / 3% | | the steps 5% / 3% / 3% (text 41px in from the box edge at 1440px, 28px on stryker.com) |
+| Today's site paints `bg-gold, boxed` as a full-width band; stryker.com shows a box at the content width | | the standard reading follows stryker.com (a box with a soft shadow) |
 
 **Not section styles any more**
 
@@ -405,11 +421,14 @@ about 860 uses) map to the nearest side-by-side choice by their widths; the page
 | opens with a heading | A tab, An accordion panel (folded away) |
 | holds a Hero block, or a Columns row next to a carousel slide | A carousel slide (folded away) |
 | is next to a tab, accordion panel or carousel slide | the folded part opens: "make this one the same to add it" |
+| any section | Background, Text and width (centred text, narrow column, line above), Show on |
+| has a background | Full width, Soft shadow; and Gradient direction for a gradient |
+| holds a button (a link alone on its line) | Buttons (purple, blue) |
 | has a style already | that style, so it can be removed |
 | none of these | "No section style applies to this section as it is" |
 
-Follow-up choices (on phones, starts open, autoplay, fade, split, band colour) appear only after their
-main choice. Styles that can't apply are listed with why under "Other section styles".
+Follow-up choices (on phones, full width, soft shadow, gradient direction, starts open, autoplay, fade,
+split, band colour) appear only after their main choice. Styles that can't apply are listed with why under "Other section styles".
 
 # 10. Values that move more (listed for review)
 
@@ -434,7 +453,7 @@ Every page concerned is listed by address in its block chapter.
 | Cards | one box colour per row (21 rows colour each card differently); building the filtered product grid |
 | Hero | page intro replacing the columns rows; framed banners, text above on phones, video backgrounds |
 | Section styles (built) | approve the *Section* area of Block options: side by side, tab, accordion panel, carousel slide, shown only when they fit the section (section 9.3) |
-| Section styles (proposed) | the 21 proposed choices of section 9.2: 10 backgrounds + full width, soft shadow box and gradient direction; centred text; narrow text column; line above; purple and blue buttons; desktop or phone only |
+| Section styles (backgrounds and the others) | approve the 21 choices of section 9.2 (10 backgrounds + full width, soft shadow, gradient direction; centred text; narrow column; line above; purple and blue buttons; desktop or phone only), built on review pages; the 10/12 column (141 uses) |
 | Section styles (dropped) | whole-section fonts and sizes move to Text style; spacing and spacer sections (4,039) become the standard gap |
 | Statistics | the 22 number rows next to images or video |
 | Table | legal lists from a sheet or in the page (Trademarks: 1,322 rows) |

@@ -72,6 +72,9 @@ options, which grey out what doesn't fit):
 | Side by side is picked | On phones (side by side too) |
 | the section opens with a heading | A tab, An accordion panel |
 | the section holds a Hero (corp) block, or a Columns row next to a carousel slide | A carousel slide |
+| any section | Background (the 10 box colours), Text and width (centred text, narrow column, line above), Show on (desktop only, phones only) |
+| a background is picked | Full width (a band), Soft shadow; Gradient direction for a gradient background |
+| the section holds a button (a link alone on its line) | Buttons: purple, blue |
 | its main choice is picked | Starts open; Autoplay, Cross-fade, Split slide; the split band colour |
 
 The tab / accordion / carousel choices sit in a folded part ("Turn this section into a tab,
@@ -79,6 +82,13 @@ accordion panel or carousel slide"), because most sections are none of these; it
 when the section or the one next to it already has one of these roles ("The section next to it is a
 tab: make this one the same to add it"). A style the section already has always shows, so it can be
 removed. The styles that can't apply are listed with why under "Other section styles".
+
+Older section style names are read as the standard choices (`SECTION_OPTIONS.aliases`): a bg-* band is
+a background + Full width, `bg-gold, boxed` is Gold + Soft shadow (a box at the content width), the
+old dividers are Line above, `center` is Centred text, col-8 / col-8-centre / col-10 / column-10-12
+are the Narrow column; **Copy section style** writes the standard names. Their look is
+styles/sections-std.css, loaded on draft pages only (scripts/corp.js) and by the panels' preview;
+the old names keep their own rules and render as before.
 
 **Copy section style** copies the result: the Style text when the section has a Section Metadata
 table (paste it over the Style row), or a whole Section Metadata table (paste it at the end of the

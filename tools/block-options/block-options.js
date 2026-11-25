@@ -315,7 +315,7 @@ function updatePreview() {
 
 /* ---------------------------------------------------------------- the section */
 
-const SECTION_CHOICE_NEEDS = ['flex', 'accordion-panel', 'carousel', 'split'];
+const SECTION_CHOICE_NEEDS = ['flex', 'accordion-panel', 'carousel', 'split', 'background', 'gradient'];
 // the groups that turn a section into one of them, folded away unless the section or a
 // neighbour has a role: most sections are none of these
 const ROLE_GROUPS = ['role', 'accordion', 'carousel', 'band'];
@@ -346,6 +346,11 @@ function sectionFactsOf(html, near = []) {
     slideBlock: !!section.querySelector(':scope > .hero-corp')
       || (!!section.querySelector(':scope > .columns') && (near.includes('carousel') || sectionDraft.includes('carousel'))),
     columnsBlock: !!section.querySelector(':scope > .columns'),
+    // a button: a link alone on its line (authoring conventions), in the text or a block
+    buttons: [...section.querySelectorAll('p')].some((p) => {
+      const a = p.querySelector('a');
+      return a && p.textContent.trim() === a.textContent.trim();
+    }),
   };
 }
 
@@ -363,11 +368,33 @@ function sectionUnfit(needs, facts) {
     'accordion-panel': sectionDraft.includes('accordion-panel') ? '' : 'make the section an accordion panel first',
     carousel: sectionDraft.includes('carousel') ? '' : 'make the section a carousel slide first',
     split: sectionDraft.includes('split') ? '' : 'turn on Split slide first',
+    background: sectionDraft.some((o) => /^box-/.test(o)) ? '' : 'pick a background first',
+    gradient: sectionDraft.some((o) => /^box-.+-gradient$/.test(o)) ? '' : 'pick a gradient background first',
+    buttons: facts.buttons ? '' : 'needs a button in the section (a link alone on its line)',
   };
   return needs.map((n) => reasons[n]).find(Boolean) || '';
 }
 
 const sectionChoices = () => SECTION_OPTIONS.groups.flatMap((g) => g.options || g.flags);
+
+/**
+ * The section's styles with older names read as the standard choices (SECTION_OPTIONS.aliases).
+ * Old combinations read as stryker.com shows them: a colour with the dimensional box
+ * (`bg-gold, boxed`) is one box in that colour with a soft shadow, at the content width (not a
+ * band); both gradient words (`gradient-top-to-bottom, gradient-inverse`) are bottom to top.
+ */
+function normalisedSection(styles) {
+  const aliases = SECTION_OPTIONS.aliases || {};
+  let out = [...new Set(styles.flatMap((st) => aliases[st] || [st]))];
+  const boxes = out.filter((o) => /^box-/.test(o));
+  if (boxes.length > 1) {
+    const keep = boxes.find((o) => o !== 'box-white') || boxes[0];
+    out = out.filter((o) => !/^box-/.test(o) || o === keep);
+  }
+  if (styles.some((st) => /^(boxed|shadow-box)$/.test(st))) out = out.filter((o) => o !== 'full-bleed');
+  if (out.includes('gradient-up')) out = out.filter((o) => o !== 'gradient-reverse');
+  return out;
+}
 
 /** a section choice that is on although its own condition (another section choice) is off */
 function unmetChoice() {
@@ -532,6 +559,7 @@ function renderSection() {
       el('ul', { class: 'tm-hint' }, ...hidden.map(([label, why]) => el('li', {}, `${label}: ${why}.`))),
     ));
   }
+  // a change from the section as authored (older names count as changed once they'd be renamed)
   const changed = orderedSection(sectionDraft).join(',') !== orderedSection(current.sectionStyles).join(',');
   const copy = el('button', { type: 'button', onclick: copySection, disabled: !changed }, changed ? 'Copy section style' : 'No section changes');
   sectionEl.append(
@@ -661,7 +689,7 @@ function setBlock(next) {
       || (next.neighbourRoles || []).join(',') !== (current.neighbourRoles || []).join(',');
     if (content || styles) {
       current = next;
-      if (styles) sectionDraft = [...next.sectionStyles];
+      if (styles) sectionDraft = normalisedSection(next.sectionStyles);
       renderGroups();
       updatePreview();
     }
@@ -669,7 +697,7 @@ function setBlock(next) {
   }
   current = next;
   draft = next ? normalised(next.name, next.options) : [];
-  sectionDraft = next ? [...next.sectionStyles] : [];
+  sectionDraft = next ? normalisedSection(next.sectionStyles) : [];
   touched.clear();
   renderGroups();
   updatePreview();

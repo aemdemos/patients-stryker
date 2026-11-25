@@ -721,6 +721,46 @@ export const BLOCK_OPTIONS = {
  */
 export const SECTION_OPTIONS = {
   label: 'Section',
+  // older section style names read as the standard choices (replaced when the author copies the
+  // section's style): today's bg-* bands are a background + full width, a dimensional box is a
+  // white background with a soft shadow, the old dividers are the line above
+  aliases: {
+    'bg-white': ['box-white', 'full-bleed'],
+    'bg-light-gray': ['box-gray', 'full-bleed'],
+    'light-gray': ['box-gray', 'full-bleed'],
+    'bg-gold': ['box-gold', 'full-bleed'],
+    gold: ['box-gold', 'full-bleed'],
+    'bg-blue': ['box-blue', 'full-bleed'],
+    blue: ['box-blue', 'full-bleed'],
+    'bg-purple': ['box-purple', 'full-bleed'],
+    purple: ['box-purple', 'full-bleed'],
+    'bg-teal': ['box-teal', 'full-bleed'],
+    'bg-dark-gray': ['box-dark', 'full-bleed'],
+    dark: ['box-dark', 'full-bleed'],
+    'bg-golden-gradient': ['box-gold-gradient', 'full-bleed'],
+    'gold-gradient': ['box-gold-gradient', 'full-bleed'],
+    'bg-dark-orange-gradient': ['box-gold-gradient', 'full-bleed'],
+    'bg-dark-blue-gradient': ['box-blue-gradient', 'full-bleed'],
+    'bg-dark-purple-gradient': ['box-purple-gradient', 'full-bleed'],
+    'purple-gradient': ['box-purple-gradient', 'full-bleed'],
+    // no standard colour: the nearest (listed for review)
+    'bg-silver': ['box-gray', 'full-bleed'],
+    'bg-gray': ['box-gray', 'full-bleed'],
+    'gray-gradient': ['box-gray', 'full-bleed'],
+    'bg-dark-gold': ['box-gold-gradient', 'full-bleed'],
+    boxed: ['box-white', 'shadow'],
+    'shadow-box': ['box-white', 'shadow'],
+    'gradient-inverse': ['gradient-reverse'],
+    'gradient-top-to-bottom': ['gradient-up'],
+    center: ['text-center'],
+    'col-8': ['narrow'],
+    'col-8-centre': ['narrow'],
+    'col-10': ['narrow'],
+    'column-10-12': ['narrow'],
+    divider: ['line-above'],
+    separator: ['line-above'],
+    'separator-row': ['line-above'],
+  },
   groups: [
     {
       id: 'side',
@@ -737,6 +777,67 @@ export const SECTION_OPTIONS = {
       label: 'On phones',
       flags: [
         ['flex-row-mobile', 'Side by side on phones too', { needs: ['flex'], hint: 'The row never stacks (e.g. social icons)' }],
+      ],
+    },
+    {
+      id: 'background',
+      label: 'Background',
+      options: [
+        ['', 'None'],
+        ['box-white', 'White', { hint: 'A white box around the section’s content' }],
+        ['box-gray', 'Light grey', { hint: 'A light grey box around the section’s content' }],
+        ['box-gold', 'Gold', { hint: 'A gold box around the section’s content' }],
+        ['box-blue', 'Blue', { hint: 'A blue box, white text' }],
+        ['box-purple', 'Purple', { hint: 'A purple box, white text' }],
+        ['box-teal', 'Teal', { hint: 'A teal box, white text' }],
+        ['box-dark', 'Dark grey', { hint: 'A dark grey box, white text' }],
+        ['box-gold-gradient', 'Gold gradient', { hint: 'Dark gold into gold' }],
+        ['box-blue-gradient', 'Blue gradient', { hint: 'Dark grey into slate blue, white text' }],
+        ['box-purple-gradient', 'Purple gradient', { hint: 'Dark grey into plum, white text' }],
+      ],
+    },
+    {
+      id: 'background-look',
+      label: 'The background',
+      flags: [
+        ['full-bleed', 'Full width (a band)', { needs: ['background'], hint: 'The background runs to the page edges, the content stays in the page width' }],
+        ['shadow', 'Soft shadow', { needs: ['background'], hint: 'A soft shadow around the box (stryker.com dimensional box)' }],
+      ],
+    },
+    {
+      id: 'gradient',
+      label: 'Gradient direction',
+      options: [
+        ['', 'Left to right'],
+        ['gradient-reverse', 'Right to left', { needs: ['gradient'] }],
+        ['gradient-up', 'Bottom to top', { needs: ['gradient'] }],
+      ],
+    },
+    {
+      id: 'text',
+      label: 'Text and width',
+      flags: [
+        ['text-center', 'Centred text', { hint: 'The section’s text centred' }],
+        ['narrow', 'Narrow column', { hint: 'The content in the centred 8/12 column from 600px (full width on phones)' }],
+        ['line-above', 'Line above', { hint: 'A grey line across the page above the section' }],
+      ],
+    },
+    {
+      id: 'buttons',
+      label: 'Buttons',
+      options: [
+        ['', 'As authored (gold, teal)'],
+        ['btn-purple', 'Purple', { needs: ['buttons'], hint: 'The section’s buttons in purple' }],
+        ['btn-blue', 'Blue', { needs: ['buttons'], hint: 'The section’s buttons in blue' }],
+      ],
+    },
+    {
+      id: 'show',
+      label: 'Show on',
+      options: [
+        ['', 'Desktop and phones'],
+        ['desktop-only', 'Desktop only', { hint: 'Hidden on phones (under 600px)' }],
+        ['mobile-only', 'Phones only', { hint: 'Hidden from 600px' }],
       ],
     },
     {

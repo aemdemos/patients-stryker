@@ -133,6 +133,12 @@ export default async function decorate(block) {
   const sections = [...fragment.children].filter((el) => el.classList.contains('section'));
   if (sections.length && isWholeSectionEmbed(section, block)) {
     if (noCta) sections.forEach((s) => removeCtas(s));
+    // in review (draft pages, docs/standardisation section styles): the host section's
+    // "show on" style (desktop-only, mobile-only) goes on the sections that replace it
+    if (document.body.classList.contains('std-draft')) {
+      const show = ['desktop-only', 'mobile-only'].filter((c) => section.classList.contains(c));
+      if (show.length) sections.forEach((s) => s.classList.add(...show));
+    }
     section.replaceWith(...sections);
     return;
   }

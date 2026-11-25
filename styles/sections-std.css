@@ -1,0 +1,116 @@
+/*
+ * Section styles in review (docs/standardisation/how-we-standardised.md section 9): the
+ * standard section choices of Block options → Section — background, full width, soft shadow,
+ * gradient direction, centred text, narrow column, line above, desktop or phone only. Loaded by
+ * scripts/corp.js on draft pages only (body.std-draft) and by the panels' preview; every rule is
+ * also scoped to body.corp.std-draft. The older names (bg-gold, divider, center, col-8-centre …)
+ * keep their own rules in styles-corp.css and render as before.
+ */
+
+:where(body.corp.std-draft) main > .section.box-white { --section-box-bg: var(--color-white); }
+:where(body.corp.std-draft) main > .section.box-gray { --section-box-bg: var(--color-surface); }
+:where(body.corp.std-draft) main > .section.box-gold { --section-box-bg: var(--color-accent); }
+
+:where(body.corp.std-draft) main > .section.box-gold-gradient {
+  --section-box-bg: linear-gradient(var(--section-box-angle, 90deg), var(--color-accent-link-hover), var(--color-accent) 20%);
+}
+
+/* the dark backgrounds: white text, as stryker.com's (and Panel's) */
+:where(body.corp.std-draft) main > .section:is(.box-blue, .box-purple, .box-teal, .box-dark, .box-blue-gradient, .box-purple-gradient) {
+  --section-box-text: var(--color-white);
+}
+
+:where(body.corp.std-draft) main > .section.box-blue { --section-box-bg: var(--color-navy-bright); }
+:where(body.corp.std-draft) main > .section.box-purple { --section-box-bg: var(--color-purple); }
+:where(body.corp.std-draft) main > .section.box-teal { --section-box-bg: var(--color-primary); }
+:where(body.corp.std-draft) main > .section.box-dark { --section-box-bg: var(--color-secondary); }
+
+:where(body.corp.std-draft) main > .section.box-blue-gradient {
+  --section-box-bg: linear-gradient(var(--section-box-angle, 90deg), var(--color-secondary), var(--corp-color-slate));
+}
+
+:where(body.corp.std-draft) main > .section.box-purple-gradient {
+  --section-box-bg: linear-gradient(var(--section-box-angle, 90deg), var(--color-secondary), var(--corp-color-plum));
+}
+
+/* gradient direction (stryker.com gradient-inverse, gradient-top-to-bottom) */
+:where(body.corp.std-draft) main > .section.gradient-reverse { --section-box-angle: -90deg; }
+:where(body.corp.std-draft) main > .section.gradient-up { --section-box-angle: 0deg; }
+
+/* background: a box round the section's content, at the page's content width (stryker.com
+   has-background boxes: 1380px from x 30 at 1440px, 360px from x 15 at 390px), with the
+   spacing steps of the box width inside: medium (5%) above, small (3%) at the sides and below
+   (stryker.com 4% / 2% / 3%). `full-bleed` makes it a band to the page edges (stryker.com
+   c-full-bleed-panel), the content staying at the page width. A carousel slide's band is the
+   carousel's (carousel-corp.css) */
+:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient):not(.carousel) {
+  --section-box-w: calc(min(100%, var(--container-max)) - 2 * var(--container-gutter));
+
+  margin-inline: calc((100% - var(--section-box-w)) / 2);
+  padding: calc(var(--section-box-w) * 0.05) max(0px, calc(var(--section-box-w) * 0.03 - var(--container-gutter))) calc(var(--section-box-w) * 0.03);
+  background: var(--section-box-bg);
+  color: var(--section-box-text, inherit);
+}
+
+:where(body.corp.std-draft) main > .section:is(.box-blue, .box-purple, .box-teal, .box-dark, .box-blue-gradient, .box-purple-gradient):not(.carousel) :is(h1, h2, h3, h4, h5, h6, p, li) {
+  color: inherit;
+}
+
+:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient).full-bleed:not(.carousel) {
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+/* soft shadow: the stryker.com dimensional box */
+:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient).shadow:not(.carousel) {
+  box-shadow: var(--shadow-soft);
+}
+
+/* centred text */
+:where(body.corp.std-draft) main > .section.text-center > .default-content-wrapper {
+  text-align: center;
+}
+
+/* line above: a 1px #b2b4ae line across the page at the top of the section, the section gap
+   above it, 20px below it on phones and 50px from 600px (stryker.com section separator: 30px
+   above / 50px below at 1440px, 20px / 20px at 390px) */
+:where(body.corp.std-draft) main > .section.line-above {
+  position: relative;
+  padding-top: var(--space-block-l);
+}
+
+:where(body.corp.std-draft) main > .section.line-above::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* desktop or phone only (stryker.com hidden-xs / visible-xs: the switch at 840px → 600px) */
+:where(body.corp.std-draft) main > .section.desktop-only {
+  display: none;
+}
+
+@media (width >= 600px) {
+  /* the narrow column: the content in the centred 8/12 column (stryker.com col-8 offset 2:
+     909px from x 265 at 1440px); full width on phones */
+  :where(body.corp.std-draft) main > .section.narrow > div {
+    width: calc(min(100%, var(--container-max)) * 2 / 3);
+    max-width: calc(var(--container-max) * 2 / 3);
+  }
+
+  :where(body.corp.std-draft) main > .section.line-above {
+    padding-top: var(--space-section-l);
+  }
+
+  :where(body.corp.std-draft) main > .section.desktop-only {
+    display: block;
+  }
+
+  :where(body.corp.std-draft) main > .section.mobile-only {
+    display: none;
+  }
+}
