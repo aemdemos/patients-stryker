@@ -19,8 +19,11 @@ export const REVIEW = {
   // what it is compared with, the first one by default: rs = the as-is copy under /rs, src = the
   // source page's snapshot, live = a live copy of the source page rendered now by the backend
   compare: ['rs', 'src', 'live'],
-  // the design panel (variants, widths, backgrounds, text sets, groups)
+  // the standard pages' designs (the summary and the results group feedback by them)
   design: true,
+  // the design panel (variants, widths, backgrounds, text sets, groups): off since 25 Nov 2026
+  // (not used: the review is about comments and QA notes, saved at once); the code stays
+  designPanel: false,
   // the widths offered, the first one by default (the source snapshots have these two)
   widths: [
     { vp: 1440, label: 'Desktop' },

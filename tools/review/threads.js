@@ -13,6 +13,11 @@
  * may tick a thread Done (entry `done:<comment|note>` on the thread's item, true / false). Older
  * data: a thread whose last move was `action: resolve` counts as done; `status:<kind>` rows (the
  * command line, before) count as AOE messages with a status.
+ * Saved at once (since 25 Nov 2026, no Save button): a message sent is final, but its author may
+ * withdraw it: its value becomes { withdrawn: true } (the audit keeps the original); a withdrawn
+ * message counts for nothing (no reply, no status, not the last move). A comment's own text is
+ * the first message of its chat; a QA note (since 25 Nov 2026) has no text of its own: its chat
+ * starts with the note, the first message says what it is about (older notes: their `text`).
  */
 
 export const ROLES = ['reviewer', 'aoe'];
@@ -75,6 +80,27 @@ export function threadKindOf(kind) {
 const isOpener = (r) => r.kind === 'comment' || r.kind === 'note';
 const isMessage = (r) => (r.kind || '').startsWith('reply:') || (r.kind || '').startsWith('status:');
 
+/** a message (or a comment's own text) withdrawn by its author: { withdrawn: true } */
+export const isWithdrawn = (value) => {
+  const v = json(value);
+  return !!v && typeof v === 'object' && v.withdrawn === true;
+};
+
+/**
+ * a thread's first words (its rows: opener and messages, any order): a comment's own text, an
+ * older QA note's text, else the first message not withdrawn ('' when none)
+ */
+export function firstText(rows) {
+  const sorted = [...rows].sort((a, b) => (a.time < b.time ? -1 : 1));
+  const opener = sorted.find(isOpener);
+  const ov = opener ? json(opener.value) : null;
+  if (opener?.kind === 'comment' && typeof ov === 'string' && ov.trim()) return ov;
+  if (opener?.kind === 'note' && ov && typeof ov === 'object' && ov.text) return ov.text;
+  const first = sorted
+    .find((r) => isMessage(r) && !isWithdrawn(r.value) && (json(r.value) || {}).text);
+  return first ? json(first.value).text : '';
+}
+
 /** is an opener a real thread (a comment with text, a QA note not deleted) */
 export function opens(r) {
   const v = json(r.value);
@@ -95,7 +121,8 @@ export function stateAllowed(value, role) {
 export function threadState(rows) {
   const sorted = [...rows].sort((a, b) => (a.time < b.time ? -1 : 1));
   const opener = sorted.find(isOpener);
-  const msgs = sorted.filter(isMessage);
+  // (withdrawn messages count for nothing)
+  const msgs = sorted.filter(isMessage).filter((r) => !isWithdrawn(r.value));
   const marks = sorted.filter((r) => (r.kind || '').startsWith('done:'));
   let done = false;
   if (marks.length) done = json(marks[marks.length - 1].value) === true;
@@ -157,9 +184,13 @@ export function pageState(allRows) {
   [...rows].sort((a, b) => (a.time < b.time ? -1 : 1)).forEach((r) => newest.set(`${r.item}|${r.kind}`, r));
   const threads = { open: 0, done: 0 };
   newest.forEach((r) => {
-    if (!isOpener(r) || !opens(r)) return;
+    if (!isOpener(r)) return;
     const own = rows
       .filter((x) => x.item === r.item && threadKindOf(x.kind) === r.kind && !isOpener(x));
+    // (a comment whose own text was withdrawn stays a thread while a message of it stands)
+    const live = opens(r) || (r.kind === 'comment' && isWithdrawn(r.value)
+      && own.some((x) => isMessage(x) && !isWithdrawn(x.value)));
+    if (!live) return;
     threads[threadState([r, ...own]).done ? 'done' : 'open'] += 1;
   });
   const CHOICES = ['variant', 'width', 'background', 'text'];

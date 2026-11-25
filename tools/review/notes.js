@@ -4,8 +4,10 @@
  * so it keeps its place when the page reflows or a block changes variant; without one, the page
  * position is kept. Pins live in the standard frame's document (they scroll with it); the shell
  * owns the editor, the list and saving.
- * A note: { id, created, vp, cat, text, status: open | resolved, anchor: { key, fx, fy } | null,
- *   at: { x, y }, deleted }
+ * A note: { id, created, vp, cat, status: open | resolved, anchor: { key, fx, fy } | null,
+ *   at: { x, y }, deleted } (since 25 Nov 2026 no text of its own: its chat's first message says
+ *   what it is about; older notes keep their `text`). Its number is its place among every note of
+ *   the page by creation, deleted ones included, so "note 4" stays note 4 for good.
  */
 import { TEXT, keyOf, findKey } from './sync.js';
 
@@ -34,9 +36,10 @@ export function createNotes({
   let attachedTo = null;
 
   const visible = () => notes.filter((n) => !n.deleted && n.vp === vp());
-  const numbered = () => notes.filter((n) => !n.deleted)
-    .sort((a, b) => (a.created < b.created ? -1 : 1));
-  const numberOf = (id) => numbered().findIndex((n) => n.id === id) + 1;
+  // (every note numbered, deleted ones too: a number never moves to another note)
+  const byCreation = () => [...notes].sort((a, b) => (a.created < b.created ? -1 : 1));
+  const numbered = () => byCreation().filter((n) => !n.deleted);
+  const numberOf = (id) => byCreation().findIndex((n) => n.id === id) + 1;
 
   /** the page position of a note: from its anchor when the anchor is on the page */
   function positionOf(d, note) {

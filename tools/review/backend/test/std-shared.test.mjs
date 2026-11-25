@@ -45,7 +45,7 @@ const open = async (token, path) => {
 try {
   {
     const { ctx, p } = await open(aoe.token, `index.html?page=${encodeURIComponent(PAGE)}`);
-    await p.waitForFunction(() => document.querySelectorAll('.rv-blocks li').length > 1 && !/Loading/.test(document.querySelector('.rv-blocks').textContent), null, { timeout: 90000 });
+    await p.waitForFunction(() => document.querySelector('.rv-pagebox-body .rv-chat'), null, { timeout: 90000 });
     await p.waitForTimeout(3000);
     const r = await p.evaluate(() => ({
       left: !!document.querySelector('.rv-panel-left'),
@@ -56,9 +56,9 @@ try {
       links: [...document.querySelectorAll('.rv-links a')].map((a) => ({ t: a.textContent, h: a.getAttribute('href'), v: a.offsetParent !== null })),
       shot: document.querySelector('.rv-shotbox-body')?.textContent || '',
     }));
-    check('std tool: the design panel with the page\'s blocks', r.left && r.blocks > 1, JSON.stringify(r).slice(0, 200));
+    check('std tool: no design panel (off since 25 Nov 2026: comments and QA notes only)', !r.left && r.blocks === 0, JSON.stringify(r).slice(0, 200));
     check('std tool: Desktop and Phone, as-is and source', JSON.stringify(r.widths) === '["1440","375"]' && r.cmp.includes('rs') && r.cmp.includes('src'), JSON.stringify(r));
-    check('std tool: the standard page in the frame (design on)', /\/content\/std\/us\/en\/.+\?review=1$/.test(r.frame), r.frame);
+    check('std tool: the standard page in the frame, as it is (no switcher)', /\/content\/std\/us\/en\/[^?]+$/.test(r.frame), r.frame);
     const edit = r.links.find((l) => /Edit in Document Authoring/.test(l.t));
     check('std tool: Edit in DA opens the /std document', edit && edit.v && edit.h.endsWith(`/stryker-com/std${PAGE}`), JSON.stringify(edit));
     check('std tool: Invitations link for the AOE team', r.links.some((l) => /Invitations/.test(l.t) && l.v));

@@ -3,15 +3,16 @@
  * The whole review loop on the backend, in a browser, on a real standard page nobody has saved
  * anything on (a --page with other entries is refused, so a reviewer's work is never touched):
  * the reviewer (name from the link, read only; the link leaves the address bar) writes in the page's
- * chat, sends the page to the AOE team and switches a design, with Save (and Undo before); the
- * summary finds the comment; set-status sends the page back with a status; the reviewer answers
- * and sends it again; an AOE member writes with a status and sends it back in the tool; the
- * reviewer ticks the thread Done and approves (resolved); the results page; an interrupted save
- * is sent again; a revoked link is refused. Everything the test wrote is removed at the end and
- * the invitations revoked. Tokens are never printed.
+ * chat and sends the page to the AOE team, each saved at once (no Save button since 25 Nov 2026);
+ * what is typed and not sent survives a reload; a message sent by mistake is withdrawn; a QA note
+ * starts its chat with its first message (no text of its own); the summary finds the comment;
+ * set-status sends the page back with a status; the reviewer answers and sends it again; an AOE
+ * member writes with a status and sends it back in the tool; the reviewer ticks the thread Done
+ * and approves (resolved); the results page; an interrupted save is sent again; a revoked link is
+ * refused. Everything the test wrote is removed at the end and the invitations revoked. Tokens are
+ * never printed.
  * usage: node tools/review/backend/test/tool.test.mjs [--base http://localhost:3000]
  *   [--page /us/en/…] [--ns <namespace, default Stage (tests): backend/target.mjs>]
- * Also: unsaved changes and Undo changes.
  */
 import { createRequire } from 'module';
 import { execFileSync } from 'child_process';
@@ -77,11 +78,12 @@ try {
     await p.click(`${chat} .rv-composer button:text-is("Send")`);
   };
   const setStatus = (p, label) => p.click(`.rv-status-actions button:text-is("${label}")`);
-  const saveNow = async (p) => {
+  // an action and the save it makes at once: the save's answer
+  const saved = async (p, act) => {
     const done = p.waitForResponse((r) => r.url().includes('std-review/save') && r.request().method() === 'POST', { timeout: 30000 });
-    await p.click('.rv-save');
+    await act();
     const code = (await done).status();
-    await p.waitForFunction(() => /All changes saved/.test(document.body.textContent), null, { timeout: 30000 }).catch(() => null);
+    await p.waitForFunction(() => /All changes saved/.test(document.querySelector('.rv-status').textContent), null, { timeout: 30000 }).catch(() => null);
     return code;
   };
   const banner = (p) => p.evaluate(() => ({
@@ -93,7 +95,7 @@ try {
   })), chat);
 
   // 1. the reviewer: the first message on the page (the comment), a second one, the page sent to
-  //    the AOE team, a design switch, all with Save
+  //    the AOE team, each saved at once; a draft kept; a message withdrawn; a QA note
   let { context, page } = await open(link);
   const name = await page.evaluate(() => {
     const n = document.querySelector('.rv-reviewer');
@@ -102,42 +104,57 @@ try {
   check('the name comes from the link, read only', name.value === 'tool test backend' && name.readOnly, JSON.stringify(name));
   check('the link leaves the address bar', !(await page.evaluate(() => window.location.search)).includes('invite='));
   check('the status banner and the toolbar badge: not reviewed yet', (await banner(page)).text === 'Not reviewed yet' && (await banner(page)).badge === 'Not reviewed yet', JSON.stringify(await banner(page)));
-  // Undo changes: unsaved changes go, the page is back at its saved state
-  await send(page, 'a change to undo');
-  await setStatus(page, 'In review');
-  check('unsaved changes enable Undo changes', await page.evaluate(() => !document.querySelector('.rv-undo').disabled
-    && /2 unsaved changes/.test(document.querySelector('.rv-status').textContent)));
-  await page.click('.rv-undo');
-  await page.click('dialog.rv-dialog button.rv-danger');
-  await page.waitForFunction(() => document.querySelector('.rv-pagebox-body .rv-chat'), null, { timeout: 60000 });
-  await page.waitForTimeout(3000);
-  check('after Undo: no messages, no status, nothing to save', (await bubbles(page)).length === 0 && (await banner(page)).text === 'Not reviewed yet'
-    && await page.evaluate(() => document.querySelector('.rv-undo').disabled && document.querySelector('.rv-save').disabled), JSON.stringify(await bubbles(page)));
-  await send(page, COMMENT);
-  await send(page, 'Ann, is this right?');
+  check('no Save or Undo button, no design panel', await page.evaluate(() => !document.querySelector('.rv-save') && !document.querySelector('.rv-undo') && !document.querySelector('.rv-item button.rv-step')));
+  check('Send saves the first message at once', await saved(page, () => send(page, COMMENT)) === 200);
+  check('… the second one too', await saved(page, () => send(page, 'Ann, is this right?')) === 200);
   let b = await bubbles(page);
   check('messages: newest at the bottom, mine on the right, with the author', b.length === 2 && b[1].text === 'Ann, is this right?' && b.every((x) => x.mine && x.who.startsWith('tool test backend')), JSON.stringify(b));
-  check('… waiting for Save', await page.evaluate(() => document.querySelectorAll('.rv-pagebox-body .rv-msg-unsaved').length === 2));
-  await setStatus(page, 'Send to the AOE team');
-  check('the banner shows the unsaved status', /Waiting for the AOE team/.test((await banner(page)).text) && await page.evaluate(() => /Save to apply/.test(document.querySelector('.rv-status-banner').textContent)));
-  // a block's chat opens with one click, its message box focused
-  await page.click('.rv-panel-left .rv-chat-head .rv-comment-toggle');
-  check('a block\'s chat opens at once, the message box focused', await page.evaluate(() => document.activeElement?.classList.contains('rv-reply')
-    && !!document.activeElement.closest('.rv-panel-left')));
-  await page.waitForFunction(() => document.querySelector('.rv-item button.rv-step[aria-label="Next variant"]'), null, { timeout: 60000 });
-  await page.click('.rv-item button.rv-step[aria-label="Next variant"]');
-  await page.waitForFunction(() => document.querySelector('.rv-item.rv-changed'), null, { timeout: 30000 });
-  check('Save: the backend takes everything', await saveNow(page) === 200);
-  check('… the banner: waiting for the AOE team, set by the reviewer', (await banner(page)).text === 'Waiting for the AOE team');
+  check('… no "sending" left once saved', await page.evaluate(() => ![...document.querySelectorAll('.rv-pagebox-body .rv-msg-state')].some((x) => x.textContent)));
+  check('a status click saves at once', await saved(page, () => setStatus(page, 'Send to the AOE team')) === 200);
+  check('… the banner: waiting for the AOE team', (await banner(page)).text === 'Waiting for the AOE team', JSON.stringify(await banner(page)));
+  // a message sent by mistake: its author withdraws it
+  await saved(page, () => send(page, 'Sent by mistake'));
+  check('a message by mistake, then Withdraw (asked first)', await saved(page, async () => {
+    await page.click(`${PAGE_CHAT} .rv-bubble:has-text("Sent by mistake") .rv-msg-withdraw`);
+    await page.click('dialog.rv-dialog button.rv-danger');
+  }) === 200);
+  b = await bubbles(page);
+  check('… everyone sees "Message withdrawn" instead of it', b.length === 3 && b[2].text === 'Message withdrawn' && !b.some((x) => x.text === 'Sent by mistake'), JSON.stringify(b));
+  // typed, not sent: still there after a reload
+  await page.fill(`${PAGE_CHAT} textarea.rv-reply`, 'half a thought');
+  await page.reload();
+  await page.waitForFunction(() => document.querySelector('.rv-pagebox-body .rv-chat'), null, { timeout: 60000 });
+  await page.waitForTimeout(2000);
+  check('what is typed and not sent survives a reload', await page.inputValue(`${PAGE_CHAT} textarea.rv-reply`) === 'half a thought');
+  await page.fill(`${PAGE_CHAT} textarea.rv-reply`, '');
+  await page.dispatchEvent(`${PAGE_CHAT} textarea.rv-reply`, 'input');
+  // a QA note: pinned on the page, its first message starts its chat, saved at once
+  await page.click('[data-action="note"]');
+  const frame = page.locator('.rv-std iframe');
+  const box = await frame.boundingBox();
+  await page.mouse.click(box.x + box.width / 2, box.y + 300);
+  await page.waitForFunction(() => !document.querySelector('.rv-note-editor').hidden, null, { timeout: 15000 });
+  check('the new note asks for its first message (no subject)', await page.evaluate(() => !!document.querySelector('.rv-note-editor textarea') && [...document.querySelectorAll('.rv-note-editor button')].some((x) => x.textContent === 'Add note')));
+  await page.fill('.rv-note-editor textarea', 'The heading is cut off here.');
+  check('Add note saves the note and its first message at once', await saved(page, () => page.click('.rv-note-editor button:text-is("Add note")')) === 200);
+  const note = await page.evaluate(() => {
+    const li = document.querySelector('.rv-notes .rv-note');
+    return li && {
+      n: li.querySelector('.rv-note-n')?.textContent, line: li.querySelector('.rv-note-text')?.textContent, bubbles: [...li.querySelectorAll('.rv-bubble .rv-msg-text')].map((x) => x.textContent), box: !!li.querySelector('textarea.rv-reply'),
+    };
+  });
+  check('… the note: number 1, its chat open with the first message, a box to answer', note?.n === '1' && note.bubbles[0] === 'The heading is cut off here.' && note.box && /The heading is cut off here/.test(note.line), JSON.stringify(note));
   await context.close();
 
   // 2. the backend has it all, written as the invitation's reviewer
   const rows = (await admin({ op: 'export' })).rows.filter((r) => r.page === PAGE && r.reviewer === 'tool test backend');
   check('the backend has the comment (the first message)', rows.some((r) => r.kind === 'comment' && JSON.parse(r.value) === COMMENT), JSON.stringify(rows).slice(0, 300));
-  check('… the second message', rows.filter((r) => r.kind.startsWith('reply:comment:')).length === 1);
+  check('… the second message and the withdrawn one (its text gone)', rows.filter((r) => r.kind.startsWith('reply:comment:')).length === 2
+    && rows.some((r) => r.kind.startsWith('reply:comment:') && JSON.parse(r.value).withdrawn === true && !JSON.parse(r.value).text));
   check('… the page status', rows.some((r) => r.kind === 'state' && JSON.parse(r.value) === 'waiting-aoe'));
-  const choice = rows.find((r) => r.kind === 'variant');
-  check('the design switch is saved under the block key, not its position', !!choice && /^b:[a-z-]+:[0-9a-f]{8}(#\d+)?$/.test(choice.item), JSON.stringify(choice));
+  const noteRow = rows.find((r) => r.kind === 'note');
+  check('… the QA note without text of its own, its first message in its chat', !!noteRow && !JSON.parse(noteRow.value).text
+    && rows.some((r) => r.item === noteRow.item && r.kind.startsWith('reply:note:') && JSON.parse(r.value).text === 'The heading is cut off here.'), JSON.stringify(noteRow));
 
   // 3. the AOE team: summary from the backend, then a status, the page sent back
   execFileSync('node', ['tools/review/summarise.mjs', '--out', out, '--themes', join(out, 'none.json'), '--base', base, '--ns', ns], { stdio: 'pipe' });
@@ -146,20 +163,18 @@ try {
   check('the summary has the comment as a page work item', !!item && item.evidence.some((e) => e.text === COMMENT), JSON.stringify(items.map((it) => it.id)));
   const status = execFileSync('node', ['tools/review/set-status.mjs', '--work', join(out, 'work-items.json'), '--item', `page:${PAGE}`,
     '--state', 'done', '--release', 'r-test', '--reason', 'loop test', '--send-back', '--ns', ns], { encoding: 'utf8' });
-  check('set-status: a message with the status, the page sent back', /1 of 1 AOE answers saved/.test(status), status);
+  // (the page's work item: its comment and the QA note on no block)
+  check('set-status: a message with the status, the page sent back', /([12]) of \1 AOE answers saved/.test(status), status);
 
-  // 4. a fresh browser: the chat, the status, the design switch
+  // 4. a fresh browser: the chat, the status
   ({ context, page } = await open(link));
-  await page.waitForFunction(() => document.querySelector('.rv-item'), null, { timeout: 60000 });
   await page.waitForTimeout(2000);
   b = await bubbles(page);
-  check('… and the saved design switch, found by its key', await page.evaluate(() => document.querySelectorAll('.rv-item.rv-changed').length === 1));
   check('a fresh browser: the comment first, mine; the AOE message on the left with its status', b[0]?.text === COMMENT && b[0].mine
     && b.some((x) => !x.mine && /AOE: done in r-test/.test(x.aoe)), JSON.stringify(b));
   check('… the banner: waiting for the customer', (await banner(page)).text === 'Waiting for the customer', JSON.stringify(await banner(page)));
-  await send(page, 'Not quite: the image is still small.');
-  await setStatus(page, 'Send to the AOE team');
-  await saveNow(page);
+  await saved(page, () => send(page, 'Not quite: the image is still small.'));
+  await saved(page, () => setStatus(page, 'Send to the AOE team'));
   check('the reviewer answers and sends the page to the AOE team again', (await banner(page)).text === 'Waiting for the AOE team');
   await context.close();
 
@@ -175,9 +190,9 @@ try {
   check('… sees every message, the reviewer\'s on the left', (await bubbles(page)).filter((x) => !x.mine).length >= 3);
   await page.selectOption(`${PAGE_CHAT} select.rv-reply-status`, 'done');
   await page.fill(`${PAGE_CHAT} input.rv-reply-release`, 'r-ui');
-  await send(page, 'Enlarged the image to the live page size.');
-  await setStatus(page, 'Send back to the customer');
-  check('the AOE member saves a message with a status and sends the page back', await saveNow(page) === 200
+  const c1 = await saved(page, () => send(page, 'Enlarged the image to the live page size.'));
+  const c2 = await saved(page, () => setStatus(page, 'Send back to the customer'));
+  check('the AOE member saves a message with a status and sends the page back', c1 === 200 && c2 === 200
     && (await banner(page)).text === 'Waiting for the customer', JSON.stringify(await banner(page)));
   await context.close();
 
@@ -185,13 +200,12 @@ try {
   ({ context, page } = await open(link));
   b = await bubbles(page);
   check('the reviewer sees the AOE message with its status', b.some((x) => !x.mine && /AOE: done in r-ui/.test(x.aoe)), JSON.stringify(b));
-  await page.check(`${PAGE_CHAT} input.rv-done`);
-  await setStatus(page, 'Approve');
-  await saveNow(page);
+  await saved(page, () => page.check(`${PAGE_CHAT} input.rv-done`));
+  await saved(page, () => setStatus(page, 'Approve'));
   check('ticked Done and approved: the page is resolved', (await banner(page)).text === 'Resolved' && await page.evaluate(() => document.querySelector('.rv-pagebox-body input.rv-done').checked), JSON.stringify(await banner(page)));
   await context.close();
   const thread = (await admin({ op: 'export' })).rows.filter((r) => r.page === PAGE && r.item === 'page' && (r.kind.startsWith('reply:comment:') || r.kind === 'done:comment'));
-  check('the backend has the chat and the Done mark, each with its author and role', thread.filter((r) => r.kind.startsWith('reply:')).length === 4
+  check('the backend has the chat and the Done mark, each with its author and role', thread.filter((r) => r.kind.startsWith('reply:')).length === 5
     && thread.some((r) => r.reviewer === 'tool test AOE' && r.role === 'aoe') && thread.some((r) => r.kind === 'done:comment' && JSON.parse(r.value) === true),
   JSON.stringify(thread.map((r) => [r.reviewer, r.role, r.kind.split(':')[0]])));
 
@@ -209,7 +223,6 @@ try {
   ({ context, page } = await open(link));
   const LATER = `${COMMENT} (sent again)`;
   await send(page, LATER);
-  await page.click('.rv-save');
   await page.close({ runBeforeUnload: false });
   const again2 = await context.newPage();
   await again2.route(/altcha|captcha/, (r) => r.abort());

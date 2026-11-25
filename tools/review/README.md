@@ -58,11 +58,13 @@ page and block, updated in place, with an audit file per save; no sign-in for re
   below), `page`, `note:<id>`, `group:<key>`; entries saved by position before the keys
   (`s<section>b<block>`, `s<section>`) are still read. Kinds: `variant`, `width`, `background`, `text`, `comment`, `reviewed`, `note`;
   values JSON-encoded.
-- **Save button** (Ctrl+S / ⌘S): changes stay in the browser (`std-review-drafts`, per page)
-  until Save; **Undo changes** drops this page's unsaved changes and shows it at its last saved
-  state again (after a confirmation); a change back to the value it had before (the saved one, else the page's own) is no
-  change. Save sends the changes of one Save in one request. Leaving a page with unsaved changes
-  asks (save now / keep for later); closing the tab warns.
+- **Saved at once** (since 25 Nov 2026: no Save or Undo button): a message on Send (Ctrl+Enter),
+  the page status, a Done tick or a QA note on click; the changes of one action go in one request
+  (a note and its first message). Each message shows *sending…* until the backend has it, *not
+  sent* (Retry in the toolbar) when it failed. What is typed in a chat's box and not sent stays in
+  the browser (`<space>-review-typing`, per page and chat). A change kept in the browser and not
+  sent (the tab closed at once) is sent on the next visit to the page; closing the tab while
+  changes are on their way warns. A change back to the value it had before is no change.
 - **Groups:** "Use this design for all" saves the group's choice as item `group:<key>` (kinds
   `variant`, `width`, `text`) on page `*` (read with every page). A block's design: its own choice,
   else its group's, else its standard design; a block with its own choice that differs is shown as
@@ -95,11 +97,20 @@ page and the summary.
   again; a release) for the summary's work items.
 - **Done**: either side ticks a chat Done when it is dealt with (unticks it again); a QA note's
   Done is its resolved pin. The status page counts open and done chats.
-- **Everything waits for Save**: messages, the page status, Done ticks, notes and design choices
-  are unsaved changes (marked "unsaved", × removes a message) until Save; Undo changes takes them
-  back. The panels keep their place when a chat redraws; the right panel resizes by dragging its
-  left edge.
-- Entries: messages `reply:<comment|note>:<id>` (written once), value `{ text, status }`; Done
+- **Saved at once; withdraw**: a message sent is final, but its author may **withdraw** it
+  (asked first): everyone then sees "Message withdrawn", it counts for nothing (no reply, no
+  status, not the last move), and the audit keeps the original. The backend allows it to the
+  invitation that wrote the message only. The panels keep their place when a chat redraws; the
+  right panel resizes by dragging its left edge.
+- **The design panel is off** (25 Nov 2026, `config.js` `designPanel: false`): it was not used,
+  so the review is comments and QA notes only (nothing else to save); `design: true` stays, so the
+  summary and the results still sort feedback by the standard pages' designs. The code stays.
+- **QA notes start their chat** (since 25 Nov 2026): a new note asks for its first message (no
+  subject of its own): "Add note" saves the note and that message at once and opens its chat. A
+  note is referred to by its number ("note 4 on page X"): numbered by creation among every note of
+  the page, deleted ones too, so a number never moves. The list shows the first message; Edit
+  changes the category or deletes the note. Older notes keep their own text (shown the same way).
+- Entries: messages `reply:<comment|note>:<id>` (written once; withdrawn: `{ withdrawn: true }`), value `{ text, status }`; Done
   `done:<comment|note>` (true / false); the page status `state` on item `page`. Older data: a
   chat closed with `action: resolve` counts as done; `status:<kind>` rows as AOE statuses.
 - `set-status.mjs` (many rows at once) writes AOE messages with a status (`admin answer`, `--by`

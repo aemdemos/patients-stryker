@@ -7,7 +7,9 @@
  */
 import { readAll, merge, inviteToken } from './store.js';
 import { keysOfHtml, toPosition } from './blockkeys.js';
-import { threadState, threadKindOf, roleOf } from './threads.js';
+import {
+  threadState, threadKindOf, roleOf, firstText,
+} from './threads.js';
 import { REVIEW } from './config.js';
 import loadPages from './pages.js';
 
@@ -144,6 +146,10 @@ async function render(savedRows, pages) {
     }
   };
   // a thread's state and the AOE team's latest status (threads.js)
+  // a thread's first words (threads.js firstText: a QA note since 25 Nov 2026 has no text of its
+  // own, its chat's first message says what it is about; withdrawn messages left out)
+  const wordsOf = (page, item, kind) => firstText(allRows
+    .filter((r) => r.page === page && r.item === item && threadKindOf(r.kind) === kind));
   const aoeOf = (page, item, kind) => {
     const own = allRows
       .filter((r) => r.page === page && r.item === item && threadKindOf(r.kind) === kind);
@@ -235,17 +241,17 @@ async function render(savedRows, pages) {
         const what = e.kind === 'text' ? `text style: ${TEXT_LABELS[e.value] || e.value}` : `background: ${design(e.value)}`;
         choiceRows.push([pageName(page), `Text (${e.item})`, what, e.reviewer, when(e.time)]);
       }
-      if (/^s\d+$/.test(e.item) && e.kind === 'comment' && e.value) {
-        commentRows.push({ type: 'Text', row: [pageName(page), `Text (${e.item})`, e.value, e.reviewer, when(e.time), aoeOf(page, e.item, 'comment')] });
+      if (/^s\d+$/.test(e.item) && e.kind === 'comment' && e.value && wordsOf(page, e.item, 'comment')) {
+        commentRows.push({ type: 'Text', row: [pageName(page), `Text (${e.item})`, wordsOf(page, e.item, 'comment'), e.reviewer, when(e.time), aoeOf(page, e.item, 'comment')] });
       }
       if (/^s\d+b\d+$/.test(e.item)) {
         if (!per.has(e.item)) per.set(e.item, {});
         per.get(e.item)[e.kind] = e;
       }
-      if (e.item === 'page' && e.kind === 'comment' && e.value) pageCommentRows.push([pageName(page), e.value, e.reviewer, when(e.time), aoeOf(page, 'page', 'comment')]);
+      if (e.item === 'page' && e.kind === 'comment' && e.value && wordsOf(page, 'page', 'comment')) pageCommentRows.push([pageName(page), wordsOf(page, 'page', 'comment'), e.reviewer, when(e.time), aoeOf(page, 'page', 'comment')]);
       if (e.kind === 'note' && e.value && !e.value.deleted) {
         noteRows.push({
-          page, ...e.value, reviewer: e.reviewer, time: e.time, aoe: aoeOf(page, e.item, 'note'),
+          page, ...e.value, text: wordsOf(page, e.item, 'note'), reviewer: e.reviewer, time: e.time, aoe: aoeOf(page, e.item, 'note'),
         });
       }
     });
@@ -260,10 +266,10 @@ async function render(savedRows, pages) {
         const parts = picks.map((kind) => (kind === 'variant' ? `${design(b.variant)} → ${design(k.variant.value)}` : `${kind}: ${design(k[kind].value)}`));
         choiceRows.push([pageName(page), name, parts.join('; '), latest.reviewer, when(latest.time)]);
       }
-      if (k.comment && k.comment.value) {
+      if (k.comment && k.comment.value && wordsOf(page, id, 'comment')) {
         commentRows.push({
           type: NAMES[b.name] || b.name,
-          row: [pageName(page), name, k.comment.value, k.comment.reviewer, when(k.comment.time), aoeOf(page, id, 'comment')],
+          row: [pageName(page), name, wordsOf(page, id, 'comment'), k.comment.reviewer, when(k.comment.time), aoeOf(page, id, 'comment')],
         });
       }
     });

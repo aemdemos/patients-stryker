@@ -7,6 +7,9 @@
  * A change's own `page` is `*` for a group choice (needs the invitation's group right).
  * Messages (kind `reply:<comment|note>:<id>`) are written once (rev 0); their value is checked for
  * the writer's role (core.mjs replyProblem); page statuses per side (stateProblem); Done marks.
+ * Withdrawing (25 Nov 2026): a message, or a comment's own text, written by this invitation
+ * may become { withdrawn: true } (its rev, the author only: the stored entry's invitation); the
+ * audit keeps the original.
  */
 import {
   open, checkInvite, inScope, saveChanges, reply, fail, isPreflight, inviteOf,
@@ -14,7 +17,8 @@ import {
 } from '../lib/core.mjs';
 import { movedMessage } from '../lib/move.mjs';
 import { updateSummary, readSummary } from '../lib/summary.mjs';
-import { ORG_KINDS, orgProblem } from '../../threads.js';
+import { ORG_KINDS, orgProblem, isWithdrawn } from '../../threads.js';
+import { entryOf } from '../lib/dbstate.mjs';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
@@ -37,10 +41,19 @@ export async function main(params) {
       || (c.page !== undefined && c.page !== '*' && c.page !== page
         && !(org(c) && typeof c.page === 'string' && c.page.startsWith('/') && c.page.length <= 400)));
     if (bad) return fail(params, 400, 'bad-change', `not allowed: ${JSON.stringify(bad).slice(0, 120)}`);
-    const badReply = changes.filter((c) => REPLY_KIND.test(c.kind))
+    // a withdrawal: a message (or a comment's own text) already there becomes { withdrawn: true }
+    const withdrawal = (c) => (REPLY_KIND.test(c.kind) || c.kind === 'comment') && (c.rev ?? 0) > 0 && isWithdrawn(c.value);
+    const badReply = changes.filter((c) => REPLY_KIND.test(c.kind) && !withdrawal(c))
       .map((c) => ({ c, problem: (c.rev ?? 0) !== 0 ? 'a reply is written once' : replyProblem(c.value, invite.role) }))
       .find((x) => x.problem);
     if (badReply) return fail(params, 400, 'bad-reply', badReply.problem);
+    // (only its author withdraws a message: the invitation that wrote it)
+    const withdrawals = changes.filter(withdrawal);
+    if (withdrawals.length) {
+      const space0 = spaceOf(invite.scope);
+      const stored = await Promise.all(withdrawals.map((c) => entryOf(stores.client, space0, c.page || page, c.item, c.kind)));
+      if (stored.some((e) => !e || e.inv !== invite.id)) return fail(params, 403, 'not-yours', 'Only its author can withdraw a message.');
+    }
     const badState = changes.filter((c) => c.kind === 'state')
       .map((c) => (c.item !== 'page' ? 'a page state is on item page' : stateProblem(c.value, invite.role)))
       .find(Boolean);
