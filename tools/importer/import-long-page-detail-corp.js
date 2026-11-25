@@ -14,6 +14,7 @@ import longPageDetailSectionsTransformer, {
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 import semanticTransformer from './transformers/long-page-detail-corp-semantic.js';
+import pageCorrectionsTransformer from './transformers/patients-stryker-page-corrections.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
@@ -41,12 +42,15 @@ const parsers = {
 // TRANSFORMER REGISTRY — the sections transformer rebuilds the body first; the shared
 // cleanup (link rewrite) and DM image rewrite run after it; the semantic transformer last
 // turns the structure transformers' intermediate size / font / colour tags into semantic
-// markup (no bracket syntax in the output).
+// markup (no bracket syntax in the output); the page corrections (each page as reviewed in DA)
+// run after everything else.
+const correctionTransformers = [pageCorrectionsTransformer];
 const transformers = [
   longPageDetailSectionsTransformer,
   cleanupTransformer,
   dmImagesTransformer,
   semanticTransformer,
+  ...correctionTransformers,
 ];
 
 function executeTransformers(hookName, element, payload) {
