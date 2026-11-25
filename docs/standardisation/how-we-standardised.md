@@ -474,6 +474,23 @@ Every page concerned is listed by address in its block chapter.
 | Stryker | decide the division contact, corporate contact and Adobe Sign forms |
 | Migration | re-import the older shared fragments; fix the two migration gaps listed in the Panel and Hero chapters |
 
+# 13. Full-page test
+
+Three of stryker.com's most complex product detail pages were migrated with the standardised blocks,
+section styles and Text style (the migration's review build, nothing edited by hand) and compared
+with stryker.com on desktop and phone. Details, screenshots and the open gaps: **page-comparison.md**
+(also as a PDF).
+
+| Page | Blocks | Main sections present | Text as on stryker.com (as designed) |
+|---|---|---|---|
+| [Isolibrium](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/isolibrium) | 17 | 14 of 14 | 72 of 77 (94%) |
+| [LIFEPAK 35](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/lifepak-35) | 14 + 3 slides | 11 of 11 | 91 of 92 (99%) |
+| [SafeAir smoke evacuation](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/safeair-smoke-evacuation) | 22 | 15 of 15 | 124 of 132 (94%) |
+
+The main open items: product-page banners show their image across the slide instead of in the right
+half; shared fragments need re-importing; a few text sizes inside boxes and the Futura words in serif
+titles need migration fixes; whether bold words in a sentence are Futura or Humanist is to decide.
+
 # Glossary
 
 | Term | Meaning |
