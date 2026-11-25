@@ -755,7 +755,7 @@ async function applyToSelection() {
     // markers outside the words' bold / italic: typing over the run would drop that
     // formatting, so only the start marker is swapped
     if (markersApart) {
-      setStatus(`To change this style, select only its start marker “:start-${old[1]}:”, then click again.`, 'error');
+      setStatus(`These words keep their bold / italic: to change the style, select only the start code “:start-${old[1]}:” (the preview stays on this line), pick the new style, then click “Style selected text”.`, 'info');
       return;
     }
   }
@@ -908,8 +908,17 @@ function watchSelection() {
       line.html = line.html.replace(MARKER_TEXT, '');
       line.words = new DOMParser().parseFromString(`<p>${line.html}</p>`, 'text/html').body.textContent;
     }
-    previewLine = line && line.words.trim() ? line : null;
-    previewBlock = previewLine ? await findBlock(previewLine.words) : null;
+    // only a start marker selected (the way to restyle words whose markers sit outside their
+    // bold / italic): the line it starts stays in the preview
+    const onlyStart = line && !line.words.trim()
+      && (html.replace(/<[^>]+>/g, '').match(/^\s*:start-([a-z0-9-]+):\s*$/) || [])[1];
+    if (onlyStart && previewLine?.old === onlyStart) {
+      previewLine = { ...previewLine };
+    } else {
+      previewLine = line && line.words.trim() ? line : null;
+    }
+    const keptBlock = onlyStart && previewBlock;
+    previewBlock = previewLine ? keptBlock || await findBlock(previewLine.words) : null;
     const whole = previewLine ? await isWholeLine(previewLine.words) : null;
     if (html !== lastSelection) return; // the selection moved on while the block was read
     selectionFacts = previewLine ? { tag: previewLine.tag, whole, old: previewLine.old || '' } : null;
