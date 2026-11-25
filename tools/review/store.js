@@ -11,6 +11,7 @@
  */
 
 import { REVIEW, storageKey } from './config.js';
+import { rememberLinks } from './picture-links.js';
 
 export const CONFIG = {
   // where the tool runs for reviewers (links in the summary, invitations)
@@ -212,6 +213,8 @@ export function createStore(onStatus = () => {}) {
           name: body.reviewer, role: body.role || 'reviewer', scope: body.scope, expires: body.expires,
         });
         rows = body.rows;
+        // (the links of the page's pictures came with it)
+        rememberLinks(body.pictures);
         rows.forEach((r) => revs.set(`${r.page}|${r.item}|${r.kind}`, r.rev));
         // changes of this page still waiting from an earlier visit (the tab was closed while they
         // were sent, or sending failed): sent again, with the revs just read

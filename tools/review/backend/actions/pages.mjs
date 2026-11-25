@@ -25,7 +25,8 @@ export async function main(params) {
     const { invite, error } = await checkInvite(stores, inviteOf(params));
     if (error) return fail(params, 401, error, 'This review link is not valid (any more): ask for a new one.');
     const space = spaceOf(invite.scope);
-    const list = await pageList(space);
+    // (?fresh=1: the AOE team's Refresh reads the scope and the live index again)
+    const list = await pageList(space, { fresh: !!params.fresh && invite.role === 'aoe' });
     if (list.none) return reply(params, 200, { none: true, pages: [] });
     const mine = list.pages.filter((p) => inScope(invite.scope, p.path));
     if (invite.role !== 'aoe') return reply(params, 200, { pages: mine.filter((p) => p.published) });

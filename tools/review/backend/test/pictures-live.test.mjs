@@ -90,6 +90,12 @@ try {
   check('a picture id that is no id is refused', badId.status === 400, JSON.stringify(badId.body));
   const seven = await save({ images: Array.from({ length: 7 }, () => ({ id: one.body.id })) });
   check('more than 6 pictures in a message are refused', seven.status === 400, JSON.stringify(seven.body));
+  const withThumb = await save({ images: [{ id: three.body.id, t: one.body.id, w: 10, h: 10 }] });
+  check('a picture with its small version (t) is saved', withThumb.body?.results?.[0]?.ok === true, JSON.stringify(withThumb.body));
+  const badThumb = await save({ images: [{ id: one.body.id, t: 'nope' }] });
+  check('a small version that is no picture id is refused', badThumb.status === 400, JSON.stringify(badThumb.body));
+  const st = await api(rev.token, `state?page=${encodeURIComponent(PAGE)}`);
+  check('the page\'s messages come with their pictures\' links', !!st.body?.pictures?.[one.body.id] && !!st.body?.pictures?.[three.body.id], JSON.stringify(Object.keys(st.body?.pictures || {})));
   // 5. purge-invite removes the pictures
   const purged = await admin({ op: 'purge-invite', id: rev.id });
   check('purge-invite removes the invitation\'s pictures', purged.images >= 2, JSON.stringify(purged));

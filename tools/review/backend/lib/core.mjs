@@ -63,10 +63,12 @@ export function replyProblem(value, role) {
     if (role !== 'aoe') return 'only the AOE team gives a status';
     if (!v.status || !ANSWER_STATES.includes(v.status.state)) return `status.state: ${ANSWER_STATES.join(', ')}`;
   }
-  // pictures (25 Nov 2026): up to 6, each { id, w, h } of a picture uploaded with the images action
+  // pictures (25 Nov 2026): up to 6, each { id, w, h, t? } of a picture uploaded with the images
+  // action (t: its small version for the chat, uploaded the same way)
   if (v.images !== undefined) {
     if (!Array.isArray(v.images) || !v.images.length || v.images.length > MAX_IMAGES) return `images: 1 to ${MAX_IMAGES} pictures`;
     const bad = v.images.find((i) => !i || typeof i !== 'object' || !/^img-[a-z0-9]{16}$/.test(i.id || '')
+      || (i.t !== undefined && !/^img-[a-z0-9]{16}$/.test(i.t))
       || ![i.w, i.h].every((x) => x === undefined || (Number.isInteger(x) && x > 0 && x < 100000)));
     if (bad) return 'images: { id, w, h } each';
   }

@@ -22,6 +22,9 @@
 :is(.pv-thumbs-2, .pv-thumbs-3) .pv-thumb img { block-size: auto; max-block-size: none; aspect-ratio: 4 / 3; }
 .pv-thumb:hover { border-color: var(--c-ink, #1d1d1d); }
 .pv-thumb:focus-visible { outline: 2px solid var(--c-blue, #0969da); outline-offset: 2px; }
+.pv-thumb.pv-loading img { min-block-size: 60px; background: linear-gradient(90deg, #eee 25%, #f7f7f7 50%, #eee 75%) 0 0 / 200% 100%; animation: pv-shimmer 1.2s linear infinite; }
+@keyframes pv-shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .pv-thumb.pv-loading img { animation: none; } }
 .pv-thumb.pv-missing { min-block-size: 48px; cursor: default; }
 .pv-thumb.pv-missing::after { content: "Picture not available"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--c-muted, #6e6e6e); font-size: var(--fs-2xs, 0.6875rem); }
 
