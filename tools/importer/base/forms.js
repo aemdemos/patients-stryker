@@ -284,18 +284,39 @@ function heroSlides(main, document) {
   main.querySelectorAll('.c-autocarousel').forEach((el) => heroImageSlide(el, { document }));
 }
 
+// The event titles are longer than the headline box of the shared image-slide hero: over the
+// image the box can run past the image bottom and cover the text that follows (768 and 1200px).
+// A white-box headline therefore moves out of the hero: the hero keeps its images and the
+// title and date follow as default content, fully readable at every width.
+function headlineOutOfHero(main) {
+  main.querySelectorAll('table').forEach((table) => {
+    const [header, ...rows] = table.rows;
+    const name = header && header.cells[0] ? header.cells[0].textContent : '';
+    if (!/^\s*Hero Corp\b.*\bwhite box\b/i.test(name) || rows.length < 2) return;
+    const last = rows[rows.length - 1];
+    const headline = [...last.cells[0].childNodes];
+    last.remove();
+    header.cells[0].textContent = 'Hero Corp (image Slide)';
+    table.after(...headline);
+  });
+}
+
 export default {
   preprocess,
-  transform: (payload) => transformEventPage(payload, 'forms', (document) => {
-    videoCarousels(document);
-    videos(document);
-    formLayouts(document);
-    formCopy(document);
-    captchas(document);
-    jumpTargets(document);
-    mergeLists(document);
-    latestNews(document);
-    heroContent(document);
-    embeds(document);
-  }, heroSlides),
+  transform: (payload) => {
+    const result = transformEventPage(payload, 'forms', (document) => {
+      videoCarousels(document);
+      videos(document);
+      formLayouts(document);
+      formCopy(document);
+      captchas(document);
+      jumpTargets(document);
+      mergeLists(document);
+      latestNews(document);
+      heroContent(document);
+      embeds(document);
+    }, heroSlides);
+    headlineOutOfHero(result[0].element);
+    return result;
+  },
 };

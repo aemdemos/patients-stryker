@@ -20877,20 +20877,36 @@ var CustomImportScript = (() => {
   function heroSlides(main, document) {
     main.querySelectorAll(".c-autocarousel").forEach((el3) => parse3(el3, { document }));
   }
+  function headlineOutOfHero(main) {
+    main.querySelectorAll("table").forEach((table) => {
+      const [header, ...rows] = table.rows;
+      const name = header && header.cells[0] ? header.cells[0].textContent : "";
+      if (!/^\s*Hero Corp\b.*\bwhite box\b/i.test(name) || rows.length < 2) return;
+      const last = rows[rows.length - 1];
+      const headline2 = [...last.cells[0].childNodes];
+      last.remove();
+      header.cells[0].textContent = "Hero Corp (image Slide)";
+      table.after(...headline2);
+    });
+  }
   var forms_default = {
     preprocess,
-    transform: (payload) => transformEventPage(payload, "forms", (document) => {
-      videoCarousels(document);
-      videos(document);
-      formLayouts(document);
-      formCopy(document);
-      captchas(document);
-      jumpTargets(document);
-      mergeLists(document);
-      latestNews(document);
-      heroContent(document);
-      embeds(document);
-    }, heroSlides)
+    transform: (payload) => {
+      const result = transformEventPage(payload, "forms", (document) => {
+        videoCarousels(document);
+        videos(document);
+        formLayouts(document);
+        formCopy(document);
+        captchas(document);
+        jumpTargets(document);
+        mergeLists(document);
+        latestNews(document);
+        heroContent(document);
+        embeds(document);
+      }, heroSlides);
+      headlineOutOfHero(result[0].element);
+      return result;
+    }
   };
 
   // tools/importer/import-base.js
