@@ -29,7 +29,7 @@ const $ = (sel) => document.querySelector(sel);
 
 /** the states, worded for the viewer's side */
 const STATES = {
-  'waiting-customer': { reviewer: 'Waiting for the customer', aoe: 'Waiting for the customer' },
+  'waiting-customer': { reviewer: 'Waiting for the reviewer', aoe: 'Waiting for the reviewer' },
   'waiting-aoe': { reviewer: 'Waiting for the AOE team', aoe: 'Waiting for the AOE team' },
   'in-review': { reviewer: 'In review', aoe: 'In review' },
   resolved: { reviewer: 'Resolved', aoe: 'Resolved' },
@@ -322,7 +322,7 @@ function tiles() {
 
 /** the group mark's explanation */
 function repTitle(p) {
-  if (p.representative) return 'The representative page of its group (chosen): the customer reviews it for the whole group';
+  if (p.representative) return 'The representative page of its group (chosen): the reviewer reviews it for the whole group';
   if (p.representativeAuto) return 'The first page of its group: its representative while none is chosen';
   return '';
 }

@@ -172,7 +172,7 @@ try {
   b = await bubbles(page);
   check('a fresh browser: the comment first, mine; the AOE message on the left with its status', b[0]?.text === COMMENT && b[0].mine
     && b.some((x) => !x.mine && /AOE: done in r-test/.test(x.aoe)), JSON.stringify(b));
-  check('… the banner: waiting for the customer', (await banner(page)).text === 'Waiting for the customer', JSON.stringify(await banner(page)));
+  check('… the banner: waiting for the customer', (await banner(page)).text === 'Waiting for the reviewer', JSON.stringify(await banner(page)));
   await saved(page, () => send(page, 'Not quite: the image is still small.'));
   await saved(page, () => setStatus(page, 'Send to the AOE team'));
   check('the reviewer answers and sends the page to the AOE team again', (await banner(page)).text === 'Waiting for the AOE team');
@@ -186,14 +186,14 @@ try {
   ({ context, page } = await open(aoeLink));
   const aoeButtons = await page.evaluate(() => [...document.querySelectorAll('.rv-status-actions button')].map((x) => x.textContent));
   check('the AOE member: name with (AOE), one status button: send back to the customer', (await page.evaluate(() => document.querySelector('.rv-reviewer').value)) === 'tool test AOE (AOE)'
-    && aoeButtons.join() === 'Send back to the customer', JSON.stringify(aoeButtons));
+    && aoeButtons.join() === 'Send back to the reviewer', JSON.stringify(aoeButtons));
   check('… sees every message, the reviewer\'s on the left', (await bubbles(page)).filter((x) => !x.mine).length >= 3);
   await page.selectOption(`${PAGE_CHAT} select.rv-reply-status`, 'done');
   await page.fill(`${PAGE_CHAT} input.rv-reply-release`, 'r-ui');
   const c1 = await saved(page, () => send(page, 'Enlarged the image to the live page size.'));
-  const c2 = await saved(page, () => setStatus(page, 'Send back to the customer'));
+  const c2 = await saved(page, () => setStatus(page, 'Send back to the reviewer'));
   check('the AOE member saves a message with a status and sends the page back', c1 === 200 && c2 === 200
-    && (await banner(page)).text === 'Waiting for the customer', JSON.stringify(await banner(page)));
+    && (await banner(page)).text === 'Waiting for the reviewer', JSON.stringify(await banner(page)));
   await context.close();
 
   // 6. the reviewer: ticks the thread Done, approves the page

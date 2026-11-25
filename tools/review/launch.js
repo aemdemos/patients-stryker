@@ -1,8 +1,9 @@
 /*
  * The review's start page (launch.html, 25 Nov 2026): where invitation links open. Who you are
  * (from the link), where the review stands (kept up to date, live.js), the pages of the review
- * with what each one is for, and the way of working between the customer's reviewers and the AOE
- * team, with the statuses in their colours. DOM only (no innerHTML).
+ * with what each one is for, and the way of working between the reviewers and the AOE team, with
+ * the statuses in their colours (the AOE team in Adobe red, reviewers in blue).
+ * DOM only (no innerHTML).
  */
 import { call, inviteToken } from './store.js';
 import { REVIEW } from './config.js';
@@ -48,7 +49,7 @@ const STATES = {
   unreviewed: 'Not reviewed yet',
   'in-review': 'In review',
   'waiting-aoe': 'Waiting for the AOE team',
-  'waiting-customer': 'Waiting for the customer',
+  'waiting-customer': 'Waiting for the reviewer',
   approved: 'Approved as is',
   resolved: 'Resolved',
   skipped: 'Skipped: not migrated',
@@ -92,16 +93,16 @@ const FLOW = [
     who: 'aoe',
     title: 'Pages are published and organised',
     state: ['unreviewed'],
-    text: 'The AOE team publishes the migrated pages, puts them in review batches, groups the pages built exactly the same way (one representative each), and sends you your review link.',
+    text: 'The AOE team publishes the migrated pages, puts them in review batches, groups the pages built exactly the same way (one representative each), and sends each reviewer a review link.',
   },
   {
-    who: 'customer',
+    who: 'reviewer',
     title: 'Review a page',
     state: ['in-review'],
-    text: 'Open your batch on the status page, then each page in the review tool: compare it with the original at every width. Write in the page\'s chat, or pin a QA note on the spot that is wrong.',
+    text: 'The reviewer opens a batch on the status page, then each page in the review tool, and compares it with the original at every width: a message in the page\'s chat, or a QA note pinned on the spot that is wrong.',
   },
   {
-    who: 'customer',
+    who: 'reviewer',
     title: 'Approve it, or send it to the AOE team',
     state: ['approved', 'waiting-aoe', 'skipped'],
     text: 'Right as it is: Approve. Something to change: Send to the AOE team. Not to be migrated: Skip. Approving a group\'s representative approves the whole group.',
@@ -110,17 +111,21 @@ const FLOW = [
     who: 'aoe',
     title: 'Answer and fix',
     state: ['waiting-customer'],
-    text: 'The AOE team answers in the chats (in progress, done, won\'t do, and the release a fix ships in), fixes the page, and sends it back to you.',
+    text: 'The AOE team answers in the chats (in progress, done, won\'t do, and the release a fix ships in), fixes the page, and sends it back to the reviewer.',
   },
   {
-    who: 'customer',
+    who: 'reviewer',
     title: 'Check and close',
     state: ['resolved'],
-    text: 'Check the fix, tick the chats Done and approve: the page is Resolved. Not quite there? Say why and send it to the AOE team again.',
+    text: 'The reviewer checks the fix, ticks the chats Done and approves: the page is Resolved. Not quite there? Say why and send it to the AOE team again.',
   },
 ];
 
+let cardsFor = null;
 function drawCards(role) {
+  // (drawn again only when the role changes: a card being hovered is not replaced)
+  if (cardsFor === role) return;
+  cardsFor = role;
   $('.ln-cards').replaceChildren(...CARDS.filter((c) => !c.aoe || role === 'aoe').map((c) => el(
     'a',
     {
@@ -141,7 +146,7 @@ function drawFlow() {
     el(
       'div',
       { class: 'ln-step-body' },
-      el('span', { class: 'ln-step-who' }, s.who === 'aoe' ? 'AOE team' : 'Customer'),
+      el('span', { class: 'ln-step-who' }, s.who === 'aoe' ? 'AOE team' : 'Reviewer'),
       el('h3', { class: 'ln-step-title' }, s.title),
       el('p', { class: 'ln-step-text' }, s.text),
       el('div', { class: 'ln-step-states' }, ...s.state.map(chip)),
@@ -150,19 +155,24 @@ function drawFlow() {
   $('.ln-legend').replaceChildren(...Object.keys(STATES).map(chip));
 }
 
-/** the numbers: pages of the review (published), and how many are in each state */
-function drawStats(role, pages, states) {
+const TILES = ['Pages in the review', STATES['waiting-aoe'], STATES['waiting-customer'], 'In review', 'Approved'];
+let statsKey = '';
+/** the numbers: pages of the review (published), how many in each state (same for both sides) */
+function drawStats(pages, states) {
   const by = new Map(states.map((s) => [s.page, s.state]));
   const count = (fn) => pages.filter((p) => fn(by.get(p.path) || 'unreviewed')).length;
-  const mine = role === 'aoe' ? 'waiting-aoe' : 'waiting-customer';
   const tiles = [
-    ['Pages in your review', pages.length, 'ln-tile-total'],
-    ['Waiting for you', count((s) => s === mine || (role !== 'aoe' && s === 'unreviewed')), 'ln-tile-you'],
-    [role === 'aoe' ? 'Waiting for the customer' : 'Waiting for the AOE team', count((s) => s === (role === 'aoe' ? 'waiting-customer' : 'waiting-aoe')), 'ln-tile-them'],
-    ['In review', count((s) => s === 'in-review'), 'ln-tile-review'],
-    ['Approved', count((s) => s === 'approved' || s === 'resolved'), 'ln-tile-done'],
+    [TILES[0], pages.length, 'ln-tile-total'],
+    [TILES[1], count((s) => s === 'waiting-aoe'), 'ln-tile-aoe'],
+    [TILES[2], count((s) => s === 'waiting-customer'), 'ln-tile-reviewer'],
+    [TILES[3], count((s) => s === 'in-review'), 'ln-tile-review'],
+    [TILES[4], count((s) => s === 'approved' || s === 'resolved'), 'ln-tile-done'],
   ];
   const done = pages.length ? Math.round((100 * count((s) => ['approved', 'resolved', 'skipped'].includes(s))) / pages.length) : 0;
+  // (drawn again only when a number changes)
+  const key = `${tiles.map((t) => t[1]).join()}|${done}`;
+  if (key === statsKey) return;
+  statsKey = key;
   $('.ln-stats').replaceChildren(
     ...tiles.map(([label, n, cls]) => el('div', { class: `ln-tile ${cls}` }, el('span', { class: 'ln-tile-n' }, String(n)), el('span', { class: 'ln-tile-label' }, label))),
     el(
@@ -191,9 +201,10 @@ async function start() {
   drawFlow();
   drawCards('reviewer');
   // (the tiles' places at once: the numbers follow when the review is read, the page doesn't jump)
-  $('.ln-stats').replaceChildren(...['Pages in your review', 'Waiting for you', 'Waiting for the other side', 'In review', 'Approved']
+  $('.ln-stats').replaceChildren(...TILES
     .map((label) => el('div', { class: 'ln-tile ln-tile-wait' }, el('span', { class: 'ln-tile-n' }, '…'), el('span', { class: 'ln-tile-label' }, label))));
   let pages = null;
+  let helloFor = null;
   const load = async () => {
     const { status, body } = await call('overview');
     if (status !== 200) {
@@ -204,17 +215,21 @@ async function start() {
     const role = body.role || 'reviewer';
     help.setRole(role);
     drawCards(role);
-    $('.ln-hello').replaceChildren('Welcome, ', el('b', {}, body.reviewer), role === 'aoe' ? el('span', { class: 'ln-role' }, 'AOE team') : el('span', { class: 'ln-role ln-role-customer' }, 'Reviewer'));
-    $('.ln-cta').replaceChildren(
-      el('a', {
-        class: 'ln-btn ln-btn-primary', href: './status.html', target: '_blank', rel: 'noopener',
-      }, role === 'aoe' ? 'See every page' : 'See my pages'),
-      el('a', {
-        class: 'ln-btn', href: './index.html', target: '_blank', rel: 'noopener',
-      }, 'Open the review tool'),
-    );
+    if (helloFor !== `${role}|${body.reviewer}`) {
+      helloFor = `${role}|${body.reviewer}`;
+      $('.ln-hello').replaceChildren('Welcome, ', el('b', {}, body.reviewer), el('span', { class: `ln-role ln-role-${role === 'aoe' ? 'aoe' : 'reviewer'}` }, role === 'aoe' ? 'AOE team' : 'Reviewer'));
+      // in the order of the work: the summary, the list of pages, the review tool on each page
+      const btn = (cls, href, text) => el('a', {
+        class: `ln-btn ${cls}`, href, target: '_blank', rel: 'noopener',
+      }, text);
+      $('.ln-cta').replaceChildren(
+        btn('ln-btn-primary', './summary.html', 'Get the Summary'),
+        btn('ln-btn-primary', './status.html', role === 'aoe' ? 'See every page' : 'See my pages'),
+        btn('', './index.html', 'Open the review tool'),
+      );
+    }
     pages = pages || (await loadPages()).filter((p) => p.published !== false);
-    drawStats(role, pages, body.pages || []);
+    drawStats(pages, body.pages || []);
   };
   await load();
   // kept up to date (live.js)

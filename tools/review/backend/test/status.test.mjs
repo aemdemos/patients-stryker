@@ -114,7 +114,7 @@ try {
     && rows[5].state === 'unreviewed' && rows[6].state === 'skipped', JSON.stringify(rows.map((x) => x.state)));
   const colours = await page.evaluate(() => Object.fromEntries(['st-skipped', 'st-unreviewed'].map((c) => [c, getComputedStyle(document.querySelector(`.st-chip.${c}`)).backgroundColor])));
   check('skipped is black, not reviewed yet is gray', colours['st-skipped'] === 'rgb(31, 35, 40)' && colours['st-unreviewed'] === 'rgb(175, 184, 193)', JSON.stringify(colours));
-  check('the names', rows[0].label === 'Waiting for the customer' && rows[1].label === 'Waiting for the AOE team', JSON.stringify(rows.map((x) => x.label)));
+  check('the names', rows[0].label === 'Waiting for the reviewer' && rows[1].label === 'Waiting for the AOE team', JSON.stringify(rows.map((x) => x.label)));
   const blueYellow = await page.evaluate(() => Object.fromEntries(['st-waiting-customer', 'st-in-review'].map((c) => [c, getComputedStyle(document.querySelector(`.st-chip.${c}`)).backgroundColor])));
   check('waiting for the customer is blue, in review is yellow', blueYellow['st-waiting-customer'] === 'rgb(9, 105, 218)' && blueYellow['st-in-review'] === 'rgb(212, 167, 44)', JSON.stringify(blueYellow));
   const tiles = await page.evaluate(() => [...document.querySelectorAll('.st-tile')].map((t) => t.textContent));
@@ -146,7 +146,7 @@ try {
   rows = await rowsOf(page);
   check('the AOE view: waiting for the AOE team first, worded for them', rows.length === 7
     && (rows[0].state === 'waiting-aoe' || rows.every((x) => x.state !== 'waiting-aoe'))
-    && rows.find((x) => x.state === 'waiting-customer')?.label === 'Waiting for the customer', JSON.stringify(rows.map((x) => [x.state, x.label])));
+    && rows.find((x) => x.state === 'waiting-customer')?.label === 'Waiting for the reviewer', JSON.stringify(rows.map((x) => [x.state, x.label])));
   check('the AOE view links the results page', await page.evaluate(() => !document.querySelector('.st-results').hidden));
   await context.close();
 } finally {
