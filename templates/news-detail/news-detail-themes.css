@@ -1221,4 +1221,10 @@ body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6) :is(:is(em, i) > 
   body.news-detail.news-xf-body .columns.columns-67-33:not(.boxed-last, .gold-last, .dark-last) > div > div:last-child {
     flex: 0 0 38%;
   }
+
+  /* news-xf-body: the caption under a photo in a Columns cell starts one section gap (30px)
+     below it, not the template's 30px + 3% */
+  body.news-detail.news-xf-body main .columns.block:not(.large-headline, .caption-tight) > div > div > p.columns-img-col:has(+ p) {
+    margin-bottom: var(--space-section);
+  }
 }
