@@ -85,8 +85,10 @@ export async function loadSource(page, url, {
   wait = 2500, pause = 150, waitUntil = 'load', settle = 0, scroll = true,
 } = {}) {
   const resp = await page.goto(url, { waitUntil, timeout: 90000 });
+  // (304: the browser loaded the page again within a run and the server said "not modified":
+  // the page shows from the browser's copy, as good as a 200)
   const status = resp ? resp.status() : 0;
-  if (status !== 200) throw Object.assign(new Error(`the source answers ${status || 'nothing'}`), { source: true });
+  if (status !== 200 && status !== 304) throw Object.assign(new Error(`the source answers ${status || 'nothing'}`), { source: true });
   if (!sameUrl(page.url(), url)) throw Object.assign(new Error(`the source redirects to ${page.url()}`), { source: true });
   await page.addStyleTag({ content: '#onetrust-consent-sdk, #onetrust-banner-sdk { display: none !important; }' });
   if (scroll) await page.evaluate(async (ms) => {
