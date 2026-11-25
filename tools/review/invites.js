@@ -102,7 +102,7 @@ function draw() {
     'tr',
     {},
     el('td', {}, i.name, i.me ? el('span', { class: 'iv-me' }, ' (you)') : null),
-    el('td', { class: i.role === 'aoe' ? 'iv-role-aoe' : '' }, i.role === 'aoe' ? 'AOE team' : `Reviewer${i.results ? ', results' : ''}`),
+    el('td', { class: i.role === 'aoe' ? 'iv-role-aoe' : '' }, i.role === 'aoe' ? 'AOE team' : 'Reviewer'),
     el('td', {}, i.paths.join(', ')),
     el('td', {}, `${day(i.created)}${i.createdBy ? ` by ${i.createdBy}` : ''}`),
     el('td', {}, day(i.expires)),
@@ -151,12 +151,6 @@ async function start() {
   $('.iv-new').hidden = false;
   $('.iv-list').hidden = false;
   $('.iv-paths').value = myPaths.join('\n');
-  // (the AOE team always has the results page)
-  $('.iv-role').addEventListener('change', () => {
-    const aoe = $('.iv-role').value === 'aoe';
-    $('.iv-results').checked = aoe || $('.iv-results').checked;
-    $('.iv-results').disabled = aoe;
-  });
   $('.iv-search').addEventListener('input', draw);
   $('.iv-all').addEventListener('change', draw);
   $('.iv-form').addEventListener('submit', async (e) => {
@@ -172,7 +166,6 @@ async function start() {
         name: $('.iv-name').value,
         role: $('.iv-role').value,
         days: Number($('.iv-days').value),
-        results: $('.iv-results').checked,
         paths,
       }),
     });
@@ -185,7 +178,7 @@ async function start() {
     made.replaceChildren(...[
       el('p', {}, el('b', {}, `Invitation for ${invite.name}`), ` (${invite.scope.role === 'aoe' ? 'AOE team' : 'reviewer'}, until ${day(invite.expires)}). Copy the link now and send it to them only: it is shown once and works like a password.`),
       linkRow('Review tool', invite.link),
-      invite.results ? linkRow('Results', invite.results) : null,
+      linkRow('Summary', invite.summary || invite.results),
     ].filter(Boolean));
     $('.iv-name').value = '';
     await load();

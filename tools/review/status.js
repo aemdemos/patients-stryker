@@ -7,6 +7,7 @@
  * open feedback); links into the review tool. State = a colour and a label.
  */
 import { call, inviteToken } from './store.js';
+import { keepFresh } from './live.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl, scopeFacts } from './pages.js';
 import {
@@ -487,8 +488,9 @@ let pagesKept = null;
  * reads the review's state (and the pages); quick: the pages kept (after organising);
  * rebuild: the backend builds its summary again from every entry (Refresh)
  */
-async function load({ quick = false, rebuild = false } = {}) {
-  $('.rs-updated').textContent = 'Loading…';
+async function load({ quick = false, rebuild = false, quiet = false } = {}) {
+  // (quiet: the 15-second refresh, live.js: no "Loading…" in between)
+  if (!quiet) $('.rs-updated').textContent = 'Loading…';
   // (the AOE team: every page of the migration scope; reviewers: the published ones)
   const [{ status, body }, pages] = await Promise.all([
     call(`overview${rebuild ? '?rebuild=1' : ''}`),
@@ -500,7 +502,6 @@ async function load({ quick = false, rebuild = false } = {}) {
     return;
   }
   me = { name: body.reviewer, role: body.role || 'reviewer' };
-  $('.st-results').hidden = !body.scope.results;
   $('.st-invites').hidden = body.role !== 'aoe';
   const states = new Map(body.pages.map((p) => [p.page, p]));
   all = pages.filter((p) => inScope(body.scope, p.path)).map((p) => {
@@ -651,6 +652,13 @@ async function start() {
   $('.st-refresh').addEventListener('click', () => load({ rebuild: true }));
   await load();
   if (view.scroll) window.scrollTo(0, view.scroll);
+  // kept up to date (live.js), not while a row is being edited or a field of the selection bar
+  // or the groups box is in use
+  keepFresh(() => {
+    const active = document.activeElement;
+    const busy = editing !== null || (active && /^(INPUT|SELECT|TEXTAREA)$/.test(active.tagName) && active.closest('.st-bulk, .st-groups, table'));
+    return busy ? null : load({ quick: true, quiet: true });
+  });
 }
 
 start();

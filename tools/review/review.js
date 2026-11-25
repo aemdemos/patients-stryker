@@ -14,6 +14,7 @@ import {
   threadState, roleOf, pageState, STATES_BY_ROLE, isWithdrawn, firstText,
 } from './threads.js';
 import { createNotes, CATEGORIES } from './notes.js';
+import { keepFresh } from './live.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl } from './pages.js';
 import {
@@ -1436,6 +1437,18 @@ shotHooks.wait = (page, had) => {
   window.setTimeout(look, 20000);
 };
 
+/**
+ * entries saved under a block key → the block's position now (a key not on the page any more:
+ * its content changed; left out here, the summary lists it for a re-check)
+ */
+function positioned(m, keys) {
+  return new Map([...m].map(([k, e]) => {
+    const at = k.lastIndexOf('|');
+    const pos = toPosition(k.slice(0, at), keys);
+    return pos ? [`${pos}|${k.slice(at + 1)}`, { ...e, item: pos }] : null;
+  }).filter(Boolean));
+}
+
 function loadPage() {
   if (!state.page) return;
   ready.std = false;
@@ -1455,6 +1468,7 @@ function loadPage() {
     REVIEW.compare.includes('rs') ? el('li', {}, el('a', { href: `${CONTENT}/rs${state.page}`, target: '_blank', rel: 'noopener' }, 'As-is page')) : null,
     el('li', {}, el('a', { href: SOURCE[state.page] || 'https://www.stryker.com/', target: '_blank', rel: 'noopener' }, 'Live stryker.com page')),
     el('li', {}, el('a', { href: './status.html', target: '_blank', rel: 'noopener' }, 'Review status of every page')),
+    el('li', {}, el('a', { href: './summary.html', target: '_blank', rel: 'noopener' }, 'Review summary')),
     // (the AOE team's: editing needs Document Authoring rights anyway)
     editUrl(state.page) ? el('li', { class: 'rv-aoe-only' }, el('a', { href: editUrl(state.page), target: '_blank', rel: 'noopener' }, 'Edit in Document Authoring')) : null,
     el('li', { class: 'rv-aoe-only' }, el('a', { href: './invites.html', target: '_blank', rel: 'noopener' }, 'Invitations: make and revoke')),
@@ -1479,13 +1493,7 @@ function loadPage() {
   savedLoad = Promise.all([store.load(loading), keysLoad]).then(([m, keys]) => {
     if (state.page !== loading) return;
     pageKeys = keys;
-    // entries saved under a block key → the block's position now (a key not on the page any
-    // more: its content changed; left out here, the summary lists it for a re-check)
-    saved = new Map([...m].map(([k, e]) => {
-      const at = k.lastIndexOf('|');
-      const pos = toPosition(k.slice(0, at), keys);
-      return pos ? [`${pos}|${k.slice(at + 1)}`, { ...e, item: pos }] : null;
-    }).filter(Boolean));
+    saved = positioned(m, keys);
     renderPageBox();
     notes.setNotes(savedNotes());
     renderNotes();
@@ -1498,6 +1506,26 @@ function loadPage() {
     }
   });
   writeUrl();
+}
+
+/** what the page's entries say, to tell whether a refresh brought anything new */
+const stampOf = (m) => [...m].map(([k, e]) => `${k}=${e.time}=${JSON.stringify(e.value)}`).sort().join('|');
+
+/**
+ * the open page's entries read again (live.js, every 15 s while the tab is visible): drawn again
+ * only when something changed; not while changes of this viewer are on their way, a dialog is
+ * open or a chat's status / release field is in use
+ */
+async function refreshSaved() {
+  const { page } = state;
+  const active = document.activeElement;
+  if (!page || drafts.size || store.busy() || document.querySelector('dialog[open]')) return;
+  if (active?.closest?.('.rv-composer') && !active.classList.contains('rv-reply')) return;
+  await savedLoad;
+  const next = positioned(await store.load(page), pageKeys);
+  if (state.page !== page || stampOf(next) === stampOf(saved)) return;
+  saved = next;
+  threadHooks.redraw();
 }
 
 async function step(delta) {
@@ -1782,10 +1810,14 @@ async function start() {
     window.addEventListener('pointermove', move);
     window.addEventListener('pointerup', up);
   });
-  // a new message redraws the panels that show chats; the panels keep their place
+  // a new message redraws the panels that show chats; the panels keep their place, and a message
+  // box being typed in keeps its focus and cursor (its text: kept in the browser, `typing`)
   threadHooks.redraw = () => {
     const right = $('.rv-panel-right');
     const top = right.scrollTop;
+    const active = document.activeElement;
+    const chat = active?.classList?.contains('rv-reply') ? active.closest('[data-chat]')?.dataset.chat : null;
+    const at = chat ? [active.selectionStart, active.selectionEnd] : null;
     listBlocks();
     renderPageBox();
     notes.setNotes(savedNotes());
@@ -1793,6 +1825,13 @@ async function start() {
     right.scrollTop = top;
     settleChats();
     sendingHooks.update();
+    if (chat) {
+      const area = document.querySelector(`[data-chat="${CSS.escape(chat)}"] textarea.rv-reply`);
+      if (area) {
+        area.focus();
+        area.setSelectionRange(...at);
+      }
+    }
   };
   statusHooks.render = renderPageStatus;
   if (!PREVIEW) {
@@ -1903,6 +1942,8 @@ async function start() {
   });
   layout();
   loadPage();
+  // the open page kept up to date (live.js)
+  keepFresh(refreshSaved);
 }
 
 start();

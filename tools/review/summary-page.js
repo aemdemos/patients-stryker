@@ -1,9 +1,11 @@
 /*
- * Review results: where the customer review stands and what it decided, from every entry the
- * invitation may see (store.js readAll: the review backend, an invitation with the results right,
- * opened as results.html?invite=…). Progress (pages reviewed), design decisions (group choices
- * and their reach, the page choices with block type and design), comments, QA notes with links
- * to their pins; CSV downloads of the to-do lists. Test entries are hidden by default.
+ * The review summary (summary.html; the results page until 25 Nov 2026, results.html forwards):
+ * where the review stands and what it decided, from every entry the invitation may see (store.js
+ * readAll: any invitation, the customer's too, within its pages). Progress (pages reviewed),
+ * design decisions (group choices and their reach, the page choices with block type and design),
+ * comments, QA notes with links to their pins; CSV downloads of the to-do lists. Kept up to date
+ * every 15 s while visible (live.js). For the AOE team only: the "Hide test entries" switch (test
+ * entries are hidden for everyone else).
  */
 import { readAll, merge, inviteToken } from './store.js';
 import { keysOfHtml, toPosition } from './blockkeys.js';
@@ -12,6 +14,7 @@ import {
 } from './threads.js';
 import { REVIEW } from './config.js';
 import loadPages from './pages.js';
+import { keepFresh } from './live.js';
 
 // the designs a block's content fits and the group labels: only with the design panel
 // (standard pages); loaded on first use
@@ -336,23 +339,36 @@ async function start() {
     $('.rs-blocked').hidden = false;
     return;
   }
-  document.title = `${REVIEW.title}: results`;
-  $('h1').textContent = `${REVIEW.title}: results`;
+  document.title = `${REVIEW.title}: summary`;
+  $('h1').textContent = `${REVIEW.title}: summary`;
   const pages = await loadPages();
   let all = [];
+  let role = 'reviewer';
+  let stamp = '';
   const draw = async () => {
-    const hide = $('.rs-hide-tests').checked;
+    // (test entries: hidden for everyone but the AOE team, who may show them)
+    const hide = role !== 'aoe' || $('.rs-hide-tests').checked;
     const rows = all.filter((r) => !hide || (!TEST_REVIEWERS.test(r.reviewer) && r.page !== '/test' && !r.page.startsWith('/std/')));
+    const y = window.scrollY;
     await render(rows, pages);
+    window.scrollTo(0, y);
   };
-  const load = async () => {
-    $('.rs-updated').textContent = 'Loading the reviews…';
+  const load = async ({ quiet = false } = {}) => {
+    if (!quiet) $('.rs-updated').textContent = 'Loading the reviews…';
     try {
-      all = await readAll();
-      await draw();
+      const got = await readAll();
+      ({ role } = got);
+      $('.rs-hide-tests').closest('label').hidden = role !== 'aoe';
+      // (the 15-second refresh: drawn again only when something changed)
+      const next = JSON.stringify(got.rows.map((r) => [r.page, r.item, r.kind, r.time]));
+      if (!quiet || next !== stamp) {
+        all = got.rows;
+        stamp = next;
+        await draw();
+      }
       $('.rs-updated').textContent = `${all.length} saved changes · read ${when(new Date().toISOString())}`;
     } catch (e) {
-      $('.rs-updated').textContent = e.code ? e.message : 'Could not read the reviews';
+      if (!quiet) $('.rs-updated').textContent = e.code ? e.message : 'Could not read the reviews';
     }
   };
   // the invitation is kept in the browser, not in the address bar
@@ -362,8 +378,10 @@ async function start() {
     window.history.replaceState(null, '', url);
   }
   $('.rs-hide-tests').addEventListener('change', draw);
-  $('.rs-refresh').addEventListener('click', load);
+  $('.rs-refresh').addEventListener('click', () => load());
   await load();
+  // kept up to date (live.js)
+  keepFresh(() => load({ quiet: true }));
 }
 
 start();

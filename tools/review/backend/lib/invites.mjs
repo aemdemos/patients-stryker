@@ -49,7 +49,9 @@ export async function createInvite({ state, files }, {
   const tool = toolOf(space, host);
   // (made on Stage, the test workspace: the link opens the tool on Stage's backend, whatever host)
   const stage = /-stage$/.test(process.env.__OW_NAMESPACE || '');
-  const link = `${tool}?${new URLSearchParams({ ...(typeof page === 'string' && page ? { page } : {}), ...(stage ? { backend: 'stage' } : {}), invite: token })}`;
+  const backend = stage ? { backend: 'stage' } : {};
+  const link = `${tool}?${new URLSearchParams({ ...(typeof page === 'string' && page ? { page } : {}), ...backend, invite: token })}`;
+  const summary = `${tool.replace('index.html', 'summary.html')}?${new URLSearchParams({ ...backend, invite: token })}`;
   return {
     id,
     name: invite.name,
@@ -57,7 +59,9 @@ export async function createInvite({ state, files }, {
     expires: exp,
     token,
     link,
-    results: scope.results ? `${tool.replace('index.html', 'results.html')}?invite=${encodeURIComponent(token)}` : undefined,
+    // the summary page, for every invitation since 25 Nov 2026 (`results`: the same, older callers)
+    summary,
+    results: summary,
   };
 }
 

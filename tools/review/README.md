@@ -46,7 +46,8 @@ keeps the invitation, later visits need no link.
 | `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch and group marking |
 | `NEW-PAGES.md` | The design of the migration scope, published pages and the backend's first shots (built 23 Nov 2026), with the facts and decisions behind it |
 | `invites.html`, `invites.js`, `invites.css` | The AOE team's invitations: make, list, revoke (below) |
-| `results.html`, `results.js`, `results.css` | Results for invitations with the results right: progress, comments, QA notes, CSV downloads (no design decisions here) |
+| `summary.html`, `summary-page.js`, `summary-page.css` | The review summary (the results page until 25 Nov 2026; `results.html` forwards): progress, comments, QA notes, CSV downloads; for every invitation (no design decisions here) |
+| `live.js` | Keeps an open page up to date: every 15 s while its tab is visible, at once when it is shown again |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
 | `shots.js` | The page's source shots in the tool: the history, one version, the AOE team's request for a new one |
 | `shoot.mjs`, `snapshot-map.py`, `capture-snapshots.mjs`, `upload-snapshots.sh`, `record-shots.mjs`, `refresh-shots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/` | Source shots and their history (below) |
@@ -62,11 +63,24 @@ keeps the invitation, later visits need no link.
 - **Withdraw**: a message sent is final, but its author may withdraw it (asked first): everyone
   then sees "Message withdrawn", it counts for nothing, the audit keeps the original. The backend
   allows it to the invitation that wrote it only.
+- **Kept up to date** (25 Nov 2026, `live.js`): the review page, the status page and the
+  summary page ask the backend again every 15 s while their tab is visible (at once when it is
+  shown again; nothing in a hidden tab). The review page draws its chats, notes and status again
+  only when something changed, and a message box being typed in keeps its text, cursor and focus
+  (not while changes are on their way, a dialog is open or a status field is in use); the status
+  page keeps filters, selection and scroll and waits while a row is edited; the summary keeps its
+  scroll. Each check is one small call (~0.05 GB-s): ~6% of the App Builder pack for 10 people, 8
+  hours a day. (App Builder can't push to the browser: it asks.)
+- **The summary page** (`summary.html`, the results page until 25 Nov 2026; older links to
+  `results.html` forward): for every invitation, the customer's too, within its pages; linked
+  from the review tool and the status page, and given with every new invitation. The "Hide test
+  entries" switch is the AOE team's only (test entries are hidden for everyone else). The
+  invitations' `results` right is no longer used.
 - **QA notes start their chat**: a new note asks for its first message (no subject of its own);
   "Add note" saves the note and that message at once and opens the chat. A note is referred to by
   its number ("note 4 on page X"): numbered by creation, deleted notes included, so a number never
   moves. Edit changes the category or deletes the note. The rules: `threads.js` (`isWithdrawn`,
-  `firstText`), used by the backend, the tool, the results page and the summary.
+  `firstText`), used by the backend, the tool, the summary page and the AOE summary.
 
 ## The status page (customer and AOE team)
 
@@ -240,7 +254,7 @@ review without the developers (backend web action `invites`, `backend/lib/invite
 with `backend/admin.mjs`):
 
 - **Make** an invitation: name (or email), role (reviewer, or AOE team: the AOE team always has
-  the results page), valid for 1–365 days (default 90), the results page for a reviewer, and the
+  the summary page), valid for 1–365 days (default 90), and the
   pages (path prefixes; default and limit: the AOE's own invitation's pages). The link points to
   the tool on the host the page was opened on (the branch preview before the merge, then main).
   **The link is shown once**: the backend keeps no tokens, and nobody can see or copy another
@@ -394,6 +408,7 @@ node tools/review/backend/test/scope-live.test.mjs    # deployed: scope pages, a
 node tools/review/backend/test/scope-tool.test.mjs <dev server>   # the scope on the status page, a backend shot in the tool, ☆
 node tools/review/backend/test/status-view.test.mjs <dev server>  # the customer's status page (no AOE parts), new tabs, state kept on refresh
 node tools/review/backend/test/live-tool.test.mjs <dev server> [page] [space]   # the Live comparison: the copy, fonts, no scripts, sync, links, widths
+node tools/review/backend/test/refresh-tool.test.mjs <dev server>   # live updates (15 s, typing kept), the summary for both roles, results.html forwards
 node tools/review/backend/test/org-edit.test.mjs <dev server> [space] [prefix of 3 pages]   # changing batches, groups, representatives (pages nobody used; purged after)
 ```
 

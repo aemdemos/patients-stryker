@@ -273,13 +273,16 @@ export function createStore(onStatus = () => {}) {
   };
 }
 
-/** every row the invitation may see (the results page: an invitation with the results right) */
+/**
+ * every row the invitation may see (the summary page: any invitation, its pages; backend action
+ * `results`) → { rows, role }
+ */
 export async function readAll() {
   const { status, body } = await call('results');
   if (status !== 200) {
-    const err = new Error(MESSAGES[body?.error?.code] || body?.error?.message || `results: ${status}`);
+    const err = new Error(MESSAGES[body?.error?.code] || body?.error?.message || `summary: ${status}`);
     err.code = body?.error?.code;
     throw err;
   }
-  return body.rows;
+  return { rows: body.rows, role: body.role || 'reviewer' };
 }
