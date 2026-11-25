@@ -242,8 +242,9 @@ export function linkImage(p) {
   a.href = link.getAttribute('href');
   if (link.target) a.target = link.target;
   if (link.rel) a.rel = link.rel;
-  // a label the link already has (e.g. "… (opens in a new tab)") is kept
-  a.setAttribute('aria-label', link.getAttribute('aria-label') || link.textContent.trim());
+  // in review (draft pages): a label the link already has (e.g. "… (opens in a new tab)") is kept
+  const kept = document.body.classList.contains('std-draft') && link.getAttribute('aria-label');
+  a.setAttribute('aria-label', kept || link.textContent.trim());
   a.append(picture);
   p.append(a);
   next.remove();
