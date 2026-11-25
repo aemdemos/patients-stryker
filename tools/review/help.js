@@ -53,7 +53,7 @@ export const HELP = {
       ['Deciding', P(['The status at the top of the right panel says whose turn it is.', '**Approve** when the page is right; **Send to the AOE team** when something must change; **Skip: don\'t migrate** for a page that should not be migrated; **In review** while you are at it. Pressing the current status clears it.', 'Everything is saved at once, and the page updates itself when someone else writes.'])],
     ],
     aoe: [
-      ['For the AOE team', P(['Answer in the chats; a message may carry a status (**in progress**, **done**, **won\'t do**, **open again**).', 'When the page is fixed: **Send back to the reviewer** (Waiting for the reviewer).', '**Edit in DA** (right panel) opens the page\'s document in Document Authoring.', '**Refresh source shot** takes a new snapshot of the stryker.com page; every earlier one is kept, with its date.', 'Where the source is checked every day for changes, the Source shot box says since when, and what the last check found.'])],
+      ['For the AOE team', P(['Answer in the chats; a message may carry a status (**in progress**, **done**, **won\'t do**, **open again**).', 'When the page is fixed: **Send back to the reviewer** (Waiting for the reviewer).', '**Edit in DA** (right panel) opens the page\'s document in Document Authoring.', '**Live** (pilot, with the review extension from the start page): the real, clickable stryker.com page under Compare with, with Scroll Sync; notes go on the migrated page or the Screenshot.', '**Refresh source shot** takes a new snapshot of the stryker.com page; every earlier one is kept, with its date.', 'Where the source is checked every day for changes, the Source shot box says since when, and what the last check found.'])],
     ],
   },
   status: {

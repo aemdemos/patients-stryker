@@ -76,6 +76,18 @@ keeps the invitation, later visits need no link.
   Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
   Colours: everything of the AOE team (Adobe) red, everything of the reviewers blue; the word is
   always "reviewer" (never "customer") on every page of the tool.
+- **Live: the real stryker.com page** (25 Nov 2026, pilot for the AOE team, `extension/`): with the
+  review extension (Chrome / Edge, loaded unpacked from `review-live-extension.zip`, linked on the
+  start page for the AOE team) Compare with offers **Live**: the real, interactive stryker.com page.
+  The extension removes stryker.com's framing headers only for www.stryker.com framed by a review
+  page (`rules.json`, aem.page / aem.live / localhost), and its bridge inside that page sends the
+  tool its anchors and scroll position (as `sync.js` does) and scrolls on request: Scroll Sync both
+  ways, the approach of fullyframe. Notes can't go on it (another site: note mode switches to the
+  Screenshot). Without the extension nothing changes. After changing the extension: bump its
+  version, `node tools/review/extension-zip.mjs`. Test: `live-extension-tool.test.mjs` (Chromium
+  with the extension, from a copy: Chrome writes into the folder it loads).
+- **QA notes on the source screenshot** (25 Nov 2026): side `src`, the screenshot's version and a
+  point in its pixels; with Render or Live showing, note mode switches to the Screenshot.
 - **Pictures in the chats** (25 Nov 2026, `pictures.js`, `pictures.css`, backend action `images`):
   for what only shows after a click on the real page, a screenshot goes with a message: pasted
   into the message box, dropped onto it, or added with **Picture**; up to 6 per message. A big
