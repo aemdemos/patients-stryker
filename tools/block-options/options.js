@@ -699,6 +699,7 @@ export const BLOCK_OPTIONS = {
           ['text-center', 'Centred text', { needs: ['text'], hint: 'All text in the cards centred' }],
           ['title-above', 'Title above the image', { needs: ['images', 'text'], hint: 'Each card’s title sits above its image' }],
           ['no-text', 'Image only', { needs: ['images'], hint: 'Images at their own size, centred, linked to the link of the card; no text shown' }],
+          ['image-centre', 'Images centred at their size', { needs: ['images'], hint: 'Each image at its own size, centred in the card (e.g. icons), as Columns' }],
           ['border', 'Card text in a box', { needs: ['images', 'text'], hint: 'A white soft-shadow box with the text, overlapping the image' }],
         ],
       },

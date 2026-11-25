@@ -676,3 +676,12 @@ body.corp.std-draft .cards-corp.resources > ul {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
+
+/* Images centred at their size (option image-centre, as Columns; in review: draft pages): each
+   card image at its own size, at most the card's width, centred — e.g. stryker.com's icon rows */
+body.corp.std-draft .cards-corp.image-centre .cards-corp-card-image img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
