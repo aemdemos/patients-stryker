@@ -344,7 +344,10 @@ async function bench(params) {
 }
 
 // ---------- the daily source change check ----------
-const CHECK_MS = 210000;
+// no page started after this: a page whose history starts or that changed takes 3 loads and a
+// shot (40 s and more), and the action stops at 300 s (a run started a page at 210 s once and
+// was cut off)
+const CHECK_MS = 170000;
 const CHECK_PAUSE = 700;
 const sleep = (ms) => new Promise((r) => { setTimeout(r, ms); });
 
@@ -529,7 +532,7 @@ async function check(stores, space, started, params) {
     }
     if (!stats.blocked) {
       for (const p of suspects) {
-        if (Date.now() - started > CHECK_MS + 40000) break;
+        if (Date.now() - started > CHECK_MS + 20000) break;
         await sleep(2000);
         try {
           await one(p);
