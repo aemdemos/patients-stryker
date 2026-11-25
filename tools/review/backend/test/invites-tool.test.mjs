@@ -73,7 +73,7 @@ try {
     await p.waitForFunction(() => /Invitation for tool test inv ui made/.test(document.querySelector('.iv-made').textContent));
     const link = await p.$eval('.iv-link input', (i) => i.value);
     // (on Stage the link also names Stage's backend: ?backend=stage&invite=…)
-    check('create: the link shown once, with Copy', /\/tools\/review\/index\.html\?(backend=stage&)?invite=/.test(link) && !!(await p.$('.iv-link button')));
+    check('create: the link shown once, with Copy', /\/tools\/review\/launch\.html\?(backend=stage&)?invite=/.test(link) && !!(await p.$('.iv-link button')));
     const links = await p.$$eval('.iv-link input', (l) => l.map((i) => i.value));
     check('create: a reviewer\'s invitation comes with its summary link too', links.some((l) => /\/tools\/review\/summary\.html\?backend=stage&invite=/.test(l)), JSON.stringify(links.map((l) => l.replace(/invite=[^&]+/, 'invite=…'))));
     await p.waitForFunction(() => [...document.querySelectorAll('.iv-table tbody tr')].some((tr) => tr.cells[0].textContent === 'tool test inv ui made'));

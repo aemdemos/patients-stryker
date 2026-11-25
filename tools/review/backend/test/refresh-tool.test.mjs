@@ -5,8 +5,10 @@
  * the backend; within ~20 s the open page shows it (live.js, every 15 s) without a reload, the
  * typing kept (text, focus); the status page shows the new activity the same way; the summary
  * page opens for the reviewer (no test-entries switch) and the AOE member (with it);
- * results.html forwards to summary.html. On a published page nobody used (its entries purged
- * after), test invitations only.
+ * results.html forwards to summary.html; the start page (launch.html) for both (greeting, role,
+ * numbers, the pages' cards: Invitations for the AOE team only, the way of working) and the help
+ * on every page (ⓘ: the viewer's side first). On a published page nobody used (its entries
+ * purged after), test invitations only.
  * usage: node tools/review/backend/test/refresh-tool.test.mjs <dev server, e.g. http://localhost:3220>
  */
 import { createRequire } from 'module';
@@ -98,6 +100,33 @@ try {
     }), TEXT);
     check(`summary for the ${who}: opens, the message in it, test switch ${toggle ? 'shown' : 'hidden'}`, /summary/.test(r.title) && /saved changes/.test(r.read) && r.toggle === toggle && r.found, JSON.stringify(r));
     await s.ctx.close();
+  }
+  // 5. the start page and the help
+  for (const [who, token, aoeSide] of [['reviewer', rev.token, false], ['AOE member', aoe.token, true]]) {
+    const l = await open(token, 'launch.html');
+    await l.p.waitForFunction(() => /Welcome/.test(document.querySelector('.ln-hello')?.textContent || '') && !document.querySelector('.ln-tile-wait'), null, { timeout: 60000 }).catch(() => null);
+    const r = await l.p.evaluate(() => ({
+      hello: document.querySelector('.ln-hello').textContent,
+      tiles: [...document.querySelectorAll('.ln-tile-n')].map((x) => x.textContent),
+      cards: [...document.querySelectorAll('.ln-card-title')].map((x) => x.textContent),
+      steps: document.querySelectorAll('.ln-step').length,
+      legend: document.querySelectorAll('.ln-legend .ln-chip').length,
+    }));
+    check(`start page for the ${who}: greeting with the role, numbers, the way of working`, r.hello.includes(aoeSide ? 'AOE team' : 'Reviewer') && r.tiles.length === 5 && r.tiles.every((t) => /^\d+$/.test(t)) && r.steps === 5 && r.legend === 7, JSON.stringify(r));
+    check(`… the cards: Invitations ${aoeSide ? 'for the AOE team' : 'not for a reviewer'}`, r.cards.some((c) => c.startsWith('Invitations')) === aoeSide && r.cards.some((c) => c.startsWith('Review tool')), JSON.stringify(r.cards));
+    await l.p.click('.hp-info');
+    const h = await l.p.evaluate(() => {
+      const d = document.querySelector('.hp-dialog');
+      return { open: d.open, side: d.querySelector('.hp-for').textContent, theirs: !!d.querySelector('.hp-theirs') };
+    });
+    check(`… its ⓘ: the help for the ${who}'s side`, h.open && h.side === (aoeSide ? 'For the AOE team' : 'For reviewers') && h.theirs === aoeSide, JSON.stringify(h));
+    await l.ctx.close();
+  }
+  for (const path of ['status.html', 'summary.html', `index.html?page=${encodeURIComponent(PAGE)}`]) {
+    const x = await open(rev.token, path);
+    const has = await x.p.waitForFunction(() => document.querySelector('.hp-info') && document.querySelector('.hp-start'), null, { timeout: 60000 }).then(() => true).catch(() => false);
+    check(`${path.split('?')[0]}: Start link and ⓘ in its top bar`, has);
+    await x.ctx.close();
   }
   const old = await open(rev.token, 'results.html');
   await old.p.waitForURL(/summary\.html/, { timeout: 20000 }).catch(() => null);

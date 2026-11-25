@@ -15,6 +15,7 @@ import {
 import { REVIEW } from './config.js';
 import loadPages from './pages.js';
 import { keepFresh } from './live.js';
+import { mountHelp } from './help.js';
 
 // the designs a block's content fits and the group labels: only with the design panel
 // (standard pages); loaded on first use
@@ -341,6 +342,7 @@ async function start() {
   }
   document.title = `${REVIEW.title}: summary`;
   $('h1').textContent = `${REVIEW.title}: summary`;
+  const help = mountHelp('summary', $('.rs-bar'));
   const pages = await loadPages();
   let all = [];
   let role = 'reviewer';
@@ -358,6 +360,7 @@ async function start() {
     try {
       const got = await readAll();
       ({ role } = got);
+      help.setRole(role);
       $('.rs-hide-tests').closest('label').hidden = role !== 'aoe';
       // (the 15-second refresh: drawn again only when something changed)
       const next = JSON.stringify(got.rows.map((r) => [r.page, r.item, r.kind, r.time]));

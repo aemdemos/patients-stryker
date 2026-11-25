@@ -48,6 +48,8 @@ keeps the invitation, later visits need no link.
 | `invites.html`, `invites.js`, `invites.css` | The AOE team's invitations: make, list, revoke (below) |
 | `summary.html`, `summary-page.js`, `summary-page.css` | The review summary (the results page until 25 Nov 2026; `results.html` forwards): progress, comments, QA notes, CSV downloads; for every invitation (no design decisions here) |
 | `live.js` | Keeps an open page up to date: every 15 s while its tab is visible, at once when it is shown again |
+| `launch.html`, `launch.js`, `launch.css` | The start page (where invitation links open): who you are, where the review stands (kept up to date), a card per page of the review, the way of working between the customer and the AOE team with the statuses in their colours; Adobe red |
+| `help.js`, `help.css` | The help on every page: "Start" and an ⓘ at the right end of the top bar; the ⓘ opens what is on the page and how to use it, for the viewer's side (AOE: theirs first, the reviewers' folded below) |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
 | `shots.js` | The page's source shots in the tool: the history, one version, the AOE team's request for a new one |
 | `shoot.mjs`, `snapshot-map.py`, `capture-snapshots.mjs`, `upload-snapshots.sh`, `record-shots.mjs`, `refresh-shots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/` | Source shots and their history (below) |
@@ -63,6 +65,14 @@ keeps the invitation, later visits need no link.
 - **Withdraw**: a message sent is final, but its author may withdraw it (asked first): everyone
   then sees "Message withdrawn", it counts for nothing, the audit keeps the original. The backend
   allows it to the invitation that wrote it only.
+- **The start page** (`launch.html`, 25 Nov 2026): where new invitation links open (a link to one
+  page still opens the review tool on it; older links keep opening the tool). The viewer's name
+  and role, the review in numbers (pages in the review, waiting for you, waiting for the other
+  side, in review, approved, % done; kept up to date), a card per page (Review tool, Status page,
+  Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
+- **Help on every page** (`help.js`): "Start" and an ⓘ at the right end of every top bar; the
+  ⓘ opens a dialog about the page for the viewer's side (customer or AOE team). The texts live
+  in `help.js` (`HELP`): keep them in step with the pages.
 - **Kept up to date** (25 Nov 2026, `live.js`): the review page, the status page and the
   summary page ask the backend again every 15 s while their tab is visible (at once when it is
   shown again; nothing in a hidden tab). The review page draws its chats, notes and status again

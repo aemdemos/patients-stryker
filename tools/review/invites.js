@@ -6,6 +6,7 @@
  */
 import { call, inviteToken } from './store.js';
 import { REVIEW } from './config.js';
+import { mountHelp } from './help.js';
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
@@ -148,6 +149,8 @@ async function start() {
   document.title = `${REVIEW.title}: invitations`;
   inviteToken();
   if (!(await load())) return;
+  // (the AOE team's page: its help for the AOE team)
+  mountHelp('invites', $('.rs-bar')).setRole('aoe');
   $('.iv-new').hidden = false;
   $('.iv-list').hidden = false;
   $('.iv-paths').value = myPaths.join('\n');

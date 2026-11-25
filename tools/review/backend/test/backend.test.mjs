@@ -205,7 +205,7 @@ check('summary: a reviewer\'s invitation reads the entries in scope, with its ro
 const withLink = await admin({
   op: 'invite', name: 'backend test (summary)', paths: [PAGE], days: 1,
 });
-check('every invitation gets a summary link', !!withLink.summary && withLink.summary.includes('summary.html?invite='), JSON.stringify(Object.keys(withLink)));
+check('every invitation gets a summary link (on Stage naming its backend)', !!withLink.summary && /summary\.html\?(backend=stage&)?invite=/.test(withLink.summary), JSON.stringify(Object.keys(withLink)));
 await admin({ op: 'revoke', id: withLink.id });
 
 r = await web(`state?page=${encodeURIComponent(PAGE)}`, { method: 'OPTIONS' });
