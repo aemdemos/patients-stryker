@@ -15,6 +15,7 @@ date: "November 24, 2026"
 | Text colours | **27** | **11** |
 | Box and background colours | **25** | **10** |
 | Image border colours | **12** | **3** |
+| Section style names | **255** | **35** author choices (14 built, 21 proposed) + 12 template looks |
 | Block variants | **70** | **53** |
 | Uses that keep their look | | **95% to 100%** for spacing inside boxes, sizes, fonts and colours; **77% to 96%** for outer spacing |
 | Real pages changed during review | | **0** (checked element by element) |
@@ -320,12 +321,97 @@ until the business approves.
 |---|---|---|
 | Variant | the structure of a block | Columns *two equal* |
 | Block options | how a block looks | box colour, spacing, border, alignment |
-| Section style | a whole section | side by side, tab panel, carousel slide: picked in **Block options → Section**, which copies the Style to paste into the section's Section Metadata |
+| Section style | a whole section | side by side, tab panel, carousel slide (built); background, line above, centred text (proposed): picked in **Block options → Section**, which copies the Style to paste into the section's Section Metadata (section 9) |
 | Text style | a few words inside a text | a gold name, a serif sentence, a 2× size |
 
 Rule for authors: the whole block → Block options; a few words → Text style.
 
-# 9. Values that move more (listed for review)
+# 9. Section styles
+
+A **section** is the part of a page between two section breaks. A **section style** changes the whole
+section: puts its parts side by side, makes it a tab or a carousel slide, gives it a background.
+Authors set it in the section's Section Metadata (Style row); the **Block options panel → Section**
+offers the ones that fit and copies the Style to paste.
+
+## 9.1 Values before and after
+
+*Section style names written on the imported stryker.com pages (2,340 live pages): **255 names, 35,817
+uses**.*
+
+| Kind | Names today | Uses | New site | Status |
+|---|---|---|---|---|
+| Side by side and column widths | 29 | 6,071 | **4**: side by side (equal, wide + narrow, narrow + wide), side by side on phones | built |
+| Section roles: tab, accordion, carousel | 11 | 1,066 | **3** roles + 7 follow-up choices (starts open; autoplay, fade, split slide, 3 band colours) | built |
+| Background and boxes | 38 | 4,123 | **10** background colours (the box colours) + full width, soft shadow box, gradient direction | proposed |
+| Text look of the whole section (fonts, sizes, bold, centred) | 56 | 11,394 | **Text style** for the words, + **1** section style: centred text | Text style built; centred proposed |
+| Spacing (padding, margin, spacer sections) | 95 | 6,194 | **0**: the standard gap between sections | by design |
+| Lines between sections | 5 | 3,348 | **1**: line above the section | proposed |
+| Template and shared parts (disclaimer, contact aside, Connect band …) | 12 | 3,450 | **12** kept as they are, set by the migration with their template or fragment; not an author choice | kept |
+| Button colour | 2 | 96 | **2**: purple buttons, blue buttons | proposed (kept) |
+| Desktop or phone only | 2 | 28 | **2**: desktop only, phone only | proposed (kept) |
+| Image looks (borders, linked images) | 5 | 47 | **0** section styles: Block options of the block (image border, linked images) | built |
+| **Total** | **255** | **35,817** | **35 author choices** (14 built, 21 proposed) **+ 12 template looks** | |
+
+## 9.2 The section styles
+
+**Built (Block options → Section)**
+
+| Choice | Style name | Replaces today | Fits when |
+|---|---|---|---|
+| Side by side, equal parts | `flex` | flex (1,630), video-text (43), form-with-aside (18), text-video, image-aside | the section has 2 or more parts |
+| Side by side, wide + narrow | `flex, flex-67-33` | flex-67-33 (323), form-right, video-right | 2 or more parts |
+| Side by side, narrow + wide | `flex, flex-33-67` | flex-33-67 (7) | 2 or more parts |
+| Side by side on phones too | `flex-row-mobile` | (icon rows) | side by side is picked |
+| A tab | `tab-panel` | tabbed (346) | the section opens with a heading (the tab label) |
+| An accordion panel | `accordion-panel` | accordion-panel (564), accordion-continue (31) | the section opens with a heading |
+| … starts open | `accordion-open` | | accordion panel is picked |
+| A carousel slide | `carousel` | carousel (103), banner | the section holds a Hero block, or a Columns row next to a slide |
+| … autoplay (one speed, 5 s) | `autoplay` | autoplay-2500 … autoplay-6500 (6 speeds) | carousel slide is picked |
+| … cross-fade | `fade` | fade (11) | carousel slide is picked |
+| … split slide | `split` | | carousel slide with a Columns row |
+| … split band colour | purple gradient (default), `box-blue-gradient`, `box-dark` | | split slide is picked |
+
+The column-width names (col-1-2, col-1-3, col-2-3, col-at-…, image-1-2 / 1-3 / 2-3, width-50 / 67, phone-full:
+about 860 uses) map to the nearest side-by-side choice by their widths; the pages are listed for review.
+
+**Proposed (to approve; would be added to Block options → Section)**
+
+| Choice | Replaces today (uses) | Note |
+|---|---|---|
+| Background: white, light grey, gold, blue, purple, teal, dark grey, gold gradient, blue gradient, purple gradient | bg-white 957, bg-gold 539, bg-light-gray 291, bg-dark-purple-gradient 218, bg-dark-blue-gradient 183, dark 127, bg-golden-gradient 92, bg-dark-gray 53, bg-blue 32, bg-purple 18 … (38 names) | the same 10 colour names as every block's box; silver, orange and dark gold go to the nearest (listed) |
+| Full width background | full-bleed 13, gold-band 20 | the background runs to the page edges |
+| Soft shadow box | boxed 1,235, shadow-box 76, headline-box 58 | a white box with a soft shadow around the section's content |
+| Gradient direction: reversed, bottom to top | gradient-inverse 37, gradient-top-to-bottom 19 | gradient backgrounds only |
+| Centred text | center 644 | the whole section's text centred |
+| Narrow text column (centred) | col-8 132, col-8-centre 171, col-10 59, column-10-12 82 | to confirm against stryker.com: one width or two |
+| Line above the section | divider 2,987, separator 325, separator-row 33, line-above 2, separator-wide 1 | one grey line; full-width line to confirm |
+| Purple buttons, blue buttons | btn-purple 77, btn-blue 19 | buttons follow the authoring conventions (gold, teal) elsewhere |
+| Desktop only, phone only | desktop-only 15, mobile-only 13 | |
+
+**Not section styles any more**
+
+| Today | Uses | Now |
+|---|---|---|
+| Fonts and sizes for the whole section (serif, h-serif, bold-body, p-1-25, large-headline, label-2, h1-1-25 …) | 11,394 | **Text style** on the words; whole-row looks of Columns in Block options → Text look |
+| Spacing (spacer sections 4,039, padding-*, margin-*, no-gap, pull-up …) | 6,194 | the **standard gap**; no setting |
+| Sections that continue the one above (continued 2,583, join 144) | 2,727 | one section, or the standard gap |
+| Image borders and linked images | 47 | **Block options** of the block |
+
+## 9.3 How the Section panel decides what to show
+
+| The section holding the block | The panel shows |
+|---|---|
+| has 2 or more parts | Side by side |
+| opens with a heading | A tab, An accordion panel (folded away) |
+| holds a Hero block, or a Columns row next to a carousel slide | A carousel slide (folded away) |
+| is next to a tab, accordion panel or carousel slide | the folded part opens: "make this one the same to add it" |
+| has a style already | that style, so it can be removed |
+| none of these | "No section style applies to this section as it is" |
+
+Follow-up choices (on phones, starts open, autoplay, fade, split, band colour) appear only after their
+main choice. Styles that can't apply are listed with why under "Other section styles".
+
+# 10. Values that move more (listed for review)
 
 | What | Uses | Proposal |
 |---|---|---|
@@ -338,7 +424,7 @@ Rule for authors: the whole block → Block options; a few words → Text style.
 
 Every page concerned is listed by address in its block chapter.
 
-# 10. Decisions for the business
+# 11. Decisions for the business
 
 | Topic | Decision needed |
 |---|---|
@@ -347,13 +433,15 @@ Every page concerned is listed by address in its block chapter.
 | Panel | the 232 gold "Connect with us" bars; the 809 boxes in column cells; the 46 overlapping boxes |
 | Cards | one box colour per row (21 rows colour each card differently); building the filtered product grid |
 | Hero | page intro replacing the columns rows; framed banners, text above on phones, video backgrounds |
-| Section layout | approve the *Section* area of Block options (side by side, tab, accordion panel, carousel slide), greyed out when it doesn't fit |
+| Section styles (built) | approve the *Section* area of Block options: side by side, tab, accordion panel, carousel slide, shown only when they fit the section (section 9.3) |
+| Section styles (proposed) | the 21 proposed choices of section 9.2: 10 backgrounds + full width, soft shadow box and gradient direction; centred text; narrow text column; line above; purple and blue buttons; desktop or phone only |
+| Section styles (dropped) | whole-section fonts and sizes move to Text style; spacing and spacer sections (4,039) become the standard gap |
 | Statistics | the 22 number rows next to images or video |
 | Table | legal lists from a sheet or in the page (Trademarks: 1,322 rows) |
 | Event calendar | keep the 2018–2021 events as an archive, or retire the pages |
 | Chart, Media gallery | chart block or images; keep the 360° spin |
 
-# 11. Tasks outside authoring
+# 12. Tasks outside authoring
 
 | Who | Task |
 |---|---|
