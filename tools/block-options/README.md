@@ -61,10 +61,24 @@ Below the block's options, the **Section** area edits the style of the section t
 block (`SECTION_OPTIONS` in `options.js`): side by side (`flex`, `flex, flex-67-33`,
 `flex, flex-33-67`, `flex-row-mobile`) and the section's role (`tab-panel`, `accordion-panel` with
 `accordion-open`, `carousel` with `autoplay`, `fade`, `split` and the split band colour). Other
-styles on the section (e.g. `full-bleed`) are kept. Choices that don't fit are greyed out with the
-reason (two or more parts for side by side, a heading first for a tab or accordion panel, a Hero
-(corp) or Columns block for a slide, a Columns block for a split slide), and a choice that depends on
-another one goes when that one is cleared.
+styles on the section (e.g. `full-bleed`) are kept.
+
+The area follows the selected block's section, so it shows only what can apply there (unlike block
+options, which grey out what doesn't fit):
+
+| Shown when | Choices |
+|---|---|
+| the section holds 2 or more parts (blocks, or the text between them) | Side by side |
+| Side by side is picked | On phones (side by side too) |
+| the section opens with a heading | A tab, An accordion panel |
+| the section holds a Hero (corp) block, or a Columns row next to a carousel slide | A carousel slide |
+| its main choice is picked | Starts open; Autoplay, Cross-fade, Split slide; the split band colour |
+
+The tab / accordion / carousel choices sit in a folded part ("Turn this section into a tab,
+accordion panel or carousel slide"), because most sections are none of these; it opens by itself
+when the section or the one next to it already has one of these roles ("The section next to it is a
+tab: make this one the same to add it"). A style the section already has always shows, so it can be
+removed. The styles that can't apply are listed with why under "Other section styles".
 
 **Copy section style** copies the result: the Style text when the section has a Section Metadata
 table (paste it over the Style row), or a whole Section Metadata table (paste it at the end of the

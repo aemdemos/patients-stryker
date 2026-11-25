@@ -74,21 +74,32 @@ function sourceBlocks(doc) {
     .filter((b) => !/^(section-metadata|metadata|da-metadata|library-metadata)$/.test(b.classList[0]));
 }
 
-function sectionStylesOf(block) {
-  const meta = block.parentElement.querySelector(':scope > .section-metadata');
+// the section roles: a tab, an accordion panel, a carousel slide (consecutive sections join)
+const SECTION_ROLES = ['tab-panel', 'accordion-panel', 'carousel'];
+
+function stylesOfSection(section) {
+  const meta = section?.querySelector(':scope > .section-metadata');
   const row = meta && [...meta.children]
     .find((r) => r.children[0]?.textContent.trim().toLowerCase() === 'style');
   return row ? row.children[1].textContent.split(',').map(toClassName).filter(Boolean) : [];
+}
+
+function sectionStylesOf(block) {
+  return stylesOfSection(block.parentElement);
 }
 
 /** the section holding a block: its styles, markup and whether it has a Section Metadata table */
 function sectionOf(block) {
   const section = block?.parentElement;
   if (!section) return { sectionStyles: [], sectionHtml: '', hasMeta: false };
+  // the roles of the sections before and after it (a tab set, accordion or carousel continues)
+  const neighbourRoles = [section.previousElementSibling, section.nextElementSibling]
+    .flatMap((s) => stylesOfSection(s)).filter((st) => SECTION_ROLES.includes(st));
   return {
     sectionStyles: sectionStylesOf(block),
     sectionHtml: section.outerHTML,
     hasMeta: !!section.querySelector(':scope > .section-metadata'),
+    neighbourRoles,
   };
 }
 
@@ -305,13 +316,17 @@ function updatePreview() {
 /* ---------------------------------------------------------------- the section */
 
 const SECTION_CHOICE_NEEDS = ['flex', 'accordion-panel', 'carousel', 'split'];
+// the groups that turn a section into one of them, folded away unless the section or a
+// neighbour has a role: most sections are none of these
+const ROLE_GROUPS = ['role', 'accordion', 'carousel', 'band'];
+const ROLE_LABELS = { 'tab-panel': 'a tab', 'accordion-panel': 'an accordion panel', carousel: 'a carousel slide' };
 
 /**
  * What the section holding the block has, for the section choices' `needs`: its parts (each
  * block, and each run of text between blocks), whether it opens with a heading, its blocks.
  * @param {string} html The section's markup
  */
-function sectionFactsOf(html) {
+function sectionFactsOf(html, near = []) {
   if (!html) return null;
   const section = new DOMParser().parseFromString(html, 'text/html').body.firstElementChild;
   if (!section) return null;
@@ -326,7 +341,10 @@ function sectionFactsOf(html) {
   return {
     parts,
     headingFirst: /^H[1-6]$/.test(children[0]?.tagName || ''),
-    slideBlock: !!section.querySelector(':scope > .hero-corp, :scope > .columns'),
+    // a Hero (corp) block is a carousel slide; a Columns row only as a split slide of a
+    // carousel that is already there (this section or the one next to it)
+    slideBlock: !!section.querySelector(':scope > .hero-corp')
+      || (!!section.querySelector(':scope > .columns') && (near.includes('carousel') || sectionDraft.includes('carousel'))),
     columnsBlock: !!section.querySelector(':scope > .columns'),
   };
 }
@@ -339,7 +357,7 @@ function sectionUnfit(needs, facts) {
   const reasons = {
     'parts-2+': facts.parts >= 2 ? '' : `needs 2 or more parts in the section (blocks, or the text between them): this section has ${parts}`,
     'heading-first': facts.headingFirst ? '' : 'needs a heading at the top of the section (it becomes the label)',
-    'slide-block': facts.slideBlock ? '' : 'needs a Hero (corp) block in the section (or a Columns block for a split slide)',
+    'slide-block': facts.slideBlock ? '' : 'needs a Hero (corp) block in the section, or a Columns row next to a carousel slide (a split slide)',
     'columns-block': facts.columnsBlock ? '' : 'needs a Columns block in the section (the image and the title)',
     flex: sectionDraft.includes('flex') ? '' : 'pick Side by side first',
     'accordion-panel': sectionDraft.includes('accordion-panel') ? '' : 'make the section an accordion panel first',
@@ -423,27 +441,51 @@ async function copySection() {
   }
 }
 
+/**
+ * The Section area follows the selected block's section: it shows only the section styles
+ * that can apply to it (side by side when the section holds 2 or more parts, tab or accordion
+ * panel when it opens with a heading, carousel slide when it holds a Hero (corp) or Columns
+ * block), and a follow-up choice (on phones, starts open, autoplay, split band) only once its
+ * main choice is picked. A style the section already has always shows, so it can be removed.
+ * The styles that can't apply are listed, with why, under "Other section styles".
+ */
 function renderSection() {
   sectionEl.replaceChildren();
   sectionEl.hidden = !current;
   if (!current) return;
-  const facts = sectionFactsOf(current.sectionHtml);
-  sectionEl.append(el('h2', { class: 'tm-section-title' }, 'Section'), el('p', { class: 'tm-hint' }, 'The section that holds this block: its layout and role (Section Metadata → Style).'));
+  const facts = sectionFactsOf(current.sectionHtml, current.neighbourRoles || []);
+  const isOn = (value) => !!value && tokensOf(value).every((t) => sectionDraft.includes(t));
+  const offered = (value, meta) => isOn(value) || !sectionUnfit(meta?.needs, facts);
+  // listed with why it isn't offered: a choice hidden by the section's content; a follow-up
+  // whose main choice is off (on phones, starts open, split …) is left out silently
+  const structural = (meta) => {
+    const needs = meta?.needs || [];
+    const follows = needs.filter((n) => SECTION_CHOICE_NEEDS.includes(n));
+    return needs.some((n) => !SECTION_CHOICE_NEEDS.includes(n)) && !sectionUnfit(follows, facts);
+  };
+  const hidden = [];
+  const titleOf = (value, meta) => [meta?.hint, value ? `Style “${value.replace(' ', ', ')}”` : 'No style']
+    .filter(Boolean).join('\n');
+  sectionEl.append(
+    el('h2', { class: 'tm-section-title' }, 'Section'),
+    el('p', { class: 'tm-hint' }, 'The part of the page this block sits in, between two section breaks. These choices change the whole section, not only the block (Section Metadata → Style).'),
+  );
+  let groupsShown = 0;
+  const roleBox = el('details', { class: 'tm-more tm-roles' });
   SECTION_OPTIONS.groups.forEach((group) => {
+    const choices = (group.options || group.flags).filter(([value]) => value);
+    const visible = choices.filter(([value, , meta]) => offered(value, meta));
+    choices.filter(([value, , meta]) => !offered(value, meta) && structural(meta))
+      .forEach(([, label, meta]) => hidden.push([label, sectionUnfit(meta.needs, facts)]));
+    if (!visible.length) return;
+    groupsShown += 1;
     const fieldset = el('fieldset', { class: 'tm-group' }, el('legend', {}, group.label));
     const row = el('div', { class: 'tm-choices', role: group.flags ? 'group' : 'radiogroup', 'aria-label': group.label });
-    const titleOf = (value, meta, reason) => [reason ? `Not available here: ${reason}.` : '', meta?.hint,
-      value ? `Style “${value.replace(' ', ', ')}”` : 'No style'].filter(Boolean).join('\n');
-    const unavailable = (reason) => (reason ? { 'aria-disabled': 'true' } : {});
     if (group.flags) {
-      group.flags.forEach(([value, label, meta]) => {
-        const on = sectionDraft.includes(value);
-        const reason = on ? '' : sectionUnfit(meta?.needs, facts);
-        row.append(el('label', { class: `tm-check${reason ? ' tm-unfit' : ''}`, title: titleOf(value, meta, reason) }, el('input', {
+      visible.forEach(([value, label, meta]) => {
+        row.append(el('label', { class: 'tm-check', title: titleOf(value, meta) }, el('input', {
           type: 'checkbox',
-          checked: on,
-          ...unavailable(reason),
-          onclick: (e) => { if (reason) e.preventDefault(); },
+          checked: sectionDraft.includes(value),
           onchange: (e) => {
             toggleSection(value, e.target.checked);
             renderGroups();
@@ -453,17 +495,15 @@ function renderSection() {
       });
     } else {
       const selected = selectedIn(group, sectionDraft);
-      group.options.forEach(([value, label, meta]) => {
-        const reason = !value || value === selected ? '' : sectionUnfit(meta?.needs, facts);
+      const none = group.options.find(([value]) => !value);
+      [...(none ? [none] : []), ...visible].forEach(([value, label, meta]) => {
         row.append(el('button', {
           type: 'button',
           role: 'radio',
-          class: `tm-choice${reason ? ' tm-unfit' : ''}`,
+          class: 'tm-choice',
           'aria-checked': String(value === selected),
-          ...unavailable(reason),
-          title: titleOf(value, meta, reason),
+          title: titleOf(value, meta),
           onclick: () => {
-            if (reason) return;
             pickSection(group, value);
             renderGroups();
             updatePreview();
@@ -472,8 +512,26 @@ function renderSection() {
       });
     }
     fieldset.append(row);
-    sectionEl.append(fieldset);
+    (ROLE_GROUPS.includes(group.id) ? roleBox : sectionEl).append(fieldset);
   });
+  if (roleBox.querySelector('fieldset')) {
+    const near = (current.neighbourRoles || []).map((r) => ROLE_LABELS[r]).filter(Boolean);
+    roleBox.prepend(el('summary', {}, 'Turn this section into a tab, accordion panel or carousel slide'));
+    if (near.length) roleBox.append(el('p', { class: 'tm-hint' }, `The section next to it is ${[...new Set(near)].join(' and ')}: make this one the same to add it.`));
+    roleBox.open = SECTION_ROLES.some((r) => sectionDraft.includes(r)) || near.length > 0;
+    sectionEl.append(roleBox);
+  }
+  if (!groupsShown) {
+    sectionEl.append(el('p', { class: 'tm-hint' }, 'No section style applies to this section as it is.'));
+  }
+  if (hidden.length) {
+    sectionEl.append(el(
+      'details',
+      { class: 'tm-more' },
+      el('summary', {}, `Other section styles (${hidden.length}): why they aren’t offered here`),
+      el('ul', { class: 'tm-hint' }, ...hidden.map(([label, why]) => el('li', {}, `${label}: ${why}.`))),
+    ));
+  }
   const changed = orderedSection(sectionDraft).join(',') !== orderedSection(current.sectionStyles).join(',');
   const copy = el('button', { type: 'button', onclick: copySection, disabled: !changed }, changed ? 'Copy section style' : 'No section changes');
   sectionEl.append(
@@ -599,7 +657,8 @@ function setBlock(next) {
     // change too
     const styles = next.sectionStyles.join(',') !== current.sectionStyles.join(',');
     const content = (next.html && next.html !== current.html)
-      || next.sectionHtml !== current.sectionHtml;
+      || next.sectionHtml !== current.sectionHtml
+      || (next.neighbourRoles || []).join(',') !== (current.neighbourRoles || []).join(',');
     if (content || styles) {
       current = next;
       if (styles) sectionDraft = [...next.sectionStyles];
