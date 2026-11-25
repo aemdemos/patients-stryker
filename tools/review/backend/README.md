@@ -68,6 +68,15 @@ check's list (`admin changes-scope`) not checked today, one at a time, with a pa
   variant, changed, unreachable, gone after 3 days; the day's visual result: baseline, same,
   noise), the runs in `changes/site.json` (timings, counts). `admin changes-page {page}` /
   `changes-site`.
+- **Redirects:** a source that sends visitors to another address (e.g. `/us/en/about/news.html`
+  → `/us/en/about/news/index.html`) is not a failure: its own state, `redirects`, kept daily; a
+  redirect that starts (on a page that had content), changes target or ends is a change (an
+  ended redirect: a shot). The scope table's pairs are never changed by this: both
+  `news.html → /us/en/about/news` and `news/index.html → /us/en/about/news/` stay as they are
+  (the tool works from the table's explicit pairs; the EDS rule: a path ending in / is the
+  folder's index page, one without is the page of that name).
+- **The status page** (AOE) lists the sources that redirect and those not reachable, from the
+  check's own summary (`site.json` `sources`, kept by each run: no page record read there).
 - **Gentle with stryker.com:** after many hundreds of loads in one afternoon (up to 20 at once),
   stryker.com answered 404 to about half of the pages on Stage, on and off (Production's loads
   were fine). So: one page at a time with a pause; a 404 is tried again at the end of the run

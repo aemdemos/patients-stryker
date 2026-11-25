@@ -16,8 +16,12 @@
  *   <space>/changes/site.json             { lastRun, runs }
  * A page's log results: baseline (the history starts: 3 loads, every version of a part seen is
  * known), unchanged, variant (a part seen once, not on the confirming load: dynamic, learned),
- * changed { parts, look, shot, unsteady }, unreachable { reason }, gone (3 days unreachable);
+ * changed { parts, look, shot, unsteady, redirect, redirectEnded }, redirects { to } (the source
+ * answers but sends visitors to another address: its own state, not a failure; a redirect that
+ * starts, changes or ends is a change), unreachable { reason }, gone (3 days unreachable);
  * a day's line also says what the weekly visual check found (look: baseline | same | noise).
+ * site.json also keeps `sources`: { redirects: { <page>: { to, since } }, unreachable: { <page>:
+ * { reason, since, misses } } }, for the status page (no page records read there).
  */
 export const pre = (space) => (!space || space === 'std' ? '' : `${space}/`);
 export const scopeFile = (space) => `${pre(space)}changes/scope.json`;
@@ -109,8 +113,10 @@ export function historyOf(state) {
     since: log[0]?.day || null,
     last: last && { day: last.day, result: last.result, reason: last.reason || null },
     lookChecked: state.look?.day || null,
+    redirect: state.redirect || null,
+    redirectSince: state.redirect ? (log.find((l) => l.redirect === state.redirect)?.day || null) : null,
     changes: log.filter((l) => l.result === 'changed' || l.result === 'baseline').map((l) => ({
-      day: l.day, at: l.at, result: l.result, parts: l.parts?.length || 0, look: !!l.look, shot: l.shot || null, unsteady: !!l.unsteady,
+      day: l.day, at: l.at, result: l.result, parts: l.parts?.length || 0, look: !!l.look, shot: l.shot || null, unsteady: !!l.unsteady, redirect: l.redirect || null, redirectEnded: l.redirectEnded || null,
     })),
     unreachable: state.misses || 0,
     gone: last?.result === 'gone',

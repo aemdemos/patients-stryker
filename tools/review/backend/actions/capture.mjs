@@ -388,6 +388,9 @@ async function checkPage(stores, browser, scratch, space, p, today, { forceLook 
   const a = await readSource(browser, p.source);
   const out = {};
   let entry;
+  // (it redirected until now: the redirect ended, a change of the source, whatever else)
+  const wasRedirect = state.redirect || null;
+  delete state.redirect;
   const shotNow = async (extra) => {
     const shot = await shoot(stores, browser, space, p.page, p.source, extra);
     // (the look the shot shows: the next visual check compares with it)
@@ -430,6 +433,13 @@ async function checkPage(stores, browser, scratch, space, p, today, { forceLook 
       }
     }
   }
+  if (wasRedirect) {
+    entry = { ...entry, result: 'changed', redirectEnded: wasRedirect };
+    if (!out.shot) {
+      entry.shot = await shotNow({ by: 'change history: changed', change: { redirectEnded: wasRedirect } });
+      out.shot = entry.shot;
+    }
+  }
   // the weekly visual check (its night, or a week since the last), unless a shot was just taken
   if (!out.shot && (forceLook || lookDue(state, p.page, today))) {
     const look = await readLook(browser, scratch, p.source);
@@ -464,6 +474,26 @@ async function checkPage(stores, browser, scratch, space, p, today, { forceLook 
   return out;
 }
 
+/**
+ * a source that answers by sending visitors to another address: its own state (not a failure),
+ * kept daily; a redirect that starts (the page had content) or changes target is a change
+ */
+async function redirected(files, space, p, today, to) {
+  let state = await readPageState(files, space, p.page) || freshState(p);
+  const at = new Date().toISOString();
+  const before = state.redirect || null;
+  let entry;
+  if (before === to) entry = { day: today, at, result: 'redirects', redirect: to };
+  // (a page that never had content of its own, e.g. only unreachable so far: its history starts)
+  else if (!state.log.length || (!before && !state.known.length)) entry = { day: today, at, result: 'baseline', redirect: to };
+  else entry = { day: today, at, result: 'changed', redirect: to, ...(before ? { redirectFrom: before } : {}) };
+  state.redirect = to;
+  state.misses = 0;
+  state = addLog(state, entry);
+  await writeJson(files, pageFile(space, p.page), state);
+  return entry.result;
+}
+
 /** a page that could not be read today: unreachable, gone after GONE_AFTER days in a row */
 async function unreachable(files, space, p, today, reason) {
   let state = await readPageState(files, space, p.page) || freshState(p);
@@ -480,7 +510,15 @@ async function check(stores, space, started, params) {
   const scope = Array.isArray(params.pages) ? { pages: params.pages } : await readScope(files, space);
   const site = await readSite(files, space);
   const stats = {
-    checked: 0, baseline: 0, unchanged: 0, variant: 0, changed: 0, unreachable: 0, shots: 0, looks: 0, blocked: false, errors: [],
+    checked: 0, baseline: 0, unchanged: 0, variant: 0, changed: 0, redirects: 0, unreachable: 0, shots: 0, looks: 0, blocked: false, errors: [],
+  };
+  // the sources the status page lists: redirecting, not reachable (kept between runs)
+  site.sources = { redirects: {}, unreachable: {}, ...(site.sources || {}) };
+  const note = (p, kind, value) => {
+    ['redirects', 'unreachable'].forEach((k) => {
+      if (k !== kind) delete site.sources[k][p.page];
+    });
+    if (kind) site.sources[kind][p.page] = { ...value, since: site.sources[kind][p.page]?.since || today };
   };
   // the pages not checked today, the longest unchecked first
   const states = await Promise.all(scope.pages.map(async (p) => ({ p, s: await readPageState(files, space, p.page) })));
@@ -497,10 +535,18 @@ async function check(stores, space, started, params) {
     scratch = await browser.newPage();
   };
   const one = async (p) => {
-    const r = await checkPage(stores, browser, scratch, space, p, today, { forceLook: !!params.forceLook });
-    stats[r.result] += 1;
-    if (r.shot) stats.shots += 1;
-    if (r.look) stats.looks += 1;
+    try {
+      const r = await checkPage(stores, browser, scratch, space, p, today, { forceLook: !!params.forceLook });
+      stats[r.result] += 1;
+      if (r.shot) stats.shots += 1;
+      if (r.look) stats.looks += 1;
+      note(p, null);
+    } catch (e) {
+      if (!e.redirect) throw e;
+      const result = await redirected(files, space, p, today, e.redirect);
+      stats[result] += 1;
+      note(p, 'redirects', { source: p.source, to: e.redirect });
+    }
   };
   try {
     for (const p of due) {
@@ -525,6 +571,7 @@ async function check(stores, space, started, params) {
         } else {
           await unreachable(files, space, p, today, reason);
           stats.unreachable += 1;
+          note(p, 'unreachable', { source: p.source, reason });
         }
       }
       stats.checked += 1;
@@ -537,8 +584,10 @@ async function check(stores, space, started, params) {
         try {
           await one(p);
         } catch (e) {
-          await unreachable(files, space, p, today, String(e.message || e).slice(0, 200));
+          const reason = String(e.message || e).slice(0, 200);
+          await unreachable(files, space, p, today, reason);
           stats.unreachable += 1;
+          note(p, 'unreachable', { source: p.source, reason });
         }
       }
     }
