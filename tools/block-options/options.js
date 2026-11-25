@@ -389,8 +389,9 @@ export const BLOCK_OPTIONS = {
     ],
   },
   // stryker.com column rows (stryker-aemcoder-package, docs/standardisation/columns.md): the five
-  // source layouts (other widths read as the nearest), a cell box (one colour list for
-  // every block) in the first / last / every cell, the spacing inside it, image borders, centred
+  // source layouts and the news 3/4 + 1/4 (other widths read as the nearest), a cell box (one
+  // colour list for every block) in the first / last / every cell, the spacing inside it, image
+  // borders, centred
   // text, and the other corp looks imported pages use (first-line bars, row looks). Rows of tiles
   // (challenge, icon, colour profile cards, product / CTA tiles, icon grid) are Cards (package);
   // pages that carry those names render as before.
@@ -415,9 +416,8 @@ export const BLOCK_OPTIONS = {
       'blue-last': ['box-blue'],
       'blue-all': ['box-blue', 'box-all'],
       'purple-last': ['box-purple'],
-      // widths outside stryker.com's five layouts (18 shared-fragment rows, docs/standardisation/
+      // widths stryker.com doesn't use (10 rows from older imports, docs/standardisation/
       // columns.md): read as the nearest layout; the rows render as before until re-saved
-      'columns-75-25': ['columns-67-33'],
       'columns-70-30': ['columns-67-33'],
       'columns-25-75': ['columns-33-67'],
       'columns-20-80': ['columns-33-67'],
@@ -444,6 +444,8 @@ export const BLOCK_OPTIONS = {
           ['columns-67-33', 'Wide + narrow', { needs: ['cells-2'] }],
           ['columns-3-cols', 'Three equal', { needs: ['cells-3'] }],
           ['columns-4-cols', 'Four equal', { needs: ['cells-4'] }],
+          // stryker.com news articles: 9 + 3 of the 12-column grid
+          ['columns-75-25', 'Wide + narrow (3/4 + 1/4)', { needs: ['cells-2'], hint: 'Three quarters + quarter, as stryker.com news articles (9 + 3 of its grid)' }],
         ],
       },
       {

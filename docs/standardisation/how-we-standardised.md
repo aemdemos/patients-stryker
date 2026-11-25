@@ -16,7 +16,7 @@ date: "November 24, 2026"
 | Box and background colours | **25** | **10** |
 | Image border colours | **12** | **3** |
 | Section style names | **255** | **35** author choices (in Block options → Section) + 12 template looks |
-| Block variants | **70** | **48** |
+| Block variants | **70** | **49** |
 | Uses that keep their look | | **95% to 100%** for spacing inside boxes, sizes, fonts and colours; **77% to 96%** for outer spacing |
 | Real pages changed during review | | **0** (checked element by element) |
 
@@ -44,7 +44,7 @@ accordions opened: 2,340 live pages. Only what the live site shows is counted.*
 | Video border colour | 5 | 875 | 1 (black) | −80% | 99% |
 | Text alignment | 4 | 9,171 | 2 (left, centred) | −50% | 100% |
 | Banner headline position (Hero) | 189 | 478 banners | 12 (3 columns × 4 heights) | −94% | 93% within 10% |
-| Column widths (Columns) | 5 | 2,419 rows | 5 layouts | 0% | 100% |
+| Column widths (Columns) | 5 + the news articles' 3/4 + 1/4 | 2,419 rows + 8 news rows | 6 layouts | 0% | 100% |
 | Statistic number size | 10 | 70 numbers | 3 | −70% | each joins the nearest of the 3 |
 | Carousel speed | 6 | 17 carousels | 1 (5 seconds) | −83% | by design |
 | News list length | 5 | 13 lists | 1 (20 articles) | −80% | by design |
@@ -117,7 +117,7 @@ most as many steps as it had values, never more.*
 | Box colour (cell boxes) | 9 colours on 242 rows | 9 + none | 100% |
 | Image border colour | 9 | 3 | 96% |
 | Text alignment | 4 | 2 | 99% |
-| Column widths | 5 patterns (+ 5 other widths on 18 shared-fragment rows) | 5 layouts; the other widths join the nearest | 99% |
+| Column widths | 5 patterns + 3/4 + 1/4 in news articles (8 rows); 4 other widths on 10 rows from older imports | 6 layouts; the 4 other widths join the nearest | 99.6% |
 
 **Cards** (2,548 cards)
 
@@ -237,7 +237,7 @@ most as many steps as it had values, never more.*
 
 | Block | Variants on stryker.com | Variants now | Properties |
 |---|---|---|---|
-| Columns | 6 | 5 layouts (the division contact is the two equal layout with a map) | 45 |
+| Columns | 6 | 6 layouts: the 5 grid layouts + 3/4 + 1/4 of news articles (the division contact is the two equal layout with a map) | 45 |
 | Panel | 1 | 1 | 19 |
 | Cards | 12 | 8 card types | 27 |
 | Hero | 9 | 5 layouts | 43 |
@@ -259,7 +259,7 @@ most as many steps as it had values, never more.*
 | Event calendar | 1 | 1 | 0 |
 | Social share | 1 | 1 | 2 |
 | Fragment | 1 | 1 | 0 |
-| **Total** | **70** | **48** | **169** |
+| **Total** | **70** | **49** | **169** |
 
 *Properties* counts every named choice except the variant, including each group's default.
 
@@ -440,7 +440,7 @@ split, band colour) appear only after their main choice. Styles that can't apply
 |---|---|---|
 | Outer spacing far from the standard gap (large or negative margins) | 23% of top margins | the standard gap; boxes that overlap on purpose are listed in the Panel chapter |
 | Charcoal text #323232 (typed by authors, not a Stryker component colour) | 93 | black |
-| Columns rows in widths outside the 5 layouts (3/4 + 1/4, 1/4 + 3/4, 70 / 30, 1/4 + 1/4 + 1/2; shared fragments) | 18 rows | the nearest layout (wide + narrow, narrow + wide, three equal) |
+| Columns rows in widths stryker.com doesn't use (1/4 + 3/4, 70 / 30, 1/4 + 1/4 + 1/2; older imports of news fragments) | 10 rows | the nearest layout (narrow + wide, wide + narrow, three equal) |
 | Text sizes above 2.5× (3.5×) | a few | 2.5× |
 | Headlines between two steps | part of 3,584 | the nearest step |
 | Rare box colours (orange, dark orange gradient, grey, dark teal gradient in Panel; bronze in Cards) | 11 in Panel, a few in Cards | the nearest named colour |

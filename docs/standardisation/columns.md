@@ -90,11 +90,13 @@ before that move, so they include the tile rows; boxes inside shared fragment ro
 The layout is the first choice when adding the block. On phones every layout stacks the cells in their
 authored order, as on stryker.com today.
 
-**Five layouts, no more.** stryker.com builds every Columns row on its 12-column grid in one of five
-widths. 18 rows in shared fragments carry other widths (three quarters + quarter 8, quarter + three
-quarters 8, 70 / 30 1, quarter + quarter + half 1, icon + text 0): they are not separate choices. The
-panel reads them as the nearest layout (wide + narrow, narrow + wide, three equal), they render as today
-until the row is saved again, and they are listed in section 7.
+**Six layouts, no more.** stryker.com builds every Columns row on its 12-column grid in one of five
+widths, and its news articles add one more: **three quarters + quarter** (9 + 3 of the grid, 8 rows on
+5 articles), kept as the sixth layout (*Wide + narrow (3/4 + 1/4)*, `columns-75-25`). 10 rows from older
+imports of news fragments carry widths stryker.com doesn't use (quarter + three quarters 8, 70 / 30 1,
+quarter + quarter + half 1; icon + text 0): they are not choices. The panel reads them as the nearest
+layout (narrow + wide, wide + narrow, three equal), they render as today until the row is saved again,
+and they are listed in section 7.
 
 ### 4.1 Two equal columns (`columns-50-50`)
 
@@ -143,7 +145,17 @@ layout, which existing pages keep showing correctly.
 | What the cells hold | groups of links (in shared fragments) 60, mixed 25, rows of images 11, text + text 9, video + text 3, image + text 5 |
 | Example pages | [About Stryker](https://www.stryker.com/us/en/about.html), [ASSH 2019](https://www.stryker.com/us/en/c/2019/ASSH.html) |
 
-### 4.6 Division contact (two equal columns with a map)
+### 4.6 Wide + narrow, three quarters + quarter (`columns-75-25`)
+
+A wide first cell (three quarters) and a narrow second cell (one quarter): the 9 + 3 rows of
+stryker.com news articles, for example a photo or a quote beside the article text.
+
+| | |
+|---|---|
+| Rows on the imported pages | **8** on 5 news articles |
+| Example pages | [A winning spirit](https://www.stryker.com/us/en/about/news/features/a-winning-spirit.html), [From behind the scenes to the front line](https://www.stryker.com/us/en/about/news/features/from-behind-the-scenes-to-the-front-line.html) |
+
+### 4.7 Division contact (two equal columns with a map)
 
 The division contact details: a "Contact us" heading, groups such as *Address* or *Customer support*
 with their phone and email links, and a Google map of the address beside them. It is the two-equal layout
@@ -252,7 +264,7 @@ and sizes of text are never block options" for row-wide looks only.
 | `page-intro` | 801 | not a Columns row: the product page intro (title, subhead, copy, image, line below) is the **Hero page intro** layout of the package (hero walkthrough, 493 rows); until that session the rows keep `page-intro` and render as today |
 | `color-heads` | 1 | First line of the text: **in a blue bar** |
 | `media-text` | 5 | the cell content (video or image with text); nothing to choose |
-| `image-left`, `thumbnails` | 1 each | the authoring order and *Wide + narrow* with *Linked images*; nothing to choose |
+| `image-left`, `thumbnails` | 1 each | the authoring order and *Wide + narrow (3/4 + 1/4)* with *Linked images*; nothing to choose |
 | `striped` | 1 | a stryker.com table (rows striped #f5f5f5): the **Table** block, not columns |
 
 **Not carried over:** `text-columns`, `card-grid`, `feature-statement`, `wide-first`, `wide-last` and
@@ -331,7 +343,7 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 | Bottom spacing far from the scale (15%: 5, 17%: 3, 13%: 3, and a few others) | | [Fluoro-free](https://www.stryker.com/us/en/joint-replacement/c/fluoro-free.html), [Triathlon Revision](https://www.stryker.com/us/en/joint-replacement/products/Triathlon_Revision.html) | nearest step (*Large* for 15% and more) |
 | Right-aligned text | 9 cells | [Suppliers](https://www.stryker.com/us/en/about/suppliers.html), [Caregiver stories](https://www.stryker.com/us/en/acute-care/c/caregiver-stories.html) | left |
 | Image borders in other colours | blue 6, white 3, dark grey 2 images | | blue → teal, dark grey → black, white → no border (the agreed colour list) |
-| Rows in widths outside the 5 layouts (3/4 + 1/4, 1/4 + 3/4, 70 / 30, 1/4 + 1/4 + 1/2) | 18 rows (shared fragments) | | the nearest layout: wide + narrow, narrow + wide, three equal |
+| Rows in widths stryker.com doesn't use (1/4 + 3/4, 70 / 30, 1/4 + 1/4 + 1/2) | 10 rows (older imports of news fragments) | | the nearest layout: narrow + wide, wide + narrow, three equal |
 | Charcoal text (#323232, typed by authors, not a Stryker component colour) | 93 uses | | black (the nearest Stryker colour), unless the business adds charcoal to the brand list |
 | Headline sizes between two steps (2.5% joins L, 3.5% joins L, 1% joins S) | part of 3,584 headlines | [Latera implant](https://www.stryker.com/us/en/ent/products/latera-absorbable-nasal-implant-system.html) | nearest step (section 5.7) |
 | Text sizes above 2.5× (3.5×) | a few uses | | 2.5× |
