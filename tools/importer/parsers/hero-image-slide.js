@@ -1,6 +1,6 @@
 /* eslint-disable */
 /* global WebImporter */
-import { STD_DRAFT_IMPORT, stdProductPage } from '../transformers/corp-text-markers.js';
+import { STD_DRAFT_IMPORT, stdProductPage, stdReviewPage } from '../transformers/corp-text-markers.js';
 import {
   dropColourTags, introCopy, productSlide, sizeBrackets, slideOptions, slideVideo, takeStripe,
 } from '../hero-corp-std-import.js';
@@ -57,6 +57,13 @@ function headline(overlay, document) {
         .filter((el) => !el.parentElement.closest('h1, h2, h3, h4, h5, h6, p'));
       return parts.length ? parts : [line];
     });
+  } else if (!headings.length && lineEls.length && product && stdReviewPage(document)) {
+    // …and lines of paragraphs: each paragraph once (Connected OR "Stryker's Connected OR
+    // Integration Platform" / "Created to Connect.", two paragraphs in one line)
+    lines = lineEls.flatMap((line) => {
+      const parts = [...line.querySelectorAll('p')].filter((el) => !el.parentElement.closest('p'));
+      return parts.length ? parts : [line];
+    });
   } else if (headings.length && lineEls.length) {
     lines = lineEls.map((line) => line.querySelector('h1, h2, h3, h4, h5, h6') || line);
   } else if (STD_DRAFT_IMPORT && headings.length) {
@@ -102,6 +109,32 @@ function headline(overlay, document) {
   return out;
 }
 
+/**
+ * Review build, product pages: the text of a slide whose Experience Fragment holds a rich text
+ * beside its image and whose overlay has none (Mako "Are you ready for more?", an h2 above the
+ * slide's image), as default content before the slide, each line with its size (Text style) and
+ * a plain h2 / h3 in Egyptienne, as on stryker.com, its bold words Futura.
+ * @returns {Element[]} The lines ([] when the slide has none)
+ */
+function xfSlideCopy(slide, overlay, document) {
+  if (overlay && clean(overlay.textContent)) return [];
+  const xf = slide.querySelector('.experienceFragment-ef') || slide.querySelector('.experienceFragment-ef-mobile');
+  const texts = xf ? [...xf.querySelectorAll('.c-rich-text-editor')] : [];
+  return texts.flatMap((rich) => headline(rich, document)).map((line) => {
+    if (!/^H[23]$/.test(line.tagName)) return line;
+    const bold = [...line.querySelectorAll('strong')].map((b) => b.textContent).join('');
+    const plain = clean(line.textContent.replace(/\[\[[^\][]+\]|\]/g, ''));
+    if (clean(bold.replace(/\[\[[^\][]+\]|\]/g, '')) === plain) return line;
+    line.querySelectorAll('strong').forEach((b) => {
+      b.prepend(document.createTextNode('[[std-sans]'));
+      b.append(document.createTextNode(']'));
+    });
+    line.prepend(document.createTextNode('[[serif]'));
+    line.append(document.createTextNode(']'));
+    return line;
+  });
+}
+
 /** A % value of the overlay's inline style as a class token (7.5 → 7-5). */
 function percent(style, re) {
   const m = style.match(re);
@@ -139,7 +172,24 @@ export default function parse(element, context) {
   const desktop = slide.querySelector('.experienceFragment-ef img');
   const mobile = slide.querySelector('.experienceFragment-ef-mobile img');
   const overlay = slide.querySelector('.overlayparsys');
-  const first = desktop || mobile || slide.querySelector('img');
+  let first = desktop || mobile || slide.querySelector('img');
+  // review build (standardised pages): a slide holding only an ambient Dynamic Media video
+  // (Connected OR) is an image slide with a video background; its poster frame is the image
+  let ambient = '';
+  if (!first && stdReviewPage(document)) {
+    // (the video component may already be a Video block: its Dynamic Media link)
+    const link = [...slide.querySelectorAll('table a[href*=".m3u8"]')]
+      .map((a) => a.getAttribute('href').match(/\/is\/content\/(.+?)\.m3u8/)).find(Boolean);
+    const path = slide.querySelector('[data-asset-path]')?.getAttribute('data-asset-path')
+      || (link ? decodeURIComponent(link[1]) : '');
+    if (path && !path.startsWith('/content/dam/')) {
+      const base = 'https://media-assets.stryker.com/is';
+      ambient = `${base}/content/${path}.m3u8?poster=${base}/image/${path}?fit=constrain,1&wid=909&hei=511`;
+      first = document.createElement('img');
+      first.setAttribute('src', `${base}/image/${path}?$max_width_1440$`);
+      first.setAttribute('alt', '');
+    }
+  }
   if (!first) return;
 
   if (stdProductPage(document) && productSlide(slide, overlay)) {
@@ -246,7 +296,7 @@ export default function parse(element, context) {
     if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add('white');
     const copy = cells[cells.length - 1];
     if (copy && Array.isArray(copy[0])) dropColourTags(copy[0], colours);
-    const video = slideVideo(slide);
+    const video = slideVideo(slide) || ambient;
     if (video) {
       const a = document.createElement('a');
       a.setAttribute('href', video);
@@ -259,7 +309,8 @@ export default function parse(element, context) {
     variants.splice(1, variants.length - 1, ...options);
   }
 
-  element.replaceWith(WebImporter.Blocks.createBlock(document, {
+  const lead = STD_DRAFT_IMPORT && stdReviewPage(document) ? xfSlideCopy(slide, overlay, document) : [];
+  element.replaceWith(...lead, WebImporter.Blocks.createBlock(document, {
     name: `Hero Corp (${variants.join(', ')})`,
     cells,
   }));

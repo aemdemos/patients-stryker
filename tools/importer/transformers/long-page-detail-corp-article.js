@@ -54,7 +54,7 @@
  */
 
 import { videoLink } from '../parsers/video.js';
-import { STD_DRAFT_IMPORT, stdProductPage } from './corp-text-markers.js';
+import { STD_DRAFT_IMPORT, stdProductPage, stdReviewPage } from './corp-text-markers.js';
 import { SECTION_OPTIONS } from '../../block-options/options.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
@@ -290,7 +290,11 @@ function bracketTag(nodes, classes, root) {
  * that holds the whole paragraph is left to the p-1-25 section style (copyStyles).
  */
 function tagTextSize(root) {
-  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  // (review build, product pages: nor do the colour tags written before, Mako "Learn more
+  // about Mako Total Knee", a teal link all in a 1.25em span)
+  const product = stdReviewPage(root.ownerDocument);
+  const squash = (value) => (product ? value.replace(/\[\[[^\][]+\]|\]/g, '') : value)
+    .replace(/[\s\u00a0]+/g, '');
   SIZE_TAGS.forEach(([cls, tag]) => {
     [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
       if (span.parentElement.closest(`.${cls}`) || !text(span)) return;
@@ -357,7 +361,26 @@ function goldBoldItalic(root) {
   });
 }
 
-function tagGoldText(root) {
+/**
+ * Whether all the text of a gold element is regular weight (no Futura bold, b or strong on it
+ * or inside it).
+ */
+function regularText(el, root) {
+  const walker = root.ownerDocument.createTreeWalker(el, 4);
+  for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+    const bold = t.nodeValue.trim() && t.parentElement.closest('.futura-bold, b, strong');
+    if (bold && root.contains(bold)) return false;
+  }
+  return true;
+}
+
+/**
+ * @param {Element} root The rich text
+ * @param {{ regular: boolean }} options regular (review build, product pages): gold text in the
+ *   regular weight is the gold Text style colour (tagStdColours), not Bold + Italic (Mako's gold
+ *   "click here" link inside a sentence)
+ */
+function tagGoldText(root, { regular = false } = {}) {
   const tagged = new Set();
   const wrap = (nodes) => markGold(nodes, root);
   // `tagged`: the nodes already inside a gold tag (a gold element in them needs no tag of its own)
@@ -367,6 +390,10 @@ function tagGoldText(root) {
   };
   root.querySelectorAll('[style*="color"]').forEach((el) => {
     if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+    if (regular && !hasOtherColour(el) && regularText(el, root)) {
+      el.setAttribute('data-gold-regular', '');
+      return;
+    }
     if (!hasOtherColour(el)) {
       wrapRun([el]);
       return;
@@ -440,9 +467,11 @@ export function tagStdColours(root, { gold = false } = {}) {
   [...owners].sort((x, y) => depth(x) - depth(y)).forEach((el) => {
     const hex = hexOf(ownColour(el));
     // gold too where the caller has no Bold + Italic step (banner headlines)
-    const name = (gold && GOLD.test(ownColour(el)) ? 'gold' : STD_COLOURS[hex])
+    const goldRun = GOLD.test(ownColour(el)) && (gold || el.hasAttribute('data-gold-regular'));
+    el.removeAttribute('data-gold-regular');
+    const name = (goldRun ? 'gold' : STD_COLOURS[hex])
       || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? 'black' : '');
-    if (!name || (!gold && GOLD.test(ownColour(el)))) return;
+    if (!name || (!goldRun && GOLD.test(ownColour(el)))) return;
     bracketTag([el], `color-${name}`, root);
     tagged.push(el);
   });
@@ -487,7 +516,7 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     }
   });
   tagPlainBoldLabels(root, wholeParagraphs);
-  tagGoldText(root);
+  tagGoldText(root, { regular: stdReviewPage(doc) });
   if (stdProductPage(doc)) tagStdColours(root);
   tagTextSize(root);
   // in review (product pages): a list item that is only a link, bold inside it (Pangea's
@@ -696,7 +725,26 @@ function headingSpanSizes(root) {
         && !span.parentElement.closest('[class*="fontsize-"]'));
     const classes = new Set(spans.map((span) => span.className.match(/\bfontsize-(\d+(?:-\d+)?)em\b/)[1]));
     if (classes.size !== 1 || squash(spans.map((span) => span.textContent).join('')) !== squash(h.textContent)) return;
-    const [n] = [...classes];
+    let [n] = [...classes];
+    // review build, product pages: size spans nested around the whole text multiply, as on
+    // stryker.com (Mako "More applications in a single system": 1.5em in 1em, 31.5px)
+    if (spans.length === 1 && stdReviewPage(root.ownerDocument)) {
+      let factor = 1;
+      let span = spans[0];
+      while (span) {
+        const m = span.className.match(/\bfontsize-(\d+)(?:-(\d+))?em\b/);
+        if (m) factor *= m[1] === '8' && !m[2] ? 0.8 : Number(`${m[1]}.${m[2] || 0}`);
+        const outer = span;
+        span = [...outer.querySelectorAll('[class*="fontsize-"]')]
+          .find((inner) => /\bfontsize-\d+(?:-\d+)?em\b/.test(inner.className)
+            && squash(inner.textContent) === squash(h.textContent)
+            && inner.parentElement.closest('[class*="fontsize-"]') === outer);
+      }
+      const STEPS = ['0-8', '1', '1-25', '1-5', '1-75', '2', '2-5'];
+      const off = (step) => Math.abs(Math.log(Number(step.replace('-', '.')) / factor));
+      n = STEPS.reduce((x, y) => (off(y) < off(x) ? y : x)).replace('0-8', '8');
+      if (n === '1') return;
+    }
     sizes.set(h, `text-${n === '8' ? '0-8' : n}`);
   });
   return sizes;
@@ -964,7 +1012,19 @@ function headlineTag(el) {
   const bold = [...el.querySelectorAll('.futura-bold, b, strong')]
     .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'))
     .map((b) => b.textContent).join('');
-  const serif = squash(bold) !== squash(el.textContent);
+  // review build, product pages: a Heading 4-6 line is Futura bold on stryker.com unless set in
+  // Egyptienne (Mako "Integrated with the Q Guidance System", an h4 at 2.5vw)
+  const minor = el.matches('h4, h5, h6') ? el : el.querySelector(':scope > h4, :scope > h5, :scope > h6');
+  const futuraHeading = !!minor && STD_DRAFT_IMPORT && stdReviewPage(el.ownerDocument)
+    && !minor.querySelector('.urw-egyptienne');
+  const serif = squash(bold) !== squash(el.textContent) && !futuraHeading;
+  // …its text Futura bold: Bold (the authoring conventions)
+  if (futuraHeading && squash(bold) !== squash(minor.textContent)) {
+    const wrap = el.ownerDocument.createElement('span');
+    wrap.className = 'futura-bold';
+    wrap.append(...minor.childNodes);
+    minor.append(wrap);
+  }
   // in review (product pages): a heading line without a size of its own keeps the large
   // headline's size for its level (stryker.com: h1 28px, h2 24.5px, h3 21px, h4 17.5px; TPX HD
   // "Introducing TPX HD…" is an h3 at 21px)
@@ -1678,7 +1738,11 @@ export default function buildArticle(element, {
       return;
     }
     if (component.matches('.c-autocarousel')) {
-      if (!component.querySelector('img')) return;
+      // (review build, product pages: or an ambient Dynamic Media video, hero-image-slide.js;
+      // Connected OR "Stryker's Connected OR Integration Platform")
+      const ambient = stdReviewPage(doc) && [...component.querySelectorAll('[data-asset-path]')]
+        .some((el) => !el.getAttribute('data-asset-path').startsWith('/content/dam/'));
+      if (!component.querySelector('img') && !ambient) return;
       startSection('hero').nodes.push(component);
       current = null;
       return;

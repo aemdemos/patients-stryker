@@ -989,6 +989,17 @@ body.corp main .columns.challenge-cards.block > div > div > p:first-child :is(em
   font-style: normal;
 }
 
+/* in review (draft pages): Bold in a Futura (sans) Text style marker under an image is Futura
+   bold (Mako global statistics "2,000+"), and so is a Bold paragraph all in one marker: a
+   title (stryker.com span.futura-bold, RISE "Tone mode" at 1.75x), not a lead-in */
+body.corp.std-draft .columns .columns-img-col + p span.text-marker.ts-sans strong {
+  font-family: var(--display-font-family);
+}
+
+body.corp.std-draft .columns .columns-img-col + p:has(> span.text-marker:only-child > strong:only-child) strong {
+  font-family: var(--display-font-family);
+}
+
 @media (width >= 600px) {
   body.corp .columns.challenge-cards {
     --columns-challenge-gap: var(--space-section);

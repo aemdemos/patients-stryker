@@ -29,7 +29,7 @@
  *   - event calendars (.c-event): dropped (the events load in the browser on stryker.com)
  */
 
-import { STD_DRAFT_IMPORT, stdProductPage } from './corp-text-markers.js';
+import { STD_DRAFT_IMPORT, stdProductPage, stdReviewPage } from './corp-text-markers.js';
 import { eventCalendarBlocks } from '../event-calendar-std-import.js';
 
 const COMPONENT = '[class^="c-"], [class*=" c-"]';
@@ -209,7 +209,17 @@ function blockCells(table) {
  * no section style; ispies: 17.5px lists `[[text-1-25]…]`).
  */
 function tagPanelCopy(nodes, doc, h) {
-  nodes.filter((n) => n.nodeType === 1 && typeof n.copyStyle === 'string' && n.copyStyle).forEach((n) => {
+  // review build, product pages: a heading keeps its own size (its size tag, headingSpanSizes)
+  // and font, not the copy style it follows (Mako "Expect more with SmartRobotics™", a 24.5px
+  // Futura bold h2 over 21px copy); a serif heading (a plain h2: Egyptienne on stryker.com,
+  // Mako "Introducing the latest advancements…") is serif
+  const product = stdReviewPage(doc);
+  if (product) {
+    nodes.filter((n) => n.nodeType === 1 && /^H[1-6]$/.test(n.tagName) && n.serifHeading)
+      .forEach((n) => h.tagCopy(n, 'serif', doc));
+  }
+  nodes.filter((n) => n.nodeType === 1 && typeof n.copyStyle === 'string' && n.copyStyle
+    && !(product && /^H[1-6]$/.test(n.tagName))).forEach((n) => {
     const own = n.copyStyle.split(',').map((s) => s.trim());
     const size = own.find((s) => s.startsWith('p-') && /\d/.test(s[2]));
     const tags = [size ? `text-${size.slice(2)}` : '', own.includes('serif') ? 'serif' : ''].filter(Boolean);
@@ -493,7 +503,10 @@ function panelCopy(cellNodes, options, doc, h, component) {
     let plain = 0;
     for (let t = walker.nextNode(); t; t = walker.nextNode()) {
       // (bracket tags an earlier step wrote around the text don't count)
-      if (squash(t.nodeValue) && !t.parentElement.closest('.futura-bold, b, strong')) {
+      // (review build, product pages: nor do footnote numbers, Mako "Global statistics
+      // through 2025<sup>5</sup>")
+      if (squash(t.nodeValue) && !t.parentElement.closest('.futura-bold, b, strong')
+        && !(stdReviewPage(el.ownerDocument) && t.parentElement.closest('sup, sub'))) {
         if (!t.parentElement.closest('.urw-egyptienne')) return false;
         plain += 1;
       }
@@ -964,6 +977,91 @@ function statCell(component, doc) {
   };
 }
 
+/**
+ * A row of columns that each hold one number counter and its own text (review build).
+ * @param {Element} row The .colctrl row
+ * @param {Element[][]} columns Each column's components
+ * @param {Document} doc The document
+ */
+/**
+ * A source line of a Statistics row as it reads: Futura bold as Bold, its size (nested size
+ * spans around the whole text multiply, the nearest step) and an Egyptienne text as Text style
+ * (Connected OR "Pre-Operative:" at 1.75x, its description at 1.5x).
+ */
+function statRowLine(source, doc, base = 1) {
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  const whole = squash(source.textContent);
+  const factor = [...source.querySelectorAll('[class*="fontsize-"]')]
+    .filter((span) => squash(span.textContent) === whole)
+    .map((span) => span.className.match(/\bfontsize-(\d+)(?:-(\d+))?em\b/) || [])
+    .filter((m) => m[1])
+    .reduce((f, m) => f * (m[1] === '8' && !m[2] ? 0.8 : Number(`${m[1]}.${m[2] || 0}`)), 1);
+  const STEPS = [[0.8, 'text-0-8'], [1, ''], [1.25, 'text-1-25'], [1.5, 'text-1-5'], [1.75, 'text-1-75'], [2, 'text-2'], [2.5, 'text-2-5']];
+  const off = ([step]) => Math.abs(Math.log(step / (factor / base)));
+  const size = STEPS.reduce((x, y) => (off(y) < off(x) ? y : x))[1];
+  const serif = [...source.querySelectorAll('.urw-egyptienne')]
+    .some((span) => squash(span.textContent) === whole);
+  const line = doc.createElement('p');
+  line.append(...source.cloneNode(true).childNodes);
+  line.querySelectorAll('span.futura-bold, b').forEach((span) => {
+    const strong = doc.createElement('strong');
+    strong.append(...span.childNodes);
+    span.replaceWith(strong);
+  });
+  line.querySelectorAll('span').forEach((span) => span.replaceWith(...span.childNodes));
+  line.querySelectorAll('*').forEach((el) => [...el.attributes].forEach((at) => {
+    if (!(el.tagName === 'A' && at.name === 'href')) el.removeAttribute(at.name);
+  }));
+  const tag = [size, serif ? 'serif' : ''].filter(Boolean).join(',');
+  if (tag && line.firstChild) {
+    line.prepend(doc.createTextNode(`[[${tag}]`));
+    line.append(doc.createTextNode(']'));
+  }
+  return line;
+}
+
+function statisticsRow(row, columns, doc) {
+  const paragraphs = (parts) => parts.flatMap((pt) => {
+    const ps = [...pt.querySelectorAll('p')].filter((p) => p.textContent.trim());
+    return ps.length ? ps : [pt].filter((x) => x.textContent.trim());
+  });
+  const stats = columns.map((ps) => {
+    const at = ps.findIndex((pt) => pt.matches('.numbercounter'));
+    const stat = statCell(ps[at], doc);
+    const after = paragraphs(ps.slice(at + 1));
+    // a short line right after the number is its unit ("minutes"); the rest is the text
+    const unit = after.length && after[0].textContent.trim().split(/\s+/).length <= 3 ? [after.shift()] : [];
+    // (the lines above and below the number are 1.5x in the block: their size is relative)
+    const line = (base) => (p) => statRowLine(p, doc, base);
+    return {
+      ...stat,
+      before: paragraphs(ps.slice(0, at)).map(line(1.5)),
+      unit: unit.map(line(1.5)),
+      rest: after.map(line(1)),
+    };
+  });
+  const colours = [...new Set(stats.map((st) => st.colour))];
+  const options = [];
+  if (stats.length !== 3) options.push(`cols-${Math.min(stats.length, 6)}`);
+  if (colours.length === 1 && colours[0] !== 'gold') options.push(`stat-${colours[0]}`);
+  const sizes = stats.map((st) => st.size).filter(Boolean);
+  const size = sizes.length ? sizes.sort((x, y) => x - y)[Math.floor(sizes.length / 2)] : 5;
+  if (size <= 4) options.push('stat-s');
+  else if (size >= 6.5) options.push('stat-l');
+  if (stats.some((st) => st.centred)) options.push('text-center');
+  const cells = stats.map((st) => {
+    const number = doc.createElement('div');
+    number.append(...st.before, st.value, ...st.unit);
+    const desc = doc.createElement('div');
+    desc.append(...(st.rest.length ? st.rest : st.desc));
+    const keyword = colours.length > 1 ? [st.colour === 'white' ? 'gold' : st.colour] : [];
+    return [...keyword, number, desc];
+  });
+  const name = options.length ? `Statistics (${options.join(', ')})` : 'Statistics';
+  const from = row.closest('[class^="cols"]') || row;
+  from.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells }), from));
+}
+
 function statisticsBlocks(main, doc) {
   const done = new Set();
   main.querySelectorAll('.numbercounter').forEach((component) => {
@@ -972,6 +1070,19 @@ function statisticsBlocks(main, doc) {
     const parts = row ? [...row.querySelectorAll(':scope > .row > [class*="col-"] > .row > *')] : [component];
     const counters = parts.filter((p) => p.matches('.numbercounter'));
     const others = parts.filter((p) => !p.matches('.numbercounter') && p.textContent.trim());
+    // review build (standardised pages): a row whose every column holds one counter with its
+    // own text (a label above, the unit and a description below: Connected OR's minutes saved)
+    // is a Statistics row: label and unit are lines of the number, the rest its text
+    if (row && others.length && stdReviewPage(doc)) {
+      const columns = [...row.querySelectorAll(':scope > .row > [class*="col-"]')]
+        .map((col) => [...col.querySelectorAll(':scope > .row > *')])
+        .filter((ps) => ps.some((pt) => pt.textContent.trim()));
+      if (columns.length >= 2 && columns.every((ps) => ps.filter((pt) => pt.matches('.numbercounter')).length === 1)) {
+        counters.forEach((c) => done.add(c));
+        statisticsRow(row, columns, doc);
+        return;
+      }
+    }
     if (row && (others.length || counters.length < 2)) return; // mixed: stays text
     counters.forEach((c) => done.add(c));
     const stats = counters.map((c) => statCell(c, doc));

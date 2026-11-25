@@ -42,7 +42,10 @@ import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
 import PRODUCT_XFS from '../product-detail-xf.js';
-import { STD_DRAFT_IMPORT, stdProductPage } from './corp-text-markers.js';
+import REVIEW_XFS from '../review-pages-xf.js';
+import {
+  STD_DRAFT_IMPORT, STD_REVIEW_IMPORT, stdProductPage, stdReviewPage,
+} from './corp-text-markers.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
 
@@ -1370,10 +1373,30 @@ function fullWidthImages(main, doc) {
     const desktop = (box.querySelector('source[srcset]') || {}).getAttribute?.('srcset') || img.getAttribute('src');
     const phone = img.getAttribute('src');
     const alt = img.getAttribute('alt') || '';
+    // review build, product pages: a desktop and a phone image are a `desktop-only` and a
+    // `mobile-only` section (standard section styles; RISE "Hydro irrigation system"); the
+    // image shadow has no standard style (the soft shadow is a box's)
+    const sources = [...new Set([desktop, phone])].filter(Boolean);
+    if (stdReviewPage(doc)) {
+      box.replaceWith(...sources.map((src, i) => {
+        const one = doc.createElement('div');
+        one.setAttribute('data-keep', 'nodes');
+        const device = ['desktop-only', 'mobile-only'][i];
+        one.setAttribute('data-section-style', sources.length > 1 ? `full-width-image, ${device}` : 'full-width-image');
+        const p = doc.createElement('p');
+        const image = doc.createElement('img');
+        image.setAttribute('src', src);
+        image.setAttribute('alt', alt);
+        p.append(image);
+        one.append(p);
+        return one;
+      }));
+      return;
+    }
     const holder = doc.createElement('div');
     holder.setAttribute('data-keep', 'nodes');
     holder.setAttribute('data-section-style', box.classList.contains('bg-shadow') ? 'full-width-image, shadow' : 'full-width-image');
-    [...new Set([desktop, phone])].filter(Boolean).forEach((src) => {
+    sources.forEach((src) => {
       const p = doc.createElement('p');
       const image = doc.createElement('img');
       image.setAttribute('src', src);
@@ -1414,8 +1437,16 @@ function titleFromHeading(heading, doc) {
   const h1 = renameTo(heading, 'h1', doc);
   const spans = [...h1.querySelectorAll('[class*="fontsize-"]')]
     .filter((span) => text(span) === text(h1));
-  const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1])
+  let size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1])
     .find((n) => TITLE_SIZES.includes(n));
+  // review build, product pages: nested size spans multiply, as on stryker.com; the nearest
+  // size step (RISE "RISE": 2.5em in 2em, 140px → 2.5x)
+  if (size && stdReviewPage(doc)) {
+    const factor = spans.map((span) => (/\bfontsize-(\d+)(?:-(\d+))?em\b/.exec(span.className) || []))
+      .filter((m) => m[1]).reduce((f, m) => f * Number(`${m[1]}.${m[2] || 0}`), 1);
+    const off = (n) => Math.abs(Math.log(Number(n.replace('-', '.')) / factor));
+    size = TITLE_SIZES.reduce((x, y) => (off(y) < off(x) ? y : x));
+  }
   // a Heading 4 enlarged 2.5x keeps its size relative to the heading (43.75 / 35px): the
   // `h4-2-5` section style (the builder's heading sizes), not a copy size tag
   const h4Enlarged = level === 'H4' && size === '2-5';
@@ -1476,12 +1507,27 @@ export default function transform(hookName, element, payload) {
   const productXf = stdProductPage(doc) && payload.template.name === 'long-page-detail-corp-fragments';
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
+  // review build, product pages: a size typed in pixels (RISE "Connectivity" in a 21px span)
+  // reads as the size step it is (1.5em of the 14px copy), as the size spans
+  if (stdReviewPage(doc)) {
+    const STEPS = ['8', '1-25', '1-5', '1-75', '2', '2-5'];
+    main.querySelectorAll('span[style*="font-size"]').forEach((span) => {
+      const m = (span.getAttribute('style') || '').match(/font-size:\s*(\d+(?:\.\d+)?)px/i);
+      if (!m) return;
+      const factor = Number(m[1]) / 14;
+      const off = (n) => Math.abs(Math.log((n === '8' ? 0.8 : Number(n.replace('-', '.'))) / factor));
+      const step = STEPS.reduce((x, y) => (off(y) < off(x) ? y : x));
+      if (Math.abs(factor - 1) > 0.1) span.classList.add(`fontsize-${step}em`);
+    });
+  }
   main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
   dropDamVideos(main);
   fullWidthImages(main, doc);
   spaceUrlColons(main, doc);
   const nav = localNav(main, doc);
-  if (!(stdProductPage(doc) && productFragments(main, doc, PRODUCT_XFS[path]))) {
+  // a review run of pages of other templates: their XFs from review-pages-xf.js
+  const pageXfs = PRODUCT_XFS[path] || (STD_REVIEW_IMPORT ? REVIEW_XFS[path] : undefined);
+  if (!(stdProductPage(doc) && productFragments(main, doc, pageXfs))) {
     experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
   }
   sectionTitles(main, doc);
