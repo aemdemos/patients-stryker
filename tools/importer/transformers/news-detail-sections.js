@@ -1747,7 +1747,8 @@ function xfColumns(marker, doc) {
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
   const templateName = payload && payload.template && payload.template.name;
-  if (templateName !== 'news-detail' && templateName !== 'news-detail-xf') return;
+  // text-only (import-text-only.js): news-detail pages on the `basic` theme
+  if (!['news-detail', 'news-detail-xf', 'text-only'].includes(templateName)) return;
   const xf = templateName === 'news-detail-xf';
   const doc = element.ownerDocument;
   const main = doc.querySelector('[role="main"]') || element;
