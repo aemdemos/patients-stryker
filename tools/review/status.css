@@ -63,6 +63,8 @@
 .st-filters .st-check { font-weight: 500; }
 .st-filters input[type="search"] { inline-size: 220px; }
 .st-filters select { max-inline-size: 220px; }
+.st-filters .st-clear { margin-inline-start: auto; }
+.st-filters .st-clear:disabled { opacity: 0.45; }
 
 /* the AOE team's folding boxes: organise, groups, the migration scope */
 :is(.st-mark, .st-groups, .st-scope) {

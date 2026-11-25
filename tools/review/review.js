@@ -25,8 +25,10 @@ import {
   loadShots, loadVersion, requestShot, shotTag, changesText,
 } from './shots.js';
 import {
-  loadOrganisation, getFilters, setFilters, passes, areaOf, areaLabel, orgLabel,
+  loadOrganisation, getFilters, setFilters, areaOf, areaLabel, orgLabel, ORDERS, STATE_ORDER,
+  clearFilters, filtersSet, onFiltersChange, matches, sortPages,
 } from './batches.js';
+import { mountPicker } from './picker.js';
 
 // the design panel (variants, widths, backgrounds, text sets, groups) and the switcher it needs:
 // REVIEW.designPanel, else REVIEW.design (the standard review keeps design: true for the summary
@@ -97,6 +99,9 @@ let allPages = [];
 let pages = [];
 // every page's organisation: path → { batch, group, representative } (batches.js)
 let orgOf = new Map();
+// every page's status and latest activity (the overview): for the filters and the order
+let infoOf = new Map();
+let picker = null;
 let rebuildTimer;
 let noteShown = false;
 let targetShown = false;
@@ -1207,6 +1212,7 @@ const STATUS_LABELS = {
   resolved: 'Resolved',
   skipped: 'Skipped: not migrated',
 };
+const stateName = (st) => STATUS_LABELS[st] || st;
 const STATUS_BUTTONS = {
   'in-review': 'In review',
   'waiting-aoe': 'Send to the AOE team',
@@ -1619,7 +1625,7 @@ function loadPage() {
   if (REVIEW.compare.includes('rs')) frames.rs.src = `${CONTENT}/rs${state.page}`;
   const i = pages.findIndex((p) => p.path === state.page);
   const page = pages[i];
-  $('.rv-page').value = page ? `${page.title} — ${page.path}` : state.page;
+  picker?.update();
   $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : `– / ${pages.length}`;
   $('.rv-batch-badge').textContent = orgLabel(orgOf.get(state.page));
   document.title = `Review: ${page ? page.title : state.page}`;
@@ -1827,28 +1833,54 @@ function funnelIcon() {
   return svg;
 }
 
-/** the pages the filters let through, the picker's list and the filter's summary */
-function applyFilters() {
-  const f = getFilters();
-  pages = allPages.filter((p) => passes(p.path, orgOf.get(p.path), f));
-  $('#rv-page-list').replaceChildren(...pages.map((p) => el('option', { value: `${p.title} — ${p.path}` })));
-  const parts = [
+/** a page with its status and latest activity (the overview) */
+const withInfo = (p) => {
+  const i = infoOf.get(p.path);
+  return { ...p, state: i?.state || 'unreviewed', last: i?.last || null };
+};
+
+/** what the filters show, in words ('' for none) */
+function filterWords(f = getFilters()) {
+  return [
+    f.search.trim() ? `"${f.search.trim()}"` : '',
+    f.states.length ? f.states.map(stateName).join(', ') : '',
+    f.template ? `template ${f.template}` : '',
     f.batches.length ? f.batches.map((b) => (b === 'none' ? 'no batch' : `batch ${b}`)).join(', ') : '',
     f.group === 'none' ? 'no group' : (f.group && `group ${f.group}`) || '',
     f.reps ? 'representatives' : '',
     f.area ? areaLabel(f.area) : '',
-  ].filter(Boolean);
-  const summary = $('.rv-filter summary');
-  summary.replaceChildren(funnelIcon(), 'Filter', parts.length ? el('span', { class: 'rv-filter-n' }, String(parts.length)) : '');
-  summary.classList.toggle('rv-filter-on', parts.length > 0);
-  summary.title = parts.length ? `Showing: ${parts.join(' · ')}` : 'All pages: filter them';
-  const i = pages.findIndex((p) => p.path === state.page);
-  $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : `– / ${pages.length}`;
+  ].filter(Boolean).join(' · ');
 }
 
-/** the filter popover: batches (several at once, as on the status page) and an area */
+/**
+ * the pages the filters let through, in the chosen order (the same filters as the status page,
+ * batches.js), the picker's list and the filter button
+ */
+function applyFilters() {
+  const f = getFilters();
+  const through = allPages.map(withInfo).filter((p) => matches(p, orgOf.get(p.path), f));
+  pages = sortPages(through, f.order, me.role);
+  const n = filtersSet(f);
+  const summary = $('.rv-filter summary');
+  summary.replaceChildren(funnelIcon(), 'Filter', n ? el('span', { class: 'rv-filter-n' }, String(n)) : '');
+  summary.classList.toggle('rv-filter-on', n > 0);
+  summary.title = n ? `Showing: ${filterWords(f)} (${ORDERS[f.order]})` : `All pages (${ORDERS[f.order]}): filter them`;
+  const i = pages.findIndex((p) => p.path === state.page);
+  $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : `– / ${pages.length}`;
+  $('.rv-count').title = i >= 0 ? 'Where this page is in the list the filters show' : 'This page is not among the pages the filters show';
+  picker?.update();
+}
+
+/**
+ * the filter popover: the same filters as the status page (batches.js, shared with it): a search,
+ * states, template, batches, group, representatives only, area, and the order; Clear all
+ */
 function filterPanel() {
   const f = getFilters();
+  const set = (change) => {
+    setFilters(change);
+    applyFilters();
+  };
   const numbers = [...new Set(allPages.map((p) => orgOf.get(p.path)?.batch).filter(Boolean))]
     .sort((a, b) => a - b);
   const count = (b) => allPages.filter((p) => (orgOf.get(p.path)?.batch || 'none') === b).length;
@@ -1857,51 +1889,67 @@ function filterPanel() {
     ...(f.batches.includes(b) ? { checked: '' } : {}),
     onchange: (e) => {
       const now = getFilters();
-      now.batches = e.target.checked ? [...now.batches, b] : now.batches.filter((x) => x !== b);
-      setFilters(now);
-      applyFilters();
+      set({ batches: e.target.checked ? [...now.batches, b] : now.batches.filter((x) => x !== b) });
     },
   }), text);
+  const select = (name, value, choices, onchange) => {
+    const sel = el('select', { 'aria-label': name, onchange: (e) => onchange(e.target.value) }, ...choices.map(([v, t]) => el('option', { value: v }, t)));
+    sel.value = value;
+    return sel;
+  };
   const areas = [...new Set(allPages.map((p) => areaOf(p.path)))].sort();
-  const area = el('select', {
-    'aria-label': 'Area',
-    onchange: (e) => {
-      setFilters({ ...getFilters(), area: e.target.value });
-      applyFilters();
-    },
-  }, el('option', { value: '' }, 'All areas'), ...areas.map((a) => el('option', { value: a }, areaLabel(a))));
-  area.value = f.area;
-  // groups: one at a time, or the pages in none; representatives only
+  const templates = [...new Set(allPages.map((p) => p.template).filter(Boolean))].sort();
   const groups = [...new Set(allPages.map((p) => orgOf.get(p.path)?.group).filter(Boolean))]
     .sort((a, b) => a - b);
   const inGroup = (g) => allPages.filter((p) => orgOf.get(p.path)?.group === g).length;
-  const group = el('select', {
-    'aria-label': 'Group',
-    onchange: (e) => {
-      const v = e.target.value;
-      setFilters({ ...getFilters(), group: v === '' || v === 'none' ? v : Number(v) });
-      applyFilters();
-    },
-  }, el('option', { value: '' }, 'All groups'), ...groups.map((g) => el('option', { value: String(g) }, `Group ${g} (${inGroup(g)})`)), el('option', { value: 'none' }, 'In no group'));
-  group.value = String(f.group);
-  const reps = el('label', { class: 'rv-check' }, el('input', {
-    type: 'checkbox',
-    ...(f.reps ? { checked: '' } : {}),
-    onchange: (e) => {
-      setFilters({ ...getFilters(), reps: e.target.checked });
-      applyFilters();
-    },
-  }), 'Representative pages only');
+  const stateCount = (st) => allPages.filter((p) => withInfo(p).state === st).length;
+  const search = el('input', {
+    type: 'search', class: 'rv-filter-search', placeholder: 'Words of the title or path', 'aria-label': 'Search', value: f.search,
+  });
+  search.addEventListener('input', () => set({ search: search.value }));
+  const states = STATE_ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'].filter((st) => st !== 'unpublished')
+    .map((st) => el('label', { class: 'rv-check rv-filter-state' }, el('input', {
+      type: 'checkbox',
+      ...(f.states.includes(st) ? { checked: '' } : {}),
+      onchange: (e) => {
+        const now = getFilters().states.filter((x) => x !== st);
+        set({ states: e.target.checked ? [...now, st] : now });
+      },
+    }), el('span', { class: `rv-dot st-${st}` }), `${stateName(st)} (${stateCount(st)})`));
   $('.rv-filter-body').replaceChildren(...[
+    el('div', { class: 'rv-filter-top' }, el('b', {}, filtersSet(f) ? `Filtered: ${filtersSet(f)}` : 'No filter'), el('button', {
+      type: 'button',
+      class: 'rv-btn-light rv-filter-clear',
+      ...(filtersSet(f) ? {} : { disabled: '' }),
+      title: 'Every filter off (the order stays); the status page\'s filters are the same',
+      onclick: () => {
+        clearFilters();
+        applyFilters();
+        filterPanel();
+      },
+    }, 'Clear all filters')),
+    el('p', { class: 'rv-filter-note' }, 'The same filters as on the status page: a change here shows there too.'),
+    el('p', { class: 'rv-filter-head' }, 'Search'),
+    search,
+    el('p', { class: 'rv-filter-head' }, 'Order'),
+    select('Order', f.order, Object.entries(ORDERS), (v) => set({ order: v })),
+    el('p', { class: 'rv-filter-head' }, 'Status (none ticked: all)'),
+    el('div', { class: 'rv-filter-states' }, ...states),
+    templates.length ? el('p', { class: 'rv-filter-head' }, 'Template') : null,
+    templates.length ? select('Template', f.template, [['', 'All templates'], ...templates.map((t) => [t, t])], (v) => set({ template: v })) : null,
+    el('p', { class: 'rv-filter-head' }, 'Area'),
+    select('Area', f.area, [['', 'All areas'], ...areas.map((a) => [a, areaLabel(a)])], (v) => set({ area: v })),
     el('p', { class: 'rv-filter-head' }, 'Batches (none ticked: all)'),
     ...numbers.map((b) => box(b, `Batch ${b} (${count(b)})`)),
-    count('none') ? box('none', `No batch (${count('none')})`) : null,
+    count('none') && numbers.length ? box('none', `No batch (${count('none')})`) : null,
     numbers.length ? null : el('p', { class: 'rv-none' }, 'No batches yet.'),
     el('p', { class: 'rv-filter-head' }, 'Group'),
-    group,
-    reps,
-    el('p', { class: 'rv-filter-head' }, 'Area'),
-    area,
+    select('Group', String(f.group), [['', 'All groups'], ...groups.map((g) => [String(g), `Group ${g} (${inGroup(g)})`]), ['none', 'In no group']], (v) => set({ group: v === '' || v === 'none' ? v : Number(v) })),
+    el('label', { class: 'rv-check' }, el('input', {
+      type: 'checkbox',
+      ...(f.reps ? { checked: '' } : {}),
+      onchange: (e) => set({ reps: e.target.checked }),
+    }), 'Representative pages only'),
   ].filter(Boolean));
 }
 
@@ -1912,7 +1960,7 @@ function setUpShell() {
   const filter = el(
     'details',
     { class: 'rv-filter' },
-    el('summary', {}, funnelIcon(), 'Filter'),
+    el('summary', { title: 'Filter and order the pages (the same filters as the status page)' }, funnelIcon(), 'Filter'),
     el('div', { class: 'rv-filter-body' }),
   );
   filter.addEventListener('toggle', () => {
@@ -1920,7 +1968,7 @@ function setUpShell() {
   });
   $('.rv-count').after(filter);
   // the page's two pages in a new tab, by the page box (the panel's links scroll away)
-  filter.before(el(
+  $('.rv-page-badge').after(el(
     'span',
     { class: 'rv-open', role: 'group', 'aria-label': 'Open in a new tab' },
     el('a', {
@@ -1931,6 +1979,24 @@ function setUpShell() {
     }, 'Source ↗'),
   ));
   $('.rv-page-badge').after(el('span', { class: 'rv-batch-badge', 'aria-live': 'polite' }));
+  // the page picker: the page's title and short path; its list right below it (picker.js)
+  picker = mountPicker($('.rv-pick-box'), {
+    list: () => pages.map((p) => ({ ...p, stateLabel: stateName(p.state) })),
+    total: () => allPages.length,
+    paths: () => allPages.map((p) => p.path),
+    current: () => state.page,
+    find: (path) => allPages.find((p) => p.path === path),
+    go: (path) => leavePage().then(() => {
+      state.page = path;
+      loadPage();
+    }),
+    filters: () => filterWords(),
+    clear: () => {
+      clearFilters();
+      applyFilters();
+    },
+    extra: (p) => orgLabel(orgOf.get(p.path)),
+  });
   // the widths
   const widths = $('[aria-label="Viewport"]');
   widths.replaceChildren(...REVIEW.widths.map((w) => el('button', {
@@ -2038,27 +2104,21 @@ async function start() {
   }
   allPages = await loadPages();
   // (the first page of a group without a chosen representative: among the pages shown)
-  orgOf = (await loadOrganisation(allPages.map((p) => p.path))).org;
+  const organisation = await loadOrganisation(allPages.map((p) => p.path));
+  orgOf = organisation.org;
+  infoOf = new Map((organisation.body?.pages || []).map((p) => [p.page, p]));
   applyFilters();
+  // (the status page changed the filters, in another tab)
+  onFiltersChange(() => {
+    applyFilters();
+    if ($('.rv-filter').open) filterPanel();
+  });
   if (PANEL) {
     const groupsResp = await fetch('./groups.json');
     GROUPS = groupsResp.ok ? (await groupsResp.json()).groups : {};
   }
   if (!state.page && pages.length) state.page = pages[0].path;
 
-  $('.rv-page').addEventListener('change', (e) => {
-    const v = e.target.value.trim();
-    const low = v.toLowerCase();
-    const hit = pages.find((p) => v.endsWith(p.path))
-      || pages.find((p) => p.title.toLowerCase() === low)
-      || pages.find((p) => p.path.includes(v) || p.title.toLowerCase().includes(low));
-    if (hit && hit.path !== state.page) {
-      leavePage().then(() => {
-        state.page = hit.path;
-        loadPage();
-      });
-    }
-  });
   document.querySelectorAll('[data-action="prev"], [data-action="next"]').forEach((b) => b.addEventListener('click', () => step(b.dataset.action === 'prev' ? -1 : 1)));
   $('[data-action="note"]').addEventListener('click', () => setNoteMode(!notes.adding));
   document.querySelectorAll('[data-vp]').forEach((b) => b.addEventListener('click', () => {
@@ -2106,6 +2166,8 @@ async function start() {
     me.name = who.name;
     me.role = who.role || 'reviewer';
     helpHooks.setRole(me.role, who.name);
+    // (the order "what waits for me first" depends on the side)
+    if (allPages.length) applyFilters();
     document.body.classList.toggle('rv-role-aoe', me.role === 'aoe');
     threadHooks.redraw();
     name.value = me.role === 'aoe' ? `${who.name} (AOE)` : who.name;

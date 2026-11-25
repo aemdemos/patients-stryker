@@ -109,7 +109,8 @@ export function createNotes({
   /** once per frame document: the pins' style and the click of note mode */
   function attach() {
     const d = doc();
-    if (!d || attachedTo === d) return;
+    // (a frame between two pages has no body yet: attached when its page has loaded)
+    if (!d || !d.body || !d.head || attachedTo === d) return;
     attachedTo = d;
     const style = d.createElement('style');
     style.textContent = STYLE;

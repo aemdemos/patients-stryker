@@ -29,15 +29,14 @@ body {
 /* the shared top bar, slimmer here: the pages need the height */
 .rv-appbar { position: static; flex: 0 0 auto; --bar-h: 44px; padding-block: 4px; }
 
-/* the tool's own toolbar: light, its controls in groups */
+/* the tool's own toolbar: light, two rows (which page; how to look at it), each wrapping in itself */
 .rv-bar {
   display: flex;
   flex: 0 0 auto;
-  flex-wrap: wrap;
-  gap: 6px 14px;
-  align-items: center;
+  flex-direction: column;
+  gap: 6px;
   min-block-size: var(--rv-bar-h);
-  padding: 6px 12px;
+  padding: 6px 12px 8px;
   position: relative;
   z-index: 5;
   border-bottom: 1px solid var(--c-line-2);
@@ -46,6 +45,8 @@ body {
   box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
 }
 
+.rv-row { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.rv-row-view { padding-top: 6px; border-top: 1px solid var(--c-line); }
 .rv-group { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
 .rv-end { margin-inline-start: auto; }
 
@@ -75,9 +76,75 @@ body {
 .rv-group[role="group"] > .rv-label { margin-inline-end: 8px; }
 .rv-group[role="group"] > label { margin-inline-start: 12px; }
 
-.rv-page { inline-size: 340px; max-inline-size: 60vw; min-block-size: 30px; }
-.rv-pages .rv-btn { inline-size: 30px; padding: 0; border-radius: 50%; font-size: var(--fs-l); line-height: 1; }
+.rv-pages { gap: 6px; }
+.rv-pages > .rv-btn { inline-size: 32px; min-block-size: 32px; padding: 0; border-radius: 50%; font-size: var(--fs-l); line-height: 1; }
+
+/* the page picker (picker.js): the page's title, its short path below; the list right below it */
+.rv-pick-box { position: relative; }
+
+.rv-pick {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 10px;
+  inline-size: clamp(260px, 34vw, 520px);
+  min-block-size: 44px;
+  padding: 4px 12px;
+  border: 1px solid var(--c-line-2);
+  border-radius: var(--r-m);
+  background: var(--c-surface);
+  color: var(--c-ink);
+  text-align: start;
+  cursor: pointer;
+}
+
+.rv-pick:hover, .rv-pick[aria-expanded="true"] { border-color: var(--c-ink); }
+.rv-pick-title { overflow: hidden; font-size: var(--fs-m); font-weight: 800; line-height: 1.25; white-space: nowrap; text-overflow: ellipsis; }
+.rv-pick-path { grid-row: 2; overflow: hidden; color: var(--c-ink-3); font: var(--fs-xs) / 1.3 var(--font-mono); white-space: nowrap; text-overflow: ellipsis; direction: rtl; text-align: start; }
+.rv-pick-caret { grid-row: 1 / 3; grid-column: 2; color: var(--c-ink-3); }
+
+.rv-pick-pop {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  inline-size: max(100%, min(620px, 90vw));
+  max-block-size: min(70vh, 640px);
+  overflow: hidden;
+  border: 1px solid var(--c-line-2);
+  border-radius: var(--r-m);
+  background: var(--c-surface);
+  box-shadow: var(--shadow-pop);
+}
+
+.rv-pick-pop[hidden] { display: none; }
+.rv-pick-search { margin: 10px 10px 6px; }
+.rv-pick-shows { display: flex; gap: 8px; align-items: center; justify-content: space-between; margin: 0 12px 8px; color: var(--c-ink-2); font-size: var(--fs-xs); font-weight: 600; }
+.rv-pick-clear { padding: 2px 10px; border: 1px solid var(--c-line-2); border-radius: var(--r-pill); background: var(--c-surface); font-size: var(--fs-2xs); font-weight: 700; cursor: pointer; }
+.rv-pick-clear:hover { border-color: var(--c-ink); }
+.rv-pick-list { flex: 1 1 auto; margin: 0; padding: 4px; overflow-y: auto; border-block: 1px solid var(--c-line); list-style: none; overscroll-behavior: contain; }
+.rv-pick-item { display: flex; gap: 10px; align-items: center; padding: 6px 10px; border-radius: var(--r-s); cursor: pointer; }
+.rv-pick-item.rv-pick-on { background: var(--c-surface-2); box-shadow: inset 0 0 0 1px var(--c-line-2); }
+.rv-pick-item.rv-pick-current { background: var(--c-reviewer-soft); box-shadow: inset 3px 0 0 var(--c-ink); }
+.rv-pick-item.rv-pick-current.rv-pick-on { box-shadow: inset 3px 0 0 var(--c-ink), inset 0 0 0 1px var(--c-line-2); }
+.rv-pick-text { display: flex; flex: 1 1 auto; flex-direction: column; min-inline-size: 0; }
+.rv-pick-item-title { overflow: hidden; font-size: var(--fs-s); font-weight: 700; white-space: nowrap; text-overflow: ellipsis; }
+.rv-pick-item-path { overflow: hidden; color: var(--c-ink-3); font: var(--fs-2xs) / 1.35 var(--font-mono); white-space: nowrap; text-overflow: ellipsis; }
+.rv-pick-item mark { padding: 0 1px; border-radius: 2px; background: #ffe58a; color: inherit; }
+.rv-pick-extra { flex: none; color: var(--c-ink-3); font-size: var(--fs-2xs); white-space: nowrap; }
+.rv-pick-here { flex: none; padding: 1px 8px; border-radius: var(--r-pill); background: var(--c-ink); color: #fff; font-size: var(--fs-2xs); font-weight: 800; }
+.rv-pick-none { padding: 16px; color: var(--c-ink-3); text-align: center; }
+.rv-pick-foot { margin: 0; padding: 6px 12px; color: var(--c-ink-3); font-size: var(--fs-2xs); }
+/* a status as a dot (its colour; the name in the tooltip and the filter) */
+.rv-dot { flex: none; inline-size: 10px; block-size: 10px; border-radius: 50%; background: var(--st); box-shadow: 0 0 0 1px rgb(0 0 0 / 15%); }
 .rv-count, .rv-showing { color: var(--rv-muted); }
+/* (what is compared, in words: on wide screens only; the buttons say it too) */
+.rv-showing { display: none; }
+@media (width >= 1200px) {
+  .rv-showing { display: flex; }
+}
 .rv-opacity, .rv-check, .rv-name { display: flex; gap: 6px; align-items: center; color: var(--c-ink-2); font-weight: 600; }
 .rv-reviewer { inline-size: 160px; min-block-size: 28px; }
 /* with a review link the name comes from it, and the top bar shows it */
@@ -409,7 +476,13 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 .rv-filter summary::after { content: "▾"; color: inherit; opacity: 0.6; }
 .rv-filter[open] summary, .rv-filter summary:hover { border-color: var(--c-ink); }
 .rv-filter-body { position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; display: flex; flex-direction: column; gap: 6px; min-inline-size: 240px; max-block-size: 60vh; padding: 12px 14px; overflow: auto; border: 1px solid var(--c-line); border-radius: var(--r-m); background: var(--c-surface); box-shadow: var(--shadow-pop); }
-.rv-filter-head { margin: 4px 0 2px; color: var(--c-ink-2); font-size: var(--fs-2xs); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.rv-filter-head { margin: 8px 0 2px; color: var(--c-ink-2); font-size: var(--fs-2xs); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.rv-filter-body { min-inline-size: 300px; }
+.rv-filter-top { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+.rv-filter-clear:disabled { opacity: 0.45; cursor: default; }
+.rv-filter-note { margin: 2px 0 0; color: var(--c-ink-3); font-size: var(--fs-2xs); }
+.rv-filter-states { display: flex; flex-direction: column; gap: 3px; }
+.rv-filter-state .rv-dot { margin-inline-end: 2px; }
 .rv-batch-badge { padding: 3px 12px; border-radius: var(--r-pill); background: #ececea; color: var(--c-ink); font-weight: 700; white-space: nowrap; }
 .rv-batch-badge:empty { display: none; }
 

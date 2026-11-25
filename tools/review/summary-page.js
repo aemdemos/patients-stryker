@@ -312,7 +312,7 @@ async function render(savedRows, pages) {
   const byCat = Object.keys(CATEGORIES)
     .map((c) => [CATEGORIES[c], noteRows.filter((n) => n.cat === c)])
     .filter(([, list]) => list.length);
-  $('#notes .rs-body').replaceChildren(
+  $('#notes .rs-body').replaceChildren(...[
     el(
       'div',
       { class: 'rs-tiles' },
@@ -332,7 +332,7 @@ async function render(savedRows, pages) {
       when(n.time),
       n.aoe,
     ])),
-  );
+  ].filter(Boolean));
 }
 
 async function start() {
