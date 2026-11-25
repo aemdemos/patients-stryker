@@ -14,7 +14,8 @@ import longPageDetailSectionsTransformer, {
   keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import corpTextMarkersTransformer, { stdTemplate } from './transformers/corp-text-markers.js';
+import corpTextMarkersTransformer, { STD_REVIEW_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
+import REVIEW_XFS from './review-pages-xf.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
@@ -95,6 +96,11 @@ function publishedDate(document) {
 export default {
   // before the importer's own cleanup, which drops empty paragraphs
   preprocess: ({ document, params }) => {
+    // review run (STD_REVIEW_PAGES): the chosen pages (review-pages-xf.js) are product pages,
+    // whatever stryker.com's template for them, so they import as the product pages do
+    if (STD_REVIEW_IMPORT && REVIEW_XFS[new URL(params.originalURL).pathname]) {
+      document.body.setAttribute('data-template', 'product-detail');
+    }
     keepHeadlineBlankLines(document);
     blankLineSpacers(document, params.originalURL);
   },
@@ -137,9 +143,7 @@ export default {
     if (keywords) meta.Keywords = keywords;
     meta.site = 'corp';
     // review build: a stryker.com product page is a product-detail page
-    const template = stdTemplate(document, PAGE_TEMPLATE.name);
-    if (template) meta.template = template;
-    else delete meta.template;
+    meta.template = stdProductPage(document) ? 'product-detail' : PAGE_TEMPLATE.name;
     if (hcp) meta['hcp-banner'] = 'true';
     // the Last Updated line is not shown for now (`show` turns it on, scripts/corp.js)
     if (published) {

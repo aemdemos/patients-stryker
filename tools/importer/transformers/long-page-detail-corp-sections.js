@@ -1462,6 +1462,63 @@ function titleFromHeading(heading, doc) {
   return h1;
 }
 
+/** The asset name of an image address (…/is/image/stryker/<name>?…), '' for none. */
+const assetName = (src) => ((src || '').match(/\/is\/(?:image|content)\/([^?#]+)/) || [])[1] || '';
+
+/**
+ * Review run: the images of standalone-image columns a quarter or less of their grid wide
+ * with text beside them (icons), by asset name.
+ * @param {Element} main The page content
+ * @returns {Set<string>} The asset names
+ */
+function iconSources(main) {
+  const names = new Set();
+  main.querySelectorAll('.standaloneimage[class*="aem-GridColumn--default--"]').forEach((col) => {
+    const grid = col.parentElement && col.parentElement.className.match(/\baem-Grid--default--(\d+)\b/);
+    const width = col.className.match(/\baem-GridColumn--default--(\d+)\b/);
+    const beside = col.nextElementSibling && col.nextElementSibling.matches('.text') && text(col.nextElementSibling);
+    if (!grid || !width || !beside || Number(width[1]) * 4 > Number(grid[1])) return;
+    col.querySelectorAll('img').forEach((img) => names.add(assetName(img.getAttribute('src'))));
+  });
+  names.delete('');
+  return names;
+}
+
+/**
+ * Review run: a Cards or Columns block whose images are all icons (iconSources) is a Columns
+ * (icon-text) block, the standard look for a small icon beside its text: one row per icon and
+ * its text (Mako global statistics, 87px icons beside each figure on stryker.com).
+ */
+function iconBlocks(root, icons, doc) {
+  root.querySelectorAll('table').forEach((table) => {
+    const trs = [...table.querySelectorAll(':scope > tbody > tr, :scope > tr')];
+    const head = trs[0] && trs[0].firstElementChild;
+    const m = head && head.textContent.trim().match(/^(Cards Corp|Columns)(?: \((.*)\))?$/);
+    if (!m) return;
+    const names = [...table.querySelectorAll('img')].map((img) => assetName(img.getAttribute('src')))
+      .concat([...table.querySelectorAll('a[href]')].map((a) => assetName(a.getAttribute('href')))
+        .filter((n) => n && !/\.(?:m3u8|mp4)$/.test(n)));
+    if (!names.length || !names.every((n) => icons.has(n))) return;
+    const media = (n) => n.nodeType === 1 && (n.matches('img, picture') || !!n.querySelector('img, picture')
+      || (n.matches('a[href], p') && icons.has(assetName((n.matches('a') ? n : n.querySelector('a[href]'))?.getAttribute('href')))));
+    const rows = [];
+    trs.slice(1).forEach((tr) => {
+      const cells = [...tr.children];
+      if (m[1] === 'Cards Corp' && cells.length === 2) {
+        rows.push([[...cells[0].childNodes], [...cells[1].childNodes]]);
+        return;
+      }
+      cells.forEach((cell) => {
+        const nodes = [...cell.childNodes];
+        const at = nodes.findIndex(media);
+        if (at < 0) return;
+        rows.push([[nodes[at]], nodes.filter((n, k) => k !== at)]);
+      });
+    });
+    if (rows.length) table.replaceWith(WebImporter.Blocks.createBlock(doc, { name: 'Columns (icon-text)', cells: rows }));
+  });
+}
+
 /** Drops the video components whose asset is a plain DAM file (not Dynamic Media). */
 function dropDamVideos(main) {
   main.querySelectorAll('.c-standalone-video').forEach((video) => {
@@ -1569,6 +1626,9 @@ export default function transform(hookName, element, payload) {
       if (!b.closest('.futura-bold') && !b.querySelector('.futura-bold')) b.replaceWith(...b.childNodes);
     });
   }
+  // review run: images in a narrow grid column beside their text (a quarter or less, e.g. the
+  // Mako global statistics icons, 1 of 4 columns): their cards / columns are icon-text rows
+  const icons = stdReviewPage(doc) ? iconSources(main) : null;
   const helpers = {
     cellNodes, richText, text, tagCopy,
   };
@@ -1597,6 +1657,7 @@ export default function transform(hookName, element, payload) {
     // review build of the shared fragments: Text style sizes, icon rows side by side
     stdText: STD_DRAFT_IMPORT && payload.template.name === 'long-page-detail-corp-fragments',
   });
+  if (icons && icons.size) iconBlocks(element, icons, doc);
   // the local navigation: a section of its own above the page
   if (nav) element.prepend(nav, doc.createElement('hr'));
 }

@@ -17,10 +17,10 @@
 // --define:STD_DRAFT=true); the committed bundles keep the bracket tags, so a re-import of a
 // real page renders as today until the standardisation is approved
 export const STD_DRAFT_IMPORT = typeof STD_DRAFT !== 'undefined' && STD_DRAFT === true;
-// a review run of chosen pages of any template (esbuild --define:STD_REVIEW_PAGES=true on top
-// of STD_DRAFT): the standardised page rules (stdProductPage) apply to every source page. The
-// two builds used today (committed, and the review build for product pages) don't set it, so
-// their output for long-page-detail and news-detail pages is unchanged
+// a review run of chosen pages (esbuild --define:STD_REVIEW_PAGES=true on top of STD_DRAFT):
+// the pages listed in review-pages-xf.js import as product pages, with the review-run rules
+// (stdReviewPage) on top. The two builds used today (committed, and the review build for
+// product pages) don't set it, so their output is unchanged
 export const STD_REVIEW_IMPORT = STD_DRAFT_IMPORT
   && typeof STD_REVIEW_PAGES !== 'undefined' && STD_REVIEW_PAGES === true;
 
@@ -33,18 +33,9 @@ export const STD_REVIEW_IMPORT = STD_DRAFT_IMPORT
  * @returns {boolean}
  */
 export function stdProductPage(doc) {
-  return STD_DRAFT_IMPORT && (STD_REVIEW_IMPORT
-    || doc?.body?.getAttribute('data-template') === 'product-detail');
+  return STD_DRAFT_IMPORT && doc?.body?.getAttribute('data-template') === 'product-detail';
 }
 
-/**
- * The EDS template of the page being imported, for the review build: stryker.com's own
- * (body `data-template`): product-detail → product-detail, long-page-detail → the
- * long-page-detail template, any other (e.g. base) → none (the corp default).
- * @param {Document} doc The source document
- * @param {string} fallback The import script's own template
- * @returns {string} The template name, or '' for none
- */
 /**
  * Whether the rules made for the review run of pages of other templates (STD_REVIEW_PAGES)
  * apply: those rules leave every other build's output as it was, product pages' too.
@@ -53,13 +44,6 @@ export function stdProductPage(doc) {
  */
 export function stdReviewPage(doc) {
   return STD_REVIEW_IMPORT && stdProductPage(doc);
-}
-
-export function stdTemplate(doc, fallback) {
-  const source = doc?.body?.getAttribute('data-template');
-  if (source === 'product-detail' && stdProductPage(doc)) return 'product-detail';
-  if (!STD_REVIEW_IMPORT || source === 'long-page-detail') return fallback;
-  return '';
 }
 
 // bracket class → Text style word ('' = no word, the text stays plain)

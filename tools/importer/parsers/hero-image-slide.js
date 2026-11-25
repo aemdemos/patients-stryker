@@ -120,7 +120,29 @@ function xfSlideCopy(slide, overlay, document) {
   if (overlay && clean(overlay.textContent)) return [];
   const xf = slide.querySelector('.experienceFragment-ef') || slide.querySelector('.experienceFragment-ef-mobile');
   const texts = xf ? [...xf.querySelectorAll('.c-rich-text-editor')] : [];
+  // the slide copy is in the copy size: a heading keeps its level's size on stryker.com (h2
+  // 24.5px), times its size span (1.25em: 30.6px → the 2x step)
+  const LEVEL = {
+    H1: 2, H2: 1.75, H3: 1.5, H4: 1.25,
+  };
+  const STEPS = ['1-25', '1-5', '1-75', '2', '2-5'];
+  const step = (factor) => STEPS.reduce((x, y) => (Math.abs(Math.log(Number(y.replace('-', '.')) / factor))
+    < Math.abs(Math.log(Number(x.replace('-', '.')) / factor)) ? y : x));
+  const sized = (line) => {
+    if (!LEVEL[line.tagName]) return;
+    const walker = document.createTreeWalker(line, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      const m = t.nodeValue.match(/\[\[text-(\d+(?:-\d+)?)\]/);
+      if (m) {
+        t.nodeValue = t.nodeValue.replace(m[0], `[[text-${step(LEVEL[line.tagName] * Number(m[1].replace('-', '.')))}]`);
+        return;
+      }
+    }
+    line.prepend(document.createTextNode(`[[text-${step(LEVEL[line.tagName])}]`));
+    line.append(document.createTextNode(']'));
+  };
   return texts.flatMap((rich) => headline(rich, document)).map((line) => {
+    sized(line);
     if (!/^H[23]$/.test(line.tagName)) return line;
     const bold = [...line.querySelectorAll('strong')].map((b) => b.textContent).join('');
     const plain = clean(line.textContent.replace(/\[\[[^\][]+\]|\]/g, ''));
@@ -296,6 +318,16 @@ export default function parse(element, context) {
     if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add('white');
     const copy = cells[cells.length - 1];
     if (copy && Array.isArray(copy[0])) dropColourTags(copy[0], colours);
+    // review run: the text of the slide's Experience Fragment (xfSlideCopy) is the slide's copy,
+    // at the top right, above the image on phones (Mako "Are you ready for more?", right of the
+    // image's top on stryker.com, above it on phones)
+    const lead = stdReviewPage(document) ? xfSlideCopy(slide, overlay, document) : [];
+    if (lead.length) {
+      cells.push([lead]);
+      const placed = ['text-left', 'text-right', 'text-wide', 'text-top', 'text-upper', 'text-middle',
+        'text-lower', 'mobile-below', 'mobile-above'];
+      options.splice(0, options.length, ...options.filter((o) => !placed.includes(o)), 'text-right', 'text-top', 'mobile-above');
+    }
     const video = slideVideo(slide) || ambient;
     if (video) {
       const a = document.createElement('a');
@@ -309,8 +341,7 @@ export default function parse(element, context) {
     variants.splice(1, variants.length - 1, ...options);
   }
 
-  const lead = STD_DRAFT_IMPORT && stdReviewPage(document) ? xfSlideCopy(slide, overlay, document) : [];
-  element.replaceWith(...lead, WebImporter.Blocks.createBlock(document, {
+  element.replaceWith(WebImporter.Blocks.createBlock(document, {
     name: `Hero Corp (${variants.join(', ')})`,
     cells,
   }));
