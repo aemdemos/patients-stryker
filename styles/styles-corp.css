@@ -152,6 +152,11 @@
   --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-plum)); /* bg-dark-purple-gradient */
   --corp-gradient-gold: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%); /* bg-golden-gradient */
   --corp-gradient-purple: linear-gradient(-90deg, var(--color-secondary), var(--corp-color-plum)); /* the purple tagline band */
+  --corp-color-teal-dark: #3e5245; /* stryker.com bg-dark-teal-gradient end colour */
+  --corp-color-taupe: #635c4f; /* stryker.com bg-dark-orange-gradient end colour */
+  --corp-gradient-dark-teal: linear-gradient(90deg, var(--color-secondary), var(--corp-color-teal-dark)); /* bg-dark-teal-gradient */
+  --corp-gradient-dark-orange: linear-gradient(90deg, var(--color-secondary), var(--corp-color-taupe)); /* bg-dark-orange-gradient */
+  --corp-gradient-gray: linear-gradient(90deg, var(--color-secondary), var(--color-surface-muted) 20%); /* bg-gray-gradient */
   --corp-page-hero-top: 28px; /* stryker.com page hero: its title starts 28px below the top */
   --corp-people-image-width: 300px;
 
@@ -331,7 +336,7 @@ body:where(.corp):has(main .hero-carousel) header {
    source default, and the paragraph's own 15px gap inside the box below its text, no gap after
    it. span-markers.js puts the box on the line itself when the run is the whole line; the text
    keeps its own colours and sizes (the other words) */
-:where(body.corp) :is(.text-marker-box, span.text-marker:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-dark-blue-gradient, .box-dark-purple-gradient)) {
+:where(body.corp) :is(.text-marker-box, span.text-marker:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-dark-blue-gradient, .box-dark-purple-gradient, .box-dark-gold, .box-gold-gradient, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient, .box-mid-gray, .box-pale-gray, .box-black)) {
   display: block;
   margin-block-end: 0;
   padding: var(--space-block-s) var(--space-block-s) calc(var(--space-block-s) + var(--space-block));
@@ -347,6 +352,14 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .box-dark { --corp-line-box-bg: var(--color-secondary); }
 :where(body.corp) .box-dark-blue-gradient { --corp-line-box-bg: var(--corp-gradient-dark-blue); }
 :where(body.corp) .box-dark-purple-gradient { --corp-line-box-bg: var(--corp-gradient-dark-purple); }
+:where(body.corp) .box-dark-gold { --corp-line-box-bg: var(--color-accent-link-hover); }
+:where(body.corp) .box-gold-gradient { --corp-line-box-bg: var(--corp-gradient-gold); }
+:where(body.corp) .box-gray-gradient { --corp-line-box-bg: var(--corp-gradient-gray); }
+:where(body.corp) .box-teal-gradient { --corp-line-box-bg: var(--corp-gradient-dark-teal); }
+:where(body.corp) .box-orange-gradient { --corp-line-box-bg: var(--corp-gradient-dark-orange); }
+:where(body.corp) .box-mid-gray { --corp-line-box-bg: var(--color-surface-muted); }
+:where(body.corp) .box-pale-gray { --corp-line-box-bg: var(--color-surface-dim); }
+:where(body.corp) .box-black { --corp-line-box-bg: var(--color-black); }
 
 /* Experience Workspace only (span-markers-canvas.js): an editor whose text holds markers is
    shown as its styled copy until the author clicks it */

@@ -69,7 +69,16 @@ var CustomImportScript = (() => {
     "box-purple",
     "box-teal",
     "box-dark",
-    "box-dark-purple-gradient"
+    "box-dark-purple-gradient",
+    "box-dark-blue-gradient",
+    "box-dark-gold",
+    "box-gold-gradient",
+    "box-gray-gradient",
+    "box-teal-gradient",
+    "box-orange-gradient",
+    "box-mid-gray",
+    "box-pale-gray",
+    "box-black"
   ];
   var HEADLINE_STEPS = [1.5, 2, 3, 4.5];
   var STEP_OF = {
@@ -125,7 +134,15 @@ var CustomImportScript = (() => {
     while (el && INLINE.has(el.tagName) && el.parentElement) el = el.parentElement;
     return el;
   };
-  function convertContainer(nodes, dropped) {
+  var SIZE_SET = /* @__PURE__ */ new Set([...Object.values(SIZE_WORDS), "hl15", "hl2", "hl3", "hl45"]);
+  var COLOUR_SET = /* @__PURE__ */ new Set([...COLOURS, ...Object.values(EXTRA_COLOURS)]);
+  function kindOf(word) {
+    if (SIZE_SET.has(word)) return "size";
+    if (COLOUR_SET.has(word)) return "colour";
+    if (["serif", "body", "sans"].includes(word)) return "font";
+    return "";
+  }
+  function convertContainer(nodes, dropped, chains = false) {
     const tokens = [];
     let offset = 0;
     let all = "";
@@ -165,15 +182,20 @@ var CustomImportScript = (() => {
     stack.forEach((t) => {
       t.literal = true;
     });
-    const gap = (a, b) => all.slice(a.to, b.at).trim() === "";
+    const between = (a, b) => all.slice(a.to, b.at);
+    const gap = (a, b) => (chains ? between(a, b).replace(/\[\[[^\][]+\]|\]/g, "") : between(a, b)).trim() === "";
     pairs.sort((a, b) => a.at - b.at).forEach((p) => {
       p.words = markerWords(p.raw, dropped);
     });
     pairs.forEach((inner) => {
-      const outer = pairs.find((o) => o !== inner && !o.merged && o.at < inner.at && o.close.at > inner.close.at && gap(o, inner) && gap(inner.close, o.close));
+      const outer = pairs.find((o) => o !== inner && o.at < inner.at && o.close.at > inner.close.at && gap(o, inner) && gap(inner.close, o.close));
       if (!outer) return;
       let target = outer;
       while (target.into) target = target.into;
+      if (chains) {
+        const kinds = inner.words.map(kindOf);
+        target.words = target.words.filter((w) => !kinds.includes(kindOf(w)) || !kindOf(w));
+      }
       target.words.push(...inner.words);
       inner.merged = true;
       inner.into = target;
@@ -230,7 +252,7 @@ var CustomImportScript = (() => {
         if (containerOf(t) === container) texts.push(t);
         t = tw.nextNode();
       }
-      if (texts.some((x) => x.nodeValue.includes("[["))) convertContainer(texts, dropped);
+      if (texts.some((x) => x.nodeValue.includes("[["))) convertContainer(texts, dropped, stdProductPage(doc));
       if (!texts.some((x) => x.nodeValue.includes(":start-sans:") || x.nodeValue.includes("-sans:"))) return;
       container.normalize();
       const joined = [];
@@ -256,9 +278,24 @@ var CustomImportScript = (() => {
     });
     return [...dropped];
   }
+  var ADDRESS_GUARD = /((?:https?|urn)\S*?)(:(?:start-[a-z0-9-]+|end):)/gi;
+  function keepMarkersReadable(main) {
+    const walker = main.ownerDocument.createTreeWalker(
+      main,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    let node = walker.nextNode();
+    while (node) {
+      ADDRESS_GUARD.lastIndex = 0;
+      if (ADDRESS_GUARD.test(node.nodeValue)) node.nodeValue = node.nodeValue.replace(ADDRESS_GUARD, "$1 $2");
+      node = walker.nextNode();
+    }
+  }
   function transform(hookName, element, payload) {
     if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
     const dropped = bracketsToMarkers(element);
+    keepMarkersReadable(element);
     if (payload && dropped.length) payload.textMarkersDropped = dropped;
   }
 
@@ -446,7 +483,16 @@ var CustomImportScript = (() => {
     "bg-dark-gray": "box-dark",
     "bg-golden-gradient": "box-gold-gradient",
     "bg-dark-purple-gradient": "box-purple-gradient",
-    "bg-dark-blue-gradient": "box-blue-gradient"
+    "bg-dark-blue-gradient": "box-blue-gradient",
+    "bg-purple": "box-purple",
+    "bg-teal": "box-teal",
+    "bg-black": "box-black",
+    "bg-lighter-gray": "box-pale-gray",
+    "bg-gray": "box-mid-gray",
+    "bg-orange": "box-dark-gold",
+    "bg-gray-gradient": "box-gray-gradient",
+    "bg-dark-teal-gradient": "box-teal-gradient",
+    "bg-dark-orange-gradient": "box-orange-gradient"
   };
   var COLOURS2 = [
     [/^(#ffb500|rgba?\(\s*255\s*,\s*181\s*,\s*0\s*(,\s*1\s*)?\))$/i, "gold"],
@@ -981,15 +1027,22 @@ var CustomImportScript = (() => {
       dark: ["box-dark", "full-bleed"],
       "bg-golden-gradient": ["box-gold-gradient", "full-bleed"],
       "gold-gradient": ["box-gold-gradient", "full-bleed"],
-      "bg-dark-orange-gradient": ["box-gold-gradient", "full-bleed"],
+      "bg-dark-orange-gradient": ["box-orange-gradient", "full-bleed"],
+      "bg-dark-teal-gradient": ["box-teal-gradient", "full-bleed"],
+      "bg-gray-gradient": ["box-gray-gradient", "full-bleed"],
+      "bg-black": ["box-black", "full-bleed"],
+      "bg-lighter-gray": ["box-pale-gray", "full-bleed"],
+      "bg-orange": ["box-dark-gold", "full-bleed"],
       "bg-dark-blue-gradient": ["box-blue-gradient", "full-bleed"],
       "bg-dark-purple-gradient": ["box-purple-gradient", "full-bleed"],
       "purple-gradient": ["box-purple-gradient", "full-bleed"],
-      // no standard colour: the nearest (listed for review)
-      "bg-silver": ["box-gray", "full-bleed"],
-      "bg-gray": ["box-gray", "full-bleed"],
-      "gray-gradient": ["box-gray", "full-bleed"],
-      "bg-dark-gold": ["box-gold-gradient", "full-bleed"],
+      // the same stryker.com colours under the older migration's names (exact, never the nearest):
+      // bg-silver and bg-gray are stryker.com's bg-gray (mid grey #b2b4ae), bg-dark-gold its
+      // bg-orange (#af6d04)
+      "bg-silver": ["box-mid-gray", "full-bleed"],
+      "bg-gray": ["box-mid-gray", "full-bleed"],
+      "gray-gradient": ["box-gray-gradient", "full-bleed"],
+      "bg-dark-gold": ["box-dark-gold", "full-bleed"],
       boxed: ["box-white", "shadow"],
       "shadow-box": ["box-white", "shadow"],
       "gradient-inverse": ["gradient-reverse"],
@@ -1035,7 +1088,14 @@ var CustomImportScript = (() => {
           ["box-dark", "Dark grey", { hint: "A dark grey box, white text" }],
           ["box-gold-gradient", "Gold gradient", { hint: "Dark gold into gold" }],
           ["box-blue-gradient", "Blue gradient", { hint: "Dark grey into slate blue, white text" }],
-          ["box-purple-gradient", "Purple gradient", { hint: "Dark grey into plum, white text" }]
+          ["box-purple-gradient", "Purple gradient", { hint: "Dark grey into plum, white text" }],
+          ["box-black", "Black", { hint: "A black box around the section\u2019s content" }],
+          ["box-pale-gray", "Pale grey", { hint: "A pale grey box around the section\u2019s content" }],
+          ["box-mid-gray", "Mid grey", { hint: "A mid grey box around the section\u2019s content" }],
+          ["box-dark-gold", "Dark gold", { hint: "A dark gold box around the section\u2019s content, white text" }],
+          ["box-gray-gradient", "Grey gradient", { hint: "A grey gradient box around the section\u2019s content, white text" }],
+          ["box-teal-gradient", "Dark teal gradient", { hint: "A dark teal gradient box around the section\u2019s content, white text" }],
+          ["box-orange-gradient", "Dark orange gradient", { hint: "A dark orange gradient box around the section\u2019s content, white text" }]
         ]
       },
       {
@@ -1338,6 +1398,54 @@ var CustomImportScript = (() => {
       wrapRun(run);
     });
   }
+  var STD_COLOURS = {
+    "1c5687": "blue",
+    "85458a": "purple",
+    "4c7d7a": "teal",
+    545857: "grey",
+    ffffff: "white",
+    edeeec: "light-gray",
+    af6d04: "dark-gold",
+    b2b4ae: "mid-grey",
+    dfe1de: "pale-grey"
+  };
+  function hexOf(value) {
+    const v = (value || "").trim().toLowerCase();
+    let m = v.match(/^#([0-9a-f]{3})$/);
+    if (m) return m[1].split("").map((c) => c + c).join("");
+    m = v.match(/^#([0-9a-f]{6})$/);
+    if (m) return m[1];
+    m = v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+    return m ? m.slice(1, 4).map((n) => Number(n).toString(16).padStart(2, "0")).join("") : "";
+  }
+  function tagStdColours(root) {
+    const coloured = (el) => ownColour(el) !== "";
+    const nearest = (node) => {
+      for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
+        if (el.matches('[style*="color"]') && coloured(el)) return el;
+      }
+      return null;
+    };
+    const owners = /* @__PURE__ */ new Set();
+    const walker = root.ownerDocument.createTreeWalker(root, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      const owner = t.nodeValue.trim() && nearest(t);
+      if (owner) owners.add(owner);
+    }
+    const tagged = [];
+    const depth = (el) => {
+      let n = 0;
+      for (let e = el; e && e !== root; e = e.parentElement) n += 1;
+      return n;
+    };
+    [...owners].sort((x, y) => depth(x) - depth(y)).forEach((el) => {
+      const hex = hexOf(ownColour(el));
+      const name = STD_COLOURS[hex] || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? "black" : "");
+      if (!name || GOLD.test(ownColour(el))) return;
+      bracketTag([el], `color-${name}`, root);
+      tagged.push(el);
+    });
+  }
   function cleanRichText(root, { wholeParagraphs = false } = {}) {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text3(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
@@ -1364,6 +1472,7 @@ var CustomImportScript = (() => {
     });
     tagPlainBoldLabels(root, wholeParagraphs);
     tagGoldText(root);
+    if (stdProductPage(doc)) tagStdColours(root);
     tagTextSize(root);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
@@ -1459,6 +1568,7 @@ var CustomImportScript = (() => {
   function labelHeadingsToParagraphs(root) {
     root.querySelectorAll("h2, h3, h4, h5, h6").forEach((h) => {
       if (!LABEL_HEADING.test(text3(h))) return;
+      if (stdProductPage(root.ownerDocument) && h.querySelector("u")) return;
       const p = root.ownerDocument.createElement("p");
       while (h.firstChild) p.append(h.firstChild);
       p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
@@ -1779,6 +1889,7 @@ var CustomImportScript = (() => {
     if (whiteBox(headline2)) return "headline-box";
     const box = headline2.querySelector(".has-background");
     const bg = (box && box.className.match(/\bbg-([a-z-]+)\b/) || [])[1] || "";
+    if (STD_DRAFT_IMPORT && bg && SECTION_OPTIONS.aliases[`bg-${bg}`]) return `headline-box, bg-${bg}`;
     if (/^(gold|golden-gradient)$/.test(bg)) return "headline-box, gold";
     if (bg === "gray-gradient") return "headline-box, gray-gradient";
     if (bg === "purple") return "headline-box, purple";
@@ -2487,10 +2598,30 @@ var CustomImportScript = (() => {
   var COMPONENT = '[class^="c-"], [class*=" c-"]';
   var UNIT = `[data-keep], ${COMPONENT}, .buttonset, table`;
   var PARSED = ".c-resourcesanddownload, .c-customizeable, .c-autocarousel";
+  var STD_BACKGROUNDS = /* @__PURE__ */ new Set([
+    "white",
+    "gold",
+    "light-gray",
+    "lighter-gray",
+    "gray",
+    "dark-gray",
+    "black",
+    "blue",
+    "purple",
+    "teal",
+    "orange",
+    "golden-gradient",
+    "gray-gradient",
+    "dark-blue-gradient",
+    "dark-purple-gradient",
+    "dark-teal-gradient",
+    "dark-orange-gradient"
+  ]);
   function colourStyle(el) {
     const m = (el.className || "").match(/\bbg-([a-z-]+)\b/);
     if (!m) return "";
     const bg = m[1];
+    if (STD_DRAFT_IMPORT && STD_BACKGROUNDS.has(bg)) return bg === "white" ? "" : `bg-${bg}`;
     if (/^(gold|golden-gradient|yellow)$/.test(bg)) return "gold";
     if (bg === "gray-gradient") return "gray-gradient";
     if (bg === "purple") return "purple";
@@ -2712,7 +2843,7 @@ var CustomImportScript = (() => {
         } else run.push(...unitNodes(unit, doc, h));
       });
       flush();
-      if (!out.length && colour === "gold" && !h.text(component)) {
+      if (!out.length && /^(bg-)?gold$/.test(colour) && !h.text(component)) {
         const bar = keepNodes(doc, [], "gold-bar");
         const end = component.getAttribute("data-row-end");
         if (end) bar.setAttribute("data-row-end", end);
@@ -2725,14 +2856,17 @@ var CustomImportScript = (() => {
   var PANEL_BOX_COLOURS = {
     white: "box-white",
     gold: "box-gold",
-    orange: "box-gold",
+    orange: "box-dark-gold",
     "light-gray": "box-gray",
-    gray: "box-gray",
+    "lighter-gray": "box-pale-gray",
+    gray: "box-mid-gray",
+    black: "box-black",
     "golden-gradient": "box-gold-gradient",
-    "dark-orange-gradient": "box-gold-gradient",
+    "gray-gradient": "box-gray-gradient",
+    "dark-orange-gradient": "box-orange-gradient",
     blue: "box-blue",
     "dark-blue-gradient": "box-blue-gradient",
-    "dark-teal-gradient": "box-blue-gradient",
+    "dark-teal-gradient": "box-teal-gradient",
     teal: "box-teal",
     purple: "box-purple",
     "dark-gray": "box-dark",
@@ -3182,11 +3316,15 @@ var CustomImportScript = (() => {
     const text5 = copy.textContent.replace(/\s+/g, " ").trim();
     if (!text5) return null;
     const run = doc.createTextNode(tags.length ? `[[${tags.join(",")}]${text5}]` : text5);
+    const inRun = stdProductPage(doc) && sups.length;
+    const nodes = inRun && tags.length ? [doc.createTextNode(`[[${tags.join(",")}]${text5}`), ...sups, doc.createTextNode("]")] : [run];
+    const after = inRun ? [] : sups;
+    if (inRun && !tags.length) nodes.push(...sups);
     if (bold) {
       const strong = doc.createElement("strong");
-      strong.append(run);
-      p.append(strong, ...sups);
-    } else p.append(run, ...sups);
+      strong.append(...nodes);
+      p.append(strong, ...after);
+    } else p.append(...nodes, ...after);
     return p;
   }
   function statCell(component, doc) {
@@ -3271,7 +3409,7 @@ var CustomImportScript = (() => {
       (component.closest(".cventcomponent") || component).replaceWith(widgetBlock(doc, "cvent", href));
     });
   }
-  var hexOf = (rgba) => {
+  var hexOf2 = (rgba) => {
     const m = String(rgba).match(/(\d+)\D+(\d+)\D+(\d+)/);
     return m ? `#${m.slice(1, 4).map((c) => Number(c).toString(16).padStart(2, "0")).join("")}` : "";
   };
@@ -3312,7 +3450,7 @@ var CustomImportScript = (() => {
       const raw = option.textContent.trim();
       const parts = pie ? raw.split(/\s*\+\s*/) : raw.split("|");
       const label = pie ? parts[0] : parts[1];
-      const colour = hexOf(pie ? parts[2] : parts[0]);
+      const colour = hexOf2(pie ? parts[2] : parts[0]);
       if (label === void 0) return;
       rows.push([label.trim(), option.getAttribute("value") || "", colour]);
     });
@@ -3663,6 +3801,1460 @@ var CustomImportScript = (() => {
     "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge/master"]
   };
 
+  // tools/importer/product-detail-xf.js
+  var product_detail_xf_default = {
+    "/us/en/acute-care/products/arise-1000-ex.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/bari-10a.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/barimatt-plus.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/bedside-stands.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/comfortgel-se.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/comfortgel.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/cub.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/eye-surgery.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/fluoroscopy-stretcher.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/gynnie.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/ibed-wireless.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master"
+    ],
+    "/us/en/acute-care/products/intouch.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isoair.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      null,
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isoflex-lal.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isoflex-se.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isolibrium.html": [
+      "/content/experience-fragments/stryker/acute-care/en/products/isolibrium_770039638/hotspot/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isotour.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/ld-304.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/michael-graves-with-stryker.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/mv3.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/nara-bassinet.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/prime-series.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/prime-tc.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/primex-x-ray.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/procuity-icu.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/procuity.html": [
+      "/content/experience-fragments/stryker/acute-care/en/products/analytics/analytics-cta/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/proform.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/s3.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/side-seating.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/sofcare-chair-cushion.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/sofcare-overlay.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/spr-plus.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/stretcher-chairs.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/surgistool.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/symmetry-plus.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/transport.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/tru-fit.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/trurize.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/ultracomfort--se.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/unity-furniture.html": [
+      "/content/experience-fragments/stryker/acute-care/en/products/unity_furniture/sleeper-bench/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/vocera-analytics.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/communications/products/Fortress-wall-system.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/accend-surgical-light.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/berchtold-led-f-gen.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/connected-or-ip.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/connected-or-lite.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/customized-suspension-solutions.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/equipment-management-accessories.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/hospital-status.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/isuite-diagnostic-4k-large-monitor-systems.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/isuite-ehr-connectivity.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/isuite-live-video.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/isuite-media-management.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/nurse-documentation-stations.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/oculan.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/operon-accessories.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/operon-d770.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/operon-d830.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/operon-d860.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/or-renovation-services.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/project-services.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/room-cameras.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/s-series-equipment-management-system.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/slx-surgical-light.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/sterile-control--.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/strykecam-4k.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/surgical-monitor-mounting.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/teletom.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/universal-device-connection.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/universal-display-mount.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/visum-blade-led.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/visum-led-ii.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/wall-control.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/wall-control/sirca-exam-light.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/wall-mounted-lcd-displays.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/craniomaxillofacial/products/pediatric-mandibular-distractor.html": [
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/pediatric-mandibular-distractor/master"
+    ],
+    "/us/en/craniomaxillofacial/products/sternalplate.html": [
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/count-on-us/count-on-us-v2",
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/pull-out-force/pull-out-force-v2",
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/related-products/master"
+    ],
+    "/us/en/craniomaxillofacial/products/tmj-concepts.html": [
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/tmj-concepts/master"
+    ],
+    "/us/en/emergency-care/products/code-stat.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/data-professional-services.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master"
+    ],
+    "/us/en/emergency-care/products/evacuation-chair.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/heartsine-samaritan-pad-360p.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master"
+    ],
+    "/us/en/emergency-care/products/heartsine-samaritan-pad-450p.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master"
+    ],
+    "/us/en/emergency-care/products/lifelink-central.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifenet-care.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifenet-system.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/data_solutions/professional-services/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifepak-1000-defibrillator.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifepak-15.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifepak-35.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/intuitive-clinically-advanced-proven/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifepak-cr2.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_cr2/callout/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lithium-ion-battery.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lucas-3.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/lucas/lucas-clinical-evidence/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/lucas/lucas-product-specifications/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/lucas/sidebar-links/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/mcgrath-mac-ems.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/mx-pro-bariatric-transport.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/performance-load.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/performance-pro-xt.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/power-load.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master"
+    ],
+    "/us/en/emergency-care/products/power-pro-2.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/pp2/sem/master1",
+      "/content/experience-fragments/stryker/emergency-care/en/products/pp2/sem/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/pp2/sem/master2",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/tech-support-and-procare",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/stair-pro.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/xpedition-powered-stair-chair.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master"
+    ],
+    "/us/en/emergency-care/products/xpr-restraints.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/xps-siderails.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/endoscopy/products/10-0-mm-laparoscopic-instruments.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1488-hd-3-chip-camera-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1588-aim-camera-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1588-aim-laproscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1588-sterilization-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1688-camera-head-with-4k-image-resolution0.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1788-platform.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/4k-32--surgical-display.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/4k-32--surgical-monitor-.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/5-0-mm-laparoscopic-instruments.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/5-0-mm-sliding-lock-graspers.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/ahto-pump.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/aim-4k-autoclavable-camera.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/arthroscopic-instrument-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/breisky-adapt-and-deaver-adapt.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/connected-or-hub0.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/cystoscope-hardware.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/cystoscope-instrumentation.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/dermacell.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/eikon-lt-adapt-se.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/eikon-lt.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/flexible-instruments.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/gynecologic-laparscopy-instruments.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/hardware.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/ideal-eyes-hd-autocalvable-eyepiece-arthroscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/insufflator-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/iris-u-kits.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/l-11-light-source-and-auto-light-technology0.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/l10-aim-light-source.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/laparoscope-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/laparoscopic-instrument-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/laparoscopic-instrument-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/laser-cystoscope-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/microcart.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/molli.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/products/molli/molli-marker/master",
+      "/content/experience-fragments/stryker/endoscopy/en/products/molli/white-paper/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/or-control--device-voice-.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/photonguide-and-photonguide-adapt.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/pinpoint.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/pneumoclear.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/pneumosurexl.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/precision-ac.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/precision-ideal-eyes-hd-autocalvable-c-mount-arthorscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/precision-ideal-eyes-hd-autoclavable-laparoscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/precision-light-source.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/printers.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/pump-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/reposable-electro-surgical-tips.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/resectoscope-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/resectoscope.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/rev360-22-24-fr-resection-products.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/rev360-ideal-eyes-autocalvable-hysteroscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/rev360-kits.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/rev360-semi-flexible-instrumentation.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/semi-rigid-autoclavable-uretroscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/serfas.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/shavers.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/soloassist-ii-robotic-scope-holder.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/spy-elite.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/spy-phi.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/sterilization-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/strykeflow2-pump.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/suction-irrigation-tips.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/suction-irrigation.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/synk-wireless-platform.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/thermedx-fluidsmart-fluid-management-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/ureteroscope-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/urology-gynecology-sterilization-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/video-carts.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/vip-package.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/visual-urethrotome.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/interventional-spine/campaign/mild-procedure.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/campaigns/mild/body-copy/master"
+    ],
+    "/us/en/interventional-spine/campaign/vertebral-compression-fractures.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/campaigns/vertebral_compressio/signs-of-a-vcf/master"
+    ],
+    "/us/en/interventional-spine/products/bone-cements-and-mixer-and-delivery-systems.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/dekompressor-disc-removal-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/ivas-elite-balloon-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/mild-procedure.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/multigen2-rf-generator-and-venom-cannula-and-electrode-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/omnicurve-curved-balloon-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/optablate-bone-tumor-ablation-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/optablate-bvn.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/spinejack-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/vcf-accessories.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/joint-replacement/products/Insignia.html": [
+      "/content/experience-fragments/stryker/joint-replacement/en/products/insignia/size-specific-collar/master",
+      "/content/experience-fragments/stryker/joint-replacement/en/products/insignia/instrumentation/master"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst--6.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-catalyst-6/master"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst-5.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/kb---axs-catalyst-5/axs-5-v2"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst-7.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-catalyst-7/master"
+    ],
+    "/us/en/neurovascular/products/axs-infinity-ls.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-infinity-ls/master"
+    ],
+    "/us/en/neurovascular/products/axs-infinity-plus.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-infinity-plus/body"
+    ],
+    "/us/en/neurovascular/products/axs-lift.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-lift-intracranial-base-catheter/master",
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-lift-intracranial-base-catheter/2-in-1",
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-lift-intracranial-base-catheter/axs-lift-anatomy"
+    ],
+    "/us/en/neurovascular/products/axs-offset.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-offset/master"
+    ],
+    "/us/en/neurovascular/products/broadway-system.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/broadway-system/master"
+    ],
+    "/us/en/neurovascular/products/excelsior--1018--microcatheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-1018/master"
+    ],
+    "/us/en/neurovascular/products/excelsior--sl-10--microcatheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-sl-10/master"
+    ],
+    "/us/en/neurovascular/products/excelsior--xt-17-microcatheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-xt-17/master"
+    ],
+    "/us/en/neurovascular/products/excelsior--xt-27--microcatheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-xt-27/master"
+    ],
+    "/us/en/neurovascular/products/flowgate2--balloon-guide-catheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/flowgate2/flowgate2us"
+    ],
+    "/us/en/neurovascular/products/guider-softip-xf.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/guider-softip-xf/master"
+    ],
+    "/us/en/neurovascular/products/inzone-detachment-system.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/inzone-hero/inzone-hero-us"
+    ],
+    "/us/en/neurovascular/products/merci-balloon-guide-catheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/merci-balloon-guide-catheter/master"
+    ],
+    "/us/en/neurovascular/products/neuroform-ez-stent-system.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/neuroform-ez/master"
+    ],
+    "/us/en/neurovascular/products/surpass-evolve.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/surpass-evolve/master"
+    ],
+    "/us/en/neurovascular/products/surpass-streamline-flow-diverter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/surpass-streamline/master"
+    ],
+    "/us/en/neurovascular/products/synchro-select-guidewires.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/synchro-select-guidewires/master"
+    ],
+    "/us/en/neurovascular/products/target--360-detachable-coils.html": [
+      null
+    ],
+    "/us/en/neurovascular/products/target--3d-detachable-coils.html": [
+      null
+    ],
+    "/us/en/neurovascular/products/target-helical-detachable-coils.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/target-helical-detachable-coils/master"
+    ],
+    "/us/en/neurovascular/products/trak-21.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/trevo-trak-21/master"
+    ],
+    "/us/en/neurovascular/products/transend--guidewires.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/transend/master"
+    ],
+    "/us/en/neurovascular/products/transform-occlusion-balloon-catheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/transform/master"
+    ],
+    "/us/en/neurovascular/products/trevo--xp-provue-retriever-.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/trevo-xp/master"
+    ],
+    "/us/en/neurovascular/products/wingspan-stent-system.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/wingspan-stent-system/master"
+    ],
+    "/us/en/nse/products/bone-vac/bone-dust-viability.html": [
+      "/content/experience-fragments/stryker/neurosurgical/en/products/bone_vac/bone_dust_viability/bone-dust-viability-chart/master"
+    ],
+    "/us/en/nse/products/qosmic-led-headlight.html": [
+      "/content/experience-fragments/stryker/neurosurgical/en/products/qosmic_led_headlight/a-new-stratosphere-of-quality/master"
+    ],
+    "/us/en/nse/products/sonopet-iq.html": [
+      "/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/header/master",
+      "/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/rapid-readiness-image-labels/master",
+      "/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/right-sized-for-mis/master"
+    ],
+    "/us/en/orthopaedic-instruments/products/npseal.html": [
+      "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/the-power-of-npwt/master",
+      "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/incisions/simple-design-in-a-slim-footprint",
+      "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/effective-care-doesn-t-have-to-be-complicated/master",
+      "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/simple-design/master"
+    ],
+    "/us/en/peripheral-vascular/products/artix-thrombectomy-system.html": [
+      "/content/experience-fragments/stryker/peripheral_vascular/en/contact/social-media/master"
+    ],
+    "/us/en/peripheral-vascular/products/clottriever-system.html": [
+      "/content/experience-fragments/stryker/peripheral_vascular/en/contact/social-media/master"
+    ],
+    "/us/en/peripheral-vascular/products/flowtriever-system.html": [
+      "/content/experience-fragments/stryker/peripheral_vascular/en/contact/social-media/master"
+    ],
+    "/us/en/sage/products/hygh-tec.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-air-pump.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-airtap-lc.html": [
+      "/content/experience-fragments/stryker/sage/en/products/airtap_lc/did-you-know/master",
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-airtap-xxl.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-airtap.html": [
+      "/content/experience-fragments/stryker/sage/en/products/prevalon_airtap/did-you-know/master",
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-barrier-cream-cloths.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-bath-cloths.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-chg-cloths.html": [
+      "/content/experience-fragments/stryker/sage/en/products/sage_2_chlorhexidine/features/features-2",
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-foot-and-leg-stabilizer-wedge.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-halfmats.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-heel-protector-i.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-heel-protector-ii.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-heel-protector-iii.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-heel-protector-or.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-incontinence-clean-up-cloths.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-m--microclimate-body-pads.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-m-care.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-mats.html": [
+      "/content/experience-fragments/stryker/sage/en/products/prevalon_mats/did-you-know/master",
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-multi-position-mats.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-nose-to-toes.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-systems-for-non-ventilated-patients.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-systems-for-ventilated-patients.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-tools.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-oral-solutions-and-moisturizers.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-primafit.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-primofit.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-rinse-free-shampoo-caps.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-self-oral-care.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-sps.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-tap-1-0.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-tap-2-0.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-tap-lc.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-tap-xl-xxl.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-traptex.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/smart-care/products/ambient-monitoring.html": [
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master",
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master1",
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master2",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master"
+    ],
+    "/us/en/smart-care/products/sync-badge.html": [
+      "/content/experience-fragments/stryker/smart_care/en/products/us/sync_badge/interpreter-callout/master",
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/virtual-monitoring.html": [
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master",
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master1",
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master2",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master"
+    ],
+    "/us/en/smart-care/products/virtual-nursing.html": [
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-accessories.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-collaboration-suite.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-ease.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-edge.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-engage.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-smartbadge.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-vina.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/spine/systems/niagara.html": [
+      "/content/experience-fragments/stryker/spine/en/products/now_sold_by_vb_spine/now-sold-by-vb-spine/master"
+    ],
+    "/us/en/sports-medicine/products/2-0-knot-pusher-suture-cutter-and-slotted-cannula-set.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/Adaptable-Arm-Positioner.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/sm-test/sm-test"
+    ],
+    "/us/en/sports-medicine/products/All-inside-meniscal-repair-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/AlphaVent-hard-body-screw-in-anchor-platform.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/AlphaVent_Knotless.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/FlowPort-Touch-cannula-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/GraftJacket-Now-Ultra-Thick.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/Iconix-HA-plus.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/Iconix-Knotless.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/ProCinch-adjustable-suspensory-fixation-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/allosource-tissue-bank.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/big-dog.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/biosteon-intraline-ha-plla-composite-anchors.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/champion-shoulder-instrumentation-set.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/champion-sliders.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/champion-slingshot-single-portal-suture-passing-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/champion-suture-passer.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/cinchlock-ss-and-cinchlock-flex-knotless-anchor-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/cobra.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/conquest-manual-instruments.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossblade-series-cutters.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossblade-xl-diamond-burs.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossfire-2-integrated-resection-and-energy-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossflow-integrated-arthroscopy-pump.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossflow-tubing.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/cutter-cannula-set.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/dri-lok-cannula.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/flosteady-select.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/flosteady-tubing.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/formula-series-cutters-and-burs.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/formula-shaver-handpieces.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/g--force-tenodesis-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/gateway.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/gravity.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/hip-check.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/iconix-all-suture-anchor.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/iconix-speed.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/injector-ii-capsule-closure.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/inspace.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/verma-quote/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/shorter-op-time/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/pain-relief/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/safe-and-effective/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/knotilus-knotless-anchor-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/knotilus-plus.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/microfx-osteochondral-drilling-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/nano-tack-peek-anchor.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/nanopass-suture-management-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/nanotack-tt.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/omega.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/peek-intraline.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/peek-zip-anchor.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/phoenix-microfracture-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/pivot-complete-hip-arthroscopy-access-and-instrumentation-kit.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/pivot-guardian-distraction-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/portal-entry-kit.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/reelx-stt-reelx-knotless-peek-anchor.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/samurai-blade.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/serfas-energy-platform.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/sharpshooter-inside-out-meniscal-repair-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/slingshot-capsule-restoration-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/slot-meniscal-transplantation-set.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/speed.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/sportsuite-vision.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/header---waitlist",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/suture-and-tape-offerings.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/tps-small-joint-series-cutters-and-burs.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/transport-and-flowport-cannulas.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/twinloop-flex-anchor-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/versitomic-flexible-reaming-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/versitomic-isi.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/surgical-technologies/products/cactus-controlled-substance-waste-management-system.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/neptune-s.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/neptune-waste-management-system.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/photonblade-3-se.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/procedural-oxygen-mask.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/products/procedural_oxygen_ma/page-body/master"
+    ],
+    "/us/en/surgical-technologies/products/safeair-smoke-evacuation.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/surgicount-safety-sponge-system.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/sustainability/products/Conference.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/ReprocessedSoundStar.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/acunav.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/agilis.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/covidien-kendall.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/ensite-x.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/ep-sustainability.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/harmonic.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/inquiry.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/ivus.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/masimo-lncs.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/myosure.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/nellcor-oximax.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/quality.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/rd-set.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/save-simply-philips-ecg.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/save-simply-sage-prevalon-mats.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/sss-impact.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/sss-impact/Supplychain.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/viewflex.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ]
+  };
+
   // tools/importer/transformers/long-page-detail-corp-sections.js
   var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments"];
   var STD_TABLE = "table[data-std-table]";
@@ -3785,6 +5377,27 @@ var CustomImportScript = (() => {
     a.textContent = path;
     return WebImporter.Blocks.createBlock(doc, { name: "Fragment", cells: [[a]] });
   }
+  var STD_REVIEW_FRAGMENTS = "/drafts/astha/pages/fragments/";
+  function reviewFragmentPath(xf) {
+    const path = xfToFragmentPath(xf);
+    return path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS);
+  }
+  function productFragments(main, doc, xfs) {
+    const slots = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment"));
+    if (!xfs || slots.length !== xfs.length) return false;
+    slots.forEach((slot, i) => {
+      const path = xfs[i] && reviewFragmentPath(xfs[i]);
+      const empty = !text4(slot) && !slot.querySelector("img, [data-asset-path], iframe");
+      if (!path || empty) {
+        slot.remove();
+        return;
+      }
+      const block = fragmentBlock(doc, path);
+      block.setAttribute("data-keep", "section");
+      slot.replaceWith(block);
+    });
+    return true;
+  }
   function experienceFragments(main, doc, xfs, slots) {
     const filled = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment")).filter((slot) => {
       if (text4(slot) || slot.querySelector("img, [data-asset-path], iframe")) return true;
@@ -3823,6 +5436,9 @@ var CustomImportScript = (() => {
         const h2 = doc.createElement("h2");
         const u = doc.createElement("u");
         u.textContent = text4(heading);
+        if (stdProductPage(doc) && heading.classList.contains("border-bottom-gold")) {
+          u.textContent = `[[rule-gold]${text4(heading)}]`;
+        }
         h2.append(u);
         nodes.push(h2);
       }
@@ -3929,6 +5545,17 @@ var CustomImportScript = (() => {
     "dark-blue-gradient": "dark-blue-gradient",
     "dark-purple-gradient": "dark-purple-gradient"
   };
+  var BOX_COLOURS_STD = __spreadProps(__spreadValues({}, BOX_COLOURS), {
+    gray: "mid-gray",
+    "lighter-gray": "pale-gray",
+    orange: "dark-gold",
+    black: "black",
+    "golden-gradient": "gold-gradient",
+    "gray-gradient": "gray-gradient",
+    "dark-teal-gradient": "teal-gradient",
+    "dark-orange-gradient": "orange-gradient"
+  });
+  var boxColours = () => STD_DRAFT_IMPORT ? BOX_COLOURS_STD : BOX_COLOURS;
   var BOX_VARIANTS = /* @__PURE__ */ new Set(["gray-2", "gold-lead", "dark-lead", "gray-lead"]);
   var SPACE_STEPS = [[0, "space-none"], [3, "space-s"], [5, ""], [10, "space-l"]];
   function spaceStep(boxes) {
@@ -3960,7 +5587,7 @@ var CustomImportScript = (() => {
     const colourOf2 = (b) => {
       const bg = (b.className.match(/\bbg-([a-z-]+)/) || [])[1];
       if (b.classList.contains("dimensional-box") && (!bg || bg === "white")) return "boxed";
-      return BOX_COLOURS[bg] || "";
+      return boxColours()[bg] || "";
     };
     const colours = [...new Set(boxes.map(colourOf2))];
     if (colours.length !== 1 || !colours[0]) return { colour: "", kind: "" };
@@ -4075,7 +5702,11 @@ var CustomImportScript = (() => {
     if (STD_DRAFT_IMPORT) {
       copy.filter((n) => sizeTag(n.copyStyle) || serif(n.copyStyle)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) ? "serif" : ""].filter(Boolean).join(","), doc));
       cells.flat().filter((n) => n.nodeType === 1 && /^H[1-3]$/.test(n.tagName) && n.stdHeadingSize).forEach((n) => tagCopy(n, n.stdHeadingSize, doc));
-      const rest = new Set(copy.flatMap((n) => (n.copyStyle || "").split(",").map((x) => x.trim())).filter((x) => x && x !== "serif" && !/^p-\d/.test(x)));
+      const product = stdProductPage(doc);
+      if (product) {
+        copy.filter((n) => (n.copyStyle || "").split(",").map((x) => x.trim()).includes("disclaimer")).forEach((n) => tagCopy(n, "text-0-8", doc));
+      }
+      const rest = new Set(copy.flatMap((n) => (n.copyStyle || "").split(",").map((x) => x.trim())).filter((x) => x && x !== "serif" && !/^p-\d/.test(x) && !(product && x === "disclaimer")));
       return [...rest].join(", ");
     }
     const weight = {};
@@ -4155,7 +5786,30 @@ var CustomImportScript = (() => {
   };
   var TILE_KEEP = new RegExp("^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a-z]+|image-border(-[a-z]+)?|text-center)$");
   var TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
-  function tileCards(cells, variant, doc) {
+  var CARD_COLOUR_LABELS = {
+    gray: "Light grey",
+    dark: "Dark grey",
+    "dark-blue-gradient": "Blue gradient",
+    "dark-purple-gradient": "Purple gradient",
+    "mid-gray": "Mid grey",
+    "pale-gray": "Pale grey",
+    "gray-gradient": "Grey gradient",
+    "teal-gradient": "Dark teal gradient",
+    "orange-gradient": "Dark orange gradient"
+  };
+  var cardColourLabel = (c) => CARD_COLOUR_LABELS[c] || c.replace(/-/g, " ").replace(/^./, (x) => x.toUpperCase());
+  function dropLineBoxes(nodes, colour) {
+    nodes.filter((n) => n.nodeType === 1).forEach((n) => {
+      [...n.matches("p, h1, h2, h3, h4, h5, h6, li") ? [n] : [], ...n.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].forEach((line) => {
+        var _a, _b;
+        if (((_a = line.firstChild) == null ? void 0 : _a.nodeType) === 3 && line.firstChild.nodeValue === `[[box-${colour}]` && ((_b = line.lastChild) == null ? void 0 : _b.nodeType) === 3 && line.lastChild.nodeValue === "]") {
+          line.firstChild.remove();
+          line.lastChild.remove();
+        }
+      });
+    });
+  }
+  function tileCards(cells, variant, doc, colours = []) {
     if (cells.some((c) => c.some((n) => n.nodeType === 1 && (n.matches("table") || n.querySelector("table"))))) return null;
     const filled = cells.filter((c) => tileParts(c).length);
     const units = filled.map(unitOf);
@@ -4164,7 +5818,10 @@ var CustomImportScript = (() => {
     const same = units.length > 0 && units.every((u) => u === units[0]);
     if (!same || filled.length < 3 && !(filled.length === 2 && boxed)) return null;
     if (!/^t?m?t?$/.test(units[0]) || names.some((v) => TILE_NOT.test(v))) return null;
-    const rows = filled.map((nodes) => {
+    const filledColours = cells.map((c, i) => tileParts(c).length ? colours[i] || "" : null).filter((c) => c !== null);
+    const perCard = filledColours.length === filled.length && filledColours.every(Boolean) && new Set(filledColours).size > 1;
+    const rows = filled.map((nodes, i) => {
+      if (perCard) dropLineBoxes(nodes, filledColours[i]);
       const parts = tileParts(nodes);
       const at = parts.findIndex(isTileMedia);
       if (at < 0) return [parts];
@@ -4189,15 +5846,17 @@ var CustomImportScript = (() => {
       units[0].startsWith("tm") ? "title-above" : "",
       imageOnly ? "no-text" : ""
     ].filter(Boolean);
+    const cardRows = perCard ? rows.map((r, i) => [cardColourLabel(filledColours[i]), ...r]) : rows;
+    const named = options.map((o) => o.replace(/^box-dark-(blue|purple)-gradient$/, "box-$1-gradient"));
     return WebImporter.Blocks.createBlock(doc, {
-      name: options.length ? `Cards Corp (${options.join(", ")})` : "Cards Corp",
-      cells: rows
+      name: named.length ? `Cards Corp (${named.join(", ")})` : "Cards Corp",
+      cells: cardRows
     });
   }
-  function xfGridRows(main, doc) {
+  function xfGridRows(main, doc, selector = ".experiencefragment .aem-Grid") {
     const num = (el, re) => Number(((el.className || "").match(re) || [])[1]) || 0;
     const filled = (el) => !!text4(el) || !!el.querySelector("img, [data-asset-path], iframe");
-    [...main.querySelectorAll(".experiencefragment .aem-Grid")].forEach((grid) => {
+    [...main.querySelectorAll(selector)].forEach((grid) => {
       if (grid.closest("header, footer, .modal, .colctrl")) return;
       const n = num(grid, /\baem-Grid--(\d+)\b/) || 12;
       const rows = [];
@@ -4216,6 +5875,7 @@ var CustomImportScript = (() => {
       rows.forEach((r) => {
         const cells = r.items.filter(([, item]) => filled(item));
         if (cells.length < 2 || cells.some(([, item]) => item.querySelector(".colctrl"))) return;
+        if (stdProductPage(doc) && cells.every(([, item]) => !text4(item) && item.querySelector("a[href] img"))) return;
         const colctrl = doc.createElement("div");
         colctrl.className = "colctrl";
         const inner = doc.createElement("div");
@@ -4236,8 +5896,25 @@ var CustomImportScript = (() => {
       const all = rowColumns(colctrl);
       const filled = all.filter((col) => text4(col) || col.querySelector("img, [data-asset-path], iframe, form, table"));
       const columns = filled.length && filled.length < all.length && all.length >= 3 ? all : filled;
-      if (columns.length < 2) return;
       const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+      if (stdProductPage(doc) && all.length === 2 && filled.length === 1 && all.every((col) => columnWidth(col) === 6)) {
+        const box = filled[0].querySelector('.c-largeheadline .has-background[class*="bg-"]');
+        const colour = box && { "bg-gold": "box-gold", "bg-light-gray": "box-gray", "bg-white": "box-white" }[[...box.classList].find((c) => /^bg-/.test(c))];
+        if (colour) {
+          const nodes = cellNodes(filled[0], doc);
+          rowCopyStyle([nodes], doc);
+          const cells2 = all.map((col) => col === filled[0] ? nodes : "");
+          const first = all[0] === filled[0];
+          const block2 = WebImporter.Blocks.createBlock(doc, {
+            name: `Columns (columns-50-50, ${colour}${first ? ", box-first" : ""})`,
+            cells: [cells2]
+          });
+          block2.setAttribute("data-keep", "section");
+          wrapper.replaceWith(block2);
+          return;
+        }
+      }
+      if (columns.length < 2) return;
       const form = marketoBlock(colctrl, doc);
       if (form) {
         form.setAttribute("data-keep", "section");
@@ -4253,8 +5930,24 @@ var CustomImportScript = (() => {
         if (STD_DRAFT_IMPORT && at >= 0) {
           const ratio = { 8: "flex-67-33", 4: "flex-33-67" }[columnWidth(columns[0])];
           const side = [];
+          const formColumn = (col) => {
+            let top = col.querySelector(".c-marketo-form");
+            while (top.parentElement && top.parentElement !== col && !top.parentElement.matches(".row")) {
+              top = top.parentElement;
+            }
+            const items = top.parentElement ? [...top.parentElement.children] : [top];
+            return items.flatMap((item) => {
+              if (item === top) return [form];
+              const holder = doc.createElement("div");
+              holder.append(item.cloneNode(true));
+              const nodes = cellNodes(holder, doc);
+              if (!nodes.length) return [];
+              side.push(nodes);
+              return [box(nodes)];
+            });
+          };
           const parts2 = columns.map((col, i) => {
-            if (i === at) return [form];
+            if (i === at) return stdProductPage(doc) ? formColumn(col) : [form];
             if (col.querySelector("table[data-keep]")) return asides.filter((t) => col.contains(t));
             const nodes = cellNodes(col, doc);
             if (nodes.length) side.push(nodes);
@@ -4352,12 +6045,14 @@ var CustomImportScript = (() => {
       const lineBoxed = /* @__PURE__ */ new Set();
       if (!boxes && STD_DRAFT_IMPORT) {
         columns.flatMap((col) => [...col.querySelectorAll(".has-background:not(.bg-white)")]).filter((b) => b.closest(".colctrl") === colctrl && text4(b) && !b.parentElement.closest(".has-background:not(.bg-white), .dimensional-box")).forEach((b) => {
-          const colour = BOX_COLOURS[(b.className.match(/\bbg-([a-z-]+)/) || [])[1]];
+          const colour = boxColours()[(b.className.match(/\bbg-([a-z-]+)/) || [])[1]];
           if (!colour) return;
-          b.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li").forEach((line) => {
+          const lines = b.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li").length ? b.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li") : b.querySelectorAll(".line");
+          lines.forEach((line) => {
             if (!text4(line) || line.parentElement.closest("p, h1, h2, h3, h4, h5, h6, li")) return;
-            line.prepend(doc.createTextNode(`[[box-${colour}]`));
-            line.append(doc.createTextNode("]"));
+            const into = line.matches(".line") && line.querySelector(":scope > div") ? line.querySelector(":scope > div") : line;
+            into.prepend(doc.createTextNode(`[[box-${colour}]`));
+            into.append(doc.createTextNode("]"));
           });
           lineBoxed.add(b);
         });
@@ -4387,7 +6082,11 @@ var CustomImportScript = (() => {
       ].filter(Boolean).join(", ");
       const cells = columns.map((col) => cellNodes(col, doc));
       const style = rowCopyStyle(cells, doc);
-      const block = STD_DRAFT_IMPORT && tileCards(cells, variant, doc) || WebImporter.Blocks.createBlock(doc, {
+      const colours = STD_DRAFT_IMPORT && !boxes ? columns.map((col) => {
+        const box = cellBox(col);
+        return box && box.kind === "whole" && box.colour !== "boxed" ? box.colour : "";
+      }) : [];
+      const block = STD_DRAFT_IMPORT && tileCards(cells, variant, doc, colours) || WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : "Columns",
         cells: [cells]
       });
@@ -4591,18 +6290,21 @@ var CustomImportScript = (() => {
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
     const path = sourcePath(payload);
+    const productXf = stdProductPage(doc) && payload.template.name === "long-page-detail-corp-fragments";
     main.querySelectorAll(".hero-space").forEach((el) => el.remove());
     main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
     dropDamVideos(main);
     fullWidthImages(main, doc);
     spaceUrlColons(main, doc);
     const nav = localNav(main, doc);
-    experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
+    if (!(stdProductPage(doc) && productFragments(main, doc, product_detail_xf_default[path]))) {
+      experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
+    }
     sectionTitles(main, doc);
     downloadTitles(main, doc);
     videoCaptions(main, doc);
     if (STD_DRAFT_IMPORT) dataTables(main, doc);
-    const hasTitle = !!(main.querySelector(".h1-title h1") && text4(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
+    const hasTitle = productXf || !!(main.querySelector(".h1-title h1") && text4(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
     let firstTitle = !hasTitle && [...main.querySelectorAll(".c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)")].find((el) => text4(el) && !el.closest(".h1-title"));
     const firstHeadline = firstTitle && firstTitle.matches(".c-largeheadline") ? firstTitle : null;
     if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);
@@ -4631,7 +6333,7 @@ var CustomImportScript = (() => {
     };
     convertBeforeRows(main, doc, helpers);
     markRowEnds(main);
-    if (STD_DRAFT_IMPORT) xfGridRows(main, doc);
+    if (STD_DRAFT_IMPORT) xfGridRows(main, doc, productXf ? ".aem-Grid" : void 0);
     columnRows(main, doc);
     gridRows(main);
     convertAfterRows(main, doc, helpers);

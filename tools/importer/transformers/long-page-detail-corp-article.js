@@ -1067,6 +1067,8 @@ function boxStyles(headline) {
   if (whiteBox(headline)) return 'headline-box';
   const box = headline.querySelector('.has-background');
   const bg = ((box && box.className.match(/\bbg-([a-z-]+)\b/)) || [])[1] || '';
+  // in review: the box's exact stryker.com colour (SECTION_OPTIONS aliases bg-…)
+  if (STD_DRAFT_IMPORT && bg && SECTION_OPTIONS.aliases[`bg-${bg}`]) return `headline-box, bg-${bg}`;
   if (/^(gold|golden-gradient)$/.test(bg)) return 'headline-box, gold';
   if (bg === 'gray-gradient') return 'headline-box, gray-gradient';
   if (bg === 'purple') return 'headline-box, purple';

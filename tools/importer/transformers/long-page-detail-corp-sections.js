@@ -445,6 +445,21 @@ const BOX_COLOURS = {
   'dark-blue-gradient': 'dark-blue-gradient',
   'dark-purple-gradient': 'dark-purple-gradient',
 };
+// in review (staging build): every stryker.com box colour, exact — the nearest is never taken
+// (bg-gray is mid grey #b2b4ae, bg-lighter-gray pale grey, bg-orange dark gold, and the grey,
+// dark teal and dark orange gradients are their own colours)
+const BOX_COLOURS_STD = {
+  ...BOX_COLOURS,
+  gray: 'mid-gray',
+  'lighter-gray': 'pale-gray',
+  orange: 'dark-gold',
+  black: 'black',
+  'golden-gradient': 'gold-gradient',
+  'gray-gradient': 'gray-gradient',
+  'dark-teal-gradient': 'teal-gradient',
+  'dark-orange-gradient': 'orange-gradient',
+};
+const boxColours = () => (STD_DRAFT_IMPORT ? BOX_COLOURS_STD : BOX_COLOURS);
 // a box in one cell that is neither the first nor the last (`gray-2`) and a box on the first
 // line of the text (`-lead`) keep their own Columns variants (columns-corp)
 const BOX_VARIANTS = new Set(['gray-2', 'gold-lead', 'dark-lead', 'gray-lead']);
@@ -491,7 +506,7 @@ function cellBox(col) {
   const colourOf = (b) => {
     const bg = (b.className.match(/\bbg-([a-z-]+)/) || [])[1];
     if (b.classList.contains('dimensional-box') && (!bg || bg === 'white')) return 'boxed';
-    return BOX_COLOURS[bg] || '';
+    return boxColours()[bg] || '';
   };
   const colours = [...new Set(boxes.map(colourOf))];
   if (colours.length !== 1 || !colours[0]) return { colour: '', kind: '' };
@@ -790,7 +805,35 @@ const TILE_KEEP = new RegExp('^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a
   + '|image-border(-[a-z]+)?|text-center)$');
 const TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
 
-function tileCards(cells, variant, doc) {
+// a card colour as authors read it in its colour cell (cards-corp.js reads it back)
+const CARD_COLOUR_LABELS = {
+  gray: 'Light grey',
+  dark: 'Dark grey',
+  'dark-blue-gradient': 'Blue gradient',
+  'dark-purple-gradient': 'Purple gradient',
+  'mid-gray': 'Mid grey',
+  'pale-gray': 'Pale grey',
+  'gray-gradient': 'Grey gradient',
+  'teal-gradient': 'Dark teal gradient',
+  'orange-gradient': 'Dark orange gradient',
+};
+const cardColourLabel = (c) => CARD_COLOUR_LABELS[c] || c.replace(/-/g, ' ').replace(/^./, (x) => x.toUpperCase());
+
+/** drops the line-box tags a card's own colour replaces (`[[box-<colour>]` … `]` per line) */
+function dropLineBoxes(nodes, colour) {
+  nodes.filter((n) => n.nodeType === 1).forEach((n) => {
+    [...(n.matches('p, h1, h2, h3, h4, h5, h6, li') ? [n] : []), ...n.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')]
+      .forEach((line) => {
+        if (line.firstChild?.nodeType === 3 && line.firstChild.nodeValue === `[[box-${colour}]`
+          && line.lastChild?.nodeType === 3 && line.lastChild.nodeValue === ']') {
+          line.firstChild.remove();
+          line.lastChild.remove();
+        }
+      });
+  });
+}
+
+function tileCards(cells, variant, doc, colours = []) {
   // a cell holding a table (data or block) is not a tile: tables stay tables
   if (cells.some((c) => c.some((n) => n.nodeType === 1 && (n.matches('table') || n.querySelector('table'))))) return null;
   const filled = cells.filter((c) => tileParts(c).length);
@@ -800,7 +843,14 @@ function tileCards(cells, variant, doc) {
   const same = units.length > 0 && units.every((u) => u === units[0]);
   if (!same || (filled.length < 3 && !(filled.length === 2 && boxed))) return null;
   if (!/^t?m?t?$/.test(units[0]) || names.some((v) => TILE_NOT.test(v))) return null;
-  const rows = filled.map((nodes) => {
+  // a colour per card (a different box colour in each cell): each card row opens with its
+  // colour cell (cards-corp.js), when every card has one
+  const filledColours = cells.map((c, i) => (tileParts(c).length ? colours[i] || '' : null))
+    .filter((c) => c !== null);
+  const perCard = filledColours.length === filled.length && filledColours.every(Boolean)
+    && new Set(filledColours).size > 1;
+  const rows = filled.map((nodes, i) => {
+    if (perCard) dropLineBoxes(nodes, filledColours[i]);
     const parts = tileParts(nodes);
     const at = parts.findIndex(isTileMedia);
     if (at < 0) return [parts];
@@ -824,9 +874,13 @@ function tileCards(cells, variant, doc) {
   const options = [textCards ? 'text' : '', video ? 'video' : '', perRow,
     ...names.filter((v) => TILE_KEEP.test(v)),
     units[0].startsWith('tm') ? 'title-above' : '', imageOnly ? 'no-text' : ''].filter(Boolean);
+  const cardRows = perCard
+    ? rows.map((r, i) => [cardColourLabel(filledColours[i]), ...r]) : rows;
+  // the Card box names of the gradients (Columns calls them dark-…)
+  const named = options.map((o) => o.replace(/^box-dark-(blue|purple)-gradient$/, 'box-$1-gradient'));
   return WebImporter.Blocks.createBlock(doc, {
-    name: options.length ? `Cards Corp (${options.join(', ')})` : 'Cards Corp',
-    cells: rows,
+    name: named.length ? `Cards Corp (${named.join(', ')})` : 'Cards Corp',
+    cells: cardRows,
   });
 }
 
@@ -1094,12 +1148,17 @@ function columnRows(main, doc) {
         .filter((b) => b.closest('.colctrl') === colctrl && text(b)
           && !b.parentElement.closest('.has-background:not(.bg-white), .dimensional-box'))
         .forEach((b) => {
-          const colour = BOX_COLOURS[(b.className.match(/\bbg-([a-z-]+)/) || [])[1]];
+          const colour = boxColours()[(b.className.match(/\bbg-([a-z-]+)/) || [])[1]];
           if (!colour) return;
-          b.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li').forEach((line) => {
+          // a Large Headline's lines are its span.line elements ("Build your ASC" phase cards)
+          const lines = b.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li').length
+            ? b.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li') : b.querySelectorAll('.line');
+          lines.forEach((line) => {
             if (!text(line) || line.parentElement.closest('p, h1, h2, h3, h4, h5, h6, li')) return;
-            line.prepend(doc.createTextNode(`[[box-${colour}]`));
-            line.append(doc.createTextNode(']'));
+            // inside a headline line's own block (its <div>), so no line break comes first
+            const into = line.matches('.line') && line.querySelector(':scope > div') ? line.querySelector(':scope > div') : line;
+            into.prepend(doc.createTextNode(`[[box-${colour}]`));
+            into.append(doc.createTextNode(']'));
           });
           lineBoxed.add(b);
         });
@@ -1129,7 +1188,12 @@ function columnRows(main, doc) {
       .filter(Boolean).join(', ');
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = rowCopyStyle(cells, doc);
-    const block = (STD_DRAFT_IMPORT && tileCards(cells, variant, doc))
+    // each column's own box colour (a colour per card), in review
+    const colours = STD_DRAFT_IMPORT && !boxes ? columns.map((col) => {
+      const box = cellBox(col);
+      return box && box.kind === 'whole' && box.colour !== 'boxed' ? box.colour : '';
+    }) : [];
+    const block = (STD_DRAFT_IMPORT && tileCards(cells, variant, doc, colours))
       || WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : 'Columns',
         cells: [cells],

@@ -23,6 +23,15 @@ const BOXES = {
   'bg-golden-gradient': 'box-gold-gradient',
   'bg-dark-purple-gradient': 'box-purple-gradient',
   'bg-dark-blue-gradient': 'box-blue-gradient',
+  'bg-purple': 'box-purple',
+  'bg-teal': 'box-teal',
+  'bg-black': 'box-black',
+  'bg-lighter-gray': 'box-pale-gray',
+  'bg-gray': 'box-mid-gray',
+  'bg-orange': 'box-dark-gold',
+  'bg-gray-gradient': 'box-gray-gradient',
+  'bg-dark-teal-gradient': 'box-teal-gradient',
+  'bg-dark-orange-gradient': 'box-orange-gradient',
 };
 
 // stryker.com colour values → the title / subline colour names (black = the default)

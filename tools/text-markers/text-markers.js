@@ -38,6 +38,14 @@ const LABELS = {
   'box-teal': 'Box: teal',
   'box-dark': 'Box: dark grey (news: dark quote box)',
   'box-dark-purple-gradient': 'Box: dark purple gradient',
+  'box-dark-gold': 'Box: dark gold',
+  'box-gold-gradient': 'Box: gold gradient',
+  'box-gray-gradient': 'Box: grey gradient',
+  'box-teal-gradient': 'Box: dark teal gradient',
+  'box-orange-gradient': 'Box: dark orange gradient',
+  'box-mid-gray': 'Box: mid grey',
+  'box-pale-gray': 'Box: pale grey',
+  'box-black': 'Box: black',
 };
 // words the site still reads (older content) but the panel doesn't offer: they style no text on
 // stryker.com (content export, styled runs): navy and capitals have no use, and no single line

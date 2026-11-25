@@ -16,7 +16,7 @@
 }
 
 /* the dark backgrounds: white text, as stryker.com's (and Panel's) */
-:where(body.corp.std-draft) main > .section:is(.box-blue, .box-purple, .box-teal, .box-dark, .box-blue-gradient, .box-purple-gradient) {
+:where(body.corp.std-draft) main > .section:is(.box-blue, .box-purple, .box-teal, .box-dark, .box-blue-gradient, .box-purple-gradient, .box-black, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) {
   --section-box-text: var(--color-white);
 }
 
@@ -33,6 +33,26 @@
   --section-box-bg: linear-gradient(var(--section-box-angle, 90deg), var(--color-secondary), var(--corp-color-plum));
 }
 
+/* the other stryker.com backgrounds, exact (bg-black, bg-lighter-gray, bg-gray, bg-orange and
+   the grey, dark teal and dark orange gradients) */
+:where(body.corp.std-draft) main > .section.box-black { --section-box-bg: var(--color-black); }
+:where(body.corp.std-draft) main > .section.box-pale-gray { --section-box-bg: var(--color-surface-dim); }
+:where(body.corp.std-draft) main > .section.box-mid-gray { --section-box-bg: var(--color-surface-muted); }
+:where(body.corp.std-draft) main > .section.box-dark-gold { --section-box-bg: var(--color-accent-link-hover); }
+
+:where(body.corp.std-draft) main > .section.box-gray-gradient {
+  --section-box-bg: linear-gradient(var(--section-box-angle, 90deg), var(--color-secondary), var(--color-surface-muted) 20%);
+}
+
+:where(body.corp.std-draft) main > .section.box-teal-gradient {
+  --section-box-bg: linear-gradient(var(--section-box-angle, 90deg), var(--color-secondary), var(--corp-color-teal-dark));
+}
+
+:where(body.corp.std-draft) main > .section.box-orange-gradient {
+  --section-box-bg: linear-gradient(var(--section-box-angle, 90deg), var(--color-secondary), var(--corp-color-taupe));
+}
+
+
 /* gradient direction (stryker.com gradient-inverse, gradient-top-to-bottom) */
 :where(body.corp.std-draft) main > .section.gradient-reverse { --section-box-angle: -90deg; }
 :where(body.corp.std-draft) main > .section.gradient-up { --section-box-angle: 0deg; }
@@ -43,7 +63,7 @@
    (stryker.com 4% / 2% / 3%). `full-bleed` makes it a band to the page edges (stryker.com
    c-full-bleed-panel), the content staying at the page width. A carousel slide's band is the
    carousel's (carousel-corp.css) */
-:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient):not(.carousel) {
+:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient):not(.carousel) {
   --section-box-w: calc(min(100%, var(--container-max)) - 2 * var(--container-gutter));
 
   margin-inline: calc((100% - var(--section-box-w)) / 2);
@@ -52,17 +72,17 @@
   color: var(--section-box-text, inherit);
 }
 
-:where(body.corp.std-draft) main > .section:is(.box-blue, .box-purple, .box-teal, .box-dark, .box-blue-gradient, .box-purple-gradient):not(.carousel) :is(h1, h2, h3, h4, h5, h6, p, li) {
+:where(body.corp.std-draft) main > .section:is(.box-blue, .box-purple, .box-teal, .box-dark, .box-blue-gradient, .box-purple-gradient, .box-black, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient):not(.carousel) :is(h1, h2, h3, h4, h5, h6, p, li) {
   color: inherit;
 }
 
-:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient).full-bleed:not(.carousel) {
+:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient).full-bleed:not(.carousel) {
   margin-inline: 0;
   padding-inline: 0;
 }
 
 /* soft shadow: the stryker.com dimensional box */
-:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient).shadow:not(.carousel) {
+:where(body.corp.std-draft) main > .section:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient).shadow:not(.carousel) {
   box-shadow: var(--shadow-soft);
 }
 

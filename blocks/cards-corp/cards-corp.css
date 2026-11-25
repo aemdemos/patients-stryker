@@ -524,32 +524,81 @@
    text, with the Text spacing step (space-none / -s / -m default / -l, % of the card) and the
    dimensional box's soft shadow; the box sets the default text colour (white on blue, teal,
    purple, dark grey). Image borders as in Columns. Text inside the cards is Text style. */
-body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) {
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) {
   --cards-corp-box-padding: 5%;
   --cards-corp-box-text: var(--text-color);
 }
 
-body.corp.std-draft .cards-corp.box-white { --cards-corp-box-bg: var(--color-white); }
-body.corp.std-draft .cards-corp.box-gold { --cards-corp-box-bg: var(--color-accent); }
-body.corp.std-draft .cards-corp.box-gray { --cards-corp-box-bg: var(--color-surface); }
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-white { --cards-corp-box-bg: var(--color-white); }
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-gold { --cards-corp-box-bg: var(--color-accent); }
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-gray { --cards-corp-box-bg: var(--color-surface); }
 
-body.corp.std-draft .cards-corp.box-blue {
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-blue {
   --cards-corp-box-bg: var(--color-navy-bright);
   --cards-corp-box-text: var(--color-white);
 }
 
-body.corp.std-draft .cards-corp.box-teal {
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-teal {
   --cards-corp-box-bg: var(--color-primary);
   --cards-corp-box-text: var(--color-white);
 }
 
-body.corp.std-draft .cards-corp.box-purple {
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-purple {
   --cards-corp-box-bg: var(--color-purple);
   --cards-corp-box-text: var(--color-white);
 }
 
-body.corp.std-draft .cards-corp.box-dark {
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-dark {
   --cards-corp-box-bg: var(--color-secondary);
+  --cards-corp-box-text: var(--color-white);
+}
+
+/* the gradients and the other stryker.com box colours, exact */
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-gold-gradient {
+  --cards-corp-box-bg: var(--corp-gradient-gold);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-blue-gradient {
+  --cards-corp-box-bg: var(--corp-gradient-dark-blue);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-purple-gradient {
+  --cards-corp-box-bg: var(--corp-gradient-dark-purple);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-black {
+  --cards-corp-box-bg: var(--color-black);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-pale-gray {
+  --cards-corp-box-bg: var(--color-surface-dim);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-mid-gray {
+  --cards-corp-box-bg: var(--color-surface-muted);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-dark-gold {
+  --cards-corp-box-bg: var(--color-accent-link-hover);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-gray-gradient {
+  --cards-corp-box-bg: var(--corp-gradient-gray);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-teal-gradient {
+  --cards-corp-box-bg: var(--corp-gradient-dark-teal);
+  --cards-corp-box-text: var(--color-white);
+}
+
+body.corp.std-draft :is(.cards-corp, .cards-corp > ul > li).box-orange-gradient {
+  --cards-corp-box-bg: var(--corp-gradient-dark-orange);
   --cards-corp-box-text: var(--color-white);
 }
 
@@ -569,28 +618,47 @@ body.corp.std-draft .cards-corp.text .cards-corp-card-body:only-child {
   background-color: transparent;
 }
 
-body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) > ul > li {
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) > ul > li {
   display: flex;
   flex-direction: column;
 }
 
-body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) .cards-corp-card-body:nth-child(n) {
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .cards-corp-card-body:nth-child(n) {
   flex: 1;
   padding: var(--cards-corp-box-padding);
   background: var(--cards-corp-box-bg);
   color: var(--cards-corp-box-text);
 }
 
-body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) .cards-corp-card-body :is(h2, h3, h4, h5, h6, p) {
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .cards-corp-card-body :is(h2, h3, h4, h5, h6, p) {
   color: inherit;
 }
 
-body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) .cards-corp-card-body > :last-child {
+body.corp.std-draft .cards-corp:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .cards-corp-card-body > :last-child {
   margin-bottom: 0;
 }
 
+/* a colour per card (in review, draft pages): a card row that starts with a colour name cell
+   (cards-corp.js) has its own box colour, over the row's Card box (stryker.com's coloured cards:
+   one colour per card) */
+body.corp.std-draft .cards-corp > ul > li:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) {
+  display: flex;
+  flex-direction: column;
+}
+
+body.corp.std-draft .cards-corp > ul > li:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .cards-corp-card-body:nth-child(n) {
+  flex: 1;
+  padding: var(--cards-corp-box-padding, 5%);
+  background: var(--cards-corp-box-bg);
+  color: var(--cards-corp-box-text, var(--text-color));
+}
+
+body.corp.std-draft .cards-corp > ul > li:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .cards-corp-card-body :is(h2, h3, h4, h5, h6, p) {
+  color: inherit;
+}
+
 /* the dimensional box: a soft shadow, 10px around the card text */
-body.corp.std-draft .cards-corp.shadow:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark) .cards-corp-card-body:nth-child(n) {
+body.corp.std-draft .cards-corp.shadow:is(.box-white, .box-gold, .box-gray, .box-blue, .box-teal, .box-purple, .box-dark, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .cards-corp-card-body:nth-child(n) {
   margin: var(--space-block-s);
   box-shadow: var(--shadow-soft);
 }

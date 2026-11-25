@@ -39,10 +39,16 @@ const UNIT = `[data-keep], ${COMPONENT}, .buttonset, table`;
 const PARSED = '.c-resourcesanddownload, .c-customizeable, .c-autocarousel';
 
 /** The section colour style of a stryker.com background class (`bg-…`), or ''. */
+// stryker.com's background classes (its base.min.css): in review, a section keeps its exact one
+const STD_BACKGROUNDS = new Set(['white', 'gold', 'light-gray', 'lighter-gray', 'gray', 'dark-gray',
+  'black', 'blue', 'purple', 'teal', 'orange', 'golden-gradient', 'gray-gradient', 'dark-blue-gradient',
+  'dark-purple-gradient', 'dark-teal-gradient', 'dark-orange-gradient']);
+
 function colourStyle(el) {
   const m = (el.className || '').match(/\bbg-([a-z-]+)\b/);
   if (!m) return '';
   const bg = m[1];
+  if (STD_DRAFT_IMPORT && STD_BACKGROUNDS.has(bg)) return bg === 'white' ? '' : `bg-${bg}`;
   if (/^(gold|golden-gradient|yellow)$/.test(bg)) return 'gold';
   // the grey-to-light-grey and purple panels (OR staff band titles, Mako refreshers bands,
   // ispies event boxes): template colour styles
@@ -353,7 +359,7 @@ function fullBleedPanels(main, doc, h) {
     });
     flush();
     // an empty gold panel (OR staff: the 34px gold band under the page title): `gold-bar`
-    if (!out.length && colour === 'gold' && !h.text(component)) {
+    if (!out.length && /^(bg-)?gold$/.test(colour) && !h.text(component)) {
       const bar = keepNodes(doc, [], 'gold-bar');
       // the row spacing after it (markRowEnds: the gold bar ends the title row)
       const end = component.getAttribute('data-row-end');
@@ -366,20 +372,23 @@ function fullBleedPanels(main, doc, h) {
 }
 
 // in review (staging build only, STD_DRAFT_IMPORT): a source box → the Panel choices of the
-// package (docs/standardisation/panel.md): the box colour (the rare ones take the nearest),
+// package (docs/standardisation/panel.md): the box colour (every stryker.com colour, exact),
 // the soft shadow of a dimensional box, the gradient direction, the inner spacing step and
 // centred text
 const PANEL_BOX_COLOURS = {
   white: 'box-white',
   gold: 'box-gold',
-  orange: 'box-gold',
+  orange: 'box-dark-gold',
   'light-gray': 'box-gray',
-  gray: 'box-gray',
+  'lighter-gray': 'box-pale-gray',
+  gray: 'box-mid-gray',
+  black: 'box-black',
   'golden-gradient': 'box-gold-gradient',
-  'dark-orange-gradient': 'box-gold-gradient',
+  'gray-gradient': 'box-gray-gradient',
+  'dark-orange-gradient': 'box-orange-gradient',
   blue: 'box-blue',
   'dark-blue-gradient': 'box-blue-gradient',
-  'dark-teal-gradient': 'box-blue-gradient',
+  'dark-teal-gradient': 'box-teal-gradient',
   teal: 'box-teal',
   purple: 'box-purple',
   'dark-gray': 'box-dark',

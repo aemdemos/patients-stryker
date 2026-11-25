@@ -15,7 +15,7 @@
  * patients names (left, gold, gold-gradient, gray) and render as before.
  */
 
-body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) {
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) {
   --panel-corp-angle: 90deg;
   --panel-corp-padding: 5%;
   --panel-corp-text: var(--text-color);
@@ -62,6 +62,41 @@ body.corp.std-draft .panel.box-purple-gradient {
   --panel-corp-text: var(--color-white);
 }
 
+/* the other stryker.com box colours, exact: bg-black, bg-lighter-gray (pale grey), bg-gray (mid
+   grey), bg-orange (dark gold), bg-gray-gradient, bg-dark-teal-gradient, bg-dark-orange-gradient */
+body.corp.std-draft .panel.box-black {
+  --panel-corp-bg: var(--color-black);
+  --panel-corp-text: var(--color-white);
+}
+
+body.corp.std-draft .panel.box-pale-gray {
+  --panel-corp-bg: var(--color-surface-dim);
+}
+
+body.corp.std-draft .panel.box-mid-gray {
+  --panel-corp-bg: var(--color-surface-muted);
+}
+
+body.corp.std-draft .panel.box-dark-gold {
+  --panel-corp-bg: var(--color-accent-link-hover);
+  --panel-corp-text: var(--color-white);
+}
+
+body.corp.std-draft .panel.box-gray-gradient {
+  --panel-corp-bg: linear-gradient(var(--panel-corp-angle), var(--color-secondary), var(--color-surface-muted) 20%);
+  --panel-corp-text: var(--color-white);
+}
+
+body.corp.std-draft .panel.box-teal-gradient {
+  --panel-corp-bg: linear-gradient(var(--panel-corp-angle), var(--color-secondary), var(--corp-color-teal-dark));
+  --panel-corp-text: var(--color-white);
+}
+
+body.corp.std-draft .panel.box-orange-gradient {
+  --panel-corp-bg: linear-gradient(var(--panel-corp-angle), var(--color-secondary), var(--corp-color-taupe));
+  --panel-corp-text: var(--color-white);
+}
+
 /* gradient direction (stryker.com `inverse`, `top-to-bottom inverse`) */
 body.corp.std-draft .panel.gradient-reverse { --panel-corp-angle: -90deg; }
 body.corp.std-draft .panel.gradient-up { --panel-corp-angle: 0deg; }
@@ -74,7 +109,7 @@ body.corp.std-draft .panel.space-l { --panel-corp-padding: 10%; }
 
 /* the box: the full width of its place, the text as the page's text (the patients panel's
    centred white shadow box and its type sizes don't apply) */
-body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body {
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body {
   margin: 0;
   padding: var(--panel-corp-padding);
   background: var(--panel-corp-bg);
@@ -84,45 +119,45 @@ body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradie
 }
 
 /* the dimensional box: a soft shadow, 10px around the box */
-body.corp.std-draft .panel.shadow:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body {
+body.corp.std-draft .panel.shadow:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body {
   margin: var(--space-block-s);
   box-shadow: var(--shadow-soft);
 }
 
-body.corp.std-draft .panel.text-center:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body {
+body.corp.std-draft .panel.text-center:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body {
   text-align: center;
 }
 
 /* stryker.com rich text in a box: paragraphs at the page's size with their 15px gap, the last
    one too (inside the box's bottom spacing) */
-body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body :is(p, p:last-child) {
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body :is(p, p:last-child) {
   margin: 0 0 var(--space-block);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
-body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body :is(h1, h2, h3, h4, h5, h6) {
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body :is(h1, h2, h3, h4, h5, h6) {
   max-width: none;
   margin: 0 0 var(--space-block);
   color: inherit;
 }
 
-body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body h3 {
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body h3 {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-m);
   font-weight: 500;
 }
 
-body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body h3 :is(em, i) {
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body h3 :is(em, i) {
   color: inherit;
 }
 
-body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body li :is(strong, b) {
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body li :is(strong, b) {
   font-family: var(--display-font-family);
 }
 
-body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient) .panel-body :is(strong > a:any-link:has(u), a:any-link > strong:has(u), strong > a:any-link:has(u) u, a:any-link > strong:has(u) u) {
+body.corp.std-draft .panel:is(.box-white, .box-gold, .box-gray, .box-gold-gradient, .box-blue, .box-blue-gradient, .box-teal, .box-purple, .box-dark, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) .panel-body :is(strong > a:any-link:has(u), a:any-link > strong:has(u), strong > a:any-link:has(u) u, a:any-link > strong:has(u) u) {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;

@@ -330,7 +330,7 @@ body.corp.std-draft .hero-corp.image-slide .hero-corp-headline {
 }
 
 /* the headline box: transparent, or coloured by box-* with a 20px inset */
-body.corp.std-draft .hero-corp.image-slide .hero-corp-headline:is(.box-white, .box-gold, .box-blue, .box-gray, .box-dark, .box-gold-gradient, .box-purple-gradient, .box-blue-gradient) {
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline:is(.box-white, .box-gold, .box-blue, .box-gray, .box-dark, .box-gold-gradient, .box-purple-gradient, .box-blue-gradient, .box-purple, .box-teal, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) {
   padding: var(--space-block-l);
 }
 
@@ -347,8 +347,18 @@ body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-gold-gradient
 body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-purple-gradient { background: var(--corp-gradient-dark-purple); }
 body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-blue-gradient { background: var(--corp-gradient-dark-blue); }
 
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-purple { background: var(--color-purple); }
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-teal { background: var(--color-primary); }
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-black { background: var(--color-black); }
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-pale-gray { background: var(--color-surface-dim); }
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-mid-gray { background: var(--color-surface-muted); }
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-dark-gold { background: var(--color-accent-link-hover); }
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-gray-gradient { background: var(--corp-gradient-gray); }
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-teal-gradient { background: var(--corp-gradient-dark-teal); }
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline.box-orange-gradient { background: var(--corp-gradient-dark-orange); }
+
 /* white text by default on the dark boxes (a Text style colour still wins) */
-body.corp.std-draft .hero-corp.image-slide .hero-corp-headline:is(.box-blue, .box-dark, .box-purple-gradient, .box-blue-gradient) {
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline:is(.box-blue, .box-dark, .box-purple-gradient, .box-blue-gradient, .box-purple, .box-teal, .box-black, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) {
   --text-color: var(--color-white);
 }
 

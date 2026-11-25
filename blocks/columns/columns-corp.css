@@ -1317,7 +1317,7 @@ body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-
    own colour (text layer); the older combined names above stay as they are. Rules for class
    names real pages already carry (image-border, border-bottom, label-right, columns-25-75)
    apply on draft pages only while in review (body.std-draft, scripts/corp.js) ---- */
-body.corp .columns:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-dark-blue-gradient, .box-dark-purple-gradient) {
+body.corp .columns:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-dark-blue-gradient, .box-dark-purple-gradient, .box-gold-gradient, .box-blue-gradient, .box-purple-gradient, .box-black, .box-pale-gray, .box-mid-gray, .box-dark-gold, .box-gray-gradient, .box-teal-gradient, .box-orange-gradient) {
   --columns-corp-box-padding: 5%;
 }
 
@@ -1330,6 +1330,20 @@ body.corp .columns.box-teal { --columns-corp-box-bg: var(--color-primary); }
 body.corp .columns.box-dark { --columns-corp-box-bg: var(--color-secondary); }
 body.corp .columns.box-dark-blue-gradient { --columns-corp-box-bg: var(--corp-gradient-dark-blue); }
 body.corp .columns.box-dark-purple-gradient { --columns-corp-box-bg: var(--corp-gradient-dark-purple); }
+
+/* in review (draft pages): the other stryker.com box colours, exact (and the gradients by their
+   short names, as in every block) */
+body.corp.std-draft .columns.box-gold-gradient { --columns-corp-box-bg: var(--corp-gradient-gold); }
+body.corp.std-draft .columns.box-blue-gradient { --columns-corp-box-bg: var(--corp-gradient-dark-blue); }
+body.corp.std-draft .columns.box-purple-gradient { --columns-corp-box-bg: var(--corp-gradient-dark-purple); }
+body.corp.std-draft .columns.box-black { --columns-corp-box-bg: var(--color-black); }
+body.corp.std-draft .columns.box-pale-gray { --columns-corp-box-bg: var(--color-surface-dim); }
+body.corp.std-draft .columns.box-mid-gray { --columns-corp-box-bg: var(--color-surface-muted); }
+body.corp.std-draft .columns.box-dark-gold { --columns-corp-box-bg: var(--color-accent-link-hover); }
+body.corp.std-draft .columns.box-gray-gradient { --columns-corp-box-bg: var(--corp-gradient-gray); }
+body.corp.std-draft .columns.box-teal-gradient { --columns-corp-box-bg: var(--corp-gradient-dark-teal); }
+body.corp.std-draft .columns.box-orange-gradient { --columns-corp-box-bg: var(--corp-gradient-dark-orange); }
+
 body.corp .columns.space-none { --columns-corp-box-padding: 0; }
 body.corp .columns.space-s { --columns-corp-box-padding: 3%; }
 body.corp .columns.space-m { --columns-corp-box-padding: 5%; }

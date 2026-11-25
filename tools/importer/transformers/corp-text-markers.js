@@ -35,14 +35,15 @@ const SIZE_WORDS = {
   '0-8': 's', '1-25': 'l', '1-5': 'xl', '1-75': 'xxl', 2: 'xxxl', '2-5': 'xxxxl',
 };
 // only the words the Text style panel offers (tools/text-markers): no navy (no stryker.com text
-// uses it), and line boxes only in the colours stryker.com puts around a single line
+// uses it); line boxes in every colour stryker.com puts round a line (exact, never the nearest)
 const COLOURS = ['gold', 'white', 'blue', 'purple', 'teal', 'grey', 'light-gray'];
 // the Stryker colours the Text style panel adds (library sheet words, class ts-<word>)
 const EXTRA_COLOURS = {
   black: 'black', 'dark-gold': 'darkgold', 'mid-grey': 'midgrey', 'pale-grey': 'palegrey',
 };
 const LOOKS = ['rule-gold', 'box-gold', 'box-blue', 'box-purple', 'box-teal', 'box-dark',
-  'box-dark-purple-gradient'];
+  'box-dark-purple-gradient', 'box-dark-blue-gradient', 'box-dark-gold', 'box-gold-gradient', 'box-gray-gradient',
+  'box-teal-gradient', 'box-orange-gradient', 'box-mid-gray', 'box-pale-gray', 'box-black'];
 // the package's four headline sizes (S, M, L, XL); every stryker.com size (17 values) takes the
 // nearest, by ratio: 1 → S, 2.5 → L, 3.5 → L, 4 → XL, 5 and up → XL
 const HEADLINE_STEPS = [1.5, 2, 3, 4.5];
@@ -168,8 +169,10 @@ function convertContainer(nodes, dropped, chains = false) {
     .trim() === '';
   // words; a tag right inside another (nothing between the openers nor the closers) joins it
   pairs.sort((a, b) => a.at - b.at).forEach((p) => { p.words = markerWords(p.raw, dropped); });
+  // (a tag right inside a merged one joins that one's target: `[[box-gold][[xxl][[color-white]X]]]`
+  // is one marker)
   pairs.forEach((inner) => {
-    const outer = pairs.find((o) => o !== inner && !o.merged && o.at < inner.at
+    const outer = pairs.find((o) => o !== inner && o.at < inner.at
       && o.close.at > inner.close.at && gap(o, inner) && gap(inner.close, o.close));
     if (!outer) return;
     let target = outer;

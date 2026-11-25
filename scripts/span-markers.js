@@ -43,7 +43,8 @@ export const SIZES = ['s', 'l', 'xl', 'xxl'];
 // underlined heading) and the line boxes in the stryker.com box colours (the same names as the
 // Columns cell boxes; box-dark is also the dark quote box of news articles)
 export const BOXES = ['box-white', 'box-gray', 'box-gold', 'box-blue', 'box-purple', 'box-teal',
-  'box-dark', 'box-dark-blue-gradient', 'box-dark-purple-gradient'];
+  'box-dark', 'box-dark-blue-gradient', 'box-dark-purple-gradient', 'box-dark-gold', 'box-gold-gradient',
+  'box-gray-gradient', 'box-teal-gradient', 'box-orange-gradient', 'box-mid-gray', 'box-pale-gray', 'box-black'];
 export const DECORATIONS = ['rule-gold', ...BOXES];
 
 // spacing word → CSS properties; step → spacing token

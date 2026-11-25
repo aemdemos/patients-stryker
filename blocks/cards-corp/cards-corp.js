@@ -105,6 +105,37 @@ async function hydrateLinkRows(block) {
  * card's link (then the image link is the card's only visible link, so it stays focusable).
  * @param {Element} block The block element
  */
+// in review (draft pages): a card's own box colour — a card row may start with a cell holding
+// one colour name (e.g. "Gold gradient", "box-teal-gradient"); the card's text box takes it over
+// the row's Card box (stryker.com's coloured cards: one colour per card)
+const CARD_COLOURS = new Set(['white', 'gray', 'gold', 'blue', 'teal', 'purple', 'dark',
+  'gold-gradient', 'blue-gradient', 'purple-gradient', 'black', 'pale-gray', 'mid-gray',
+  'dark-gold', 'gray-gradient', 'teal-gradient', 'orange-gradient']);
+const COLOUR_WORDS = {
+  'light-gray': 'gray',
+  'dark-gray': 'dark',
+  'dark-blue-gradient': 'blue-gradient',
+  'dark-purple-gradient': 'purple-gradient',
+  'dark-teal-gradient': 'teal-gradient',
+  'dark-orange-gradient': 'orange-gradient',
+  'golden-gradient': 'gold-gradient',
+};
+
+/**
+ * The colour of a card row's colour cell, or '' (draft pages only).
+ * @param {Element} cell The row's first cell
+ * @param {number} cells The number of cells in the row
+ * @returns {string} The box class (box-…), or ''
+ */
+function cardColour(cell, cells) {
+  if (!document.body.classList.contains('std-draft') || cells < 2 || !cell) return '';
+  if (cell.querySelector('picture, img, a, iframe, video')) return '';
+  const word = cell.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/grey/g, 'gray')
+    .replace(/^box-/, '');
+  const name = COLOUR_WORDS[word] || word;
+  return CARD_COLOURS.has(name) ? `box-${name}` : '';
+}
+
 export default async function decorate(block) {
   await hydrateLinkRows(block);
 
@@ -118,6 +149,11 @@ export default async function decorate(block) {
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
+    const colour = cardColour(row.firstElementChild, row.children.length);
+    if (colour) {
+      li.classList.add(colour);
+      row.firstElementChild.remove();
+    }
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div, i) => {
       const video = isVideo && videoIn(div);
