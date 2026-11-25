@@ -519,6 +519,22 @@ const sendingOf = (item, kind) => store.pendingOf(item.startsWith('group:') ? '*
 
 // the chats shown open (kept across redraws; the page's own chat is always open)
 const openChats = new Set();
+/** the attachment icon (a paper clip) of the message box's picture button */
+function clipIcon() {
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('class', 'pv-clip');
+  const path = document.createElementNS(NS, 'path');
+  path.setAttribute('d', 'M21 11.5l-8.6 8.6a5.5 5.5 0 0 1-7.8-7.8l9.2-9.2a3.7 3.7 0 0 1 5.2 5.2l-9.2 9.2a1.8 1.8 0 0 1-2.6-2.6l8.5-8.5');
+  svg.append(path);
+  const words = document.createElement('span');
+  words.className = 'pv-sr';
+  words.textContent = 'Attach a picture';
+  return [svg, words];
+}
+
 // pictures in a chat's box, not sent yet (kept across redraws, not across reloads): key → [picture]
 const attached = new Map();
 // a chat whose pictures are on their way: key → what to show ('Sending picture 1 of 2…', an error)
@@ -617,9 +633,6 @@ function chatParts(item, kind) {
   area.value = typing.get(key);
   area.addEventListener('input', () => typing.set(key, area.value));
   const pick = me.role === 'aoe' ? el('select', { class: 'rv-reply-status', 'aria-label': 'Status' }, el('option', { value: '' }, 'no status'), ...Object.entries(AOE_STATES).map(([k, v]) => el('option', { value: k }, v))) : null;
-  const release = me.role === 'aoe' ? el('input', {
-    class: 'rv-reply-release', placeholder: 'release', 'aria-label': 'Release', size: '7',
-  }) : null;
   // pictures (a screenshot of what a page shows after a click): the Picture button, pasting into
   // the box, dropping onto it; they go with the next message
   const strip = el('div', { class: 'pv-attach', 'aria-label': 'Pictures to send' });
@@ -675,7 +688,7 @@ function chatParts(item, kind) {
     addPictures(picturesIn(file.files));
     file.value = '';
   });
-  const pickPicture = el('label', { class: 'rv-btn-light pv-pick', title: 'Add a picture (or paste one into the message box, or drop it here)' }, file, 'Picture');
+  const pickPicture = el('label', { class: 'rv-btn-light pv-pick', title: 'Attach a picture (or paste one into the message box, or drop it here)' }, file, clipIcon());
   const sendNow = (words, images, status) => {
     // (the first message on a block, section or the page is the comment itself: its pictures
     // follow it as the chat's next message)
@@ -696,8 +709,7 @@ function chatParts(item, kind) {
     const pics = attached.get(key) || [];
     if (picturesSending.has(key) && /^Sending/.test(picturesSending.get(key))) return;
     if (!words && !pick?.value && !pics.length) return;
-    const status = pick?.value
-      ? { state: pick.value, release: release.value.trim() || undefined } : undefined;
+    const status = pick?.value ? { state: pick.value } : undefined;
     if (!pics.length) {
       sendNow(words, null, status);
       area.value = '';
@@ -730,12 +742,18 @@ function chatParts(item, kind) {
       show(`${e.message} Nothing was sent: try Send again.`);
     }
   };
+  area.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      send();
+    }
+  });
   const composer = el(
     'div',
     { class: 'rv-composer' },
     area,
     strip,
-    el('div', { class: 'rv-reply-actions' }, pickPicture, pick, release, el('button', { type: 'button', class: 'rv-btn-light rv-primary', onclick: send }, 'Send'), progress),
+    el('div', { class: 'rv-reply-actions' }, pickPicture, pick, el('button', { type: 'button', class: 'rv-btn-light rv-primary', onclick: send }, 'Send'), progress),
   );
   composer.addEventListener('dragover', (e) => {
     if (![...(e.dataTransfer?.types || [])].includes('Files')) return;
@@ -1078,7 +1096,7 @@ function openEditor(note) {
   const isNew = !note.id;
   // a new note: what it is about is the first message of its chat (no subject of its own); an
   // existing note: its category, or delete it (its messages are withdrawn one by one)
-  const text = isNew ? el('textarea', { rows: '4', placeholder: 'What is wrong or should change here? (the first message of the note\'s chat)' }) : null;
+  const text = isNew ? el('textarea', { rows: '4', placeholder: 'What is wrong or should change here? (the first message of this note\'s subject)' }) : null;
   box.replaceChildren(
     el('div', { class: 'rv-note-editor-head' }, isNew ? 'New QA note' : `QA note ${notes.list().find((n) => n.id === note.id)?.n || ''}`, el('span', { class: 'rv-meta' }, ` ${WIDTH_NAMES[note.vp] || note.vp}`)),
     cat,
@@ -1633,7 +1651,7 @@ const stampOf = (m) => [...m].map(([k, e]) => `${k}=${e.time}=${JSON.stringify(e
 /**
  * the open page's entries read again (live.js, every 15 s while the tab is visible): drawn again
  * only when something changed; not while changes of this viewer are on their way, a dialog is
- * open or a chat's status / release field is in use
+ * open or a chat's status field is in use
  */
 async function refreshSaved() {
   const { page } = state;

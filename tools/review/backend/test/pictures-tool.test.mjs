@@ -91,6 +91,18 @@ try {
   }));
   check('sent: the message shows both pictures, the box is empty again', shown && sent.strip === 0 && sent.text.some((t) => t === TEXT), JSON.stringify(sent));
   check('… the 5000 px picture was made smaller (≤ 4096)', sent.sizes.some((x) => Number(x.split('x')[0]) <= 4096 && Number(x.split('x')[0]) > 1000), JSON.stringify(sent.sizes));
+  // (Ctrl+Enter sends too; the picture button is a paper clip, no release box)
+  const TEXT2 = `ctrl enter ${Date.now()}`;
+  await a.p.fill('.rv-pagebox-body .rv-composer textarea', TEXT2);
+  await a.p.press('.rv-pagebox-body .rv-composer textarea', 'Control+Enter');
+  const byKey = await a.p.waitForFunction((t) => [...document.querySelectorAll('.rv-pagebox-body .rv-msg-text')].some((x) => x.textContent === t), TEXT2, { timeout: 20000 }).then(() => true).catch(() => false);
+  check('Ctrl+Enter sends the message', byKey);
+  const box = await a.p.evaluate(() => ({
+    clip: !!document.querySelector('.rv-pagebox-body .pv-pick svg') && !/Picture/.test(document.querySelector('.rv-pagebox-body .pv-pick').textContent.replace('Attach a picture', '')),
+    release: !!document.querySelector('.rv-reply-release'),
+    head: document.querySelector('.rv-pagebox > h3').textContent,
+  }));
+  check('… the picture button is a paper clip, no release box, "General page comments"', box.clip && !box.release && box.head === 'General page comments', JSON.stringify(box));
   // 2. the reviewer's open page shows them (live update)
   const theirs = await r.p.waitForFunction(() => [...document.querySelectorAll('.rv-pagebox-body .rv-chat .pv-thumb img')].filter((i) => i.complete && i.naturalWidth > 0).length === 2, null, { timeout: 45000 })
     .then(() => true).catch(() => false);
@@ -105,6 +117,13 @@ try {
   await r.p.click('.pv-dialog .pv-btn[title^="Zoom out"]');
   await r.p.click('.pv-dialog .pv-btn[title^="Zoom out"]');
   const smaller = await zoom();
+  await r.p.click('.pv-dialog .pv-btn[title^="Fill"]');
+  const filled = await r.p.evaluate(() => {
+    const i = document.querySelector('.pv-img').getBoundingClientRect();
+    const st = document.querySelector('.pv-stage');
+    return { w: i.width, h: i.height, sw: st.clientWidth, sh: st.clientHeight };
+  });
+  check('… Fill: the window\'s whole width and height', filled.w >= filled.sw - 40 && filled.h >= filled.sh - 40, JSON.stringify(filled));
   await r.p.click('.pv-dialog .pv-btn[title^="Fit"]');
   const again = await zoom();
   const inWindow = await r.p.evaluate(() => document.querySelector('.pv-img').getBoundingClientRect().width <= window.innerWidth);

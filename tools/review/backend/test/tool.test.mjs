@@ -189,7 +189,7 @@ try {
     && aoeButtons.join() === 'Send back to the reviewer', JSON.stringify(aoeButtons));
   check('… sees every message, the reviewer\'s on the left', (await bubbles(page)).filter((x) => !x.mine).length >= 3);
   await page.selectOption(`${PAGE_CHAT} select.rv-reply-status`, 'done');
-  await page.fill(`${PAGE_CHAT} input.rv-reply-release`, 'r-ui');
+  check('… no release box in the chats (25 Nov 2026)', !(await page.$(`${PAGE_CHAT} .rv-reply-release`)));
   const c1 = await saved(page, () => send(page, 'Enlarged the image to the live page size.'));
   const c2 = await saved(page, () => setStatus(page, 'Send back to the reviewer'));
   check('the AOE member saves a message with a status and sends the page back', c1 === 200 && c2 === 200
@@ -199,7 +199,7 @@ try {
   // 6. the reviewer: ticks the thread Done, approves the page
   ({ context, page } = await open(link));
   b = await bubbles(page);
-  check('the reviewer sees the AOE message with its status', b.some((x) => !x.mine && /AOE: done in r-ui/.test(x.aoe)), JSON.stringify(b));
+  check('the reviewer sees the AOE message with its status', b.some((x) => !x.mine && /AOE: done/.test(x.aoe)), JSON.stringify(b));
   await saved(page, () => page.check(`${PAGE_CHAT} input.rv-done`));
   await saved(page, () => setStatus(page, 'Approve'));
   check('ticked Done and approved: the page is resolved', (await banner(page)).text === 'Resolved' && await page.evaluate(() => document.querySelector('.rv-pagebox-body input.rv-done').checked), JSON.stringify(await banner(page)));
@@ -215,7 +215,7 @@ try {
     const row = [...document.querySelectorAll('#comments tr')].find((tr) => tr.textContent.includes(text));
     return { found: !!row, aoe: row?.lastElementChild?.textContent || '', search: window.location.search };
   }, COMMENT);
-  check('the summary page lists the comment: done, with the AOE status', res.found && /done · done, in r-ui/.test(res.aoe), JSON.stringify(res));
+  check('the summary page lists the comment: done, with the AOE status', res.found && /done · done/.test(res.aoe), JSON.stringify(res));
   check('… and keeps the link out of the address bar', !res.search.includes('invite='));
   await context.close();
 

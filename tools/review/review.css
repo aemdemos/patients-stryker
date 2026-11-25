@@ -102,8 +102,8 @@ body.rv-resizing, body.rv-resizing * { cursor: col-resize !important; user-selec
 body.rv-resizing iframe { pointer-events: none; }
 .rv-panel-right.rv-collapsed .rv-resize { display: none; }
 
-/* the right panel's parts: cards */
-.rv-panel-right :is(.rv-statusbox, .rv-pagebox, .rv-notesbox, .rv-shotbox, .rv-linksbox) {
+/* the right panel's parts: cards (the QA notes' box is no card: each note is one, below) */
+.rv-panel-right :is(.rv-statusbox, .rv-pagebox, .rv-shotbox, .rv-linksbox) {
   margin-bottom: 12px;
   padding: 12px;
   border: 1px solid var(--c-line);
@@ -327,12 +327,35 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 .rv-note-btn[aria-pressed="true"] { border-color: var(--rv-accent); background: var(--rv-accent); color: #000; }
 .rv-stage.rv-adding { box-shadow: inset 0 0 0 3px var(--rv-accent); }
 .rv-notes-count { color: var(--rv-accent-ink); font-weight: 700; }
-.rv-notes { margin: 0; padding: 0; list-style: none; }
-.rv-note { margin-bottom: 6px; padding: 8px 10px; border: 1px solid var(--c-line); border-radius: var(--r-s); background: var(--c-surface); }
-.rv-note.rv-on { border-color: var(--rv-accent); box-shadow: 0 0 0 2px rgb(255 181 0 / 30%); }
+/* every chat its own card, its head in its colour: the page's general comments dark, each QA
+   note gold (where one chat stops and the next starts) */
+.rv-panel-right .rv-pagebox { padding: 0; overflow: hidden; border-top: 4px solid var(--c-ink); }
+.rv-pagebox > h3 { display: flex; gap: 8px; align-items: center; margin: 0; padding: 10px 12px; border-bottom: 1px solid var(--c-line); background: var(--c-surface-2); font-size: var(--fs-m); }
+.rv-pagebox > h3::before { content: ""; inline-size: 18px; block-size: 18px; border-radius: 5px 5px 5px 1px; background: var(--c-ink); }
+.rv-pagebox-body { padding: 8px 12px 12px; }
+.rv-panel-right .rv-notesbox { margin: 18px 0 12px; }
+.rv-notesbox > h3 { display: flex; gap: 6px; align-items: baseline; margin: 0 2px 8px; color: var(--c-ink-2); font-size: var(--fs-xs); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.rv-notes { display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.rv-notes > .rv-none { padding: 12px; border: 1px dashed var(--c-line-2); border-radius: var(--r-m); color: var(--c-ink-2); }
+
+.rv-note {
+  overflow: hidden;
+  border: 1px solid var(--c-line);
+  border-top: 4px solid var(--rv-accent);
+  border-radius: var(--r-m);
+  background: var(--c-surface);
+  box-shadow: var(--shadow-1);
+}
+
+.rv-note > .rv-note-main { padding: 10px 12px 4px; background: #fffaeb; }
+.rv-note > .rv-item-foot { margin: 0; padding: 0 12px 8px 42px; border-bottom: 1px solid var(--c-line); background: #fffaeb; }
+.rv-note > :is(.rv-chat-head, .rv-chat-box) { margin-inline: 12px; }
+.rv-note > :last-child { margin-bottom: 12px; }
+.rv-note.rv-on { border-color: var(--rv-accent); box-shadow: 0 0 0 3px rgb(255 181 0 / 35%), var(--shadow-1); }
+.rv-note-resolved { border-top-color: var(--c-ok); }
 .rv-note-resolved { opacity: 0.65; }
-.rv-note-main { display: flex; gap: 8px; align-items: flex-start; inline-size: 100%; padding: 0; border: 0; background: none; text-align: start; cursor: pointer; }
-.rv-note-n { flex: 0 0 22px; block-size: 22px; border-radius: 50%; background: var(--rv-accent); font-size: var(--fs-2xs); font-weight: 800; line-height: 22px; text-align: center; }
+.rv-note-main { display: flex; gap: 8px; align-items: flex-start; inline-size: 100%; padding: 0; border: 0; background: none; font-weight: 700; text-align: start; cursor: pointer; }
+.rv-note-n { flex: 0 0 24px; block-size: 24px; border-radius: 50%; background: var(--rv-accent); font-size: var(--fs-2xs); font-weight: 800; line-height: 24px; text-align: center; }
 .rv-note-resolved .rv-note-n { background: var(--c-ok); color: #fff; }
 .rv-note-text { overflow-wrap: anywhere; }
 .rv-note-editor { margin-bottom: 8px; padding: 10px; border: 1px solid var(--rv-accent); border-radius: var(--r-s); background: #fffaf0; }
