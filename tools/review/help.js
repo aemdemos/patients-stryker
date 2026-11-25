@@ -26,8 +26,8 @@ const el = (tag, attrs = {}, ...children) => {
 // a section of help: [title, [paragraph or [bullets]]]
 const P = (...lines) => lines;
 const sourceWords = REVIEW.compare.includes('rs')
-  ? 'the as-is copy of the page, a snapshot of the stryker.com page (Source) or the live stryker.com page (Live)'
-  : 'a snapshot of the stryker.com page (Source) or the live stryker.com page (Live)';
+  ? 'the as-is copy of the page, a screenshot of the stryker.com page (Screenshot) or the stryker.com page rendered now (Render)'
+  : 'a screenshot of the stryker.com page (Screenshot) or the stryker.com page rendered now (Render)';
 
 const widthWords = REVIEW.widths.map((w) => w.label.toLowerCase()).join(', ').replace(/, ([^,]+)$/, ' or $1');
 const widthButtons = REVIEW.widths.map((w) => w.label).join(' / ');
@@ -48,7 +48,7 @@ export const HELP = {
     title: 'The review tool',
     intro: `One page at a time: the migrated page next to ${sourceWords}, at ${widthWords} width, with everything said about it in the panel on the right.`,
     reviewer: [
-      ['Looking at a page', P(['**Find a page** at the top left, or step with ‹ › (Alt+← / Alt+→).', `**${widthButtons}**: the width both pages are shown at.`, `**Compare with**: ${sourceWords}. Source shows the snapshot taken when the page was published (its date is in the Source shot box); Live renders the stryker.com page now, as it is (menus and carousels don't move).`, '**Side by side**, **Flip** (Space switches) or **Overlay**; **Sync** keeps both pages at the same place while you scroll.'])],
+      ['Looking at a page', P(['**Find a page** at the top left, or step with ‹ › (Alt+← / Alt+→); **EDS ↗** and **Source ↗** next to it open the migrated and the stryker.com page in a new tab.', `**${widthButtons}**: the width both pages are shown at.`, `**Compare with**: ${sourceWords}. Screenshot shows the screenshot taken when the page was published (its date is in the Source shot box); Render shows the stryker.com page as it is now (menus and carousels don't move).`, '**Side by side**, **Flip** (Space switches) or **Overlay**; **Scroll Sync** keeps both pages at the same place while you scroll.'])],
       ['Saying something', P(['**This page** chat (right panel): a message about the page as a whole. Send (or Ctrl+Enter) saves it at once.', '**+ Add QA note** (or N), then click the spot on the page: a numbered pin, and its own chat. Its first message says what is wrong. Refer to it as "note 4 on page X".', '**Pictures**: for what only shows after a click on the real page (the migrated or the stryker.com one), take a screenshot and paste it into the message box (Ctrl+V / ⌘V), drop it onto it, or use the paper clip; up to 6 per message, sent with it. A click on a picture shows it large: zoom with − + (or Ctrl+wheel), **Fit** (all of it), **Fill** (the whole window), **100%**, drag it around, ‹ › for the others.', 'A message sent by mistake: **Withdraw** it (everyone then sees "Message withdrawn").', 'Something written and not sent stays in your browser until you send it.', '**Done**: tick a chat when it is dealt with (either side can).'])],
       ['Deciding', P(['The status at the top of the right panel says whose turn it is.', '**Approve** when the page is right; **Send to the AOE team** when something must change; **Skip: don\'t migrate** for a page that should not be migrated; **In review** while you are at it. Pressing the current status clears it.', 'Everything is saved at once, and the page updates itself when someone else writes.'])],
     ],

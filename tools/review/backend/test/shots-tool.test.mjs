@@ -101,7 +101,7 @@ try {
     await p.selectOption('.rv-shot-pick', 's-20261123-080000');
     await p.waitForTimeout(2500);
     b = await box(p);
-    check('test page: an earlier shot shown and said so', /an earlier shot/.test(b.tag) && /\/1440\/0\.jpg$/.test(b.tiles[0]?.src || '') && !/s-2026/.test(b.tiles[0]?.src || ''), `${b.tag} ${b.tiles[0]?.src}`);
+    check('test page: an earlier shot shown and said so', /an earlier one/.test(b.tag) && /\/1440\/0\.jpg$/.test(b.tiles[0]?.src || '') && !/s-2026/.test(b.tiles[0]?.src || ''), `${b.tag} ${b.tiles[0]?.src}`);
     await p.click('.rv-shot-refresh');
     await p.waitForFunction(() => /asked for by/.test(document.querySelector('.rv-shot-req')?.textContent || ''));
     b = await box(p);
