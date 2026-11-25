@@ -12,8 +12,9 @@ import { mountBar } from './bar.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl, scopeFacts } from './pages.js';
 import {
-  getFilters, setFilters, pagesOf, markOrg, makeRepresentatives, areaLabel, orgLabel, passes,
-  markFirstRepresentatives, clearRepresentatives,
+  getFilters, setFilters, pagesOf, markOrg, makeRepresentatives, areaLabel, orgLabel,
+  markFirstRepresentatives, clearRepresentatives, STATE_ORDER, clearFilters, filtersSet,
+  onFiltersChange, matches, sortPages,
 } from './batches.js';
 
 const { hostname } = window.location;
@@ -39,10 +40,8 @@ const STATES = {
   // (in the migration scope, not published yet: the AOE team's lists only)
   unpublished: { reviewer: 'Not published yet', aoe: 'Not published yet' },
 };
-const ORDER = {
-  reviewer: ['waiting-customer', 'waiting-aoe', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped', 'unpublished'],
-  aoe: ['waiting-aoe', 'waiting-customer', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped', 'unpublished'],
-};
+// (each side's "what waits for me first": batches.js, shared with the tool)
+const ORDER = STATE_ORDER;
 
 function el(tag, attrs = {}, ...children) {
   const e = document.createElement(tag);
@@ -63,7 +62,11 @@ let all = [];
 let me = { name: '', role: 'reviewer' };
 let previousVisit = '';
 let shown = PAGE_SIZE;
-const picked = new Set();
+// the status tiles picked: the shared filters' states (batches.js)
+const picked = {
+  has: (s) => getFilters().states.includes(s),
+  get size() { return getFilters().states.length; },
+};
 // the table is drawn further down; the state tiles redraw it through this
 const hooks = { draw: () => {}, load: () => {} };
 // the AOE team's organising: the pages ticked in the table, the page whose row is being edited
@@ -253,16 +256,47 @@ function savedView() {
   }
 }
 function saveView(extra = {}) {
+  // (the filters and the order: shared with the tool, batches.js; only "new" and the place here)
   window.localStorage.setItem(VIEW_KEY, JSON.stringify({
     ...savedView(),
-    search: $('.st-search').value,
-    template: $('.st-template').value,
-    state: $('.st-state').value,
-    order: $('.st-order').value,
     onlyNew: $('.st-new').checked,
-    picked: [...picked],
     ...extra,
   }));
+}
+
+/** the filter fields from the shared filters (after a change here, in the tool or Clear all) */
+function showFilters({ fromElsewhere = false } = {}) {
+  const f = getFilters();
+  // (not while typing in it here; always when the tool changed it)
+  if (fromElsewhere || document.activeElement !== $('.st-search')) $('.st-search').value = f.search;
+  $('.st-template').value = f.template;
+  $('.st-unit').value = f.area;
+  $('.st-group').value = String(f.group);
+  $('.st-reps').checked = f.reps;
+  $('.st-state').value = f.states.length === 1 ? f.states[0] : '';
+  $('.st-order').value = f.order;
+}
+
+const pickedStates = (state, before) => {
+  if (state) return [state];
+  return before.length > 1 ? before : [];
+};
+
+/** the shared filters from the fields */
+function takeFilters() {
+  const v = $('.st-group').value;
+  const state = $('.st-state').value;
+  const before = getFilters().states;
+  setFilters({
+    search: $('.st-search').value,
+    template: $('.st-template').value,
+    area: $('.st-unit').value,
+    group: v === '' || v === 'none' ? v : Number(v),
+    reps: $('.st-reps').checked,
+    // (the select picks one status; the tiles may have picked several)
+    states: pickedStates(state, before),
+    order: $('.st-order').value,
+  });
 }
 // the selects filled from the pages (template, state) get their saved value on the first load
 let restoredSelects = false;
@@ -272,31 +306,13 @@ function label(state) {
 }
 
 function filtered() {
-  const q = $('.st-search').value.trim().toLowerCase();
-  const template = $('.st-template').value;
-  const unit = $('.st-unit').value;
-  const state = $('.st-state').value;
+  const f = getFilters();
   const onlyNew = $('.st-new').checked;
-  // batches, group, representatives only (the area is the select's own, below)
-  const org = { ...getFilters(), area: '' };
-  return all.filter((p) => (!q || p.title.toLowerCase().includes(q) || p.path.includes(q))
-    && (!template || p.template === template)
-    && (!unit || p.unit === unit)
-    && passes(p.path, p, org)
-    && (!state || p.state === state)
-    && (!picked.size || picked.has(p.state))
-    && (!onlyNew || p.isNew));
+  return all.filter((p) => matches(p, p, f) && (!onlyNew || p.isNew));
 }
 
 function sorted(list) {
-  const order = $('.st-order').value;
-  const rank = ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'];
-  const recent = (a, b) => ((b.last?.at || '') < (a.last?.at || '') ? -1 : 1);
-  if (order === 'title') return [...list].sort((a, b) => a.title.localeCompare(b.title));
-  if (order === 'recent') return [...list].sort(recent);
-  return [...list].sort((a, b) => rank.indexOf(a.state) - rank.indexOf(b.state)
-    || Number(b.isNew) - Number(a.isNew)
-    || recent(a, b));
+  return sortPages(list, getFilters().order, me.role);
 }
 
 function tiles() {
@@ -308,8 +324,9 @@ function tiles() {
     class: `st-tile st-${s}${picked.has(s) ? ' st-picked' : ''}`,
     'aria-pressed': String(picked.has(s)),
     onclick: () => {
-      if (picked.has(s)) picked.delete(s);
-      else picked.add(s);
+      const states = getFilters().states.filter((x) => x !== s);
+      setFilters({ states: picked.has(s) ? states : [...states, s] });
+      showFilters();
       saveView();
       shown = PAGE_SIZE;
       hooks.draw();
@@ -385,7 +402,7 @@ function batchChips() {
   const chip = (b, text) => el('button', {
     type: 'button', class: 'st-batch', 'aria-pressed': String(chosen.includes(b)), onclick: () => toggle(b),
   }, text);
-  $('.st-batches').replaceChildren(
+  $('.st-batches').replaceChildren(...[
     el('span', {}, 'Batches:'),
     el('button', {
       type: 'button',
@@ -398,12 +415,13 @@ function batchChips() {
     }, `All (${all.length})`),
     ...numbers.map((b) => chip(b, `Batch ${b} (${count(b)})`)),
     count('none') ? chip('none', `No batch (${count('none')})`) : null,
-  );
+  ].filter(Boolean));
 }
 
 function draw() {
   batchChips();
   tiles();
+  $('.st-clear').disabled = !filtersSet() && !$('.st-new').checked;
   const list = sorted(filtered());
   $('.st-count').textContent = `${list.length} of ${all.length} pages${all.some((p) => p.isNew) ? ` · ${all.filter((p) => p.isNew).length} with news since your last visit` : ''}`;
   // (template and design choices: only where the pages have them)
@@ -531,17 +549,12 @@ async function load({ quick = false, rebuild = false, quiet = false } = {}) {
     ...groups.map((g) => ({ value: String(g), label: `Group ${g} (${groupCount(g)})` })),
     { value: 'none', label: 'In no group' },
   ]);
-  $('.st-group').value = String(getFilters().group);
   $('.st-reps').checked = getFilters().reps;
   // the AOE team marks pages for a batch
   $('.st-mark').hidden = me.role !== 'aoe';
   options($('.st-state'), ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'].map((s) => ({ value: s, label: label(s) })));
-  if (!restoredSelects) {
-    restoredSelects = true;
-    const v = savedView();
-    if (v.template) $('.st-template').value = v.template;
-    if (v.state) $('.st-state').value = v.state;
-  }
+  if (!restoredSelects) restoredSelects = true;
+  showFilters();
   $('.rs-updated').textContent = `Last read ${when(body.at)}`;
   draw();
   window.localStorage.setItem(VISIT_KEY, body.at);
@@ -566,18 +579,34 @@ async function start() {
   previousVisit = window.sessionStorage.getItem(TAB_VISIT_KEY)
     || window.localStorage.getItem(VISIT_KEY) || '';
   if (previousVisit) window.sessionStorage.setItem(TAB_VISIT_KEY, previousVisit);
-  // the page as it was: search, order, only new, the picked status tiles
+  // the page as it was: only new, the place; the filters and the order are the shared ones
+  // (an older visit's own search, template, state, order and tiles: taken over once)
   const view = savedView();
-  $('.st-search').value = view.search || '';
-  if (view.order) $('.st-order').value = view.order;
+  const older = view.search || view.template || view.state || view.order || view.picked?.length;
+  if (!view.shared && older) {
+    setFilters({
+      search: view.search || '',
+      template: view.template || '',
+      states: view.picked?.length ? view.picked : [view.state].filter(Boolean),
+      ...(view.order ? { order: view.order } : {}),
+    });
+  }
+  saveView({ shared: true });
   $('.st-new').checked = !!view.onlyNew;
-  (view.picked || []).forEach((st) => picked.add(st));
-  $('.st-unit').addEventListener('change', () => setFilters({ ...getFilters(), area: $('.st-unit').value }));
-  $('.st-group').addEventListener('change', () => {
-    const v = $('.st-group').value;
-    setFilters({ ...getFilters(), group: v === '' || v === 'none' ? v : Number(v) });
+  showFilters();
+  $('.st-clear').addEventListener('click', () => {
+    clearFilters();
+    $('.st-new').checked = false;
+    shown = PAGE_SIZE;
+    saveView();
+    showFilters();
+    draw();
   });
-  $('.st-reps').addEventListener('change', () => setFilters({ ...getFilters(), reps: $('.st-reps').checked }));
+  // (the tool changed them, in another tab)
+  onFiltersChange(() => {
+    showFilters({ fromElsewhere: true });
+    draw();
+  });
   const result = (text) => {
     $('.st-mark-result').textContent = text;
   };
@@ -634,7 +663,9 @@ async function start() {
   ['.st-search', '.st-template', '.st-unit', '.st-group', '.st-reps', '.st-state', '.st-order', '.st-new'].forEach((sel) => {
     $(sel).addEventListener(sel === '.st-search' ? 'input' : 'change', () => {
       shown = PAGE_SIZE;
+      if (sel !== '.st-new') takeFilters();
       saveView();
+      showFilters();
       draw();
     });
   });

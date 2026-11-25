@@ -67,9 +67,19 @@ export const areaLabel = (area) => {
   return words ? words[0].toUpperCase() + words.slice(1) : '(home)';
 };
 
+// the orders of the page list, and each side's "what waits for me first"
+export const ORDERS = { waiting: 'What waits for me first', recent: 'Latest activity first', title: 'Title' };
+export const STATE_ORDER = {
+  reviewer: ['waiting-customer', 'waiting-aoe', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped', 'unpublished'],
+  aoe: ['waiting-aoe', 'waiting-customer', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped', 'unpublished'],
+};
+
 /**
- * The chosen filters: batches (numbers, and 'none' for pages in no batch; empty = all), a group
- * (a number, 'none' or '' = all), representatives only, an area ('' = all).
+ * The chosen filters, the same on the status page and in the tool (25 Nov 2026: all of them,
+ * kept in this browser; a change in one tab reaches the others): batches (numbers, and 'none' for
+ * pages in no batch; empty = all), a group (a number, 'none' or '' = all), representatives only,
+ * an area, a template, states (several; empty = all), a search (every word in the title or the
+ * path) and the order ('' = all for the others).
  */
 export function getFilters() {
   let f = {};
@@ -83,12 +93,39 @@ export function getFilters() {
     group: Number.isInteger(f.group) || f.group === 'none' ? f.group : '',
     reps: f.reps === true,
     area: typeof f.area === 'string' ? f.area : '',
+    template: typeof f.template === 'string' ? f.template : '',
+    states: Array.isArray(f.states) ? f.states.filter((x) => typeof x === 'string') : [],
+    search: typeof f.search === 'string' ? f.search : '',
+    order: ORDERS[f.order] ? f.order : 'waiting',
   };
 }
 export function setFilters(filters) {
-  window.localStorage.setItem(FILTER_KEY, JSON.stringify(filters));
+  window.localStorage.setItem(FILTER_KEY, JSON.stringify({ ...getFilters(), ...filters }));
 }
-
+/** every filter off (the order stays: it is no filter) */
+export function clearFilters() {
+  setFilters({
+    batches: [], group: '', reps: false, area: '', template: '', states: [], search: '',
+  });
+}
+/** how many filters are set */
+export function filtersSet(f = getFilters()) {
+  return [f.batches.length, f.group !== '', f.reps, f.area, f.template, f.states.length, f.search.trim()]
+    .filter(Boolean).length;
+}
+/** a change of the filters in another tab (the status page and the tool side by side) */
+export function onFiltersChange(fn) {
+  window.addEventListener('storage', (e) => {
+    if (e.key === FILTER_KEY) fn(getFilters());
+  });
+}
+/** every word of a search in the title or the path */
+export function searchMatches(search, page) {
+  const words = String(search || '').toLowerCase().split(/\s+/).filter(Boolean);
+  if (!words.length) return true;
+  const text = `${page.title || ''} ${page.path || ''}`.toLowerCase();
+  return words.every((w) => text.includes(w));
+}
 /** does a page pass the filters (its organisation from loadOrganisation, or undefined) */
 export function passes(path, info, filters = getFilters()) {
   const o = info || {};
@@ -97,6 +134,27 @@ export function passes(path, info, filters = getFilters()) {
   if (filters.group !== '' && (o.group || 'none') !== filters.group) return false;
   if (filters.reps && !o.representative && !o.representativeAuto) return false;
   return true;
+}
+
+/**
+ * does a page pass every filter: page { path, title, template, state }, info its organisation
+ * (batch, group, representative…; the page itself on the status page)
+ */
+export function matches(page, info, f = getFilters()) {
+  return passes(page.path, info, f)
+    && searchMatches(f.search, page)
+    && (!f.template || page.template === f.template)
+    && (!f.states.length || f.states.includes(page.state || 'unreviewed'));
+}
+/** the pages in the chosen order: pages { title, state, last: { at }, isNew } */
+export function sortPages(list, order, role) {
+  const rank = STATE_ORDER[role === 'aoe' ? 'aoe' : 'reviewer'];
+  const recent = (a, b) => ((b.last?.at || '') < (a.last?.at || '') ? -1 : 1);
+  if (order === 'title') return [...list].sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+  if (order === 'recent') return [...list].sort(recent);
+  return [...list].sort((a, b) => rank.indexOf(a.state || 'unreviewed') - rank.indexOf(b.state || 'unreviewed')
+    || Number(!!b.isNew) - Number(!!a.isNew)
+    || recent(a, b));
 }
 
 /**
