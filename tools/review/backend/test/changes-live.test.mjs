@@ -38,7 +38,7 @@ const check = (label, ok, detail = '') => {
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${label}${ok ? '' : ` ${String(detail).slice(0, 400)}`}`);
   if (!ok) failed += 1;
 };
-const run = (pages) => call('capture', {
+const run = (pages) => call('check', {
   op: 'check', space: 'main', force: true, pages,
 });
 const record = (page) => admin({ op: 'changes-page', page });
@@ -61,6 +61,8 @@ try {
   a = await record(A);
   const last = a.log[a.log.length - 1];
   check('3. A\'s record: changed, its parts, the shot', last.result === 'changed' && last.parts.length > 0 && !!last.shot, JSON.stringify(last));
+  check('3. the change says what changed (text before / after, links added / removed)', Array.isArray(last.diff) && last.diff.some((x) => x.text?.before !== undefined || x.links), JSON.stringify(last.diff).slice(0, 300));
+  check('3. the record keeps the latest content (what the next change is diffed against)', Array.isArray(a.content) && a.content.length > 0 && typeof a.content[0].text === 'string');
   const h = await history(A);
   check('3. the new shot in A\'s history, labelled', h.length === shotsBefore + 1 && h[h.length - 1].by === 'change history: changed' && h[h.length - 1].id === last.shot, JSON.stringify(h.map((v) => [v.id, v.by])));
 
@@ -74,7 +76,7 @@ try {
   await admin({ op: 'forget-test-invites' });
 
   const pages = [{ page: A, source: SRC[2], template: 't1' }, { page: B, source: SRC[1], template: 't2' }];
-  r = await call('capture', {
+  r = await call('check', {
     op: 'check', space: 'main', force: true, pages, forceLook: true,
   });
   check('5. the visual check: both looks compared, the same, no shot', r.looks === 2 && r.shots === 0 && r.changed === 0, JSON.stringify(r));

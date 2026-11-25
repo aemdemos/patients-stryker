@@ -61,7 +61,7 @@ async function scheduleOne({
  * to 03:55 UTC, each run checking the pages not checked today, gently, until all are
  */
 export const scheduleChanges = ({ enabled = true, space = 'main' } = {}) => scheduleOne({
-  name: 'review-check', action: 'capture', cron: '*/5 1-3 * * *', payload: { op: 'check', space }, enabled,
+  name: 'review-check', action: 'check', cron: '*/5 1-3 * * *', payload: { op: 'check', space }, enabled,
 });
 
 /**

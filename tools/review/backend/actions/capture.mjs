@@ -37,7 +37,7 @@ import { rebuildSummary } from '../lib/summary.mjs';
 import { pageContent, fingerprintOf } from '../lib/fingerprint.mjs';
 import {
   readScope, readSite, readPageState, writeJson, readJson, pageFile, siteFile, checkLockFile, dayOf,
-  differences, confirm, looksDifferent, lookDue, addLog, GONE_AFTER,
+  differences, confirm, looksDifferent, lookDue, addLog, GONE_AFTER, keptContent, contentDiff,
 } from '../lib/changes.mjs';
 
 const WIDTHS = [1440, 860, 375];
@@ -349,6 +349,8 @@ async function bench(params) {
 // was cut off)
 const CHECK_MS = 170000;
 const CHECK_PAUSE = 700;
+// pages checked at a time (each with its own pause)
+const CHECK_TABS = 2;
 const sleep = (ms) => new Promise((r) => { setTimeout(r, ms); });
 
 /** one gentle lite load of a source → its content fingerprint */
@@ -358,7 +360,8 @@ async function readSource(browser, source) {
     await loadSource(page, source, {
       wait: 300, pause: 40, waitUntil: 'domcontentloaded', settle: 2000,
     });
-    return { fp: fingerprintOf(await page.evaluate(pageContent)) };
+    const content = await page.evaluate(pageContent);
+    return { fp: fingerprintOf(content), content };
   } finally {
     await page.close().catch(() => null);
   }
@@ -419,7 +422,8 @@ async function checkPage(stores, browser, scratch, space, p, today, { forceLook 
       const b = await readSource(browser, p.source);
       const c = confirm(d, b.fp, state);
       if (c.parts.length || c.unsteady.length) {
-        const change = { parts: [...c.parts, ...c.unsteady].map((x) => x.key), ...(c.unsteady.length ? { unsteady: true } : {}) };
+        const keys = [...c.parts, ...c.unsteady].map((x) => x.key);
+        const change = { parts: keys, ...(c.unsteady.length ? { unsteady: true } : {}), diff: contentDiff(state.content, keptContent(b.content), keys) };
         const shot = await shotNow({ by: 'change history: changed', change });
         state.known = [...new Set([...a.fp.parts, ...b.fp.parts].map((q) => q.hash))];
         entry = {
@@ -429,7 +433,9 @@ async function checkPage(stores, browser, scratch, space, p, today, { forceLook 
       } else {
         // seen once, not on the confirming load: a dynamic part's variant, learned
         state.known = [...new Set([...state.known, ...a.fp.parts.map((q) => q.hash), ...b.fp.parts.map((q) => q.hash)])];
-        entry = { day: today, at, result: 'variant', parts: d.parts.map((x) => x.key) };
+        entry = {
+          day: today, at, result: 'variant', parts: d.parts.map((x) => x.key), diff: contentDiff(state.content, keptContent(a.content), d.parts.map((x) => x.key)),
+        };
       }
     }
   }
@@ -466,6 +472,7 @@ async function checkPage(stores, browser, scratch, space, p, today, { forceLook 
     }
   }
   state = addLog(state, entry);
+  state.content = keptContent(a.content);
   state.misses = 0;
   state.source = p.source;
   await writeJson(files, pageFile(space, p.page), state);
@@ -526,17 +533,27 @@ async function check(stores, space, started, params) {
     .sort((x, y) => String(x.s?.log?.slice(-1)[0]?.at || '').localeCompare(String(y.s?.log?.slice(-1)[0]?.at || '')))
     .map(({ p }) => p);
   const suspects = [];
+  const retries = [];
   let in404 = 0;
+  // CHECK_TABS pages at a time in one browser (each worker its own scratch page and its pause):
+  // the pauses overlap, the container's time per page about halves, stryker.com sees at most
+  // CHECK_TABS loads at once
   let browser = await launch();
-  let scratch = await browser.newPage();
-  const restart = async () => {
-    await browser.close().catch(() => null);
-    browser = await launch();
-    scratch = await browser.newPage();
+  let relaunch = null;
+  const alive = async () => {
+    if (browser.connected) return browser;
+    // (one worker starts it again; the other waits for the same new browser)
+    relaunch = relaunch || (async () => {
+      await browser.close().catch(() => null);
+      browser = await launch();
+      relaunch = null;
+      return browser;
+    })();
+    return relaunch;
   };
-  const one = async (p) => {
+  const one = async (p, w) => {
     try {
-      const r = await checkPage(stores, browser, scratch, space, p, today, { forceLook: !!params.forceLook });
+      const r = await checkPage(stores, browser, w.scratch, space, p, today, { forceLook: !!params.forceLook });
       stats[r.result] += 1;
       if (r.shot) stats.shots += 1;
       if (r.look) stats.looks += 1;
@@ -548,26 +565,32 @@ async function check(stores, space, started, params) {
       note(p, 'redirects', { source: p.source, to: e.redirect });
     }
   };
-  try {
-    for (const p of due) {
-      if (Date.now() - started > CHECK_MS) break;
+  const tabs = Math.max(1, Math.min(2, Number(params.tabs) || CHECK_TABS));
+  let next = 0;
+  const worker = async () => {
+    const w = { scratch: await browser.newPage() };
+    const fresh = async () => {
+      await alive();
+      if (w.scratch.isClosed() || !browser.connected || w.scratch.browser() !== browser) w.scratch = await browser.newPage();
+    };
+    while (next < due.length && !stats.blocked && Date.now() - started <= CHECK_MS) {
+      const p = due[next];
+      next += 1;
       try {
-        await one(p);
+        await fresh();
+        await one(p, w);
         in404 = 0;
       } catch (e) {
         const reason = String(e.message || e).slice(0, 200);
         if (!e.source) {
-          stats.errors.push(`${p.page}: ${reason}`);
-          await restart();
+          // (the browser, not the source: tried once more at the end of the run)
+          retries.push({ p, reason });
         } else if (/answers 404/.test(reason)) {
           // a 404: maybe stryker.com refusing the backend for a while; tried again at the end,
           // and three in a row stop the run (the pages stay due)
           suspects.push(p);
           in404 += 1;
-          if (in404 >= 3) {
-            stats.blocked = true;
-            break;
-          }
+          if (in404 >= 3) stats.blocked = true;
         } else {
           await unreachable(files, space, p, today, reason);
           stats.unreachable += 1;
@@ -577,12 +600,30 @@ async function check(stores, space, started, params) {
       stats.checked += 1;
       await sleep(CHECK_PAUSE);
     }
+  };
+  try {
+    await Promise.all(Array.from({ length: tabs }, worker));
     if (!stats.blocked) {
+      await alive();
+      const w = { scratch: await browser.newPage() };
+      for (const { p, reason } of retries) {
+        if (Date.now() - started > CHECK_MS + 20000) {
+          stats.errors.push(`${p.page}: ${reason}`);
+          continue;
+        }
+        try {
+          await alive();
+          if (w.scratch.isClosed() || w.scratch.browser() !== browser) w.scratch = await browser.newPage();
+          await one(p, w);
+        } catch (e) {
+          stats.errors.push(`${p.page}: ${String(e.message || e).slice(0, 200)} (tried twice)`);
+        }
+      }
       for (const p of suspects) {
         if (Date.now() - started > CHECK_MS + 20000) break;
         await sleep(2000);
         try {
-          await one(p);
+          await one(p, w);
         } catch (e) {
           const reason = String(e.message || e).slice(0, 200);
           await unreachable(files, space, p, today, reason);

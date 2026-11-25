@@ -11,8 +11,11 @@
  * edit, even a comment, and says nothing about which pages look different.)
  * In Files:
  *   <space>/changes/scope.json            { pages: [{ page, source, template }] }: the pages checked
- *   <space>/changes/pages/<b64 page>.json { page, source, known: [part hashes seen], look: {
- *        hash: [per screen], day }, day, misses, log: [{ day, at, result, … }] }
+ *   <space>/changes/pages/<b64 page>.json { page, source, known: [part hashes seen], content:
+ *        [the latest load's parts: key, text, images, links, embeds], look: { hash: [per
+ *        screen], day }, day, misses, log: [{ day, at, result, diff, … }] }
+ *   (a change or a variant logs its diff: per part, the text around the difference before and
+ *   after, images / links / embeds added and removed)
  *   <space>/changes/site.json             { lastRun, runs }
  * A page's log results: baseline (the history starts: 3 loads, every version of a part seen is
  * known), unchanged, variant (a part seen once, not on the confirming load: dynamic, learned),
@@ -48,6 +51,43 @@ export const writeJson = (files, name, value) => files.write(name, JSON.stringif
 export const readScope = (files, space) => readJson(files, scopeFile(space), { pages: [] });
 export const readSite = (files, space) => readJson(files, siteFile(space), { runs: [] });
 export const readPageState = (files, space, page) => readJson(files, pageFile(space, page), null);
+
+/** a load's content as kept in the page's record (the latest only: what a change is diffed against) */
+export const keptContent = (content) => content.parts.map((p) => ({
+  key: p.key, text: p.text, images: p.images, links: p.links, embeds: p.embeds,
+}));
+
+/**
+ * what changed, part by part (the parts by position): a short excerpt of the text around the
+ * first difference, before and after; images, links and embeds added and removed
+ */
+export function contentDiff(before, after, keys) {
+  if (!before) return null;
+  const at = (list, key) => list.find((p) => p.key === key) || { text: '', images: [], links: [], embeds: [] };
+  const sets = (a, b) => ({ added: b.filter((x) => !a.includes(x)).slice(0, 10), removed: a.filter((x) => !b.includes(x)).slice(0, 10) });
+  return keys.map((key) => {
+    const a = at(before, key);
+    const b = at(after, key);
+    const out = { key };
+    if (a.text !== b.text) {
+      let s = 0;
+      while (s < a.text.length && a.text[s] === b.text[s]) s += 1;
+      let ea = a.text.length;
+      let eb = b.text.length;
+      while (ea > s && eb > s && a.text[ea - 1] === b.text[eb - 1]) {
+        ea -= 1;
+        eb -= 1;
+      }
+      const from = Math.max(0, s - 60);
+      out.text = { before: a.text.slice(from, Math.min(ea + 60, from + 300)), after: b.text.slice(from, Math.min(eb + 60, from + 300)) };
+    }
+    ['images', 'links', 'embeds'].forEach((f) => {
+      const d = sets(a[f] || [], b[f] || []);
+      if (d.added.length || d.removed.length) out[f] = d;
+    });
+    return out;
+  });
+}
 
 /** a page's record and one load → the parts never seen */
 export function differences(state, fp) {
