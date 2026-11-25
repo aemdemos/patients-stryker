@@ -453,6 +453,7 @@ Every page concerned is listed by address in its block chapter.
 | Topic | Decision needed |
 |---|---|
 | All blocks | approve the named choices and the review-page results; then switch the new look on for real pages |
+| Product pages (full-page test) | the 5 open decisions in section 13: bold words in sentences, phone heading sizes, Cards images at their own size, footnote numbers, video border in Cards and Columns |
 | Columns | *Text look* group in Block options (whole-row text looks); first-line bars → line boxes |
 | Panel | the 232 gold "Connect with us" bars; the 809 boxes in column cells; the 46 overlapping boxes |
 | Cards | one box colour per row (21 rows colour each card differently); building the filtered product grid |
@@ -476,22 +477,41 @@ Every page concerned is listed by address in its block chapter.
 
 # 13. Full-page test
 
-Three of stryker.com's most complex product detail pages were migrated with the standardised blocks,
-section styles and Text style (the migration's review build, nothing edited by hand) and compared
-with stryker.com on desktop and phone. Details, screenshots and the open gaps: **page-comparison.md**
-(also as a PDF).
+Three of stryker.com's most complex **product detail** pages were migrated in one pass with the
+standardised blocks, section styles and Text style (the migration's review build, nothing edited by
+hand) and compared with stryker.com on desktop (1,440px) and phone (390px).
 
-| Page | Blocks | Main sections present | Text as on stryker.com (as designed) |
-|---|---|---|---|
-| [Isolibrium](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/isolibrium) | 18 | 14 of 14 | 74 of 76 (97%) |
-| [LIFEPAK 35](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/lifepak-35) | 14 + 3 slides | 11 of 11 | 91 of 92 (99%) |
-| [SafeAir smoke evacuation](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/safeair-smoke-evacuation) | 22 | 15 of 15 | 124 of 132 (94%) |
+| Page | stryker.com | New site | Blocks | Fragments | Text as on stryker.com (desktop / phone) |
+|---|---|---|---|---|---|
+| Isolibrium | [original](https://www.stryker.com/us/en/acute-care/products/isolibrium.html) | [review page](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/isolibrium-v2) | 19 | 3 | 68 / 62 of 76 |
+| LIFEPAK 35 | [original](https://www.stryker.com/us/en/emergency-care/products/lifepak-35.html) | [review page](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/lifepak-35-v2) | 18 | 3 | 99 / 98 of 107 |
+| SafeAir smoke evacuation | [original](https://www.stryker.com/us/en/surgical-technologies/products/safeair-smoke-evacuation.html) | [review page](https://standardisation--stryker-com--strykerenterprise.aem.page/drafts/astha/pages/safeair-smoke-evacuation-v2) | 27 | 2 | 122 / 117 of 142 |
 
-Fixed after the first review: product-page banners are now the Page intro (text left, product image
-right), and a gold heading box over a white shadow box beside an image is a side-by-side section of
-Panels; and every section keeps only the standard section styles (whole-section sizes and fonts are
-Text style, spacing is the standard gap). The main open items: shared fragments need re-importing; a few text sizes inside boxes and the Futura words in serif
-titles need migration fixes; whether bold words in a sentence are Futura or Humanist is to decide.
+*Text as on stryker.com* = font, size, weight, colour and capitals the same. The rest are the
+by-design steps (a headline joins the nearest standard size, charcoal becomes black), the open
+decisions below, and measuring noise (footnote numbers, tab labels, text inside an embedded app).
+
+**How the pages are built**
+
+| Rule | What it means |
+|---|---|
+| Product pages have their own template | `template: product-detail`, as on stryker.com; it holds only what the standard blocks, section styles and Text style don't. Long-page-detail and news-detail pages are not affected |
+| Fragments as the AEM export lists them | each Experience Fragment a page places (contact aside, social icons, product parts, footers) is a Fragment block pointing at its fragment document, migrated with the same rules |
+| Banner with the product image on the right | the Hero **Page intro** layout (text left, image right), no rule under it |
+| Boxes beside an image | a side-by-side section with the **Panels** (e.g. a gold heading box over a white box with soft shadow) |
+| Only standard section styles | whole-section sizes and fonts become Text style; spacing is the standard gap |
+| Text style on every text that needs it | sizes, fonts and colours from the standard sets; bold = Futura (authoring conventions), kept inside serif lines |
+| Nearest standard values, no exact copies | e.g. download covers fill their card; videos have no frame unless the Video block has *Black border*; social icons use the standard icon size and gap |
+
+**Open decisions**
+
+| Topic | Choice |
+|---|---|
+| Bold words inside a sentence | Futura bold (authoring conventions, today) or the body font bold (stryker.com): 2 phrases on Isolibrium, 5 on SafeAir, LIFEPAK's reference numbers |
+| Phone heading sizes | slightly larger than stryker.com (e.g. 21.9px against 17.5px): site-wide sizes, would change real pages too |
+| Cards: images at their own size | an option like Columns' *Images centred at their size* (e.g. LIFEPAK's icon cards), or images fill the card |
+| Footnote numbers | linked footnote numbers in teal, as elsewhere on the site |
+| Video border in Cards and Columns | stryker.com shows a 1px black border on SafeAir's 5 YouTube videos; the standardisation has no frame option outside the Video block |
 
 # Glossary
 
