@@ -112,6 +112,7 @@ var CustomImportScript = (() => {
       if (c === "serif") return ["serif"];
       if (c === "body-font") return ["body"];
       if (c === "futura-bold") return ["sans"];
+      if (c === "std-sans") return ["std-sans"];
       if (LOOKS.includes(c)) return [c];
       dropped.add(c);
       return [];
@@ -177,6 +178,22 @@ var CustomImportScript = (() => {
       inner.merged = true;
       inner.into = target;
     });
+    pairs.forEach((p) => {
+      p.hadFont = p.words.some((w) => w === "serif" || w === "body");
+    });
+    pairs.forEach((p) => {
+      if (!p.words.includes("std-sans")) return;
+      const target = p.merged ? p.into : p;
+      if (p.merged) {
+        const font = target.words.some((w) => w === "serif" || w === "body") || target.hadFont;
+        target.words = target.words.filter((w) => w !== "serif" && w !== "body" && w !== "std-sans");
+        if (font) target.words.push("sans");
+        return;
+      }
+      const around = pairs.some((o) => o !== p && o.at < p.at && o.close.at > p.close.at && (o.merged ? o.into : o).words.some((w) => w === "serif" || w === "body"));
+      p.words = p.words.filter((w) => w !== "std-sans");
+      if (around) p.words.push("sans");
+    });
     tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
       const open = t.raw !== void 0 ? t : t.pair;
       const unique = [...new Set(oneSize(open.words))];
@@ -214,6 +231,28 @@ var CustomImportScript = (() => {
         t = tw.nextNode();
       }
       if (texts.some((x) => x.nodeValue.includes("[["))) convertContainer(texts, dropped);
+      if (!texts.some((x) => x.nodeValue.includes(":start-sans:") || x.nodeValue.includes("-sans:"))) return;
+      container.normalize();
+      const joined = [];
+      const jw = doc.createTreeWalker(container, 4);
+      for (let j = jw.nextNode(); j; j = jw.nextNode()) joined.push(j);
+      joined.forEach((x) => {
+        x.nodeValue = x.nodeValue.replace(
+          /:start-sans::start-([a-z0-9-]+):([^:]*?):end::end:/g,
+          (all, inner, words) => {
+            const list = [.../* @__PURE__ */ new Set([...inner.split("-"), "sans"])];
+            const ordered = [...list.filter((w) => !/\d/.test(w)), ...list.filter((w) => /\d/.test(w))];
+            return `:start-${ordered.join("-")}:${words}:end:`;
+          }
+        ).replace(
+          /:start-([a-z0-9-]*?)-?sans::start-([a-z0-9-]+):([^:]*?):end::end:/g,
+          (all, outer, inner, words) => {
+            const list = [.../* @__PURE__ */ new Set([...outer.split("-").filter(Boolean), ...inner.split("-"), "sans"])];
+            const ordered = [...list.filter((w) => !/\d/.test(w)), ...list.filter((w) => /\d/.test(w))];
+            return `:start-${ordered.join("-")}:${words}:end:`;
+          }
+        );
+      });
     });
     return [...dropped];
   }
@@ -1358,6 +1397,13 @@ var CustomImportScript = (() => {
         if (!sized && bolds.length && squash(bolds.map((el) => el.textContent).join("")) === squash(h.textContent)) {
           bolds.forEach(unwrap);
         }
+      });
+    }
+    if (stdProductPage(root.ownerDocument)) {
+      root.querySelectorAll("span.futura-bold").forEach((el) => {
+        if (el.parentElement.closest(".futura-bold") || !el.textContent.trim()) return;
+        el.prepend(root.ownerDocument.createTextNode("[[std-sans]"));
+        el.append(root.ownerDocument.createTextNode("]"));
       });
     }
     root.querySelectorAll("span.futura-bold").forEach((el) => rename(el, "strong"));
@@ -2647,10 +2693,14 @@ var CustomImportScript = (() => {
   function fullBleedPanels(main, doc, h) {
     main.querySelectorAll(".c-full-bleed-panel").forEach((component) => {
       const colour = colourStyle(component);
-      const style = [colour, "full-bleed"].filter(Boolean).join(", ");
+      const product = stdProductPage(doc);
+      const lines = product ? [...component.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => el.textContent.trim()) : [];
+      const centred = lines.length > 0 && lines.every((el) => el.closest('[style*="text-align: center"], [style*="text-align:center"], .text-center'));
+      const style = [colour, "full-bleed", centred ? "text-center" : ""].filter(Boolean).join(", ");
       const out = [];
       let run = [];
       const flush = () => {
+        if (product) tagPanelCopy(run, doc, h);
         if (run.length) out.push(keepNodes(doc, run, style));
         run = [];
       };

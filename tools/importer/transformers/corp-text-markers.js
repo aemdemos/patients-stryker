@@ -92,6 +92,9 @@ export function markerWords(raw, dropped) {
     if (c === 'serif') return ['serif'];
     if (c === 'body-font') return ['body'];
     if (c === 'futura-bold') return ['sans'];
+    // a product page's Futura bold run (long-page-detail-corp-article.js): kept only inside a
+    // serif or body run (convertContainer)
+    if (c === 'std-sans') return ['std-sans'];
     if (LOOKS.includes(c)) return [c];
     dropped.add(c);
     return [];
@@ -160,6 +163,23 @@ function convertContainer(nodes, dropped) {
     inner.merged = true;
     inner.into = target;
   });
+  // a product page's Futura bold run: the `sans` word inside a serif or body run (the run's font
+  // would cover it), nothing elsewhere; a whole serif run that is Futura bold is Futura bold
+  pairs.forEach((p) => { p.hadFont = p.words.some((w) => w === 'serif' || w === 'body'); });
+  pairs.forEach((p) => {
+    if (!p.words.includes('std-sans')) return;
+    const target = p.merged ? p.into : p;
+    if (p.merged) {
+      const font = target.words.some((w) => w === 'serif' || w === 'body') || target.hadFont;
+      target.words = target.words.filter((w) => w !== 'serif' && w !== 'body' && w !== 'std-sans');
+      if (font) target.words.push('sans');
+      return;
+    }
+    const around = pairs.some((o) => o !== p && o.at < p.at && o.close.at > p.close.at
+      && (o.merged ? o.into : o).words.some((w) => w === 'serif' || w === 'body'));
+    p.words = p.words.filter((w) => w !== 'std-sans');
+    if (around) p.words.push('sans');
+  });
   // replace, last first so the offsets in each node stay valid
   tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
     const open = t.raw !== undefined ? t : t.pair;
@@ -202,6 +222,30 @@ export function bracketsToMarkers(main) {
       t = tw.nextNode();
     }
     if (texts.some((x) => x.nodeValue.includes('[['))) convertContainer(texts, dropped);
+    // a product page's `sans` around a run that already has its marker: one marker (the site
+    // keeps only the inner one of two stacked markers); adjacent text joined first
+    if (!texts.some((x) => x.nodeValue.includes(':start-sans:') || x.nodeValue.includes('-sans:'))) return;
+    container.normalize();
+    const joined = [];
+    const jw = doc.createTreeWalker(container, 4);
+    for (let j = jw.nextNode(); j; j = jw.nextNode()) joined.push(j);
+    joined.forEach((x) => {
+      x.nodeValue = x.nodeValue.replace(
+        /:start-sans::start-([a-z0-9-]+):([^:]*?):end::end:/g,
+        (all, inner, words) => {
+          const list = [...new Set([...inner.split('-'), 'sans'])];
+          const ordered = [...list.filter((w) => !/\d/.test(w)), ...list.filter((w) => /\d/.test(w))];
+          return `:start-${ordered.join('-')}:${words}:end:`;
+        },
+      ).replace(
+        /:start-([a-z0-9-]*?)-?sans::start-([a-z0-9-]+):([^:]*?):end::end:/g,
+        (all, outer, inner, words) => {
+          const list = [...new Set([...outer.split('-').filter(Boolean), ...inner.split('-'), 'sans'])];
+          const ordered = [...list.filter((w) => !/\d/.test(w)), ...list.filter((w) => /\d/.test(w))];
+          return `:start-${ordered.join('-')}:${words}:end:`;
+        },
+      );
+    });
   });
   return [...dropped];
 }

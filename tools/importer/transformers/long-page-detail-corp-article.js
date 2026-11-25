@@ -54,7 +54,7 @@
  */
 
 import { videoLink } from '../parsers/video.js';
-import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
+import { STD_DRAFT_IMPORT, stdProductPage } from './corp-text-markers.js';
 import { SECTION_OPTIONS } from '../../block-options/options.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
@@ -469,6 +469,17 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   // span.futura-bold → <strong>: on corp pages <strong> is Futura bold in the text colour
   // (styles-corp.css); gold text → Bold + Italic (gold, the authoring convention).
   // <b> → <strong>.
+  // review build, product pages: a Futura bold run stays Futura bold inside an Egyptienne line
+  // (stryker.com large headlines: "<span class=futura-bold>SafeAir</span> smoke evacuation"):
+  // its own tag, which corp-text-markers.js turns into the `sans` word only inside a serif or
+  // body run (elsewhere Bold is Futura already)
+  if (stdProductPage(root.ownerDocument)) {
+    root.querySelectorAll('span.futura-bold').forEach((el) => {
+      if (el.parentElement.closest('.futura-bold') || !el.textContent.trim()) return;
+      el.prepend(root.ownerDocument.createTextNode('[[std-sans]'));
+      el.append(root.ownerDocument.createTextNode(']'));
+    });
+  }
   root.querySelectorAll('span.futura-bold').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('b').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('i').forEach((el) => rename(el, 'em'));

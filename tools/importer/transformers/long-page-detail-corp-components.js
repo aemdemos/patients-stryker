@@ -29,7 +29,7 @@
  *   - event calendars (.c-event): dropped (the events load in the browser on stryker.com)
  */
 
-import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
+import { STD_DRAFT_IMPORT, stdProductPage } from './corp-text-markers.js';
 import { eventCalendarBlocks } from '../event-calendar-std-import.js';
 
 const COMPONENT = '[class^="c-"], [class*=" c-"]';
@@ -324,13 +324,23 @@ function navigationBars(main, doc, h) {
 function fullBleedPanels(main, doc, h) {
   main.querySelectorAll('.c-full-bleed-panel').forEach((component) => {
     const colour = colourStyle(component);
-    const style = [colour, 'full-bleed'].filter(Boolean).join(', ');
+    // review build, product pages: a band whose text is all centred (SafeAir testimonial) is
+    // centred (`text-center`, a standard section style)
+    const product = stdProductPage(doc);
+    const lines = product ? [...component.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')]
+      .filter((el) => el.textContent.trim()) : [];
+    const centred = lines.length > 0 && lines.every((el) => el.closest('[style*="text-align: center"], [style*="text-align:center"], .text-center'));
+    const style = [colour, 'full-bleed', centred ? 'text-center' : ''].filter(Boolean).join(', ');
     // the panel's content in band sections; a section it holds (tabs, accordion panels:
     // `data-keep="nodes"` with a style) keeps its style and gets the band's (Mako surgeon
     // campaign: `blue, full-bleed, tabbed`)
     const out = [];
     let run = [];
     const flush = () => {
+      // review build, product pages: the band's copy keeps its own size and font as Text style
+      // (a band has no copy style of its own; SafeAir testimonial 1.75x Futura bold quote over a
+      // 1.5x Egyptienne attribution), as an Accordion panel's copy does
+      if (product) tagPanelCopy(run, doc, h);
       if (run.length) out.push(keepNodes(doc, run, style));
       run = [];
     };
