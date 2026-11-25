@@ -9,7 +9,8 @@
  *   <space>/images/<id>.<ext> with <id>.json (page, who, when). → { id } (then { id, ok, ext })
  * Show: GET ?ids=img-…,img-… → { urls: { id: short-lived read link } } for pictures of pages in
  *   the invitation's review (others are left out). An <img> can't send the invitation, so the
- *   tool asks for the links and shows them.
+ *   tool asks for the links (a page's come with its messages: state action) and keeps each
+ *   picture in the browser (a picture never changes).
  * The message that shows a picture holds its id (save action, core.mjs replyProblem); a withdrawn
  * message hides it, the picture itself is kept (as the audit keeps the text).
  */
@@ -81,16 +82,25 @@ async function upload(params, stores, invite) {
   return reply(params, 200, { id, ok: true, ext, bytes: whole.length });
 }
 
-async function links(params, stores, invite) {
+/**
+ * short-lived read links of pictures, for an invitation (only pictures of pages in its review)
+ * → { id: url } (also used by the state action: the links come with a page's messages)
+ */
+export async function pictureLinks(files, invite, ids) {
   const space = spaceOf(invite.scope);
+  const urls = {};
+  await Promise.all([...new Set(ids)].filter((id) => IMAGE_ID.test(id)).slice(0, 200).map(async (id) => {
+    const meta = await files.read(metaFile(space, id)).then((b) => JSON.parse(b.toString())).catch(() => null);
+    if (!meta || !inScope(invite.scope, meta.page)) return;
+    urls[id] = await files.generatePresignURL(imageFile(space, id, meta.ext), { expiryInSeconds: 3600, permissions: 'r' });
+  }));
+  return urls;
+}
+
+async function links(params, stores, invite) {
   const ids = [...new Set(String(params.ids || '').split(','))].filter((id) => IMAGE_ID.test(id)).slice(0, 60);
   if (!ids.length) return fail(params, 400, 'bad-ids', 'ids: picture ids, comma separated');
-  const urls = {};
-  await Promise.all(ids.map(async (id) => {
-    const meta = await stores.files.read(metaFile(space, id)).then((b) => JSON.parse(b.toString())).catch(() => null);
-    if (!meta || !inScope(invite.scope, meta.page)) return;
-    urls[id] = await stores.files.generatePresignURL(imageFile(space, id, meta.ext), { expiryInSeconds: 3600, permissions: 'r' });
-  }));
+  const urls = await pictureLinks(stores.files, invite, ids);
   return reply(params, 200, { urls, expires: new Date(Date.now() + 3600 * 1000).toISOString() });
 }
 

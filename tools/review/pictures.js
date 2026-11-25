@@ -6,9 +6,13 @@
  * viewer: the picture large in a dialog, zoom in / out (buttons, Ctrl+wheel, + − 0 1 F keys), Fit
  * (all of it in the window), Fill (the window's whole width and height, the rest scrolls),
  * dragged around when it is larger than the window, the message's other pictures with ‹ ›.
- * DOM only (no innerHTML).
+ * Fast (25 Nov 2026): a picture never changes, so each one is kept in the browser (Cache
+ * Storage) the first time it is shown and never downloaded again; the chat shows a small version
+ * (made when it is sent, ~640 px wide), the viewer the whole picture; a page's links come with
+ * its messages (store.js). DOM only (no innerHTML).
  */
 import { call } from './store.js';
+import { links, knownLink } from './picture-links.js';
 
 const css = document.createElement('link');
 css.rel = 'stylesheet';
@@ -41,15 +45,40 @@ const toBlob = (canvas, type, quality) => new Promise((done) => {
   canvas.toBlob(done, type, quality);
 });
 
+const encode = async (canvas, quality) => {
+  const webp = await toBlob(canvas, 'image/webp', quality);
+  return webp && webp.type === 'image/webp' ? webp : toBlob(canvas, 'image/jpeg', quality);
+};
+
+// the chat's small version: up to 640 px wide, its top (the chat shows a picture's top-left part)
+const THUMB_W = 640;
+const THUMB_MAX_H = 800;
+async function thumbOf(bitmap) {
+  const { width, height } = bitmap;
+  const scale = Math.min(1, THUMB_W / width);
+  const cropH = Math.min(height, Math.round(THUMB_MAX_H / scale));
+  if (scale === 1 && cropH === height) return null;
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, Math.round(width * scale));
+  canvas.height = Math.max(1, Math.round(cropH * scale));
+  const ctx = canvas.getContext('2d');
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(bitmap, 0, 0, width, cropH, 0, 0, canvas.width, canvas.height);
+  const blob = await encode(canvas, 0.82);
+  return { blob, w: canvas.width, h: canvas.height };
+}
+
 /**
- * A picture ready to send: { blob, w, h, url (to show it before it is sent) }. Small ones as they
- * are; big ones drawn smaller and saved as WebP (JPEG where the browser can't write WebP)
+ * A picture ready to send: { blob, w, h, url (to show it before it is sent), thumb? }. Small ones
+ * as they are; big ones drawn smaller and saved as WebP (JPEG where the browser can't write
+ * WebP); thumb: the chat's small version, for pictures larger than it
  */
 export async function prepare(file) {
   const bitmap = await createImageBitmap(file);
   let w = bitmap.width;
   let h = bitmap.height;
   let blob = file;
+  const thumb = await thumbOf(bitmap);
   const scale = Math.min(1, MAX_SIDE / Math.max(w, h), Math.sqrt(MAX_PIXELS / (w * h)));
   if (file.size > KEEP_BYTES || scale < 1) {
     w = Math.max(1, Math.round(w * scale));
@@ -60,12 +89,11 @@ export async function prepare(file) {
     const ctx = canvas.getContext('2d');
     ctx.imageSmoothingQuality = 'high';
     ctx.drawImage(bitmap, 0, 0, w, h);
-    blob = await toBlob(canvas, 'image/webp', 0.9);
-    if (!blob || blob.type !== 'image/webp') blob = await toBlob(canvas, 'image/jpeg', 0.9);
+    blob = await encode(canvas, 0.9);
   }
   bitmap.close?.();
   return {
-    blob, w, h, url: URL.createObjectURL(blob),
+    blob, w, h, url: URL.createObjectURL(blob), thumb,
   };
 }
 
@@ -99,8 +127,7 @@ export async function upload(page, pic, onProgress = () => {}) {
   return id;
 }
 
-// the pictures' short-lived links: asked for together, kept until shortly before they expire
-const links = new Map();
+// the pictures' short-lived links (picture-links.js): the missing ones asked for together
 let asking = null;
 const waiting = new Set();
 
@@ -133,11 +160,48 @@ async function linksOf(ids) {
   return new Map(ids.map((id) => [id, links.get(id)?.url || null]));
 }
 
-/** a link already known (to show a picture at once on a redraw) */
-const knownLink = (id) => {
-  const l = links.get(id);
-  return l?.until > Date.now() ? l.url : null;
-};
+/* ---------- the pictures kept in the browser ---------- */
+
+const CACHE = 'review-pictures-v1';
+const cacheKey = (id) => new URL(`./__pictures/${id}`, window.location.href).href;
+// this visit's pictures: id → object URL (shown at once on a redraw), and the ones on their way
+const ready = new Map();
+const loading = new Map();
+const openCache = () => (window.caches
+  ? window.caches.open(CACHE).catch(() => null) : Promise.resolve(null));
+
+/** a picture just sent from this browser: kept, never downloaded */
+export async function keepPicture(id, blob) {
+  if (!id || !blob) return;
+  ready.set(id, URL.createObjectURL(blob));
+  const cache = await openCache();
+  await cache?.put(cacheKey(id), new Response(blob, { headers: { 'content-type': blob.type } })).catch(() => null);
+}
+
+/**
+ * A picture to show (an object URL): kept in the browser, else downloaded once and kept. Where
+ * the browser keeps nothing (or the download is refused) its link is used as it is.
+ */
+export function pictureUrl(id) {
+  if (ready.has(id)) return Promise.resolve(ready.get(id));
+  if (loading.has(id)) return loading.get(id);
+  const job = (async () => {
+    const cache = await openCache();
+    let res = await cache?.match(cacheKey(id)).catch(() => null);
+    if (!res) {
+      const link = knownLink(id) || (await linksOf([id])).get(id);
+      if (!link) return null;
+      res = await fetch(link).catch(() => null);
+      if (!res?.ok) return link;
+      await cache?.put(cacheKey(id), res.clone()).catch(() => null);
+    }
+    const url = URL.createObjectURL(await res.blob());
+    ready.set(id, url);
+    return url;
+  })().finally(() => loading.delete(id));
+  loading.set(id, job);
+  return job;
+}
 
 /* ---------- the viewer ---------- */
 
@@ -196,9 +260,8 @@ function makeViewer() {
     // (shown once it fits the window: no flash at full size)
     img.style.visibility = 'hidden';
     zoomLabel.textContent = '';
-    const src = p.url || knownLink(p.id);
     const set = (url) => {
-      if (!url) return;
+      if (!url || v.pics[v.index] !== p) return;
       img.onload = () => {
         setZoom(fitZoom());
         img.style.visibility = '';
@@ -206,8 +269,8 @@ function makeViewer() {
       img.src = url;
       open.href = url;
     };
-    if (src) set(src);
-    else linksOf([p.id]).then((m) => set(m.get(p.id)));
+    if (p.url) set(p.url);
+    else pictureUrl(p.id).then(set);
   };
   const head = el(
     'div',
@@ -297,32 +360,30 @@ export function openViewer(pics, index = 0) {
 export function picturesOf(pics) {
   const box = el('div', { class: `pv-thumbs pv-thumbs-${Math.min(pics.length, 3)}` });
   pics.forEach((p, i) => {
+    // (the chat shows the small version, when there is one)
+    const shown = p.t || p.id;
     const img = el('img', {
       alt: `Picture ${i + 1} of ${pics.length}`,
       width: p.w || null,
       height: p.h || null,
-      loading: 'lazy',
       decoding: 'async',
-      'data-picture': p.id || null,
-      src: p.url || (p.id && knownLink(p.id)) || null,
+      src: p.url || (shown && ready.get(shown)) || null,
     });
-    box.append(el('button', {
+    const thumb = el('button', {
       type: 'button',
       class: 'pv-thumb',
       title: 'Show it larger',
       onclick: () => openViewer(pics, i),
-    }, img));
-  });
-  // (the links of pictures not shown yet)
-  const missing = pics.filter((p) => p.id && !p.url && !knownLink(p.id));
-  if (missing.length) {
-    linksOf(missing.map((p) => p.id)).then((urls) => {
-      box.querySelectorAll('img[data-picture]').forEach((img) => {
-        const url = urls.get(img.dataset.picture);
+    }, img);
+    box.append(thumb);
+    if (!img.getAttribute('src') && shown) {
+      thumb.classList.add('pv-loading');
+      pictureUrl(shown).then((url) => {
+        thumb.classList.remove('pv-loading');
         if (url) img.src = url;
-        else if (!img.src) img.closest('.pv-thumb').classList.add('pv-missing');
+        else thumb.classList.add('pv-missing');
       });
-    });
-  }
+    }
+  });
   return box;
 }

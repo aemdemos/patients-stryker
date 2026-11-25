@@ -17,7 +17,7 @@ import { createNotes, CATEGORIES } from './notes.js';
 import { keepFresh } from './live.js';
 import { mountBar } from './bar.js';
 import {
-  picturesOf, picturesIn, prepare, upload, MAX_PICTURES, TYPES as PICTURE_TYPES,
+  picturesOf, picturesIn, prepare, upload, keepPicture, MAX_PICTURES, TYPES as PICTURE_TYPES,
 } from './pictures.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl } from './pages.js';
@@ -729,7 +729,14 @@ function chatParts(item, kind) {
       await pics.reduce(async (before, pic, i) => {
         await before;
         show(`Sending picture ${i + 1} of ${pics.length}…`);
-        images.push({ id: await upload(state.page, pic), w: pic.w, h: pic.h });
+        // (with its small version for the chat; both kept in this browser: never downloaded here)
+        const id = await upload(state.page, pic);
+        const t = pic.thumb ? await upload(state.page, pic.thumb) : undefined;
+        keepPicture(id, pic.blob);
+        if (t) keepPicture(t, pic.thumb.blob);
+        images.push({
+          id, t, w: pic.w, h: pic.h,
+        });
       }, Promise.resolve());
       picturesSending.delete(key);
       attached.delete(key);
@@ -1586,6 +1593,14 @@ function positioned(m, keys) {
   }).filter(Boolean));
 }
 
+/** the block keys of a page's document */
+const keysOf = (page) => fetch(`${BASE}${page}.plain.html`)
+  .then((r) => (r.ok ? r.text() : ''))
+  .then((html) => keysOfHtml(html))
+  .catch(() => ({ byId: {}, byKey: {} }));
+// the page of the address: its saved reviews and its document, asked for at once (25 Nov 2026)
+let early = null;
+
 function loadPage() {
   if (!state.page) return;
   ready.std = false;
@@ -1623,11 +1638,11 @@ function loadPage() {
   live.key = '';
   loadLive();
   pageKeys = { byId: {}, byKey: {} };
-  const keysLoad = fetch(`${BASE}${loading}.plain.html`)
-    .then((r) => (r.ok ? r.text() : ''))
-    .then((html) => keysOfHtml(html))
-    .catch(() => ({ byId: {}, byKey: {} }));
-  savedLoad = Promise.all([store.load(loading), keysLoad]).then(([m, keys]) => {
+  // (the page of the address was asked for at the start, with the page list)
+  const pre = early && early.page === loading ? early : null;
+  early = null;
+  const keysLoad = pre ? pre.keys : keysOf(loading);
+  savedLoad = Promise.all([pre ? pre.saved : store.load(loading), keysLoad]).then(([m, keys]) => {
     if (state.page !== loading) return;
     pageKeys = keys;
     saved = positioned(m, keys);
@@ -1978,6 +1993,10 @@ async function start() {
   Object.keys(frames).forEach((side) => {
     if (side === 'std' || REVIEW.compare.includes(side)) frames[side].addEventListener('load', () => onFrameLoad(side));
   });
+  // (the page of the address: its reviews and document asked for now, not after the page list)
+  if (state.page) {
+    early = { page: state.page, saved: store.load(state.page), keys: keysOf(state.page) };
+  }
   allPages = await loadPages();
   // (the first page of a group without a chosen representative: among the pages shown)
   orgOf = (await loadOrganisation(allPages.map((p) => p.path))).org;

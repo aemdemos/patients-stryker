@@ -496,7 +496,7 @@ async function load({ quick = false, rebuild = false, quiet = false } = {}) {
   // (the AOE team: every page of the migration scope; reviewers: the published ones)
   const [{ status, body }, pages] = await Promise.all([
     call(`overview${rebuild ? '?rebuild=1' : ''}`),
-    quick && pagesKept ? pagesKept : loadPages({ all: true }),
+    quick && pagesKept ? pagesKept : loadPages({ all: true, fresh: rebuild }),
   ]);
   pagesKept = pages;
   if (status !== 200) {

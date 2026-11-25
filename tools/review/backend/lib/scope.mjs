@@ -80,7 +80,21 @@ export async function loadLive(space) {
  * published, unit, renamed }], notInScope: [{ path, title }], problems }
  * (a page in two rows is listed once: the first row)
  */
-export async function pageList(space) {
+// (kept a minute in a warm container: every page load of every reviewer asks for the list, the
+// scope sheet and the live index change rarely; a change shows within a minute)
+const KEEP_MS = 60 * 1000;
+const kept = new Map();
+
+export async function pageList(space, { fresh = false } = {}) {
+  const k = kept.get(space);
+  if (!fresh && k && Date.now() - k.at < KEEP_MS) return k.list;
+  const list = buildPageList(space);
+  kept.set(space, { at: Date.now(), list });
+  list.catch(() => kept.delete(space));
+  return list;
+}
+
+async function buildPageList(space) {
   const [{ rows, problems, none }, live] = await Promise.all([loadScope(space), loadLive(space)]);
   const seen = new Set();
   const pages = [];

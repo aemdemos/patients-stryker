@@ -91,6 +91,20 @@ keeps the invitation, later visits need no link.
   others, Esc closes. A withdrawn message hides its pictures (the files are kept, like the audit);
   `purge-invite` removes a test invitation's pictures. Not kept across a reload: pictures added
   but not sent yet. Tests: `pictures-live.test.mjs`, `pictures-tool.test.mjs`.
+- **Fast loading** (25 Nov 2026, measured on Stage: pictures shown on a reload 1.25 s → 0.3 s,
+  no picture downloaded again): a picture never changes, so each one is kept in the browser
+  (Cache Storage `review-pictures-v1`) the first time it is shown, and the sender's own are kept
+  at once; the chat shows a small version made when it is sent (≤ 640 px wide, its top; `t` in
+  the message), the viewer the whole picture; a page's picture links come with its messages
+  (state action `pictures`). The page list is kept in the browser (`review-data-v1`, per
+  invitation and backend, up to a day) and used at once while it is asked again; the status
+  page's Refresh waits for a fresh one (`pages?fresh=1`). The backend keeps the scope sheet and
+  the live index a minute in a warm container (the capture always reads them fresh). The tool
+  asks for the page of its address (messages, document) at once, with the page list.
+  Not used on purpose: App Builder's CDN (for files deployed with the app, not for pictures
+  uploaded during the review) and its action-response cache (keyed by address, not by
+  invitation: it could hand one person's answer to another). The database reads are by key
+  (~0.1 s), so no index was needed.
 - **One design for every page** (`ui.css`, `bar.js`, 25 Nov 2026): the same dark top bar with
   the tools in the order of the work, page heads with the title and when the page was read,
   cards, pill buttons, status tiles that filter the list when clicked, tables whose head stays
