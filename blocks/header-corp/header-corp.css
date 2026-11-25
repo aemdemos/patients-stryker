@@ -105,7 +105,7 @@ header.header-corp-wrapper {
   height: 3px;
   margin-bottom: 3px;
   border-radius: 1px;
-  background: var(--color-secondary);
+  background: var(--color-black); /* black, as on the patients header */
 }
 
 /* mobile search toggle: the live float measures 0×0 at the logo's bottom edge (y=46) and the
@@ -119,19 +119,19 @@ header.header-corp-wrapper {
 
 .header-corp .search-toggle {
   display: block;
-  width: 26px;
-  height: 26px;
   margin-top: 8px;
-  font-size: 20px;
-  line-height: 32px;
   color: var(--color-black); /* black below 900px; teal from 900px (below) */
 }
 
+/* the magnifier: the same SVG mask as the patients header (icons/search.svg), painted in
+   the button's text colour; sized as the patients mobile toggle (glyph ratio 1033:1221) */
 .header-corp .icon-search::before {
-  content: "\e003";
-  font-family: var(--corp-icon-font-family);
-  font-style: normal;
-  font-weight: 400;
+  content: "";
+  display: block;
+  width: 24px;
+  height: 29px;
+  background-color: currentcolor;
+  mask: url('/icons/search.svg') no-repeat center / contain;
 }
 
 .header-corp .utility-links {
@@ -164,11 +164,17 @@ header.header-corp-wrapper {
   height: 40px;
   padding: 8px 11px;
   border: 0;
-  outline: 0; /* as on www.stryker.com: no ring on the search box, focused it shows its text cursor */
+  outline: 0;
   color: var(--color-surface-muted);
   background: var(--color-surface);
   font: inherit;
   font-family: var(--body-font-family);
+}
+
+/* focused: the patients header's teal ring, drawn inside the box */
+.header-corp .search-control:focus {
+  outline: var(--corp-focus-ring) solid var(--color-primary);
+  outline-offset: calc(-1 * var(--corp-focus-ring));
 }
 
 .header-corp .search-control::placeholder {
@@ -189,10 +195,17 @@ header.header-corp-wrapper {
   border: 0;
   background: none;
   color: var(--color-black); /* black below 900px; teal from 900px (below) */
-  font-size: 20px;
-  line-height: 34px;
-  text-align: start; /* live: the glyph sits at the box's left edge */
   cursor: pointer;
+}
+
+/* desktop magnifier: 21px glyph pinned to the top of the mask (the SVG has empty space
+   below the glyph), 11px from the box's top and right edges — as on the patients header */
+.header-corp .search-submit::before {
+  width: 21px;
+  height: 21px;
+  margin-top: 3px;
+  mask-size: 100% auto;
+  mask-position: top;
 }
 
 .header-corp .search-source {
@@ -385,13 +398,23 @@ body.hcp-banner .header-corp .hcp-band {
   line-height: inherit;
 }
 
+.header-corp .main-nav li.has-sub > a,
+.header-corp .main-nav li.has-sub > p > a {
+  position: relative;
+}
+
+/* mobile "+": the patients header's fixed 16px bold sign, 18px from the right edge and
+   centred on the row (2vw shrank it to a dot on phones) */
 .header-corp .main-nav li.has-sub > a::after,
 .header-corp .main-nav li.has-sub > p > a::after {
   content: "+";
-  float: right;
-  font-size: 2vw;
+  position: absolute;
+  top: 50%;
+  right: calc(var(--space-block) + var(--space-block-xxs));
+  transform: translateY(-50%);
+  font-size: var(--nav-toggle-icon-size);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 1;
 }
 
 .header-corp .secondary-nav {
@@ -506,6 +529,10 @@ body.hcp-banner .header-corp .hcp-band {
   .header-corp .search-submit {
     display: block;
     color: var(--color-primary);
+  }
+
+  .header-corp .search-submit:hover {
+    color: var(--color-primary-pressed);
   }
 
   .header-corp .language-country-select {
@@ -689,7 +716,7 @@ body.hcp-banner .header-corp .hcp-band {
 /* ---- keyboard focus ---- */
 
 /* keyboard focus: every header link and button shows a ring while it has keyboard focus (mouse
-   clicks don't; the search box has none, see .search-control). Drawn inside the box, so the clipped drawer, gold bar and fly-outs don't cut it off,
+   clicks don't; the search box has its own teal ring, see .search-control). Drawn inside the box, so the clipped drawer, gold bar and fly-outs don't cut it off,
    in the control's text colour, so it shows on white, gold, grey and the dark open item alike */
 .header-corp :is(a, button):focus-visible {
   outline: var(--corp-focus-ring) solid currentcolor;
