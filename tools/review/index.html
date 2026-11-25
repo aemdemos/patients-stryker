@@ -27,15 +27,15 @@
     <div class="rv-group" role="group" aria-label="Compare with">
       <span class="rv-label">Compare with</span>
       <button type="button" class="rv-btn" data-cmp="rs" title="The page as migrated, before standardisation">As-is</button>
-      <button type="button" class="rv-btn" data-cmp="src" title="A snapshot of the live stryker.com page">Source</button>
-      <button type="button" class="rv-btn" data-cmp="live" title="The live stryker.com page, rendered now by the review backend at this width (as rendered: menus, tabs and carousels don't move; links open the real page in a new tab)">Live</button>
+      <button type="button" class="rv-btn" data-cmp="src" title="A screenshot of the stryker.com page, taken by the review (its date is in the Source shot box)">Screenshot</button>
+      <button type="button" class="rv-btn" data-cmp="live" title="The stryker.com page as it is now, rendered by the review backend at this width (as rendered: menus, tabs and carousels don't move; links open the real page in a new tab)">Render</button>
     </div>
     <div class="rv-group" role="group" aria-label="View">
       <button type="button" class="rv-btn" data-mode="flip" title="Flip between the standard page and the other one (Space)">Flip</button>
       <button type="button" class="rv-btn" data-mode="opacity" title="The other page over the standard page">Overlay</button>
       <button type="button" class="rv-btn" data-mode="side" title="Side by side">Side by side</button>
       <label class="rv-opacity"><span class="rv-opacity-label">As-is</span> <input type="range" min="0" max="100" step="5" aria-label="Opacity"></label>
-      <label class="rv-check"><input type="checkbox" class="rv-sync" checked> Sync</label>
+      <label class="rv-check" title="Both pages scroll together"><input type="checkbox" class="rv-sync" checked> Scroll Sync</label>
     </div>
     <div class="rv-group">
       <button type="button" class="rv-btn rv-note-btn" data-action="note" aria-pressed="false" title="Then click the spot on the standard page (N; Esc to stop)">+ Add QA note</button>
@@ -64,12 +64,12 @@
       <div class="rv-frame rv-rs" data-side="rs"><iframe title="As-is page"></iframe><span class="rv-tag">As-is</span></div>
       <div class="rv-frame rv-src" data-side="src">
         <div class="rv-src-scroller"><div class="rv-src-page"></div></div>
-        <span class="rv-tag">Source</span>
+        <span class="rv-tag">Screenshot</span>
         <p class="rv-src-none" hidden>No snapshot of this page at this width yet.</p>
       </div>
       <div class="rv-frame rv-live" data-side="live">
         <iframe sandbox="allow-same-origin" title="Live stryker.com page"></iframe>
-        <span class="rv-tag">Live stryker.com</span>
+        <span class="rv-tag">Render of stryker.com</span>
         <p class="rv-live-msg" hidden></p>
         <button type="button" class="rv-live-again" hidden title="Render the live page again now">Render again</button>
       </div>

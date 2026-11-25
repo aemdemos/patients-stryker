@@ -38,7 +38,7 @@ try {
   await p.goto(`${base}/tools/review/index.html?invite=${encodeURIComponent(rev.token)}&page=${encodeURIComponent(PAGE)}&mode=side&vp=1440`, { waitUntil: 'load' });
   await p.waitForTimeout(6000);
   await p.click('[data-cmp="live"]');
-  await p.waitForFunction(() => /rendered/.test(document.querySelector('.rv-live .rv-tag').textContent), null, { timeout: 60000 });
+  await p.waitForFunction(() => /Render of stryker\.com, /.test(document.querySelector('.rv-live .rv-tag').textContent), null, { timeout: 60000 });
   await p.waitForTimeout(3000);
   const r = await p.evaluate(() => {
     const f = document.querySelector('.rv-live iframe');
@@ -55,7 +55,7 @@ try {
     };
   });
   check('live: a copy in the Live pane (blob, same origin)', /^blob:/.test(r.src || '') && r.text > 200, JSON.stringify(r).slice(0, 200));
-  check('live: the tag says when it was rendered', /Live stryker\.com, rendered/.test(r.tag), r.tag);
+  check('live: the tag says when it was rendered', /Render of stryker\.com, /.test(r.tag), r.tag);
   check('live: no scripts in the copy', r.scripts === 0);
   check('live: the Stryker fonts loaded', r.fonts.some((f) => /Stryker/.test(f)), JSON.stringify(r.fonts));
   check('live: images from stryker.com', r.imgs > 0 && /^https:\/\/www\.stryker\.com\//.test(r.base || ''), `${r.imgs} ${r.base}`);
@@ -82,7 +82,7 @@ try {
   await p.click('[data-vp="375"]');
   await p.waitForFunction((s) => document.querySelector('.rv-live iframe').getAttribute('src') !== s, firstSrc, { timeout: 60000 });
   check('live: another width renders a new copy', true);
-  await p.waitForFunction(() => /rendered/.test(document.querySelector('.rv-live .rv-tag').textContent), null, { timeout: 60000 });
+  await p.waitForFunction(() => /Render of stryker\.com, /.test(document.querySelector('.rv-live .rv-tag').textContent), null, { timeout: 60000 });
   await p.waitForTimeout(3000);
   // sync: scroll the page under review, the live copy follows (at phone width the pages are
   // long enough to scroll in their panes; at desktop width a short page fits in its pane)

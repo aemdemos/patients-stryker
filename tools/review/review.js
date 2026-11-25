@@ -125,8 +125,13 @@ function writeUrl() {
 
 /* ---------- layout: each frame at the viewport width, scaled to fit its pane ---------- */
 
+// (the pages sit on a dark backdrop with this margin: where a page starts is never in doubt)
+const STAGE_PAD = 10;
+
 function layout() {
-  const { width: W, height: H } = stage.getBoundingClientRect();
+  const box = stage.getBoundingClientRect();
+  const W = box.width - 2 * STAGE_PAD;
+  const H = box.height - 2 * STAGE_PAD;
   const side = state.mode === 'side';
   const gap = side ? 12 : 0;
   const paneW = side ? (W - gap) / 2 : W;
@@ -134,9 +139,11 @@ function layout() {
   const cmp = panes[state.cmp];
   Object.entries(panes).forEach(([key, pane]) => {
     const w = state.vp * scale;
-    let left = (paneW - w) / 2;
+    let left = STAGE_PAD + (paneW - w) / 2;
     if (side && key !== 'std') left += paneW + gap;
-    Object.assign(pane.style, { left: `${left}px`, width: `${w}px`, height: `${H}px` });
+    Object.assign(pane.style, {
+      left: `${left}px`, top: `${STAGE_PAD}px`, width: `${w}px`, height: `${H}px`,
+    });
     Object.assign((frames[key] || scroller).style, {
       width: `${state.vp}px`, height: `${H / scale}px`, transform: `scale(${scale})`,
     });
@@ -1467,13 +1474,14 @@ async function loadSnapshot() {
   if (`${state.page}|${state.vp}` !== want) return;
   none.hidden = !!meta;
   if (!meta) {
-    panes.src.querySelector('.rv-tag').textContent = 'Source: no snapshot yet';
+    panes.src.querySelector('.rv-tag').textContent = 'Screenshot: none yet';
     return;
   }
   snapshot = meta;
   SOURCE[state.page] = meta.url;
   const liveLink = [...document.querySelectorAll('.rv-links a')].find((a) => a.textContent === 'Live stryker.com page');
   if (liveLink) liveLink.href = meta.url;
+  $('.rv-open-link[data-open="src"]').href = meta.url;
   pageEl.style.height = `${meta.height}px`;
   // (newer shots only in Document Authoring: through the preview, also on the workspace)
   const tilesAt = meta.dir ? `${REVIEW.snapshots.preview}${state.page}${meta.dir}` : `${SNAPSHOTS}${state.page}`;
@@ -1493,7 +1501,7 @@ async function loadSnapshot() {
   })));
   const day = new Date(meta.captured).toLocaleDateString([], { dateStyle: 'medium' });
   const older = version && shots.data.versions[shots.data.versions.length - 1].id !== version.id;
-  panes.src.querySelector('.rv-tag').textContent = `Source (stryker.com, ${day})${older ? ', an earlier shot' : ''}`;
+  panes.src.querySelector('.rv-tag').textContent = `Screenshot (stryker.com, ${day})${older ? ', an earlier one' : ''}`;
   scroller.scrollTop = 0;
   ready.src = true;
   rebuildAnchors();
@@ -1526,7 +1534,7 @@ async function loadLive(fresh = false) {
   );
   msg.hidden = false;
   again.hidden = true;
-  tag.textContent = 'Live stryker.com: rendering…';
+  tag.textContent = 'Render of stryker.com: rendering…';
   const q = new URLSearchParams({
     page: state.page, vp: String(state.vp), ...(SOURCE[state.page] ? { source: SOURCE[state.page] } : {}), ...(fresh ? { fresh: '1' } : {}),
   });
@@ -1539,7 +1547,7 @@ async function loadLive(fresh = false) {
       el('strong', {}, 'No live copy'),
       el('span', {}, body?.error?.message || 'The review backend did not answer.'),
     );
-    tag.textContent = 'Live stryker.com';
+    tag.textContent = 'Render of stryker.com';
     return;
   }
   if (live.url) URL.revokeObjectURL(live.url);
@@ -1559,7 +1567,7 @@ async function loadLive(fresh = false) {
       })}`).catch(() => null)), Promise.resolve());
   }
   const at = new Date(body.at).toLocaleTimeString([], { timeStyle: 'short' });
-  tag.textContent = `Live stryker.com, rendered ${at}${body.cached ? '' : ' (now)'}`;
+  tag.textContent = `Render of stryker.com, ${at}${body.cached ? '' : ' (now)'}`;
 }
 // after a Refresh: the backend takes the shot within minutes; look every 20 s for 8 minutes
 shotHooks.wait = (page, had) => {
@@ -1615,6 +1623,10 @@ function loadPage() {
   $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : `– / ${pages.length}`;
   $('.rv-batch-badge').textContent = orgLabel(orgOf.get(state.page));
   document.title = `Review: ${page ? page.title : state.page}`;
+  $('.rv-open-link[data-open="eds"]').href = `${BASE}${state.page}`;
+  // (the source: from the shot, else the scope's row)
+  if (!SOURCE[state.page] && page?.source) SOURCE[state.page] = page.source;
+  $('.rv-open-link[data-open="src"]').href = SOURCE[state.page] || 'https://www.stryker.com/';
   $('.rv-links').replaceChildren(...[
     el('li', {}, el('a', { href: `${BASE}${state.page}`, target: '_blank', rel: 'noopener' }, `${BASE_LABEL} page`)),
     REVIEW.compare.includes('rs') ? el('li', {}, el('a', { href: `${CONTENT}/rs${state.page}`, target: '_blank', rel: 'noopener' }, 'As-is page')) : null,
@@ -1802,6 +1814,19 @@ async function onFrameLoad(side) {
 
 /* ---------- start ---------- */
 
+/** the filter button's icon (a funnel) */
+function funnelIcon() {
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('class', 'rv-funnel');
+  const path = document.createElementNS(NS, 'path');
+  path.setAttribute('d', 'M3 5h18l-7 8v6l-4 2v-8z');
+  svg.append(path);
+  return svg;
+}
+
 /** the pages the filters let through, the picker's list and the filter's summary */
 function applyFilters() {
   const f = getFilters();
@@ -1813,7 +1838,10 @@ function applyFilters() {
     f.reps ? 'representatives' : '',
     f.area ? areaLabel(f.area) : '',
   ].filter(Boolean);
-  $('.rv-filter summary').textContent = parts.length ? `Showing: ${parts.join(' · ')}` : 'All pages';
+  const summary = $('.rv-filter summary');
+  summary.replaceChildren(funnelIcon(), 'Filter', parts.length ? el('span', { class: 'rv-filter-n' }, String(parts.length)) : '');
+  summary.classList.toggle('rv-filter-on', parts.length > 0);
+  summary.title = parts.length ? `Showing: ${parts.join(' · ')}` : 'All pages: filter them';
   const i = pages.findIndex((p) => p.path === state.page);
   $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : `– / ${pages.length}`;
 }
@@ -1884,13 +1912,24 @@ function setUpShell() {
   const filter = el(
     'details',
     { class: 'rv-filter' },
-    el('summary', {}, 'All pages'),
+    el('summary', {}, funnelIcon(), 'Filter'),
     el('div', { class: 'rv-filter-body' }),
   );
   filter.addEventListener('toggle', () => {
     if (filter.open) filterPanel();
   });
   $('.rv-count').after(filter);
+  // the page's two pages in a new tab, by the page box (the panel's links scroll away)
+  filter.before(el(
+    'span',
+    { class: 'rv-open', role: 'group', 'aria-label': 'Open in a new tab' },
+    el('a', {
+      class: 'rv-open-link', 'data-open': 'eds', target: '_blank', rel: 'noopener', title: `The ${BASE_WORD} page (EDS) in a new tab`,
+    }, 'EDS ↗'),
+    el('a', {
+      class: 'rv-open-link', 'data-open': 'src', target: '_blank', rel: 'noopener', title: 'The stryker.com page in a new tab',
+    }, 'Source ↗'),
+  ));
   $('.rv-page-badge').after(el('span', { class: 'rv-batch-badge', 'aria-live': 'polite' }));
   // the widths
   const widths = $('[aria-label="Viewport"]');

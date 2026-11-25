@@ -38,10 +38,12 @@ body {
   align-items: center;
   min-block-size: var(--rv-bar-h);
   padding: 6px 12px;
+  position: relative;
+  z-index: 5;
   border-bottom: 1px solid var(--c-line-2);
   background: var(--c-surface);
   color: var(--c-ink);
-  box-shadow: 0 1px 0 rgb(0 0 0 / 3%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
 }
 
 .rv-group { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
@@ -94,7 +96,7 @@ body:not(.mode-opacity) .rv-opacity { display: none; }
 
 .rv-panel h2 { margin: 6px 0; color: var(--c-ink-2); font-size: var(--fs-xs); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .rv-panel h3 { margin: 0 0 8px; color: var(--c-ink); font-size: var(--fs-s); font-weight: 800; }
-.rv-panel-right { position: relative; order: 2; flex-basis: var(--rv-panel-right, 360px); border-inline-end: 0; border-inline-start: 1px solid var(--c-line-2); }
+.rv-panel-right { position: relative; z-index: 4; order: 2; flex-basis: var(--rv-panel-right, 360px); border-inline-end: 0; border-inline-start: 1px solid var(--c-line-2); box-shadow: -2px 0 8px rgb(0 0 0 / 18%); }
 /* the right panel's left edge: drag to resize (kept per browser) */
 .rv-resize { position: absolute; inset-block: 0; left: -3px; z-index: 3; inline-size: 7px; cursor: col-resize; }
 .rv-resize:hover, body.rv-resizing .rv-resize { background: rgb(9 105 218 / 35%); }
@@ -169,14 +171,16 @@ body.rv-resizing iframe { pointer-events: none; }
 .rv-links li { margin: 3px 0; }
 .rv-links a { font-weight: 600; }
 
-.rv-stage { position: relative; order: 1; flex: 1 1 auto; overflow: hidden; }
+/* the pages on a dark backdrop, a margin all around: the tool's parts are never taken for the page */
+.rv-stage { position: relative; order: 1; flex: 1 1 auto; overflow: hidden; background: #3a3936; }
 
 .rv-frame {
   position: absolute;
   top: 0;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 0 0 1px var(--c-line-2), 0 6px 20px rgb(0 0 0 / 8%);
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 40%), 0 8px 24px rgb(0 0 0 / 35%);
 }
 
 .rv-frame iframe { display: block; border: 0; transform-origin: 0 0; }
@@ -391,9 +395,18 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 
 /* the batch / area filter by the page picker (batches.js), the page's batch */
 .rv-filter { position: relative; }
-.rv-filter summary { display: flex; align-items: center; min-block-size: 30px; padding: 4px 12px; border: 1px solid var(--c-line-2); border-radius: var(--r-pill); background: var(--c-surface); font-weight: 600; white-space: nowrap; list-style: none; cursor: pointer; }
+.rv-filter summary { display: flex; gap: 6px; align-items: center; min-block-size: 30px; padding: 4px 12px; border: 1px solid var(--c-line-2); border-radius: var(--r-pill); background: var(--c-surface); font-weight: 700; white-space: nowrap; list-style: none; cursor: pointer; }
+/* a filter set: dark, with how many */
+.rv-filter summary.rv-filter-on { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }
+.rv-funnel { inline-size: 15px; block-size: 15px; fill: none; stroke: currentcolor; stroke-width: 2; stroke-linejoin: round; }
+.rv-filter-on .rv-funnel { fill: currentcolor; }
+.rv-filter-n { display: inline-grid; place-items: center; min-inline-size: 18px; block-size: 18px; padding: 0 5px; border-radius: var(--r-pill); background: #fff; color: var(--c-ink); font-size: var(--fs-2xs); font-weight: 800; }
+/* the page's two pages in a new tab, by the page box */
+.rv-open { display: inline-flex; gap: 4px; }
+.rv-open-link { display: inline-flex; align-items: center; min-block-size: 26px; padding: 2px 10px; border: 1px solid var(--c-line-2); border-radius: var(--r-pill); color: var(--c-ink); font-size: var(--fs-xs); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.rv-open-link:hover { border-color: var(--c-ink); color: var(--c-ink); }
 .rv-filter summary::-webkit-details-marker { display: none; }
-.rv-filter summary::after { content: " ▾"; margin-inline-start: 4px; color: var(--rv-muted); }
+.rv-filter summary::after { content: "▾"; color: inherit; opacity: 0.6; }
 .rv-filter[open] summary, .rv-filter summary:hover { border-color: var(--c-ink); }
 .rv-filter-body { position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; display: flex; flex-direction: column; gap: 6px; min-inline-size: 240px; max-block-size: 60vh; padding: 12px 14px; overflow: auto; border: 1px solid var(--c-line); border-radius: var(--r-m); background: var(--c-surface); box-shadow: var(--shadow-pop); }
 .rv-filter-head { margin: 4px 0 2px; color: var(--c-ink-2); font-size: var(--fs-2xs); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
