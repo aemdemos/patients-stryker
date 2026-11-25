@@ -15,7 +15,7 @@ import {
 import { REVIEW } from './config.js';
 import loadPages from './pages.js';
 import { keepFresh } from './live.js';
-import { mountHelp } from './help.js';
+import { mountBar } from './bar.js';
 
 // the designs a block's content fits and the group labels: only with the design panel
 // (standard pages); loaded on first use
@@ -342,7 +342,7 @@ async function start() {
   }
   document.title = `${REVIEW.title}: summary`;
   $('h1').textContent = `${REVIEW.title}: summary`;
-  const help = mountHelp('summary', $('.rs-bar'));
+  const help = mountBar('summary', $('.rs-bar'));
   const pages = await loadPages();
   let all = [];
   let role = 'reviewer';

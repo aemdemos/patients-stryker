@@ -6,7 +6,7 @@
  */
 import { call, inviteToken } from './store.js';
 import { REVIEW } from './config.js';
-import { mountHelp } from './help.js';
+import { mountBar } from './bar.js';
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
@@ -103,7 +103,7 @@ function draw() {
     'tr',
     {},
     el('td', {}, i.name, i.me ? el('span', { class: 'iv-me' }, ' (you)') : null),
-    el('td', { class: i.role === 'aoe' ? 'iv-role-aoe' : '' }, i.role === 'aoe' ? 'AOE team' : 'Reviewer'),
+    el('td', {}, el('span', { class: `ui-role ui-role-${i.role === 'aoe' ? 'aoe' : 'reviewer'}` }, i.role === 'aoe' ? 'AOE team' : 'Reviewer')),
     el('td', {}, i.paths.join(', ')),
     el('td', {}, `${day(i.created)}${i.createdBy ? ` by ${i.createdBy}` : ''}`),
     el('td', {}, day(i.expires)),
@@ -122,6 +122,7 @@ function draw() {
 }
 hooks.draw = draw;
 
+let bar = null;
 async function load() {
   const { status, body } = await call('invites');
   if (status !== 200) {
@@ -136,7 +137,8 @@ async function load() {
   invites = body.invites;
   const mine = invites.find((i) => i.me);
   myPaths = mine?.paths?.length ? mine.paths : ['/'];
-  $('.rs-updated').textContent = `${mine?.name || ''} (AOE) · read ${when(new Date().toISOString())}`;
+  $('.rs-updated').textContent = `Last read ${when(new Date().toISOString())}`;
+  bar?.setRole('aoe', mine?.name);
   draw();
   return true;
 }
@@ -148,9 +150,8 @@ async function start() {
   }
   document.title = `${REVIEW.title}: invitations`;
   inviteToken();
+  bar = mountBar('invites', $('.rs-bar'));
   if (!(await load())) return;
-  // (the AOE team's page: its help for the AOE team)
-  mountHelp('invites', $('.rs-bar')).setRole('aoe');
   $('.iv-new').hidden = false;
   $('.iv-list').hidden = false;
   $('.iv-paths').value = myPaths.join('\n');
@@ -167,7 +168,7 @@ async function start() {
       body: JSON.stringify({
         op: 'create',
         name: $('.iv-name').value,
-        role: $('.iv-role').value,
+        role: $('.iv-role input:checked').value,
         days: Number($('.iv-days').value),
         paths,
       }),

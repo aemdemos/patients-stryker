@@ -82,7 +82,7 @@ try {
   {
     const { ctx, p } = await open(rev.token, 'status.html');
     await p.waitForFunction(() => /pages/.test(document.querySelector('.st-count')?.textContent || ''));
-    const hidden = await p.evaluate(() => document.querySelector('.st-mark').hidden && document.querySelector('.st-invites').hidden);
+    const hidden = await p.evaluate(() => document.querySelector('.st-mark').hidden && document.querySelector('.ui-nav-invites').hidden);
     check('std status: the customer sees no AOE parts', hidden);
     await ctx.close();
   }

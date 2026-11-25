@@ -5,18 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Review summary</title>
+  <link rel="stylesheet" href="./ui.css">
   <link rel="stylesheet" href="./summary-page.css">
   <script type="module" src="./summary-page.js"></script>
 </head>
 <body>
-  <header class="rs-bar">
-    <h1>Review summary</h1>
-    <span class="rs-updated" aria-live="polite">Loading the reviews…</span>
-    <label class="rs-check" hidden><input type="checkbox" class="rs-hide-tests" checked> Hide test entries</label>
-    <button type="button" class="rs-btn rs-refresh">Refresh</button>
-    <a class="rs-btn" href="./status.html">Status of every page</a>
-    <a class="rs-btn" href="./index.html">Open the review tool</a>
-  </header>
+  <header class="rs-bar"></header>
+  <div class="ui-pagehead">
+    <div>
+      <h1>Review summary</h1>
+      <span class="rs-updated" aria-live="polite">Loading the reviews…</span>
+    </div>
+    <div class="ui-actions">
+      <label class="rs-check" hidden><input type="checkbox" class="rs-hide-tests" checked> Hide test entries</label>
+      <button type="button" class="rs-btn rs-refresh">Refresh</button>
+    </div>
+  </div>
   <main class="rs-main">
     <section class="rs-section" id="progress"><h2>Progress</h2><div class="rs-body"></div></section>
     <section class="rs-section" id="designs"><h2>Design decisions</h2><div class="rs-body"></div></section>

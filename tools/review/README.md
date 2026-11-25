@@ -113,6 +113,11 @@ page and the summary.
   Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
   Colours: everything of the AOE team (Adobe) red, everything of the reviewers blue; the word is
   always "reviewer" (never "customer") on every page of the tool.
+- **One design for every page** (`ui.css`, `bar.js`, 25 Nov 2026): the same dark top bar with
+  the tools in the order of the work, page heads with the title and when the page was read,
+  cards, pill buttons, status tiles that filter the list when clicked, tables whose head stays
+  while the page scrolls (on phones they scroll sideways in their box). Keep new pages on the
+  tokens of `ui.css`; the class names the code and tests use did not change.
 - **Help on every page** (`help.js`): "Start" and an ⓘ at the right end of every top bar; the
   ⓘ opens a dialog about the page for the viewer's side (customer or AOE team). The texts live
   in `help.js` (`HELP`): keep them in step with the pages.

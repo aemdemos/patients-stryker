@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Review: invitations</title>
+  <link rel="stylesheet" href="./ui.css">
   <link rel="stylesheet" href="./summary-page.css">
   <link rel="stylesheet" href="./invites.css">
   <script type="module" src="./invites.js"></script>
 </head>
 <body>
-  <header class="rs-bar">
-    <h1>Invitations</h1>
-    <span class="rs-updated" aria-live="polite">Loading…</span>
-    <a class="rs-btn" href="./index.html">Open the review tool</a>
-    <a class="rs-btn" href="./status.html">Review status</a>
-  </header>
+  <header class="rs-bar"></header>
+  <div class="ui-pagehead">
+    <div>
+      <h1>Invitations</h1>
+      <span class="rs-updated" aria-live="polite">Loading…</span>
+    </div>
+  </div>
   <main class="rs-main">
     <p class="iv-denied rs-section" hidden></p>
     <section class="rs-section iv-new" hidden>
@@ -23,10 +25,11 @@
       <p class="rs-muted">An invitation is a personal link to the review: whoever has it reviews under its name, so send each person their own, and treat it like a password. The link is shown once, here; if it is lost, revoke it and make a new one.</p>
       <form class="iv-form">
         <label>Name <input type="text" class="iv-name" maxlength="80" required placeholder="Name or email of the person"></label>
-        <label>Role <select class="iv-role">
-          <option value="reviewer">Reviewer</option>
-          <option value="aoe">AOE team</option>
-        </select></label>
+        <fieldset class="iv-role">
+          <legend>Role</legend>
+          <label class="iv-role-reviewer"><input type="radio" name="iv-role" value="reviewer" checked> Reviewer</label>
+          <label class="iv-role-aoe"><input type="radio" name="iv-role" value="aoe"> AOE team</label>
+        </fieldset>
         <label>Valid for (days) <input type="number" class="iv-days" min="1" max="365" value="90" required></label>
         <label class="iv-paths-label">Pages <textarea class="iv-paths" rows="2" aria-describedby="iv-paths-help"></textarea></label>
         <p id="iv-paths-help" class="rs-muted">One path per line: the pages under it (/ is every page). Only pages your own invitation covers.</p>

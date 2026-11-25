@@ -147,7 +147,7 @@ try {
   check('the AOE view: waiting for the AOE team first, worded for them', rows.length === 7
     && (rows[0].state === 'waiting-aoe' || rows.every((x) => x.state !== 'waiting-aoe'))
     && rows.find((x) => x.state === 'waiting-customer')?.label === 'Waiting for the reviewer', JSON.stringify(rows.map((x) => [x.state, x.label])));
-  check('the AOE view links the results page', await page.evaluate(() => !document.querySelector('.st-results').hidden));
+  check('the AOE view links the results page', await page.evaluate(() => !document.querySelector('.ui-nav-summary').hidden));
   await context.close();
 } finally {
   await browser.close();

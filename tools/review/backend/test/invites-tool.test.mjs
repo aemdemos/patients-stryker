@@ -102,7 +102,7 @@ try {
   {
     const { ctx, p } = await open(aoe.token, 'status.html');
     await p.waitForFunction(() => !/Loading/.test(document.querySelector('.rs-updated').textContent));
-    check('status page: Invitations for the AOE team', await p.$eval('.st-invites', (e) => !e.hidden));
+    check('status page: Invitations for the AOE team', await p.$eval('.ui-nav-invites', (e) => !e.hidden));
     await ctx.close();
   }
   {
@@ -111,7 +111,7 @@ try {
     });
     const { ctx, p } = await open(fresh.token, 'status.html');
     await p.waitForFunction(() => !/Loading/.test(document.querySelector('.rs-updated').textContent));
-    check('status page: no Invitations for reviewers', await p.$eval('.st-invites', (e) => e.hidden));
+    check('status page: no Invitations for reviewers', await p.$eval('.ui-nav-invites', (e) => e.hidden));
     await ctx.close();
     await admin({ op: 'revoke', id: fresh.id });
   }

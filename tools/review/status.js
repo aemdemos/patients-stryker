@@ -8,7 +8,7 @@
  */
 import { call, inviteToken } from './store.js';
 import { keepFresh } from './live.js';
-import { mountHelp } from './help.js';
+import { mountBar } from './bar.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl, scopeFacts } from './pages.js';
 import {
@@ -437,7 +437,7 @@ function draw() {
     el('td', {}, el('span', { class: `st-chip st-${p.state}` }, label(p.state))),
     el(
       'td',
-      {},
+      { class: 'st-page-cell' },
       el('a', { href: `./index.html?page=${encodeURIComponent(p.path)}`, target: '_blank', rel: 'noopener' }, p.title),
       el('br'),
       el('small', { class: 'rs-muted' }, p.path),
@@ -489,7 +489,7 @@ let pagesKept = null;
  * reads the review's state (and the pages); quick: the pages kept (after organising);
  * rebuild: the backend builds its summary again from every entry (Refresh)
  */
-let help = null;
+let bar = null;
 async function load({ quick = false, rebuild = false, quiet = false } = {}) {
   // (quiet: the 15-second refresh, live.js: no "Loading…" in between)
   if (!quiet) $('.rs-updated').textContent = 'Loading…';
@@ -504,8 +504,7 @@ async function load({ quick = false, rebuild = false, quiet = false } = {}) {
     return;
   }
   me = { name: body.reviewer, role: body.role || 'reviewer' };
-  help?.setRole(me.role);
-  $('.st-invites').hidden = body.role !== 'aoe';
+  bar?.setRole(me.role, me.name);
   const states = new Map(body.pages.map((p) => [p.page, p]));
   all = pages.filter((p) => inScope(body.scope, p.path)).map((p) => {
     const s = states.get(p.path) || { state: 'unreviewed' };
@@ -543,7 +542,7 @@ async function load({ quick = false, rebuild = false, quiet = false } = {}) {
     if (v.template) $('.st-template').value = v.template;
     if (v.state) $('.st-state').value = v.state;
   }
-  $('.rs-updated').textContent = `${me.name}${me.role === 'aoe' ? ' (AOE)' : ''} · read ${when(body.at)}`;
+  $('.rs-updated').textContent = `Last read ${when(body.at)}`;
   draw();
   window.localStorage.setItem(VISIT_KEY, body.at);
 }
@@ -653,7 +652,7 @@ async function start() {
     draw();
   });
   $('.st-refresh').addEventListener('click', () => load({ rebuild: true }));
-  help = mountHelp('status', $('.rs-bar'));
+  bar = mountBar('status', $('.rs-bar'));
   await load();
   if (view.scroll) window.scrollTo(0, view.scroll);
   // kept up to date (live.js), not while a row is being edited or a field of the selection bar

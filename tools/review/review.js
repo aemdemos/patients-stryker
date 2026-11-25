@@ -15,7 +15,7 @@ import {
 } from './threads.js';
 import { createNotes, CATEGORIES } from './notes.js';
 import { keepFresh } from './live.js';
-import { mountHelp } from './help.js';
+import { mountBar } from './bar.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl } from './pages.js';
 import {
@@ -1913,7 +1913,7 @@ async function start() {
     if (!who) return;
     me.name = who.name;
     me.role = who.role || 'reviewer';
-    helpHooks.setRole(me.role);
+    helpHooks.setRole(me.role, who.name);
     document.body.classList.toggle('rv-role-aoe', me.role === 'aoe');
     threadHooks.redraw();
     name.value = me.role === 'aoe' ? `${who.name} (AOE)` : who.name;
@@ -1948,7 +1948,8 @@ async function start() {
   loadPage();
   // the open page kept up to date (live.js)
   keepFresh(refreshSaved);
-  Object.assign(helpHooks, mountHelp('review', $('.rv-bar')));
+  Object.assign(helpHooks, mountBar('review', $('.rv-appbar')));
+  if (me.name) helpHooks.setRole(me.role, me.name);
 }
 
 start();
