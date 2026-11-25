@@ -1,6 +1,6 @@
 /* eslint-disable */
 /* global WebImporter */
-import { STD_DRAFT_IMPORT } from '../transformers/corp-text-markers.js';
+import { STD_DRAFT_IMPORT, stdProductPage } from '../transformers/corp-text-markers.js';
 import {
   dropColourTags, introCopy, productSlide, sizeBrackets, slideOptions, slideVideo, takeStripe,
 } from '../hero-corp-std-import.js';
@@ -129,7 +129,7 @@ export default function parse(element, context) {
   const first = desktop || mobile || slide.querySelector('img');
   if (!first) return;
 
-  if (STD_DRAFT_IMPORT && productSlide(slide, overlay)) {
+  if (stdProductPage(document) && productSlide(slide, overlay)) {
     const copy = introCopy(overlay);
     overlay.querySelectorAll('.curatedcta a.btn[href]').forEach((btn) => {
       const p = document.createElement('p');

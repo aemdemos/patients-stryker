@@ -1,0 +1,55 @@
+/*
+ * Template product-detail: www.stryker.com product pages (review build, docs/standardisation).
+ * The pages are built from the standard blocks, section styles (styles/sections-std.css) and
+ * Text style; this file holds only what a product page needs beyond them. Sections keep the
+ * corp standard gap. In review: every rule is for review pages (body.std-draft) only — the real
+ * product pages that already carry `template: product-detail` render as before.
+ */
+
+body.product-detail.std-draft {
+  --product-detail-video-frame: 1px; /* the .dm-video border (lazy-styles.css) */
+  --product-detail-download-box: 240px; /* a download cover's box (stryker.com resources) */
+  --product-detail-download-cover: 238px; /* the cover's maximum height (184 x 238 covers) */
+}
+
+/* headings: a section title draws the grey rule only when it is underlined (authoring
+   conventions; stryker.com section-title "Resources", "Overview"); a plain Heading 2 has none
+   ("Proven pressure injury prevention") */
+body.product-detail.std-draft main > .section > .default-content-wrapper h2:not(.underline) {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* a page title in a Columns cell (SafeAir "SafeAir smoke evacuation"): its lines 1.35x the
+   size apart, the hero line height */
+body.product-detail.std-draft main .columns > div > div h1 {
+  line-height: var(--heading-line-height-hero);
+}
+
+/* Dynamic Media video: the frame inside the column, the video area in the video's own shape
+   (product-detail.js reads it from the Dynamic Media set; 16:9 until then), as on stryker.com
+   (Isolibrium 1380 x 575 at 1440) */
+body.product-detail.std-draft main .dm-video-wrapper:not(.is-fullscreen) .dm-video {
+  box-sizing: content-box;
+  width: calc(100% - 2 * var(--product-detail-video-frame));
+  aspect-ratio: var(--product-detail-video-ratio, 16 / 9);
+}
+
+body.product-detail.std-draft main .dm-video-wrapper:not(.is-playing) .dm-video {
+  object-fit: cover;
+}
+
+/* downloads (Cards Corp resources): each cover centred in a 240px box, at most 238px high and
+   the card's width (stryker.com 184 x 238 portrait covers) */
+body.product-detail.std-draft main .cards-corp.resources .cards-corp-card-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: var(--product-detail-download-box);
+}
+
+body.product-detail.std-draft main .cards-corp.resources .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: var(--product-detail-download-cover);
+}

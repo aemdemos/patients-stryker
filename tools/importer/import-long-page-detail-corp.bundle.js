@@ -43,6 +43,10 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/corp-text-markers.js
   var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
+  function stdProductPage(doc) {
+    var _a;
+    return STD_DRAFT_IMPORT && ((_a = doc == null ? void 0 : doc.body) == null ? void 0 : _a.getAttribute("data-template")) === "product-detail";
+  }
   var SIZE_WORDS = {
     "0-8": "s",
     "1-25": "l",
@@ -812,7 +816,7 @@ var CustomImportScript = (() => {
     const overlay = slide.querySelector(".overlayparsys");
     const first = desktop || mobile || slide.querySelector("img");
     if (!first) return;
-    if (STD_DRAFT_IMPORT && productSlide(slide, overlay)) {
+    if (stdProductPage(document) && productSlide(slide, overlay)) {
       const copy = introCopy(overlay);
       overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
         const p = document.createElement("p");
@@ -4250,7 +4254,7 @@ var CustomImportScript = (() => {
           return;
         }
       }
-      if (STD_DRAFT_IMPORT && columns.length === 2 && !boxVariant(columns)) {
+      if (stdProductPage(doc) && columns.length === 2 && !boxVariant(columns)) {
         const boxOf = (c) => c.querySelector(":scope > .dimensional-box, :scope > .has-background, :scope > div > .dimensional-box");
         const squash = (v) => (v || "").replace(/[\s\u00a0]+/g, "");
         const texts = columns.map((col) => [...col.querySelectorAll(".c-rich-text-editor")].filter((c) => c.closest(".colctrl") === colctrl && !c.parentElement.closest(".c-rich-text-editor") && text4(c)).map((c) => ({ c, box: boxOf(c) })).map((t) => __spreadProps(__spreadValues({}, t), { variant: t.box ? panelOptions(t.box, t.c) : "" })));
@@ -4958,7 +4962,7 @@ var CustomImportScript = (() => {
       const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
-      meta.template = PAGE_TEMPLATE.name;
+      meta.template = stdProductPage(document) ? "product-detail" : PAGE_TEMPLATE.name;
       if (hcp) meta["hcp-banner"] = "true";
       if (published) {
         meta.published = published;

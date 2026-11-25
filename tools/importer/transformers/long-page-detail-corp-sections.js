@@ -41,7 +41,7 @@ import { convertBeforeRows, convertAfterRows, panelOptions } from './long-page-d
 import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
-import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
+import { STD_DRAFT_IMPORT, stdProductPage } from './corp-text-markers.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
 
@@ -940,7 +940,7 @@ function columnRows(main, doc) {
     // is the package's "box beside other content": a side-by-side section of Panel blocks (one
     // per box, stacked in their column, scripts/corp.js) and the other column's content — only
     // where the Columns cell box can't carry it (a single box in a cell stays the cell box)
-    if (STD_DRAFT_IMPORT && columns.length === 2 && !boxVariant(columns)) {
+    if (stdProductPage(doc) && columns.length === 2 && !boxVariant(columns)) {
       const boxOf = (c) => c.querySelector(':scope > .dimensional-box, :scope > .has-background, :scope > div > .dimensional-box');
       const squash = (v) => (v || '').replace(/[\s\u00a0]+/g, '');
       const texts = columns.map((col) => [...col.querySelectorAll('.c-rich-text-editor')]

@@ -18,6 +18,18 @@
 // real page renders as today until the standardisation is approved
 export const STD_DRAFT_IMPORT = typeof STD_DRAFT !== 'undefined' && STD_DRAFT === true;
 
+/**
+ * Whether the page being imported is a stryker.com product page (its body has
+ * `data-template="product-detail"`), in the staging build: the product-detail review rules
+ * (Page intro banner, Panels beside other content, template product-detail) apply only there,
+ * so long-page-detail and news-detail pages keep their own import.
+ * @param {Document} doc The source document
+ * @returns {boolean}
+ */
+export function stdProductPage(doc) {
+  return STD_DRAFT_IMPORT && doc?.body?.getAttribute('data-template') === 'product-detail';
+}
+
 // bracket class → Text style word ('' = no word, the text stays plain)
 const SIZE_WORDS = {
   '0-8': 's', '1-25': 'l', '1-5': 'xl', '1-75': 'xxl', 2: 'xxxl', '2-5': 'xxxxl',

@@ -14,7 +14,7 @@ import longPageDetailSectionsTransformer, {
   keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import corpTextMarkersTransformer from './transformers/corp-text-markers.js';
+import corpTextMarkersTransformer, { stdProductPage } from './transformers/corp-text-markers.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
@@ -136,7 +136,8 @@ export default {
     const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
     if (keywords) meta.Keywords = keywords;
     meta.site = 'corp';
-    meta.template = PAGE_TEMPLATE.name;
+    // review build: a stryker.com product page is a product-detail page
+    meta.template = stdProductPage(document) ? 'product-detail' : PAGE_TEMPLATE.name;
     if (hcp) meta['hcp-banner'] = 'true';
     // the Last Updated line is not shown for now (`show` turns it on, scripts/corp.js)
     if (published) {
