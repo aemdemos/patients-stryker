@@ -111,7 +111,7 @@ const FLOW = [
     who: 'aoe',
     title: 'Answer and fix',
     state: ['waiting-customer'],
-    text: 'The AOE team answers in the chats (in progress, done, won\'t do, and the release a fix ships in), fixes the page, and sends it back to the reviewer.',
+    text: 'The AOE team answers in the chats (in progress, done, won\'t do), fixes the page, and sends it back to the reviewer.',
   },
   {
     who: 'reviewer',

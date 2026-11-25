@@ -3,7 +3,8 @@
  * migrated or the source page. Getting one in (a Picture button, pasting into the message box,
  * dropping onto it), making a big one smaller in the browser, uploading it in parts (a request
  * may not be over 1 MB; backend action `images`), showing the pictures of a message, and the
- * viewer: the picture large in a dialog, zoom in / out (buttons, Ctrl+wheel, + − 0 1 keys),
+ * viewer: the picture large in a dialog, zoom in / out (buttons, Ctrl+wheel, + − 0 1 F keys), Fit
+ * (all of it in the window), Fill (the window's whole width and height, the rest scrolls),
  * dragged around when it is larger than the window, the message's other pictures with ‹ ›.
  * DOM only (no innerHTML).
  */
@@ -179,6 +180,12 @@ function makeViewer() {
     v.fit = Math.min(1, (stage.clientWidth - 32) / w, (stage.clientHeight - 32) / h);
     return v.fit;
   };
+  // (the window's whole width and height: the rest of the picture scrolls)
+  const fillZoom = () => {
+    const w = img.naturalWidth || 1;
+    const h = img.naturalHeight || 1;
+    return Math.max((stage.clientWidth - 32) / w, (stage.clientHeight - 32) / h);
+  };
   v.show = (i) => {
     v.index = (i + v.pics.length) % v.pics.length;
     const p = v.pics[v.index];
@@ -212,7 +219,8 @@ function makeViewer() {
     btn('−', 'Zoom out (−)', () => setZoom(v.zoom / 1.25)),
     zoomLabel,
     btn('+', 'Zoom in (+)', () => setZoom(v.zoom * 1.25)),
-    btn('Fit', 'Fit the window (0)', () => setZoom(fitZoom())),
+    btn('Fit', 'Fit: all of it in the window (0)', () => setZoom(fitZoom())),
+    btn('Fill', 'Fill the window\'s whole width and height (F)', () => setZoom(fillZoom())),
     btn('100%', 'Actual size (1)', () => setZoom(1)),
     open,
     btn('×', 'Close (Esc)', () => dialog.close(), 'pv-close'),
@@ -257,6 +265,8 @@ function makeViewer() {
       '-': () => setZoom(v.zoom / 1.25),
       0: () => setZoom(fitZoom()),
       1: () => setZoom(1),
+      f: () => setZoom(fillZoom()),
+      F: () => setZoom(fillZoom()),
       ArrowLeft: () => v.pics.length > 1 && v.show(v.index - 1),
       ArrowRight: () => v.pics.length > 1 && v.show(v.index + 1),
     };

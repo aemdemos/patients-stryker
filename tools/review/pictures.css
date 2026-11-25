@@ -32,7 +32,9 @@
 .pv-attach-item img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: top left; }
 .pv-attach-remove { position: absolute; top: 2px; right: 2px; display: grid; place-items: center; inline-size: 20px; block-size: 20px; padding: 0; border: 0; border-radius: 50%; background: rgb(20 20 20 / 80%); color: #fff; font-size: 14px; line-height: 1; cursor: pointer; }
 .pv-attach-remove:hover { background: var(--c-red, #eb1000); }
-.pv-pick { display: inline-flex; gap: 4px; align-items: center; }
+.pv-pick { display: inline-grid; place-items: center; inline-size: 34px; min-block-size: 30px; padding: 0; }
+.pv-clip { inline-size: 18px; block-size: 18px; fill: none; stroke: currentcolor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pv-sr { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .pv-pick input { position: absolute; inline-size: 1px; block-size: 1px; opacity: 0; pointer-events: none; }
 .pv-pick:has(:focus-visible) { outline: 2px solid var(--c-blue, #0969da); outline-offset: 2px; }
 .pv-drop { outline: 2px dashed var(--c-blue, #0969da); outline-offset: -4px; background: var(--c-reviewer-soft, #eaf3ff); }
