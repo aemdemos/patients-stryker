@@ -106,6 +106,10 @@ function markerWords() {
 
 const startMarker = () => (markerWords().length ? `:start-${markerWords().join('-')}:` : '');
 const END_MARKER = ':end:';
+// EDS skips a `:name:` right after a word holding "http" or "urn" (its guard for addresses,
+// e.g. "journey.:end:" stays as text): a space before the marker keeps it a marker
+const ADDRESS_GUARD = /((?:https?|urn)\S*?)(:(?:start-[a-z0-9-]+|end):)/gi;
+const readable = (text) => text.replace(ADDRESS_GUARD, '$1 $2');
 
 let sdk = null;
 let statusEl;
@@ -508,7 +512,7 @@ function markInTarget(target, find, words, marker) {
   const at = node.textContent.indexOf(find);
   const before = node.textContent.slice(0, at);
   const after = node.textContent.slice(at + find.length);
-  node.textContent = `${before}${marker}${words}${END_MARKER}${after}`;
+  node.textContent = readable(`${before}${marker}${words}${END_MARKER}${after}`);
   return true;
 }
 
@@ -759,7 +763,7 @@ async function applyToSelection() {
   // otherwise plain text replaces the selection inside its line (HTML would be inserted as a
   // new paragraph); bold / italic covering the whole selection is kept by the editor
   const live = await replaceInLive(text, words, marker);
-  if (!live) sdk.actions.sendText(`${marker}${words}${END_MARKER}`);
+  if (!live) sdk.actions.sendText(readable(`${marker}${words}${END_MARKER}`));
   setStatus(old
     ? `Changed the style of “${words.trim()}” from :start-${old[1]}: to ${marker}`
     : `Styled “${words.trim()}” with ${marker} … ${END_MARKER}`, 'ok');

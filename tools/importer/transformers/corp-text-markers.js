@@ -270,9 +270,28 @@ export function bracketsToMarkers(main) {
   return [...dropped];
 }
 
+// EDS skips a `:name:` right after a word holding "http" or "urn" (its guard for addresses,
+// e.g. "journey.:end:" stays as text): a space before the marker keeps it a marker
+const ADDRESS_GUARD = /((?:https?|urn)\S*?)(:(?:start-[a-z0-9-]+|end):)/gi;
+
+/**
+ * Puts a space before every marker the address guard would skip.
+ * @param {Element} main The page content
+ */
+export function keepMarkersReadable(main) {
+  const walker = main.ownerDocument.createTreeWalker(main, 4 /* NodeFilter.SHOW_TEXT */);
+  let node = walker.nextNode();
+  while (node) {
+    ADDRESS_GUARD.lastIndex = 0;
+    if (ADDRESS_GUARD.test(node.nodeValue)) node.nodeValue = node.nodeValue.replace(ADDRESS_GUARD, '$1 $2');
+    node = walker.nextNode();
+  }
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'afterTransform' || !STD_DRAFT_IMPORT) return;
   const dropped = bracketsToMarkers(element);
+  keepMarkersReadable(element);
   // the classes without a word, for the import report
   if (payload && dropped.length) payload.textMarkersDropped = dropped;
 }
