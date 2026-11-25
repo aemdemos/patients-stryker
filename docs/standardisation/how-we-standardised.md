@@ -261,7 +261,7 @@ most as many steps as it had values, never more.*
 | Fragment | 1 | 1 | 0 |
 | **Total** | **70** | **49** | **169** |
 
-*Properties* counts every named choice except the variant, including each group's default.
+*Properties* counts every named choice except the variant, including each group's default. Section layout's 4 variants and Carousel's 5 properties are section styles, so they are also part of the 35 section-style choices in section 9: don't add the two totals together.
 
 **The properties, block by block**
 
