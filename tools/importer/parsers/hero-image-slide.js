@@ -49,6 +49,14 @@ function headline(overlay, document) {
   let lines = headings.length ? headings : [...overlay.querySelectorAll('.line, p')];
   if (headings.length && lineEls.length) {
     lines = lineEls.map((line) => line.querySelector('h1, h2, h3, h4, h5, h6') || line);
+  } else if (STD_DRAFT_IMPORT && headings.length) {
+    // in review (staging build only): the text paragraphs after the headings too, in their
+    // order (the description under LIFEPAK 35's and Isolibrium's title); a paragraph that is
+    // only a button stays with the slide's buttons
+    lines = [...overlay.querySelectorAll('h1, h2, h3, h4, h5, h6, p')]
+      .filter((el) => !el.parentElement.closest('h1, h2, h3, h4, h5, h6, p')
+        && !el.closest('.curatedcta, .buttonset, .c-curatedcta')
+        && !(el.tagName === 'P' && el.querySelector('a') && clean(el.textContent) === clean(el.querySelector('a').textContent)));
   }
   lines.forEach((line) => {
     if (!clean(line.textContent)) return;
@@ -135,7 +143,13 @@ export default function parse(element, context) {
       const a = document.createElement('a');
       a.setAttribute('href', btn.getAttribute('href'));
       a.textContent = clean(btn.textContent);
-      strong.append(a);
+      // in review (staging build only): a gold button (a.btn.btn-gold) is a Bold + Italic link
+      // (authoring conventions: gold), not the teal Bold link
+      if (STD_DRAFT_IMPORT && btn.classList.contains('btn-gold')) {
+        const em = document.createElement('em');
+        em.append(a);
+        strong.append(em);
+      } else strong.append(a);
       p.append(strong);
       lines.push(p);
     });

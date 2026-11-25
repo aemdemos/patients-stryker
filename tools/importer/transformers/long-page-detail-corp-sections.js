@@ -616,6 +616,9 @@ function rowCopyStyle(cells, doc) {
     copy.filter((n) => sizeTag(n.copyStyle) || serif(n.copyStyle))
       .forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) ? 'serif' : '']
         .filter(Boolean).join(','), doc));
+    // a heading in its source size span keeps that size (headingSpanSizes)
+    cells.flat().filter((n) => n.nodeType === 1 && /^H[1-3]$/.test(n.tagName) && n.stdHeadingSize)
+      .forEach((n) => tagCopy(n, n.stdHeadingSize, doc));
     const rest = new Set(copy.flatMap((n) => (n.copyStyle || '').split(',').map((x) => x.trim()))
       .filter((x) => x && x !== 'serif' && !/^p-\d/.test(x)));
     return [...rest].join(', ');
@@ -786,6 +789,55 @@ function tileCards(cells, variant, doc) {
  *     Fragment block in another column (the contact aside) in the same section
  *   - any other row: a `Columns` block (variant from the column widths), its own section
  */
+/**
+ * In review (staging build only, docs/standardisation/page-comparison.md): the rows of an XF's
+ * AEM responsive grid (e.g. the Isolibrium feature rows: a 4-column image beside an 8-column
+ * text) become a column row (.colctrl > .row > .col-md-N), so columnRows makes them one Columns
+ * block in their source widths. Grid items fill a row up to the grid's 12 columns (offset +
+ * span); a row with two or more filled items is converted; a full-width item stays as it is.
+ * Outer grids first: an item's own grid (e.g. LIFEPAK 35's icon beside its text, in a row of
+ * three) stays inside its cell (no blocks inside blocks).
+ * @param {Element} main The page content
+ * @param {Document} doc The document
+ */
+function xfGridRows(main, doc) {
+  const num = (el, re) => Number(((el.className || '').match(re) || [])[1]) || 0;
+  const filled = (el) => !!text(el) || !!el.querySelector('img, [data-asset-path], iframe');
+  [...main.querySelectorAll('.experiencefragment .aem-Grid')].forEach((grid) => {
+    if (grid.closest('header, footer, .modal, .colctrl')) return;
+    const n = num(grid, /\baem-Grid--(\d+)\b/) || 12;
+    const rows = [];
+    let row = null;
+    [...grid.children].filter((el) => el.classList.contains('aem-GridColumn')).forEach((item) => {
+      const span = num(item, /\baem-GridColumn--default--(\d+)\b/) || n;
+      const offset = num(item, /\baem-GridColumn--offset--default--(\d+)\b/);
+      if (row && row.used + offset + span <= n) {
+        row.items.push([span, item]);
+        row.used += offset + span;
+      } else {
+        row = { used: offset + span, items: [[span, item]] };
+        rows.push(row);
+      }
+    });
+    rows.forEach((r) => {
+      const cells = r.items.filter(([, item]) => filled(item));
+      if (cells.length < 2 || cells.some(([, item]) => item.querySelector('.colctrl'))) return;
+      const colctrl = doc.createElement('div');
+      colctrl.className = 'colctrl';
+      const inner = doc.createElement('div');
+      inner.className = 'row';
+      colctrl.append(inner);
+      cells[0][1].before(colctrl);
+      cells.forEach(([span, item]) => {
+        const col = doc.createElement('div');
+        col.className = `col-sm-${span} col-md-${span}`;
+        col.append(item);
+        inner.append(col);
+      });
+    });
+  });
+}
+
 function columnRows(main, doc) {
   [...main.querySelectorAll('.colctrl')].reverse().forEach((colctrl) => {
     const all = rowColumns(colctrl);
@@ -1192,6 +1244,16 @@ function spaceUrlColons(main, doc) {
 
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
+  // in review (staging build only): a slide's headline box can be a rich text box
+  // (.has-background.bg-…, e.g. LIFEPAK 35's dark purple gradient slides), which the steps
+  // below unwrap: its colour is kept on the slide's overlay for the slide parser (slideOptions)
+  if (STD_DRAFT_IMPORT) {
+    element.querySelectorAll('.overlayparsys').forEach((overlay) => {
+      const box = overlay.querySelector('.has-background[class*="bg-"]');
+      const bg = box && [...box.classList].find((c) => /^bg-/.test(c));
+      if (bg) overlay.setAttribute('data-std-box', bg);
+    });
+  }
   if (!payload || !payload.template || !TEMPLATES.includes(payload.template.name)) return;
   const doc = element.ownerDocument;
   const main = doc.querySelector('[role="main"]') || element;
@@ -1248,6 +1310,7 @@ export default function transform(hookName, element, payload) {
   };
   convertBeforeRows(main, doc, helpers);
   markRowEnds(main);
+  if (STD_DRAFT_IMPORT) xfGridRows(main, doc);
   columnRows(main, doc);
   gridRows(main);
   convertAfterRows(main, doc, helpers);

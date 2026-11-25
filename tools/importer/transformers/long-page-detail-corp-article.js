@@ -578,6 +578,28 @@ const HEADING_SIZES = [
   ['H1', 'fontsize-h4-2-5', 'h4-2-5'],
 ];
 
+/**
+ * In review (staging build only): the size of a heading whose whole text is in one source size
+ * span (e.g. LIFEPAK 35's h3 "The big, tough touchscreen" in span.fontsize-1-25em, 26.25px), as
+ * its Text style size tag (`text-1-25`), for headings in a column row's cells (rowCopyStyle).
+ * @param {Element} root The rich text
+ * @returns {Map<Element, string>} The headings and their size tags
+ */
+function headingSpanSizes(root) {
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  const sizes = new Map();
+  root.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((h) => {
+    const spans = [...h.querySelectorAll('[class*="fontsize-"]')]
+      .filter((span) => /\bfontsize-\d+(?:-\d+)?em\b/.test(span.className)
+        && !span.parentElement.closest('[class*="fontsize-"]'));
+    const classes = new Set(spans.map((span) => span.className.match(/\bfontsize-(\d+(?:-\d+)?)em\b/)[1]));
+    if (classes.size !== 1 || squash(spans.map((span) => span.textContent).join('')) !== squash(h.textContent)) return;
+    const [n] = [...classes];
+    sizes.set(h, `text-${n === '8' ? '0-8' : n}`);
+  });
+  return sizes;
+}
+
 function smallHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   const styles = new Map();
@@ -700,6 +722,7 @@ function richTextNodes(component, doc) {
   const plainBold = plainBoldParagraphs(box);
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
+  const spanSizes = STD_DRAFT_IMPORT ? headingSpanSizes(box) : new Map();
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
@@ -709,6 +732,14 @@ function richTextNodes(component, doc) {
     if (plainBold.has(node)) node.boldBody = true;
     if (serifHeads.has(node)) node.serifHeading = true;
     if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
+    if (spanSizes.has(node)) node.stdHeadingSize = spanSizes.get(node);
+    // in review: a heading the section styles don't size keeps its size as a size tag
+    // (Text style marker), wherever it goes (Isolibrium "Stryker's Financial Guarantees")
+    // (h1-h3: an h4-h6 label gets its size from the label styles already)
+    if (node.stdHeadingSize && !node.headingStyle && /^H[1-3]$/.test(node.tagName)) {
+      node.prepend(doc.createTextNode(`[[${node.stdHeadingSize}]`));
+      node.append(doc.createTextNode(']'));
+    }
   });
   // elements without copy of their own (headings, images) follow the copy around them
   let last = null;

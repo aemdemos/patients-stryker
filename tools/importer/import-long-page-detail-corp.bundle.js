@@ -51,17 +51,20 @@ var CustomImportScript = (() => {
     2: "xxxl",
     "2-5": "xxxxl"
   };
-  var COLOURS = ["gold", "white", "blue", "purple", "teal", "navy", "grey", "light-gray"];
+  var COLOURS = ["gold", "white", "blue", "purple", "teal", "grey", "light-gray"];
+  var EXTRA_COLOURS = {
+    black: "black",
+    "dark-gold": "darkgold",
+    "mid-grey": "midgrey",
+    "pale-grey": "palegrey"
+  };
   var LOOKS = [
     "rule-gold",
-    "box-white",
-    "box-gray",
     "box-gold",
     "box-blue",
     "box-purple",
     "box-teal",
     "box-dark",
-    "box-dark-blue-gradient",
     "box-dark-purple-gradient"
   ];
   var HEADLINE_STEPS = [1.5, 2, 3, 4.5];
@@ -101,6 +104,7 @@ var CustomImportScript = (() => {
       if (m) return [headlineWord(Number((m[1] || m[2]).replace("-", ".")))];
       m = c.match(/^color-([a-z-]+)$/);
       if (m && COLOURS.includes(m[1])) return [m[1]];
+      if (m && EXTRA_COLOURS[m[1]]) return [EXTRA_COLOURS[m[1]]];
       if (c === "serif") return ["serif"];
       if (c === "body-font") return ["body"];
       if (c === "futura-bold") return ["sans"];
@@ -473,7 +477,7 @@ var CustomImportScript = (() => {
   }) {
     const options = [...slidePosition(left, right, top).options];
     const boxed = headline2 && headline2.querySelector('.has-background[class*="bg-"]');
-    const bg = boxed && [...boxed.classList].find((c) => BOXES[c]);
+    const bg = boxed && [...boxed.classList].find((c) => BOXES[c]) || overlay && BOXES[overlay.getAttribute("data-std-box")] && overlay.getAttribute("data-std-box");
     if (bg) options.push(BOXES[bg]);
     if (headline2) options.push(...colourOptions(headline2));
     if (overlay && overlay.classList.contains("mobile_Bottom")) options.push("mobile-below");
@@ -652,6 +656,8 @@ var CustomImportScript = (() => {
     let lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
     if (headings.length && lineEls.length) {
       lines = lineEls.map((line) => line.querySelector("h1, h2, h3, h4, h5, h6") || line);
+    } else if (STD_DRAFT_IMPORT && headings.length) {
+      lines = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter((el) => !el.parentElement.closest("h1, h2, h3, h4, h5, h6, p") && !el.closest(".curatedcta, .buttonset, .c-curatedcta") && !(el.tagName === "P" && el.querySelector("a") && clean2(el.textContent) === clean2(el.querySelector("a").textContent)));
     }
     lines.forEach((line) => {
       if (!clean2(line.textContent)) return;
@@ -726,7 +732,11 @@ var CustomImportScript = (() => {
         const a = document.createElement("a");
         a.setAttribute("href", btn.getAttribute("href"));
         a.textContent = clean2(btn.textContent);
-        strong.append(a);
+        if (STD_DRAFT_IMPORT && btn.classList.contains("btn-gold")) {
+          const em = document.createElement("em");
+          em.append(a);
+          strong.append(em);
+        } else strong.append(a);
         p.append(strong);
         lines.push(p);
       });
@@ -1147,6 +1157,18 @@ var CustomImportScript = (() => {
     // long-page-detail-corp-sections.js → titleFromHeading)
     ["H1", "fontsize-h4-2-5", "h4-2-5"]
   ];
+  function headingSpanSizes(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const sizes = /* @__PURE__ */ new Map();
+    root.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((h) => {
+      const spans = [...h.querySelectorAll('[class*="fontsize-"]')].filter((span) => /\bfontsize-\d+(?:-\d+)?em\b/.test(span.className) && !span.parentElement.closest('[class*="fontsize-"]'));
+      const classes = new Set(spans.map((span) => span.className.match(/\bfontsize-(\d+(?:-\d+)?)em\b/)[1]));
+      if (classes.size !== 1 || squash(spans.map((span) => span.textContent).join("")) !== squash(h.textContent)) return;
+      const [n] = [...classes];
+      sizes.set(h, `text-${n === "8" ? "0-8" : n}`);
+    });
+    return sizes;
+  }
   function smallHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const styles = /* @__PURE__ */ new Map();
@@ -1247,6 +1269,7 @@ var CustomImportScript = (() => {
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
+    const spanSizes = STD_DRAFT_IMPORT ? headingSpanSizes(box) : /* @__PURE__ */ new Map();
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = blockNodes(box, doc);
@@ -1254,6 +1277,11 @@ var CustomImportScript = (() => {
       if (plainBold.has(node)) node.boldBody = true;
       if (serifHeads.has(node)) node.serifHeading = true;
       if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
+      if (spanSizes.has(node)) node.stdHeadingSize = spanSizes.get(node);
+      if (node.stdHeadingSize && !node.headingStyle && /^H[1-3]$/.test(node.tagName)) {
+        node.prepend(doc.createTextNode(`[[${node.stdHeadingSize}]`));
+        node.append(doc.createTextNode("]"));
+      }
     });
     let last = null;
     nodes.forEach((node) => {
@@ -3625,6 +3653,7 @@ var CustomImportScript = (() => {
     const serif = (style) => (style || "").split(",").map((x) => x.trim()).includes("serif");
     if (STD_DRAFT_IMPORT) {
       copy.filter((n) => sizeTag(n.copyStyle) || serif(n.copyStyle)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) ? "serif" : ""].filter(Boolean).join(","), doc));
+      cells.flat().filter((n) => n.nodeType === 1 && /^H[1-3]$/.test(n.tagName) && n.stdHeadingSize).forEach((n) => tagCopy(n, n.stdHeadingSize, doc));
       const rest = new Set(copy.flatMap((n) => (n.copyStyle || "").split(",").map((x) => x.trim())).filter((x) => x && x !== "serif" && !/^p-\d/.test(x)));
       return [...rest].join(", ");
     }
@@ -3742,6 +3771,43 @@ var CustomImportScript = (() => {
     return WebImporter.Blocks.createBlock(doc, {
       name: options.length ? `Cards Corp (${options.join(", ")})` : "Cards Corp",
       cells: rows
+    });
+  }
+  function xfGridRows(main, doc) {
+    const num = (el, re) => Number(((el.className || "").match(re) || [])[1]) || 0;
+    const filled = (el) => !!text4(el) || !!el.querySelector("img, [data-asset-path], iframe");
+    [...main.querySelectorAll(".experiencefragment .aem-Grid")].forEach((grid) => {
+      if (grid.closest("header, footer, .modal, .colctrl")) return;
+      const n = num(grid, /\baem-Grid--(\d+)\b/) || 12;
+      const rows = [];
+      let row = null;
+      [...grid.children].filter((el) => el.classList.contains("aem-GridColumn")).forEach((item) => {
+        const span = num(item, /\baem-GridColumn--default--(\d+)\b/) || n;
+        const offset = num(item, /\baem-GridColumn--offset--default--(\d+)\b/);
+        if (row && row.used + offset + span <= n) {
+          row.items.push([span, item]);
+          row.used += offset + span;
+        } else {
+          row = { used: offset + span, items: [[span, item]] };
+          rows.push(row);
+        }
+      });
+      rows.forEach((r) => {
+        const cells = r.items.filter(([, item]) => filled(item));
+        if (cells.length < 2 || cells.some(([, item]) => item.querySelector(".colctrl"))) return;
+        const colctrl = doc.createElement("div");
+        colctrl.className = "colctrl";
+        const inner = doc.createElement("div");
+        inner.className = "row";
+        colctrl.append(inner);
+        cells[0][1].before(colctrl);
+        cells.forEach(([span, item]) => {
+          const col = doc.createElement("div");
+          col.className = `col-sm-${span} col-md-${span}`;
+          col.append(item);
+          inner.append(col);
+        });
+      });
     });
   }
   function columnRows(main, doc) {
@@ -4051,6 +4117,13 @@ var CustomImportScript = (() => {
   }
   function transform2(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
+    if (STD_DRAFT_IMPORT) {
+      element.querySelectorAll(".overlayparsys").forEach((overlay) => {
+        const box = overlay.querySelector('.has-background[class*="bg-"]');
+        const bg = box && [...box.classList].find((c) => /^bg-/.test(c));
+        if (bg) overlay.setAttribute("data-std-box", bg);
+      });
+    }
     if (!payload || !payload.template || !TEMPLATES.includes(payload.template.name)) return;
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
@@ -4095,6 +4168,7 @@ var CustomImportScript = (() => {
     };
     convertBeforeRows(main, doc, helpers);
     markRowEnds(main);
+    if (STD_DRAFT_IMPORT) xfGridRows(main, doc);
     columnRows(main, doc);
     gridRows(main);
     convertAfterRows(main, doc, helpers);

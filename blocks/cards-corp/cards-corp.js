@@ -5,6 +5,9 @@ import {
 } from '../../scripts/utils.js';
 import { isVideoUrl, videoPlayerFor } from '../video/video.js';
 
+// an image this narrow (in px) or narrower is an icon, shown at its own size (review pages)
+const ICON_WIDTH = 200;
+
 /**
  * video variant: the player for a cell that holds only a video — a Dynamic Media player
  * (rendered by decorateDMAssets) or a single YouTube/DM link. Null for any other cell.
@@ -174,6 +177,21 @@ export default async function decorate(block) {
       above.className = 'cards-corp-card-title-above';
       above.append(title);
       image.before(above);
+    });
+  }
+
+  // in review (draft pages, docs/standardisation/page-comparison.md): an icon-sized image (e.g.
+  // LIFEPAK 35's 90px "Intuitive" icons) keeps its own size instead of filling the card
+  if (document.body.classList.contains('std-draft')) {
+    ul.querySelectorAll('.cards-corp-card-image img').forEach((img) => {
+      const fit = () => {
+        if (img.naturalWidth && img.naturalWidth <= ICON_WIDTH) {
+          img.closest('.cards-corp-card-image').classList.add('cards-corp-card-icon');
+          img.style.setProperty('--cards-corp-icon-width', `${img.naturalWidth}px`);
+        }
+      };
+      if (img.complete) fit();
+      else img.addEventListener('load', fit, { once: true });
     });
   }
 

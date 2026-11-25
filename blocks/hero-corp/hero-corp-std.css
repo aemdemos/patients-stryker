@@ -391,8 +391,10 @@ body.corp.std-draft .hero-corp.image-slide .hero-corp-headline > p:first-child {
 }
 
 /* …a line with a Text style text size (1.25×, 1.5× …) counts from the 14px text, as the source's
-   em sizes do at every width */
-body.corp.std-draft .hero-corp.image-slide .hero-corp-headline p:has(.text-marker:is(.ts-s, .ts-l, .ts-xl, .ts-xxl, .ts-xxxl, .ts-xxxxl)) {
+   em sizes do at every width; so does the bold title line when it is a heading (LIFEPAK 35:
+   its 2× title is 28px), while a plain heading line (the subline) counts from the heading size
+   (its 1.25× is 30.6px) */
+body.corp.std-draft .hero-corp.image-slide .hero-corp-headline :is(p, :is(h1, h2, h3):has(.hero-corp-title)):has(.text-marker:is(.ts-s, .ts-l, .ts-xl, .ts-xxl, .ts-xxxl, .ts-xxxxl)) {
   font-size: var(--body-font-size-m);
 }
 

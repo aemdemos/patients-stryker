@@ -116,7 +116,9 @@ export function slideOptions({
 }) {
   const options = [...slidePosition(left, right, top).options];
   const boxed = headline && headline.querySelector('.has-background[class*="bg-"]');
-  const bg = boxed && [...boxed.classList].find((c) => BOXES[c]);
+  // the box colour noted before the page steps unwrapped a rich-text box (sections transformer)
+  const bg = (boxed && [...boxed.classList].find((c) => BOXES[c]))
+    || (overlay && BOXES[overlay.getAttribute('data-std-box')] && overlay.getAttribute('data-std-box'));
   if (bg) options.push(BOXES[bg]);
   if (headline) options.push(...colourOptions(headline));
   if (overlay && overlay.classList.contains('mobile_Bottom')) options.push('mobile-below');

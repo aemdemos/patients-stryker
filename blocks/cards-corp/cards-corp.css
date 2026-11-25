@@ -670,3 +670,11 @@ body.corp.std-draft .cards-corp.resources > ul {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
+
+/* in review (draft pages): an icon-sized card image keeps its own size (cards-corp.js sets
+   --cards-corp-icon-width), as the icons of stryker.com's feature rows */
+body.corp.std-draft .cards-corp .cards-corp-card-image.cards-corp-card-icon img {
+  width: var(--cards-corp-icon-width);
+  max-width: 100%;
+  height: auto;
+}
