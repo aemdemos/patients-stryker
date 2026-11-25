@@ -115,7 +115,17 @@ const containerOf = (node) => {
  * @param {Text[]} nodes Its text nodes, in order
  * @param {Set<string>} dropped Collects the classes without a word
  */
-function convertContainer(nodes, dropped) {
+// the kind of a Text style word: one size, colour and font per marker
+const SIZE_SET = new Set([...Object.values(SIZE_WORDS), 'hl15', 'hl2', 'hl3', 'hl45']);
+const COLOUR_SET = new Set([...COLOURS, ...Object.values(EXTRA_COLOURS)]);
+function kindOf(word) {
+  if (SIZE_SET.has(word)) return 'size';
+  if (COLOUR_SET.has(word)) return 'colour';
+  if (['serif', 'body', 'sans'].includes(word)) return 'font';
+  return '';
+}
+
+function convertContainer(nodes, dropped, chains = false) {
   // the tokens, with their offset in the container's text
   const tokens = [];
   let offset = 0;
@@ -150,7 +160,12 @@ function convertContainer(nodes, dropped) {
     }
   });
   stack.forEach((t) => { t.literal = true; });
-  const gap = (a, b) => all.slice(a.to, b.at).trim() === '';
+  // product pages (chains): a chain of tags directly inside each other (a colour, a size and the
+  // copy size of the cell, SafeAir "65mm suction sleeve") is one marker: the tokens of the tags
+  // between two of them don't count as content
+  const between = (a, b) => all.slice(a.to, b.at);
+  const gap = (a, b) => (chains ? between(a, b).replace(/\[\[[^\][]+\]|\]/g, '') : between(a, b))
+    .trim() === '';
   // words; a tag right inside another (nothing between the openers nor the closers) joins it
   pairs.sort((a, b) => a.at - b.at).forEach((p) => { p.words = markerWords(p.raw, dropped); });
   pairs.forEach((inner) => {
@@ -159,6 +174,11 @@ function convertContainer(nodes, dropped) {
     if (!outer) return;
     let target = outer;
     while (target.into) target = target.into;
+    // a chain (product pages): the inner tag's size, colour and font win, as stacked markers do
+    if (chains) {
+      const kinds = inner.words.map(kindOf);
+      target.words = target.words.filter((w) => !kinds.includes(kindOf(w)) || !kindOf(w));
+    }
     target.words.push(...inner.words);
     inner.merged = true;
     inner.into = target;
@@ -221,7 +241,7 @@ export function bracketsToMarkers(main) {
       if (containerOf(t) === container) texts.push(t);
       t = tw.nextNode();
     }
-    if (texts.some((x) => x.nodeValue.includes('[['))) convertContainer(texts, dropped);
+    if (texts.some((x) => x.nodeValue.includes('[['))) convertContainer(texts, dropped, stdProductPage(doc));
     // a product page's `sans` around a run that already has its marker: one marker (the site
     // keeps only the inner one of two stacked markers); adjacent text joined first
     if (!texts.some((x) => x.nodeValue.includes(':start-sans:') || x.nodeValue.includes('-sans:'))) return;

@@ -114,6 +114,12 @@ export async function loadFragment(path) {
  */
 function isWholeSectionEmbed(section, block) {
   if (!section || section.querySelector(':scope > .default-content-wrapper')) return false;
+  // in review (draft pages): a side-by-side section groups its parts in columns
+  // (scripts/corp.js groupFlexColumns), so its other content sits deeper
+  if (document.body.classList.contains('std-draft')
+    && (section.querySelector('.default-content-wrapper') || section.querySelectorAll('.block').length > 1)) {
+    return false;
+  }
   const blocks = section.querySelectorAll(':scope > div > .block');
   return blocks.length === 1 && blocks[0] === block;
 }

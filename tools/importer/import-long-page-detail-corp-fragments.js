@@ -15,10 +15,11 @@
 import videoParser from './parsers/video.js';
 import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
 import longPageDetailSectionsTransformer, {
-  keepHeadlineBlankLines, edsLinkPaths,
+  keepHeadlineBlankLines, edsLinkPaths, reviewFragmentPath,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import corpTextMarkersTransformer from './transformers/corp-text-markers.js';
+import corpTextMarkersTransformer, { STD_DRAFT_IMPORT } from './transformers/corp-text-markers.js';
+import PRODUCT_XFS from './product-detail-xf.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 import { xfToFragmentPath, xfKey } from './xf-fragment-path.js';
 
@@ -157,7 +158,12 @@ export default {
     const { document, url, params } = payload;
     const main = document.body;
     const key = xfKey(params.originalURL || url);
-    const path = xfToFragmentPath(key);
+    // in review (staging build): an XF of a product page is imported with the product pages'
+    // standardised rules (they read the source body's data-template) into the review folder
+    const productXf = STD_DRAFT_IMPORT
+      && Object.values(PRODUCT_XFS).some((xfs) => xfs.includes(key));
+    if (productXf) document.body.setAttribute('data-template', 'product-detail');
+    const path = productXf ? reviewFragmentPath(key) : xfToFragmentPath(key);
     if (!path) throw new Error(`Not an Experience Fragment: ${key}`);
     const src = document.querySelector('.xf-content-height') || main;
 

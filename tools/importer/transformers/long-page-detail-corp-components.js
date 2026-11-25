@@ -919,11 +919,19 @@ function statLine(line, doc) {
   if (!text) return null;
   // Futura bold is Bold (corp <strong>); the marker goes inside it
   const run = doc.createTextNode(tags.length ? `[[${tags.join(',')}]${text}]` : text);
+  // in review (product pages): a footnote number stays in its label's run, as on stryker.com
+  // (its size and font follow the label's: Futura bold, 0.75 of the label)
+  const inRun = stdProductPage(doc) && sups.length;
+  const nodes = inRun && tags.length
+    ? [doc.createTextNode(`[[${tags.join(',')}]${text}`), ...sups, doc.createTextNode(']')]
+    : [run];
+  const after = inRun ? [] : sups;
+  if (inRun && !tags.length) nodes.push(...sups);
   if (bold) {
     const strong = doc.createElement('strong');
-    strong.append(run);
-    p.append(strong, ...sups);
-  } else p.append(run, ...sups);
+    strong.append(...nodes);
+    p.append(strong, ...after);
+  } else p.append(...nodes, ...after);
   return p;
 }
 

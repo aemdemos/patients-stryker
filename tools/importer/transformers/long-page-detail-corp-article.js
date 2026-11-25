@@ -373,6 +373,68 @@ function tagGoldText(root) {
   });
 }
 
+// in review (product pages): inline text colours that are standard Text style colours (exact
+// stryker.com values; corp-text-markers.js turns the tag into the colour word). Gold is Bold +
+// Italic (tagGoldText); black and charcoal (#323232, typed by authors) are the default text
+const STD_COLOURS = {
+  '1c5687': 'blue',
+  '85458a': 'purple',
+  '4c7d7a': 'teal',
+  545857: 'grey',
+  ffffff: 'white',
+  edeeec: 'light-gray',
+  af6d04: 'dark-gold',
+  b2b4ae: 'mid-grey',
+  dfe1de: 'pale-grey',
+};
+
+function hexOf(value) {
+  const v = (value || '').trim().toLowerCase();
+  let m = v.match(/^#([0-9a-f]{3})$/);
+  if (m) return m[1].split('').map((c) => c + c).join('');
+  m = v.match(/^#([0-9a-f]{6})$/);
+  if (m) return m[1];
+  m = v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+  return m ? m.slice(1, 4).map((n) => Number(n).toString(16).padStart(2, '0')).join('') : '';
+}
+
+/**
+ * Each run in a standard (non-gold) colour gets its colour tag (review build, product pages).
+ * A text takes its nearest colour: an element is tagged only when some of its own text is in
+ * its colour (a white span whose text is all in a black span inside it, "How can we help
+ * you?" on SafeAir, is black text); black is tagged only inside another tagged colour.
+ */
+function tagStdColours(root) {
+  const coloured = (el) => ownColour(el) !== '';
+  const nearest = (node) => {
+    for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
+      if (el.matches('[style*="color"]') && coloured(el)) return el;
+    }
+    return null;
+  };
+  const owners = new Set();
+  const walker = root.ownerDocument.createTreeWalker(root, 4);
+  for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+    const owner = t.nodeValue.trim() && nearest(t);
+    if (owner) owners.add(owner);
+  }
+  const tagged = [];
+  const depth = (el) => {
+    let n = 0;
+    for (let e = el; e && e !== root; e = e.parentElement) n += 1;
+    return n;
+  };
+  // outer colours first, so a black run inside a tagged colour knows it is inside one
+  [...owners].sort((x, y) => depth(x) - depth(y)).forEach((el) => {
+    const hex = hexOf(ownColour(el));
+    const name = STD_COLOURS[hex]
+      || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? 'black' : '');
+    if (!name || GOLD.test(ownColour(el))) return;
+    bracketTag([el], `color-${name}`, root);
+    tagged.push(el);
+  });
+}
+
 function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
   const centred = blocks.length > 0
@@ -413,6 +475,7 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   });
   tagPlainBoldLabels(root, wholeParagraphs);
   tagGoldText(root);
+  if (stdProductPage(doc)) tagStdColours(root);
   tagTextSize(root);
 
   // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
@@ -561,6 +624,9 @@ const LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contac
 function labelHeadingsToParagraphs(root) {
   root.querySelectorAll('h2, h3, h4, h5, h6').forEach((h) => {
     if (!LABEL_HEADING.test(text(h))) return;
+    // product pages: an underlined heading is a section title ("Contact", SafeAir), not a
+    // press-release label
+    if (stdProductPage(root.ownerDocument) && h.querySelector('u')) return;
     const p = root.ownerDocument.createElement('p');
     while (h.firstChild) p.append(h.firstChild);
     // the heading's own size span (e.g. fontsize-8em) is not copy size: the label is 14px

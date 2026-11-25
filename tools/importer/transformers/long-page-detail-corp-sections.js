@@ -41,6 +41,7 @@ import { convertBeforeRows, convertAfterRows, panelOptions } from './long-page-d
 import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
+import PRODUCT_XFS from '../product-detail-xf.js';
 import { STD_DRAFT_IMPORT, stdProductPage } from './corp-text-markers.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
@@ -226,6 +227,41 @@ function fragmentBlock(doc, path) {
   return WebImporter.Blocks.createBlock(doc, { name: 'Fragment', cells: [[a]] });
 }
 
+// in review: the product pages' fragment documents, imported with the same standardised rules
+// into the review folder (the real /us/en/fragments/… documents stay as they are)
+export const STD_REVIEW_FRAGMENTS = '/drafts/astha/pages/fragments/';
+
+/** The review fragment document of an XF (its /us/en/fragments/… path in the review folder). */
+export function reviewFragmentPath(xf) {
+  const path = xfToFragmentPath(xf);
+  return path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS);
+}
+
+/**
+ * In review (product pages, staging build): every XF the page places becomes a Fragment block
+ * in its place (docs/standardisation/fragment.md), matched to the export's list by order (the
+ * page shows its XF components in the export's order). A slot count that doesn't match the
+ * export leaves the slots to the long-page-detail handling.
+ * @returns {boolean} true when the slots were handled
+ */
+function productFragments(main, doc, xfs) {
+  const slots = [...main.querySelectorAll('.experiencefragment')]
+    .filter((slot) => !slot.parentElement.closest('.experiencefragment'));
+  if (!xfs || slots.length !== xfs.length) return false;
+  slots.forEach((slot, i) => {
+    const path = xfs[i] && reviewFragmentPath(xfs[i]);
+    const empty = !text(slot) && !slot.querySelector('img, [data-asset-path], iframe');
+    if (!path || empty) {
+      slot.remove();
+      return;
+    }
+    const block = fragmentBlock(doc, path);
+    block.setAttribute('data-keep', 'section');
+    slot.replaceWith(block);
+  });
+  return true;
+}
+
 function experienceFragments(main, doc, xfs, slots) {
   const filled = [...main.querySelectorAll('.experiencefragment')]
     .filter((slot) => !slot.parentElement.closest('.experiencefragment'))
@@ -271,6 +307,11 @@ function sectionTitles(main, doc) {
       const h2 = doc.createElement('h2');
       const u = doc.createElement('u');
       u.textContent = text(heading);
+      // product pages: a title with stryker.com's gold rule (h2.border-bottom-gold) has the Text
+      // style gold rule under it
+      if (stdProductPage(doc) && heading.classList.contains('border-bottom-gold')) {
+        u.textContent = `[[rule-gold]${text(heading)}]`;
+      }
       h2.append(u);
       nodes.push(h2);
     }
@@ -619,8 +660,15 @@ function rowCopyStyle(cells, doc) {
     // a heading in its source size span keeps that size (headingSpanSizes)
     cells.flat().filter((n) => n.nodeType === 1 && /^H[1-3]$/.test(n.tagName) && n.stdHeadingSize)
       .forEach((n) => tagCopy(n, n.stdHeadingSize, doc));
+    // product pages: a small-print line in a row (0.8em, LIFEPAK 35's document code below its
+    // form) is that line's small size (Text style), not a disclaimer section around the row
+    const product = stdProductPage(doc);
+    if (product) {
+      copy.filter((n) => (n.copyStyle || '').split(',').map((x) => x.trim()).includes('disclaimer'))
+        .forEach((n) => tagCopy(n, 'text-0-8', doc));
+    }
     const rest = new Set(copy.flatMap((n) => (n.copyStyle || '').split(',').map((x) => x.trim()))
-      .filter((x) => x && x !== 'serif' && !/^p-\d/.test(x)));
+      .filter((x) => x && x !== 'serif' && !/^p-\d/.test(x) && !(product && x === 'disclaimer')));
     return [...rest].join(', ');
   }
   const weight = {};
@@ -800,10 +848,10 @@ function tileCards(cells, variant, doc) {
  * @param {Element} main The page content
  * @param {Document} doc The document
  */
-function xfGridRows(main, doc) {
+function xfGridRows(main, doc, selector = '.experiencefragment .aem-Grid') {
   const num = (el, re) => Number(((el.className || '').match(re) || [])[1]) || 0;
   const filled = (el) => !!text(el) || !!el.querySelector('img, [data-asset-path], iframe');
-  [...main.querySelectorAll('.experiencefragment .aem-Grid')].forEach((grid) => {
+  [...main.querySelectorAll(selector)].forEach((grid) => {
     if (grid.closest('header, footer, .modal, .colctrl')) return;
     const n = num(grid, /\baem-Grid--(\d+)\b/) || 12;
     const rows = [];
@@ -822,6 +870,9 @@ function xfGridRows(main, doc) {
     rows.forEach((r) => {
       const cells = r.items.filter(([, item]) => filled(item));
       if (cells.length < 2 || cells.some(([, item]) => item.querySelector('.colctrl'))) return;
+      // a row of linked images without text (the contact aside's social icons) is a row of
+      // icons, not columns: it stays default content (product pages: an icon row)
+      if (stdProductPage(doc) && cells.every(([, item]) => !text(item) && item.querySelector('a[href] img'))) return;
       const colctrl = doc.createElement('div');
       colctrl.className = 'colctrl';
       const inner = doc.createElement('div');
@@ -848,9 +899,31 @@ function columnRows(main, doc) {
     // the empty columns as empty cells, so the content keeps its source column width (a
     // two-column row with one empty column stays the content alone, e.g. a thank-you page)
     const columns = filled.length && filled.length < all.length && all.length >= 3 ? all : filled;
-    if (columns.length < 2) return;
     const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className)
       ? colctrl.parentElement : colctrl;
+    // product pages: a coloured Large Headline box in one half of a row whose other half is
+    // empty (SafeAir "SafeAir compact smoke evacuator": a gold band over the left half) is
+    // Columns two equal with that cell's box, the other cell empty (as the source row)
+    if (stdProductPage(doc) && all.length === 2 && filled.length === 1
+      && all.every((col) => columnWidth(col) === 6)) {
+      const box = filled[0].querySelector('.c-largeheadline .has-background[class*="bg-"]');
+      const colour = box && { 'bg-gold': 'box-gold', 'bg-light-gray': 'box-gray', 'bg-white': 'box-white' }[
+        [...box.classList].find((c) => /^bg-/.test(c))];
+      if (colour) {
+        const nodes = cellNodes(filled[0], doc);
+        rowCopyStyle([nodes], doc);
+        const cells = all.map((col) => (col === filled[0] ? nodes : ''));
+        const first = all[0] === filled[0];
+        const block = WebImporter.Blocks.createBlock(doc, {
+          name: `Columns (columns-50-50, ${colour}${first ? ', box-first' : ''})`,
+          cells: [cells],
+        });
+        block.setAttribute('data-keep', 'section');
+        wrapper.replaceWith(block);
+        return;
+      }
+    }
+    if (columns.length < 2) return;
     const form = marketoBlock(colctrl, doc);
     if (form) {
       form.setAttribute('data-keep', 'section');
@@ -871,8 +944,27 @@ function columnRows(main, doc) {
       if (STD_DRAFT_IMPORT && at >= 0) {
         const ratio = { 8: 'flex-67-33', 4: 'flex-33-67' }[columnWidth(columns[0])];
         const side = [];
+        // product pages: the form's column keeps its other content (stryker.com LIFEPAK 35: the
+        // "Have feedback…" line above the form, the document code below it), in order; the
+        // section layout stacks it with the form in the wide column
+        const formColumn = (col) => {
+          let top = col.querySelector('.c-marketo-form');
+          while (top.parentElement && top.parentElement !== col && !top.parentElement.matches('.row')) {
+            top = top.parentElement;
+          }
+          const items = top.parentElement ? [...top.parentElement.children] : [top];
+          return items.flatMap((item) => {
+            if (item === top) return [form];
+            const holder = doc.createElement('div');
+            holder.append(item.cloneNode(true));
+            const nodes = cellNodes(holder, doc);
+            if (!nodes.length) return [];
+            side.push(nodes);
+            return [box(nodes)];
+          });
+        };
         const parts = columns.map((col, i) => {
-          if (i === at) return [form];
+          if (i === at) return stdProductPage(doc) ? formColumn(col) : [form];
           if (col.querySelector('table[data-keep]')) return asides.filter((t) => col.contains(t));
           const nodes = cellNodes(col, doc);
           if (nodes.length) side.push(nodes);
@@ -1314,6 +1406,10 @@ export default function transform(hookName, element, payload) {
   const main = doc.querySelector('[role="main"]') || element;
 
   const path = sourcePath(payload);
+  // in review: an XF of a product page imported as its own fragment document (the fragments
+  // import marks it product-detail): its own grid rows are the XF's rows, and it has no page
+  // title (the page that places it has the H1)
+  const productXf = stdProductPage(doc) && payload.template.name === 'long-page-detail-corp-fragments';
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
   main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
@@ -1321,12 +1417,15 @@ export default function transform(hookName, element, payload) {
   fullWidthImages(main, doc);
   spaceUrlColons(main, doc);
   const nav = localNav(main, doc);
-  experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
+  if (!(stdProductPage(doc) && productFragments(main, doc, PRODUCT_XFS[path]))) {
+    experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
+  }
   sectionTitles(main, doc);
   downloadTitles(main, doc);
   videoCaptions(main, doc);
   if (STD_DRAFT_IMPORT) dataTables(main, doc);
-  const hasTitle = !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
+  const hasTitle = productXf
+    || !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
     || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1');
   // no title: the first non-empty Large Headline or rich-text heading (in source order) is
   // the page H1 (e.g. the Mako thank-you page's "Thank you for registering." H4); any other
@@ -1365,7 +1464,7 @@ export default function transform(hookName, element, payload) {
   };
   convertBeforeRows(main, doc, helpers);
   markRowEnds(main);
-  if (STD_DRAFT_IMPORT) xfGridRows(main, doc);
+  if (STD_DRAFT_IMPORT) xfGridRows(main, doc, productXf ? '.aem-Grid' : undefined);
   columnRows(main, doc);
   gridRows(main);
   convertAfterRows(main, doc, helpers);

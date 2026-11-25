@@ -209,6 +209,9 @@ body.corp.std-draft .hero-corp.page-hero h1 {
   font-size: var(--heading-font-size-xxl);
   font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height);
+
+  /* a long title word ("Isolibrium/Isolibrium") wraps on phones instead of widening the page */
+  overflow-wrap: anywhere;
 }
 
 body.corp.std-draft .hero-corp.page-hero h1 :is(strong, b) {

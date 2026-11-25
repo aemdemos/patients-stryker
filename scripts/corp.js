@@ -232,7 +232,7 @@ function buildAccordionSections(main) {
  * new tab.
  * @param {Element} main The container element
  */
-export function linkImage(p) {
+function linkImage(p) {
   const picture = p.querySelector(':scope > picture');
   if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
   const next = p.nextElementSibling;
@@ -252,6 +252,47 @@ export function linkImage(p) {
 
 function decorateImageLinks(main) {
   main.querySelectorAll(':scope > .section.image-link > .default-content-wrapper > p').forEach(linkImage);
+}
+
+const isLinkedImage = (el) => el?.matches('p') && el.children.length === 1
+  && el.firstElementChild.matches('a[href]') && el.firstElementChild.querySelector(':scope > picture')
+  && !el.textContent.trim();
+
+/**
+ * In review (product pages, docs/standardisation): linked icons in a row. The migration writes
+ * a social icon as an image line then its link line (a Dynamic Media image link can't also
+ * carry the target); the pair becomes one linked image (the `image-link` rule) and two or more
+ * linked images in a row stand side by side as an icon row (the standard icon-row size and
+ * gap, product-detail.css). Runs on <main> and on fragments (the contact aside is one).
+ * @param {Element} main The container element
+ */
+function productIconRows(main) {
+  if (!document.body.matches('.product-detail.std-draft')) return;
+  main.querySelectorAll(':scope > .section > .default-content-wrapper').forEach((wrapper) => {
+    // only the migration's pairs: the link line repeats the image's text (its alt), so an
+    // image followed by a call to action keeps both
+    [...wrapper.querySelectorAll(':scope > p')].forEach((p) => {
+      const alt = p.querySelector(':scope > picture img')?.alt.trim();
+      const next = p.nextElementSibling;
+      // (a fragment is decorated before it joins the page: a paired line has left its parent)
+      if (p.parentElement && alt && next?.textContent.trim() === alt) linkImage(p);
+    });
+    let run = [];
+    const flush = () => {
+      if (run.length > 1) {
+        const row = document.createElement('div');
+        row.className = 'product-detail-icon-row';
+        run[0].before(row);
+        row.append(...run);
+      }
+      run = [];
+    };
+    [...wrapper.children].forEach((el) => {
+      if (isLinkedImage(el)) run.push(el);
+      else flush();
+    });
+    flush();
+  });
 }
 
 /**
@@ -461,6 +502,7 @@ export function decorateSections(main) {
   if (document.body.classList.contains('std-draft')) buildTabPanelSections(main);
   buildAccordionSections(main);
   decorateImageLinks(main);
+  productIconRows(main);
   joinSplitHeadingUnderlines(main);
   decorateExclaimButtons(main);
 }

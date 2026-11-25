@@ -639,6 +639,12 @@ body.corp.std-draft .cards-corp.teaser.no-description .cards-corp-card-body > p:
   body.corp.std-draft .cards-corp.three-up.block > ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  /* videos with no number chosen: the panel's default, four (SafeAir "Learn more": four
+     videos in a row on stryker.com) */
+  body.corp.std-draft .cards-corp.video.block:not(.two-up, .three-up, .five-up, .six-up) > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 /* the text sizes are Text style on draft pages: bold words keep the size of their text (the
