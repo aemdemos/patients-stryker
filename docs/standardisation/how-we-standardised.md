@@ -16,7 +16,7 @@ date: "November 24, 2026"
 | Box and background colours | **25** | **10** |
 | Image border colours | **12** | **3** |
 | Section style names | **255** | **35** author choices (in Block options → Section) + 12 template looks |
-| Block variants | **70** | **53** |
+| Block variants | **70** | **48** |
 | Uses that keep their look | | **95% to 100%** for spacing inside boxes, sizes, fonts and colours; **77% to 96%** for outer spacing |
 | Real pages changed during review | | **0** (checked element by element) |
 
@@ -89,6 +89,8 @@ hover ("it goes under a heading", "select the whole line"), as Block options do 
 | Colour | **exact values only**; the same colour written two ways counts once | `#ffb500` and `rgb(255,181,0)` are one gold |
 | Anything else rare | the nearest choice, and the page is listed for review | an orange box → gold |
 
+**The rule:** every value on stryker.com joins exactly one choice, so the new site never has more choices than stryker.com had values; where stryker.com had only one look, there is nothing to choose.
+
 **Why these steps:** each step is the most used value of its group on stryker.com, so most pages don't
 move at all. Example (Columns, space above the text in a box, 483 boxes): 5% (104) → medium, 3% (101) →
 small, 2% (62) → small, 0% (43) → none, 15% and 20% (47) → listed for review, proposal large.
@@ -99,7 +101,9 @@ the most headlines: 862 join S, 787 M, 1,245 L, 690 XL; 73% are within 12.5% of 
 # 5. Block by block: values before and after
 
 *Format: values on stryker.com → choices on the new site (kept). Spacing is listed as top / bottom /
-left / right.*
+left / right. Fonts, sizes and text colours are **one shared Text style set** for the whole site (49 →
+11 sizes, 9 → 3 fonts, 27 → 11 colours): each value a block used joins one step, so a block uses at
+most as many steps as it had values, never more.*
 
 **Columns** (2,419 rows)
 
@@ -107,13 +111,13 @@ left / right.*
 |---|---|---|---|
 | Inner spacing | 23 / 15 / 11 / 10 values | 4 steps | 89 / 98 / 98 / 100% |
 | Outer spacing | 27 / 17 / 7 / 8 values | standard gap | 82 / 97 / 61 / 98% |
-| Font size | 39 | 11 | 97% |
-| Font | 6 | 3 | 99% |
-| Text colour | 22 | 11 | 98% |
-| Box colour | 6 | 9 + none | 100% |
+| Font size | 39 | 11 (the shared set) | 97% |
+| Font | 6 | 3 (the shared set) | 99% |
+| Text colour | 22 | 11 (the shared set) | 98% |
+| Box colour (cell boxes) | 9 colours on 242 rows | 9 + none | 100% |
 | Image border colour | 9 | 3 | 96% |
 | Text alignment | 4 | 2 | 99% |
-| Column widths | 5 patterns | 5 layouts (+ 5 widths real pages use) | 100% |
+| Column widths | 5 patterns (+ 5 other widths on 18 shared-fragment rows) | 5 layouts; the other widths join the nearest | 99% |
 
 **Cards** (2,548 cards)
 
@@ -121,9 +125,9 @@ left / right.*
 |---|---|---|---|
 | Inner spacing | 17 / 25 / 11 / 10 values | 4 steps | 96 / 96 / 99 / 99% |
 | Outer spacing | 18 / 11 / 5 / 5 values | standard gap | 64 / 97 / 100 / 100% |
-| Font size | 26 | 11 | 95% |
-| Font | 7 | 3 | 99% |
-| Text colour | 23 | 11 | 97% |
+| Font size | 26 | 11 (the shared set) | 95% |
+| Font | 7 | 3 (the shared set) | 99% |
+| Text colour | 23 | 11 (the shared set) | 97% |
 | Box colour | 19 | 7 + none | 95% |
 | Image border colour | 10 | 3 | 95% |
 | Text alignment | 3 | 2 | 100% |
@@ -135,9 +139,9 @@ left / right.*
 |---|---|---|---|
 | Inner spacing | 20 / 31 / 12 / 10 values | 4 steps | 99 / 99 / 100 / 99% |
 | Outer spacing | 23 / 15 / 15 / 14 values | standard gap | 77 / 93 / 94 / 82% |
-| Font size | 12 | 11 | 96% |
-| Font | 4 | 3 | 100% |
-| Text colour | 12 | 11 | 99% |
+| Font size | 12 | 11 (the shared set) | 96% |
+| Font | 4 | 3 (the shared set) | 100% |
+| Text colour | 12 | 11 (the shared set) | 99% |
 | Box colour | 22 | 10 | 99% |
 | Gradient direction | 4 | 3 | 97% |
 | Text alignment | 4 | 2 | 100% |
@@ -148,9 +152,9 @@ left / right.*
 |---|---|---|---|
 | Inner spacing | 11 / 9 / 9 / 8 values | 4 steps | 96 / 97 / 96 / 97% |
 | Outer spacing | 12 / 9 / 9 / 11 values | standard gap | 95 / 99 / 91 / 32% |
-| Font size | 30 | 11 | 87% |
-| Font | 4 | 3 | 100% |
-| Text colour | 19 | 11 | 97% |
+| Font size | 30 | 11 (the shared set) | 87% |
+| Font | 4 | 3 (the shared set) | 100% |
+| Text colour | 19 | 11 (the shared set) | 97% |
 | Box colour | 10 | 8 + none | 100% |
 | Headline position | 189 | 12 | 93% within 10% |
 | Text alignment | 4 | 2 | 99% |
@@ -159,42 +163,42 @@ left / right.*
 
 | Setting | stryker.com | New site | Kept |
 |---|---|---|---|
-| Inner spacing (top) | 2 values | 4 steps | 100% |
+| Inner spacing (top) | 2 values | none: standard spacing | 100% |
 | Outer spacing | 4 / 2 values | standard gap | 70 / 100% |
-| Font size | 9 | 11 | 100% |
-| Font | 4 | 3 | 99% |
-| Text colour | 11 | 11 | 97% |
-| Box colour | 2 | 10 | 36% (pale grey lists become *Lists in a light grey box*) |
+| Font size | 9 | up to 9 of the shared 11 sizes | 100% |
+| Font | 4 | 3 (the shared set) | 99% |
+| Text colour | 11 | 11 (the shared set) | 97% |
+| Box colour | 2 (pale grey 7, gold 4) | 1 switch: *Lists in a light grey box* | 36% exact (pale grey lists become light grey; gold lists listed) |
 | Text alignment | 4 | 2 | 99% |
 
 **Tabs** (198)
 
 | Setting | stryker.com | New site | Kept |
 |---|---|---|---|
-| Inner spacing | 4 / 5 / 4 / 4 values | 4 steps | 100% |
+| Inner spacing | 4 / 5 / 4 / 4 values | none: standard spacing | 100% |
 | Outer spacing (top) | 1 value | standard gap | 100% |
-| Font size | 9 | 11 | 100% |
-| Font | 2 | 3 | 100% |
-| Text colour | 14 | 11 | 97% |
+| Font size | 9 | up to 9 of the shared 11 sizes | 100% |
+| Font | 2 | up to 2 of the shared 3 fonts | 100% |
+| Text colour | 14 | 11 (the shared set) | 97% |
 | Text alignment | 4 | 2 | 99% |
 
 **Section layout** (side-by-side rows, 1,054)
 
 | Setting | stryker.com | New site | Kept |
 |---|---|---|---|
-| Inner spacing | 6 / 4 / 5 / 3 values | 4 steps | 88 / 100 / 92 / 100% |
+| Inner spacing | 6 / 4 / 5 / 3 values | none: standard spacing | 88 / 100 / 92 / 100% |
 | Outer spacing | 6 / 4 / 2 / 2 values | standard gap | 95 / 86 / 0 / 100% |
-| Font size | 11 | 11 | 98% |
-| Text colour | 8 | 11 | 100% |
+| Font size | 11 | 11 (the shared set) | 98% |
+| Text colour | 8 | up to 8 of the shared 11 colours | 100% |
 | Column widths | any | 4 section styles | 100% |
 
 **Carousel** (30)
 
 | Setting | stryker.com | New site | Kept |
 |---|---|---|---|
-| Font size | 14 | 11 | 82% |
-| Font | 2 | 3 | 100% |
-| Text colour | 8 | 11 | 100% |
+| Font size | 14 | 11 (the shared set) | 82% |
+| Font | 2 | up to 2 of the shared 3 fonts | 100% |
+| Text colour | 8 | up to 8 of the shared 11 colours | 100% |
 | Speed | 6 (2.5 to 10 seconds) | 1 (5 seconds) | by design |
 
 **Statistics** (82)
@@ -203,8 +207,8 @@ left / right.*
 |---|---|---|---|
 | Number colour | 6 | 5 | 99% (dark gold joins gold) |
 | Number size | 10 | 3 (2.5–4 → small 11, 4.5–6 → medium 42, 6.5–9 → large 17) | nearest step |
-| Label font size | 6 | 11 | 68% |
-| Label colour | 9 | 11 | 88% |
+| Label font size | 6 | up to 6 of the shared 11 sizes | 68% |
+| Label colour | 9 | up to 9 of the shared 11 colours | 88% |
 | Alignment | 2 | 2 | 100% |
 
 **Video** (1,255)
@@ -233,7 +237,7 @@ left / right.*
 
 | Block | Variants on stryker.com | Variants now | Properties |
 |---|---|---|---|
-| Columns | 6 | 10 layouts (5 main + 5 widths real pages use) | 45 |
+| Columns | 6 | 5 layouts (the division contact is the two equal layout with a map) | 45 |
 | Panel | 1 | 1 | 19 |
 | Cards | 12 | 8 card types | 27 |
 | Hero | 9 | 5 layouts | 43 |
@@ -255,7 +259,7 @@ left / right.*
 | Event calendar | 1 | 1 | 0 |
 | Social share | 1 | 1 | 2 |
 | Fragment | 1 | 1 | 0 |
-| **Total** | **70** | **53** | **169** |
+| **Total** | **70** | **48** | **169** |
 
 *Properties* counts every named choice except the variant, including each group's default.
 
@@ -436,6 +440,7 @@ split, band colour) appear only after their main choice. Styles that can't apply
 |---|---|---|
 | Outer spacing far from the standard gap (large or negative margins) | 23% of top margins | the standard gap; boxes that overlap on purpose are listed in the Panel chapter |
 | Charcoal text #323232 (typed by authors, not a Stryker component colour) | 93 | black |
+| Columns rows in widths outside the 5 layouts (3/4 + 1/4, 1/4 + 3/4, 70 / 30, 1/4 + 1/4 + 1/2; shared fragments) | 18 rows | the nearest layout (wide + narrow, narrow + wide, three equal) |
 | Text sizes above 2.5× (3.5×) | a few | 2.5× |
 | Headlines between two steps | part of 3,584 | the nearest step |
 | Rare box colours (orange, dark orange gradient, grey, dark teal gradient in Panel; bronze in Cards) | 11 in Panel, a few in Cards | the nearest named colour |

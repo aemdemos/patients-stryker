@@ -90,6 +90,12 @@ before that move, so they include the tile rows; boxes inside shared fragment ro
 The layout is the first choice when adding the block. On phones every layout stacks the cells in their
 authored order, as on stryker.com today.
 
+**Five layouts, no more.** stryker.com builds every Columns row on its 12-column grid in one of five
+widths. 18 rows in shared fragments carry other widths (three quarters + quarter 8, quarter + three
+quarters 8, 70 / 30 1, quarter + quarter + half 1, icon + text 0): they are not separate choices. The
+panel reads them as the nearest layout (wide + narrow, narrow + wide, three equal), they render as today
+until the row is saved again, and they are listed in section 7.
+
 ### 4.1 Two equal columns (`columns-50-50`)
 
 Two cells of the same width, typically an image or video next to text.
@@ -217,7 +223,6 @@ pages (not package numbers).*
 
 | Group | Choices | Rows on imported pages |
 |---|---|---|
-| More widths (Layout) | three quarters + quarter, quarter + three quarters, 70 / 30, icon + text (1/5, 4/5), quarter + quarter + half | 8, 8, 1, 0, 1 |
 | First line of the text | in a light grey box, a gold bar, a dark grey bar, a **blue bar** (stryker.com coloured heads) | 79, 2, 1, 1 |
 | Text look (switches) | large headline type, serif lead paragraph, serif captions, pull quote in the last cell, large pull quote beside a photo, numbered quotes | 479, 1, 3, 1, 1, 4 |
 | Row looks (switches) | linked images, one per row on phones, related links, link groups, icon beside text, page title beside a photo, caption right under the photo, images centred at their size, photo two thirds wide on phones, rule under the first cell, **line below the row**, **first cell right-aligned (labels)** | 315, 72, 11, 1, 4, 1, 1, 1, 3, 3, **750**, **7** |
@@ -247,7 +252,7 @@ and sizes of text are never block options" for row-wide looks only.
 | `page-intro` | 801 | not a Columns row: the product page intro (title, subhead, copy, image, line below) is the **Hero page intro** layout of the package (hero walkthrough, 493 rows); until that session the rows keep `page-intro` and render as today |
 | `color-heads` | 1 | First line of the text: **in a blue bar** |
 | `media-text` | 5 | the cell content (video or image with text); nothing to choose |
-| `image-left`, `thumbnails` | 1 each | the authoring order and *Three quarters + quarter* with *Linked images*; nothing to choose |
+| `image-left`, `thumbnails` | 1 each | the authoring order and *Wide + narrow* with *Linked images*; nothing to choose |
 | `striped` | 1 | a stryker.com table (rows striped #f5f5f5): the **Table** block, not columns |
 
 **Not carried over:** `text-columns`, `card-grid`, `feature-statement`, `wide-first`, `wide-last` and
@@ -326,6 +331,7 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 | Bottom spacing far from the scale (15%: 5, 17%: 3, 13%: 3, and a few others) | | [Fluoro-free](https://www.stryker.com/us/en/joint-replacement/c/fluoro-free.html), [Triathlon Revision](https://www.stryker.com/us/en/joint-replacement/products/Triathlon_Revision.html) | nearest step (*Large* for 15% and more) |
 | Right-aligned text | 9 cells | [Suppliers](https://www.stryker.com/us/en/about/suppliers.html), [Caregiver stories](https://www.stryker.com/us/en/acute-care/c/caregiver-stories.html) | left |
 | Image borders in other colours | blue 6, white 3, dark grey 2 images | | blue → teal, dark grey → black, white → no border (the agreed colour list) |
+| Rows in widths outside the 5 layouts (3/4 + 1/4, 1/4 + 3/4, 70 / 30, 1/4 + 1/4 + 1/2) | 18 rows (shared fragments) | | the nearest layout: wide + narrow, narrow + wide, three equal |
 | Charcoal text (#323232, typed by authors, not a Stryker component colour) | 93 uses | | black (the nearest Stryker colour), unless the business adds charcoal to the brand list |
 | Headline sizes between two steps (2.5% joins L, 3.5% joins L, 1% joins S) | part of 3,584 headlines | [Latera implant](https://www.stryker.com/us/en/ent/products/latera-absorbable-nasal-implant-system.html) | nearest step (section 5.7) |
 | Text sizes above 2.5× (3.5×) | a few uses | | 2.5× |
@@ -422,7 +428,7 @@ Hovering a greyed choice shows why ("Not available here: needs images in the row
 | An image in the first cell, text beside it | Icon beside text, Page title beside a photo, Large pull quote beside a photo |
 | Exactly 2 cells | the two-cell layouts, First cell right-aligned, Rule under the first cell |
 | 2 or more cells | Pull quote in the last cell |
-| 3 cells / 3 or more / 4 cells | Three equal, Quarter + quarter + half, Numbered quotes / One per row on phones / Four equal |
+| 3 cells / 3 or more / 4 cells | Three equal, Numbered quotes / One per row on phones / Four equal |
 | Links / lists of links | Related links / Link groups |
 | Any text | Centred, the first-line bars, Large headline, Serif lead paragraph |
 

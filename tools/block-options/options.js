@@ -389,7 +389,7 @@ export const BLOCK_OPTIONS = {
     ],
   },
   // stryker.com column rows (stryker-aemcoder-package, docs/standardisation/columns.md): the five
-  // source layouts (and the other widths the corp styles have), a cell box (one colour list for
+  // source layouts (other widths read as the nearest), a cell box (one colour list for
   // every block) in the first / last / every cell, the spacing inside it, image borders, centred
   // text, and the other corp looks imported pages use (first-line bars, row looks). Rows of tiles
   // (challenge, icon, colour profile cards, product / CTA tiles, icon grid) are Cards (package);
@@ -415,6 +415,13 @@ export const BLOCK_OPTIONS = {
       'blue-last': ['box-blue'],
       'blue-all': ['box-blue', 'box-all'],
       'purple-last': ['box-purple'],
+      // widths outside stryker.com's five layouts (18 shared-fragment rows, docs/standardisation/
+      // columns.md): read as the nearest layout; the rows render as before until re-saved
+      'columns-75-25': ['columns-67-33'],
+      'columns-70-30': ['columns-67-33'],
+      'columns-25-75': ['columns-33-67'],
+      'columns-20-80': ['columns-33-67'],
+      'columns-25-25-50': ['columns-3-cols'],
       // imported looks that are existing choices: the page intro is the two equal layout with the
       // line below (its title and subtitle are the text layer), the coloured heads the blue first
       // line; image side, media + text and thumbnails are the authoring; striped rows are the
@@ -437,11 +444,6 @@ export const BLOCK_OPTIONS = {
           ['columns-67-33', 'Wide + narrow', { needs: ['cells-2'] }],
           ['columns-3-cols', 'Three equal', { needs: ['cells-3'] }],
           ['columns-4-cols', 'Four equal', { needs: ['cells-4'] }],
-          ['columns-75-25', 'Three quarters + quarter', { needs: ['cells-2'] }],
-          ['columns-25-75', 'Quarter + three quarters', { needs: ['cells-2'] }],
-          ['columns-70-30', 'Wide + narrow (70 / 30)', { needs: ['cells-2'] }],
-          ['columns-20-80', 'Icon + text (1/5, 4/5)', { needs: ['cells-2'] }],
-          ['columns-25-25-50', 'Quarter + quarter + half', { needs: ['cells-3'] }],
         ],
       },
       {
@@ -905,7 +907,9 @@ export function withLibrary(defs, sheet) {
     if (!merged[name]) merged[name] = { label: title, groups: [] };
     groups.forEach((values, key) => {
       const group = merged[name].groups.find((g) => g.id === key);
-      const choices = values.filter(([v]) => v);
+      // an older name the block reads as another choice (its `aliases`) is not offered
+      const old = merged[name].aliases || {};
+      const choices = values.filter(([v]) => v && !old[v]);
       // a sheet row names and orders the choices; what a built-in choice needs and its hint stay
       const named = (list) => choices.map(([v, l]) => {
         const base = list.find(([x]) => x === v);
