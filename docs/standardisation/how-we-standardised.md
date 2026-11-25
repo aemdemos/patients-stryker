@@ -489,7 +489,8 @@ with stryker.com on desktop and phone. Details, screenshots and the open gaps: *
 
 Fixed after the first review: product-page banners are now the Page intro (text left, product image
 right), and a gold heading box over a white shadow box beside an image is a side-by-side section of
-Panels. The main open items: shared fragments need re-importing; a few text sizes inside boxes and the Futura words in serif
+Panels; and every section keeps only the standard section styles (whole-section sizes and fonts are
+Text style, spacing is the standard gap). The main open items: shared fragments need re-importing; a few text sizes inside boxes and the Futura words in serif
 titles need migration fixes; whether bold words in a sentence are Futura or Humanist is to decide.
 
 # Glossary

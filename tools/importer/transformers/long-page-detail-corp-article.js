@@ -55,6 +55,7 @@
 
 import { videoLink } from '../parsers/video.js';
 import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
+import { SECTION_OPTIONS } from '../../block-options/options.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -1309,6 +1310,114 @@ function stdFragmentText(sections) {
   }
 }
 
+/*
+ * Review build (docs/standardisation/how-we-standardised.md section 9): a section keeps only
+ * the standard section styles (Block options → Section: side by side, roles, backgrounds, text
+ * alignment, width, line, buttons, show on) and the template / shared-part looks. Older names
+ * are written as their standard ones (SECTION_OPTIONS aliases); whole-section fonts and sizes
+ * become Text style on the lines they styled (bracket tags, then markers, corp-text-markers.js);
+ * spacing styles go (the standard gap). Anything else is left out.
+ */
+const STD_TEMPLATE_LOOKS = ['disclaimer', 'references-spaced', 'references-body-lines',
+  'contact-aside', 'connect-band', 'bu-resources', 'talent-banner', 'curated-cta', 'back-link',
+  'link-list', 'cta-inset', 'standalone-url'];
+const STD_SECTION_STYLES = new Set([
+  ...SECTION_OPTIONS.groups.flatMap((g) => (g.options || g.flags)
+    .flatMap(([value]) => value.split(/[\s,]+/))).filter(Boolean),
+  ...STD_TEMPLATE_LOOKS,
+]);
+// whole-section text looks → [the lines they style (as the section-style CSS targets them),
+// the bracket class those lines get]; a line that has its own tag for the property keeps it
+// (spacing styles — spacer, padding-*, margin-*, no-gap … — are not standard: they go)
+const SIZE_CLASS = (n) => (n === '1' ? '' : `text-${n === '8' ? '0-8' : n}`);
+const STD_TEXT_LOOKS = [
+  [/^p-(\d+(?:-\d+)?)$/, () => 'p, li', (m) => SIZE_CLASS(m[1]), 'size'],
+  [/^h([1-6])-(\d+(?:-\d+)?)$/, (m) => `h${m[1]}`, (m) => SIZE_CLASS(m[2]), 'size'],
+  [/^h-(\d+(?:-\d+)?)$/, () => 'h2, h3', (m) => SIZE_CLASS(m[1]), 'size'],
+  [/^label-(\d+(?:-\d+)?)$/, () => 'p:has(> strong:only-child)', (m) => SIZE_CLASS(m[1]),
+    'size'],
+  [/^h-serif$/, () => 'h2, h3', () => 'serif', 'font'],
+  [/^serif$/, () => 'p, li', () => 'serif', 'font'],
+  [/^bold-body$/, () => 'p, li', () => 'body-font', 'bold'],
+];
+const TAGGED = {
+  size: /\[\[[^\]]*\b(text|size|headline)-\d/,
+  font: /\[\[[^\]]*\b(serif|body-font|futura-bold)\b/,
+  bold: /\[\[[^\]]*\bbody-font\b/,
+};
+
+/** the bold runs (strong / b) of a line in the body font (Text style), as `bold-body` did */
+function bodyFontBold(line) {
+  [...line.querySelectorAll('strong, b')].filter((b) => !b.parentElement.closest('strong, b'))
+    .forEach((b) => bracketTag([b], 'body-font', line));
+}
+
+/**
+ * The standard section styles of a section (review build); its text looks become Text style.
+ * @param {Object} section The section ({ style, nodes })
+ * @param {Element[]} labels Plain-bold label lines marked body-font-bold
+ * @returns {string} The styles to write ('' for none)
+ */
+function stdSectionStyle(section, labels) {
+  const styles = (section.style || '').split(',').map((st) => st.trim()).filter(Boolean);
+  const elements = section.nodes.filter((n) => n.nodeType === 1 && n.tagName !== 'TABLE');
+  const lines = (selector) => elements
+    .flatMap((n) => [...(n.matches(selector) ? [n] : []), ...n.querySelectorAll(selector)])
+    .filter((line) => !line.closest('table') && text(line) && !line.querySelector('p, li'));
+  const out = [];
+  const boxed = styles.includes('headline-box');
+  styles.forEach((st) => {
+    if (st === 'headline-box') {
+      // a Large Headline in a box: the box at the content width (a white box when no colour)
+      if (!styles.some((o) => o !== st && SECTION_OPTIONS.aliases[o])) out.push('box-white');
+      return;
+    }
+    if (st === 'body-font-bold') {
+      labels.forEach(bodyFontBold);
+      return;
+    }
+    const look = STD_TEXT_LOOKS.find(([re]) => re.test(st));
+    if (look) {
+      const [re, selector, cls, prop] = look;
+      const m = st.match(re);
+      const tag = cls(m);
+      if (tag) {
+        const own = (line) => TAGGED[prop].test(line.textContent);
+        lines(selector(m)).filter((line) => !own(line)).forEach((line) => {
+          if (prop === 'bold') bodyFontBold(line);
+          else bracketTag([...line.childNodes], tag, line);
+        });
+      }
+      return;
+    }
+    const alias = SECTION_OPTIONS.aliases[st];
+    // a coloured headline box stays at the content width (no full-bleed)
+    if (alias) out.push(...(boxed ? alias.filter((a) => a !== 'full-bleed') : alias));
+    else if (STD_SECTION_STYLES.has(st)) out.push(st);
+  });
+  return [...new Set(out)].join(', ');
+}
+
+/**
+ * Review build: the empty `spacer` sections go (the standard gap); a jump-bar anchor they
+ * held moves to the section that follows them.
+ * @param {Object[]} sections The article sections
+ */
+function stdDropSpacers(sections) {
+  for (let i = sections.length - 1; i >= 0; i -= 1) {
+    const sec = sections[i];
+    if (sec.kind === 'spacer' && !sec.nodes.length) {
+      const next = sections.slice(i + 1).find((s) => s.nodes.length);
+      if (sec.anchor && next) next.anchor = [sec.anchor, next.anchor].filter(Boolean).join(', ');
+      // a rule the spacer carried goes to the next section too
+      if (/\b(separator|divider)\b/.test(sec.style || '') && next) {
+        next.style = ['separator', next.style].filter(Boolean).join(', ');
+      }
+      if (!sec.anchor || next) sections.splice(i, 1);
+    }
+  }
+}
+
 export default function buildArticle(element, {
   keep = '', spacer = true, componentStyle = null, stdText = false,
 } = {}) {
@@ -1745,6 +1854,7 @@ export default function buildArticle(element, {
   }
 
   if (stdText) stdFragmentText(sections);
+  if (STD_DRAFT_IMPORT) stdDropSpacers(sections);
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a
   // `spacer` section is the metadata alone)
@@ -1764,6 +1874,10 @@ export default function buildArticle(element, {
       if ((section.style || '').split(', ').includes(style)) return;
       section.style = [section.style, style].filter(Boolean).join(', ');
     });
+    if (STD_DRAFT_IMPORT) {
+      const labels = marked.filter((el) => el.getAttribute('data-section-style') === 'body-font-bold');
+      section.style = stdSectionStyle(section, labels) || undefined;
+    }
     marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
     section.nodes.forEach((node) => { if (node.nodeType === 1) node.removeAttribute('data-keep'); });
     if (section.style || section.anchor) {

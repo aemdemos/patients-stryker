@@ -13,15 +13,21 @@ date: "November 25, 2026"
 | Blocks on the page | 18 | 14 (+ 3 carousel slides) | 22 |
 | Main sections on stryker.com, all present on the new site | 14 | 11 | 15 |
 | Text pieces compared (font, size, colour) | 76 | 92 | 132 |
-| Same as stryker.com | 70 | 90 | 116 |
+| Same as stryker.com | 70 | 91 | 116 |
 | Different by design (standard steps) | 3 | 0 | 6 |
-| Measuring artefacts | 1 | 1 | 2 |
+| Measuring artefacts | 1 | 0 | 2 |
 | **Matches as designed** | **74 of 76 (97%)** | **91 of 92 (99%)** | **124 of 132 (94%)** |
 | Open gaps (listed per page) | 3 text, 1 layout | 2 text, 2 content | 8 text, 3 layout |
 
 *Measured on desktop (1,440px) with the same method as the block review pages: every visible piece of text
 matched by its words on both sites, then its font, size (within 2%) and colour compared. Phones (390px):
-Isolibrium 66, LIFEPAK 35 90, SafeAir 112 exact matches of the same pieces.*
+Isolibrium 66, LIFEPAK 35 91, SafeAir 112 exact matches of the same pieces.*
+
+**Section styles:** every section on the three pages carries only standard section styles: side by side
+(`flex`, `flex-67-33`), tab panels, carousel slides, backgrounds (`box-gold`, `box-gray`, `box-white`,
+`full-bleed`), the line above a section (`line-above`) and the small-print look (`disclaimer`,
+`references-spaced`). Whole-section sizes and fonts (`p-1-25`, `h2-1-5`, `h-serif`, `body-font-bold`) are
+Text style on the lines they styled; spacing (`spacer`, `large`) is the standard gap.
 
 **How the pages were made:** the migration's review build (the standardised one) imported each page
 from stryker.com as it is; nothing was edited by hand. Real pages are not affected: the migration's
@@ -154,4 +160,4 @@ All in the migration's review build or on review pages only; real pages are unch
 | Video cards: 4 per row on stryker.com, 3 + 1 on the new site | SafeAir | migration: write *Cards per row* for video rows |
 | "Have feedback…" line and document code not migrated | LIFEPAK 35 | migration: keep the form's intro text and the document code |
 | ProCare Services banner not migrated | Isolibrium | open decision: ProCare tiles as page metadata or authored cards |
-| Whole-section text styles still written as section styles (p-1-25, h2-1-5, h-serif, spacer …) | all three | migration: move them to Text style, as the block cells already are |
+| An empty 34px gold bar between sections (`gold-bar`) is not a standard section style: left out | Isolibrium, SafeAir | to decide: a *line above* in gold, or nothing (the band above it already is gold) |

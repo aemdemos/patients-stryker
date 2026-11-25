@@ -917,6 +917,166 @@ var CustomImportScript = (() => {
     }));
   }
 
+  // tools/block-options/options.js
+  var SECTION_OPTIONS = {
+    label: "Section",
+    // older section style names read as the standard choices (replaced when the author copies the
+    // section's style): today's bg-* bands are a background + full width, a dimensional box is a
+    // white background with a soft shadow, the old dividers are the line above
+    aliases: {
+      "bg-white": ["box-white", "full-bleed"],
+      "bg-light-gray": ["box-gray", "full-bleed"],
+      "light-gray": ["box-gray", "full-bleed"],
+      "bg-gold": ["box-gold", "full-bleed"],
+      gold: ["box-gold", "full-bleed"],
+      "bg-blue": ["box-blue", "full-bleed"],
+      blue: ["box-blue", "full-bleed"],
+      "bg-purple": ["box-purple", "full-bleed"],
+      purple: ["box-purple", "full-bleed"],
+      "bg-teal": ["box-teal", "full-bleed"],
+      "bg-dark-gray": ["box-dark", "full-bleed"],
+      dark: ["box-dark", "full-bleed"],
+      "bg-golden-gradient": ["box-gold-gradient", "full-bleed"],
+      "gold-gradient": ["box-gold-gradient", "full-bleed"],
+      "bg-dark-orange-gradient": ["box-gold-gradient", "full-bleed"],
+      "bg-dark-blue-gradient": ["box-blue-gradient", "full-bleed"],
+      "bg-dark-purple-gradient": ["box-purple-gradient", "full-bleed"],
+      "purple-gradient": ["box-purple-gradient", "full-bleed"],
+      // no standard colour: the nearest (listed for review)
+      "bg-silver": ["box-gray", "full-bleed"],
+      "bg-gray": ["box-gray", "full-bleed"],
+      "gray-gradient": ["box-gray", "full-bleed"],
+      "bg-dark-gold": ["box-gold-gradient", "full-bleed"],
+      boxed: ["box-white", "shadow"],
+      "shadow-box": ["box-white", "shadow"],
+      "gradient-inverse": ["gradient-reverse"],
+      "gradient-top-to-bottom": ["gradient-up"],
+      center: ["text-center"],
+      "col-8": ["narrow"],
+      "col-8-centre": ["narrow"],
+      "col-10": ["narrow"],
+      "column-10-12": ["narrow"],
+      divider: ["line-above"],
+      separator: ["line-above"],
+      "separator-row": ["line-above"]
+    },
+    groups: [
+      {
+        id: "side",
+        label: "Side by side",
+        options: [
+          ["", "No (one under the other)"],
+          ["flex", "Equal parts", { needs: ["parts-2+"], hint: "The parts of the section side by side in equal widths from 600px" }],
+          ["flex flex-67-33", "Wide + narrow (2/3 + 1/3)", { needs: ["parts-2+"], hint: "The first parts two thirds wide, the last part one third" }],
+          ["flex flex-33-67", "Narrow + wide (1/3 + 2/3)", { needs: ["parts-2+"], hint: "The first part one third wide, the others two thirds" }]
+        ]
+      },
+      {
+        id: "side-phones",
+        label: "On phones",
+        flags: [
+          ["flex-row-mobile", "Side by side on phones too", { needs: ["flex"], hint: "The row never stacks (e.g. social icons)" }]
+        ]
+      },
+      {
+        id: "background",
+        label: "Background",
+        options: [
+          ["", "None"],
+          ["box-white", "White", { hint: "A white box around the section\u2019s content" }],
+          ["box-gray", "Light grey", { hint: "A light grey box around the section\u2019s content" }],
+          ["box-gold", "Gold", { hint: "A gold box around the section\u2019s content" }],
+          ["box-blue", "Blue", { hint: "A blue box, white text" }],
+          ["box-purple", "Purple", { hint: "A purple box, white text" }],
+          ["box-teal", "Teal", { hint: "A teal box, white text" }],
+          ["box-dark", "Dark grey", { hint: "A dark grey box, white text" }],
+          ["box-gold-gradient", "Gold gradient", { hint: "Dark gold into gold" }],
+          ["box-blue-gradient", "Blue gradient", { hint: "Dark grey into slate blue, white text" }],
+          ["box-purple-gradient", "Purple gradient", { hint: "Dark grey into plum, white text" }]
+        ]
+      },
+      {
+        id: "background-look",
+        label: "The background",
+        flags: [
+          ["full-bleed", "Full width (a band)", { needs: ["background"], hint: "The background runs to the page edges, the content stays in the page width" }],
+          ["shadow", "Soft shadow", { needs: ["background"], hint: "A soft shadow around the box (stryker.com dimensional box)" }]
+        ]
+      },
+      {
+        id: "gradient",
+        label: "Gradient direction",
+        options: [
+          ["", "Left to right"],
+          ["gradient-reverse", "Right to left", { needs: ["gradient"] }],
+          ["gradient-up", "Bottom to top", { needs: ["gradient"] }]
+        ]
+      },
+      {
+        id: "text",
+        label: "Text and width",
+        flags: [
+          ["text-center", "Centred text", { hint: "The section\u2019s text centred" }],
+          ["narrow", "Narrow column", { hint: "The content in the centred 8/12 column from 600px (full width on phones)" }],
+          ["line-above", "Line above", { hint: "A grey line across the page above the section" }]
+        ]
+      },
+      {
+        id: "buttons",
+        label: "Buttons",
+        options: [
+          ["", "As authored (gold, teal)"],
+          ["btn-purple", "Purple", { needs: ["buttons"], hint: "The section\u2019s buttons in purple" }],
+          ["btn-blue", "Blue", { needs: ["buttons"], hint: "The section\u2019s buttons in blue" }]
+        ]
+      },
+      {
+        id: "show",
+        label: "Show on",
+        options: [
+          ["", "Desktop and phones"],
+          ["desktop-only", "Desktop only", { hint: "Hidden on phones (under 600px)" }],
+          ["mobile-only", "Phones only", { hint: "Hidden from 600px" }]
+        ]
+      },
+      {
+        id: "role",
+        label: "Section is",
+        options: [
+          ["", "A normal section"],
+          ["tab-panel", "A tab", { needs: ["heading-first"], hint: "Its first heading is the tab label; tab sections in a row make one tab set" }],
+          ["accordion-panel", "An accordion panel", { needs: ["heading-first"], hint: "Its heading is the label; panel sections in a row make one accordion" }],
+          ["carousel", "A carousel slide", { needs: ["slide-block"], hint: "Slide sections in a row make one carousel" }]
+        ]
+      },
+      {
+        id: "accordion",
+        label: "Accordion panel",
+        flags: [
+          ["accordion-open", "Starts open", { needs: ["accordion-panel"], hint: "The panel is open when the page loads" }]
+        ]
+      },
+      {
+        id: "carousel",
+        label: "Carousel",
+        flags: [
+          ["autoplay", "Autoplay (5 seconds)", { needs: ["carousel"], hint: "The slides move on by themselves; set on the slides of one carousel" }],
+          ["fade", "Cross-fade", { needs: ["carousel"], hint: "The slides fade instead of sliding" }],
+          ["split", "Split slide", { needs: ["carousel", "columns-block"], hint: "An image beside a title on a coloured band (a Columns row)" }]
+        ]
+      },
+      {
+        id: "band",
+        label: "Split slide band",
+        options: [
+          ["", "Purple gradient (default)"],
+          ["box-blue-gradient", "Blue gradient", { needs: ["split"] }],
+          ["box-dark", "Dark grey", { needs: ["split"] }]
+        ]
+      }
+    ]
+  };
+
   // tools/importer/transformers/long-page-detail-corp-article.js
   var SOURCE_ORIGIN2 = "https://www.stryker.com";
   var COMPONENTS = [
@@ -1788,6 +1948,95 @@ var CustomImportScript = (() => {
       }
     }
   }
+  var STD_TEMPLATE_LOOKS = [
+    "disclaimer",
+    "references-spaced",
+    "references-body-lines",
+    "contact-aside",
+    "connect-band",
+    "bu-resources",
+    "talent-banner",
+    "curated-cta",
+    "back-link",
+    "link-list",
+    "cta-inset",
+    "standalone-url"
+  ];
+  var STD_SECTION_STYLES = /* @__PURE__ */ new Set([
+    ...SECTION_OPTIONS.groups.flatMap((g) => (g.options || g.flags).flatMap(([value]) => value.split(/[\s,]+/))).filter(Boolean),
+    ...STD_TEMPLATE_LOOKS
+  ]);
+  var SIZE_CLASS = (n) => n === "1" ? "" : `text-${n === "8" ? "0-8" : n}`;
+  var STD_TEXT_LOOKS = [
+    [/^p-(\d+(?:-\d+)?)$/, () => "p, li", (m) => SIZE_CLASS(m[1]), "size"],
+    [/^h([1-6])-(\d+(?:-\d+)?)$/, (m) => `h${m[1]}`, (m) => SIZE_CLASS(m[2]), "size"],
+    [/^h-(\d+(?:-\d+)?)$/, () => "h2, h3", (m) => SIZE_CLASS(m[1]), "size"],
+    [
+      /^label-(\d+(?:-\d+)?)$/,
+      () => "p:has(> strong:only-child)",
+      (m) => SIZE_CLASS(m[1]),
+      "size"
+    ],
+    [/^h-serif$/, () => "h2, h3", () => "serif", "font"],
+    [/^serif$/, () => "p, li", () => "serif", "font"],
+    [/^bold-body$/, () => "p, li", () => "body-font", "bold"]
+  ];
+  var TAGGED = {
+    size: /\[\[[^\]]*\b(text|size|headline)-\d/,
+    font: /\[\[[^\]]*\b(serif|body-font|futura-bold)\b/,
+    bold: /\[\[[^\]]*\bbody-font\b/
+  };
+  function bodyFontBold(line) {
+    [...line.querySelectorAll("strong, b")].filter((b) => !b.parentElement.closest("strong, b")).forEach((b) => bracketTag([b], "body-font", line));
+  }
+  function stdSectionStyle(section, labels) {
+    const styles = (section.style || "").split(",").map((st) => st.trim()).filter(Boolean);
+    const elements = section.nodes.filter((n) => n.nodeType === 1 && n.tagName !== "TABLE");
+    const lines = (selector) => elements.flatMap((n) => [...n.matches(selector) ? [n] : [], ...n.querySelectorAll(selector)]).filter((line) => !line.closest("table") && text3(line) && !line.querySelector("p, li"));
+    const out = [];
+    const boxed = styles.includes("headline-box");
+    styles.forEach((st) => {
+      if (st === "headline-box") {
+        if (!styles.some((o) => o !== st && SECTION_OPTIONS.aliases[o])) out.push("box-white");
+        return;
+      }
+      if (st === "body-font-bold") {
+        labels.forEach(bodyFontBold);
+        return;
+      }
+      const look = STD_TEXT_LOOKS.find(([re]) => re.test(st));
+      if (look) {
+        const [re, selector, cls, prop] = look;
+        const m = st.match(re);
+        const tag = cls(m);
+        if (tag) {
+          const own = (line) => TAGGED[prop].test(line.textContent);
+          lines(selector(m)).filter((line) => !own(line)).forEach((line) => {
+            if (prop === "bold") bodyFontBold(line);
+            else bracketTag([...line.childNodes], tag, line);
+          });
+        }
+        return;
+      }
+      const alias = SECTION_OPTIONS.aliases[st];
+      if (alias) out.push(...boxed ? alias.filter((a) => a !== "full-bleed") : alias);
+      else if (STD_SECTION_STYLES.has(st)) out.push(st);
+    });
+    return [...new Set(out)].join(", ");
+  }
+  function stdDropSpacers(sections) {
+    for (let i = sections.length - 1; i >= 0; i -= 1) {
+      const sec = sections[i];
+      if (sec.kind === "spacer" && !sec.nodes.length) {
+        const next = sections.slice(i + 1).find((s) => s.nodes.length);
+        if (sec.anchor && next) next.anchor = [sec.anchor, next.anchor].filter(Boolean).join(", ");
+        if (/\b(separator|divider)\b/.test(sec.style || "") && next) {
+          next.style = ["separator", next.style].filter(Boolean).join(", ");
+        }
+        if (!sec.anchor || next) sections.splice(i, 1);
+      }
+    }
+  }
   function buildArticle(element, {
     keep = "",
     spacer = true,
@@ -2122,6 +2371,7 @@ var CustomImportScript = (() => {
       }
     }
     if (stdText) stdFragmentText(sections);
+    if (STD_DRAFT_IMPORT) stdDropSpacers(sections);
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
@@ -2134,6 +2384,10 @@ var CustomImportScript = (() => {
         if ((section.style || "").split(", ").includes(style)) return;
         section.style = [section.style, style].filter(Boolean).join(", ");
       });
+      if (STD_DRAFT_IMPORT) {
+        const labels = marked.filter((el) => el.getAttribute("data-section-style") === "body-font-bold");
+        section.style = stdSectionStyle(section, labels) || void 0;
+      }
       marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
       section.nodes.forEach((node) => {
         if (node.nodeType === 1) node.removeAttribute("data-keep");
