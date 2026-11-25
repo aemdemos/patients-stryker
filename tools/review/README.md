@@ -113,6 +113,21 @@ page and the summary.
   Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
   Colours: everything of the AOE team (Adobe) red, everything of the reviewers blue; the word is
   always "reviewer" (never "customer") on every page of the tool.
+- **Pictures in the chats** (25 Nov 2026, `pictures.js`, `pictures.css`, backend action `images`):
+  for what only shows after a click on the real page, a screenshot goes with a message: pasted
+  into the message box, dropped onto it, or added with **Picture**; up to 6 per message. A big
+  one is made smaller in the browser first (over 1.5 MB or 4096 px: WebP, JPEG where WebP can't
+  be written); a request may not be over 1 MB, so it is sent in parts of 600 KB, put together and
+  checked by the backend (PNG, JPEG, WebP or GIF by its bytes, never SVG; up to 8 MB) and kept in
+  Files (`<space>/images/<id>.<ext>` + `.json`: page, who, when). The message holds the pictures'
+  ids (`images: [{ id, w, h }]`); the first message of a comment chat stays the comment's text
+  ("Picture" when there is none) and its pictures follow as the next message. An `<img>` can't
+  send the invitation, so the tool asks the backend for short-lived links (only for pictures of
+  pages in the viewer's review). A click shows the picture in the viewer: − + (or Ctrl+wheel,
+  − + 0 1 keys), Fit, 100%, dragged around when larger than the window, ‹ › for the message's
+  others, Esc closes. A withdrawn message hides its pictures (the files are kept, like the audit);
+  `purge-invite` removes a test invitation's pictures. Not kept across a reload: pictures added
+  but not sent yet. Tests: `pictures-live.test.mjs`, `pictures-tool.test.mjs`.
 - **One design for every page** (`ui.css`, `bar.js`, 25 Nov 2026): the same dark top bar with
   the tools in the order of the work, page heads with the title and when the page was read,
   cards, pill buttons, status tiles that filter the list when clicked, tables whose head stays

@@ -25,6 +25,7 @@ export const SECRET_FILE = 'secrets/signing.json';
 // what reviewers may save; `status:*` rows are the AOE team's (admin action only)
 export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note', 'batch', 'group', 'representative'];
 export const MAX_VALUE = 20000;
+export const MAX_IMAGES = 6;
 export const REPLY_KIND = /^reply:(comment|note):[A-Za-z0-9_-]{6,40}$/;
 export const ROLES = ['reviewer', 'aoe'];
 
@@ -62,7 +63,14 @@ export function replyProblem(value, role) {
     if (role !== 'aoe') return 'only the AOE team gives a status';
     if (!v.status || !ANSWER_STATES.includes(v.status.state)) return `status.state: ${ANSWER_STATES.join(', ')}`;
   }
-  if (!v.text && !v.status) return 'a message needs text or a status';
+  // pictures (25 Nov 2026): up to 6, each { id, w, h } of a picture uploaded with the images action
+  if (v.images !== undefined) {
+    if (!Array.isArray(v.images) || !v.images.length || v.images.length > MAX_IMAGES) return `images: 1 to ${MAX_IMAGES} pictures`;
+    const bad = v.images.find((i) => !i || typeof i !== 'object' || !/^img-[a-z0-9]{16}$/.test(i.id || '')
+      || ![i.w, i.h].every((x) => x === undefined || (Number.isInteger(x) && x > 0 && x < 100000)));
+    if (bad) return 'images: { id, w, h } each';
+  }
+  if (!v.text && !v.status && !v.images) return 'a message needs text, a status or a picture';
   return null;
 }
 export const MAX_CHANGES = 100;

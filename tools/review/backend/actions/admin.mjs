@@ -40,7 +40,7 @@
  *   import { rows: [{ page, item, kind, value, reviewer, time, inv?, role? }] }  rows from elsewhere (e.g. a CSV), as they were
  *   rekey { page, moves: [{ from, to }] }  entries moved to another item name (e.g. position → block key)
  *   audit { date, page }                    the audit files of one day (default today), optionally one page
- *   purge-invite { id }                    removes every entry one invitation wrote (any page)
+ *   purge-invite { id }                    removes every entry one invitation wrote (any page), and its pictures
  *   purge-by { by }                         removes every entry written under a test name (status test …)
  *   shot-requests                           the open requests for new source shots (pending, failed)
  *   shot-history { page }                   a page's source shots (every version, with anchors)
@@ -331,7 +331,20 @@ async function run(params) {
         await Promise.all(on.map((k) => state.delete(k)));
         statuses += on.length;
       }
-      return ok({ deleted, statuses, invite: params.id });
+      // and the pictures that invitation uploaded (images action)
+      let images = 0;
+      const metas = (await listAll(files, `${space}/images/`)).filter((f) => f.name.endsWith('.json'));
+      for (const f of metas) {
+        const meta = await files.read(f.name).then((x) => JSON.parse(x.toString())).catch(() => null);
+        if (meta?.inv === params.id) {
+          await files.delete(`${space}/images/${meta.id}.${meta.ext}`).catch(() => null);
+          await files.delete(f.name);
+          images += 1;
+        }
+      }
+      return ok({
+        deleted, statuses, images, invite: params.id,
+      });
     }
     if (op === 'purge-by') {
       // every entry written under a test name (written by the admin action, so no invitation of

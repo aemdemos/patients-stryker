@@ -244,7 +244,7 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 .rv-msg-text, .rv-msg-action { margin: 2px 0 0; white-space: pre-wrap; }
 .rv-msg-action { color: var(--c-ok); font-style: italic; }
 .rv-msg .rv-aoe { margin: 2px 0 0; }
-.rv-badge { margin-inline-start: 4px; padding: 0 5px; border-radius: var(--r-s); background: #bf8700; color: #fff; font-size: 0.625rem; font-weight: 800; vertical-align: 1px; }
+.rv-badge { margin-inline-start: 4px; padding: 0 5px; border-radius: var(--r-s); background: var(--c-aoe); color: #fff; font-size: 0.625rem; font-weight: 800; vertical-align: 1px; }
 .rv-reply { display: block; inline-size: 100%; margin-top: 4px; font-size: var(--fs-s); }
 .rv-reply-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 6px; }
 .rv-msg-unsaved { outline: 1px dashed #bf8700; }
