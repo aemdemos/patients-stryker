@@ -141,6 +141,11 @@ function layout() {
   const gap = side ? 12 : 0;
   const paneW = side ? (W - gap) / 2 : W;
   const scale = Math.min(1, paneW / state.vp);
+  // (the pins keep their size however small the page is drawn: the pages are scaled down)
+  const unscale = String(1 / scale);
+  scroller.style.setProperty('--rv-unscale', unscale);
+  const stdDoc = ready.std ? frames.std?.contentDocument : null;
+  stdDoc?.documentElement?.style.setProperty('--rv-unscale', unscale);
   const cmp = panes[state.cmp];
   Object.entries(panes).forEach(([key, pane]) => {
     const w = state.vp * scale;
@@ -185,12 +190,21 @@ const win = (side) => (side === 'src' ? snapshotWindow : frames[side].contentWin
 const doc = (side) => frames[side].contentDocument;
 
 // pinned QA notes on the standard page (notes.js); the editor and the list are set up below
-const noteHooks = { place: () => {}, select: () => {}, render: () => {} };
+const noteHooks = {
+  place: () => {}, select: () => {}, render: () => {}, showSource: async () => {},
+};
 const notes = createNotes({
   doc: () => (ready.std ? doc('std') : null),
   vp: () => state.vp,
   onPlace: (draft) => noteHooks.place(draft),
   onSelect: (id) => noteHooks.select(id),
+  // notes on the source screenshot (25 Nov 2026)
+  src: {
+    page: () => (ready.src && snapshot ? panes.src.querySelector('.rv-src-page') : null),
+    shot: () => (snapshot ? snapshot.id || 'first' : null),
+    scrollTo: (y) => scroller.scrollTo({ top: Math.max(0, y - scroller.clientHeight / 3), behavior: 'smooth' }),
+    show: (note) => noteHooks.showSource(note),
+  },
 });
 
 function rebuildAnchors() {
@@ -1095,6 +1109,8 @@ function saveNote(note) {
     status: note.status,
     anchor: note.anchor,
     at: note.at,
+    // (on the source: its screenshot)
+    ...(note.side === 'src' ? { side: 'src', shot: note.shot } : {}),
     deleted: !!note.deleted,
   });
   notes.setNotes(savedNotes());
@@ -1117,7 +1133,7 @@ function openEditor(note) {
   // existing note: its category, or delete it (its messages are withdrawn one by one)
   const text = isNew ? el('textarea', { rows: '4', placeholder: 'What is wrong or should change here? (the first message of this note\'s subject)' }) : null;
   box.replaceChildren(
-    el('div', { class: 'rv-note-editor-head' }, isNew ? 'New QA note' : `QA note ${notes.list().find((n) => n.id === note.id)?.n || ''}`, el('span', { class: 'rv-meta' }, ` ${WIDTH_NAMES[note.vp] || note.vp}`)),
+    el('div', { class: 'rv-note-editor-head' }, isNew ? 'New QA note' : `QA note ${notes.list().find((n) => n.id === note.id)?.n || ''}`, el('span', { class: 'rv-meta' }, ` ${WIDTH_NAMES[note.vp] || note.vp}${note.side === 'src' ? ', on the source screenshot' : ''}`)),
     cat,
     text,
     el(
@@ -1166,9 +1182,10 @@ function renderNotes() {
     el('button', {
       type: 'button',
       class: 'rv-note-main',
-      title: n.vp === state.vp ? 'Show on the page' : `Found at ${WIDTH_NAMES[n.vp]} width: switches to it and shows the pin`,
+      title: (n.side === 'src' && 'On the source screenshot: shows it, at its width, and the pin')
+        || (n.vp === state.vp ? 'Show on the page' : `Found at ${WIDTH_NAMES[n.vp]} width: switches to it and shows the pin`),
       onclick: () => {
-        if (n.vp === state.vp) {
+        if (n.vp === state.vp || n.side === 'src') {
           notes.select(n.id);
           return;
         }
@@ -1180,7 +1197,7 @@ function renderNotes() {
     el(
       'div',
       { class: 'rv-item-foot' },
-      el('span', { class: 'rv-meta' }, `${WIDTH_NAMES[n.vp] || n.vp} · ${n.reviewer === 'you' ? (me.name || 'you') : (n.reviewer || 'someone')} · ${when(n.time)}`),
+      el('span', { class: 'rv-meta' }, n.side === 'src' ? el('b', { class: 'rv-note-side' }, 'On the source · ') : '', `${WIDTH_NAMES[n.vp] || n.vp} · ${n.reviewer === 'you' ? (me.name || 'you') : (n.reviewer || 'someone')} · ${when(n.time)}`),
       el('button', { type: 'button', class: 'rv-comment-toggle', onclick: () => openEditor(n) }, 'Edit'),
     ),
     ...chatParts(`note:${n.id}`, 'note'),
@@ -1190,10 +1207,38 @@ function renderNotes() {
 }
 
 function setNoteMode(on) {
+  // (a note goes on the migrated page or the source screenshot: never on the rendered copy, which
+  // isn't kept; in any view mode, Render becomes Screenshot)
+  if (on && state.cmp === 'live' && REVIEW.compare.includes('src')) $('[data-cmp="src"]')?.click();
   notes.setAdding(on);
   $('[data-action="note"]').setAttribute('aria-pressed', String(on));
   $('.rv-stage').classList.toggle('rv-adding', on);
 }
+
+/** to a note on the source: Screenshot, its width, its screenshot (resolves once it is shown) */
+noteHooks.showSource = async (note) => {
+  if (state.cmp !== 'src') $('[data-cmp="src"]')?.click();
+  if (state.mode === 'flip' && state.show !== 'cmp') {
+    state.show = 'cmp';
+    layout();
+  }
+  const shot = () => (snapshot ? snapshot.id || 'first' : null);
+  if (state.vp !== note.vp) $(`[data-vp="${note.vp}"]`)?.click();
+  else if (shot() !== note.shot) {
+    shots.chosen = note.shot === 'first' ? null : note.shot;
+    const pick = $('.rv-shot-pick');
+    if (pick && note.shot !== 'first') pick.value = note.shot;
+    shotHooks.reload();
+  }
+  // (the screenshot loads in the background: up to 6 s)
+  await new Promise((done) => {
+    const check = (n) => {
+      if (n <= 0 || (ready.src && shot() === note.shot && state.vp === note.vp)) done();
+      else window.setTimeout(() => check(n - 1), 100);
+    };
+    check(60);
+  });
+};
 
 noteHooks.place = (draft) => openEditor(draft);
 noteHooks.render = renderNotes;
@@ -1512,6 +1557,8 @@ async function loadSnapshot() {
   ready.src = true;
   rebuildAnchors();
   syncFrom('std');
+  // (its notes' pins)
+  notes.render();
 }
 
 shotHooks.reload = loadSnapshot;
@@ -1772,6 +1819,8 @@ async function onFrameLoad(side) {
   window.setTimeout(rebuildAnchors, 2500);
   if (side !== 'std') return;
   notes.attach();
+  // (its pins' size: set by the layout, now that the frame has its page)
+  layout();
   setNoteMode(notes.adding);
   if (PANEL) $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Preparing the variants…'));
   const review = PANEL ? await whenSwitcher() : null;
