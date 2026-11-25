@@ -1,28 +1,75 @@
-/* the AOE team's invitations page (invites.html); the bar, sections and table from results.css */
-.iv-form { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: flex-end; }
-.iv-form label { display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
-.iv-form .iv-check { flex-direction: row; align-items: center; gap: 6px; }
-.iv-name { width: 260px; }
-.iv-days { width: 70px; }
+/* The AOE team's invitations page (invites.html), on the shared design (ui.css) and the report parts (summary-page.css) */
+.iv-form { display: flex; flex-wrap: wrap; gap: var(--sp-3) var(--sp-4); align-items: flex-end; }
+.iv-form > label { display: flex; flex-direction: column; gap: 4px; color: var(--c-ink-2); font-size: var(--fs-s); font-weight: 700; }
+.iv-form > label > :is(input, textarea) { color: var(--c-ink); font-weight: 400; }
+.iv-name { inline-size: 320px; max-inline-size: 100%; }
+.iv-days { inline-size: 90px; }
 .iv-paths-label { flex: 1 1 100%; }
-.iv-paths { width: 100%; font: 13px/1.4 ui-monospace, monospace; }
-#iv-paths-help { flex: 1 1 100%; margin: -6px 0 0; font-size: 12px; }
+.iv-paths { inline-size: 100%; font: var(--fs-s) / 1.45 var(--font-mono); }
+#iv-paths-help { flex: 1 1 100%; margin: -6px 0 0; font-size: var(--fs-xs); }
+.iv-create { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }
+.iv-create:hover:not(:disabled) { background: #000; color: #fff; }
+
+/* the role: a choice of two, the AOE team red, reviewers blue */
+.iv-role { display: flex; gap: 0; margin: 0; padding: 0; border: 0; }
+.iv-role legend { margin-bottom: 4px; padding: 0; color: var(--c-ink-2); font-size: var(--fs-s); font-weight: 700; }
+
+.iv-role label {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  min-block-size: 32px;
+  padding: 4px 14px;
+  border: 1px solid var(--c-line-2);
+  background: var(--c-surface);
+  font-size: var(--fs-s);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.iv-role label:first-of-type { border-radius: var(--r-pill) 0 0 var(--r-pill); }
+.iv-role label:last-of-type { margin-inline-start: -1px; border-radius: 0 var(--r-pill) var(--r-pill) 0; }
+.iv-role input { position: absolute; opacity: 0; pointer-events: none; }
+.iv-role label:hover { border-color: var(--c-ink-3); }
+.iv-role label:has(:focus-visible) { outline: 2px solid var(--c-blue); outline-offset: 2px; }
+.iv-role-reviewer:has(:checked) { border-color: var(--c-reviewer); background: var(--c-reviewer); color: #fff; }
+.iv-role-aoe:has(:checked) { border-color: var(--c-aoe); background: var(--c-aoe); color: #fff; }
+
+/* the link just made: shown once, to copy */
 .iv-made:empty { display: none; }
-.iv-made { margin-top: 14px; padding: 12px 14px; border: 1px solid #d4a72c; border-radius: 6px; background: #fff8c5; font-size: 13px; }
-.iv-made p { margin: 0 0 8px; }
-.iv-link { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
-.iv-link input { flex: 1; font: 12px ui-monospace, monospace; }
-.iv-error { color: #cf222e; }
-.iv-filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; font-size: 13px; }
-.iv-filters .iv-check { display: flex; gap: 6px; align-items: center; }
-.iv-table td, .iv-table th { padding: 6px 8px; border-bottom: 1px solid #eaeef2; text-align: left; vertical-align: top; }
-.iv-state { padding: 1px 6px; border-radius: 9px; font-size: 12px; white-space: nowrap; }
-.iv-state-active { background: #dafbe1; color: #116329; }
-.iv-state-expired { background: #eaeef2; color: #57606a; }
-.iv-state-revoked { background: #ffebe9; color: #a40e26; }
-.iv-role-aoe { font-weight: 600; }
-.iv-me { color: #57606a; font-size: 12px; }
-.iv-revoke { padding: 2px 8px; font-size: 12px; }
-.iv-revoke-cell { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
-.iv-sure { font-size: 12px; color: #a40e26; }
-.iv-revoke-yes { border-color: #cf222e; background: #cf222e; }
+
+.iv-made {
+  margin-top: var(--sp-4);
+  padding: var(--sp-4);
+  border: 1px solid #e9c46a;
+  border-radius: var(--r-m);
+  background: linear-gradient(135deg, #fff8dc, #fff3c4);
+  font-size: var(--fs-s);
+}
+
+.iv-made p { margin: 0 0 var(--sp-2); }
+.iv-link { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; margin: var(--sp-2) 0; }
+.iv-link input { flex: 1 1 280px; background: var(--c-surface); font: var(--fs-xs) var(--font-mono); }
+.iv-link button { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }
+.iv-link button:hover:not(:disabled) { background: #000; color: #fff; }
+.iv-error { color: var(--c-error); font-weight: 600; }
+
+/* the list */
+.iv-filters { display: flex; flex-wrap: wrap; gap: var(--sp-3) var(--sp-4); align-items: center; margin-bottom: var(--sp-2); padding: var(--sp-3); border-radius: var(--r-m); background: var(--c-surface-2); box-shadow: inset 0 0 0 1px var(--c-line); font-size: var(--fs-s); }
+.iv-filters label { display: flex; gap: 6px; align-items: center; color: var(--c-ink-2); font-weight: 600; }
+.iv-table td, .iv-table th { padding: 10px; }
+.iv-table td { vertical-align: middle; }
+.iv-state { padding: 2px 10px; border-radius: var(--r-pill); font-size: var(--fs-xs); font-weight: 700; white-space: nowrap; }
+.iv-state-active { background: #dcf3e2; color: #135c29; }
+.iv-state-expired { background: #ececea; color: var(--c-ink-2); }
+.iv-state-revoked { background: var(--c-red-50); color: var(--c-red-800); }
+.iv-me { color: var(--c-muted); font-size: var(--fs-xs); }
+
+/* revoke: a red outline, in two steps */
+.iv-revoke-cell { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.iv-revoke { min-block-size: 28px; padding: 2px 12px; border-color: #f0b4ad; color: var(--c-red-800); font-size: var(--fs-xs); }
+.iv-revoke:hover:not(:disabled) { border-color: var(--c-red); background: var(--c-red-50); color: var(--c-red-800); }
+.iv-revoke-yes { border-color: var(--c-red); background: var(--c-red); color: #fff; }
+.iv-revoke-yes:hover:not(:disabled) { background: var(--c-red-600); color: #fff; }
+.iv-sure { color: var(--c-red-800); font-size: var(--fs-xs); font-weight: 600; }

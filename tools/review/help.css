@@ -9,6 +9,7 @@
 }
 
 .hp-tools { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.ui-bar .hp-tools { margin-left: 0; }
 .hp-tools.hp-fixed { position: fixed; top: 12px; right: 14px; z-index: 50; }
 .hp-start { padding: 4px 12px; border: 1px solid currentcolor; border-radius: 999px; color: inherit; font: 600 13px/1.4 var(--hp-font); text-decoration: none; opacity: 0.9; }
 .hp-start:hover { opacity: 1; background: rgb(255 255 255 / 12%); }

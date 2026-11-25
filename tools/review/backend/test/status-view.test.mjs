@@ -42,7 +42,7 @@ try {
     return {
       mark: visible('.st-mark'),
       scope: visible('.st-scope'),
-      invites: visible('.st-invites'),
+      invites: visible('.ui-nav-invites'),
       edit: document.querySelectorAll('.st-edit').length,
       unpublished: [...document.querySelectorAll('.st-tile')].some((t) => /Not published/.test(t.textContent)),
       aoeButtons: [...document.querySelectorAll('button')].filter((b) => b.offsetParent !== null).map((b) => b.textContent.trim()),

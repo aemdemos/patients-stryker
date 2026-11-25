@@ -20,7 +20,7 @@ const STYLE = `
 #rv-pins .rv-pin { position: absolute; display: grid; place-items: center; width: 26px; height: 26px;
   margin: -13px 0 0 -13px; border: 2px solid #fff; border-radius: 50%; background: #ffb500; color: #000;
   font: 700 12px/1 system-ui, sans-serif; box-shadow: 0 1px 4px rgb(0 0 0 / 45%); cursor: pointer; }
-#rv-pins .rv-pin.rv-resolved { background: #4c7d7a; color: #fff; opacity: 0.75; }
+#rv-pins .rv-pin.rv-resolved { background: #1a7f37; color: #fff; opacity: 0.75; }
 #rv-pins .rv-pin.rv-draft { border-style: dashed; background: #fff3d1; }
 #rv-pins .rv-pin.rv-sel { outline: 3px solid #1f2328; outline-offset: 2px; }
 body.rv-adding, body.rv-adding * { cursor: crosshair !important; }

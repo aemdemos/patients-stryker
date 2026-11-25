@@ -1,0 +1,197 @@
+/*
+ * The review's shared design (25 Nov 2026): tokens, base elements and the top bar of every page.
+ * Adobe red = the AOE team (Adobe), blue = the reviewers, the statuses in their own colours.
+ * Layered, so each page's own stylesheet (unlayered) refines it without fighting specificity.
+ */
+@layer ui-tokens, ui-base, ui-components;
+
+@layer ui-tokens {
+  :root {
+    color-scheme: light;
+
+    /* tier 1: the palette */
+    --c-red: #eb1000;
+    --c-red-600: #c20d00;
+    --c-red-800: #8a0a00;
+    --c-red-50: #fff0ee;
+    --c-blue: #0969da;
+    --c-blue-700: #0550ae;
+    --c-blue-50: #eaf3ff;
+    --c-gold: #b0861a;
+    --c-green: #1a7f37;
+    --c-ink: #1d1d1d;
+    --c-ink-2: #4b4b4b;
+    --c-ink-3: #6e6e6e;
+    --c-line: #e3e3e1;
+    --c-line-2: #cfcfcc;
+    --c-bg: #f6f5f3;
+    --c-surface: #fff;
+    --c-surface-2: #f9f9f8;
+    --c-bar: #141414;
+    --c-bar-2: #242424;
+    --c-bar-line: #3a3a3a;
+    --c-bar-muted: #a9a9a9;
+
+    /* tier 2: meanings */
+    --c-aoe: var(--c-red);
+    --c-aoe-soft: var(--c-red-50);
+    --c-reviewer: var(--c-blue);
+    --c-reviewer-soft: var(--c-blue-50);
+    --c-accent: var(--c-red);
+    --c-link: var(--c-blue-700);
+    --c-muted: var(--c-ink-3);
+    --c-ok: var(--c-green);
+    --c-warn: #9a6700;
+    --c-error: #b42318;
+
+    /* type, space, shapes */
+    --font: adobe-clean, "Source Sans 3", "Source Sans Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: ui-monospace, "SF Mono", menlo, consolas, monospace;
+    --fs-2xs: 0.6875rem;
+    --fs-xs: 0.75rem;
+    --fs-s: 0.8125rem;
+    --fs-m: 0.875rem;
+    --fs-l: 1rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.625rem;
+    --fs-3xl: 2.25rem;
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 24px;
+    --sp-6: 32px;
+    --r-s: 6px;
+    --r-m: 10px;
+    --r-l: 16px;
+    --r-pill: 999px;
+    --shadow-1: 0 1px 2px rgb(0 0 0 / 5%), 0 4px 14px rgb(0 0 0 / 5%);
+    --shadow-2: 0 10px 30px rgb(0 0 0 / 10%);
+    --shadow-pop: 0 18px 48px rgb(0 0 0 / 22%);
+    --bar-h: 52px;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  /* the statuses: a colour and a label each (the label carries the meaning, the colour helps the eye) */
+  .st-unreviewed { --st: #afb8c1; --st-ink: #1f2328; }
+  .st-in-review { --st: #d4a72c; --st-ink: #1f2328; }
+  .st-waiting-aoe { --st: #cf222e; --st-ink: #fff; }
+  .st-waiting-customer { --st: #0969da; --st-ink: #fff; }
+  .st-approved { --st: #8fd19e; --st-ink: #1f2328; }
+  .st-resolved { --st: #1a7f37; --st-ink: #fff; }
+  .st-skipped { --st: #1f2328; --st-ink: #fff; }
+  .st-unpublished { --st: #fff; --st-ink: #57606a; }
+}
+
+@layer ui-base {
+  body {
+    margin: 0;
+    background: var(--c-bg);
+    color: var(--c-ink);
+    font: var(--fs-m) / 1.5 var(--font);
+    accent-color: var(--c-ink);
+  }
+
+  :where(*, *::before, *::after) { box-sizing: border-box; }
+  :where(a) { color: var(--c-link); text-underline-offset: 0.15em; }
+  :where(a:hover) { color: var(--c-blue); }
+  :where(button, input, select, textarea) { font: inherit; color: inherit; }
+  :where(h1, h2, h3) { text-wrap: balance; }
+  :where(p) { text-wrap: pretty; }
+  ::selection { background: rgb(235 16 0 / 18%); }
+
+  :focus-visible { outline: 2px solid var(--c-blue); outline-offset: 2px; }
+
+  /* form fields */
+  :where(input:not([type="checkbox"], [type="radio"], [type="range"]), select, textarea) {
+    min-block-size: 32px;
+    padding: 5px 10px;
+    border: 1px solid var(--c-line-2);
+    border-radius: var(--r-s);
+    background: var(--c-surface);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  :where(input:not([type="checkbox"], [type="radio"], [type="range"]), select, textarea):hover { border-color: var(--c-ink-3); }
+
+  :where(input:not([type="checkbox"], [type="radio"], [type="range"]), select, textarea):focus-visible {
+    border-color: var(--c-blue);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgb(9 105 218 / 22%);
+  }
+
+  :where(input:user-invalid, textarea:user-invalid) { border-color: var(--c-error); }
+  :where(textarea) { resize: vertical; }
+  :where(input[type="checkbox"], input[type="radio"]) { inline-size: 16px; block-size: 16px; margin: 0; }
+
+  /* tables */
+  :where(table) { width: 100%; border-collapse: separate; border-spacing: 0; font-size: var(--fs-s); }
+  :where(th, td) { padding: 8px 10px; border-bottom: 1px solid var(--c-line); text-align: left; vertical-align: top; }
+  :where(th) { color: var(--c-ink-2); font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; text-wrap: balance; }
+  :where(tbody tr):hover > td { background: var(--c-surface-2); }
+}
+
+@layer ui-components {
+  /* the top bar of every page: brand (to the start page), the tools, who you are, Start and ⓘ */
+  .ui-bar {
+    position: relative;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2) var(--sp-4);
+    align-items: center;
+    min-block-size: var(--bar-h);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--c-bar-line);
+    background: var(--c-bar);
+    color: #fff;
+  }
+
+  .ui-brand { display: inline-flex; gap: 10px; align-items: center; color: #fff; font-size: var(--fs-l); text-decoration: none; white-space: nowrap; }
+  .ui-brand:hover { color: #fff; }
+  .ui-brand b { font-weight: 800; }
+  .ui-brand-name { color: var(--c-bar-muted); }
+  .ui-mark { inline-size: 22px; block-size: 22px; border-radius: 5px; background: linear-gradient(135deg, #ff3b1f, var(--c-red) 60%, var(--c-red-600)); }
+
+  .ui-nav { display: flex; flex-wrap: wrap; gap: 2px; margin-inline-end: auto; }
+
+  .ui-nav a {
+    position: relative;
+    padding: 6px 12px;
+    border-radius: var(--r-s);
+    color: #d6d6d6;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .ui-nav a:hover { background: var(--c-bar-2); color: #fff; }
+  .ui-nav a[aria-current="page"] { color: #fff; }
+  .ui-nav a[aria-current="page"]::after { content: ""; position: absolute; inset: auto 12px -9px; block-size: 3px; border-radius: 3px 3px 0 0; background: var(--c-red); }
+  .ui-nav a[hidden] { display: none; }
+
+  .ui-who { display: inline-flex; gap: var(--sp-2); align-items: center; color: #e8e8e8; font-size: var(--fs-s); white-space: nowrap; }
+  .ui-who[hidden] { display: none; }
+
+  /* the role chips: the AOE team red, reviewers blue */
+  .ui-role { display: inline-block; padding: 1px 9px; border-radius: var(--r-pill); color: #fff; font-size: var(--fs-2xs); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+  .ui-role-aoe { background: var(--c-aoe); }
+  .ui-role-reviewer { background: var(--c-reviewer); }
+
+  /* the page's own head below the bar: its title, when it was read, its actions */
+  .ui-pagehead { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); align-items: flex-end; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: var(--sp-5) 20px var(--sp-3); }
+  .ui-pagehead h1 { margin: 0; font-size: var(--fs-2xl); font-weight: 900; letter-spacing: -0.01em; line-height: 1.15; }
+  .ui-pagehead .rs-updated { display: block; margin-top: 2px; color: var(--c-muted); font-size: var(--fs-s); }
+  .ui-actions { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; }
+
+  @media (width >= 600px) {
+    .ui-bar { padding-inline: 20px; }
+  }
+
+  /* (wide screens: the bar stays at the top while the page scrolls) */
+  @media (width >= 900px) {
+    .ui-bar { position: sticky; }
+  }
+}

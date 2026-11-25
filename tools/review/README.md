@@ -50,6 +50,8 @@ keeps the invitation, later visits need no link.
 | `live.js` | Keeps an open page up to date: every 15 s while its tab is visible, at once when it is shown again |
 | `launch.html`, `launch.js`, `launch.css` | The start page (where invitation links open): who you are, where the review stands (kept up to date), a card per page of the review, the way of working between the customer and the AOE team with the statuses in their colours; Adobe red |
 | `help.js`, `help.css` | The help on every page: "Start" and an ⓘ at the right end of the top bar; the ⓘ opens what is on the page and how to use it, for the viewer's side (AOE: theirs first, the reviewers' folded below) |
+| `ui.css` | The shared design of every page (25 Nov 2026): tokens (Adobe red = the AOE team, blue = reviewers, the statuses' colours, type sizes in rem, spacing, corners, shadows), base elements (fields, tables, focus rings) and the top bar; in cascade layers, so each page's own stylesheet refines it without specificity fights |
+| `bar.js` | The top bar of every page: the brand (to the start page), the tools in the order of the work (Summary, Status, Review tool, Invitations for the AOE team; the current one underlined in red), who you are with a red AOE team or blue Reviewer chip, Start and ⓘ; pinned at the top on wide screens |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
 | `shots.js` | The page's source shots in the tool: the history, one version, the AOE team's request for a new one |
 | `shoot.mjs`, `snapshot-map.py`, `capture-snapshots.mjs`, `upload-snapshots.sh`, `record-shots.mjs`, `refresh-shots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/` | Source shots and their history (below) |
@@ -73,6 +75,11 @@ keeps the invitation, later visits need no link.
   Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
   Colours: everything of the AOE team (Adobe) red, everything of the reviewers blue; the word is
   always "reviewer" (never "customer") on every page of the tool.
+- **One design for every page** (`ui.css`, `bar.js`, 25 Nov 2026): the same dark top bar with
+  the tools in the order of the work, page heads with the title and when the page was read,
+  cards, pill buttons, status tiles that filter the list when clicked, tables whose head stays
+  while the page scrolls (on phones they scroll sideways in their box). Keep new pages on the
+  tokens of `ui.css`; the class names the code and tests use did not change.
 - **Help on every page** (`help.js`): "Start" and an ⓘ at the right end of every top bar; the
   ⓘ opens a dialog about the page for the viewer's side (customer or AOE team). The texts live
   in `help.js` (`HELP`): keep them in step with the pages.

@@ -11,27 +11,18 @@
   --ln-font: adobe-clean, "Source Sans 3", "Source Sans Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--ln-bg); color: var(--ln-ink); font: 16px/1.55 var(--ln-font); }
-
-/* status colours (the same as the tool and the status page) */
-.st-unreviewed { --st: #afb8c1; --st-ink: #1f2328; }
-.st-in-review { --st: #d4a72c; --st-ink: #1f2328; }
-.st-waiting-aoe { --st: #cf222e; --st-ink: #fff; }
-.st-waiting-customer { --st: #0969da; --st-ink: #fff; }
-.st-approved { --st: #8fd19e; --st-ink: #1f2328; }
-.st-resolved { --st: #1a7f37; --st-ink: #fff; }
-.st-skipped { --st: #1f2328; --st-ink: #fff; }
+/* (the box model, the statuses' colours and the tokens: ui.css) */
+body { margin: 0; background: var(--ln-bg); color: var(--ln-ink); font: 1rem/1.55 var(--ln-font); }
 
 /* the bar */
 .ln-bar { position: absolute; top: 0; right: 0; left: 0; z-index: 3; display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; padding: 16px 28px; color: #fff; }
 .ln-brand { display: inline-flex; gap: 10px; align-items: center; font-size: 17px; letter-spacing: 0.01em; }
 .ln-brand b { font-weight: 800; }
 .ln-mark { width: 26px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, #ff3b1f, var(--ln-red) 60%, #c20d00); box-shadow: 0 0 0 2px rgb(255 255 255 / 35%); }
-.ln-bar-sub { font-size: 14px; opacity: 0.8; }
+.ln-bar-sub { order: 3; flex-basis: 100%; font-size: 14px; opacity: 0.8; }
 
 /* the hero */
-.ln-hero { position: relative; overflow: hidden; padding: 120px 28px 120px; background: radial-gradient(120% 140% at 0% 0%, #ff2d12 0%, var(--ln-red) 30%, #b80d00 58%, #3d0500 100%); color: #fff; }
+.ln-hero { position: relative; overflow: hidden; padding: 120px 28px; background: radial-gradient(120% 140% at 0% 0%, #ff2d12 0%, var(--ln-red) 30%, #b80d00 58%, #3d0500 100%); color: #fff; }
 .ln-hero::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgb(255 255 255 / 6%) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 6%) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(180deg, #000 0%, transparent 85%); pointer-events: none; }
 .ln-hero-art span { position: absolute; border-radius: 50%; filter: blur(2px); opacity: 0.55; animation: ln-float 14s ease-in-out infinite; }
 .ln-hero-art span:nth-child(1) { top: -120px; right: -80px; width: 420px; height: 420px; background: radial-gradient(circle at 30% 30%, #ff7a5c, transparent 65%); }
@@ -56,7 +47,6 @@ body { margin: 0; background: var(--ln-bg); color: var(--ln-ink); font: 16px/1.5
 /* the help in the bar: on the brand's line (the sub-line below it on small screens), ringed in white on the red */
 .ln-bar .hp-start { display: none; }
 .ln-bar .hp-tools { order: 2; }
-.ln-bar-sub { order: 3; flex-basis: 100%; }
 .ln-bar .hp-info { box-shadow: 0 0 0 2px #fff; }
 @media (width >= 900px) {
   .ln-bar-sub { order: 1; flex-basis: auto; }
