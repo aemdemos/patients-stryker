@@ -8,7 +8,7 @@
  * starts its chat with its first message (no text of its own); the summary finds the comment;
  * set-status sends the page back with a status; the reviewer answers and sends it again; an AOE
  * member writes with a status and sends it back in the tool; the reviewer ticks the thread Done
- * and approves (resolved); the results page; an interrupted save is sent again; a revoked link is
+ * and approves (resolved); the summary page; an interrupted save is sent again; a revoked link is
  * refused. Everything the test wrote is removed at the end and the invitations revoked. Tokens are
  * never printed.
  * usage: node tools/review/backend/test/tool.test.mjs [--base http://localhost:3000]
@@ -56,7 +56,7 @@ const check = (label, ok, detail = '') => {
 };
 
 const inv = await admin({
-  op: 'invite', name: 'tool test backend', paths: [PAGE], days: 1, results: true,
+  op: 'invite', name: 'tool test backend', paths: [PAGE], days: 1,
 });
 const link = `${base}/tools/review/index.html?page=${encodeURIComponent(PAGE)}&invite=${encodeURIComponent(inv.token)}`;
 const browser = await chromium.launch();
@@ -209,13 +209,13 @@ try {
     && thread.some((r) => r.reviewer === 'tool test AOE' && r.role === 'aoe') && thread.some((r) => r.kind === 'done:comment' && JSON.parse(r.value) === true),
   JSON.stringify(thread.map((r) => [r.reviewer, r.role, r.kind.split(':')[0]])));
 
-  // 7. the results page with the results right
-  ({ context, page } = await open(`${base}/tools/review/results.html?invite=${encodeURIComponent(inv.token)}`, '#comments table'));
+  // 7. the summary page (any invitation since 25 Nov 2026; summary.html, results.html forwards)
+  ({ context, page } = await open(`${base}/tools/review/summary.html?invite=${encodeURIComponent(inv.token)}`, '#comments table'));
   const res = await page.evaluate((text) => {
     const row = [...document.querySelectorAll('#comments tr')].find((tr) => tr.textContent.includes(text));
     return { found: !!row, aoe: row?.lastElementChild?.textContent || '', search: window.location.search };
   }, COMMENT);
-  check('the results page lists the comment: done, with the AOE status', res.found && /done · done, in r-ui/.test(res.aoe), JSON.stringify(res));
+  check('the summary page lists the comment: done, with the AOE status', res.found && /done · done, in r-ui/.test(res.aoe), JSON.stringify(res));
   check('… and keeps the link out of the address bar', !res.search.includes('invite='));
   await context.close();
 

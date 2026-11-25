@@ -28,7 +28,7 @@ browser keeps the token, later visits need no link (locally the frames read `/co
 | `groups.js` | The variants a block's content fits and its group ("blocks like this": block type + standard variant + for Columns the cell kinds of its first row, more rows flagged); used by `frame.js` and `build-groups.mjs` |
 | `build-groups.mjs`, `groups.json` | The 34 groups over the 672 standard pages with their size (blocks, pages); `node tools/review/build-groups.mjs` against the workspace preview |
 | `status.html`, `status.js`, `status.css` | The status of every page: colour-coded states, filters, "waits for me" order (below) |
-| `results.html`, `results.js`, `results.css` | Review results from every entry in the scope of an invitation with the results right (`results.html?invite=…`): progress (pages marked reviewed, activity, reviewers), design decisions (group choices with their reach; single-block choices named by block type and design, values equal to the block's own design left out), comments by block type and per page, QA notes (open / resolved, by category) with links that open the tool at the pin (`index.html?page=…&vp=…&note=<id>`); CSV downloads of comments and QA notes; test entries hidden by default |
+| `summary.html`, `summary-page.js`, `summary-page.css` | The review summary (the results page until 25 Nov 2026; `results.html` forwards) from every entry in the scope of any invitation (`summary.html?invite=…`): progress (pages marked reviewed, activity, reviewers), design decisions (group choices with their reach; single-block choices named by block type and design, values equal to the block's own design left out), comments by block type and per page, QA notes (open / resolved, by category) with links that open the tool at the pin (`index.html?page=…&vp=…&note=<id>`); CSV downloads of comments and QA notes; test entries hidden by default |
 | `store.js` | Saving and loading the review state (below) |
 | `blockkeys.js` | Stable keys for blocks and text sections (below): what choices are saved under |
 | `notes.js` | Pinned QA notes: note mode (button or N, Esc), a click on the standard page drops a pin tied to the nearest text run or image (`sync.js` key + spot in its box, else the page position), so it keeps its place on reflow and variant switches; pins live in the frame; category, text, width, open / resolved, deleted. Saved as item `note:<id>`, kind `note` |
@@ -47,7 +47,7 @@ page and block, updated in place, with an audit file per save; no sign-in for re
 - **Invitation:** the link's token (`?invite=`) is kept in the browser (`std-review-invite`) and
   removed from the address bar; every call sends it (header `x-review-invite`). The reviewer's
   name comes from it (the name field is read only); its scope (path prefixes, the group right,
-  the results right) decides what can be read and saved. An expired or withdrawn link: the tool
+  since 25 Nov 2026 any invitation also opens the summary page) decides what can be read and saved. An expired or withdrawn link: the tool
   says so.
 - **Load:** `state?page=…` gives the page's entries and every group choice (page `*`), AOE
   statuses among them; merged per `item|kind`.
@@ -105,6 +105,19 @@ page and the summary.
 - **The design panel is off** (25 Nov 2026, `config.js` `designPanel: false`): it was not used,
   so the review is comments and QA notes only (nothing else to save); `design: true` stays, so the
   summary and the results still sort feedback by the standard pages' designs. The code stays.
+- **Kept up to date** (25 Nov 2026, `live.js`): the review page, the status page and the
+  summary page ask the backend again every 15 s while their tab is visible (at once when it is
+  shown again; nothing in a hidden tab). The review page draws its chats, notes and status again
+  only when something changed, and a message box being typed in keeps its text, cursor and focus
+  (not while changes are on their way, a dialog is open or a status field is in use); the status
+  page keeps filters, selection and scroll and waits while a row is edited; the summary keeps its
+  scroll. Each check is one small call (~0.05 GB-s): ~6% of the App Builder pack for 10 people, 8
+  hours a day. (App Builder can't push to the browser: it asks.)
+- **The summary page** (`summary.html`, the results page until 25 Nov 2026; older links to
+  `results.html` forward): for every invitation, the customer's too, within its pages; linked
+  from the review tool and the status page, and given with every new invitation. The "Hide test
+  entries" switch is the AOE team's only (test entries are hidden for everyone else). The
+  invitations' `results` right is no longer used.
 - **QA notes start their chat** (since 25 Nov 2026): a new note asks for its first message (no
   subject of its own): "Add note" saves the note and that message at once and opens its chat. A
   note is referred to by its number ("note 4 on page X"): numbered by creation among every note of
@@ -160,7 +173,7 @@ conversion re-runs (sections removed, title lines in their own section), the con
   when exactly one block has it (a twin whose other twin is gone).
 - **A text fix** gives that block a new key: its saved choices are not found any more; the tool
   leaves them out, the summary lists them as re-check questions; never guessed.
-- The tool, the results page and the summary compute keys from the page they show, map entries
+- The tool, the summary page and the AOE summary compute keys from the page they show, map entries
   to positions on load and save under keys; summary links name blocks by key (`?block=b:…`).
 - Tests: `test/blockkeys.test.mjs` (a page changed as a re-run would: every block keeps its key
   while its position moves; a text fix changes one key); the loop test saves a design switch
@@ -221,7 +234,7 @@ node tools/review/set-status.mjs --item variant:columns:media-text --state done|
 It saves one status per reviewer row of the item (or only `--refs`) in the review backend (its
 private `admin status`): reviewer `AOE`, kind `status:<kind>` on the
 reviewer's own item, value `{ state, release, reason, workItem, commit }`. The tool shows it under
-the comment or QA note ("AOE: done in r1 · image column widened"), the results page in an AOE
+the comment or QA note ("AOE: done in r1 · image column widened"), the summary page in an AOE
 column (AOE rows are no reviewer there), and the next summary per row (mixed states = "partly").
 `open` takes a status back. Decisions get no status here: the apply step will record what it
 applied. `release` is free text; the commit is recorded with every status.
@@ -230,7 +243,7 @@ Tests: `node tools/review/test/summary.test.mjs` (the sample `test/sample-rows.c
 feedback on real standard pages, from `test/sample-rows.mjs`); the whole loop on the backend
 (reviewer: page chat, Send to the AOE team, a design switch → summary → set-status sends it back
 with a status → the reviewer answers and sends it again → the AOE team writes with a status and
-sends it back in the tool → the reviewer ticks Done and approves: resolved → results page): `backend/test/tool.test.mjs`;
+sends it back in the tool → the reviewer ticks Done and approves: resolved → summary page): `backend/test/tool.test.mjs`;
 the shared rules: `backend/test/states.test.mjs`.
 
 ## Source snapshots
@@ -359,7 +372,7 @@ review without the developers (backend web action `invites`, `backend/lib/invite
 with `backend/admin.mjs`):
 
 - **Make** an invitation: name (or email), role (reviewer, or AOE team: the AOE team always has
-  the results page), valid for 1–365 days (default 90), the results page for a reviewer, and the
+  the summary page), valid for 1–365 days (default 90), and the
   pages (path prefixes; default and limit: the AOE's own invitation's pages). The link points to
   the tool on the host the page was opened on (the branch preview before the merge, then main).
   **The link is shown once**: the backend keeps no tokens, and nobody can see or copy another
@@ -604,6 +617,7 @@ node tools/review/backend/test/scope-live.test.mjs    # deployed: scope pages, a
 node tools/review/backend/test/scope-tool.test.mjs <dev server>   # the scope on the status page, a backend shot in the tool, ☆
 node tools/review/backend/test/status-view.test.mjs <dev server>  # the customer's status page (no AOE parts), new tabs, state kept on refresh
 node tools/review/backend/test/live-tool.test.mjs <dev server> [page] [space]   # the Live comparison: the copy, fonts, no scripts, sync, links, widths
+node tools/review/backend/test/refresh-tool.test.mjs <dev server>   # live updates (15 s, typing kept), the summary for both roles, results.html forwards
 node tools/review/backend/test/org-edit.test.mjs <dev server> [space] [prefix of 3 pages]   # changing batches, groups, representatives (pages nobody used; purged after)
 ```
 

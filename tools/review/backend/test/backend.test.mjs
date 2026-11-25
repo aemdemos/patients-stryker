@@ -198,16 +198,15 @@ const mine = ov.json?.pages?.find((p) => p.page === PAGE);
 check('overview: resolved (approved after feedback), threads counted', mine?.state === 'resolved' && mine.threads.open + mine.threads.done >= 1, JSON.stringify(mine));
 await admin({ op: 'revoke', id: aoe.id });
 
+// the summary page (since 25 Nov 2026): every invitation, its pages, with its role
 r = await web('results', { invite: T });
-check('results without the results right: 403', r.status === 403 && r.json?.error.code === 'no-results', r.status);
-const withResults = await admin({
-  op: 'invite', name: 'backend test (results)', paths: [PAGE], days: 1, results: true,
+check('summary: a reviewer\'s invitation reads the entries in scope, with its role', r.status === 200 && r.json.role === 'reviewer'
+  && r.json.rows.some((x) => x.page === PAGE && x.item === 's1b0') && r.json.rows.every((x) => x.page === '*' || x.page === PAGE), `${r.status} ${JSON.stringify(r.json).slice(0, 200)}`);
+const withLink = await admin({
+  op: 'invite', name: 'backend test (summary)', paths: [PAGE], days: 1,
 });
-check('an invitation with the results right gets a results link', !!withResults.results && withResults.results.includes('results.html?invite='));
-r = await web('results', { invite: withResults.token });
-check('results: the entries in scope', r.status === 200 && r.json.rows.some((x) => x.page === PAGE && x.item === 's1b0')
-  && r.json.rows.every((x) => x.page === '*' || x.page === PAGE), r.status);
-await admin({ op: 'revoke', id: withResults.id });
+check('every invitation gets a summary link', !!withLink.summary && withLink.summary.includes('summary.html?invite='), JSON.stringify(Object.keys(withLink)));
+await admin({ op: 'revoke', id: withLink.id });
 
 r = await web(`state?page=${encodeURIComponent(PAGE)}`, { method: 'OPTIONS' });
 check('CORS preflight from the review preview', r.status === 204 && r.headers.get('access-control-allow-origin') === ORIGIN, `${r.status} ${r.headers.get('access-control-allow-origin')}`);
