@@ -51,7 +51,9 @@ const SNAPSHOTS = LOCAL ? REVIEW.snapshots.local : REVIEW.snapshots.preview;
 const READY_TIMEOUT = 8000;
 const NAME_KEY = storageKey('reviewer');
 const MODES = ['flip', 'opacity', 'side'];
-const COMPARE = { rs: 'as-is', src: 'source', live: 'live source' };
+const COMPARE = {
+  rs: 'as-is', src: 'source screenshot', live: 'source render', real: 'live stryker.com',
+};
 const WIDTHS = REVIEW.widths.map((w) => w.vp);
 
 const params = new URLSearchParams(window.location.search);
@@ -59,7 +61,7 @@ const state = {
   page: params.get('page') || '',
   vp: WIDTHS.includes(Number(params.get('vp'))) ? Number(params.get('vp')) : WIDTHS[0],
   mode: MODES.includes(params.get('mode')) ? params.get('mode') : REVIEW.mode,
-  cmp: REVIEW.compare.includes(params.get('cmp')) ? params.get('cmp') : REVIEW.compare[0],
+  cmp: REVIEW.compare.includes(params.get('cmp')) || (params.get('cmp') === 'real' && document.documentElement.dataset.reviewLive) ? params.get('cmp') : REVIEW.compare[0],
   show: ['rs', 'cmp'].includes(params.get('show')) ? 'cmp' : 'std',
   opacity: Number.isFinite(Number(params.get('op'))) && params.get('op') !== null ? Number(params.get('op')) : 50,
   sync: true,
@@ -68,17 +70,28 @@ const state = {
 const $ = (sel) => document.querySelector(sel);
 const stage = $('.rv-stage');
 const panes = {
-  std: $('.rv-std'), rs: $('.rv-rs'), src: $('.rv-src'), live: $('.rv-live'),
+  std: $('.rv-std'), rs: $('.rv-rs'), src: $('.rv-src'), live: $('.rv-live'), real: $('.rv-real'),
 };
 const frames = {
-  std: panes.std.querySelector('iframe'), rs: panes.rs.querySelector('iframe'), live: panes.live.querySelector('iframe'),
+  std: panes.std.querySelector('iframe'),
+  rs: panes.rs.querySelector('iframe'),
+  live: panes.live.querySelector('iframe'),
+  real: panes.real.querySelector('iframe'),
 };
 const scroller = panes.src.querySelector('.rv-src-scroller');
 const ready = {
-  std: false, rs: false, src: false, live: false,
+  std: false, rs: false, src: false, live: false, real: false,
 };
 const quietUntil = {
-  std: 0, rs: 0, src: 0, live: 0,
+  std: 0, rs: 0, src: 0, live: 0, real: 0,
+};
+// the real stryker.com page (Compare with: Live), with the review extension (pilot, 25 Nov
+// 2026: extension/): the extension lets stryker.com be framed here and tells, from inside it,
+// where its texts and images are and where it is scrolled to (it can't be read from here)
+const REAL_ORIGIN = 'https://www.stryker.com';
+const HAS_REAL = !!document.documentElement.dataset.reviewLive && REVIEW.compare.includes('src');
+const real = {
+  url: '', leaves: [], y: 0, h: 0, at: '',
 };
 // the live copy of the source page (backend action live): what it was rendered for, its blob URL
 const live = { key: '', url: '', prefetched: new Set() };
@@ -186,7 +199,20 @@ const snapshotWindow = {
   get innerHeight() { return scroller.clientHeight; },
   scrollTo(x, y) { scroller.scrollTop = typeof x === 'object' ? x.top : y; },
 };
-const win = (side) => (side === 'src' ? snapshotWindow : frames[side].contentWindow);
+// the real page: what its bridge last said, and scrolling it through the bridge
+const realWindow = {
+  get scrollY() { return real.y; },
+  get innerHeight() { return real.h || frames.real.clientHeight; },
+  scrollTo(x, y) {
+    const top = typeof x === 'object' ? x.top : y;
+    frames.real.contentWindow?.postMessage({ reviewLive: true, type: 'scrollTo', y: top }, REAL_ORIGIN);
+  },
+};
+const win = (side) => {
+  if (side === 'src') return snapshotWindow;
+  if (side === 'real') return realWindow;
+  return frames[side].contentWindow;
+};
 const doc = (side) => frames[side].contentDocument;
 
 // pinned QA notes on the standard page (notes.js); the editor and the list are set up below
@@ -210,7 +236,10 @@ const notes = createNotes({
 function rebuildAnchors() {
   if (!ready.std || !ready[state.cmp]) return;
   try {
-    const other = state.cmp === 'src' ? snapshot.leaves : leaves(doc(state.cmp));
+    let other;
+    if (state.cmp === 'src') other = snapshot.leaves;
+    else if (state.cmp === 'real') other = real.leaves;
+    else other = leaves(doc(state.cmp));
     anchors = buildAnchors(leaves(doc('std')), other);
   } catch (e) {
     anchors = [];
@@ -1209,7 +1238,7 @@ function renderNotes() {
 function setNoteMode(on) {
   // (a note goes on the migrated page or the source screenshot: never on the rendered copy, which
   // isn't kept; in any view mode, Render becomes Screenshot)
-  if (on && state.cmp === 'live' && REVIEW.compare.includes('src')) $('[data-cmp="src"]')?.click();
+  if (on && ['live', 'real'].includes(state.cmp) && REVIEW.compare.includes('src')) $('[data-cmp="src"]')?.click();
   notes.setAdding(on);
   $('[data-action="note"]').setAttribute('aria-pressed', String(on));
   $('.rv-stage').classList.toggle('rv-adding', on);
@@ -1564,6 +1593,22 @@ async function loadSnapshot() {
 shotHooks.reload = loadSnapshot;
 
 /**
+ * the real stryker.com page (Compare with: Live, the review extension): the page's source, loaded
+ * when Live is shown; its bridge then says where its texts and images are (message listener)
+ */
+function loadReal() {
+  if (!HAS_REAL || state.cmp !== 'real' || !state.page) return;
+  const url = SOURCE[state.page] || allPages.find((p) => p.path === state.page)?.source;
+  if (!url || url === real.url) return;
+  real.url = url;
+  real.leaves = [];
+  real.synced = false;
+  ready.real = false;
+  panes.real.querySelector('.rv-tag').textContent = 'Live stryker.com: loading…';
+  frames.real.src = url;
+}
+
+/**
  * the live copy of the source page, when Live is the comparison: rendered by the backend at the
  * current width (stryker.com builds some parts with its scripts per width), kept there 10
  * minutes; fresh: render again now
@@ -1702,6 +1747,8 @@ function loadPage() {
   // (a new page: its live copy when Live is the comparison)
   live.key = '';
   loadLive();
+  real.url = '';
+  loadReal();
   pageKeys = { byId: {}, byKey: {} };
   // (the page of the address was asked for at the start, with the page list)
   const pre = early && early.page === loading ? early : null;
@@ -2053,10 +2100,11 @@ function setUpShell() {
   }, w.label)));
   // the compare options: only this review's (one alone stays, as what the page is compared with)
   document.querySelectorAll('[data-cmp]').forEach((b) => {
-    if (!REVIEW.compare.includes(b.dataset.cmp)) b.remove();
+    if (!REVIEW.compare.includes(b.dataset.cmp) && !(b.dataset.cmp === 'real' && HAS_REAL)) b.remove();
   });
   if (!REVIEW.compare.includes('rs')) panes.rs.remove();
   if (!REVIEW.compare.includes('live')) panes.live.remove();
+  if (!HAS_REAL) panes.real.remove();
   panes.std.querySelector('.rv-tag').textContent = BASE_LABEL;
   panes.std.querySelector('iframe').title = `${BASE_LABEL} page`;
   document.querySelectorAll('[data-mode]').forEach((b) => {
@@ -2184,7 +2232,33 @@ async function start() {
     rebuildAnchors();
     syncFrom('std');
     loadLive();
+    loadReal();
   }));
+  // the real page's bridge (the review extension): where its texts and images are, its scrolling
+  window.addEventListener('message', (e) => {
+    if (!HAS_REAL || e.origin !== REAL_ORIGIN || !e.data?.reviewLive) return;
+    if (e.source !== frames.real.contentWindow) return;
+    const m = e.data;
+    real.y = Number(m.y) || 0;
+    real.h = Number(m.h) || real.h;
+    if (m.type === 'leaves') {
+      real.leaves = Array.isArray(m.leaves) ? m.leaves : [];
+      real.at = m.url || '';
+      ready.real = true;
+      const elsewhere = real.url && real.at && real.at.split('#')[0] !== real.url.split('#')[0];
+      panes.real.querySelector('.rv-tag').textContent = elsewhere ? 'Live stryker.com: another page (clicked through)' : 'Live stryker.com';
+      rebuildAnchors();
+      if (!real.synced) {
+        real.synced = true;
+        syncFrom('std');
+      }
+    } else if (m.type === 'scroll' && Date.now() >= quietUntil.real) {
+      window.requestAnimationFrame(() => syncFrom('real'));
+    }
+  });
+  frames.real?.addEventListener('load', () => {
+    frames.real.contentWindow?.postMessage({ reviewLive: true, type: 'hello' }, REAL_ORIGIN);
+  });
   panes.live?.querySelector('.rv-live-again').addEventListener('click', () => loadLive(true));
   scroller.addEventListener('scroll', () => {
     if (Date.now() < quietUntil.src) return;

@@ -121,6 +121,33 @@ const FLOW = [
   },
 ];
 
+/**
+ * the AOE team's pilot: the review extension (the real stryker.com page in the tool, Compare
+ * with: Live): installed or not, the download, how to install it
+ */
+function drawPilot(role) {
+  const box = $('.ln-pilot');
+  box.hidden = role !== 'aoe';
+  if (box.hidden || box.childElementCount) return;
+  const version = document.documentElement.dataset.reviewLive;
+  box.append(
+    el('h2', { class: 'ln-h2' }, 'Pilot: the live stryker.com page in the tool', el('span', { class: 'ln-tag' }, 'AOE team')),
+    el('p', { class: 'ln-sub' }, 'A small browser extension lets the review tool show the real, clickable stryker.com page next to the migrated one (Compare with: Live), with Scroll Sync. Menus, tabs and carousels work. Notes still go on the migrated page or the Screenshot.'),
+    el(
+      'div',
+      { class: `ln-pilot-box${version ? ' ln-pilot-on' : ''}` },
+      el('p', { class: 'ln-pilot-state' }, version ? `Installed in this browser (version ${version}): pick Live under Compare with.` : 'Not installed in this browser.'),
+      el('ol', { class: 'ln-pilot-steps' }, ...[
+        ['Download ', el('a', { href: './review-live-extension.zip', download: '' }, 'review-live-extension.zip'), ' and unzip it.'],
+        ['Open ', el('code', {}, 'chrome://extensions'), ' (Edge: ', el('code', {}, 'edge://extensions'), ') and turn on Developer mode.'],
+        ['Click Load unpacked and choose the unzipped folder.'],
+        ['Reload the review tool: Live appears under Compare with.'],
+      ].map((parts) => el('li', {}, ...parts))),
+      el('p', { class: 'ln-pilot-note' }, 'It only lifts stryker.com\'s "don\'t show me inside other sites" rule when a review page shows it, and tells the tool where the page is scrolled to. Updating: unzip the new version over the old folder, then Reload on the extension\'s card.'),
+    ),
+  );
+}
+
 let cardsFor = null;
 function drawCards(role) {
   // (drawn again only when the role changes: a card being hovered is not replaced)
@@ -215,6 +242,7 @@ async function start() {
     const role = body.role || 'reviewer';
     help.setRole(role);
     drawCards(role);
+    drawPilot(role);
     if (helloFor !== `${role}|${body.reviewer}`) {
       helloFor = `${role}|${body.reviewer}`;
       $('.ln-hello').replaceChildren('Welcome, ', el('b', {}, body.reviewer), el('span', { class: `ln-role ln-role-${role === 'aoe' ? 'aoe' : 'reviewer'}` }, role === 'aoe' ? 'AOE team' : 'Reviewer'));
