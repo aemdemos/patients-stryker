@@ -1,5 +1,6 @@
 /* eslint-disable */
 /* global WebImporter */
+import { stdProductPage } from '../transformers/corp-text-markers.js';
 
 /**
  * Parser: www.stryker.com `.c-customizeable` related-content grid → `Cards Corp (teaser)`
@@ -47,8 +48,13 @@ function textCell(item, document) {
   if (title && clean(title.textContent)) {
     const h3 = document.createElement('h3');
     const titleLink = title.querySelector('a[href]');
-    if (titleLink) h3.append(link(document, titleLink, clean(titleLink.textContent)));
-    else h3.textContent = clean(title.textContent);
+    // in review (product pages): a title the source sets in Futura bold (h3.futura-bold,
+    // TPX HD's related products) keeps it as Text style (`sans`): the teaser title is serif
+    const sans = stdProductPage(document) && title.classList.contains('futura-bold');
+    // (not bold: a bold link alone on its line is a button by the conventions)
+    const words = (t) => (sans ? `[[futura-bold]${t}]` : t);
+    if (titleLink) h3.append(link(document, titleLink, words(clean(titleLink.textContent))));
+    else h3.textContent = words(clean(title.textContent));
     body.push(h3);
   }
   // the description (a Latest News card's p.description, e.g. the DE&I Summit's "Related

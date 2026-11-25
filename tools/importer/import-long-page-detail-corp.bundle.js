@@ -194,7 +194,8 @@ var CustomImportScript = (() => {
       while (target.into) target = target.into;
       if (chains) {
         const kinds = inner.words.map(kindOf);
-        target.words = target.words.filter((w) => !kinds.includes(kindOf(w)) || !kindOf(w));
+        const innerText = inner.words.some((x) => STEP_OF[x]);
+        target.words = target.words.filter((w) => !kindOf(w) || !kinds.includes(kindOf(w)) || innerText && STEP_OF[w]);
       }
       target.words.push(...inner.words);
       inner.merged = true;
@@ -415,8 +416,10 @@ var CustomImportScript = (() => {
     if (title && clean(title.textContent)) {
       const h3 = document.createElement("h3");
       const titleLink = title.querySelector("a[href]");
-      if (titleLink) h3.append(link(document, titleLink, clean(titleLink.textContent)));
-      else h3.textContent = clean(title.textContent);
+      const sans = stdProductPage(document) && title.classList.contains("futura-bold");
+      const words = (t) => sans ? `[[futura-bold]${t}]` : t;
+      if (titleLink) h3.append(link(document, titleLink, words(clean(titleLink.textContent))));
+      else h3.textContent = words(clean(title.textContent));
       body.push(h3);
     }
     item.querySelectorAll(".desc-container > p, :scope > p.description").forEach((source) => {
@@ -537,8 +540,11 @@ var CustomImportScript = (() => {
       }
       node = walker.nextNode();
     }
+    const uniform = STD_DRAFT_IMPORT && stdProductPage(doc);
     return ["title", "subline"].flatMap((role) => {
-      const [top] = Object.entries(counts[role]).sort((a, b) => b[1] - a[1]);
+      const entries = Object.entries(counts[role]).sort((a, b) => b[1] - a[1]);
+      const [top] = entries;
+      if (uniform && entries.length > 1) return [];
       return top && ["gold", "white", "light-gray", "blue"].includes(top[0]) ? [`${role}-${top[0]}`] : [];
     });
   }
@@ -819,193 +825,6 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
   }
 
-  // tools/importer/parsers/hero-image-slide.js
-  function copyImage(source, document) {
-    const img = document.createElement("img");
-    img.setAttribute("src", source.getAttribute("src"));
-    img.setAttribute("alt", source.getAttribute("alt") || "");
-    return img;
-  }
-  function clean2(text5) {
-    return (text5 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
-  }
-  function headline(overlay, document) {
-    const out = [];
-    const headings = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6")];
-    const lineEls = [...overlay.querySelectorAll(".line")];
-    let lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
-    if (headings.length && lineEls.length) {
-      lines = lineEls.map((line) => line.querySelector("h1, h2, h3, h4, h5, h6") || line);
-    } else if (STD_DRAFT_IMPORT && headings.length) {
-      lines = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter((el) => !el.parentElement.closest("h1, h2, h3, h4, h5, h6, p") && !el.closest(".curatedcta, .buttonset, .c-curatedcta") && !(el.tagName === "P" && el.querySelector("a") && clean2(el.textContent) === clean2(el.querySelector("a").textContent)));
-    }
-    lines.forEach((line) => {
-      if (!clean2(line.textContent)) return;
-      const el = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : "p");
-      const box = document.createElement("div");
-      box.innerHTML = line.innerHTML;
-      if (STD_DRAFT_IMPORT) sizeBrackets(box);
-      box.querySelectorAll("span.futura-bold, b").forEach((span) => {
-        const strong = document.createElement("strong");
-        while (span.firstChild) strong.append(span.firstChild);
-        span.replaceWith(strong);
-      });
-      box.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
-      box.querySelectorAll("a").forEach((a) => {
-        if (!(a.getAttribute("href") || "").trim()) a.replaceWith(...a.childNodes);
-      });
-      box.querySelectorAll("strong strong").forEach((s) => s.replaceWith(...s.childNodes));
-      box.querySelectorAll("*").forEach((node) => {
-        [...node.attributes].forEach((attr) => {
-          if (!(node.tagName === "A" && attr.name === "href")) node.removeAttribute(attr.name);
-        });
-      });
-      while (box.firstChild && box.firstChild.nodeType === 3 && !box.firstChild.textContent.trim()) box.firstChild.remove();
-      while (box.lastChild && box.lastChild.nodeType === 3 && !box.lastChild.textContent.trim()) box.lastChild.remove();
-      while (box.firstChild) el.append(box.firstChild);
-      out.push(el);
-    });
-    return out;
-  }
-  function percent(style, re) {
-    const m = style.match(re);
-    return m ? String(parseFloat(m[1])).replace(".", "-") : null;
-  }
-  function parse5(element, context) {
-    const { document } = context;
-    const slides = [...element.querySelectorAll(".carouselslide:not(.slick-cloned)")];
-    if (STD_DRAFT_IMPORT && slides.length > 1 && !element.hasAttribute("data-std-slide")) {
-      const settings = element.querySelector(".slider-wrapper") || element;
-      const styles = ["carousel"];
-      if (settings.getAttribute("data-autoplay") === "true") styles.push("autoplay");
-      if (settings.getAttribute("data-transition") === "true") styles.push("fade");
-      const out = [document.createElement("hr")];
-      slides.forEach((one) => {
-        const holder = document.createElement("div");
-        const single = document.createElement("div");
-        single.setAttribute("data-std-slide", "");
-        single.append(one.cloneNode(true));
-        holder.append(single);
-        parse5(single, context);
-        out.push(...holder.childNodes, WebImporter.Blocks.createBlock(document, {
-          name: "Section Metadata",
-          cells: { style: styles.join(", ") }
-        }), document.createElement("hr"));
-      });
-      element.replaceWith(...out);
-      return;
-    }
-    const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
-    const desktop = slide.querySelector(".experienceFragment-ef img");
-    const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
-    const overlay = slide.querySelector(".overlayparsys");
-    const first = desktop || mobile || slide.querySelector("img");
-    if (!first) return;
-    if (stdProductPage(document) && productSlide(slide, overlay)) {
-      const copy = introCopy(overlay);
-      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
-        const p = document.createElement("p");
-        const strong = document.createElement("strong");
-        const a = document.createElement("a");
-        a.setAttribute("href", btn.getAttribute("href"));
-        a.textContent = clean2(btn.textContent);
-        if (btn.classList.contains("btn-gold")) {
-          const em = document.createElement("em");
-          em.append(a);
-          strong.append(em);
-        } else strong.append(a);
-        p.append(strong);
-        copy.push(p);
-      });
-      element.replaceWith(WebImporter.Blocks.createBlock(document, {
-        name: "Hero Corp (page-hero, no-rule)",
-        cells: [[copy], [copyImage(desktop || first, document)]]
-      }));
-      return;
-    }
-    const variants = ["image-slide"];
-    const cells = [[copyImage(first, document)]];
-    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
-    if (overlay) {
-      const lines = headline(overlay, document);
-      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
-        const p = document.createElement("p");
-        const strong = document.createElement("strong");
-        const a = document.createElement("a");
-        a.setAttribute("href", btn.getAttribute("href"));
-        a.textContent = clean2(btn.textContent);
-        if (STD_DRAFT_IMPORT && btn.classList.contains("btn-gold")) {
-          const em = document.createElement("em");
-          em.append(a);
-          strong.append(em);
-        } else strong.append(a);
-        p.append(strong);
-        lines.push(p);
-      });
-      if (lines.length) cells.push([lines]);
-      const style = overlay.getAttribute("style") || "";
-      const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
-      const left = percent(style, /margin-left:\s*(\d+(?:\.\d+)?)%/i);
-      const right = percent(style, /width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
-      if (top !== null) variants.push(`top-${top}`);
-      if (left !== null) variants.push(`left-${left}`);
-      if (right !== null) variants.push(`right-${right}`);
-      const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
-      const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
-      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
-      if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
-      if (overlay.querySelector(".has-background.bg-white")) variants.push("white-box");
-      if (overlay.querySelector(".has-background.bg-blue")) variants.push("blue-box");
-      const gold = overlay.querySelector(".has-background.bg-gold");
-      if (gold) {
-        variants.push("gold-box");
-        const margin = parseFloat(percent(gold.getAttribute("style") || "", /margin-right:\s*(\d+(?:\.\d+)?)%/i) || "0");
-        if (margin) {
-          const l = parseFloat((left || "0").replace("-", "."));
-          const r = parseFloat((right || "0").replace("-", "."));
-          const inset = Math.round((r + (100 - l - r) * margin / 100) * 10) / 10;
-          const i = variants.findIndex((v) => v.startsWith("right-"));
-          const token = `right-${String(inset).replace(".", "-")}`;
-          if (i >= 0) variants[i] = token;
-          else variants.push(token);
-        }
-      }
-    }
-    if (STD_DRAFT_IMPORT && overlay) {
-      const style = overlay.getAttribute("style") || "";
-      const num = (re) => {
-        const m = style.match(re);
-        return m ? parseFloat(m[1]) : null;
-      };
-      const options = slideOptions({
-        left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
-        right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
-        top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
-        overlay,
-        headline: overlay.querySelector(".c-largeheadline") || overlay
-      });
-      const colours = new Set(options.map((o) => (o.match(/^(?:title|subline)-(.+)$/) || [])[1]).filter(Boolean));
-      if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add("white");
-      const copy = cells[cells.length - 1];
-      if (copy && Array.isArray(copy[0])) dropColourTags(copy[0], colours);
-      const video = slideVideo(slide);
-      if (video) {
-        const a = document.createElement("a");
-        a.setAttribute("href", video);
-        a.textContent = video;
-        cells.unshift([a]);
-        options.push("video-background");
-      }
-      const stripe = takeStripe(element);
-      if (stripe) options.push(stripe);
-      variants.splice(1, variants.length - 1, ...options);
-    }
-    element.replaceWith(WebImporter.Blocks.createBlock(document, {
-      name: `Hero Corp (${variants.join(", ")})`,
-      cells
-    }));
-  }
-
   // tools/block-options/options.js
   var SECTION_OPTIONS = {
     label: "Section",
@@ -1259,7 +1078,15 @@ var CustomImportScript = (() => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
       return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
     });
-    const size = SIZE_STYLES.find(([cls]) => covers(cls));
+    let size = SIZE_STYLES.find(([cls]) => covers(cls));
+    const doc = root.ownerDocument || root;
+    const nested = STD_DRAFT_IMPORT && stdProductPage(doc) ? SIZE_STYLES.filter(([cls, style]) => /^p-\d/.test(style) && covers(cls)) : [];
+    if (nested.length > 1) {
+      const em = ([, style]) => Number(style.slice(2).replace("-", "."));
+      const product = nested.reduce((p, s) => p * em(s), 1);
+      const off = (s) => Math.abs(Math.log(em(s) / product));
+      size = SIZE_STYLES.filter(([, style]) => /^p-\d/.test(style)).reduce((a, b) => off(b) < off(a) ? b : a);
+    }
     const coversFont = (cls) => copy.every((el) => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
       const bold = [...el.querySelectorAll(".futura-bold")].filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest(".futura-bold"));
@@ -1418,7 +1245,7 @@ var CustomImportScript = (() => {
     m = v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
     return m ? m.slice(1, 4).map((n) => Number(n).toString(16).padStart(2, "0")).join("") : "";
   }
-  function tagStdColours(root) {
+  function tagStdColours(root, { gold = false } = {}) {
     const coloured = (el) => ownColour(el) !== "";
     const nearest = (node) => {
       for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
@@ -1440,8 +1267,8 @@ var CustomImportScript = (() => {
     };
     [...owners].sort((x, y) => depth(x) - depth(y)).forEach((el) => {
       const hex = hexOf(ownColour(el));
-      const name = STD_COLOURS[hex] || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? "black" : "");
-      if (!name || GOLD.test(ownColour(el))) return;
+      const name = (gold && GOLD.test(ownColour(el)) ? "gold" : STD_COLOURS[hex]) || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? "black" : "");
+      if (!name || !gold && GOLD.test(ownColour(el))) return;
       bracketTag([el], `color-${name}`, root);
       tagged.push(el);
     });
@@ -1474,6 +1301,13 @@ var CustomImportScript = (() => {
     tagGoldText(root);
     if (stdProductPage(doc)) tagStdColours(root);
     tagTextSize(root);
+    if (stdProductPage(doc)) {
+      root.querySelectorAll("li").forEach((li) => {
+        const links = li.querySelectorAll("a[href]");
+        if (links.length !== 1 || text3(li) !== text3(links[0])) return;
+        links[0].querySelectorAll("b, strong").forEach((bold) => bold.replaceWith(...bold.childNodes));
+      });
+    }
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const a = span.closest("a") || span.querySelector("a");
@@ -1802,7 +1636,14 @@ var CustomImportScript = (() => {
     const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length, depth(span)]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1] || b[2] - a[2]).map(([n]) => n)[0];
     const bold = [...el.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
     const serif = squash(bold) !== squash(el.textContent);
-    return [size ? `headline-${size}` : "", serif ? "serif" : ""].filter(Boolean).join(",");
+    const LEVEL_SIZES = {
+      H1: "text-2",
+      H2: "text-1-75",
+      H3: "text-1-5",
+      H4: "text-1-25"
+    };
+    const levelSize = !size && STD_DRAFT_IMPORT && stdProductPage(el.ownerDocument) ? LEVEL_SIZES[el.tagName] : "";
+    return [size ? `headline-${size}` : levelSize || "", serif ? "serif" : ""].filter(Boolean).join(",");
   }
   function blankLineAfter(p, doc) {
     const end = p.lastChild && p.lastChild.nodeType === 3 && p.lastChild.textContent === "]" ? p.lastChild : null;
@@ -2560,6 +2401,200 @@ var CustomImportScript = (() => {
       }
     });
     element.replaceChildren(...out);
+  }
+
+  // tools/importer/parsers/hero-image-slide.js
+  function copyImage(source, document) {
+    const img = document.createElement("img");
+    img.setAttribute("src", source.getAttribute("src"));
+    img.setAttribute("alt", source.getAttribute("alt") || "");
+    return img;
+  }
+  function clean2(text5) {
+    return (text5 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
+  }
+  function headline(overlay, document) {
+    const out = [];
+    const headings = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6")];
+    const lineEls = [...overlay.querySelectorAll(".line")];
+    let lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
+    const product = STD_DRAFT_IMPORT && stdProductPage(document);
+    if (headings.length && lineEls.length && product) {
+      lines = lineEls.flatMap((line) => {
+        const parts = [...line.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter((el) => !el.parentElement.closest("h1, h2, h3, h4, h5, h6, p"));
+        return parts.length ? parts : [line];
+      });
+    } else if (headings.length && lineEls.length) {
+      lines = lineEls.map((line) => line.querySelector("h1, h2, h3, h4, h5, h6") || line);
+    } else if (STD_DRAFT_IMPORT && headings.length) {
+      lines = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter((el) => !el.parentElement.closest("h1, h2, h3, h4, h5, h6, p") && !el.closest(".curatedcta, .buttonset, .c-curatedcta") && !(el.tagName === "P" && el.querySelector("a") && clean2(el.textContent) === clean2(el.querySelector("a").textContent)));
+    }
+    lines.forEach((line) => {
+      if (!clean2(line.textContent)) return;
+      const el = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : "p");
+      const box = document.createElement("div");
+      box.innerHTML = line.innerHTML;
+      if (STD_DRAFT_IMPORT) sizeBrackets(box);
+      if (product) tagStdColours(box, { gold: true });
+      box.querySelectorAll("span.futura-bold, b").forEach((span) => {
+        const strong = document.createElement("strong");
+        while (span.firstChild) strong.append(span.firstChild);
+        span.replaceWith(strong);
+      });
+      box.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
+      box.querySelectorAll("a").forEach((a) => {
+        if (!(a.getAttribute("href") || "").trim()) a.replaceWith(...a.childNodes);
+      });
+      box.querySelectorAll("strong strong").forEach((s) => s.replaceWith(...s.childNodes));
+      box.querySelectorAll("*").forEach((node) => {
+        [...node.attributes].forEach((attr) => {
+          if (!(node.tagName === "A" && attr.name === "href")) node.removeAttribute(attr.name);
+        });
+      });
+      while (box.firstChild && box.firstChild.nodeType === 3 && !box.firstChild.textContent.trim()) box.firstChild.remove();
+      while (box.lastChild && box.lastChild.nodeType === 3 && !box.lastChild.textContent.trim()) box.lastChild.remove();
+      while (box.firstChild) el.append(box.firstChild);
+      out.push(el);
+    });
+    return out;
+  }
+  function percent(style, re) {
+    const m = style.match(re);
+    return m ? String(parseFloat(m[1])).replace(".", "-") : null;
+  }
+  function parse5(element, context) {
+    const { document } = context;
+    const slides = [...element.querySelectorAll(".carouselslide:not(.slick-cloned)")];
+    if (STD_DRAFT_IMPORT && slides.length > 1 && !element.hasAttribute("data-std-slide")) {
+      const settings = element.querySelector(".slider-wrapper") || element;
+      const styles = ["carousel"];
+      if (settings.getAttribute("data-autoplay") === "true") styles.push("autoplay");
+      if (settings.getAttribute("data-transition") === "true") styles.push("fade");
+      const out = [document.createElement("hr")];
+      slides.forEach((one) => {
+        const holder = document.createElement("div");
+        const single = document.createElement("div");
+        single.setAttribute("data-std-slide", "");
+        single.append(one.cloneNode(true));
+        holder.append(single);
+        parse5(single, context);
+        out.push(...holder.childNodes, WebImporter.Blocks.createBlock(document, {
+          name: "Section Metadata",
+          cells: { style: styles.join(", ") }
+        }), document.createElement("hr"));
+      });
+      element.replaceWith(...out);
+      return;
+    }
+    const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
+    const desktop = slide.querySelector(".experienceFragment-ef img");
+    const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
+    const overlay = slide.querySelector(".overlayparsys");
+    const first = desktop || mobile || slide.querySelector("img");
+    if (!first) return;
+    if (stdProductPage(document) && productSlide(slide, overlay)) {
+      const copy = introCopy(overlay);
+      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        const a = document.createElement("a");
+        a.setAttribute("href", btn.getAttribute("href"));
+        a.textContent = clean2(btn.textContent);
+        if (btn.classList.contains("btn-gold")) {
+          const em = document.createElement("em");
+          em.append(a);
+          strong.append(em);
+        } else strong.append(a);
+        p.append(strong);
+        copy.push(p);
+      });
+      element.replaceWith(WebImporter.Blocks.createBlock(document, {
+        name: "Hero Corp (page-hero, no-rule)",
+        cells: [[copy], [copyImage(desktop || first, document)]]
+      }));
+      return;
+    }
+    const variants = ["image-slide"];
+    const cells = [[copyImage(first, document)]];
+    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+    if (overlay) {
+      const lines = headline(overlay, document);
+      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        const a = document.createElement("a");
+        a.setAttribute("href", btn.getAttribute("href"));
+        a.textContent = clean2(btn.textContent);
+        if (STD_DRAFT_IMPORT && btn.classList.contains("btn-gold")) {
+          const em = document.createElement("em");
+          em.append(a);
+          strong.append(em);
+        } else strong.append(a);
+        p.append(strong);
+        lines.push(p);
+      });
+      if (lines.length) cells.push([lines]);
+      const style = overlay.getAttribute("style") || "";
+      const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
+      const left = percent(style, /margin-left:\s*(\d+(?:\.\d+)?)%/i);
+      const right = percent(style, /width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
+      if (top !== null) variants.push(`top-${top}`);
+      if (left !== null) variants.push(`left-${left}`);
+      if (right !== null) variants.push(`right-${right}`);
+      const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
+      const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
+      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+      if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
+      if (overlay.querySelector(".has-background.bg-white")) variants.push("white-box");
+      if (overlay.querySelector(".has-background.bg-blue")) variants.push("blue-box");
+      const gold = overlay.querySelector(".has-background.bg-gold");
+      if (gold) {
+        variants.push("gold-box");
+        const margin = parseFloat(percent(gold.getAttribute("style") || "", /margin-right:\s*(\d+(?:\.\d+)?)%/i) || "0");
+        if (margin) {
+          const l = parseFloat((left || "0").replace("-", "."));
+          const r = parseFloat((right || "0").replace("-", "."));
+          const inset = Math.round((r + (100 - l - r) * margin / 100) * 10) / 10;
+          const i = variants.findIndex((v) => v.startsWith("right-"));
+          const token = `right-${String(inset).replace(".", "-")}`;
+          if (i >= 0) variants[i] = token;
+          else variants.push(token);
+        }
+      }
+    }
+    if (STD_DRAFT_IMPORT && overlay) {
+      const style = overlay.getAttribute("style") || "";
+      const num = (re) => {
+        const m = style.match(re);
+        return m ? parseFloat(m[1]) : null;
+      };
+      const options = slideOptions({
+        left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
+        right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
+        top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
+        overlay,
+        headline: overlay.querySelector(".c-largeheadline") || overlay
+      });
+      const colours = new Set(options.map((o) => (o.match(/^(?:title|subline)-(.+)$/) || [])[1]).filter(Boolean));
+      if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add("white");
+      const copy = cells[cells.length - 1];
+      if (copy && Array.isArray(copy[0])) dropColourTags(copy[0], colours);
+      const video = slideVideo(slide);
+      if (video) {
+        const a = document.createElement("a");
+        a.setAttribute("href", video);
+        a.textContent = video;
+        cells.unshift([a]);
+        options.push("video-background");
+      }
+      const stripe = takeStripe(element);
+      if (stripe) options.push(stripe);
+      variants.splice(1, variants.length - 1, ...options);
+    }
+    element.replaceWith(WebImporter.Blocks.createBlock(document, {
+      name: `Hero Corp (${variants.join(", ")})`,
+      cells
+    }));
   }
 
   // tools/importer/event-calendar-std-import.js

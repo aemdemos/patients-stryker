@@ -163,7 +163,19 @@ function copyStyles(root) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
     return squash(spans.map((span) => span.textContent).join('')) === squash(el.textContent);
   });
-  const size = SIZE_STYLES.find(([cls]) => covers(cls));
+  let size = SIZE_STYLES.find(([cls]) => covers(cls));
+  // product pages (review build): size spans right inside each other multiply, as on
+  // stryker.com (Pangea "anatomic plates": 1.5em in 2em = 3×) → the nearest copy size
+  const doc = (root.ownerDocument || root);
+  const nested = STD_DRAFT_IMPORT && stdProductPage(doc)
+    ? SIZE_STYLES.filter(([cls, style]) => /^p-\d/.test(style) && covers(cls)) : [];
+  if (nested.length > 1) {
+    const em = ([, style]) => Number(style.slice(2).replace('-', '.'));
+    const product = nested.reduce((p, s) => p * em(s), 1);
+    const off = (s) => Math.abs(Math.log(em(s) / product));
+    size = SIZE_STYLES.filter(([, style]) => /^p-\d/.test(style))
+      .reduce((a, b) => (off(b) < off(a) ? b : a));
+  }
   // the running font: Futura bold words (span.futura-bold → <strong>, Futura in any
   // section) don't count, e.g. room-design "Design your OR with Stryker and" (serif) + "see
   // the difference." (Futura bold) is a serif paragraph
@@ -404,7 +416,7 @@ function hexOf(value) {
  * its colour (a white span whose text is all in a black span inside it, "How can we help
  * you?" on SafeAir, is black text); black is tagged only inside another tagged colour.
  */
-function tagStdColours(root) {
+export function tagStdColours(root, { gold = false } = {}) {
   const coloured = (el) => ownColour(el) !== '';
   const nearest = (node) => {
     for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
@@ -427,9 +439,10 @@ function tagStdColours(root) {
   // outer colours first, so a black run inside a tagged colour knows it is inside one
   [...owners].sort((x, y) => depth(x) - depth(y)).forEach((el) => {
     const hex = hexOf(ownColour(el));
-    const name = STD_COLOURS[hex]
+    // gold too where the caller has no Bold + Italic step (banner headlines)
+    const name = (gold && GOLD.test(ownColour(el)) ? 'gold' : STD_COLOURS[hex])
       || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? 'black' : '');
-    if (!name || GOLD.test(ownColour(el))) return;
+    if (!name || (!gold && GOLD.test(ownColour(el)))) return;
     bracketTag([el], `color-${name}`, root);
     tagged.push(el);
   });
@@ -477,6 +490,17 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   tagGoldText(root);
   if (stdProductPage(doc)) tagStdColours(root);
   tagTextSize(root);
+  // in review (product pages): a list item that is only a link, bold inside it (Pangea's
+  // "Hospital resources": <li><a><b>Pangea Product Brochure</b></a></li>, a bold teal text link
+  // on stryker.com), is a plain link: a bold link alone is a button by the authoring
+  // conventions, and there is no bold text link convention
+  if (stdProductPage(doc)) {
+    root.querySelectorAll('li').forEach((li) => {
+      const links = li.querySelectorAll('a[href]');
+      if (links.length !== 1 || text(li) !== text(links[0])) return;
+      links[0].querySelectorAll('b, strong').forEach((bold) => bold.replaceWith(...bold.childNodes));
+    });
+  }
 
   // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
   // triangle — e.g. "Read the full report") → bold + underline link, the authoring
@@ -941,7 +965,15 @@ function headlineTag(el) {
     .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'))
     .map((b) => b.textContent).join('');
   const serif = squash(bold) !== squash(el.textContent);
-  return [size ? `headline-${size}` : '', serif ? 'serif' : ''].filter(Boolean).join(',');
+  // in review (product pages): a heading line without a size of its own keeps the large
+  // headline's size for its level (stryker.com: h1 28px, h2 24.5px, h3 21px, h4 17.5px; TPX HD
+  // "Introducing TPX HD…" is an h3 at 21px)
+  const LEVEL_SIZES = {
+    H1: 'text-2', H2: 'text-1-75', H3: 'text-1-5', H4: 'text-1-25',
+  };
+  const levelSize = !size && STD_DRAFT_IMPORT && stdProductPage(el.ownerDocument)
+    ? LEVEL_SIZES[el.tagName] : '';
+  return [size ? `headline-${size}` : levelSize || '', serif ? 'serif' : ''].filter(Boolean).join(',');
 }
 
 /**

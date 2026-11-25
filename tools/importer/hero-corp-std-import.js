@@ -13,6 +13,7 @@
  *                l … xxxxl)
  */
 import { slidePosition } from './slide-position.js';
+import { STD_DRAFT_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
 
 const BOXES = {
   'bg-white': 'box-white',
@@ -83,8 +84,13 @@ export function colourOptions(headline) {
     }
     node = walker.nextNode();
   }
+  // in review (product pages): a title / subline colour only when every such run has it (each
+  // run keeps its own colour as Text style otherwise)
+  const uniform = STD_DRAFT_IMPORT && stdProductPage(doc);
   return ['title', 'subline'].flatMap((role) => {
-    const [top] = Object.entries(counts[role]).sort((a, b) => b[1] - a[1]);
+    const entries = Object.entries(counts[role]).sort((a, b) => b[1] - a[1]);
+    const [top] = entries;
+    if (uniform && entries.length > 1) return [];
     return top && ['gold', 'white', 'light-gray', 'blue'].includes(top[0]) ? [`${role}-${top[0]}`] : [];
   });
 }

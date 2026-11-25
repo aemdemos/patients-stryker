@@ -180,7 +180,11 @@ function convertContainer(nodes, dropped, chains = false) {
     // a chain (product pages): the inner tag's size, colour and font win, as stacked markers do
     if (chains) {
       const kinds = inner.words.map(kindOf);
-      target.words = target.words.filter((w) => !kinds.includes(kindOf(w)) || !kindOf(w));
+      // …except two text sizes (em in em): they multiply on stryker.com (Pangea's 1.5em in 2em
+      // is 3×), so both stay and the marker takes the step nearest their product (oneSize)
+      const innerText = inner.words.some((x) => STEP_OF[x]);
+      target.words = target.words.filter((w) => !kindOf(w) || !kinds.includes(kindOf(w))
+        || (innerText && STEP_OF[w]));
     }
     target.words.push(...inner.words);
     inner.merged = true;

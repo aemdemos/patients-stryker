@@ -4,6 +4,7 @@ import { STD_DRAFT_IMPORT, stdProductPage } from '../transformers/corp-text-mark
 import {
   dropColourTags, introCopy, productSlide, sizeBrackets, slideOptions, slideVideo, takeStripe,
 } from '../hero-corp-std-import.js';
+import { tagStdColours } from '../transformers/long-page-detail-corp-article.js';
 
 /**
  * Parser: www.stryker.com single-slide `.c-autocarousel` → `Hero Corp (image-slide)`.
@@ -47,7 +48,16 @@ function headline(overlay, document) {
   // "Is it a heart attack or sudden cardiac arrest?")
   const lineEls = [...overlay.querySelectorAll('.line')];
   let lines = headings.length ? headings : [...overlay.querySelectorAll('.line, p')];
-  if (headings.length && lineEls.length) {
+  const product = STD_DRAFT_IMPORT && stdProductPage(document);
+  if (headings.length && lineEls.length && product) {
+    // in review (product pages): every heading and paragraph of each line, in order (TPX HD's
+    // "Total Joint and Trauma" heading and its "Prepares you to perform at your best" line)
+    lines = lineEls.flatMap((line) => {
+      const parts = [...line.querySelectorAll('h1, h2, h3, h4, h5, h6, p')]
+        .filter((el) => !el.parentElement.closest('h1, h2, h3, h4, h5, h6, p'));
+      return parts.length ? parts : [line];
+    });
+  } else if (headings.length && lineEls.length) {
     lines = lineEls.map((line) => line.querySelector('h1, h2, h3, h4, h5, h6') || line);
   } else if (STD_DRAFT_IMPORT && headings.length) {
     // in review (staging build only): the text paragraphs after the headings too, in their
@@ -65,6 +75,9 @@ function headline(overlay, document) {
     box.innerHTML = line.innerHTML;
     // in review (staging build only): the run sizes as bracket tags → Text style markers
     if (STD_DRAFT_IMPORT) sizeBrackets(box);
+    // in review (product pages): each run's own colour as a Text style colour (a banner's bold
+    // words can be black and white in one headline)
+    if (product) tagStdColours(box, { gold: true });
     box.querySelectorAll('span.futura-bold, b').forEach((span) => {
       const strong = document.createElement('strong');
       while (span.firstChild) strong.append(span.firstChild);
