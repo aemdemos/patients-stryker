@@ -66,7 +66,7 @@ body.corp .columns p strong {
    "Residency:" labels, TEACH talks "Course instructor:"), Humanist bold, Egyptienne bold
    in `serif` cells and in a large headline (jr45 October "Complex total hip through DA",
    the source's bold Egyptienne Light second title line); gold (Bold + Italic) stays Futura bold (TEACH "View more information") */
-body.corp .columns.plain-bold :is(p, h1) strong:not(:where(em > strong, :has(> em))) {
+body.corp .columns:is(.plain-bold, .faculty, .chapter-labels, .gray-cards, .product-details) :is(p, h1) strong:not(:where(em > strong, :has(> em))) {
   font-family: inherit;
 }
 
@@ -79,7 +79,7 @@ body.corp .columns .columns-img-col + p:not(.columns-bold) strong:not(:where(em 
 
 /* label-bold: a line's first Bold before another Bold is a Futura bold label, the Bold after
    it the row's (stryker.com TEACH talks "Chapter 1:" in Futura, its title in Humanist bold) */
-body.corp .columns.label-bold p > strong:first-child:has(~ strong) {
+body.corp .columns:is(.label-bold, .chapter-labels) p > strong:first-child:has(~ strong) {
   font-family: var(--display-font-family);
 }
 
@@ -103,21 +103,25 @@ body.corp .columns.columns-20-80 h4 {
 
 /* large-copy: 17.5px copy (.fontsize-1-25em; ASC rows, jr45 intro rows, Mako refreshers
    lists), the source's lines 21.25px apart */
-body.corp .columns.large-copy {
+body.corp .columns.large-copy,
+body.corp .columns.large-serif-copy,
+body.corp .columns.course-cards,
+body.corp .columns.gold-lead-copy {
   --columns-corp-copy-size: var(--body-font-size-l);
 }
 
-body.corp .columns.xlarge-copy {
+body.corp .columns.xlarge-copy,
+body.corp .columns.xlarge-serif-copy {
   --columns-corp-copy-size: var(--body-font-size-xl);
 }
 
-body.corp .columns.large-copy :is(p, ul, li) {
+body.corp .columns:is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy) :is(p, ul, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
 
 /* xlarge-copy: 21px copy (.fontsize-1-5em; CLOUT, OR staff, neurosurgical events) */
-body.corp .columns.xlarge-copy :is(p, ul, li) {
+body.corp .columns:is(.xlarge-copy, .xlarge-serif-copy) :is(p, ul, li) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
 }
@@ -125,26 +129,26 @@ body.corp .columns.xlarge-copy :is(p, ul, li) {
 /* serif: Egyptienne light copy (span.urw-egyptienne on whole paragraphs: jr45 faculty
    rows, spine, foot & ankle); at 14px its lines 22.4px apart and list items 23px, as the
    source's Egyptienne in a Humanist paragraph sets them */
-body.corp .columns.serif :is(p, li) {
+body.corp .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) :is(p, li) {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-regular);
 }
 
-body.corp .columns.serif p {
+body.corp .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) p {
   line-height: var(--corp-serif-copy-line-height);
 }
 
-body.corp .columns.serif li {
+body.corp .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) li {
   line-height: var(--corp-serif-item-line-height);
 }
 
-body.corp .columns.serif.large-copy :is(p, li) {
+body.corp .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro):is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy) :is(p, li) {
   line-height: var(--body-line-height-l);
 }
 
 /* a standalone link (bold + underline) in those cells stays the 14px Futura bold action link
    (stryker.com: bunion "PATIENTS.STRYKER.COM ▸" under 17.5px Egyptienne copy) */
-body.corp .columns:is(.large-copy, .xlarge-copy, .serif) a.link-strong:any-link {
+body.corp .columns:is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy, .xlarge-copy, .xlarge-serif-copy, .serif, .headline-serif-copy, .product-intro) a.link-strong:any-link {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
 }
@@ -273,14 +277,14 @@ body.corp .columns.large-headline p:has(> em:only-child) {
 
 /* large-subtitles: the plain line right under a cell's Heading 3 at 17.5px (stryker.com
    .fontsize-1-25em: the jr45 faculty cities "New York, NY" under the names) */
-body.corp .columns.large-subtitles.block > div > div h3 + p {
+body.corp .columns:is(.large-subtitles, .faculty, .course-cards, .event-cards).block > div > div h3 + p {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
 
 /* …right under the heading, as the next line of the source paragraph (build-your-ASC "that
    simplies a complex process…" under "Step-by-step playbook") */
-body.corp .columns.large-subtitles.block > div > div h3:where(:has(+ p)) {
+body.corp .columns:is(.large-subtitles, .faculty, .course-cards, .event-cards).block > div > div h3:where(:has(+ p)) {
   margin-bottom: 0;
 }
 
@@ -372,14 +376,14 @@ body.corp .columns.large-headline li + li {
 /* large-titles: the cells' Heading 2 at 28px (stryker.com .fontsize-2em Futura bold: jr45
    "Program objectives" / "Product focus", Mako refreshers), lines 1.06. A fully Bold Heading 2
    is the 35px display line (below) */
-body.corp .columns.large-titles > div > div h2 {
+body.corp .columns:is(.large-titles, .course-cards) > div > div h2 {
   font-size: var(--heading-font-size-xxl);
   line-height: var(--heading-line-height);
 }
 
 /* …a title under other text keeps the blank line the source has above it (stryker.com jr45
    "Product focus" 49px under the list above, "Program objectives" under the cell headline) */
-body.corp .columns.large-titles > div > div > :where(:not(:first-child, h2)) + h2 {
+body.corp .columns:is(.large-titles, .course-cards) > div > div > :where(:not(:first-child, h2)) + h2 {
   margin-top: var(--corp-blank-line);
 }
 
@@ -397,7 +401,7 @@ body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > stro
 /* large-titles: a two-tone Heading 2 with a gold marker is the variant's 28px title too, not
    the 35px display line (stryker.com spine resources "Highlights of each interactive S2S
    visit", .fontsize-2em) */
-body.corp .columns.large-titles > div > div h2:has(> em > strong, > strong > em) {
+body.corp .columns:is(.large-titles, .course-cards) > div > div h2:has(> em > strong, > strong > em) {
   font-size: var(--heading-font-size-xxl);
 }
 
@@ -613,7 +617,7 @@ body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
    caption cell) at the Large Headline 1.5vw
    size, 2N vw on phones, capped at 21px (stryker.com .fontsize-1-5-vw: jr45 "Watch Darwin
    Chen, M.D., … as they discuss …": 21px at 1440, 11.7px at 390 → never under 12px here) */
-body.corp .columns.headline-copy.block > div > div > p:only-child:not(:has(strong)) {
+body.corp .columns:is(.headline-copy, .headline-serif-copy).block > div > div > p:only-child:not(:has(strong)) {
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
   line-height: var(--heading-line-height-hero);
 }
@@ -698,13 +702,13 @@ body.corp .columns.boxed-last > div > div:last-child {
 
 /* gold-first: the first cell is a gold box (stryker.com bg-gold component: 20px
    padding inside its 15px column gutter); Bold text in it is white */
-body.corp .columns.gold-first > div > div:first-child {
+body.corp .columns:is(.gold-first, .gold-headline-first) > div > div:first-child {
   margin-inline: var(--space-block);
   padding: var(--space-block-l);
   background-color: var(--color-accent);
 }
 
-body.corp .columns.gold-first > div > div:first-child strong {
+body.corp .columns:is(.gold-first, .gold-headline-first) > div > div:first-child strong {
   color: var(--color-white);
 }
 
@@ -766,12 +770,12 @@ body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n):has(> s
    know?" on "Is it a heart attack or sudden cardiac arrest?": 322px wide at 1440px, padded
    16px / 20px / 20px), its text the headline's 1.5vw light serif (21px at 1440px, 3vw on
    phones), a Bold line Futura bold */
-body.corp .columns.gray-last > div > div:last-child {
+body.corp .columns:is(.gray-last, .faculty, .product-details) > div > div:last-child {
   padding: var(--space-block) var(--space-block-l) var(--space-block-l);
   background-color: var(--color-surface);
 }
 
-body.corp .columns.gray-last:not(.product-details).block > div > div:last-child :is(p, li):nth-child(n) {
+body.corp .columns:is(.gray-last, .faculty).block > div > div:last-child :is(p, li):nth-child(n) {
   font-family: var(--heading-font-family);
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
   line-height: var(--heading-line-height-hero);
@@ -779,16 +783,16 @@ body.corp .columns.gray-last:not(.product-details).block > div > div:last-child 
 
 /* …except a video's caption under it in the box: the 14px copy (stryker.com jr45 December
    "Mako SmartRobotics™ in my practice" Futura bold, "43:09 minutes" Egyptienne, 14px) */
-body.corp .columns.gray-last.block > div > div:last-child p:has(> .dm-video-wrapper) ~ p:nth-child(n) {
+body.corp .columns:is(.gray-last, .faculty, .product-details).block > div > div:last-child p:has(> .dm-video-wrapper) ~ p:nth-child(n) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
-body.corp .columns.gray-last.block > div > div:last-child p:has(> .dm-video-wrapper) ~ p:nth-child(n) strong {
+body.corp .columns:is(.gray-last, .faculty, .product-details).block > div > div:last-child p:has(> .dm-video-wrapper) ~ p:nth-child(n) strong {
   font-family: var(--display-font-family);
 }
 
-body.corp .columns.gray-last.block > div > div:last-child > :last-child {
+body.corp .columns:is(.gray-last, .faculty, .product-details).block > div > div:last-child > :last-child {
   margin-bottom: 0;
 }
 
@@ -888,13 +892,13 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   /* boxed-last / gold-first: the box takes what the other cell leaves (its margins
      sit inside the column) and hugs its content */
   body.corp .columns.boxed-last > div > div:last-child,
-  body.corp .columns.gold-first > div > div:first-child {
+  body.corp .columns:is(.gold-first, .gold-headline-first) > div > div:first-child {
     flex: 1 1 0;
     align-self: flex-start;
   }
 
   /* gray-last: the box hugs its content, level with the row top */
-  body.corp .columns.gray-last > div > div:last-child {
+  body.corp .columns:is(.gray-last, .faculty, .product-details) > div > div:last-child {
     align-self: flex-start;
   }
 
@@ -1007,7 +1011,7 @@ body.corp .columns .columns-box > :last-child {
   margin-bottom: 0;
 }
 
-body.corp .columns:is(.gray-last, .gray-2, .gray-all) {
+body.corp .columns:is(.gray-last, .faculty, .product-details, .gray-2, .gray-all, .gray-cards) {
   --columns-corp-box-bg: var(--color-surface);
 }
 
@@ -1117,7 +1121,7 @@ body.corp .columns.goal-cards.block > div > div :where(p) {
   line-height: var(--heading-line-height);
 }
 
-body.corp .columns.gold-lead {
+body.corp .columns:is(.gold-lead, .gold-lead-copy) {
   --columns-corp-box-bg: var(--color-accent);
   --col-5050-inset: var(--space-block);
 }
@@ -1127,7 +1131,7 @@ body.corp .columns.dark-lead {
   --columns-corp-box-color: var(--color-white);
 }
 
-body.corp .columns:is(.gold-lead, .dark-lead) .columns-box {
+body.corp .columns:is(.gold-lead, .gold-lead-copy, .dark-lead) .columns-box {
   margin-bottom: var(--space-block);
   text-align: center;
 }
@@ -1136,18 +1140,18 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box {
    (10px + the source line's paragraph margin), and the
    cells the source's full column width, no 50-50 inset (stryker.com SKILL e-Lab "The SKILL
    e-Lab offers what you need": .bg-gold padding-top 4%; the inset with the bar colour above) */
-body.corp .columns.gold-lead .columns-box {
+body.corp .columns:is(.gold-lead, .gold-lead-copy) .columns-box {
   padding: 4% var(--space-block-s) calc(var(--space-block-s) + var(--space-block));
 }
 
 /* on the gold bar the Bold + Italic (accent) words are white (stryker.com white Futura bold
    on .bg-gold: SKILL e-Lab "The SKILL e-Lab offers what you need") */
-body.corp .columns.gold-lead .columns-box :is(strong em, em strong) {
+body.corp .columns:is(.gold-lead, .gold-lead-copy) .columns-box :is(strong em, em strong) {
   color: var(--color-white);
 }
 
 /* an image right under a title bar touches it (Mako refreshers) */
-body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-col) {
+body.corp .columns:is(.gold-lead, .gold-lead-copy, .dark-lead) .columns-box:has(+ .columns-img-col) {
   margin-bottom: 0;
 }
 
@@ -1194,7 +1198,7 @@ body.corp .columns > div > :where(div:empty) {
     grid-row: 1 / -1;
   }
 
-  body.corp .columns.stack.gray-last > div > div > .columns-box:only-child {
+  body.corp .columns.stack:is(.gray-last, .faculty, .product-details) > div > div > .columns-box:only-child {
     align-self: start;
   }
 
@@ -1204,7 +1208,7 @@ body.corp .columns > div > :where(div:empty) {
 
   /* jr45 faculty (`stack, gray-last`): the image and its text are one source column, the name
      24px under the image */
-  body.corp .columns.stack.gray-last .columns-img-col {
+  body.corp .columns.stack:is(.gray-last, .faculty, .product-details) .columns-img-col {
     margin-bottom: var(--space-section);
   }
 }
@@ -1990,13 +1994,13 @@ body.corp main .columns.faculty.block > div > div:last-child > .columns-box > :i
 /* headline-copy (above) also when a box variant puts that paragraph in its box (jr45 October
    `gray-2` "Watch Darwin Chen, M.D., …"), its lines 25px apart on phones (the source's 21px
    Large Headline line around the 3vw text) */
-body.corp .columns.headline-copy.block > div > div > .columns-box > :where(p:only-child:not(:has(strong))) {
+body.corp .columns:is(.headline-copy, .headline-serif-copy).block > div > div > .columns-box > :where(p:only-child:not(:has(strong))) {
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
   line-height: var(--corp-headline-copy-line-height-s);
 }
 
 @media (width >= 600px) {
-  body.corp .columns.headline-copy.block > div > div > .columns-box > :where(p:only-child:not(:has(strong))) {
+  body.corp .columns:is(.headline-copy, .headline-serif-copy).block > div > div > .columns-box > :where(p:only-child:not(:has(strong))) {
     line-height: var(--heading-line-height-hero);
   }
 }

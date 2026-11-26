@@ -1,6 +1,5 @@
 import decorateDMAssets from '../../scripts/dm-support.js';
 import decorateMapLinks from '../../scripts/map-embed.js';
-import expandVariantBundles from '../../scripts/variant-bundles.js';
 
 // YouTube link signatures (watch, short youtu.be and nocookie embeds)
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
@@ -56,6 +55,15 @@ function decorateYouTube(block) {
 // the box variants (columns-corp.css): which cells hold a coloured text box, and whether the
 // box is the cell's text (`-last`, `-2`, `-all`) or only its first line (`-lead`)
 const BOX_VARIANT = /\b(?:(?:gray|purple)-last|gray-2|(?:gray|boxed|blue)-all|(?:gold|dark)-lead)\b/;
+// variants that include a box variant (their CSS groups with it, columns-corp.css): jr45
+// faculty and MIS product details (grey last cell), CLOUT grey cards (every cell), SKILL
+// NeuroElite gold lead bar
+const BOX_BUNDLES = {
+  faculty: 'gray-last',
+  'product-details': 'gray-last',
+  'gray-cards': 'gray-all',
+  'gold-lead-copy': 'gold-lead',
+};
 const MEDIA = '.columns-img-col, .columns-youtube, .dm-video-wrapper';
 
 /**
@@ -65,9 +73,10 @@ const MEDIA = '.columns-img-col, .columns-youtube, .dm-video-wrapper';
  * @param {Element} block The columns block
  */
 function decorateBoxes(block) {
+  const bundle = Object.keys(BOX_BUNDLES).find((name) => block.classList.contains(name));
   const match = block.className.match(BOX_VARIANT);
-  if (!match) return;
-  const variant = match[0];
+  if (!match && !bundle) return;
+  const variant = match ? match[0] : BOX_BUNDLES[bundle];
   [...block.children].forEach((row) => {
     const cells = [...row.children];
     let targets = cells;
@@ -90,8 +99,6 @@ function decorateBoxes(block) {
 }
 
 export default function decorate(block) {
-  // a bundle name (e.g. `faculty`) stands for the variants it groups (scripts/variant-bundles.js)
-  expandVariantBundles(block);
   // convert DM links to <picture>/<video> before restructuring — the canvas
   // re-renders fields from source, so run here (idempotent), not just decorateMain
   decorateDMAssets(block);

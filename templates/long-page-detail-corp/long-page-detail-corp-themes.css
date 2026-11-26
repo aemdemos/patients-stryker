@@ -374,28 +374,28 @@ body.long-page-detail-corp.spine-meded main .hero-corp.image-slide > div:last-ch
 
 /* list items 23px apart (the source's 17.5px Egyptienne line in a 14px item: resources BioSkills,
    Mobile lab, S2S lists) */
-body.long-page-detail-corp.spine-meded main .columns.serif.large-copy li {
+body.long-page-detail-corp.spine-meded main .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro):is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy) li {
   line-height: calc(var(--body-font-size-m) * var(--corp-serif-item-line-height));
 }
 
 /* the location and contact cells: a fully Bold label on the 14px copy's 19.25px line (not the
    serif copy's 22.4px), and on phones, where the cells stack, 15px between them (the row gap
    alone, as on stryker.com) */
-body.long-page-detail-corp.spine-meded main .columns.stack.serif p.columns-bold {
+body.long-page-detail-corp.spine-meded main .columns.stack:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) p.columns-bold {
   line-height: var(--paragraph-line-height);
 }
 
 /* the S2S title cells: 10px further in on both sides (the source's padded white rich-text box) */
-body.long-page-detail-corp.spine-meded main .columns.large-titles.serif > div > div {
+body.long-page-detail-corp.spine-meded main .columns:is(.large-titles, .course-cards):is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) > div > div {
   padding-inline: calc(var(--space-block) + var(--space-block-s));
 }
 
-body.long-page-detail-corp.spine-meded main .columns.stack.serif > div > div > :last-child {
+body.long-page-detail-corp.spine-meded main .columns.stack:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) > div > div > :last-child {
   margin-bottom: 0;
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp.spine-meded main .columns.stack.serif > div > div > :last-child {
+  body.long-page-detail-corp.spine-meded main .columns.stack:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) > div > div > :last-child {
     margin-bottom: var(--space-block);
   }
 }
@@ -403,7 +403,7 @@ body.long-page-detail-corp.spine-meded main .columns.stack.serif > div > div > :
 /* a cell's Heading 3 (21px Futura bold) on 25.6px lines (resources "The mobile lab is used for a
    variety of events:", two lines 50px tall on stryker.com), in Futura so the line keeps that
    height (a serif heading around Futura bold words sets taller lines) */
-body.long-page-detail-corp.spine-meded main .columns.serif.large-copy h3 {
+body.long-page-detail-corp.spine-meded main .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro):is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy) h3 {
   font-family: var(--display-font-family);
   line-height: var(--paragraph-line-height-l-nested);
 }
@@ -718,12 +718,12 @@ body.long-page-detail-corp.skill main .accordion-item + .accordion-item {
    without a label (stryker.com: an empty first line,
    "Mako Education Center" beside "Bioskills Lab") starts one line lower, level with the other
    cells' text */
-body.long-page-detail-corp.spine-meded main .columns.stack.serif > div:has(> div > p.columns-bold:first-child) > div:not(:has(> p.columns-bold:first-child)) {
+body.long-page-detail-corp.spine-meded main .columns.stack:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) > div:has(> div > p.columns-bold:first-child) > div:not(:has(> p.columns-bold:first-child)) {
   padding-top: calc(var(--corp-blank-line) + var(--space-block-xs));
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp.spine-meded main .columns.stack.serif > div:has(> div > p.columns-bold:first-child) > div:not(:has(> p.columns-bold:first-child)) {
+  body.long-page-detail-corp.spine-meded main .columns.stack:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) > div:has(> div > p.columns-bold:first-child) > div:not(:has(> p.columns-bold:first-child)) {
     display: block;
   }
 }

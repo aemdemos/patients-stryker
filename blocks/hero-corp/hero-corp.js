@@ -1,5 +1,3 @@
-import expandVariantBundles from '../../scripts/variant-bundles.js';
-
 /**
  * Set up the corp image-slide hero from its authored rows.
  * @param {Element} block The hero-corp block
@@ -320,8 +318,6 @@ function keepTextInside(block) {
 }
 
 export default function decorate(block) {
-  // a bundle name (e.g. `large-serif-copy`) stands for the variants it groups
-  expandVariantBundles(block);
   readSectionOptions(block);
   readSlideOptions(block);
   setupHero(block);

@@ -361,24 +361,24 @@
    light, its Bold Egyptienne bold / at 17.5px, lines 21.25px apart (stryker.com
    .urw-egyptienne .fontsize-1-25em on the banner text: foot & ankle patient marketing
    toolkit, bunion and total ankle replacement) ---- */
-.hero-corp.serif > div:last-child :is(p:not(.button-wrapper), li) {
+.hero-corp:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) > div:last-child :is(p:not(.button-wrapper), li) {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-regular);
 }
 
-.hero-corp.serif > div:last-child :is(p:not(.button-wrapper), li) strong {
+.hero-corp:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) > div:last-child :is(p:not(.button-wrapper), li) strong {
   font-family: inherit;
   font-weight: var(--font-weight-bold);
 }
 
-.hero-corp.large-copy > div:last-child :is(p:not(.button-wrapper), li) {
+.hero-corp:is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy) > div:last-child :is(p:not(.button-wrapper), li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
 
 /* xlarge-copy: the copy at 21px (stryker.com .fontsize-1-5em: CLOUT "The largest prospective
    mechanical thrombectomy study…", its trial number link) */
-.hero-corp.xlarge-copy > div:last-child :is(p, li) {
+.hero-corp:is(.xlarge-copy, .xlarge-serif-copy) > div:last-child :is(p, li) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
 }
@@ -387,7 +387,7 @@
    .fontsize-1-5-vw: the ASC gold labels "Implants and disposables", spine MedEd "You specialize
    in your patients."): 21px at 1440, 11.7px at 390, lines 1.35 apart. Not a link alone (the
    button keeps its size) */
-.hero-corp.headline-copy > div:last-child :is(p:not(.button-wrapper), li) {
+.hero-corp:is(.headline-copy, .headline-serif-copy) > div:last-child :is(p:not(.button-wrapper), li) {
   font-size: calc(1.5 * var(--hero-corp-title-unit));
   line-height: var(--hero-corp-title-line-height);
 }

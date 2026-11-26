@@ -1407,7 +1407,7 @@ body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::afte
    text (`[[headline-3-5,serif]…]`, `[[text-1-5]…]`), so its plain copy is the 14px copy, not
    the block's 2vw default (stryker.com hero overlays and banner text boxes); the title of a
    `large` / `xlarge` hero keeps the variant's size, the copy of a `large-copy` hero its 17.5px */
-body.long-page-detail-corp main .hero-corp:not(.large-copy, .xlarge-copy, .headline-copy) > div:last-child > :not(h1, h2),
+body.long-page-detail-corp main .hero-corp:not(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy, .xlarge-copy, .xlarge-serif-copy, .headline-copy, .headline-serif-copy) > div:last-child > :not(h1, h2),
 body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge, .serif-gold-title, .fixed-xlarge-title) > div:last-child > :is(h1, h2) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
@@ -1558,7 +1558,7 @@ body.long-page-detail-corp main > .section.cell-padding .columns > div > div > :
 
 /* grey cards of a title and a link (`gray-all`, CLOUT clinical evidence "See results"): the
    link at the card's bottom, level across the row (stryker.com pads the shorter cards) */
-body.long-page-detail-corp main > .section .columns.stack.gray-all .columns-box {
+body.long-page-detail-corp main > .section .columns.stack:is(.gray-all, .gray-cards) .columns-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
