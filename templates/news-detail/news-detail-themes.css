@@ -1211,6 +1211,7 @@ body.news-detail.news-xf-body main > .section > .default-content-wrapper picture
    underline of their own and stay Egyptienne (italic in a news heading) */
 body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6):is(.underline, :has(> u, > :is(strong, b, em, i) > u, > u > :is(em, i))) {
   border-bottom-color: var(--color-accent);
+  padding-bottom: 16px;
 }
 
 body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6) :is(:is(em, i) > u, u:has(> :is(em, i))) {
