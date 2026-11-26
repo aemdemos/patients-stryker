@@ -1,8 +1,15 @@
+---
+title: "stryker.com authoring model"
+subtitle: "Variants, Block options, section styles and Text style: what an author picks where in Experience Workspace"
+date: "November 26, 2026"
+---
+
 # Authoring model: variants, Block options, section styles, Text style
 
-What an author picks where, for every standardised stryker.com block — generated from the panels'
-own configuration (tools/block-options/options.js, scripts/span-markers.js), so it matches what the
-Experience Workspace panels offer. The Block Library itself is not changed yet.
+What an author picks where, for every standardised stryker.com block. The tables are generated from the
+panels' own configuration (tools/block-options/options.js, scripts/span-markers.js), so they match what
+the two Experience Workspace extensions, **Block options** and **Text style**, offer today. The Block
+Library itself is not changed yet.
 
 ## How the layers fit together
 
@@ -14,8 +21,20 @@ Experience Workspace panels offer. The Block Library itself is not changed yet.
 | 4. Style a **few words** | Text style panel | select the words; pick colour, font, size or a look | *Gold* name, *Serif* sentence |
 
 Rules of thumb for authors: **the structure comes from the variant**; **the whole block → Block options**;
-**the whole section → Section**; **a few words → Text style**. Choices that don't fit the selected block
-or words are greyed out (Block options, Text style looks) or not shown (Section), with the reason on hover.
+**the whole section → Section**; **a few words → Text style**.
+
+## How the panels behave
+
+| Behaviour | Block options | Text style |
+|---|---|---|
+| Only what fits is shown | choices that would do nothing for the selected block or section are not shown (e.g. *Image border* without images, *Which cell* without a box); a choice the block already has always shows, so it can be removed | looks that don't fit the selected words are not shown (e.g. a line box only for a whole line, the gold rule only in a heading) |
+| Follow-up choices | appear once their main choice is made (*Text spacing in a box* after a box; *Gradient direction* after a gradient; *Starts open* after *An accordion panel*) | — |
+| Current values pre-selected | the block's applied options are the selected choices when the panel opens | selecting styled words selects their colour, font, size and look |
+| Defaults marked | the choice used when nothing is set reads "… — default" (e.g. *Medium (5%) — default*) | — |
+| Colours | swatches in four rows: **Light** (white, greys) · **Accent** (gold, blue, purple, teal, dark gold) · **Dark** (dark grey, black) · **Gradients**; every colour exact from stryker.com | the same four rows for text colours and line boxes |
+| Preview | pinned at the top while scrolling; *Desktop* (1200px) or *Phone* (375px) width; a tall preview (e.g. a block stacked on phones) scrolls inside its frame to the end | the same; words inside a block are previewed in that block |
+| What is applied | "On the block: …" or "Not applied yet: …" under the preview; the button reads *Apply options* or *No changes* | *Style selected text*; *Remove style* takes a style off |
+| Section | only the section choices that fit the selected block's section; tab / accordion / carousel roles folded away unless the section or a neighbour uses one | — |
 
 ## Blocks with variants and Block options
 
@@ -51,7 +70,7 @@ or words are greyed out (Block options, Text style looks) or not shown (Section)
 
 | Block options group | Kind | Choices | Shown when |
 |---|---|---|---|
-| Number colour | one choice | Gold · Navy · Purple · Teal · White | always |
+| Number colour | one choice | Gold · Blue · Purple · Teal · Dark gold · White · Light grey · Pale grey · Mid grey · Grey · Black | always |
 | Number size | one choice | Medium · Small · Large | always |
 | Numbers per row | one choice | Three · One · Two · Four · Six | needs 2 or more rows / 4 or more rows / 6 or more rows |
 | Options | switches | Centred · Number and text on one line | needs text |
@@ -121,10 +140,13 @@ or words are greyed out (Block options, Text style looks) or not shown (Section)
 | Which cell | one choice | Last cell · First cell · Every cell | layout box |
 | Text spacing in a box | one choice | Medium (5%) · None · Small (3%) · Large (10%) | needs a box chosen first |
 | Image border | one choice | None · Grey · Teal · Black | needs images in the block |
-| Text | switches | Centred | needs text |
+| Text | switches | Centred · Text centred beside the image · First cell right-aligned (labels) · Page title beside a photo | needs text / exactly 2 cells / images in the block / an image in the first cell |
 | First line of the text | one choice | As written · In a light grey box · In a gold bar · In a dark grey bar · In a blue bar | needs text |
 | Text look | switches | Large headline · Serif lead paragraph · Serif captions · Pull quote in the last cell · Large pull quote beside a photo · Numbered quotes | needs text / a photo with a caption / 2 or more cells / an image in the first cell / 3 cells |
-| Row looks | switches | Linked images · One per row on phones · Related links · Link groups · Icon beside text · Text centred beside the image · Page title beside a photo · Caption right under the photo · Images centred at their size · Photo two thirds wide on phones · Rule under the first cell · Line below the row · First cell right-aligned (labels) | needs images in the block / 3 or more cells / links / lists of links / an image in the first cell / exactly 2 cells / text / a photo with a caption |
+| Images | switches | Linked images · Images centred at their size · Photo two thirds wide on phones · Icon beside text · Caption right under the photo | needs images in the block / an image in the first cell / a photo with a caption |
+| On phones | switches | One per row on phones | needs 3 or more cells |
+| Lines | switches | Rule under the first cell · Line below the row | needs exactly 2 cells |
+| Links | switches | Related links · Link groups | needs links / lists of links |
 
 ### Panel
 
@@ -149,6 +171,7 @@ or words are greyed out (Block options, Text style looks) or not shown (Section)
 | Text spacing in a box | one choice | Medium (5%) · None · Small (3%) · Large (10%) | needs a box chosen first |
 | Options | switches | Soft shadow · Centred text · Title above the image · Image only · Images centred at their size · Card text in a box | needs a box chosen first / text / images in the block |
 | Teaser | switches | No description | layout teaser |
+| Card colours | one list per card | Row colour (the Card box) or any of the 17 box colours, per card | needs text; written as the card's first cell |
 
 ### Section (Block options → Section)
 
@@ -191,19 +214,28 @@ or words are greyed out (Block options, Text style looks) or not shown (Section)
 Selecting words that already have a style shows that style as the current choice; *Remove style*
 takes it off.
 
-## Making the panels more intuitive (proposals)
+## Making the panels more intuitive: status
+
+Built (on the standardisation branch, review pages):
+
+| # | Was | Now |
+|---|---|---|
+| 1 | choices that don't fit were greyed out (Block options) or hidden (Section) | hidden in both panels and in the Section area; what the block already has always shows |
+| 2 | colour lists were long plain buttons (Cell box: 18 choices) | colour swatches in *Light · Accent · Dark · Gradients* rows, in both panels |
+| 3 | defaults read like ordinary choices | marked "— default" |
+| 5 | a colour per card was a typed cell ("Purple") | *Card colours*: one list per card that writes that cell |
+| 6 | Statistics' number colour offered 5 colours | the 11 Text style colours, exact |
+| 7 | Columns had one *Row looks* list of 13 switches | split into *Text*, *Images*, *On phones*, *Lines*, *Links*; only fitting groups shown |
+| – | the preview scrolled away with the choices | pinned at the top; a tall phone preview scrolls inside its frame |
+| – | the panels opened with nothing selected | the applied block options and the selected words' style are pre-selected |
+
+Still open (need a decision or another team):
 
 | # | Today | Proposal | Why |
 |---|---|---|---|
-| 1 | Block options greys out choices that don't fit; the Section area hides them | one behaviour in both: show what fits, fold the rest under "Not available here (n)" with the reason | one rule to learn |
-| 2 | Colour lists are long plain buttons (Cell box: 18 choices) | colour swatches (as in Text style), grouped *Light · Accent · Dark · Gradients* | faster to scan, colours visible |
-| 3 | Defaults read like ordinary choices ("Medium (5%)", "Last cell") | mark the default ("Medium (5%) — default") | authors know what "nothing chosen" does |
-| 4 | Section styles are copied and pasted into Section Metadata | ask the DA / EW team for a way for extensions to write Section Metadata, then apply directly like block options | removes the most error-prone step |
-| 5 | A colour per card is a typed cell in the card ("Purple") | a *Card colours* list in Block options (one dropdown per card) that writes that cell | no hidden keywords to remember |
-| 6 | Statistics' number colour offers 5 colours | the shared 11 text colours, exact (as Text style) | one colour list everywhere |
-| 7 | Long *Row looks* list (13 switches) in Columns | split into *Images* (linked images, centred, ⅔ on phones, icon beside text), *Text* (centred beside the image, labels right), *Lines* (rule under the first cell, line below the row), *Links* (related links, link groups); only fitting groups shown | shorter lists, clearer purpose |
-| 8 | Block options *Apply* vs Text style *Style selected text* | the same wording and position in both ("Apply"), and a visible "not applied yet" state | fewer missed changes |
-| 9 | Style codes show as text in the plain DA editor | guide authors to style text in Experience Workspace, where codes are hidden and the preview is live | less confusion |
-| 10 | Help is in hints only | a "?" link in each panel to the authoring guide (conventions, this model) | one click to the rules |
+| 4 | section styles are copied and pasted into Section Metadata | ask the DA / EW team for a way for extensions to write Section Metadata, then apply directly like block options | removes the most error-prone step |
+| 8 | Block options *Apply options* vs Text style *Style selected text* | the same wording and position in both ("Apply"); Text style gets the "not applied yet" line too | fewer missed changes |
+| 9 | style codes show as text in the plain DA editor | guide authors to style text in Experience Workspace, where codes are hidden and the preview is live | less confusion |
+| 10 | help is in hints only | a "?" link in each panel to the authoring guide (conventions, this model) | one click to the rules |
 
-Approve the proposals you want and they are built one by one, review pages first.
+Approve the open proposals you want and they are built one by one, review pages first.
