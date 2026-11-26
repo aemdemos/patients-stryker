@@ -254,3 +254,15 @@ body {
 .tm-hint.tm-pointer {
   font-style: italic;
 }
+
+/* Section style: what each choice of a group does, written out under its buttons */
+.tm-explain {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--s2-gray-700, #505050);
+}
+
+.tm-explain li + li {
+  margin-top: 4px;
+}

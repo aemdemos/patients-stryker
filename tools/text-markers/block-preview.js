@@ -7,8 +7,8 @@
  *     (markers, Dynamic Media images, block CSS / JS) — e.g. a hero's gold box or its image;
  *   - outside a block: the words in their line (paragraph or heading level), on white and on
  *     a dark background; with nothing selected, a sample sentence.
- * The panel posts { action: 'tm-preview-render', block?, sectionStyles?, tag?, html?, words,
- * marker } and gets { action: 'tm-preview-rendered', height, found } back.
+ * The panel posts { action: 'tm-preview-render', section? | block?, sectionStyles?, tag?, html?,
+ * words, marker } and gets { action: 'tm-preview-rendered', height, found } back.
  */
 import decorateSpanMarkers from '../../scripts/span-markers.js';
 import decorateDMAssets from '../../scripts/dm-support.js';
@@ -78,33 +78,20 @@ function parse(html) {
     .map((n) => document.importNode(n, true));
 }
 
-/** the selected words in their block, decorated by the block's own code */
-async function renderBlock(main, {
-  block: blockHtml, sectionStyles = [], words, marker, tag,
-}) {
-  const [block] = parse(blockHtml).filter((n) => n.nodeType === Node.ELEMENT_NODE);
-  if (!block) return false;
-  const name = block.classList[0];
-  // as the EDS pipeline does: a cell holding a single paragraph loses the <p> (blocks rely
-  // on it, e.g. to tell an image cell from a text cell)
+/** as the EDS pipeline does: a cell holding a single paragraph loses the <p> (blocks rely on
+ * it, e.g. to tell an image cell from a text cell) */
+function unwrapCells(block) {
   block.querySelectorAll(':scope > div > div').forEach((cell) => {
     const only = cell.children.length === 1 && cell.firstElementChild;
     const loose = [...cell.childNodes]
       .some((n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
     if (only?.tagName === 'P' && !loose) only.replaceWith(...only.childNodes);
   });
-  const found = restyleWords(block, words, marker, tag);
-  markersToSpans(block);
-  const section = document.createElement('div');
-  section.className = ['section', ...sectionStyles].join(' ');
-  const wrapper = document.createElement('div');
-  wrapper.className = `${name}-wrapper`;
-  block.classList.add('block');
-  wrapper.append(block);
-  section.append(wrapper);
-  main.replaceChildren(section);
-  decorateDMAssets(main);
-  decorateSpanMarkers(main);
+}
+
+/** a block in the page, decorated by its own styles and script */
+async function decorateBlock(block) {
+  const name = block.classList[0];
   // a shared block's corp styles are its <name>-corp.css; a corp block (hero-corp …) has none
   await Promise.all([
     loadCSS(`/blocks/${name}/${name}.css`),
@@ -117,7 +104,76 @@ async function renderBlock(main, {
     // a block without a script, or one that fails here: its styles alone still apply
   }
   block.dataset.blockStatus = 'loaded';
+}
+
+/** a block wrapped as the EDS pipeline wraps it */
+function wrapBlock(block) {
+  const wrapper = document.createElement('div');
+  wrapper.className = `${block.classList[0]}-wrapper`;
+  block.classList.add('block');
+  wrapper.append(block);
+  return wrapper;
+}
+
+/** the selected words in their block, decorated by the block's own code */
+async function renderBlock(main, {
+  block: blockHtml, sectionStyles = [], words, marker, tag,
+}) {
+  const [block] = parse(blockHtml).filter((n) => n.nodeType === Node.ELEMENT_NODE);
+  if (!block) return false;
+  unwrapCells(block);
+  const found = restyleWords(block, words, marker, tag);
+  markersToSpans(block);
+  const section = document.createElement('div');
+  section.className = ['section', ...sectionStyles].join(' ');
+  section.append(wrapBlock(block));
+  main.replaceChildren(section);
+  decorateDMAssets(main);
+  decorateSpanMarkers(main);
+  await decorateBlock(block);
   return found;
+}
+
+/**
+ * A whole section with its styles (the Section style panel): its text in default-content
+ * wrappers and its blocks decorated by their own code, then the corp section layout (side by
+ * side columns). Buttons show as their links (the page's button decoration isn't loaded here).
+ */
+async function renderSection(main, { section: html, sectionStyles = [] }) {
+  const [source] = parse(html).filter((n) => n.nodeType === Node.ELEMENT_NODE);
+  if (!source) return false;
+  const section = document.createElement('div');
+  section.className = ['section', ...sectionStyles].join(' ');
+  const blocks = [];
+  let text = null;
+  [...source.children].forEach((child) => {
+    if (child.matches('.section-metadata')) return;
+    if (child.tagName === 'DIV' && child.classList.length) {
+      text = null;
+      unwrapCells(child);
+      blocks.push(child);
+      section.append(wrapBlock(child));
+      return;
+    }
+    if (!text) {
+      text = document.createElement('div');
+      text.className = 'default-content-wrapper';
+      section.append(text);
+    }
+    text.append(child);
+  });
+  main.replaceChildren(section);
+  markersToSpans(main);
+  decorateDMAssets(main);
+  decorateSpanMarkers(main);
+  await Promise.all(blocks.map(decorateBlock));
+  try {
+    const { decorateLayout } = await import('../../scripts/corp.js');
+    decorateLayout(main);
+  } catch {
+    // the section shows without the corp layout
+  }
+  return true;
 }
 
 /** the words (or a sample) in their line, on white and on a dark background */
@@ -159,7 +215,10 @@ async function render(data) {
   // decorated in the page (block scripts may measure or query media), replacing the last one
   const main = document.createElement('main');
   document.querySelector('main').replaceWith(main);
-  const found = data.block ? await renderBlock(main, data) : renderLine(main, data);
+  let found;
+  if (data.section) found = await renderSection(main, data);
+  else if (data.block) found = await renderBlock(main, data);
+  else found = renderLine(main, data);
   if (id !== renderId) return; // a newer choice arrived while this one was decorating
   await Promise.all([...main.querySelectorAll('img')].map((img) => (img.complete ? null
     : new Promise((resolve) => { img.onload = resolve; img.onerror = resolve; }))));
