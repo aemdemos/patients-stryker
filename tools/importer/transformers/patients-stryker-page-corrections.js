@@ -1078,6 +1078,33 @@ const CORRECTIONS = {
       superscript(m, d);
     },
   ],
+
+  // single news-detail pages
+  // advancing-surgical-education-highlights-from-ispies-at-ircad
+  'https://www.stryker.com/us/en/endoscopy/news/advancing-surgical-education-highlights-from-ispies-at-ircad.html': [
+    (m, d) => {
+      // full width with the body-l theme (17.5px copy); the copy and heading sizes come from the
+      // theme and the template, not from size styles
+      m.setAttribute('data-meta-theme', 'full-width, body-l');
+      tags(m, 'stryker:business-unit/endoscopy, stryker:content-type/news');
+      const body = find(m, 'p', 'In mid-October, Endoscopy');
+      style(m, d, body, null);
+      // the Egyptienne subheads: italic Heading 2
+      m.querySelectorAll('h2').forEach((h2) => {
+        if (h2.querySelector('em') || !txt(h2)) return;
+        const em = d.createElement('em');
+        em.append(...h2.childNodes);
+        h2.append(em);
+      });
+      // as in DA: a small spacer, the social share block and a spacer under the title
+      const spacer = sectionOf(m, m.querySelector('h1'))[0]?.nextElementSibling?.nextElementSibling;
+      if (isSectionMetadata(spacer) && !blockTable(m, 'social share corp')) {
+        style(m, d, spacer, 'spacer,small');
+        socialShareAfter(m, d, spacer);
+        spacerBefore(m, d, body, 'spacer');
+      }
+    },
+  ],
 };
 
 const FRAGMENT_CORRECTIONS = {

@@ -110,6 +110,15 @@ body.news-detail.full-width.basic main > .section:not(.disclaimer) > .default-co
   line-height: var(--body-line-height-l);
 }
 
+/* body-l: the article copy at 17.5px on 20.125px lines at every width, the small print
+   unchanged; headings keep the template sizes. Measured on stryker.com, "Advancing Surgical
+   Education: Highlights from iSPIES at IRCAD North America" (copy in fontsize-1-25em spans:
+   Humanist 17.5px / 20.125px at 390 and 1440px) */
+body.news-detail.body-l main > .section:not(.disclaimer) > .default-content-wrapper :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
 body.news-detail.full-width.basic main > .section > .default-content-wrapper > h1 {
   font-size: var(--corp-heading-font-size-h1-1-5);
   line-height: var(--heading-line-height);

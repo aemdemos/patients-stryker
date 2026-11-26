@@ -4288,6 +4288,29 @@ var CustomImportScript = (() => {
         spacerBefore(m, d, m.querySelector("ol"), "spacer, small");
         superscript(m, d);
       }
+    ],
+    // single news-detail pages
+    // advancing-surgical-education-highlights-from-ispies-at-ircad
+    "https://www.stryker.com/us/en/endoscopy/news/advancing-surgical-education-highlights-from-ispies-at-ircad.html": [
+      (m, d) => {
+        var _a, _b;
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        tags(m, "stryker:business-unit/endoscopy, stryker:content-type/news");
+        const body = find(m, "p", "In mid-October, Endoscopy");
+        style(m, d, body, null);
+        m.querySelectorAll("h2").forEach((h2) => {
+          if (h2.querySelector("em") || !txt(h2)) return;
+          const em = d.createElement("em");
+          em.append(...h2.childNodes);
+          h2.append(em);
+        });
+        const spacer2 = (_b = (_a = sectionOf(m, m.querySelector("h1"))[0]) == null ? void 0 : _a.nextElementSibling) == null ? void 0 : _b.nextElementSibling;
+        if (isSectionMetadata(spacer2) && !blockTable(m, "social share corp")) {
+          style(m, d, spacer2, "spacer,small");
+          socialShareAfter(m, d, spacer2);
+          spacerBefore(m, d, body, "spacer");
+        }
+      }
     ]
   };
   var FRAGMENT_CORRECTIONS = {
