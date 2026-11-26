@@ -7,6 +7,7 @@
 import { call, inviteToken } from './store.js';
 import { REVIEW } from './config.js';
 import { mountBar } from './bar.js';
+import ask, { askMessage } from './ask.js';
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
@@ -61,34 +62,31 @@ const linkRow = (label, url) => {
 };
 
 /**
- * Revoke, in two steps (a revoked link stops working at once and can't be brought back): the
- * button asks, Yes revokes, Cancel goes back
+ * Revoke, asked first in the tool's one confirmation (ask.js): a revoked link stops working at
+ * once and can't be brought back
  */
 function revokeCell(i) {
   const cell = el('div', { class: 'iv-revoke-cell' });
-  const ask = () => cell.replaceChildren(el('button', {
+  const revoke = async (button) => {
+    const message = askMessage({
+      head: `Revoke the invitation of ${i.name}?`,
+      foot: 'Their link stops working at once, for good. What they wrote in the review stays.',
+    });
+    if (!(await ask(message, [['Revoke', true, 'danger'], ['Cancel', false]]))) return;
+    Object.assign(button, { disabled: true });
+    const { status, body } = await call('invites', { method: 'POST', body: JSON.stringify({ op: 'revoke', id: i.id }) });
+    if (status !== 200) {
+      cell.replaceChildren(el('span', { class: 'iv-error' }, body?.error?.message || `Failed (${status})`));
+      return;
+    }
+    Object.assign(i, body.invite);
+    hooks.draw();
+  };
+  cell.append(el('button', {
     type: 'button',
     class: 'rs-btn iv-revoke',
-    onclick: () => cell.replaceChildren(
-      el('span', { class: 'iv-sure' }, 'Their link stops working at once, for good.'),
-      el('button', {
-        type: 'button',
-        class: 'rs-btn iv-revoke iv-revoke-yes',
-        onclick: async (e) => {
-          e.target.disabled = true;
-          const { status, body } = await call('invites', { method: 'POST', body: JSON.stringify({ op: 'revoke', id: i.id }) });
-          if (status !== 200) {
-            cell.replaceChildren(el('span', { class: 'iv-error' }, body?.error?.message || `Failed (${status})`));
-            return;
-          }
-          Object.assign(i, body.invite);
-          hooks.draw();
-        },
-      }, 'Yes, revoke'),
-      el('button', { type: 'button', class: 'rs-btn iv-revoke', onclick: () => ask() }, 'Cancel'),
-    ),
+    onclick: (e) => revoke(e.currentTarget),
   }, 'Revoke'));
-  ask();
   return cell;
 }
 

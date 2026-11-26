@@ -116,15 +116,15 @@ try {
   await open(A);
   const approveBtn = '.rv-status-actions .rv-page-state-approved';
   await p.click(approveBtn);
-  const dialog = await p.waitForSelector('dialog.rv-dialog[open] .rv-ask', { timeout: 10000 }).then(() => p.evaluate(() => document.querySelector('dialog.rv-dialog .rv-ask').textContent)).catch(() => '');
+  const dialog = await p.waitForSelector('dialog.ui-dialog[open] .ui-ask', { timeout: 10000 }).then(() => p.evaluate(() => document.querySelector('dialog.ui-dialog .ui-ask').textContent)).catch(() => '');
   check('Approve on a page of a group: first says what happens to the others (the one in review counts as approved)', /group 997/.test(dialog) && /will count as approved/.test(dialog) && /In review/.test(dialog), dialog.slice(0, 300));
-  await p.click('dialog.rv-dialog button:has-text("Cancel")');
+  await p.click('dialog.ui-dialog button:has-text("Cancel")');
   await p.waitForTimeout(1500);
   const cancelled = await p.evaluate(() => document.querySelector('.rv-status-banner strong').textContent);
   check('… Cancel: nothing approved', cancelled !== 'Approved as is', cancelled);
   await p.click(approveBtn);
-  await p.waitForSelector('dialog.rv-dialog[open] .rv-ask', { timeout: 10000 });
-  await p.click('dialog.rv-dialog button:has-text("Approve the group")');
+  await p.waitForSelector('dialog.ui-dialog[open] .ui-ask', { timeout: 10000 });
+  await p.click('dialog.ui-dialog button:has-text("Approve the group")');
   const approved = await p.waitForFunction(() => document.querySelector('.rv-status-banner strong').textContent === 'Approved as is', null, { timeout: 15000 }).then(() => true).catch(() => false);
   check('… Approve the group: the page approved', approved);
   // 2. the representative itself, and a page in no group: there, disabled, the tooltip says why
