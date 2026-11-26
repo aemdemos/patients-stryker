@@ -332,6 +332,22 @@ const WRAPPERS = /^(TABLE|THEAD|TBODY|TR|TD|TH|DIV|UL|OL|BLOCKQUOTE)$/;
 const LINES = /^(P|H[1-6]|LI)$/;
 
 /**
+ * Parses document or selection HTML with every style code as text, the way authors see it:
+ * Experience Workspace hands the document and the selection over in page form, where a code is
+ * an EDS icon (<span class="icon icon-start-gold"></span>, <span class="icon icon-end"></span>).
+ * @param {string} html The HTML
+ * @returns {Document} The parsed document
+ */
+function parseDoc(html) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  doc.querySelectorAll('span.icon').forEach((icon) => {
+    const name = [...icon.classList].find((c) => /^icon-(start-[a-z0-9-]+|end)$/.test(c));
+    if (name) icon.replaceWith(doc.createTextNode(`:${name.slice(5)}:`));
+  });
+  return doc;
+}
+
+/**
  * The line a selection sits in: its tag (P, H1 … H6, LI) and the selected inline HTML,
  * found below the table / cell / list wrappers the editor returns around it. Null when the
  * selection spans several lines (markers style part of one line).
@@ -340,7 +356,7 @@ const LINES = /^(P|H[1-6]|LI)$/;
  */
 function readLine(html) {
   // parsed in an inert document: nothing is rendered or run
-  const { body } = new DOMParser().parseFromString(html.trim(), 'text/html');
+  const { body } = parseDoc(html.trim());
   let node = body;
   for (;;) {
     const elements = [...node.children];
@@ -392,7 +408,7 @@ const HAS_MARKER = /:(?:start-[a-z0-9-]+|end):/;
  * @returns {{text: string, ok: boolean}} Its text, and whether rewriting it is safe
  */
 function analyseSelection(inner) {
-  const { body } = new DOMParser().parseFromString(`<p>${inner}</p>`, 'text/html');
+  const { body } = parseDoc(`<p>${inner}</p>`);
   const line = body.firstElementChild;
   const text = line.textContent;
   if (line.querySelector('a, br, img')) return { text, ok: false };
@@ -502,7 +518,7 @@ async function documentHtml() {
 async function documentText() {
   if (liveText) return liveText;
   const html = await documentHtml();
-  return html ? new DOMParser().parseFromString(html, 'text/html').body.textContent : '';
+  return html ? parseDoc(html).body.textContent : '';
 }
 
 const plain = (text) => text.replace(MARKER_TEXT, '').replace(/\s+/g, ' ').trim();
@@ -518,7 +534,7 @@ async function findBlock(words) {
   const html = await documentHtml();
   const target = plain(words);
   if (!html || !target) return null;
-  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const doc = parseDoc(html);
   const root = doc.querySelector('main') || doc.body;
   const blocks = [...root.querySelectorAll(':scope > div > div[class]')]
     .filter((b) => !/^(section-metadata|metadata)$/.test(b.classList[0]));
@@ -541,7 +557,7 @@ async function isWholeLine(words) {
   const html = await documentHtml();
   const target = plain(words);
   if (!html || !target) return null;
-  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const doc = parseDoc(html);
   const lines = [...doc.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')]
     .filter((line) => plain(line.textContent).includes(target));
   if (!lines.length) return null;
@@ -610,7 +626,7 @@ function liveTarget(find) {
   if (!liveHtml || !liveEditable || sdk.capabilities?.sendHTMLReplace !== 1) return null;
   const html = liveHtml;
   const blockIndex = liveBlockIndex;
-  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const doc = parseDoc(html);
   const root = doc.querySelector('main') || doc.body;
   let target;
   if (blockIndex !== null) {
@@ -648,7 +664,7 @@ async function sendLive({ html, blockIndex, target }) {
   if (!result?.ok) return false;
   if (typeof result.html === 'string') {
     liveHtml = result.html;
-    liveText = new DOMParser().parseFromString(liveHtml, 'text/html').body.textContent;
+    liveText = parseDoc(liveHtml).body.textContent;
   }
   return true;
 }
@@ -1041,7 +1057,7 @@ function watchSelection() {
       line.old = (line.html.match(/:start-([a-z0-9-]+):/) || [])[1]
         || findRun(selectedText, liveText || await documentText())?.name || '';
       line.html = line.html.replace(MARKER_TEXT, '');
-      line.words = new DOMParser().parseFromString(`<p>${line.html}</p>`, 'text/html').body.textContent;
+      line.words = parseDoc(`<p>${line.html}</p>`).body.textContent;
     }
     // only a start marker selected (the way to restyle words whose markers sit outside their
     // bold / italic): the line it starts stays in the preview
@@ -1087,7 +1103,7 @@ async function connect() {
     if (sdk.capabilities?.liveDocument === 1 && typeof sdk.actions.subscribeLiveDocument === 'function') {
       sdk.actions.subscribeLiveDocument(({ html, selection, editable }) => {
         liveHtml = html || '';
-        liveText = new DOMParser().parseFromString(liveHtml, 'text/html').body.textContent;
+        liveText = parseDoc(liveHtml).body.textContent;
         liveBlockIndex = Number.isInteger(selection?.blockIndex) ? selection.blockIndex : null;
         liveEditable = editable !== false;
       });
