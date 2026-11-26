@@ -1414,3 +1414,49 @@ body.corp.std-draft .columns.related-links h4 a:any-link {
     flex: 0 0 75%;
   }
 }
+
+/* icon-text, in review: icons side by side, each cell its icon (a paragraph of its own) beside
+   its text (stryker.com Mako global statistics, LIFEPAK 35 "Intuitive / Clinically advanced /
+   Proven": a 1/3 column each, the icon a quarter of it, 87px at 1440px, the text beside it):
+   one per row on phones, the icon a third of the cell (100px at 390px); from 600px the cells
+   side by side, a third of the row each at most (a row of two keeps its thirds) */
+body.corp.std-draft main .columns.icon-text.block > div:has(> div > .columns-img-col ~ *):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  flex-flow: column nowrap;
+  gap: var(--space-block-l);
+}
+
+body.corp.std-draft main .columns.icon-text.block > div > div:has(> .columns-img-col ~ *):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  --columns-icon-cell: 3;
+
+  display: grid;
+  grid-template-columns:
+    calc((100% + 2 * var(--container-gutter)) / var(--columns-icon-cell) - 2 * var(--container-gutter))
+    minmax(0, 1fr);
+  column-gap: calc(2 * var(--container-gutter));
+  align-content: start;
+  flex: 1 1 auto;
+  margin-top: 0;
+}
+
+body.corp.std-draft main .columns.icon-text.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:has(~ *):nth-child(n):nth-child(n):nth-child(n) {
+  grid-row: 1 / span 12;
+  margin: 0;
+}
+
+body.corp.std-draft main .columns.icon-text.block > div > div > .columns-img-col ~ *:nth-child(n) {
+  grid-column: 2;
+}
+
+@media (width >= 600px) {
+  body.corp.std-draft main .columns.icon-text.block > div:has(> div > .columns-img-col ~ *):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    flex-flow: row nowrap;
+    gap: 0;
+  }
+
+  body.corp.std-draft main .columns.icon-text.block > div > div:has(> .columns-img-col ~ *):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    --columns-icon-cell: 4;
+
+    flex: 1 1 0;
+    max-width: calc(100% / 3);
+  }
+}

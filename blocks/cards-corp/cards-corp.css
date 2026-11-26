@@ -667,6 +667,12 @@ body.corp.std-draft .cards-corp.text-center :is(.cards-corp-card-body, .cards-co
   text-align: center;
 }
 
+/* a Heading 3 in a text card's body lines up with its text (stryker.com TPX HD "ProCare" /
+   "Flex Financial" boxes: left-aligned titles); centred only with Text centred (text-center) */
+body.corp.std-draft .cards-corp.text:not(.text-center) .cards-corp-card-body h3 {
+  text-align: start;
+}
+
 body.corp.std-draft .cards-corp:is(.image-border, .image-border-teal, .image-border-black) .cards-corp-card-image img {
   box-sizing: border-box;
   border: 1px solid var(--cards-corp-image-border);

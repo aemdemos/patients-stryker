@@ -234,10 +234,21 @@ function fragmentBlock(doc, path) {
 // into the review folder (the real /us/en/fragments/… documents stay as they are)
 export const STD_REVIEW_FRAGMENTS = '/drafts/astha/pages/fragments/';
 
+// review fragments imported again after a change (2026-11-26: icons beside their text, 3 per
+// row; the four link lists as Columns): new documents in a "-v2" folder, so the documents
+// already in review stay as they are (the pages imported now link to the new ones)
+const REVIEW_FRAGMENTS_V2 = [
+  '/mako_smartrobotics_o/global-statistics/master',
+  '/lifepak_35/product_page/intuitive-clinically-advanced-proven/master',
+  '/emergency-care/en/business_unit/footer/master',
+];
+
 /** The review fragment document of an XF (its /us/en/fragments/… path in the review folder). */
 export function reviewFragmentPath(xf) {
   const path = xfToFragmentPath(xf);
-  return path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS);
+  const v2 = REVIEW_FRAGMENTS_V2.some((end) => (xf || '').endsWith(end));
+  return path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS)
+    .replace(/\/master$/, v2 ? '-v2/master' : '/master');
 }
 
 /**
@@ -486,6 +497,23 @@ function spaceStep(boxes) {
 const IMAGE_BORDERS = {
   gray: 'image-border', teal: 'image-border-teal', black: 'image-border-black', blue: 'image-border-teal',
 };
+/**
+ * Product pages (review build): whether every filled column's image shows narrower than its
+ * column (under 85% of the column's text width, as laid out on the loaded source page), e.g.
+ * stryker.com Connected OR "Safe / Efficient / Scalable": 300px images centred in 440px
+ * columns. Such a row takes `image-centre` (images at their own size, centred). Images not
+ * laid out (in a closed tab) leave it off.
+ */
+function smallImages(columns) {
+  const images = columns.map((col) => col.querySelector('.c-standalone-image img')).filter(Boolean);
+  if (!images.length || images.length !== columns.length) return false;
+  return images.every((img, i) => {
+    const { width } = img.getBoundingClientRect();
+    const room = columns[i].getBoundingClientRect().width - 30;
+    return width > 0 && room > 0 && width < room * 0.85;
+  });
+}
+
 function imageBorder(columns) {
   const colours = columns.flatMap((col) => [...col.querySelectorAll('.c-standalone-image img[class*="bor-"]')]
     .map((img) => (img.className.match(/\bbor-([a-z]+)/) || [])[1]));
@@ -805,7 +833,7 @@ const hrefOf = (n) => {
   return a ? a.getAttribute('href').split('#')[0] : '';
 };
 const TILE_KEEP = new RegExp('^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a-z]+'
-  + '|image-border(-[a-z]+)?|text-center)$');
+  + '|image-border(-[a-z]+)?|text-center|image-centre)$');
 const TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
 
 // a card colour as authors read it in its colour cell (cards-corp.js reads it back)
@@ -846,6 +874,10 @@ function tileCards(cells, variant, doc, colours = []) {
   const same = units.length > 0 && units.every((u) => u === units[0]);
   if (!same || (filled.length < 3 && !(filled.length === 2 && boxed))) return null;
   if (!/^t?m?t?$/.test(units[0]) || names.some((v) => TILE_NOT.test(v))) return null;
+  // product pages: four text columns (stryker.com LIFEPAK 35 "Explore / Learn / Support /
+  // More" link lists, col-sm-3: 4 per row, 2 on phones) stay Columns, whose four cells give
+  // that layout (Cards text has no four per row)
+  if (stdProductPage(doc) && units[0] === 't' && cells.length === 4) return null;
   // a colour per card (a different box colour in each cell): each card row opens with its
   // colour cell (cards-corp.js), when every card has one
   const filledColours = cells.map((c, i) => (tileParts(c).length ? colours[i] || '' : null))
@@ -939,6 +971,10 @@ function xfGridRows(main, doc, selector = '.experiencefragment .aem-Grid') {
       cells.forEach(([span, item]) => {
         const col = doc.createElement('div');
         col.className = `col-sm-${span} col-md-${span}`;
+        // product pages: the item's phone width too (stryker.com LIFEPAK 35 footer link lists:
+        // aem-GridColumn--phone--6, two per row on phones), as a source column row has it
+        const phone = num(item, /\baem-GridColumn--phone--(\d+)\b/);
+        if (stdProductPage(doc) && phone) col.className += ` col-xs-${phone}`;
         col.append(item);
         inner.append(col);
       });
@@ -1187,7 +1223,8 @@ function columnRows(main, doc) {
     const centred = filled.every(centredColumn);
     const layout = COLUMN_VARIANTS[key] || COLUMN_VARIANTS[columns.map(desktopWidth).join(',')];
     const variant = [layout, linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes,
-      imageBorder(columns), centred ? 'text-center' : '', firstRule ? 'left-border-bottom' : '']
+      imageBorder(columns), centred ? 'text-center' : '', firstRule ? 'left-border-bottom' : '',
+      stdProductPage(doc) && smallImages(filled) ? 'image-centre' : '']
       .filter(Boolean).join(', ');
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = rowCopyStyle(cells, doc);
@@ -1196,7 +1233,9 @@ function columnRows(main, doc) {
       const box = cellBox(col);
       return box && box.kind === 'whole' && box.colour !== 'boxed' ? box.colour : '';
     }) : [];
-    const block = (STD_DRAFT_IMPORT && tileCards(cells, variant, doc, colours))
+    // (product pages: the plate rows, plateColumns, stay Columns as on stryker.com)
+    const block = (STD_DRAFT_IMPORT && !colctrl.hasAttribute('data-columns')
+      && tileCards(cells, variant, doc, colours))
       || WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : 'Columns',
         cells: [cells],
@@ -1466,8 +1505,8 @@ function titleFromHeading(heading, doc) {
 const assetName = (src) => ((src || '').match(/\/is\/(?:image|content)\/([^?#]+)/) || [])[1] || '';
 
 /**
- * Review run: the images of standalone-image columns a quarter or less of their grid wide
- * with text beside them (icons), by asset name.
+ * Product pages (review build): the images of standalone-image columns a quarter or less of
+ * their grid wide with text beside them (icons), by asset name.
  * @param {Element} main The page content
  * @returns {Set<string>} The asset names
  */
@@ -1485,9 +1524,10 @@ function iconSources(main) {
 }
 
 /**
- * Review run: a Cards or Columns block whose images are all icons (iconSources) is a Columns
- * (icon-text) block, the standard look for a small icon beside its text: one row per icon and
- * its text (Mako global statistics, 87px icons beside each figure on stryker.com).
+ * Product pages (review build): a Cards or Columns block whose images are all icons
+ * (iconSources) is a Columns (icon-text) block, the standard look for a small icon beside its
+ * text, the icons in their source rows (Mako global statistics: 3 then 2 per row, 87px icons
+ * beside each figure on stryker.com).
  */
 function iconBlocks(root, icons, doc) {
   root.querySelectorAll('table').forEach((table) => {
@@ -1501,21 +1541,62 @@ function iconBlocks(root, icons, doc) {
     if (!names.length || !names.every((n) => icons.has(n))) return;
     const media = (n) => n.nodeType === 1 && (n.matches('img, picture') || !!n.querySelector('img, picture')
       || (n.matches('a[href], p') && icons.has(assetName((n.matches('a') ? n : n.querySelector('a[href]'))?.getAttribute('href')))));
-    const rows = [];
+    // the icon units in source order, each [icon, its text…], grouped as the source rows: a
+    // Columns row's cells, or a Cards block's cards per row (three-up / two-up)
+    const units = [];
     trs.slice(1).forEach((tr) => {
       const cells = [...tr.children];
       if (m[1] === 'Cards Corp' && cells.length === 2) {
-        rows.push([[...cells[0].childNodes], [...cells[1].childNodes]]);
+        units.push({ row: units.length, nodes: [...cells[0].childNodes, ...cells[1].childNodes] });
         return;
       }
+      const row = units.length ? units[units.length - 1].row + 1 : 0;
       cells.forEach((cell) => {
         const nodes = [...cell.childNodes];
         const at = nodes.findIndex(media);
         if (at < 0) return;
-        rows.push([[nodes[at]], nodes.filter((n, k) => k !== at)]);
+        units.push({ row, nodes: [nodes[at], ...nodes.filter((n, k) => k !== at)] });
       });
     });
-    if (rows.length) table.replaceWith(WebImporter.Blocks.createBlock(doc, { name: 'Columns (icon-text)', cells: rows }));
+    if (!units.length) return;
+    const perRow = m[1] === 'Cards Corp'
+      ? ({ 'two-up': 2, 'three-up': 3 }[(m[2] || '').split(', ').find((v) => /-up$/.test(v))] || 3) : 0;
+    const grouped = [];
+    units.forEach((unit, i) => {
+      const at = perRow ? Math.floor(i / perRow) : unit.row;
+      (grouped[at] = grouped[at] || []).push(unit.nodes);
+    });
+    const rows = grouped.filter(Boolean);
+    // one icon per row (an icon beside a whole-width text): the icon and its text are the
+    // row's two cells; icons side by side (stryker.com Mako global statistics, LIFEPAK 35
+    // "Intuitive / Clinically advanced / Proven": 3 per row): each cell holds its icon and
+    // its text, side by side within the cell (columns-corp.css)
+    const cells = rows.every((r) => r.length === 1)
+      ? rows.map(([nodes]) => [[nodes[0]], nodes.slice(1)])
+      : rows.map((r) => r.map((nodes) => {
+        const [icon, ...rest] = nodes;
+        const paragraph = (inline) => {
+          const p = doc.createElement('p');
+          p.append(...inline);
+          return p;
+        };
+        const block = (n) => n.nodeType === 1 && /^(P|H[1-6]|UL|OL|DIV|TABLE)$/.test(n.tagName);
+        const filled = (list) => list.some((n) => n.nodeType === 1 || n.textContent.trim());
+        // the icon and the text in paragraphs of their own (loose text, e.g. a figure and its
+        // line, is one paragraph), so the cell's text sits beside the icon as a whole
+        const out = [block(icon) ? icon : paragraph([icon])];
+        let run = [];
+        rest.forEach((n) => {
+          if (block(n)) {
+            if (filled(run)) out.push(paragraph(run));
+            run = [];
+            out.push(n);
+          } else run.push(n);
+        });
+        if (filled(run)) out.push(paragraph(run));
+        return out;
+      }));
+    table.replaceWith(WebImporter.Blocks.createBlock(doc, { name: 'Columns (icon-text)', cells }));
   });
 }
 
@@ -1626,9 +1707,10 @@ export default function transform(hookName, element, payload) {
       if (!b.closest('.futura-bold') && !b.querySelector('.futura-bold')) b.replaceWith(...b.childNodes);
     });
   }
-  // review run: images in a narrow grid column beside their text (a quarter or less, e.g. the
-  // Mako global statistics icons, 1 of 4 columns): their cards / columns are icon-text rows
-  const icons = stdReviewPage(doc) ? iconSources(main) : null;
+  // product pages (and the review run): images in a narrow grid column beside their text (a
+  // quarter or less, e.g. the Mako global statistics and LIFEPAK 35 icons, 1 of 4 columns):
+  // their cards / columns are icon-text rows
+  const icons = stdProductPage(doc) ? iconSources(main) : null;
   const helpers = {
     cellNodes, richText, text, tagCopy,
   };

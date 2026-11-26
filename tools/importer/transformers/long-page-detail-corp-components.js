@@ -170,6 +170,36 @@ function tabs(main, doc, h) {
 }
 
 /**
+ * Product pages (review build): a row of columns that each hold an image and an accordion of
+ * one open panel (stryker.com Pangea plates: the plate photo, then "HUMERUS" over its list of
+ * design-rationale links, 3 per row) is a Columns row: each accordion becomes its title (a
+ * Heading 4, as the source panel title) and its panel's text, so a cell holds the image, the
+ * title and the links. The toggle is not kept (the panels are open on the source).
+ */
+function plateColumns(main, doc, h) {
+  main.querySelectorAll('.colctrl').forEach((colctrl) => {
+    const row = colctrl.querySelector(':scope > .row');
+    const cols = row ? [...row.children].filter((c) => h.text(c) || c.querySelector('img')) : [];
+    const plate = (col) => {
+      const groups = col.querySelectorAll('.panel-group');
+      const panels = groups.length === 1 ? groups[0].querySelectorAll(':scope > .panel') : [];
+      return panels.length === 1 && !!panels[0].querySelector('.panel-collapse.in, .panel-collapse.show')
+        && !!col.querySelector('.c-standalone-image img') && !col.querySelector('.colctrl');
+    };
+    if (cols.length < 2 || !cols.every(plate)) return;
+    cols.forEach((col) => {
+      const group = col.querySelector('.panel-group');
+      const title = doc.createElement('h4');
+      title.textContent = h.text(group.querySelector('.panel-title'));
+      const body = [...group.querySelectorAll('.panel-body .c-rich-text-editor')];
+      const target = group.closest('.accordion') || group.closest('.c-accordion') || group;
+      target.replaceWith(h.richText(doc, [title]), ...body);
+    });
+    colctrl.setAttribute('data-columns', '');
+  });
+}
+
+/**
  * An accordion in a column of a row with other content (Mako surgeon campaign: the clinical
  * studies beside an image) can't be a block in a Columns cell: the row is unwrapped (its
  * columns' content one after the other: the image, then the accordion), so the accordion
@@ -177,6 +207,7 @@ function tabs(main, doc, h) {
  * (`image-aside`).
  */
 function accordionsInColumns(main, doc, h) {
+  if (stdProductPage(doc)) plateColumns(main, doc, h);
   main.querySelectorAll('.panel-group').forEach((group) => {
     const col = group.closest('[class*="col-sm-"], [class*="col-md-"]');
     const row = col && col.parentElement;
