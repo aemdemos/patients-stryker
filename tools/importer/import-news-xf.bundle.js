@@ -3646,6 +3646,35 @@ var CustomImportScript = (() => {
       });
     });
   }
+  var BODY_L_REPLACES = ["p-1", "p-1-25", "p-1-5", "p-1-75", "p-2", "p-2-5", "h2-0-8", "h2-1-25", "h2-1-5", "h3-0-8", "h3-1-25", "h3-1-5", "h4-1-25", "join"];
+  function bodyLRepresentative(main, doc) {
+    main.setAttribute("data-meta-theme", "body-l");
+    main.querySelectorAll("h2").forEach((h2) => {
+      const h3 = doc.createElement("h3");
+      const b = doc.createElement("strong");
+      b.append(...h2.childNodes);
+      b.querySelectorAll("em, strong").forEach((el) => el.replaceWith(...el.childNodes));
+      h3.append(b);
+      h2.replaceWith(h3);
+    });
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => {
+      const row = [...t.querySelectorAll("tr")].find((tr) => txt(tr.cells[0]).toLowerCase() === "style");
+      if (!row) return;
+      const rest = txt(row.cells[1]).split(",").map((v) => v.trim()).filter((v) => v && !BODY_L_REPLACES.includes(v));
+      if (rest.length) row.cells[1].textContent = rest.join(", ");
+      else if (t.querySelectorAll("tr").length <= 2) t.remove();
+      else row.remove();
+    });
+    main.querySelectorAll("h3").forEach((h3) => breakBefore(main, doc, h3, null));
+  }
+  function labelsToSubheads(main, doc, labels) {
+    main.querySelectorAll("p").forEach((p) => {
+      if (!labels.includes(txt(p)) || !p.querySelector("em strong, strong em")) return;
+      const h2 = doc.createElement("h2");
+      h2.append(...p.childNodes);
+      p.replaceWith(h2);
+    });
+  }
   function tags(main, value) {
     main.setAttribute("data-meta-tags", value);
   }
@@ -4356,6 +4385,250 @@ var CustomImportScript = (() => {
       }
     ],
     // single news-detail pages
+    // cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females
+    "https://www.stryker.com/us/en/sage/news/2021/cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females.html": [
+      (m, d) => {
+        labelsToSubheads(m, d, ["Background", "Intervention", "Results", "Conclusion", "About the Clinicians"]);
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          if (txt(td) === "disclaimer, references-body-lines") td.textContent = "disclaimer";
+        }));
+      }
+    ],
+    // new-safety-advisory-from-the-joint-commission
+    "https://www.stryker.com/us/en/sage/news/2021/new-safety-advisory-from-the-joint-commission.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // primafit-device-updates
+    "https://www.stryker.com/us/en/sage/news/2021/primafit-device-updates.html": [
+      (m, d) => {
+        labelsToSubheads(m, d, ["Developed in partnership with clinicians for better outcomes", "New enhancements for better care", "Addressing the #1 CAUTI risk factor", "No catheter. No CAUTI.\u2122"]);
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          if (txt(td) === "disclaimer, references-body-lines") td.textContent = "disclaimer";
+        }));
+        dropTextTag(m, d, "color-teal");
+        const more = find(m, "p", "To learn more about how Sage can help");
+        if (more && !more.querySelector("em")) {
+          const em = d.createElement("em");
+          em.append(...more.childNodes);
+          more.append(em);
+        }
+        style(m, d, more, null);
+        mergeWithPrevious(m, more);
+        style(m, d, more, null);
+      }
+    ],
+    // sage-supports-the-family-health-partnership-clinic-in-mchenry-co
+    "https://www.stryker.com/us/en/sage/news/2021/sage-supports-the-family-health-partnership-clinic-in-mchenry-co.html": [
+      (m, d) => {
+        labelsToSubheads(m, d, ["Raising funds and awareness at the Care4Breast Cancer 5K", "Helping our neighbors", "Donate today \u2013 any amount makes a difference!"]);
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // can-brushing-your-teeth-keep-you-healthy-in-the-hospital
+    "https://www.stryker.com/us/en/sage/news/2022/can-brushing-your-teeth-keep-you-healthy-in-the-hospital.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // ecri-reports-nvhap-as-a-top-threat-to-patient-safety-in-2022
+    "https://www.stryker.com/us/en/sage/news/2022/ecri-reports-nvhap-as-a-top-threat-to-patient-safety-in-2022.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // evergreen-medical-uses-a-kinder-gentler-presurgical-skin-prep
+    "https://www.stryker.com/us/en/sage/news/2022/evergreen-medical-uses-a-kinder-gentler-presurgical-skin-prep.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/4");
+      }
+    ],
+    // focusrn-website-is-now-available
+    "https://www.stryker.com/us/en/sage/news/2022/focusrn-website-is-now-available.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // health-affairs-urges-policy-makers-to-confront-pneumonia-threat
+    "https://www.stryker.com/us/en/sage/news/2022/health-affairs-urges-policy-makers-to-confront-pneumonia-threat.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // infection-control-today-article-about-waterborne-pathogens
+    "https://www.stryker.com/us/en/sage/news/2022/infection-control-today-article-about-waterborne-pathogens.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // joint-commission-barbara-quinn-interview-nv-hap-prevention
+    "https://www.stryker.com/us/en/sage/news/2022/joint-commission-barbara-quinn-interview-nv-hap-prevention.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news");
+      }
+    ],
+    // poster-presented-at-wocn-shows-comfort-shield-reduces-iad
+    "https://www.stryker.com/us/en/sage/news/2022/poster-presented-at-wocn-shows-comfort-shield-reduces-iad.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+      }
+    ],
+    // preoperative-strategy-to-reduce-the-risk-of-surgical-site-infect
+    "https://www.stryker.com/us/en/sage/news/2022/preoperative-strategy-to-reduce-the-risk-of-surgical-site-infect.html": [
+      (m, d) => {
+        labelsToSubheads(m, d, ["Surgical Technology International article recommends using chlorhexidine-impregnated cloths instead of a chlorhexidine solution"]);
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // sage-launches-journey-to-zero-to-help-reduce-nurse-injury
+    "https://www.stryker.com/us/en/sage/news/2022/sage-launches-journey-to-zero-to-help-reduce-nurse-injury.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // stryker-sea-and-mccd-help-clean-up-hickory-grove-highlands
+    "https://www.stryker.com/us/en/sage/news/2022/stryker-sea-and-mccd-help-clean-up-hickory-grove-highlands.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // stryker-womens-network-at-sage-supports-international-womens-day
+    "https://www.stryker.com/us/en/sage/news/2022/stryker-womens-network-at-sage-supports-international-womens-day.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // a-magical-celebration-in-cary
+    "https://www.stryker.com/us/en/sage/news/2023/a-magical-celebration-in-cary.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // iu-health-decreases-urinary-catheter-usage-and-cauti-rates
+    "https://www.stryker.com/us/en/sage/news/2023/iu-health-decreases-urinary-catheter-usage-and-cauti-rates.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/4");
+      }
+    ],
+    // journey-to-zero-program-helps-protect-healthcare-workers
+    "https://www.stryker.com/us/en/sage/news/2023/journey-to-zero-program-helps-protect-healthcare-workers.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // nyc-medical-center-implementation-of-external-female-catheter-av
+    "https://www.stryker.com/us/en/sage/news/2023/nyc-medical-center-implementation-of-external-female-catheter-av.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news");
+      }
+    ],
+    // shea-oral-care-reduction-in-non-ventilator-associated-pneumonia
+    "https://www.stryker.com/us/en/sage/news/2023/shea-oral-care-reduction-in-non-ventilator-associated-pneumonia.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+      }
+    ],
+    // study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients
+    "https://www.stryker.com/us/en/sage/news/2023/study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // stryker-advances-urology-portfolio-launch-flexible-ureteroscope
+    "https://www.stryker.com/us/en/endoscopy/news/stryker-advances-urology-portfolio-launch-flexible-ureteroscope.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:business-unit/endoscopy");
+        style(m, d, [...m.querySelectorAll("p")].find((p) => txt(p) === "F88 ureteroscope"), "image-1-2, col-8");
+        style(m, d, find(m, "p", "To learn more, visit Stryker"), "col-8");
+      }
+    ],
+    // sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t
+    "https://www.stryker.com/us/en/sage/news/2022/sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // sea-promotes-social-responsibility-with-tree-planting-event-
+    "https://www.stryker.com/us/en/sage/news/2022/sea-promotes-social-responsibility-with-tree-planting-event-.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // the-journey-to-zero-program-supports-nurse-safety
+    "https://www.stryker.com/us/en/sage/news/2022/the-journey-to-zero-program-supports-nurse-safety.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // study-validates-the-value-of-mobilty-for-older-patients
+    "https://www.stryker.com/us/en/sage/news/2023/study-validates-the-value-of-mobilty-for-older-patients.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // 2-percent-chlorhexidine-gluconate-cloth-ssi-prevention
+    "https://www.stryker.com/us/en/sage/news/2024/2-percent-chlorhexidine-gluconate-cloth-ssi-prevention.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+      }
+    ],
+    // aeds-role-in-athletics
+    "https://www.stryker.com/us/en/emergency-care/news/2024/aeds-role-in-athletics.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:business-unit/ems/news/articles, stryker:content-type/news");
+        spacerBefore(m, d, [...m.querySelectorAll("h3")].find((h) => txt(h) === "Learn More"), "spacer");
+        mergeWithPrevious(m, find(m, "p", "Knowing when to use an AED"));
+        const refs = [...m.querySelectorAll("ol")].find((ol) => txt(ol).includes("Rothmier"));
+        if (refs) refs.replaceWith(...[...refs.children].map((li) => {
+          const p = d.createElement("p");
+          p.append(...li.childNodes);
+          return p;
+        }));
+      }
+    ],
+    // introducing-ip-bravoe-a-new-standard-in-or-integration
+    "https://www.stryker.com/us/en/endoscopy/news/introducing-ip-bravoe-a-new-standard-in-or-integration.html": [
+      (m, d) => {
+        m.setAttribute("data-meta-theme", "body-l");
+        tags(m, "stryker:content-type/news, stryker:business-unit/endoscopy");
+        style(m, d, find(m, "p", "As surgical environments evolve"), null);
+        const close = find(m, "p", "The future of");
+        style(m, d, close, null);
+        close == null ? void 0 : close.querySelectorAll("em").forEach((em) => em.replaceWith(...em.childNodes));
+      }
+    ],
     // school-safety-staff-communication
     "https://www.stryker.com/us/en/smart-care/news/school-safety-staff-communication.html": [
       (m, d) => {

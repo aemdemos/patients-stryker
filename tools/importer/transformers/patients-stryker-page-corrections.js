@@ -369,6 +369,45 @@ function stripListNumbers(main, el) {
   }));
 }
 
+/** Size and join section styles the `body-l` theme replaces (it sets the copy and headings). */
+const BODY_L_REPLACES = ['p-1', 'p-1-25', 'p-1-5', 'p-1-75', 'p-2', 'p-2-5', 'h2-0-8', 'h2-1-25', 'h2-1-5', 'h3-0-8', 'h3-1-25', 'h3-1-5', 'h4-1-25', 'join'];
+
+/**
+ * The `body-l` layout of the representative "School safety: The importance of effective staff
+ * communication": theme `body-l`, the source's H2 subheads as bold H3 (Futura bold), no size
+ * styles, and a section break before each H3 for space above the subheads.
+ */
+function bodyLRepresentative(main, doc) {
+  main.setAttribute('data-meta-theme', 'body-l');
+  main.querySelectorAll('h2').forEach((h2) => {
+    const h3 = doc.createElement('h3');
+    const b = doc.createElement('strong');
+    b.append(...h2.childNodes);
+    b.querySelectorAll('em, strong').forEach((el) => el.replaceWith(...el.childNodes));
+    h3.append(b);
+    h2.replaceWith(h3);
+  });
+  [...main.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => {
+    const row = [...t.querySelectorAll('tr')].find((tr) => txt(tr.cells[0]).toLowerCase() === 'style');
+    if (!row) return;
+    const rest = txt(row.cells[1]).split(',').map((v) => v.trim()).filter((v) => v && !BODY_L_REPLACES.includes(v));
+    if (rest.length) row.cells[1].textContent = rest.join(', ');
+    else if (t.querySelectorAll('tr').length <= 2) t.remove();
+    else row.remove();
+  });
+  main.querySelectorAll('h3').forEach((h3) => breakBefore(main, doc, h3, null));
+}
+
+/** Gold bold + italic label paragraphs (whole paragraph) become subheads (H2, then bold H3). */
+function labelsToSubheads(main, doc, labels) {
+  main.querySelectorAll('p').forEach((p) => {
+    if (!labels.includes(txt(p)) || !p.querySelector('em strong, strong em')) return;
+    const h2 = doc.createElement('h2');
+    h2.append(...p.childNodes);
+    p.replaceWith(h2);
+  });
+}
+
 /** The DA `tags` metadata (not on the source page): import-text-only.js writes `data-meta-*`. */
 function tags(main, value) {
   main.setAttribute('data-meta-tags', value);
@@ -1080,6 +1119,280 @@ const CORRECTIONS = {
   ],
 
   // single news-detail pages
+  // cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females
+  'https://www.stryker.com/us/en/sage/news/2021/cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females.html': [
+    (m, d) => {
+      // the gold Futura bold labels on stryker.com are the subheads
+      labelsToSubheads(m, d, ["Background", "Intervention", "Results", "Conclusion", "About the Clinicians"]);
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+      // the small print: `disclaimer` as in DA
+      [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => { if (txt(td) === 'disclaimer, references-body-lines') td.textContent = 'disclaimer'; }));
+    },
+  ],
+  // new-safety-advisory-from-the-joint-commission
+  'https://www.stryker.com/us/en/sage/news/2021/new-safety-advisory-from-the-joint-commission.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+    },
+  ],
+  // primafit-device-updates
+  'https://www.stryker.com/us/en/sage/news/2021/primafit-device-updates.html': [
+    (m, d) => {
+      // the gold Futura bold labels on stryker.com are the subheads
+      labelsToSubheads(m, d, ["Developed in partnership with clinicians for better outcomes", "New enhancements for better care", "Addressing the #1 CAUTI risk factor", "No catheter. No CAUTI.™"]);
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      // the small print: `disclaimer` as in DA
+      [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => { if (txt(td) === 'disclaimer, references-body-lines') td.textContent = 'disclaimer'; }));
+      // the closing link: bold + italic (the link convention), in one section with the line before it
+      dropTextTag(m, d, 'color-teal');
+      const more = find(m, 'p', 'To learn more about how Sage can help');
+      if (more && !more.querySelector('em')) { const em = d.createElement('em'); em.append(...more.childNodes); more.append(em); }
+      style(m, d, more, null);
+      mergeWithPrevious(m, more);
+      style(m, d, more, null);
+    },
+  ],
+  // sage-supports-the-family-health-partnership-clinic-in-mchenry-co
+  'https://www.stryker.com/us/en/sage/news/2021/sage-supports-the-family-health-partnership-clinic-in-mchenry-co.html': [
+    (m, d) => {
+      // the gold Futura bold labels on stryker.com are the subheads
+      labelsToSubheads(m, d, ["Raising funds and awareness at the Care4Breast Cancer 5K", "Helping our neighbors", "Donate today – any amount makes a difference!"]);
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+    },
+  ],
+  // can-brushing-your-teeth-keep-you-healthy-in-the-hospital
+  'https://www.stryker.com/us/en/sage/news/2022/can-brushing-your-teeth-keep-you-healthy-in-the-hospital.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+    },
+  ],
+  // ecri-reports-nvhap-as-a-top-threat-to-patient-safety-in-2022
+  'https://www.stryker.com/us/en/sage/news/2022/ecri-reports-nvhap-as-a-top-threat-to-patient-safety-in-2022.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+    },
+  ],
+  // evergreen-medical-uses-a-kinder-gentler-presurgical-skin-prep
+  'https://www.stryker.com/us/en/sage/news/2022/evergreen-medical-uses-a-kinder-gentler-presurgical-skin-prep.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/4");
+    },
+  ],
+  // focusrn-website-is-now-available
+  'https://www.stryker.com/us/en/sage/news/2022/focusrn-website-is-now-available.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+    },
+  ],
+  // health-affairs-urges-policy-makers-to-confront-pneumonia-threat
+  'https://www.stryker.com/us/en/sage/news/2022/health-affairs-urges-policy-makers-to-confront-pneumonia-threat.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+    },
+  ],
+  // infection-control-today-article-about-waterborne-pathogens
+  'https://www.stryker.com/us/en/sage/news/2022/infection-control-today-article-about-waterborne-pathogens.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+    },
+  ],
+  // joint-commission-barbara-quinn-interview-nv-hap-prevention
+  'https://www.stryker.com/us/en/sage/news/2022/joint-commission-barbara-quinn-interview-nv-hap-prevention.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news");
+    },
+  ],
+  // poster-presented-at-wocn-shows-comfort-shield-reduces-iad
+  'https://www.stryker.com/us/en/sage/news/2022/poster-presented-at-wocn-shows-comfort-shield-reduces-iad.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+    },
+  ],
+  // preoperative-strategy-to-reduce-the-risk-of-surgical-site-infect
+  'https://www.stryker.com/us/en/sage/news/2022/preoperative-strategy-to-reduce-the-risk-of-surgical-site-infect.html': [
+    (m, d) => {
+      // the gold Futura bold labels on stryker.com are the subheads
+      labelsToSubheads(m, d, ["Surgical Technology International article recommends using chlorhexidine-impregnated cloths instead of a chlorhexidine solution"]);
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+    },
+  ],
+  // sage-launches-journey-to-zero-to-help-reduce-nurse-injury
+  'https://www.stryker.com/us/en/sage/news/2022/sage-launches-journey-to-zero-to-help-reduce-nurse-injury.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+    },
+  ],
+  // stryker-sea-and-mccd-help-clean-up-hickory-grove-highlands
+  'https://www.stryker.com/us/en/sage/news/2022/stryker-sea-and-mccd-help-clean-up-hickory-grove-highlands.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+    },
+  ],
+  // stryker-womens-network-at-sage-supports-international-womens-day
+  'https://www.stryker.com/us/en/sage/news/2022/stryker-womens-network-at-sage-supports-international-womens-day.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+    },
+  ],
+  // a-magical-celebration-in-cary
+  'https://www.stryker.com/us/en/sage/news/2023/a-magical-celebration-in-cary.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+    },
+  ],
+  // iu-health-decreases-urinary-catheter-usage-and-cauti-rates
+  'https://www.stryker.com/us/en/sage/news/2023/iu-health-decreases-urinary-catheter-usage-and-cauti-rates.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/4");
+    },
+  ],
+  // journey-to-zero-program-helps-protect-healthcare-workers
+  'https://www.stryker.com/us/en/sage/news/2023/journey-to-zero-program-helps-protect-healthcare-workers.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+    },
+  ],
+  // nyc-medical-center-implementation-of-external-female-catheter-av
+  'https://www.stryker.com/us/en/sage/news/2023/nyc-medical-center-implementation-of-external-female-catheter-av.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news");
+    },
+  ],
+  // shea-oral-care-reduction-in-non-ventilator-associated-pneumonia
+  'https://www.stryker.com/us/en/sage/news/2023/shea-oral-care-reduction-in-non-ventilator-associated-pneumonia.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+    },
+  ],
+  // study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients
+  'https://www.stryker.com/us/en/sage/news/2023/study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+    },
+  ],
+  // stryker-advances-urology-portfolio-launch-flexible-ureteroscope
+  'https://www.stryker.com/us/en/endoscopy/news/stryker-advances-urology-portfolio-launch-flexible-ureteroscope.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:business-unit/endoscopy");
+      // the col-8 layout as in DA
+      style(m, d, [...m.querySelectorAll('p')].find((p) => txt(p) === 'F88 ureteroscope'), 'image-1-2, col-8');
+      style(m, d, find(m, 'p', 'To learn more, visit Stryker'), 'col-8');
+    },
+  ],
+  // sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t
+  'https://www.stryker.com/us/en/sage/news/2022/sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+    },
+  ],
+  // sea-promotes-social-responsibility-with-tree-planting-event-
+  'https://www.stryker.com/us/en/sage/news/2022/sea-promotes-social-responsibility-with-tree-planting-event-.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+    },
+  ],
+  // the-journey-to-zero-program-supports-nurse-safety
+  'https://www.stryker.com/us/en/sage/news/2022/the-journey-to-zero-program-supports-nurse-safety.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+    },
+  ],
+  // study-validates-the-value-of-mobilty-for-older-patients
+  'https://www.stryker.com/us/en/sage/news/2023/study-validates-the-value-of-mobilty-for-older-patients.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+    },
+  ],
+  // 2-percent-chlorhexidine-gluconate-cloth-ssi-prevention
+  'https://www.stryker.com/us/en/sage/news/2024/2-percent-chlorhexidine-gluconate-cloth-ssi-prevention.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+    },
+  ],
+  // aeds-role-in-athletics
+  'https://www.stryker.com/us/en/emergency-care/news/2024/aeds-role-in-athletics.html': [
+    (m, d) => {
+      // like the representative school safety page: body-l, bold H3 subheads, no size styles
+      bodyLRepresentative(m, d);
+      tags(m, "stryker:business-unit/ems/news/articles, stryker:content-type/news");
+      // as in DA: a spacer before the Learn More links, the reference as a paragraph
+      spacerBefore(m, d, [...m.querySelectorAll('h3')].find((h) => txt(h) === 'Learn More'), 'spacer');
+      mergeWithPrevious(m, find(m, 'p', 'Knowing when to use an AED'));
+      const refs = [...m.querySelectorAll('ol')].find((ol) => txt(ol).includes('Rothmier'));
+      if (refs) refs.replaceWith(...[...refs.children].map((li) => { const p = d.createElement('p'); p.append(...li.childNodes); return p; }));
+    },
+  ],
+  // introducing-ip-bravoe-a-new-standard-in-or-integration
+  'https://www.stryker.com/us/en/endoscopy/news/introducing-ip-bravoe-a-new-standard-in-or-integration.html': [
+    (m, d) => {
+      // body-l theme: it sets the copy (17.5px) and the italic H2 (the Egyptienne subheads, 21px,
+      // 24.5px from 600px), so no p-1-25 / p-1-5 / h2-1-25 size styles
+      m.setAttribute('data-meta-theme', 'body-l');
+      tags(m, 'stryker:content-type/news, stryker:business-unit/endoscopy');
+      style(m, d, find(m, 'p', 'As surgical environments evolve'), null);
+      // the closing line: bold only (black Futura bold on stryker.com; bold + italic would be
+      // the gold label), its link keeps the link colour
+      const close = find(m, 'p', 'The future of');
+      style(m, d, close, null);
+      close?.querySelectorAll('em').forEach((em) => em.replaceWith(...em.childNodes));
+    },
+  ],
   // school-safety-staff-communication
   'https://www.stryker.com/us/en/smart-care/news/school-safety-staff-communication.html': [
     (m, d) => {
