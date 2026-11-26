@@ -25,14 +25,10 @@ Update: unzip the new version over the old folder, then **Reload** on the extens
   same anchors as the tool's `sync.js`), and scrolls when the tool asks. It reads nothing else and
   sends nothing anywhere else.
 - **The marker** (`tool.js`): on the review tool's pages it sets `data-review-live` on `<html>`, so
-  the tool knows it can offer Live, and carries Snap between the tool and the extension.
-- **Snap** (0.2.0, `background.js`): **📷 Snap** on the Live page puts a picture of exactly what it
-  shows (a menu open, a tab picked…) into the chat box last used (General page comments by
-  default), to send with a line of text. A browser lets an extension take a picture of a tab only
-  after the user clicked its icon (or pressed **Alt+Shift+S**) in that tab (`activeTab`: no access
-  to any site is asked for). So the first time in a review tab, click the extension's icon (the red
-  L in the toolbar; pin it with the puzzle icon) or press Alt+Shift+S: that snaps, and the button
-  works in that tab until it is reloaded or closed. Review pages only.
+  the tool knows it can offer Live.
+
+Snap (0.2.0, a picture of the Live page into a chat) was removed in 0.3.0: it took no more than a
+screenshot of one's own, pasted into the chat.
 
 ## Limits
 
