@@ -854,6 +854,32 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   font-family: var(--heading-font-family);
 }
 
+/* section style `serif-futura-bold`: the section's copy in Egyptienne at 17.5px on the
+   nested serif lines (stryker.com span.urw-egyptienne > span.fontsize-1-25em), its bold in
+   Futura bold (span.futura-bold) — also on news articles, where bold in running text is
+   otherwise the body font (news-detail.css; :nth-child(n) outranks that rule) */
+:where(body.corp) main > .section.serif-futura-bold > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif-futura-bold > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif-futura-bold > div :is(p, li) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--corp-paragraph-line-height-serif-l-nested);
+}
+
+/* …and its Heading 1 at 35px (stryker.com h1 > span.fontsize-1-25em) */
+:where(body.corp) main > .section.serif-futura-bold > .default-content-wrapper h1,
+:where(body.corp) .tabs-panel > .section.serif-futura-bold > .default-content-wrapper h1,
+:where(body.corp) .accordion-item-body > .section.serif-futura-bold > .default-content-wrapper h1 {
+  font-size: var(--corp-heading-font-size-h1-1-25);
+}
+
+:where(body.corp) main > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n),
+:where(body.corp) .tabs-panel > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n),
+:where(body.corp) .accordion-item-body > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
    bold news subtitle) instead of the corp Futura bold */
 :where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
@@ -1152,6 +1178,39 @@ body.corp .back-to-top.visible {
   margin-top: var(--space-block-l);
 }
 
+/* section style `flex-corp` (layout from 600px below): its image is a block, so no text line
+   (the gap under an inline image's baseline) sits below it and its bottom edge is the
+   text's. A Panel (left) in its text is the source's dimensional box around one paragraph —
+   flush with the text column, 3% padding (2% below, plus the paragraph's 15px), 10px above
+   the next paragraph — and its copy takes the section's copy styles (e.g. 17.5px Egyptienne
+   with `serif, p-1-25`, as the "AM, also known as 3D printing" box of the additive
+   manufacturing feature) */
+:where(body.corp) main > .section.flex-corp > .flex-corp-media > p > picture > img {
+  display: block;
+}
+
+:where(body.corp) main > .section.flex-corp .panel.left.block .panel-body {
+  margin: 0 0 var(--space-block-s);
+  padding: 3% 3% 2%;
+}
+
+:where(body.corp) main > .section.flex-corp .panel.left.block .panel-body p {
+  margin-bottom: var(--space-block);
+}
+
+:where(body.corp) main > .section.flex-corp:is(.p-1-25, .serif-futura-bold) .panel.left.block .panel-body p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+:where(body.corp) main > .section.flex-corp:is(.serif, .serif-futura-bold) .panel.left.block .panel-body p {
+  font-family: var(--heading-font-family);
+}
+
+:where(body.corp) main > .section.flex-corp:is(.serif.p-1-25, .serif-futura-bold) .panel.left.block .panel-body p {
+  line-height: var(--corp-paragraph-line-height-serif-l-nested);
+}
+
 @media (width >= 600px) {
   :where(body.corp) h2 {
     font-size: var(--heading-font-size-xl);
@@ -1213,6 +1272,40 @@ body.corp .back-to-top.visible {
 
   :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
     margin: 14.8vw 0 0 calc(57vw - (100vw - 100%) / 2);
+  }
+
+  /* flex-corp: text (paragraphs, a Panel…) with an image beside it, as the source's 75/25
+     text + image row (col-sm-9 + col-sm-3 from 768px, EDS 600px): the section is the row,
+     the text a 75% column less a quarter of the 30px gutter, the image (corp.js
+     .flex-corp-media) the rest, spanning the text with its bottom level with the text's.
+     Below 600px the image follows the text */
+  :where(body.corp) main > .section.flex-corp {
+    display: grid;
+    grid-template-columns: calc(75% - var(--container-gutter) / 2) minmax(0, 1fr);
+    align-items: start;
+    column-gap: calc(2 * var(--container-gutter));
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  :where(body.corp) main > .section.flex-corp > div {
+    grid-column: 1;
+    min-width: 0;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  :where(body.corp) main > .section.flex-corp > .flex-corp-media {
+    grid-row: 1 / span var(--flex-corp-rows, 1);
+    grid-column: 2;
+    align-self: end;
+  }
+
+  :where(body.corp) main > .section.flex-corp > div:empty {
+    display: none;
   }
 
   /* flex-67-33 / flex-33-67: source col-sm-8 + col-sm-4 from 841px (EDS 600px), top-aligned,

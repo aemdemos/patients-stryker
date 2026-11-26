@@ -215,7 +215,11 @@ export default function transform(hookName, element, payload) {
   } catch (e) {
     return;
   }
-  const group = GROUPS.find((g) => g.paths.includes(path));
+  // a page listed in a group gets that group; otherwise the import script's template can name
+  // the group for all its pages (import-text-only.js: `newsGroup: 'basic'`)
+  const fallback = payload.template && payload.template.newsGroup;
+  const group = GROUPS.find((g) => g.paths.includes(path))
+    || (fallback ? GROUPS.find((g) => g.name === fallback) : undefined);
   if (!group) return;
   if (group.theme) element.setAttribute('data-representative-theme', group.theme);
   if (group.sizes) element.setAttribute('data-representative-sizes', group.sizes.join(','));

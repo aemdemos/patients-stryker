@@ -226,8 +226,8 @@ var CustomImportScript = (() => {
   function newTabHref(source, href) {
     if (!href || href.includes("#") || /^(mailto|tel):/i.test(href)) return href;
     const isPdf = /\.pdf(\?|$)/i.test(href);
-    const newTab2 = (source.getAttribute("target") || "").toLowerCase() === "_blank";
-    return isPdf || newTab2 ? `${href}#_blank` : href;
+    const newTab3 = (source.getAttribute("target") || "").toLowerCase() === "_blank";
+    return isPdf || newTab3 ? `${href}#_blank` : href;
   }
   var SIZE_STYLES = [
     // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph)
@@ -683,8 +683,8 @@ var CustomImportScript = (() => {
     });
     let last = null;
     nodes.forEach((node) => {
-      const style = elementStyles.get(node);
-      node.copyStyle = style === void 0 || style === null ? last : style;
+      const style2 = elementStyles.get(node);
+      node.copyStyle = style2 === void 0 || style2 === null ? last : style2;
       if (node.copyStyle !== null) last = node.copyStyle;
     });
     const first = nodes.find((node) => node.copyStyle !== null);
@@ -797,10 +797,10 @@ var CustomImportScript = (() => {
       const blocks2 = [...line.querySelectorAll(BLOCKS)].filter((block) => text2(block) && !block.parentElement.closest(BLOCKS));
       return blocks2.length > 1 ? blocks2 : [line];
     });
-    const tags = segments.map(headlineTag);
+    const tags2 = segments.map(headlineTag);
     const VW = /\bfontsize-(\d+(?:-\d+)?)-?vw\b/;
     segments.forEach((segment, i) => {
-      const own = (/\bheadline-(\d+(?:-\d+)?)\b/.exec(tags[i] || "") || [])[1];
+      const own = (/\bheadline-(\d+(?:-\d+)?)\b/.exec(tags2[i] || "") || [])[1];
       if (!own) return;
       [...segment.querySelectorAll('[class*="fontsize-"]')].forEach((span) => {
         const n = (VW.exec(span.className) || [])[1];
@@ -858,10 +858,10 @@ var CustomImportScript = (() => {
         p.firstChild.remove();
       }
       const blank = leadingBlank[i] !== null && previous;
-      const onPrevious = blank && leadingBlank[i] === sizeOf(tags[previousIndex]) && centredSegments[previousIndex] === centredSegments[i];
+      const onPrevious = blank && leadingBlank[i] === sizeOf(tags2[previousIndex]) && centredSegments[previousIndex] === centredSegments[i];
       if (blank && !onPrevious) p.prepend(doc.createElement("br"));
-      if (tags[i]) {
-        p.prepend(doc.createTextNode(`[[${tags[i]}]`));
+      if (tags2[i]) {
+        p.prepend(doc.createTextNode(`[[${tags2[i]}]`));
         p.append(doc.createTextNode("]"));
       }
       if (levels[i]) p.headingLevel = levels[i];
@@ -1115,9 +1115,9 @@ var CustomImportScript = (() => {
       if (typeof n.copyStyle !== "string" || !n.copyStyle || !n.firstChild) return;
       const own = n.copyStyle.split(",").map((v) => v.trim());
       const size = own.find((v) => /^p-\d/.test(v));
-      const tags = [size ? `text-${size.slice(2)}` : "", own.includes("serif") ? "serif" : ""].filter(Boolean);
-      if (!tags.length || n.matches("ul, ol")) return;
-      n.prepend(doc.createTextNode(`[[${tags.join(",")}]`));
+      const tags2 = [size ? `text-${size.slice(2)}` : "", own.includes("serif") ? "serif" : ""].filter(Boolean);
+      if (!tags2.length || n.matches("ul, ol")) return;
+      n.prepend(doc.createTextNode(`[[${tags2.join(",")}]`));
       n.append(doc.createTextNode("]"));
     };
     const TEXT = ".c-largeheadline, .c-rich-text-editor, .buttonset, .c-curatedcta";
@@ -1188,9 +1188,9 @@ var CustomImportScript = (() => {
     const heroRows = heroTextRows(heroText(overlay, doc));
     rows.push(...heroRows.rows);
     const props = {};
-    const style = overlay ? overlay.getAttribute("style") || "" : "";
+    const style2 = overlay ? overlay.getAttribute("style") || "" : "";
     const pct = (re) => {
-      const found = style.match(re);
+      const found = style2.match(re);
       return found ? String(parseFloat(found[1])) : null;
     };
     const top = pct(/top:\s*(-?\d+(?:\.\d+)?)%/i);
@@ -1216,11 +1216,11 @@ var CustomImportScript = (() => {
     let extraStyle = "";
     let lastKept = null;
     const startSection = (kind, sectionStyle) => {
-      const style = [separatorNext || "", sectionStyle, extraStyle].filter(Boolean).join(", ") || void 0;
+      const style2 = [separatorNext || "", sectionStyle, extraStyle].filter(Boolean).join(", ") || void 0;
       separatorNext = false;
       current = {
         kind,
-        style,
+        style: style2,
         nodes: [],
         extra: extraStyle
       };
@@ -1302,8 +1302,8 @@ var CustomImportScript = (() => {
           return;
         }
         if (component.getAttribute("data-keep") === "nodes") {
-          const style = component.getAttribute("data-section-style") || void 0;
-          startSection(component.children.length || !style ? "kept" : "spacer", style).nodes.push(...component.children);
+          const style2 = component.getAttribute("data-section-style") || void 0;
+          startSection(component.children.length || !style2 ? "kept" : "spacer", style2).nodes.push(...component.children);
           current = null;
           return;
         }
@@ -1342,8 +1342,8 @@ var CustomImportScript = (() => {
           const p = doc.createElement("p");
           p.append(a);
           nodes2.splice(1, 0, p);
-          const style = ["image-link", link2.closest(".text-center") ? "center" : ""].filter(Boolean).join(", ");
-          startSection("image", style).nodes.push(...nodes2);
+          const style2 = ["image-link", link2.closest(".text-center") ? "center" : ""].filter(Boolean).join(", ");
+          startSection("image", style2).nodes.push(...nodes2);
           current = null;
           return;
         }
@@ -1457,8 +1457,8 @@ var CustomImportScript = (() => {
           runs[runs.length - 1].nodes.push(node);
         });
         runs.forEach((run) => {
-          const style = [box, run.centred ? "center" : ""].filter(Boolean).join(", ");
-          startSection("headline", style || void 0).nodes.push(...run.nodes);
+          const style2 = [box, run.centred ? "center" : ""].filter(Boolean).join(", ");
+          startSection("headline", style2 || void 0).nodes.push(...run.nodes);
         });
         current = null;
         return;
@@ -1547,8 +1547,8 @@ var CustomImportScript = (() => {
       if (i > 0) out.push(doc.createElement("hr"));
       out.push(...section.nodes);
       const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches("[data-btn-style]") ? [node] : [], ...node.querySelectorAll("[data-btn-style]")] : []);
-      [...new Set(marked.map((a) => a.getAttribute("data-btn-style")))].forEach((style) => {
-        section.style = [section.style, style].filter(Boolean).join(", ");
+      [...new Set(marked.map((a) => a.getAttribute("data-btn-style")))].forEach((style2) => {
+        section.style = [section.style, style2].filter(Boolean).join(", ");
       });
       marked.forEach((a) => a.removeAttribute("data-btn-style"));
       section.nodes.forEach((node) => {
@@ -1597,9 +1597,9 @@ var CustomImportScript = (() => {
     if (!size && !serif) return;
     [...unit.querySelectorAll("td > p, td > ul, td > ol, div > p, div > ul, div > ol")].filter((n) => typeof n.copyStyle === "string").forEach((n) => {
       const own = n.copyStyle.split(",").map((s) => s.trim());
-      const tags = [size && own.includes(size) ? `text-${size.slice(2)}` : "", serif && own.includes("serif") ? "serif" : ""].filter(Boolean);
-      if (!tags.length) return;
-      h.tagCopy(n, tags.join(","), doc);
+      const tags2 = [size && own.includes(size) ? `text-${size.slice(2)}` : "", serif && own.includes("serif") ? "serif" : ""].filter(Boolean);
+      if (!tags2.length) return;
+      h.tagCopy(n, tags2.join(","), doc);
     });
     unit.removeAttribute("data-section-style");
   }
@@ -1618,10 +1618,10 @@ var CustomImportScript = (() => {
   function contentNodes(container, doc, h) {
     return contentUnits(container).flatMap((unit) => unitNodes(unit, doc, h));
   }
-  function keepNodes(doc, nodes, style) {
+  function keepNodes(doc, nodes, style2) {
     const box = doc.createElement("div");
     box.setAttribute("data-keep", "nodes");
-    if (style) box.setAttribute("data-section-style", style);
+    if (style2) box.setAttribute("data-section-style", style2);
     box.append(...nodes);
     return box;
   }
@@ -1648,8 +1648,8 @@ var CustomImportScript = (() => {
         nodes.push(heading, ...content);
       });
       if (!nodes.length) return;
-      const style = component.hasAttribute("data-image-aside") ? "tabbed, image-aside" : "tabbed";
-      (component.closest(".tabs") || component).replaceWith(keepNodes(doc, nodes, style));
+      const style2 = component.hasAttribute("data-image-aside") ? "tabbed, image-aside" : "tabbed";
+      (component.closest(".tabs") || component).replaceWith(keepNodes(doc, nodes, style2));
     });
   }
   function accordionsInColumns(main, doc, h) {
@@ -1676,8 +1676,8 @@ var CustomImportScript = (() => {
     nodes.filter((n) => n.nodeType === 1 && typeof n.copyStyle === "string" && n.copyStyle).forEach((n) => {
       const own = n.copyStyle.split(",").map((s) => s.trim());
       const size = own.find((s) => s.startsWith("p-") && /\d/.test(s[2]));
-      const tags = [size ? `text-${size.slice(2)}` : "", own.includes("serif") ? "serif" : ""].filter(Boolean);
-      if (tags.length) h.tagCopy(n, tags.join(","), doc);
+      const tags2 = [size ? `text-${size.slice(2)}` : "", own.includes("serif") ? "serif" : ""].filter(Boolean);
+      if (tags2.length) h.tagCopy(n, tags2.join(","), doc);
     });
   }
   function accordionOptions(panels) {
@@ -1753,14 +1753,14 @@ var CustomImportScript = (() => {
   function fullBleedPanels(main, doc, h) {
     main.querySelectorAll(".c-full-bleed-panel").forEach((component) => {
       const colour = colourStyle(component);
-      const style = [colour, "full-bleed"].filter(Boolean).join(", ");
+      const style2 = [colour, "full-bleed"].filter(Boolean).join(", ");
       const out = [];
       let run = [];
       let extras = [];
       let centred = true;
       const CENTRED = '[style*="text-align: center"], [style*="text-align:center"], .text-center';
       const flush = () => {
-        const styles = [style, ...centred && run.length ? ["center", ...new Set(extras)] : []];
+        const styles = [style2, ...centred && run.length ? ["center", ...new Set(extras)] : []];
         if (run.length) out.push(keepNodes(doc, run, styles.filter(Boolean).join(", ")));
         run = [];
         extras = [];
@@ -1769,7 +1769,7 @@ var CustomImportScript = (() => {
       contentUnits(component).forEach((unit) => {
         if (unit.getAttribute("data-keep") === "nodes" && unit.hasAttribute("data-section-style")) {
           flush();
-          unit.setAttribute("data-section-style", `${style}, ${unit.getAttribute("data-section-style")}`);
+          unit.setAttribute("data-section-style", `${style2}, ${unit.getAttribute("data-section-style")}`);
           out.push(unit);
           return;
         }
@@ -2836,7 +2836,7 @@ var CustomImportScript = (() => {
       weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text3(n).length;
     });
     let dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || "";
-    const relative = (style) => sizeTag(style) === "text-1-25";
+    const relative = (style2) => sizeTag(style2) === "text-1-25";
     const ownTags = (n) => !sizeTag(n.copyStyle) || relative(n.copyStyle) && !relative(dominant);
     if (sizeTag(dominant) && copy.some(ownTags)) {
       dominant = dominant.split(",").map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(", ");
@@ -2844,7 +2844,7 @@ var CustomImportScript = (() => {
     copy.filter((n) => relative(n.copyStyle)).forEach((n) => {
       dropWholeTag(n, "text-1-25");
     });
-    const serif = (style) => (style || "").split(",").map((x) => x.trim()).includes("serif");
+    const serif = (style2) => (style2 || "").split(",").map((x) => x.trim()).includes("serif");
     copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) && !serif(dominant) ? "serif" : ""].filter(Boolean).join(","), doc));
     const parts = dominant.split(",").map((s) => s.trim()).filter(Boolean);
     if (parts.includes("serif") && !parts.some((s) => sizeTag(s))) return ["p-1", ...parts].join(", ");
@@ -2942,7 +2942,7 @@ var CustomImportScript = (() => {
       const centred = !captioned && filled.every(centredColumn);
       const padded = filled.every((col) => paddedColumn(col, colctrl));
       const cells = columns.map((col) => cellNodes(col, doc));
-      const style = [rowCopyStyle(cells, doc), centred ? "center" : "", padded ? "cell-padding" : ""].filter(Boolean).join(", ");
+      const style2 = [rowCopyStyle(cells, doc), centred ? "center" : "", padded ? "cell-padding" : ""].filter(Boolean).join(", ");
       cells.flat().filter((n) => n.boxTag).forEach((n) => {
         const closing = (t) => t.nodeType === 3 && !t.textContent.split("]").join("").trim();
         let last = n.lastChild;
@@ -2957,7 +2957,7 @@ var CustomImportScript = (() => {
         cells: [cells]
       });
       block.setAttribute("data-keep", "section");
-      if (style) block.setAttribute("data-section-style", style);
+      if (style2) block.setAttribute("data-section-style", style2);
       if (wrapper.hasAttribute("data-row-end")) block.setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
       wrapper.replaceWith(block);
     });
@@ -2998,8 +2998,8 @@ var CustomImportScript = (() => {
       const images = rowA.every(isMediaCell) && rowA.some((td) => td.querySelector(MEDIA));
       if (!pair || !images || !rowsB[0].every(textOnly)) return;
       rowA.forEach((td, i) => td.append(...rowsB[0][i].childNodes));
-      const style = b.getAttribute("data-section-style");
-      if (style) first.setAttribute("data-section-style", style);
+      const style2 = b.getAttribute("data-section-style");
+      if (style2) first.setAttribute("data-section-style", style2);
       else first.removeAttribute("data-section-style");
       takeEnd(first, b);
       b.remove();
@@ -3258,6 +3258,7 @@ var CustomImportScript = (() => {
     const isNewsDetail = !!(payload && payload.template && [
       "news-detail",
       "news-detail-xf",
+      "text-only",
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
       "event-detail",
@@ -3521,9 +3522,9 @@ var CustomImportScript = (() => {
     while (w.nextNode()) if (containerOf(w.currentNode) === container) out.push(w.currentNode);
     return out;
   }
-  function tagSpan(doc, tags, ...content) {
+  function tagSpan(doc, tags2, ...content) {
     const span = doc.createElement("span");
-    span.dataset.tag = tags.join(" ");
+    span.dataset.tag = tags2.join(" ");
     span.append(...content);
     return span;
   }
@@ -3532,9 +3533,9 @@ var CustomImportScript = (() => {
     const parts = [];
     let last = 0;
     [...text4.matchAll(TAG_RE)].forEach((m) => {
-      const tags = parseTags(m[1]);
-      if (!tags.length) return;
-      parts.push(text4.slice(last, m.index), tagSpan(doc, tags, m[2]));
+      const tags2 = parseTags(m[1]);
+      if (!tags2.length) return;
+      parts.push(text4.slice(last, m.index), tagSpan(doc, tags2, m[2]));
       last = m.index + m[0].length;
     });
     if (!last) return;
@@ -3559,14 +3560,14 @@ var CustomImportScript = (() => {
       }
       const opener = open.pop();
       if (!opener || !opener.m[1] || opener.node === node) return false;
-      const tags2 = parseTags(opener.m[1]);
-      if (!tags2.length) return false;
+      const tags3 = parseTags(opener.m[1]);
+      if (!tags3.length) return false;
       found = {
         openNode: opener.node,
         open: opener.m,
         closeNode: node,
         closeIndex: m.index,
-        tags: tags2
+        tags: tags3
       };
       return true;
     }));
@@ -3575,13 +3576,13 @@ var CustomImportScript = (() => {
       openNode,
       closeNode,
       closeIndex,
-      tags
+      tags: tags2
     } = found;
     const text4 = openNode.nodeValue;
     const range = doc.createRange();
     range.setStart(openNode, found.open.index + found.open[0].length);
     range.setEnd(closeNode, closeIndex);
-    const span = tagSpan(doc, tags, range.extractContents());
+    const span = tagSpan(doc, tags2, range.extractContents());
     range.insertNode(span);
     openNode.nodeValue = text4.slice(0, found.open.index);
     closeNode.nodeValue = closeNode.nodeValue.slice(1);
@@ -3610,8 +3611,8 @@ var CustomImportScript = (() => {
     el.replaceWith(out);
     return out;
   }
-  function headlineSize(tags) {
-    const t = tags.find((n) => /^headline-\d/.test(n));
+  function headlineSize(tags2) {
+    const t = tags2.find((n) => /^headline-\d/.test(n));
     return t ? Number(t.slice(9).replace("-", ".")) : 0;
   }
   function lineInfo(el) {
@@ -3753,7 +3754,7 @@ var CustomImportScript = (() => {
   function pageSpacers(doc, main, url) {
     var _a;
     const list = ((_a = PAGE_SPACERS.find(([re]) => re.test(url))) == null ? void 0 : _a[1]) || [];
-    list.forEach(([text4, style]) => {
+    list.forEach(([text4, style2]) => {
       var _a2;
       const textOf = (n) => n.tagName === "TABLE" ? norm([...n.querySelectorAll("tr")].slice(1).map((r) => r.textContent).join(" ")) : norm(n.textContent);
       const node = [...main.children].find((n) => textOf(n).startsWith(text4));
@@ -3765,7 +3766,7 @@ var CustomImportScript = (() => {
       th.textContent = "Section Metadata";
       head.append(th);
       const row = doc.createElement("tr");
-      ["style", style].forEach((v) => {
+      ["style", style2].forEach((v) => {
         const td = doc.createElement("td");
         td.textContent = v;
         row.append(td);
@@ -4056,11 +4057,11 @@ var CustomImportScript = (() => {
         }
       });
       if (isColumns) {
-        const subtitle = cells.some((td) => [...td.querySelectorAll(":scope > p")].some((p) => {
+        const subtitle2 = cells.some((td) => [...td.querySelectorAll(":scope > p")].some((p) => {
           const prev = p.previousElementSibling;
           return wholeSize(p) === "text-1-25" && !fullyBold(p) && (prev == null ? void 0 : prev.tagName) === "P" && fullyBold(prev) && wholeSize(prev) === "text-1-5";
         }));
-        if (subtitle) addVariant(table, "large-subtitles");
+        if (subtitle2) addVariant(table, "large-subtitles");
         cells.forEach((td) => {
           if (td.querySelector("a, img, picture") || !norm(td.textContent)) return;
           const whole = spansIn(td).find((s) => tagsOf(s).includes("headline-1-5") && norm(s.textContent) === norm(td.textContent));
@@ -4263,11 +4264,11 @@ var CustomImportScript = (() => {
   }
   function finishSpans(doc, main, warn) {
     spansIn(main).reverse().forEach((span) => {
-      const tags = tagsOf(span);
-      if (tags.includes("color-gold")) gold(doc, span);
-      if (tags.includes("serif") && span.closest("h1, h2, h3, h4, h5, h6")) serifInHeading(doc, span);
-      const known = tags.every((t) => /^(color-|text-|headline-|serif$|body-font$|box-)/.test(t));
-      if (!known) warn.push(`unmapped tag ${tags.join(",")}: "${norm(span.textContent).slice(0, 40)}"`);
+      const tags2 = tagsOf(span);
+      if (tags2.includes("color-gold")) gold(doc, span);
+      if (tags2.includes("serif") && span.closest("h1, h2, h3, h4, h5, h6")) serifInHeading(doc, span);
+      const known = tags2.every((t) => /^(color-|text-|headline-|serif$|body-font$|box-)/.test(t));
+      if (!known) warn.push(`unmapped tag ${tags2.join(",")}: "${norm(span.textContent).slice(0, 40)}"`);
     });
     spansIn(main).forEach(unwrap2);
   }
@@ -4462,6 +4463,185 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/transformers/patients-stryker-page-corrections.js
+  var txt = (el) => (el ? el.textContent : "").replace(/[\s ]+/g, " ").trim();
+  var isBlank = (n) => n && n.nodeType === 3 && !n.textContent.trim();
+  function nextOf(n) {
+    let x = n && n.nextSibling;
+    while (isBlank(x)) x = x.nextSibling;
+    return x;
+  }
+  function prevOf(n) {
+    let x = n && n.previousSibling;
+    while (isBlank(x)) x = x.previousSibling;
+    return x;
+  }
+  var find = (main, sel, start) => [...main.querySelectorAll(sel)].find((el) => txt(el).startsWith(start));
+  function topOf(main, el) {
+    let node = el;
+    while (node && node.parentElement !== main) node = node.parentElement;
+    return node;
+  }
+  function sectionOf(main, el) {
+    const kids = [...main.children];
+    const i = kids.indexOf(topOf(main, el));
+    if (i < 0) return [];
+    let s = i;
+    while (s > 0 && kids[s - 1].tagName !== "HR") s -= 1;
+    let e = i;
+    while (e < kids.length - 1 && kids[e + 1].tagName !== "HR") e += 1;
+    return kids.slice(s, e + 1);
+  }
+  var isSectionMetadata = (el) => el && el.tagName === "TABLE" && txt(el.querySelector("th, td")).toLowerCase() === "section metadata";
+  function style(main, doc, el, value) {
+    if (!el) return;
+    const section = sectionOf(main, el);
+    const table = section.find(isSectionMetadata);
+    if (!value) {
+      if (table) table.remove();
+      return;
+    }
+    if (table) {
+      const row = [...table.querySelectorAll("tr")].find((tr) => txt(tr.cells[0]).toLowerCase() === "style");
+      if (row) {
+        row.cells[1].textContent = value;
+        return;
+      }
+      table.remove();
+    }
+    section[section.length - 1].after(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: value } }));
+  }
+  function breakBefore(main, doc, el, value) {
+    var _a;
+    if (!el) return;
+    const top = topOf(main, el);
+    if (((_a = top.previousElementSibling) == null ? void 0 : _a.tagName) === "HR") {
+      style(main, doc, el, value);
+      return;
+    }
+    const table = sectionOf(main, el).find(isSectionMetadata);
+    const hr = doc.createElement("hr");
+    top.before(hr);
+    if (table) hr.before(table);
+    if (value) style(main, doc, el, value);
+  }
+  function breakAfter(main, doc, el, { keepStyle = false } = {}) {
+    var _a;
+    if (!el) return;
+    const top = topOf(main, el);
+    if (((_a = top.nextElementSibling) == null ? void 0 : _a.tagName) === "HR") return;
+    const table = sectionOf(main, el).find(isSectionMetadata);
+    const hr = doc.createElement("hr");
+    top.after(hr);
+    if (keepStyle && table) hr.before(table);
+  }
+  function mergeWithPrevious(main, el) {
+    if (!el) return;
+    const section = sectionOf(main, el);
+    const hr = section[0].previousElementSibling;
+    if (!hr || hr.tagName !== "HR") return;
+    section.filter(isSectionMetadata).forEach((t) => t.remove());
+    const before = hr.previousElementSibling;
+    hr.remove();
+    const rest = sectionOf(main, section.find((n) => n.isConnected) || before);
+    if (isSectionMetadata(before)) rest[rest.length - 1].after(before);
+  }
+  function retag(main, doc, el, tag) {
+    if (!el || el.tagName.toLowerCase() === tag) return el;
+    const out = doc.createElement(tag);
+    out.append(...el.childNodes);
+    el.replaceWith(out);
+    return out;
+  }
+  function subtitle(main, doc, el, { em = false, split = true } = {}) {
+    const h3 = retag(main, doc, el, "h3");
+    if (!h3) return;
+    if (em && !h3.querySelector("em")) {
+      const i = doc.createElement("em");
+      i.append(...h3.childNodes);
+      h3.append(i);
+    }
+    if (split) breakAfter(main, doc, h3);
+  }
+  function joinLabel(main, doc, label) {
+    [...main.querySelectorAll("p")].filter((p) => txt(p) === label && txt(p.querySelector("strong")) === label).forEach((p) => {
+      const next = p.nextElementSibling;
+      if (!next || next.tagName !== "P") return;
+      p.append(doc.createElement("br"), ...next.childNodes);
+      next.remove();
+    });
+  }
+  function joinParagraph(doc, p, breaks = 2) {
+    const prev = p && p.previousElementSibling;
+    if (!prev || prev.tagName !== "P") return;
+    for (let i = 0; i < breaks; i += 1) prev.append(doc.createElement("br"));
+    prev.append(...p.childNodes);
+    p.remove();
+  }
+  function boldAll(main, doc, el) {
+    if (!el || el.children.length === 1 && el.firstElementChild.tagName === "STRONG" && txt(el) === txt(el.firstElementChild)) return;
+    const b = doc.createElement("strong");
+    b.append(...el.childNodes);
+    el.append(b);
+  }
+  function boldPerLine(strong, doc) {
+    if (!strong || !strong.querySelector("br")) return;
+    const parts = [[]];
+    [...strong.childNodes].forEach((n) => n.nodeName === "BR" ? parts.push([]) : parts[parts.length - 1].push(n));
+    const out = [];
+    parts.forEach((nodes, i) => {
+      if (i) out.push(doc.createElement("br"));
+      const b = doc.createElement("strong");
+      b.append(...nodes);
+      out.push(b);
+    });
+    strong.replaceWith(...out);
+  }
+  function brBeforeLabel(p) {
+    var _a;
+    const b = p && p.querySelector("strong");
+    if (b && ((_a = b.firstChild) == null ? void 0 : _a.nodeName) === "BR") b.before(b.firstChild);
+  }
+  function newTab2(main, hrefs) {
+    hrefs.forEach((h) => main.querySelectorAll(`a[href="${h}"]`).forEach((a) => a.setAttribute("href", `${h}#_blank`)));
+  }
+  function tags(main, value) {
+    main.setAttribute("data-meta-tags", value);
+  }
+  function footnotesToList(main, doc, first) {
+    if (!first) return;
+    const paras = [];
+    for (let p = first; p && p.tagName === "P" && /^\d+\./.test(txt(p)); p = p.nextElementSibling) paras.push(p);
+    const ol = doc.createElement("ol");
+    paras.forEach((p) => {
+      let item = [];
+      const flush = () => {
+        var _a;
+        if (!item.length) return;
+        const li = doc.createElement("li");
+        li.append(...item);
+        if (((_a = li.firstChild) == null ? void 0 : _a.nodeType) === 3) li.firstChild.textContent = li.firstChild.textContent.replace(/^\s*\d+\.\s*/, "");
+        ol.append(li);
+        item = [];
+      };
+      [...p.childNodes].forEach((n) => {
+        var _a, _b, _c, _d;
+        if (n.nodeName === "BR" && ((_a = nextOf(n)) == null ? void 0 : _a.nodeName) === "BR") {
+          flush();
+          return;
+        }
+        if (n.nodeName === "BR" && ((_b = prevOf(n)) == null ? void 0 : _b.nodeName) === "BR") return;
+        if (isBlank(n) && (((_c = nextOf(n)) == null ? void 0 : _c.nodeName) === "BR" || ((_d = prevOf(n)) == null ? void 0 : _d.nodeName) === "BR") && !item.length) return;
+        item.push(n);
+      });
+      flush();
+    });
+    const last = paras[paras.length - 1];
+    const hr1 = doc.createElement("hr");
+    const hr2 = doc.createElement("hr");
+    last.after(hr1, WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: "spacer" } }), hr2, ol);
+    paras.forEach((p) => p.remove());
+    ol.after(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: "disclaimer" } }));
+  }
   var SRC = "https://www.stryker.com/us/en/";
   var norm2 = (t) => (t || "").replace(/\s+/g, " ").trim();
   var headOf = (table) => table.querySelector("tr");
@@ -4507,7 +4687,7 @@ var CustomImportScript = (() => {
       if (nth < 0 || i === nth) td.textContent = to;
     });
   }
-  var metaWithStyle = (main, style) => styleCells(main).filter((td) => norm2(td.textContent) === style).map((td) => td.closest("table"));
+  var metaWithStyle = (main, style2) => styleCells(main).filter((td) => norm2(td.textContent) === style2).map((td) => td.closest("table"));
   function removeEmptySection(meta) {
     const next = meta.nextElementSibling;
     if ((next == null ? void 0 : next.tagName) === "HR") next.remove();
@@ -4558,7 +4738,7 @@ var CustomImportScript = (() => {
     frag.append(...n.childNodes);
     return frag;
   };
-  function styleTable(doc, style) {
+  function styleTable(doc, style2) {
     const table = doc.createElement("table");
     const head = doc.createElement("tr");
     const th = doc.createElement("th");
@@ -4566,7 +4746,7 @@ var CustomImportScript = (() => {
     th.textContent = "Section Metadata";
     head.append(th);
     const row = doc.createElement("tr");
-    ["style", style].forEach((v) => {
+    ["style", style2].forEach((v) => {
       const td = doc.createElement("td");
       td.textContent = v;
       row.append(td);
@@ -4574,13 +4754,13 @@ var CustomImportScript = (() => {
     table.append(head, row);
     return table;
   }
-  function addSectionStyle(node, style) {
+  function addSectionStyle(node, style2) {
     let last = node;
     while (last.nextElementSibling && last.nextElementSibling.tagName !== "HR") last = last.nextElementSibling;
-    last.after(styleTable(node.ownerDocument, style));
+    last.after(styleTable(node.ownerDocument, style2));
   }
-  function sectionBefore(node, style) {
-    node.before(styleTable(node.ownerDocument, style), node.ownerDocument.createElement("hr"));
+  function sectionBefore(node, style2) {
+    node.before(styleTable(node.ownerDocument, style2), node.ownerDocument.createElement("hr"));
   }
   function spacerSectionsBefore(node) {
     const out = [];
@@ -4668,7 +4848,269 @@ var CustomImportScript = (() => {
   ];
   var page = (path) => `${SRC}${path}.html`;
   var jr45 = (path) => `${SRC}training-and-education/orthopaedics/joint-replacement/jr45/${path}.html`;
-  var CORRECTIONS = __spreadValues(__spreadProps(__spreadValues(__spreadProps(__spreadValues({}, Object.fromEntries(["april", "may", "december", "january", "february", "march", "june", "july", "november"].map((p) => [jr45(p), JR45_TITLE]))), {
+  var CORRECTIONS = __spreadValues(__spreadProps(__spreadValues(__spreadProps(__spreadValues({
+    // text-only news pages (import-text-only.js): the edits authors made in DA after the
+    // import, so a re-import gives the reviewed page; `tags` is the DA metadata row
+    // stryker-announces-definitive-agreement-to-acquire-artelon--inc--
+    "https://www.stryker.com/us/en/about/news/2024/stryker-announces-definitive-agreement-to-acquire-artelon--inc--.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+      }
+    ],
+    // stryker-completes-acquisition-of-vertos-medical-inc-expanding-interventional-pain-management-solutions
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-vertos-medical-inc-expanding-interventional-pain-management-solutions.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-care-ai
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-care-ai.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-joins-atrium-health-affiliate-ircad-north-america--to-ad
+    "https://www.stryker.com/us/en/about/news/2024/stryker-joins-atrium-health-affiliate-ircad-north-america--to-ad.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-nico-corporation--expanding-min
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-nico-corporation--expanding-min.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-molli-surgical
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-molli-surgical.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-artelon-inc
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-artelon-inc.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-serf-sas
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-serf-sas.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        style(m, d, find(m, "p", "Forward-looking statements"), null);
+        ["About Menix", "About SERF SAS", "Media contact"].forEach((label) => joinLabel(m, d, label));
+      }
+    ],
+    // stryker-expands-foot---ankle-portfolio-with-specialized-offering
+    "https://www.stryker.com/us/en/about/news/2024/stryker-expands-foot---ankle-portfolio-with-specialized-offering.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        retag(m, d, find(m, "h4", "The company to feature new products"), "h3");
+      }
+    ],
+    // stryker-expands-prophecy-surgical-planning-system-to-include-the
+    "https://www.stryker.com/us/en/about/news/2024/stryker-expands-prophecy-surgical-planning-system-to-include-the.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        boldAll(m, d, find(m, "p", "References:"));
+      }
+    ],
+    // stryker-unveils-mako-total-knee-2-0-at-the-aaos-2023-annual-meet
+    "https://www.stryker.com/us/en/about/news/2023/stryker-unveils-mako-total-knee-2-0-at-the-aaos-2023-annual-meet.html": [
+      (m, d) => {
+        var _a;
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "p", "Next advancement of Mako SmartRobotics"), { em: true });
+        const about = find(m, "p", "About Stryker");
+        breakBefore(m, d, about, "separator");
+        if (about && ((_a = about.lastChild) == null ? void 0 : _a.nodeName) !== "BR") about.append(d.createElement("br"));
+        brBeforeLabel(find(m, "p", "Media contact"));
+      }
+    ],
+    // stryker-s-pangea-systems-receive-fda-clearance
+    "https://www.stryker.com/us/en/about/news/2023/stryker-s-pangea-systems-receive-fda-clearance.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "h2", "Pangea to offer"));
+      }
+    ],
+    // stryker-receives-fda-clearance-for-q-guidance-system-for-spine-a
+    "https://www.stryker.com/us/en/about/news/2022/stryker-receives-fda-clearance-for-q-guidance-system-for-spine-a.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "p", "Innovative planning and intraoperative"));
+        ["About Stryker", "Media contact"].forEach((label) => joinLabel(m, d, label));
+        style(m, d, find(m, "p", "About Stryker"), "separator");
+        style(m, d, find(m, "p", "Media contact"), "separator");
+      }
+    ],
+    // 2022-ana-innovation-award-winners-address-gaps-in-health-equity-
+    "https://www.stryker.com/us/en/about/news/2022/2022-ana-innovation-award-winners-address-gaps-in-health-equity-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+      }
+    ],
+    // stryker-announces-first-patient-case-using--new-tornier-perform-
+    "https://www.stryker.com/us/en/about/news/2022/stryker-announces-first-patient-case-using--new-tornier-perform-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/news/events, stryker:content-type/news/in-the-news");
+        breakAfter(m, d, find(m, "p", "Case to be Presented at 2022"));
+      }
+    ],
+    // stryker-donates-to-k9s-for-warriors-to-conclude-2022-minor-leagu
+    "https://www.stryker.com/us/en/about/news/2022/stryker-donates-to-k9s-for-warriors-to-conclude-2022-minor-leagu.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        subtitle(m, d, find(m, "h4", "This season, the Official SmartRobotics"), { split: false });
+        breakBefore(m, d, find(m, "p", "About Stryker"), "separator");
+      }
+    ],
+    // stryker-launches--free-your-feet--campaign-to-raise-awareness-ab
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches--free-your-feet--campaign-to-raise-awareness-ab.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        const more = find(m, "p", "More information about the campaign");
+        mergeWithPrevious(m, more);
+        joinParagraph(d, more, 2);
+        style(m, d, find(m, "p", "About Stryker"), "separator");
+      }
+    ],
+    // stryker-launches-prostep--mica-solo-guide--to-simplify-minimally
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches-prostep--mica-solo-guide--to-simplify-minimally.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/product-bulletins, stryker:content-type/news/events, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      }
+    ],
+    // stryker-to-showcase-innovative-portfolio-of-spine-solutions--at-
+    "https://www.stryker.com/us/en/about/news/2022/stryker-to-showcase-innovative-portfolio-of-spine-solutions--at-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "p", "Newly Launched Q Guidance System"), { em: true });
+        mergeWithPrevious(m, find(m, "p", "QGS-MM-2_3426"));
+        style(m, d, find(m, "p", "References:"), "separator, disclaimer");
+      }
+    ],
+    // stryker-launches-insignia--femoral-hip-stem-at-the-american-acad
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches-insignia--femoral-hip-stem-at-the-american-acad.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/product-bulletins, stryker:content-type/news/events, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        subtitle(m, d, find(m, "p", "Engineered to optimize fit and function"));
+        joinLabel(m, d, "About Stryker");
+        style(m, d, find(m, "p", "About Stryker"), "separator");
+      }
+    ],
+    // stryker-enters-national-partnership-with-minor-league-baseball-t
+    "https://www.stryker.com/us/en/about/news/2021/stryker-enters-national-partnership-with-minor-league-baseball-t.html": [
+      (m, d) => {
+        var _a, _b;
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        const label = [...m.querySelectorAll("p > strong")].find((s) => txt(s) === "The Nation Emerges from COVID-19");
+        if (label && ((_a = nextOf(label)) == null ? void 0 : _a.nodeName) === "BR" && ((_b = nextOf(nextOf(label))) == null ? void 0 : _b.nodeName) !== "BR") label.after(d.createElement("br"));
+      }
+    ],
+    // stryker-introduces-market-leading-tornier-shoulder-arthroplasty-
+    "https://www.stryker.com/us/en/about/news/2021/stryker-introduces-market-leading-tornier-shoulder-arthroplasty-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        const date = [...m.querySelectorAll("p > strong, p > b")].find((s) => /^MAHWAH, N\.J\.—?$/.test(txt(s)));
+        if (date) {
+          const dash = nextOf(date);
+          if (dash && dash.nodeType === 1 && txt(dash) === "\u2014") dash.remove();
+          if (txt(date).endsWith("\u2014")) date.textContent = "MAHWAH, N.J.";
+          const rest = nextOf(date);
+          if (rest && rest.nodeType === 3 && !rest.textContent.startsWith(" \u2014 ")) rest.textContent = ` \u2014 ${rest.textContent.replace(/^[\s—]+/, "")}`;
+        }
+        breakBefore(m, d, find(m, "p", "Media Contacts"), null);
+      }
+    ],
+    // stryker-expands-its-mako-smartrobotics-footprint-to-reach-more-v
+    "https://www.stryker.com/us/en/about/news/2021/stryker-expands-its-mako-smartrobotics-footprint-to-reach-more-v.html": [
+      (m, d) => {
+        var _a, _b;
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/news/in-the-news");
+        breakAfter(m, d, find(m, "p", "Stryker continues to work with United"), { keepStyle: true });
+        const label = [...m.querySelectorAll("p > strong")].find((s) => txt(s) === "About Stryker");
+        if (label && ((_a = nextOf(label)) == null ? void 0 : _a.nodeName) === "BR" && ((_b = nextOf(nextOf(label))) == null ? void 0 : _b.nodeName) === "BR") nextOf(label).remove();
+      }
+    ],
+    // awareness-campaign-launched-to-support-world-restart-a-heart-day
+    "https://www.stryker.com/us/en/about/news/2020/awareness-campaign-launched-to-support-world-restart-a-heart-day.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        footnotesToList(m, d, find(m, "p", "1. Cardiovascular diseases (CVDs)"));
+      }
+    ],
+    // stryker-releases-emergency-relief-bed
+    "https://www.stryker.com/us/en/about/news/2020/stryker-releases-emergency-relief-bed.html": [
+      (m, d) => {
+        tags(m, "stryker:Stryker-SEO-Tags/covid19, stryker:content-type/news, stryker:Stryker-SEO-Tags/coronavirus, stryker:Stryker-SEO-Tags/covid-19, stryker:content-type/news/product-bulletins, stryker:content-type/corporatenews, stryker:content-type/news/covid-19");
+        const place = find(m, "h5", "Kalamazoo, MI, USA");
+        if (place) {
+          const p = d.createElement("p");
+          const b = d.createElement("strong");
+          b.append(...place.childNodes);
+          p.append(b);
+          place.replaceWith(p);
+        }
+        const h1 = m.querySelector("h1");
+        if (h1 && !h1.querySelector("strong")) boldAll(m, d, h1);
+        style(m, d, h1, null);
+        retag(m, d, find(m, "h4", "Company aims to manufacture"), "h3");
+        ["About Stryker", "Media contact"].forEach((label) => joinLabel(m, d, label));
+        breakBefore(m, d, find(m, "p", "About Stryker"), "separator");
+        breakBefore(m, d, find(m, "p", "Media contact"), null);
+      }
+    ],
+    // stryker-completes-acquisition-of-wright-medical
+    "https://www.stryker.com/us/en/about/news/2020/stryker-completes-acquisition-of-wright-medical.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/ir, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-joins-leading-executives-and-employers-in-forming-oneten
+    "https://www.stryker.com/us/en/about/news/2020/stryker-joins-leading-executives-and-employers-in-forming-oneten.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews, stryker:content-type/news/diversity-equity-inclusion");
+        const sub = find(m, "p", "OneTen will create one million jobs");
+        style(m, d, sub, null);
+        subtitle(m, d, sub);
+      }
+    ],
+    // urgent-11-vulnerabilities---wind-river-vxworks-
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/urgent-11-vulnerabilities---wind-river-vxworks-.html": [
+      (m, d) => {
+        m.querySelectorAll('a[href="https://www.us-cert.gov/ics/advisories/icsa-19-211-01"]').forEach((a) => {
+          const u = a.querySelector("u") || a;
+          if (txt(u) === "https://www.us-cert.gov/ics/advisories/icsa-19-211-01") u.textContent = u.textContent.toUpperCase();
+        });
+      }
+    ],
+    // microsoft-windows-rdp-vulnerability--cve-2019-0708--bulletin
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/microsoft-windows-rdp-vulnerability--cve-2019-0708--bulletin.html": [
+      (m, d) => {
+        newTab2(m, ["https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708", "https://support.microsoft.com/en-us/help/4500705/customer-guidance-for-cve-2019-0708"]);
+      }
+    ],
+    // ripple20-treck-tcp-ip-stack-vulnerabilities-icsa-20-168-01
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/ripple20-treck-tcp-ip-stack-vulnerabilities-icsa-20-168-01.html": [
+      (m, d) => {
+        newTab2(m, ["https://us-cert.cisa.gov/ics/advisories/icsa-20-168-01"]);
+      }
+    ],
+    // -sweyntooth--ble-vulnerabilities--icsa--20-063-01-
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/-sweyntooth--ble-vulnerabilities--icsa--20-063-01-.html": [
+      (m, d) => {
+        newTab2(m, ["https://us-cert.cisa.gov/ics/alerts/ics-alert-20-063-01"]);
+      }
+    ],
+    // vocera-report-server-vulnerabilities--cve-2022-46898--cve-2022-4
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/vocera-report-server-vulnerabilities--cve-2022-46898--cve-2022-4.html": [
+      (m, d) => {
+        boldPerLine([...m.querySelectorAll("p > strong")].find((s) => txt(s).startsWith("CVE-2022-46898 Arbitrary File Upload")), d);
+        newTab2(m, ["https://support.vocera.com/s/contactsupport", ...["46898", "46899", "46900", "46901", "46902"].map((n) => `https://cve.report/CVE-2022-${n}`)]);
+      }
+    ]
+  }, Object.fromEntries(["april", "may", "december", "january", "february", "march", "june", "july", "november"].map((p) => [jr45(p), JR45_TITLE]))), {
     [jr45("october")]: [
       ...JR45_TITLE,
       (main) => blocks(main, /^columns \(gray-2, headline-serif-copy\)$/).forEach((t) => setVariants2(t, ["gray-2", "headline-copy", "serif"]))
