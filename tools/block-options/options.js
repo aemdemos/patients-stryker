@@ -275,9 +275,10 @@ export const BLOCK_OPTIONS = {
     ],
   },
   // stryker.com accordions (stryker-aemcoder-package, docs/standardisation/accordion.md): panels
-  // that start open, and the two looks imported pages use (a line under each label, lists in a
-  // light grey box). Panels that hold blocks are `accordion-panel` sections (scripts/corp.js),
-  // open with the `accordion-open` section style.
+  // that start open, and lists in a light grey box. Every item ends with a grey line (the
+  // block's standard look, so `divided` is no longer a choice; pages that have it keep it).
+  // Panels that hold blocks are `accordion-panel` sections (scripts/corp.js), open with the
+  // `accordion-open` section style.
   accordion: {
     label: 'Accordion',
     groups: [
@@ -286,7 +287,6 @@ export const BLOCK_OPTIONS = {
         label: 'Options',
         flags: [
           ['open', 'Panels start open', { hint: 'Every panel starts open; a click still closes it' }],
-          ['divided', 'Line under each label', { hint: 'A grey line under each closed label' }],
           ['gray-list', 'Lists in a light grey box', { needs: ['lists'], hint: 'The list in each panel sits in a light grey box' }],
         ],
       },

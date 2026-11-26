@@ -117,6 +117,7 @@ most as many steps as it had values, never more.*
 | Box colour (cell boxes) | 9 colours on 242 rows | 9 + none | 100% |
 | Image border colour | 9 | 3 | 96% |
 | Text alignment | 4 | 2 | 99% |
+| Line between items | 1 (every accordion: grey #b2b4ae) | the standard look, no choice | 100% |
 | Column widths | 5 patterns + 3/4 + 1/4 in news articles (8 rows); 4 other widths on 10 rows from older imports | 6 layouts; the 4 other widths join the nearest | 99.6% |
 
 **Cards** (2,548 cards)
@@ -158,6 +159,7 @@ most as many steps as it had values, never more.*
 | Box colour | 10 | 8 + none | 100% |
 | Headline position | 189 | 12 | 93% within 10% |
 | Text alignment | 4 | 2 | 99% |
+| Line between items | 1 (every accordion: grey #b2b4ae) | the standard look, no choice | 100% |
 
 **Accordion** (249)
 
@@ -170,6 +172,7 @@ most as many steps as it had values, never more.*
 | Text colour | 11 | 11 (the shared set) | 97% |
 | Box colour | 2 (pale grey 7, gold 4) | 1 switch: *Lists in a light grey box* | 36% exact (pale grey lists become light grey; gold lists listed) |
 | Text alignment | 4 | 2 | 99% |
+| Line between items | 1 (every accordion: grey #b2b4ae) | the standard look, no choice | 100% |
 
 **Tabs** (198)
 
@@ -181,6 +184,7 @@ most as many steps as it had values, never more.*
 | Font | 2 | up to 2 of the shared 3 fonts | 100% |
 | Text colour | 14 | 11 (the shared set) | 97% |
 | Text alignment | 4 | 2 | 99% |
+| Line between items | 1 (every accordion: grey #b2b4ae) | the standard look, no choice | 100% |
 
 **Section layout** (side-by-side rows, 1,054)
 
@@ -245,7 +249,7 @@ most as many steps as it had values, never more.*
 | Video | 3 | 1 | 3 |
 | Statistics | 5 | 1 | 15 |
 | Table | 3 | 1 | 4 |
-| Accordion | 2 | 1 | 3 |
+| Accordion | 2 | 1 | 2 |
 | Tabs | 1 | 1 | 0 |
 | Carousel | 2 | 2 | 5 |
 | Widget | 5 | 5 | 0 |
@@ -259,7 +263,7 @@ most as many steps as it had values, never more.*
 | Event calendar | 1 | 1 | 0 |
 | Social share | 1 | 1 | 2 |
 | Fragment | 1 | 1 | 0 |
-| **Total** | **70** | **49** | **169** |
+| **Total** | **70** | **49** | **168** |
 
 *Properties* counts every named choice except the variant, including each group's default. Section layout's 4 variants and Carousel's 5 properties are section styles, so they are also part of the 35 section-style choices in section 9: don't add the two totals together.
 
@@ -275,7 +279,7 @@ most as many steps as it had values, never more.*
 | Video | black border, autoplay (muted), loop |
 | Statistics | number colour (gold, navy, purple, teal, white); number size (small, medium, large); numbers per row (1, 2, 3, 4, 6); centred; number and text on one line |
 | Table | header row or none; rows as lines on phones; data from a sheet |
-| Accordion | panels start open; line under each label; lists in a light grey box |
+| Accordion | panels start open; lists in a light grey box |
 | Carousel | autoplay; fade; split slide band (purple gradient, blue gradient, dark grey) |
 | Local navigation | no top line |
 | Chart | values on the bars (not for pies) |

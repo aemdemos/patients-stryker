@@ -184,7 +184,7 @@ For a few words inside a sentence only colour, font and size apply; the line loo
 
 | Block options group | Kind | Choices | Shown when |
 |---|---|---|---|
-| Options | switches | Panels start open · Line under each label · Lists in a light grey box | needs a list |
+| Options | switches | Panels start open · Lists in a light grey box | needs a list |
 
 ### Chart
 

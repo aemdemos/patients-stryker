@@ -90,12 +90,16 @@ the style `accordion-open` too.
 
 ### 4.2 Looks kept from imported pages
 
-Two looks that pages imported earlier use are kept as choices, without new variants:
+One look that pages imported earlier use is kept as a choice, without a new variant:
 
 | Choice | Option | What it does |
 |---|---|---|
-| Line under each label | `divided` | a grey line under each closed label (MRI information) |
 | Lists in a light grey box | `gray-list` | the list in each panel sits in a light grey box, the panel's full width (ISPIES) |
+
+The grey line between items is not a choice: every stryker.com accordion has it (Connected OR, Global
+quality, LD 304, Contact, Governance, Device registration), so it is the block's standard look. It sits
+under a closed item's label and under an open item's content, 15px below its last line (1px #b2b4ae).
+Pages that carry the earlier `divided` option keep it; it is no longer offered.
 
 ### 4.3 A title above the accordion (no option)
 
@@ -168,7 +172,7 @@ accordion; open panels open, closed panels closed. All match.
 1. One accordion look and the *Panels start open* switch, opening every panel as on stryker.com (the
    package called it "first panel open").
 2. `open` on panels with blocks inside (69 accordions): the `accordion-open` section style.
-3. The two kept looks (*Line under each label*, *Lists in a light grey box*).
+3. The kept look (*Lists in a light grey box*) and the grey line between items as the standard look.
 4. Removing the review-only gate (section *Review status*).
 
 **Proposed, still open:**
@@ -200,7 +204,7 @@ that would do nothing is not shown. Hovering a choice shows what it does.
 | Needs | Choices |
 |---|---|
 | A list in a panel | Lists in a light grey box |
-| Any accordion | Panels start open, Line under each label |
+| Any accordion | Panels start open |
 
 ## Review status (draft pages only)
 
