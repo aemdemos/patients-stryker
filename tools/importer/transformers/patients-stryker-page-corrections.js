@@ -175,6 +175,200 @@ function newTab(main, hrefs) {
   hrefs.forEach((h) => main.querySelectorAll(`a[href="${h}"]`).forEach((a) => a.setAttribute('href', `${h}#_blank`)));
 }
 
+/**
+ * Opens every external link in a new tab (`#_blank`, scripts.js): absolute http(s) links
+ * to another site, other Stryker sites included (investors.stryker.com, ent.stryker.com);
+ * not www.stryker.com itself, this site's own paths, email links or anchors.
+ */
+function newTabExternal(main) {
+  main.querySelectorAll('a[href^="http"]').forEach((a) => {
+    const href = a.getAttribute('href');
+    if (href.endsWith('#_blank')) return;
+    let host = '';
+    try { host = new URL(href).hostname.toLowerCase(); } catch (e) { return; }
+    if (['www.stryker.com', 'stryker.com'].includes(host) || /\.aem\.(page|live)$/.test(host)) return;
+    a.setAttribute('href', `${href}#_blank`);
+  });
+}
+
+/** No `theme` row: the page has no theme in DA (import-text-only.js drops an empty `data-meta-*`). */
+function noTheme(main) {
+  main.setAttribute('data-meta-theme', '');
+}
+
+/** Removes a `[[name]…]` text tag around a paragraph's content, keeping the content. */
+function dropTextTag(main, doc, name) {
+  const open = `[[${name}]`;
+  main.querySelectorAll('p').forEach((p) => {
+    if (!txt(p).startsWith(open) || !txt(p).endsWith(']')) return;
+    const walker = doc.createTreeWalker(p, 4 /* NodeFilter.SHOW_TEXT */);
+    const texts = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) texts.push(n);
+    const first = texts.find((t) => t.textContent.includes(open));
+    if (first) first.textContent = first.textContent.replace(open, '');
+    const last = [...texts].reverse().find((t) => t.textContent.trim());
+    if (last && last.textContent.trim().endsWith(']')) last.textContent = last.textContent.replace(/\]\s*$/, '');
+  });
+}
+
+/** Underlines the text of the links in `el` (the bold + underline link convention). */
+function underlineLinks(el, doc) {
+  if (!el) return;
+  el.querySelectorAll('a').forEach((a) => {
+    if (a.querySelector('u')) return;
+    const u = doc.createElement('u');
+    u.append(...a.childNodes);
+    a.append(u);
+  });
+}
+
+/** Unwraps the source's font-size `<sub><sup>` wrappers around copy (the SPS blog posts). */
+function unwrapSubSup(main) {
+  main.querySelectorAll('sub').forEach((sub) => {
+    const sup = sub.children.length === 1 && sub.firstElementChild.tagName === 'SUP' ? sub.firstElementChild : null;
+    if (!sup || /^[\s\d,*†‡-]*$/.test(sup.textContent)) return;
+    sub.replaceWith(...sup.childNodes);
+  });
+}
+
+/** `label` bold, with the `count` paragraphs after it as its lines (`<br>` between). */
+function joinLines(main, doc, label, count) {
+  const p = [...main.querySelectorAll('p')].find((el) => txt(el) === label);
+  if (!p || p.querySelector('br')) return;
+  if (!p.querySelector('strong')) boldAll(main, doc, p);
+  for (let i = 0; i < count; i += 1) {
+    const next = p.nextElementSibling;
+    if (!next || next.tagName !== 'P') break;
+    p.append(doc.createElement('br'), ...next.childNodes);
+    next.remove();
+  }
+}
+
+/** Sets every ™ / ® of the page text that is not in a <sup> as a superscript, `<sup>®</sup>`. */
+function superscript(main, doc) {
+  const walker = doc.createTreeWalker(main, 4 /* NodeFilter.SHOW_TEXT */);
+  const nodes = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+    if (/[™®]/.test(n.textContent) && !n.parentElement.closest('sup, script, style')) nodes.push(n);
+  }
+  nodes.forEach((n) => {
+    const out = n.textContent.split(/([™®])/).filter(Boolean).map((part) => {
+      if (!/^[™®]$/.test(part)) return doc.createTextNode(part);
+      const sup = doc.createElement('sup');
+      sup.textContent = part;
+      return sup;
+    });
+    n.replaceWith(...out);
+  });
+}
+
+/** Removes a `spacer` section that opens the page (the reviewed page starts with its title). */
+function dropLeadingSpacer(main) {
+  const first = main.firstElementChild;
+  if (!isSectionMetadata(first) || txt(first).toLowerCase().indexOf('spacer') < 0) return;
+  const hr = first.nextElementSibling;
+  first.remove();
+  if (hr && hr.tagName === 'HR') hr.remove();
+}
+
+/** Splits paragraph `p` after its first line (at the first `<br>`): two paragraphs. */
+function splitAtFirstBreak(doc, p) {
+  const br = p && p.querySelector(':scope > br');
+  if (!br) return;
+  const rest = doc.createElement('p');
+  while (br.nextSibling) rest.append(br.nextSibling);
+  br.remove();
+  p.after(rest);
+}
+
+/** Inserts a section holding only Section Metadata `value` before the section holding `el`. */
+function spacerBefore(main, doc, el, value) {
+  if (!el) return;
+  const first = sectionOf(main, el)[0];
+  const prevHr = first.previousElementSibling;
+  if (prevHr && prevHr.tagName === 'HR' && isSectionMetadata(prevHr.previousElementSibling)
+    && prevHr.previousElementSibling.previousElementSibling?.tagName === 'HR'
+    && txt(prevHr.previousElementSibling).toLowerCase().includes(value.split(',')[0])) return;
+  const table = WebImporter.Blocks.createBlock(doc, { name: 'Section Metadata', cells: { style: value } });
+  if (prevHr && prevHr.tagName === 'HR') prevHr.after(table, doc.createElement('hr'));
+  else first.before(table, doc.createElement('hr'));
+}
+
+/** Removes the spacer-only section right after the section holding `el`. */
+function dropSpacerAfter(main, el) {
+  if (!el) return;
+  const section = sectionOf(main, el);
+  const hr = section[section.length - 1].nextElementSibling;
+  const table = hr && hr.nextElementSibling;
+  if (!hr || hr.tagName !== 'HR' || !isSectionMetadata(table) || !txt(table).toLowerCase().includes('spacer')) return;
+  const after = table.nextElementSibling;
+  if (after && after.tagName !== 'HR') return;
+  hr.remove();
+  table.remove();
+}
+
+/** The block table named `name` (first cell, case-insensitive), or undefined. */
+const blockTable = (main, name) => [...main.querySelectorAll('table')]
+  .find((t) => txt(t.querySelector('th, td')).toLowerCase().startsWith(name.toLowerCase()));
+
+/** Adds a section with a block after the section holding `el`. */
+function blockSectionAfter(main, doc, el, name, cells) {
+  if (!el) return;
+  const section = sectionOf(main, el);
+  const last = section[section.length - 1];
+  const table = WebImporter.Blocks.createBlock(doc, { name, cells });
+  last.after(doc.createElement('hr'), table);
+}
+
+/** The social share block (`social-share-corp`): Facebook, LinkedIn, email, copy link. */
+function socialShareAfter(main, doc, el) {
+  if (blockTable(main, 'social share corp')) return;
+  blockSectionAfter(main, doc, el, 'Social Share Corp', [[':facebook:'], [':linkedin:'], [':email:'], [':copy-link:']]);
+}
+
+/** Underlines the text of each bold run whose text starts with one of `labels`. */
+function underlineBold(main, doc, labels) {
+  main.querySelectorAll('strong').forEach((b) => {
+    if (b.querySelector('u') || !labels.some((l) => txt(b).startsWith(l))) return;
+    const u = doc.createElement('u');
+    u.append(...b.childNodes);
+    b.append(u);
+  });
+}
+
+/** Drops the empty last cell of each row of the block tables named `name`. */
+function dropEmptyLastCells(main, name) {
+  [...main.querySelectorAll('table')].filter((t) => txt(t.querySelector('th, td')).toLowerCase().startsWith(name)).forEach((t) => {
+    [...t.querySelectorAll('tr')].slice(1).forEach((tr) => {
+      const last = tr.cells[tr.cells.length - 1];
+      if (tr.cells.length > 2 && last && !txt(last) && !last.querySelector('img, picture, a')) last.remove();
+    });
+  });
+}
+
+/**
+ * One item per reference in the ordered lists under `el`'s section: an item holding further
+ * "<br>N. …" references is split there, and each item loses its leading "N. ".
+ */
+function stripListNumbers(main, el) {
+  if (!el) return;
+  const doc = main.ownerDocument;
+  sectionOf(main, el).forEach((node) => node.querySelectorAll?.('ol > li').forEach((li) => {
+    [...li.querySelectorAll(':scope > br')].reverse().forEach((br) => {
+      const next = br.nextSibling;
+      if (!next || next.nodeType !== 3 || !/^\s*\d+\.\s/.test(next.textContent)) return;
+      const item = doc.createElement('li');
+      while (br.nextSibling) item.append(br.nextSibling);
+      br.remove();
+      li.after(item);
+    });
+  }));
+  sectionOf(main, el).forEach((node) => node.querySelectorAll?.('ol > li').forEach((li) => {
+    const t = li.firstChild;
+    if (t && t.nodeType === 3) t.textContent = t.textContent.replace(/^\s*\d+\.\s*/, '');
+  }));
+}
+
 /** The DA `tags` metadata (not on the source page): import-text-only.js writes `data-meta-*`. */
 function tags(main, value) {
   main.setAttribute('data-meta-tags', value);
@@ -402,6 +596,7 @@ const CORRECTIONS = {
   'https://www.stryker.com/us/en/about/news/2020/awareness-campaign-launched-to-support-world-restart-a-heart-day.html': [
     (m, d) => {
       tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+      noTheme(m);
       footnotesToList(m, d, find(m, 'p', '1. Cardiovascular diseases (CVDs)'));
     },
   ],
@@ -424,12 +619,14 @@ const CORRECTIONS = {
   'https://www.stryker.com/us/en/about/news/2020/stryker-completes-acquisition-of-wright-medical.html': [
     (m, d) => {
       tags(m, "stryker:content-type/news, stryker:content-type/news/ir, stryker:content-type/corporatenews");
+      noTheme(m);
     },
   ],
   // stryker-joins-leading-executives-and-employers-in-forming-oneten
   'https://www.stryker.com/us/en/about/news/2020/stryker-joins-leading-executives-and-employers-in-forming-oneten.html': [
     (m, d) => {
       tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews, stryker:content-type/news/diversity-equity-inclusion");
+      noTheme(m);
       const sub = find(m, 'p', 'OneTen will create one million jobs');
       style(m, d, sub, null);
       subtitle(m, d, sub);
@@ -438,6 +635,7 @@ const CORRECTIONS = {
   // urgent-11-vulnerabilities---wind-river-vxworks-
   'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/urgent-11-vulnerabilities---wind-river-vxworks-.html': [
     (m, d) => {
+      noTheme(m);
       m.querySelectorAll('a[href="https://www.us-cert.gov/ics/advisories/icsa-19-211-01"]').forEach((a) => {
         const u = a.querySelector('u') || a;
         if (txt(u) === 'https://www.us-cert.gov/ics/advisories/icsa-19-211-01') u.textContent = u.textContent.toUpperCase();
@@ -447,26 +645,437 @@ const CORRECTIONS = {
   // microsoft-windows-rdp-vulnerability--cve-2019-0708--bulletin
   'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/microsoft-windows-rdp-vulnerability--cve-2019-0708--bulletin.html': [
     (m, d) => {
+      noTheme(m);
       newTab(m, ['https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708', 'https://support.microsoft.com/en-us/help/4500705/customer-guidance-for-cve-2019-0708']);
     },
   ],
   // ripple20-treck-tcp-ip-stack-vulnerabilities-icsa-20-168-01
   'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/ripple20-treck-tcp-ip-stack-vulnerabilities-icsa-20-168-01.html': [
     (m, d) => {
+      noTheme(m);
       newTab(m, ['https://us-cert.cisa.gov/ics/advisories/icsa-20-168-01']);
     },
   ],
   // -sweyntooth--ble-vulnerabilities--icsa--20-063-01-
   'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/-sweyntooth--ble-vulnerabilities--icsa--20-063-01-.html': [
     (m, d) => {
+      noTheme(m);
       newTab(m, ['https://us-cert.cisa.gov/ics/alerts/ics-alert-20-063-01']);
     },
   ],
   // vocera-report-server-vulnerabilities--cve-2022-46898--cve-2022-4
   'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/vocera-report-server-vulnerabilities--cve-2022-46898--cve-2022-4.html': [
     (m, d) => {
+      noTheme(m);
       boldPerLine([...m.querySelectorAll('p > strong')].find((s) => txt(s).startsWith('CVE-2022-46898 Arbitrary File Upload')), d);
       newTab(m, ['https://support.vocera.com/s/contactsupport', ...['46898', '46899', '46900', '46901', '46902'].map((n) => `https://cve.report/CVE-2022-${n}`)]);
+    },
+  ],
+
+  // text-only pages, second set: the DA `tags` row and external links in a new tab
+  // apache--log4j--open-source-logging-library
+  'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/apache--log4j--open-source-logging-library.html': [
+    (m, d) => {
+      newTabExternal(m);
+    },
+  ],
+  // microsoft-print-spooler-vulnerabilities--cve-2021-34527-and-cve-
+  'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/microsoft-print-spooler-vulnerabilities--cve-2021-34527-and-cve-.html': [
+    (m, d) => {
+      newTabExternal(m);
+    },
+  ],
+  // stryker-responds-to-krack-vulnerability-for-ibed-wireless-enable
+  'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/stryker-responds-to-krack-vulnerability-for-ibed-wireless-enable.html': [
+    (m, d) => {
+      newTabExternal(m);
+    },
+  ],
+  // wannacry-vulnerability
+  'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/wannacry-vulnerability.html': [
+    (m, d) => {
+      newTabExternal(m);
+    },
+  ],
+  // kevin-lobo-shares-leadership-strategies-with-medical-design---ou
+  'https://www.stryker.com/us/en/about/news/2021/kevin-lobo-shares-leadership-strategies-with-medical-design---ou.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      newTabExternal(m);
+    },
+  ],
+  // stryker-announced-as-new-partner-for-the-ana-innovation-awards
+  'https://www.stryker.com/us/en/about/news/2021/stryker-announced-as-new-partner-for-the-ana-innovation-awards.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+      newTabExternal(m);
+    },
+  ],
+  // stryker-sponsors-pga-2021-world-golf-championships-fedex-st--jud
+  'https://www.stryker.com/us/en/about/news/2021/stryker-sponsors-pga-2021-world-golf-championships-fedex-st--jud.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/events");
+      newTabExternal(m);
+    },
+  ],
+  // stryker-to-showcase-new--combined-foot-and-ankle-portfolio-at--2
+  'https://www.stryker.com/us/en/about/news/2021/stryker-to-showcase-new--combined-foot-and-ankle-portfolio-at--2.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/product-bulletins, stryker:content-type/news/events, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      newTabExternal(m);
+    },
+  ],
+  // cms-grants-outpatient-facility-code-for-insertion-of-stryker-s-i
+  'https://www.stryker.com/us/en/about/news/2022/cms-grants-outpatient-facility-code-for-insertion-of-stryker-s-i.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews, stryker:content-type/news/product-bulletins");
+      retag(m, d, find(m, 'p', 'The new code enables greater access'), 'h3');
+      ['About the decision', 'About Stryker', 'Media contact'].forEach((label) => joinLabel(m, d, label));
+      ['About the decision', 'About Stryker', 'Media contact'].forEach((label) => style(m, d, find(m, 'p', label), 'separator'));
+      newTabExternal(m);
+    },
+  ],
+  // stryker-completes-acquisition-of-vocera-communications
+  'https://www.stryker.com/us/en/about/news/2022/stryker-completes-acquisition-of-vocera-communications.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/ir, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      newTabExternal(m);
+    },
+  ],
+  // stryker-works-with-red-cross-to-direct-resources-to-humanitarian
+  'https://www.stryker.com/us/en/about/news/2022/stryker-works-with-red-cross-to-direct-resources-to-humanitarian.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      newTabExternal(m);
+    },
+  ],
+  // vocera--now-part-of-stryker--introduces-latest-evolution-in-hand
+  'https://www.stryker.com/us/en/about/news/2022/vocera--now-part-of-stryker--introduces-latest-evolution-in-hand.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      retag(m, d, find(m, 'p', 'New Minibadge expands intuitive mobile'), 'h4');
+      newTabExternal(m);
+    },
+  ],
+  // Cigna-Coverage-Policy-Update-ClariFix
+  'https://www.stryker.com/us/en/ent/news/Cigna-Coverage-Policy-Update-ClariFix.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news");
+      joinLabel(m, d, 'About Stryker');
+      style(m, d, find(m, 'p', 'About Stryker'), null);
+      newTabExternal(m);
+    },
+  ],
+  // stryker-announces-creation-new-nasal-valve-collapse-1CD-10-CM-codes
+  'https://www.stryker.com/us/en/ent/news/stryker-announces-creation-new-nasal-valve-collapse-1CD-10-CM-codes.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news");
+      style(m, d, find(m, 'p', 'Effective October 1, 2024'), null);
+      newTabExternal(m);
+    },
+  ],
+  // stryker-announces-creation-of-new-category-1-cpt-codes-for-repor
+  'https://www.stryker.com/us/en/ent/news/stryker-announces-creation-of-new-category-1-cpt-codes-for-repor.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/ent/clinical-information");
+      joinLabel(m, d, 'About Stryker');
+      joinLines(m, d, 'Media contact', 3);
+      style(m, d, find(m, 'p', 'About Stryker'), 'separator');
+      newTabExternal(m);
+    },
+  ],
+  // united-healthcare-medicare-advantage-policy-update-for-clarifix-
+  'https://www.stryker.com/us/en/ent/news/united-healthcare-medicare-advantage-policy-update-for-clarifix-.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news");
+      newTabExternal(m);
+    },
+  ],
+  // i-thought-op-knees-were-approved-by-medicare--why-arent-they-in-
+  'https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/i-thought-op-knees-were-approved-by-medicare--why-arent-they-in-.html': [
+    (m, d) => {
+      unwrapSubSup(m);
+      mergeWithPrevious(m, find(m, 'p', 'While there is not (yet)'));
+      dropTextTag(m, d, 'color-teal');
+      const back = [...m.querySelectorAll('p')].find((p) => txt(p) === 'BACK');
+      underlineLinks(back, d);
+      style(m, d, back, null);
+      newTabExternal(m);
+    },
+  ],
+  // update-from-cms--what-to-expect-may--september-2018
+  'https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/update-from-cms--what-to-expect-may--september-2018.html': [
+    (m, d) => {
+      style(m, d, find(m, 'p', 'On April 24th, CMS provided'), null);
+      const close = find(m, 'p', 'Every episode is an opportunity');
+      if (close) {
+        const h5 = d.createElement('h5');
+        const first = d.createElement('strong');
+        first.textContent = 'Every episode is an opportunity to do what is best for your patients.';
+        const em = d.createElement('em');
+        const second = d.createElement('strong');
+        second.textContent = 'We have your back.';
+        em.append(second);
+        h5.append(first, em);
+        close.replaceWith(h5);
+      }
+      dropTextTag(m, d, 'color-teal');
+      const back = [...m.querySelectorAll('p')].find((p) => txt(p) === 'GO BACK');
+      underlineLinks(back, d);
+      style(m, d, back, null);
+      newTabExternal(m);
+    },
+  ],
+  // will-your-practice-qualify-for-mips-exemption-under-bpci-advance
+  'https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/will-your-practice-qualify-for-mips-exemption-under-bpci-advance.html': [
+    (m, d) => {
+      style(m, d, find(m, 'p', 'Many orthopedic physician groups'), null);
+      dropTextTag(m, d, 'color-teal');
+      const back = [...m.querySelectorAll('p')].find((p) => txt(p) === 'BACK');
+      underlineLinks(back, d);
+      style(m, d, back, null);
+      newTabExternal(m);
+    },
+  ],
+
+  // news-detail `basic` pages (text and lead image, import-news-detail.js): the DA `tags`
+  // row and ™ / ® as superscript
+  // stryker-expands-mako-robotics-portfolio
+  'https://www.stryker.com/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      superscript(m, d);
+    },
+  ],
+  // stryker-showcases-continued-innovation-across-orthopaedics-at-aaos-2026-annual-meeting
+  'https://www.stryker.com/us/en/about/news/2026/stryker-showcases-continued-innovation-across-orthopaedics-at-aaos-2026-annual-meeting.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      superscript(m, d);
+    },
+  ],
+  // stryker-launches-surpass-elite-flow-diverter
+  'https://www.stryker.com/us/en/about/news/2025/stryker-launches-surpass-elite-flow-diverter.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      superscript(m, d);
+    },
+  ],
+  // stryker-unveils-oculan-lighting-platform
+  'https://www.stryker.com/us/en/about/news/2024/stryker-unveils-oculan-lighting-platform.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      superscript(m, d);
+    },
+  ],
+  // stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-
+  'https://www.stryker.com/us/en/about/news/2023/stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+      dropLeadingSpacer(m);
+      style(m, d, m.querySelector('h1'), null);
+      subtitle(m, d, find(m, 'p', 'Stryker’s PROstep MIS portfolio will be'), { em: true });
+      splitAtFirstBreak(d, [...m.querySelectorAll('p')].find((p) => txt(p).startsWith('References: 1.')));
+      style(m, d, find(m, 'p', 'A surgeon must always rely'), 'separator,disclaimer');
+      superscript(m, d);
+    },
+  ],
+  // stryker-announces-definitive-agreement-to-acquire-vocera-communi
+  'https://www.stryker.com/us/en/about/news/2022/stryker-announces-definitive-agreement-to-acquire-vocera-communi.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/ir, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      superscript(m, d);
+    },
+  ],
+
+  // news-detail `basic` pages, second set (import-news-detail.js; SurgiCount: import-news-xf.js)
+  // stryker-launches-the-connected-power-pro-2-powered-ambulance-cot
+  'https://www.stryker.com/us/en/about/news/2022/stryker-launches-the-connected-power-pro-2-powered-ambulance-cot.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      superscript(m, d);
+    },
+  ],
+  // stryker-strengthens-its-r-d-capabilities-with-advanced-global-te
+  'https://www.stryker.com/us/en/about/news/2022/stryker-strengthens-its-r-d-capabilities-with-advanced-global-te.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      subtitle(m, d, find(m, 'p', 'New center to help accelerate'));
+      joinLabel(m, d, 'About Stryker');
+      style(m, d, find(m, 'p', 'About Stryker'), 'separator');
+      ['Stryker:', 'SPAG:'].forEach((label) => joinLabel(m, d, label));
+      mergeWithPrevious(m, find(m, 'p', 'SPAG:'));
+      style(m, d, find(m, 'p', 'Media contact'), 'separator');
+      superscript(m, d);
+    },
+  ],
+  // stryker-launches-next-generation-of-surgicount--to-help-improve-
+  'https://www.stryker.com/us/en/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      // news-detail-xf page on the `basic` theme in DA (the XF script has no representative groups)
+      m.setAttribute('data-meta-theme', 'basic');
+      const h1 = m.querySelector('h1');
+      dropSpacerAfter(m, h1);
+      // the body's image row is the shared fragment in DA
+      const cols = blockTable(m, 'columns');
+      if (cols) {
+        const a = d.createElement('a');
+        a.href = '/us/en/fragments/stryker/corporate/en/about/news/2024/stryker-launches-next-generation-of-surgicount-to-help-improve';
+        a.textContent = a.getAttribute('href');
+        cols.replaceWith(WebImporter.Blocks.createBlock(d, { name: 'Fragment', cells: [[a]] }));
+      }
+      spacerBefore(m, d, m.querySelector('ol'), 'spacer, small');
+      superscript(m, d);
+    },
+  ],
+  // stryker-names-spencer-stiles-president-and-chief-operating-officer
+  'https://www.stryker.com/us/en/about/news/2025/stryker-names-spencer-stiles-president-and-chief-operating-officer.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      const h1 = m.querySelector('h1');
+      style(m, d, h1, null);
+      breakAfter(m, d, h1);
+      breakAfter(m, d, m.querySelector('h2'));
+      const logo = [...m.querySelectorAll('p')].find((p) => txt(p) === 'stryker_logo2015_left');
+      breakAfter(m, d, logo);
+      spacerBefore(m, d, find(m, 'p', 'PORTAGE, Mich., USA – Dec. 4'), 'spacer, small');
+      socialShareAfter(m, d, find(m, 'p', 'About Stryker'));
+      superscript(m, d);
+    },
+  ],
+  // stryker-cmr-surgical-announce-strategic-alliance-advance-robotic-assisted-surgery
+  'https://www.stryker.com/us/en/about/news/2026/stryker-cmr-surgical-announce-strategic-alliance-advance-robotic-assisted-surgery.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      const lead = find(m, 'p', 'Strategic alliance combines CMR');
+      style(m, d, lead, null);
+      breakAfter(m, d, lead);
+      underlineBold(m, d, ['Strategic alliance combines CMR', 'For investor inquiries for Stryker:', 'For media inquiries for Stryker:', 'For investor and media inquiries for CMR Surgical:']);
+      superscript(m, d);
+    },
+  ],
+  // stryker-partners-professional-golfer-shane-lowry-caregiver-journey
+  'https://www.stryker.com/us/en/about/news/2026/stryker-partners-professional-golfer-shane-lowry-caregiver-journey.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      socialShareAfter(m, d, find(m, 'p', 'About Stryker'));
+      superscript(m, d);
+    },
+  ],
+  // stryker-launches-new-gamma4-hip-fracture-nailing-system
+  'https://www.stryker.com/us/en/about/news/2022/stryker-launches-new-gamma4-hip-fracture-nailing-system.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      dropSpacerAfter(m, m.querySelector('h1'));
+      const sub = find(m, 'p', 'New System to Strengthen the Gamma');
+      breakAfter(m, d, sub);
+      style(m, d, sub, 'p-1-25');
+      const media = find(m, 'p', 'Media contact');
+      breakBefore(m, d, media, null);
+      spacerBefore(m, d, media, 'spacer');
+      spacerBefore(m, d, find(m, 'p', 'References'), 'spacer, small');
+      superscript(m, d);
+    },
+  ],
+  // stryker-launches-q-guidance-system-with-spine-guidance-software
+  'https://www.stryker.com/us/en/about/news/2022/stryker-launches-q-guidance-system-with-spine-guidance-software.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      const sub = find(m, 'p', 'First spine navigation software');
+      breakAfter(m, d, sub);
+      style(m, d, sub, 'p-1-25');
+      const about = find(m, 'p', 'About Stryker');
+      breakBefore(m, d, about, null);
+      spacerBefore(m, d, about, 'spacer');
+      const media = find(m, 'p', 'Media contact');
+      breakBefore(m, d, media, null);
+      spacerBefore(m, d, media, 'spacer, small');
+      spacerBefore(m, d, find(m, 'p', 'References:'), 'spacer, small');
+      superscript(m, d);
+    },
+  ],
+  // stryker-launches-steri-shield-8-personal-protection-system
+  'https://www.stryker.com/us/en/about/news/2025/stryker-launches-steri-shield-8-personal-protection-system.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      const note = find(m, 'p', '*Stryker internal data');
+      spacerBefore(m, d, note, 'spacer, small');
+      style(m, d, note, 'disclaimer, join');
+      superscript(m, d);
+    },
+  ],
+  // stryker-launches-industry-s-first-completely-wireless-hospital-b
+  'https://www.stryker.com/us/en/about/news/2020/stryker-launches-industry-s-first-completely-wireless-hospital-b.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews");
+      const img = [...m.querySelectorAll('p, a')].find((el) => txt(el) === 'IsoTour bed');
+      spacerBefore(m, d, img, 'spacer');
+      style(m, d, img, 'col-8');
+      style(m, d, find(m, 'p', 'ProCuity Bed Series designed'), 'col-8');
+      style(m, d, find(m, 'p', 'Specific key features of ProCuity'), 'separator, col-8');
+      dropEmptyLastCells(m, 'columns');
+      ['About Stryker', 'Media contact'].forEach((label) => joinLabel(m, d, label));
+      style(m, d, find(m, 'p', 'About Stryker'), null);
+      style(m, d, find(m, 'p', 'Media contact'), null);
+      const refs = m.querySelector('ol');
+      stripListNumbers(m, refs);
+      style(m, d, refs, 'disclaimer');
+      superscript(m, d);
+    },
+  ],
+  // a-clearer-vision-of-surgery-stryker-releases-its-next-generation-of-advanced-surgical-cameras
+  'https://www.stryker.com/us/en/about/news/2023/a-clearer-vision-of-surgery-stryker-releases-its-next-generation-of-advanced-surgical-cameras.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      spacerBefore(m, d, [...m.querySelectorAll('p, a')].find((el) => txt(el) === '1788 Camera hero'), 'spacer');
+      breakAfter(m, d, m.querySelector('h2'));
+      breakBefore(m, d, blockTable(m, 'video'), null);
+      const media = find(m, 'p', 'Media contacts');
+      breakBefore(m, d, media, null);
+      spacerBefore(m, d, media, 'spacer, small');
+      spacerBefore(m, d, m.querySelector('ol'), 'spacer');
+      superscript(m, d);
+    },
+  ],
+  // stryker-receives-fda-clearance-for-optablate-bvn-ablation-system
+  'https://www.stryker.com/us/en/about/news/2025/stryker-receives-fda-clearance-for-optablate-bvn-ablation-system.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      const body = find(m, 'p', 'PORTAGE, Mich., USA');
+      spacerBefore(m, d, body, 'spacer, small');
+      // the image and the key features are a 50/50 Columns block in DA
+      const img = [...m.querySelectorAll('p')].find((p) => txt(p) === 'OptaBlate-BVN-ablation-vertebral-body');
+      const key = find(m, 'p', 'Key features of the system include');
+      if (img && key && !blockTable(m, 'columns')) {
+        const rest = sectionOf(m, key).filter((n) => !isSectionMetadata(n));
+        sectionOf(m, key).filter(isSectionMetadata).forEach((t) => t.remove());
+        const hr = rest[0].previousElementSibling;
+        const table = WebImporter.Blocks.createBlock(d, { name: 'Columns (columns-50-50)', cells: [[[img], rest]] });
+        hr.after(table);
+      }
+      style(m, d, body, 'join');
+      const notes = find(m, 'p', '*Chronic low back pain');
+      const refs = [...m.querySelectorAll('p')].find((p) => txt(p) === 'References');
+      breakBefore(m, d, refs, 'disclaimer, bold-body');
+      style(m, d, notes, null);
+      breakBefore(m, d, notes, null);
+      spacerBefore(m, d, notes, 'spacer, small');
+      spacerBefore(m, d, refs, 'spacer, small');
+      superscript(m, d);
+    },
+  ],
+  // stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi
+  'https://www.stryker.com/us/en/about/news/2020/stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews");
+      dropLeadingSpacer(m);
+      const h1 = m.querySelector('h1');
+      style(m, d, h1, null);
+      const img = [...m.querySelectorAll('p')].find((p) => /atlas-1/.test(p.innerHTML) && p.querySelector('a'));
+      breakAfter(m, d, img, { keepStyle: true });
+      spacerBefore(m, d, m.querySelector('ol'), 'spacer, small');
+      superscript(m, d);
     },
   ],
 };

@@ -11,6 +11,7 @@ import newsDetailSectionsTransformer from './transformers/news-detail-sections.j
 import newsTypographyTransformer from './transformers/news-typography.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
+import pageCorrectionsTransformer from './transformers/patients-stryker-page-corrections.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
@@ -53,6 +54,8 @@ const transformers = [
   newsTypographyTransformer,
   cleanupTransformer,
   dmImagesTransformer,
+  // persisted DA edits (excat-persist-content-edit): last, on the final page
+  pageCorrectionsTransformer,
 ];
 
 function executeTransformers(hookName, element, payload) {
@@ -127,6 +130,16 @@ export default {
     // keywords, as on the source page (<meta name="keywords">, e.g. "News, Our impact")
     const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
     if (keywords) meta.Keywords = keywords;
+    // metadata a page correction sets (patients-stryker-page-corrections.js: `data-meta-<name>`
+    // on the body, e.g. the `tags` authors added in DA, which the source page does not carry);
+    // an empty value removes the row
+    const dropMeta = [];
+    [...main.attributes].filter((a) => a.name.startsWith('data-meta-')).forEach((a) => {
+      const name = a.name.slice('data-meta-'.length);
+      if (a.value) meta[name] = a.value;
+      else dropMeta.push(name);
+      main.removeAttribute(a.name);
+    });
     meta.site = 'corp';
     meta.template = 'news-detail';
     // the date below the title (`first-published`, YYYY-MM-DD): shown by the news-detail
@@ -157,6 +170,7 @@ export default {
       meta.theme = theme;
       main.removeAttribute('data-news-theme');
     }
+    dropMeta.forEach((name) => delete meta[name]);
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
