@@ -471,8 +471,13 @@ function keepChoice(id, patch) {
 function ask(text, choices) {
   return new Promise((resolve) => {
     const dialog = el('dialog', { class: 'rv-dialog' });
+    // (Esc: the last choice, Cancel / Keep it)
+    dialog.addEventListener('cancel', () => {
+      dialog.remove();
+      resolve(choices[choices.length - 1][1]);
+    });
     dialog.append(
-      el('p', {}, text),
+      typeof text === 'string' ? el('p', {}, text) : text,
       el('div', { class: 'rv-note-actions' }, ...choices.map(([text2, value, cls]) => el('button', {
         type: 'button',
         class: `rv-btn-light ${cls || ''}`,
@@ -1311,6 +1316,43 @@ function currentRows() {
   return [...rows.values()].filter((e) => e && e.kind);
 }
 
+/**
+ * Approving a page of a group approves the group (threads.js withGroupApproval): before it does,
+ * the reviewer is told what happens to the group's other pages, by status, and confirms (26 Nov
+ * 2026). Not asked when the page is in no group, alone in it, or its group is approved already.
+ * → true to go on
+ */
+async function confirmGroupApproval() {
+  const own = orgOf.get(state.page);
+  if (!own?.group || own.groupApproved) return true;
+  const others = [...orgOf.values()].filter((m) => m.group === own.group && m.path !== state.page);
+  if (!others.length) return true;
+  const stateOf = (p) => infoOf.get(p)?.state || 'unreviewed';
+  const name = (p) => {
+    const page = allPages.find((x) => x.path === p);
+    return page ? page.title : `${p} (not published yet)`;
+  };
+  const counted = others.filter((m) => ['unreviewed', 'in-review'].includes(stateOf(m.path)));
+  const approved = others.filter((m) => ['approved', 'resolved'].includes(stateOf(m.path)));
+  const kept = others.filter((m) => !counted.includes(m) && !approved.includes(m));
+  const names = (list) => {
+    const shown = list.slice(0, 6).map((m) => el('li', {}, `${name(m.path)} — ${stateName(stateOf(m.path))}`));
+    if (list.length > 6) shown.push(el('li', {}, `and ${list.length - 6} more`));
+    return el('ul', {}, ...shown);
+  };
+  const part = (title, list) => (list.length ? el('div', { class: 'rv-ask-part' }, el('p', {}, el('b', {}, title)), names(list)) : null);
+  const message = el(
+    'div',
+    { class: 'rv-ask' },
+    el('p', { class: 'rv-ask-head' }, `This page is in group ${own.group}, with ${others.length} other page${others.length > 1 ? 's' : ''}. Approving it approves the whole group:`),
+    part(`${counted.length} will count as approved (their status now: not reviewed yet or in review)`, counted),
+    part(`${kept.length} keep${kept.length > 1 ? '' : 's'} its status, shown with the group's approval`, kept),
+    part(`${approved.length} already approved`, approved),
+    el('p', { class: 'rv-ask-foot' }, 'Nothing is written on the other pages: taking this approval back (press Approve again), or moving a page out of the group, undoes it for them.'),
+  );
+  return ask(message, [['Approve the group', true, 'rv-primary'], ['Cancel', false]]);
+}
+
 /** the status banner (Feedback panel) and the toolbar badge: whose turn it is, prominently */
 function renderPageStatus() {
   const own = pageState(currentRows());
@@ -1335,8 +1377,11 @@ function renderPageStatus() {
     type: 'button',
     class: `rv-page-state rv-page-state-${value}`,
     'aria-pressed': String(st.pageState === value),
-    onclick: () => {
-      saveRow('page', 'state', st.pageState === value ? '' : value);
+    onclick: async () => {
+      const clearing = st.pageState === value;
+      // (approving a page of a group: what happens to the others, OK or Cancel)
+      if (value === 'approved' && !clearing && !(await confirmGroupApproval())) return;
+      saveRow('page', 'state', clearing ? '' : value);
       renderPageStatus();
     },
   }, STATUS_BUTTONS[value])));

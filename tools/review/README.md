@@ -83,6 +83,11 @@ keeps the invitation, later visits need no link.
   tooltip "No representative has been established or migrated for this page yet"); chosen
   already, such a page shows a message in its place. Note mode switches it to the Screenshot (a
   note belongs to the page reviewed). Test: `rep-tool.test.mjs`.
+- **Approving a page of a group asks first** (26 Nov 2026): the dialog lists the group's other
+  pages by what happens to them (not reviewed yet / in review: they count as approved; other
+  statuses: kept, shown with the group's approval; already approved), with Approve the group /
+  Cancel (Esc: Cancel). Not asked when the page is in no group, alone in it, or its group is
+  approved already. Nothing is written on the other pages.
 - **Labels out of the way** (26 Nov 2026): the pages' labels fade out while the pointer is on
   them (and 14 px around): the frames' own mouse moves, the extension's bridge for Live (0.4.0).
 - **Live: the real stryker.com page** (25 Nov 2026, pilot for the AOE team, `extension/`): with the
