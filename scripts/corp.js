@@ -105,9 +105,13 @@ const VARIANT_BUNDLES = {
   'gold-headline-first': ['gold-first'],
 };
 
+// the blocks that author bundle names (a section style of the same name is left alone)
+const VARIANT_BUNDLE_BLOCKS = ['columns', 'hero-corp'];
+
 function expandVariantBundles(main) {
   Object.entries(VARIANT_BUNDLES).forEach(([bundle, parts]) => {
-    main.querySelectorAll(`div.${bundle}`).forEach((block) => block.classList.add(...parts));
+    const selector = VARIANT_BUNDLE_BLOCKS.map((name) => `div.${name}.${bundle}`).join(', ');
+    main.querySelectorAll(selector).forEach((block) => block.classList.add(...parts));
   });
 }
 
