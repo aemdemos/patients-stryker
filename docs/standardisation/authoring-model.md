@@ -23,7 +23,110 @@ Library itself is not changed yet.
 Rules of thumb for authors: **the structure comes from the variant**; **the whole block → Block options**;
 **the whole section → Section**; **a few words → Text style**.
 
-## How the panels behave
+## The Block options panel, step by step
+
+The panel opens beside the document in Experience Workspace. Click anywhere in a block and the
+panel shows that block's options. The screenshots are from the review pages.
+
+### 1. Click in a block: what it is, what it has, how it looks
+
+The top of the panel stays pinned while the author scrolls. It shows the block's name, the options
+it has now (**On the block**), a live **preview** at *Desktop* or *Phone* width, and the button.
+
+![A Columns block with a gold first cell: its options and its preview](img/authoring/bo-top.png){width=48%}
+
+### 2. Pick choices: the current values are already selected
+
+The block's current layout and options show as the selected choices. Colours are swatches in four
+rows: **Light**, **Accent** (Stryker's strong colours), **Dark** and **Gradients**, each the exact
+stryker.com colour. The value used when nothing is set reads **— default**. Follow-up choices
+appear after their main choice (*Which cell* and *Text spacing in a box* after a box colour).
+
+![Layout: the block's layout is selected (Wide + narrow)](img/authoring/bo-layout.png){width=48%}
+
+![Cell box: gold is selected; Which cell and Text spacing follow it; defaults marked](img/authoring/bo-colours.png){width=48%}
+
+### 3. Only what fits the block is shown
+
+Choices that would do nothing for this block are not shown. This two-column text block gets
+*Text*, *First line of the text*, *Text look* and *Lines*. It has no images or links, so *Images*,
+*Image border* and *Links* don't appear.
+
+![Only the groups that fit a two-column text block](img/authoring/bo-groups.png){width=48%}
+
+### 4. See it before applying
+
+Every pick updates the preview straight away. Under the block name the panel says
+**Not applied yet** with the new options; *Apply options* writes them into the block
+(*No changes* when there is nothing to apply).
+
+![Blue chosen instead of gold: shown in the preview, not applied yet](img/authoring/bo-not-applied.png){width=48%}
+
+### 5. Check the phone view
+
+*Phone* shows the block at phone width. A tall block (here three statistics stacked on a phone)
+scrolls inside the preview, so the whole block can be checked.
+
+![Statistics on a phone, scrolled to the second and third numbers](img/authoring/bo-phone.png){width=48%}
+
+### 6. A colour per card
+
+Cards blocks also list **Card colours**: one list per card, named by the card's first words.
+*Row colour* keeps the block's Card box; any of the 17 box colours gives that card its own colour.
+
+![Card colours: one list per card](img/authoring/bo-card-colours.png){width=48%}
+
+### 7. The section
+
+Below the block's options, **Section** styles the part of the page the block sits in (between two
+section breaks): side by side, background, centred text, narrow column, line above, and showing on
+desktop or phones only. *Tab*, *accordion panel* and *carousel slide* are folded away unless the
+section or a neighbour already is one. The panel copies a Section Metadata table to paste at the
+end of the section.
+
+![Section: side by side](img/authoring/bo-section-top.png){width=48%}
+
+![Section: text and width, show on, tab / accordion / carousel, copy](img/authoring/bo-section-bottom.png){width=48%}
+
+## The Text style panel, step by step
+
+Text style is for a few words, not a whole block: select the words in the document, pick a style,
+then *Style selected text*. The code it adds (shown at the top, e.g. `:start-gold:`) is hidden in
+Experience Workspace and on the page.
+
+### 1. Select words: an existing style is selected
+
+Selecting words that already have a style shows that style as the chosen values (here *Serif* and
+*2×*) and previews the words in their block. *Remove style* takes the style off.
+
+![Styled words in a Columns block, previewed in the block](img/authoring/ts-styled-top.png){width=48%}
+
+![Their font and size are selected (Serif, 2×)](img/authoring/ts-styled-groups.png){width=48%}
+
+### 2. Colours
+
+The 11 text colours, exact, in the same **Light · Accent · Dark** rows as Block options.
+
+![Text colours](img/authoring/ts-colours.png){width=48%}
+
+### 3. Looks for a whole line
+
+When the selection is a whole line or heading, **Special look** offers the gold rule under a
+heading and a box around the line in the box colours. The preview shows the line on white and on a
+dark background.
+
+![A whole heading in gold with the gold rule](img/authoring/ts-heading-top.png){width=48%}
+
+![Special looks for a whole line or heading](img/authoring/ts-looks.png){width=48%}
+
+### 4. A few words inside a sentence
+
+For a few words inside a sentence only colour, font and size apply; the line looks are not shown.
+
+![Words inside a sentence: sizes, then no special looks](img/authoring/ts-words-looks.png){width=48%}
+
+
+## How the panels behave (summary)
 
 | Behaviour | Block options | Text style |
 |---|---|---|
@@ -213,29 +316,3 @@ Rules of thumb for authors: **the structure comes from the variant**; **the whol
 
 Selecting words that already have a style shows that style as the current choice; *Remove style*
 takes it off.
-
-## Making the panels more intuitive: status
-
-Built (on the standardisation branch, review pages):
-
-| # | Was | Now |
-|---|---|---|
-| 1 | choices that don't fit were greyed out (Block options) or hidden (Section) | hidden in both panels and in the Section area; what the block already has always shows |
-| 2 | colour lists were long plain buttons (Cell box: 18 choices) | colour swatches in *Light · Accent · Dark · Gradients* rows, in both panels |
-| 3 | defaults read like ordinary choices | marked "— default" |
-| 5 | a colour per card was a typed cell ("Purple") | *Card colours*: one list per card that writes that cell |
-| 6 | Statistics' number colour offered 5 colours | the 11 Text style colours, exact |
-| 7 | Columns had one *Row looks* list of 13 switches | split into *Text*, *Images*, *On phones*, *Lines*, *Links*; only fitting groups shown |
-| – | the preview scrolled away with the choices | pinned at the top; a tall phone preview scrolls inside its frame |
-| – | the panels opened with nothing selected | the applied block options and the selected words' style are pre-selected |
-
-Still open (need a decision or another team):
-
-| # | Today | Proposal | Why |
-|---|---|---|---|
-| 4 | section styles are copied and pasted into Section Metadata | ask the DA / EW team for a way for extensions to write Section Metadata, then apply directly like block options | removes the most error-prone step |
-| 8 | Block options *Apply options* vs Text style *Style selected text* | the same wording and position in both ("Apply"); Text style gets the "not applied yet" line too | fewer missed changes |
-| 9 | style codes show as text in the plain DA editor | guide authors to style text in Experience Workspace, where codes are hidden and the preview is live | less confusion |
-| 10 | help is in hints only | a "?" link in each panel to the authoring guide (conventions, this model) | one click to the rules |
-
-Approve the open proposals you want and they are built one by one, review pages first.

@@ -67,9 +67,13 @@ let sectionEl;
 // re-renders the block's groups and the section's (set below, once both renderers exist)
 let renderGroups = () => {};
 
+// the instruction shown while no block is selected ('' until the panel is connected)
+let idleStatus = '';
+
 function setStatus(text, kind = 'info') {
   statusEl.textContent = text;
   statusEl.dataset.kind = kind;
+  statusEl.hidden = !text;
 }
 
 /* ---------------------------------------------------------------- the document */
@@ -377,7 +381,10 @@ function cardsOf(html) {
   return [...(block?.children || [])].map((row) => {
     const colour = cardColourOf(row);
     const cells = [...row.children].slice(colour ? 1 : 0);
-    const words = cells.map((c) => c.textContent.trim()).filter(Boolean).join(' ').split(/\s+/);
+    // the card's words as the author reads them: without Text style codes or lone symbols
+    const words = cells.map((c) => c.textContent.replace(/:(?:start-[a-z0-9-]+|end):/g, ' ').trim())
+      .filter(Boolean).join(' ').split(/\s+/)
+      .filter((w) => /[\p{L}\p{N}]/u.test(w));
     return { colour, words: `${words.slice(0, 5).join(' ')}${words.length > 5 ? ' …' : ''}` };
   });
 }
@@ -817,6 +824,8 @@ function setBlock(next) {
     return;
   }
   current = next;
+  // a newly selected block replaces the "click in a block" instruction; it returns without one
+  if (idleStatus && (!next || statusEl.textContent === idleStatus)) setStatus(next ? '' : idleStatus);
   draft = next ? normalised(next.name, next.options) : [];
   cardDraft = next ? cardsOf(next.html).map((c) => c.colour) : [];
   sectionDraft = next ? normalisedSection(next.sectionStyles) : [];
@@ -980,10 +989,12 @@ async function connect() {
     noticeEl.hidden = !outsideReview(documentPath(sdk));
     if (sdk.capabilities?.liveDocument === 1 && sdk.capabilities?.sendHTMLReplace === 1) {
       sdk.actions.subscribeLiveDocument(onLiveDocument);
-      setStatus('Click in a block to see its options.');
+      idleStatus = 'Click in a block to see its options.';
+      setStatus(idleStatus);
     } else {
       // DA editor: no shared document; the author selects the block's name row
-      setStatus('Select a block’s name row (e.g. “hero-corp (image-slide, …)”) to see its options.');
+      idleStatus = 'Select a block’s name row (e.g. “hero-corp (image-slide, …)”) to see its options.';
+      setStatus(idleStatus);
       let busy = false;
       setInterval(async () => {
         if (busy || document.hidden) return;
