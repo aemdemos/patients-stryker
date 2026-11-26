@@ -545,6 +545,7 @@ body:not(.rv-role-aoe) .rv-aoe-only { display: none; }
 }
 
 .rv-live-msg[hidden] { display: none; }
+.rv-rep-msg { z-index: 3; }
 .rv-live-msg strong { font-size: var(--fs-xl); }
 .rv-live-msg span { color: var(--c-ink-2); }
 .rv-live-msg.rv-live-error strong { color: var(--c-error); }
