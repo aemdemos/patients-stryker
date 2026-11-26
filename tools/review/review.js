@@ -55,7 +55,7 @@ const READY_TIMEOUT = 8000;
 const NAME_KEY = storageKey('reviewer');
 const MODES = ['flip', 'opacity', 'side'];
 const COMPARE = {
-  rs: 'as-is', src: 'source screenshot', live: 'source render', real: 'live stryker.com',
+  rs: 'as-is', src: 'source screenshot', live: 'source render', real: 'live stryker.com', rep: 'group representative',
 };
 const WIDTHS = REVIEW.widths.map((w) => w.vp);
 
@@ -64,7 +64,7 @@ const state = {
   page: params.get('page') || '',
   vp: WIDTHS.includes(Number(params.get('vp'))) ? Number(params.get('vp')) : WIDTHS[0],
   mode: MODES.includes(params.get('mode')) ? params.get('mode') : REVIEW.mode,
-  cmp: REVIEW.compare.includes(params.get('cmp')) || (params.get('cmp') === 'real' && document.documentElement.dataset.reviewLive) ? params.get('cmp') : REVIEW.compare[0],
+  cmp: REVIEW.compare.includes(params.get('cmp')) || params.get('cmp') === 'rep' || (params.get('cmp') === 'real' && document.documentElement.dataset.reviewLive) ? params.get('cmp') : REVIEW.compare[0],
   show: ['rs', 'cmp'].includes(params.get('show')) ? 'cmp' : 'std',
   opacity: Number.isFinite(Number(params.get('op'))) && params.get('op') !== null ? Number(params.get('op')) : 50,
   sync: true,
@@ -73,20 +73,21 @@ const state = {
 const $ = (sel) => document.querySelector(sel);
 const stage = $('.rv-stage');
 const panes = {
-  std: $('.rv-std'), rs: $('.rv-rs'), src: $('.rv-src'), live: $('.rv-live'), real: $('.rv-real'),
+  std: $('.rv-std'), rs: $('.rv-rs'), src: $('.rv-src'), live: $('.rv-live'), real: $('.rv-real'), rep: $('.rv-rep'),
 };
 const frames = {
   std: panes.std.querySelector('iframe'),
   rs: panes.rs.querySelector('iframe'),
   live: panes.live.querySelector('iframe'),
   real: panes.real.querySelector('iframe'),
+  rep: panes.rep.querySelector('iframe'),
 };
 const scroller = panes.src.querySelector('.rv-src-scroller');
 const ready = {
-  std: false, rs: false, src: false, live: false, real: false,
+  std: false, rs: false, src: false, live: false, real: false, rep: false,
 };
 const quietUntil = {
-  std: 0, rs: 0, src: 0, live: 0, real: 0,
+  std: 0, rs: 0, src: 0, live: 0, real: 0, rep: 0,
 };
 // the real stryker.com page (Compare with: Live), with the review extension (pilot, 25 Nov
 // 2026: extension/): the extension lets stryker.com be framed here and tells, from inside it,
@@ -1241,7 +1242,7 @@ function renderNotes() {
 function setNoteMode(on) {
   // (a note goes on the migrated page or the source screenshot: never on the rendered copy, which
   // isn't kept; in any view mode, Render becomes Screenshot)
-  if (on && ['live', 'real'].includes(state.cmp) && REVIEW.compare.includes('src')) $('[data-cmp="src"]')?.click();
+  if (on && ['live', 'real', 'rep'].includes(state.cmp) && REVIEW.compare.includes('src')) $('[data-cmp="src"]')?.click();
   notes.setAdding(on);
   $('[data-action="note"]').setAttribute('aria-pressed', String(on));
   $('.rv-stage').classList.toggle('rv-adding', on);
@@ -1596,6 +1597,61 @@ async function loadSnapshot() {
 shotHooks.reload = loadSnapshot;
 
 /**
+ * the group representative of a page (its migrated page): the chosen one (★), else the group's
+ * first page (☆) → { path, chosen, published, self } or null (the page is in no group)
+ */
+function repOf(page) {
+  const group = orgOf.get(page)?.group;
+  if (!group) return null;
+  const members = [...orgOf.values()].filter((o) => o.group === group);
+  const rep = members.find((o) => o.representative) || members.find((o) => o.representativeAuto);
+  if (!rep) return null;
+  return {
+    path: rep.path,
+    group,
+    chosen: !!rep.representative,
+    published: allPages.some((p) => p.path === rep.path),
+    self: rep.path === page,
+  };
+}
+
+/** Compare with: Representative, only for a page of a group (not the representative itself) */
+function showRepChoice() {
+  const r = repOf(state.page);
+  const button = $('[data-cmp="rep"]');
+  if (!button) return;
+  button.hidden = !r || r.self;
+  if (r && !r.self) button.title = `The migrated page of this page's group representative (group ${r.group}${r.chosen ? ', chosen' : ', its first page: none chosen yet'}), the page reviewed for the whole group`;
+  // (the page left its group, or is its representative: back to the first comparison)
+  if (button.hidden && state.cmp === 'rep') $(`[data-cmp="${REVIEW.compare[0]}"]`)?.click();
+}
+
+/** the representative's migrated page, when Representative is shown; a message when it has none */
+function loadRep() {
+  if (state.cmp !== 'rep' || !state.page) return;
+  const r = repOf(state.page);
+  const msg = panes.rep.querySelector('.rv-rep-msg');
+  const tag = panes.rep.querySelector('.rv-tag');
+  if (!r || r.self) return;
+  if (!r.published) {
+    ready.rep = false;
+    frames.rep.removeAttribute('src');
+    tag.textContent = `Representative (group ${r.group})`;
+    msg.replaceChildren(el('strong', {}, 'Not migrated yet'), el('span', {}, `The group's representative, ${r.path}, has no live page yet: there is nothing to compare with until it is migrated and published.`));
+    msg.hidden = false;
+    return;
+  }
+  msg.hidden = true;
+  // (short: the page shows its own title)
+  tag.textContent = `Representative${r.chosen ? ' ★' : ' ☆'} (group ${r.group})`;
+  const url = `${BASE}${r.path}`;
+  if (frames.rep.getAttribute('src') !== url) {
+    ready.rep = false;
+    frames.rep.src = url;
+  }
+}
+
+/**
  * the real stryker.com page (Compare with: Live, the review extension): the page's source, loaded
  * when Live is shown; its bridge then says where its texts and images are (message listener)
  */
@@ -1752,6 +1808,8 @@ function loadPage() {
   loadLive();
   real.url = '';
   loadReal();
+  showRepChoice();
+  loadRep();
   pageKeys = { byId: {}, byKey: {} };
   // (the page of the address was asked for at the start, with the page list)
   const pre = early && early.page === loading ? early : null;
@@ -2103,7 +2161,9 @@ function setUpShell() {
   }, w.label)));
   // the compare options: only this review's (one alone stays, as what the page is compared with)
   document.querySelectorAll('[data-cmp]').forEach((b) => {
-    if (!REVIEW.compare.includes(b.dataset.cmp) && !(b.dataset.cmp === 'real' && HAS_REAL)) b.remove();
+    // (Representative: every review; it shows for pages of a group only)
+    const keep = REVIEW.compare.includes(b.dataset.cmp) || b.dataset.cmp === 'rep' || (b.dataset.cmp === 'real' && HAS_REAL);
+    if (!keep) b.remove();
   });
   if (!REVIEW.compare.includes('rs')) panes.rs.remove();
   if (!REVIEW.compare.includes('live')) panes.live.remove();
@@ -2241,7 +2301,7 @@ async function start() {
     return;
   }
   Object.keys(frames).forEach((side) => {
-    if (side === 'std' || REVIEW.compare.includes(side)) frames[side].addEventListener('load', () => onFrameLoad(side));
+    if (side === 'std' || side === 'rep' || REVIEW.compare.includes(side)) frames[side].addEventListener('load', () => onFrameLoad(side));
   });
   // (the page of the address: its reviews and document asked for now, not after the page list)
   if (state.page) {
@@ -2253,6 +2313,7 @@ async function start() {
   orgOf = organisation.org;
   infoOf = new Map((organisation.body?.pages || []).map((p) => [p.page, p]));
   applyFilters();
+  showRepChoice();
   // (the status page changed the filters, in another tab)
   onFiltersChange(() => {
     applyFilters();
@@ -2281,6 +2342,7 @@ async function start() {
     syncFrom('std');
     loadLive();
     loadReal();
+    loadRep();
   }));
   // the real page's bridge (the review extension): where its texts and images are, its scrolling
   window.addEventListener('message', (e) => {

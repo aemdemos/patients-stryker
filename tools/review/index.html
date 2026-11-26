@@ -38,6 +38,7 @@
         <button type="button" class="rv-btn" data-cmp="src" title="A screenshot of the stryker.com page, taken by the review (its date is in the Source shot box)">Screenshot</button>
         <button type="button" class="rv-btn" data-cmp="live" title="The stryker.com page as it is now, rendered by the review backend at this width (as rendered: menus, tabs and carousels don't move; links open the real page in a new tab)">Render</button>
         <button type="button" class="rv-btn" data-cmp="real" title="The real stryker.com page, interactive (menus, tabs, carousels work), with Scroll Sync: needs the review extension (pilot)">Live</button>
+        <button type="button" class="rv-btn" data-cmp="rep" title="The migrated page of this page's group representative (the page reviewed for the whole group)" hidden>Representative</button>
       </div>
       <div class="rv-group" role="group" aria-label="View">
         <button type="button" class="rv-btn" data-mode="flip" title="Flip between the standard page and the other one (Space)">Flip</button>
@@ -72,6 +73,11 @@
         <div class="rv-src-scroller"><div class="rv-src-page"></div></div>
         <span class="rv-tag">Screenshot</span>
         <p class="rv-src-none" hidden>No snapshot of this page at this width yet.</p>
+      </div>
+      <div class="rv-frame rv-rep" data-side="rep">
+        <iframe title="The group's representative page"></iframe>
+        <span class="rv-tag">Representative</span>
+        <p class="rv-live-msg rv-rep-msg" hidden></p>
       </div>
       <div class="rv-frame rv-real" data-side="real">
         <iframe title="The real stryker.com page"></iframe>
