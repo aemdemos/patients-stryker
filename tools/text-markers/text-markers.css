@@ -266,3 +266,54 @@ body {
 .tm-explain li + li {
   margin-top: 4px;
 }
+
+/* Section style: what a section is, the steps, the tasks and where to paste */
+.tm-intro {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--s2-gray-75, #f3f3f3);
+  font-size: 13px;
+}
+
+.tm-intro p,
+.tm-step {
+  margin: 0;
+  font-size: 13px;
+}
+
+.tm-task > summary {
+  font-weight: 700;
+}
+
+.tm-task-now {
+  font-weight: 400;
+  color: var(--s2-gray-700, #505050);
+}
+
+.tm-where:not([hidden]) {
+  display: grid;
+  gap: 4px;
+}
+
+.tm-paste-doc,
+.tm-paste-break {
+  font-size: 12px;
+  color: var(--s2-gray-700, #505050);
+}
+
+.tm-paste-table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.tm-paste-table td {
+  padding: 2px 8px;
+  border: 1px solid var(--s2-gray-300, #b1b1b1);
+}
+
+.tm-paste-table .tm-paste-here {
+  outline: 2px solid var(--s2-blue-800, #3b63fb);
+  font-weight: 700;
+}

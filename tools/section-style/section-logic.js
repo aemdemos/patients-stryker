@@ -204,6 +204,54 @@ export async function copySectionStyle({
 }
 
 /**
+ * One group of section choices as buttons (or switches), only the choices that fit the section
+ * (and those it has); null when none fits. `values` limits the group to some of its choices.
+ */
+function groupFieldset(group, {
+  draft, facts, explain, onChange, values, legend = true,
+}) {
+  const isOn = (value) => !!value && tokensOf(value).every((t) => draft.includes(t));
+  const offered = (value, meta) => isOn(value) || !sectionUnfit(meta?.needs, facts, draft);
+  const titleOf = (value, meta) => [meta?.hint, value ? `Style “${value.replace(' ', ', ')}”` : 'No style']
+    .filter(Boolean).join('\n');
+  const choices = (group.options || group.flags)
+    .filter(([value]) => value && (!values || values.includes(value)));
+  const visible = choices.filter(([value, , meta]) => offered(value, meta));
+  if (!visible.length) return null;
+  const fieldset = el('fieldset', { class: 'tm-group' }, legend ? el('legend', {}, group.label) : null);
+  let row = el('div', { class: 'tm-choices', role: 'group', 'aria-label': group.label });
+  if (group.flags) {
+    visible.forEach(([value, label, meta]) => {
+      row.append(el('label', { class: 'tm-check', title: titleOf(value, meta) }, el('input', {
+        type: 'checkbox',
+        checked: draft.includes(value),
+        onchange: (e) => onChange(toggleSection(draft, value, e.target.checked)),
+      }), label));
+    });
+  } else {
+    const selected = selectedIn(group, draft);
+    const none = group.options.find(([value]) => !value);
+    const list = [...(none ? [none] : []), ...visible];
+    row = choiceLayout(group.label, list, (value, label, meta) => {
+      const button = choiceButton(value, label, meta, value === selected, () => {
+        onChange(pickSection(draft, group, value));
+      });
+      button.title = titleOf(value, meta);
+      return button;
+    });
+  }
+  fieldset.append(row);
+  // Section style: what each choice does, written out (colours speak for themselves)
+  const colours = visible.every(([value]) => /^box-/.test(value));
+  if (explain && !colours) {
+    fieldset.append(el('ul', { class: 'tm-explain' }, ...visible
+      .filter(([, , meta]) => meta?.hint)
+      .map(([, label, meta]) => el('li', {}, el('strong', {}, label), ` — ${meta.hint}`))));
+  }
+  return fieldset;
+}
+
+/**
  * The section choices that fit a section, as buttons and switches: only the styles that can
  * apply to it (side by side when it holds 2 or more parts, tab or accordion panel when it opens
  * with a heading, carousel slide when it holds a Hero (corp) or Columns block), a follow-up
@@ -218,47 +266,14 @@ export async function copySectionStyle({
 export function renderSectionGroups(container, {
   draft, facts, near = [], explain = false, onChange,
 }) {
-  const isOn = (value) => !!value && tokensOf(value).every((t) => draft.includes(t));
-  const offered = (value, meta) => isOn(value) || !sectionUnfit(meta?.needs, facts, draft);
-  const titleOf = (value, meta) => [meta?.hint, value ? `Style “${value.replace(' ', ', ')}”` : 'No style']
-    .filter(Boolean).join('\n');
   let groupsShown = 0;
   const roleBox = el('details', { class: 'tm-more tm-roles' });
   SECTION_OPTIONS.groups.forEach((group) => {
-    const choices = (group.options || group.flags).filter(([value]) => value);
-    const visible = choices.filter(([value, , meta]) => offered(value, meta));
-    if (!visible.length) return;
+    const fieldset = groupFieldset(group, {
+      draft, facts, explain, onChange,
+    });
+    if (!fieldset) return;
     groupsShown += 1;
-    const fieldset = el('fieldset', { class: 'tm-group' }, el('legend', {}, group.label));
-    let row = el('div', { class: 'tm-choices', role: 'group', 'aria-label': group.label });
-    if (group.flags) {
-      visible.forEach(([value, label, meta]) => {
-        row.append(el('label', { class: 'tm-check', title: titleOf(value, meta) }, el('input', {
-          type: 'checkbox',
-          checked: draft.includes(value),
-          onchange: (e) => onChange(toggleSection(draft, value, e.target.checked)),
-        }), label));
-      });
-    } else {
-      const selected = selectedIn(group, draft);
-      const none = group.options.find(([value]) => !value);
-      const list = [...(none ? [none] : []), ...visible];
-      row = choiceLayout(group.label, list, (value, label, meta) => {
-        const button = choiceButton(value, label, meta, value === selected, () => {
-          onChange(pickSection(draft, group, value));
-        });
-        button.title = titleOf(value, meta);
-        return button;
-      });
-    }
-    fieldset.append(row);
-    // Section style: what each choice does, written out (colours speak for themselves)
-    const colours = visible.every(([value]) => /^box-/.test(value));
-    if (explain && !colours) {
-      fieldset.append(el('ul', { class: 'tm-explain' }, ...visible
-        .filter(([, , meta]) => meta?.hint)
-        .map(([, label, meta]) => el('li', {}, el('strong', {}, label), ` — ${meta.hint}`))));
-    }
     (ROLE_GROUPS.includes(group.id) ? roleBox : container).append(fieldset);
   });
   if (roleBox.querySelector('fieldset')) {
@@ -269,4 +284,54 @@ export function renderSectionGroups(container, {
     container.append(roleBox);
   }
   return groupsShown;
+}
+
+/**
+ * The section choices by what the author wants to do (Section style): each task a fold with
+ * an example, holding the groups (or some of a group's choices) that do it; a task shows when
+ * one of its choices fits the section, and is open when the section has one of them.
+ * @param {Element} container Where the tasks go
+ * @param {{draft: string[], facts: object, near: string[], onChange: Function,
+ *   tasks: Array<{title: string, example?: string, groups: Array<string|{id: string,
+ *   values: string[]}>, extra?: () => Element}>}} state The section and the tasks
+ * @returns {number} How many tasks are shown
+ */
+export function renderSectionTasks(container, {
+  draft, facts, near = [], onChange, tasks,
+}) {
+  let shown = 0;
+  tasks.forEach((task) => {
+    const parts = task.groups.map((g) => {
+      const { id, values } = typeof g === 'string' ? { id: g } : g;
+      const group = SECTION_OPTIONS.groups.find((x) => x.id === id);
+      // a task of one group needs no group title: the task says what it is
+      return group && groupFieldset(group, {
+        draft, facts, explain: true, onChange, values, legend: task.groups.length > 1,
+      });
+    }).filter(Boolean);
+    const extra = task.extra?.();
+    if (!parts.length && !extra) return;
+    shown += 1;
+    const values = task.groups.flatMap((g) => {
+      const group = SECTION_OPTIONS.groups.find((x) => x.id === (typeof g === 'string' ? g : g.id));
+      const list = (group?.options || group?.flags || []).map(([v]) => v).filter(Boolean);
+      return typeof g === 'string' ? list : list.filter((v) => g.values.includes(v));
+    });
+    const on = values.filter((v) => tokensOf(v).every((t) => draft.includes(t)));
+    const labelOf = (v) => sectionChoices().find(([x]) => x === v)?.[1] || v;
+    const now = on.length ? on.map(labelOf).join(', ') : '';
+    const box = el(
+      'details',
+      { class: 'tm-more tm-task' },
+      el('summary', {}, task.title, now ? el('span', { class: 'tm-task-now' }, ` — now: ${now}`) : null),
+      task.example ? el('p', { class: 'tm-hint' }, task.example) : null,
+      ...parts,
+      extra,
+    );
+    const nearLabels = task.roles ? near.map((r) => ROLE_LABELS[r]).filter(Boolean) : [];
+    if (nearLabels.length) box.append(el('p', { class: 'tm-hint' }, `The section next to it is ${[...new Set(nearLabels)].join(' and ')}: make this one the same to add it.`));
+    box.open = on.length > 0 || nearLabels.length > 0;
+    container.append(box);
+  });
+  return shown;
 }

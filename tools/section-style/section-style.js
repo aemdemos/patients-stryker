@@ -15,7 +15,7 @@ import {
 } from '../panel-ui.js';
 import {
   sectionInfo, sectionFactsOf, normalisedSection, orderedSection, copySectionStyle,
-  renderSectionGroups,
+  renderSectionTasks,
 } from './section-logic.js';
 import { paintSwatches } from '../colour-groups.js';
 import { REVIEW_NOTE, documentPath, outsideReview } from '../review-pages.js';
@@ -202,13 +202,70 @@ async function copySpacer(style) {
   }
 }
 
+/** the spacer sizes to copy (inside the "Line above / more space" task) */
 function renderSpacers() {
-  const box = el('details', { class: 'tm-more' }, el('summary', {}, 'Add space between sections (spacer)'));
-  box.append(
-    el('p', { class: 'tm-hint' }, 'More space between two sections is an empty section of its own, with the style “spacer” (as on the patients site). Its size is the gap it adds; use it above a divider line for stryker.com’s larger gaps.'),
+  return el(
+    'div',
+    { class: 'tm-group' },
+    el('p', { class: 'tm-hint' }, el('strong', {}, 'More space between two sections'), ' is an empty section of its own with the style “spacer” (as on the patients site). Pick its size to copy it, then paste it between the two sections.'),
     choiceLayout('Spacer size', SPACERS.map(([style, label]) => [style, label, { hint: `Copies a spacer section: style “${style}”` }]), (style, label, meta) => choiceButton(style, label, meta, false, () => copySpacer(style))),
   );
-  return box;
+}
+
+// the choices by what an author wants to do with the section, with a stryker.com example
+const TASKS = [
+  {
+    title: 'Colour behind it',
+    example: 'A coloured box or band behind the whole section, e.g. Pangea’s gold band with the numbers.',
+    groups: ['background', 'background-look', 'gradient'],
+  },
+  {
+    title: 'Put its parts side by side',
+    example: 'The section’s blocks and text next to each other instead of one under the other, e.g. text beside a Panel box.',
+    groups: ['side', 'side-phones'],
+  },
+  {
+    title: 'Line above / more space',
+    example: 'A grey line above the section, as wide as the content, e.g. Connected OR’s separators. For more space, add a spacer section.',
+    groups: [{ id: 'text', values: ['divider'] }],
+    extra: renderSpacers,
+  },
+  {
+    title: 'Centre or narrow the text',
+    groups: [{ id: 'text', values: ['text-center', 'narrow'] }],
+  },
+  {
+    title: 'Button colour',
+    example: 'The section’s buttons (a link alone on its line) in another colour.',
+    groups: ['buttons'],
+  },
+  {
+    title: 'Show only on desktop or on phones',
+    groups: ['show'],
+  },
+  {
+    title: 'Make it a tab, accordion panel or carousel slide',
+    example: 'Sections of the same kind in a row become one tab set, accordion or carousel.',
+    groups: ['role', 'accordion', 'carousel', 'band'],
+    roles: true,
+  },
+];
+
+/** where the copied style goes, drawn as the document shows it */
+function pastePicture(hasMeta, text) {
+  return el(
+    'div',
+    { class: 'tm-paste' },
+    el('p', { class: 'tm-hint' }, 'Paste it ', hasMeta ? 'over the Style row of this section’s Section Metadata table:' : 'as a new table at the end of this section:'),
+    el('div', { class: 'tm-paste-doc' }, '… the section’s text and blocks …'),
+    el(
+      'table',
+      { class: 'tm-paste-table' },
+      el('tr', {}, el('td', { colspan: '2' }, 'Section Metadata')),
+      el('tr', {}, el('td', {}, 'style'), el('td', { class: 'tm-paste-here' }, text || '…')),
+    ),
+    el('div', { class: 'tm-paste-break' }, '--- section break ---'),
+  );
 }
 
 function renderGroups() {
@@ -217,26 +274,27 @@ function renderGroups() {
   if (!current) {
     titleEl.textContent = '';
     stateEl.textContent = '';
-    whereEl.textContent = '';
+    whereEl.replaceChildren();
     updatePreview();
     return;
   }
-  titleEl.textContent = `Section ${current.index + 1} of ${current.count}: “${current.label || 'empty'}”`;
+  titleEl.textContent = `This section: ${current.index + 1} of ${current.count}, “${current.label || 'empty'}”`;
   const changed = orderedSection(draft).join(',') !== orderedSection(current.sectionStyles).join(',');
-  stateEl.textContent = `Holds ${current.holds}. ${changed ? `Not applied yet: ${listOf(orderedSection(draft))}` : `On the section: ${listOf(current.sectionStyles)}`}`;
+  stateEl.textContent = `Holds ${current.holds}. ${changed ? `Not applied yet: ${listOf(orderedSection(draft))} (copy it in step 3 below)` : `On the section: ${listOf(current.sectionStyles)}`}`;
   const near = current.neighbourRoles || [];
-  const shown = renderSectionGroups(groupsEl, {
+  groupsEl.append(el('p', { class: 'tm-step' }, el('strong', {}, '2  What do you want to do?'), ' Only what fits this section is shown.'));
+  const shown = renderSectionTasks(groupsEl, {
     draft,
     facts: sectionFactsOf(current.sectionHtml, near, draft),
     near,
-    explain: true,
+    tasks: TASKS,
     onChange: (next) => {
       draft = next;
       renderGroups();
     },
   });
   if (!shown) groupsEl.append(el('p', { class: 'tm-hint' }, 'No section style applies to this section as it is.'));
-  groupsEl.append(renderSpacers());
+  const text = orderedSection(draft).join(', ');
   const codeEl = el('code', { class: 'tm-code', hidden: true });
   actionsEl.append(
     el('button', {
@@ -244,14 +302,16 @@ function renderGroups() {
       class: 'tm-primary',
       disabled: !changed,
       onclick: () => copySectionStyle({
-        text: orderedSection(draft).join(', '), hasMeta: current.hasMeta, codeEl, setStatus,
+        text, hasMeta: current.hasMeta, codeEl, setStatus,
       }),
-    }, changed ? 'Copy section style' : 'No changes'),
+    }, changed ? 'Copy section style' : 'No changes yet'),
     codeEl,
   );
-  whereEl.textContent = current.hasMeta
-    ? 'Copy, then paste over the Style row of this section’s Section Metadata table.'
-    : 'Copy, then paste the Section Metadata table at the end of this section.';
+  whereEl.replaceChildren(
+    el('p', { class: 'tm-step' }, el('strong', {}, '3  Copy and paste'), changed ? '' : ' — pick something in step 2 first.'),
+    actionsEl,
+    ...(changed ? [pastePicture(current.hasMeta, text)] : []),
+  );
   paintSwatches(groupsEl, previewFrame);
   updatePreview();
 }
@@ -288,7 +348,7 @@ function render() {
   statusEl = el('p', { class: 'tm-status', role: 'status' });
   titleEl = el('p', { class: 'tm-block-name' });
   stateEl = el('p', { class: 'tm-hint tm-applied' });
-  whereEl = el('p', { class: 'tm-hint' });
+  whereEl = el('div', { class: 'tm-where' });
   groupsEl = el('div', { class: 'tm-choices-wrap' });
   actionsEl = el('div', { class: 'tm-actions' });
   previewFrame = el('iframe', { class: 'tm-preview', title: 'Preview', src: `${PREVIEW}?v=${Date.now()}` });
@@ -308,7 +368,12 @@ function render() {
   }, name === 'desktop' ? 'Desktop' : 'Phone'));
   root.append(
     el('h1', {}, 'Section style'),
-    el('p', { class: 'tm-hint' }, 'Styles the part of the page between two section breaks: its background, width, layout, line above, and whether it is a tab, accordion panel or carousel slide. Click in a block of the section, or select a few words of its text.'),
+    el(
+      'div',
+      { class: 'tm-intro' },
+      el('p', {}, 'A ', el('strong', {}, 'section'), ' is everything between two section breaks (---). Use this panel for the ', el('strong', {}, 'whole section'), '; for one block use Block options, for a few words Text style.'),
+      el('p', { class: 'tm-step' }, el('strong', {}, '1  Point at the section:'), ' click in one of its blocks, or select a few words of its text.'),
+    ),
     noticeEl,
     el(
       'div',
@@ -317,11 +382,11 @@ function render() {
       stateEl,
       el('div', { class: 'tm-choices', role: 'radiogroup', 'aria-label': 'Preview width' }, ...viewButtons),
       frameBox,
-      actionsEl,
-      whereEl,
     ),
-    statusEl,
     groupsEl,
+    whereEl,
+    // the step's result (copied, where to paste) or what to do first, under step 3
+    statusEl,
     el('p', { class: 'tm-hint tm-pointer' }, 'Changing one block (its colours, boxes, layout)? Use Block options. A few words? Text style.'),
   );
   window.addEventListener('message', (e) => {
