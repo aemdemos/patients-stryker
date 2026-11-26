@@ -1,0 +1,10 @@
+/*
+ * Video: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js).
+ */
+
+/* border: the video in a 1px black frame (stryker.com .c-standalone-video.black-border, e.g. the
+   SAGE FocusRN webinar pages; without `border` it is unframed, as the source's `hide-border`) */
+body.corp .video.border :is(.dm-video-wrapper, .video-embed) {
+  border: 1px solid var(--color-black);
+}

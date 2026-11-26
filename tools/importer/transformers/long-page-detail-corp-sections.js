@@ -42,7 +42,9 @@ import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
 
-const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
+const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments', 'base'];
+// templates whose rich-text title is only a source H1 (a lower heading keeps its level)
+const H1_TITLE_ONLY = ['base'];
 
 // the shared XFs: on 2 or more long-page-detail pages in the export
 const XF_PAGES = Object.values(PAGE_XFS).flat().reduce((counts, xf) => {
@@ -280,6 +282,8 @@ function sectionTitles(main, doc) {
     if (!nodes.length) {
       const spacer = doc.createElement('div');
       spacer.className = 'c-largeheadline';
+      // a jump target (`data-section-id`, set by a page builder) stays the Section Metadata `Id`
+      if (title.hasAttribute('data-section-id')) spacer.setAttribute('data-section-id', title.getAttribute('data-section-id'));
       title.replaceWith(spacer);
       return;
     }
@@ -358,7 +362,19 @@ function marketoBlock(container, doc) {
     ['Munchkin ID', form.getAttribute('data-marketo-munchkin-id') || ''],
     ['Form ID', form.getAttribute('data-marketo-form-id') || ''],
   ];
-  return WebImporter.Blocks.createBlock(doc, { name: 'Marketo Form', cells });
+  // a page builder may ask for the Altcha captcha rows (`data-captcha`) the corp form pages carry
+  if (container.matches('[data-captcha]') || container.querySelector('[data-captcha]')) {
+    cells.push(
+      ['Captcha Script', 'https://www.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js'],
+      ['Captcha Challenge URL', 'https://www.stryker.com/bin/stryker/captcha/challenge'],
+    );
+  }
+  const block = WebImporter.Blocks.createBlock(doc, { name: 'Marketo Form', cells });
+  // a page builder may ask for the section style of the form (`data-form-style`)
+  const style = (container.matches('[data-form-style]') ? container : container.querySelector('[data-form-style]'))
+    ?.getAttribute('data-form-style');
+  if (style) block.setAttribute('data-section-style', style);
+  return block;
 }
 
 const CELL_COMPONENTS = [
@@ -733,7 +749,8 @@ const isMediaCell = (td) => !td.textContent.trim() || (td.querySelector(MEDIA)
  * (on phones each image then its own name). The rows also share the section style.
  */
 function gridRows(main) {
-  const isColumns = (el) => el && el.matches('table[data-keep="section"]')
+  // `data-no-merge`: a block that stays on its own (one hero carousel slide per section)
+  const isColumns = (el) => el && el.matches('table[data-keep="section"]:not([data-no-merge])')
     && /^Columns\b/.test(text(tableRows(el)[0] || el));
   const empty = (el) => !text(el) && !el.querySelector(`${MEDIA}, table, form, hr, .sectionseparator`)
     && !el.matches('[data-keep], .sectionseparator, hr');
@@ -906,7 +923,8 @@ export default function transform(hookName, element, payload) {
   // no title: the first non-empty Large Headline or rich-text heading (in source order) is
   // the page H1 (e.g. the Mako thank-you page's "Thank you for registering." H4); any other
   // rich-text H1 is an H2 (the OR staff form has two), so the page has one H1
-  let firstTitle = !hasTitle && [...main.querySelectorAll('.c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)')]
+  const titleHeadings = H1_TITLE_ONLY.includes(payload.template.name) ? 'h1' : ':is(h1, h2, h3, h4, h5, h6)';
+  let firstTitle = !hasTitle && [...main.querySelectorAll(`.c-largeheadline, .c-rich-text-editor ${titleHeadings}`)]
     .find((el) => text(el) && !el.closest('.h1-title'));
   const firstHeadline = firstTitle && firstTitle.matches('.c-largeheadline') ? firstTitle : null;
   if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);

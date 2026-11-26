@@ -1,0 +1,517 @@
+/* legal theme: www.stryker.com legal, governance and policy pages (#517) */
+body.base.legal main:has(> .section:first-child > .default-content-wrapper > h1) {
+  padding-top: calc(var(--space-section) - var(--corp-title-offset-trim));
+}
+
+/* a Large Headline title (`headline-2-5vw`): its offset below the header scales with the
+   viewport (--corp-large-headline-offset) instead of the fixed gap of sized titles */
+body.base.legal main:has(> .section:first-child.headline-2-5vw > .default-content-wrapper > h1) {
+  padding-top: var(--corp-large-headline-offset);
+}
+
+body.base.legal main > .section:first-child:has(> .default-content-wrapper > h1) {
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
+/* source gap above a heading that follows copy: one empty paragraph (--corp-blank-line) plus the
+   paragraph margin; after a block the source also adds its column-control margin and 20px */
+:where(body.base.legal) main > .section > .default-content-wrapper > :is(p, ul, ol) + h2 {
+  margin-top: calc(var(--space-block) + var(--corp-blank-line));
+}
+
+body.base.legal main > .section > .columns-wrapper + .default-content-wrapper {
+  padding-top: calc(var(--space-block) + var(--corp-blank-line) + 2 * var(--space-block-l));
+}
+
+/* a section that opens with a heading after a copy-only section (bylaws Article I) */
+body.base.legal main > .section:not(:has(h1)) + .section > .default-content-wrapper:first-child > h2:first-child {
+  margin-top: calc(var(--corp-blank-line) + var(--space-block));
+}
+
+/* source headings sit 20px above their copy (H3) */
+body.base.legal main > .section > .default-content-wrapper > h3:has(+ p) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.base.legal main > .section:first-child:has(> .default-content-wrapper > h1) > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.base.legal main > .section:first-child > .default-content-wrapper > h1:has(+ p) {
+  margin-bottom: var(--space-block-s);
+}
+
+body.base.legal main > .section:first-child:not([class*="headline-"]) > .default-content-wrapper > h1 {
+  line-height: var(--heading-line-height);
+}
+
+body.base.legal main > .section > .columns-wrapper:has(> .columns.color-heads) + .default-content-wrapper {
+  padding-top: var(--corp-blank-line);
+}
+
+/* a bold page title with no Large Headline size (source Futura bold 28px, gold when also italic) */
+body.base.legal main > .section:first-child:not(.headline-2-5vw) > .default-content-wrapper > h1:has(strong) {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-title-underline);
+  padding-bottom: 0;
+}
+
+@media (width >= 900px) {
+  body.base.legal main > .section:first-child:not(.headline-2-5vw) > .default-content-wrapper > h1:has(strong) {
+    line-height: var(--heading-line-height);
+  }
+}
+
+/* bylaws and charters copy: 9/12 of the row from 900px (stryker.com col-md-9) */
+@media (width >= 900px) {
+  body.base.legal main > .section.heading-space-l > .default-content-wrapper > * {
+    padding-right: calc(25% + var(--space-block));
+  }
+}
+
+/* po-terms: the title is a 1.5x span in the H4 and the intro a 0.8x serif span (14px headings on
+   phones, 17.5px from 600px) */
+body.base.legal main > .section.width-67 > .default-content-wrapper > h4 {
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+body.base.legal main > .section.width-67 > .default-content-wrapper > h4 + h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--footnote-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--footnote-line-height);
+}
+
+@media (width >= 600px) {
+  body.base.legal main > .section.width-67 > .default-content-wrapper > h4 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.base.legal main > .section.width-67 > .default-content-wrapper > h4 + h4 {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+/* underlined title-only sections: tighter source line-height on phones */
+body.base.legal main > .section:first-child > .default-content-wrapper > h1.underline:not(:has(strong)) {
+  line-height: var(--corp-heading-line-height-title-underline);
+}
+
+body.base.legal main > .section > .default-content-wrapper:not(:has(+ .columns-wrapper h4:first-child)) h2:is(.underline, :has(> u)):not(:has(+ :is(h3, h4))) {
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.base.legal main > .section:first-child > .default-content-wrapper > h1.underline:not(:has(strong)) {
+    line-height: var(--heading-line-height);
+  }
+
+  body.base.legal main > .section:first-child:has(> .default-content-wrapper > h1) {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.base.legal main > .section > .default-content-wrapper:not(:has(+ .columns-wrapper h4:first-child)) h2:is(.underline, :has(> u)):not(:has(+ :is(h3, h4))) {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.base.legal main > .section > .columns-wrapper + .default-content-wrapper {
+    padding-top: calc(var(--space-block) + var(--corp-blank-line) + var(--space-section) + var(--space-block-l));
+  }
+
+  body.base.legal main > .section > .default-content-wrapper > h3:has(+ p) {
+    margin-bottom: var(--space-section);
+  }
+}
+
+body.base.legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) {
+  margin: 0;
+  padding-left: var(--list-indent-l);
+  list-style: none;
+}
+
+body.base.legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) ul {
+  margin: 0;
+  list-style: none;
+  padding-left: var(--list-indent-l);
+}
+
+body.base.legal main > .section.width-50:first-child + .section .accordion.divided {
+  padding-top: var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.base.legal main > .section.width-50:first-child:has(+ .section .accordion.divided):nth-child(n):nth-child(n) {
+  margin-bottom: var(--space-block);
+}
+
+@media (width >= 600px) {
+  body.base.legal main > .section.width-50:first-child + .section .accordion.divided {
+    padding-top: var(--space-section);
+  }
+
+  body.base.legal main > .section.width-50:first-child:has(+ .section .accordion.divided):nth-child(n):nth-child(n) {
+    margin-bottom: var(--space-block);
+  }
+}
+
+/* an H2 title followed straight by a block: the source leaves one empty row above it (convercent) */
+body.base.legal main > .section:first-child > .default-content-wrapper:has(> h2:only-child):has(+ .table-wrapper) {
+  padding-top: var(--space-section);
+}
+
+/* title section above the committee columns: the source gap to the first label is 45px */
+body.base.legal main > .section:first-child:has(+ .section > .columns-wrapper > .columns.no-stack) > .default-content-wrapper {
+  padding-block: calc(2 * var(--space-section)) 0;
+}
+
+body.base.legal main > .section:first-child:has(+ .section > .columns-wrapper > .columns.no-stack) > .default-content-wrapper > h2 {
+  margin-bottom: calc(var(--space-section) + var(--space-block));
+}
+
+/* committee columns: Futura 21px label over 17.5px Egyptienne names (stryker.com fontsize-1-5em / 1-25em) */
+body.base.legal main > .section.bold-body > .default-content-wrapper :is(p, li) em > strong {
+  font-family: var(--display-font-family);
+}
+
+body.base.legal main > .section:has(+ .section > .default-content-wrapper:first-child > p:first-child):has(> .default-content-wrapper:last-child > :is(p, ul, ol):last-child) {
+  margin-bottom: var(--space-block);
+}
+
+body.base.legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) li > p {
+  margin-bottom: var(--space-block);
+}
+
+body.base.legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) ul > li {
+  margin-bottom: var(--space-block);
+}
+
+body.corp.base.legal main > .section.disclaimer:has(+ .section:empty + .last-modified-section) {
+  margin-bottom: var(--space-block);
+}
+
+/* patents theme: patents and trademarks pages (#518) */
+body.base.patents main:has(> .section.columns-container:first-child > .default-content-wrapper > h1) {
+  padding-top: calc(var(--space-section) - var(--corp-title-offset-trim));
+}
+
+body.base.patents main > .section.separator > .default-content-wrapper {
+  padding-block: calc(var(--space-block-l) + var(--space-block)) calc(var(--space-block-l) + var(--space-block-s) - var(--corp-title-offset-trim));
+}
+
+body.base.patents main > .section.columns-container:first-child > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.base.patents main > .section.columns-container:first-child > .default-content-wrapper > h1 {
+  margin-bottom: var(--space-block-s);
+  padding-bottom: 0;
+  font-family: var(--display-font-family);
+  line-height: var(--corp-heading-line-height-title-underline);
+}
+
+/* the image cell's own bottom margin and the section gap are dropped */
+body.base.patents main > .section.columns-container:first-child {
+  margin-bottom: var(--space-block-s);
+}
+
+/* stacked: the image sits one paragraph space (15px) under the notice, as on the source phone layout; the
+   cover is capped at its natural width (the 666px source preset) */
+body.base.patents main > .section.columns-container:first-child .columns .columns-img-col {
+  margin: 0;
+}
+
+body.base.patents main > .section.columns-container:first-child .columns .columns-img-col img {
+  max-width: var(--corp-patents-cover-width);
+}
+
+@media (width >= 900px) {
+  body.base.patents main > .section.columns-container:first-child > .default-content-wrapper > h1 {
+    line-height: var(--heading-line-height);
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) > .default-content-wrapper {
+    grid-column: 1;
+    margin: 0;
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) > .columns-wrapper,
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns,
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns > div {
+    display: contents;
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns > div > div:first-child {
+    grid-area: 2 / 1;
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns .columns-img-col {
+    grid-area: 1 / 2 / span 2;
+    margin-top: 0;
+  }
+}
+
+/* trademarks: the title is an H1 set as the source H2 (Futura 21px, 24.5px from 600px), the intro is
+   Egyptienne w500 17.5px (21px from 600px) at 1.375, and the table follows 15px closer than the shared
+   section gap; "Last Updated" sits 60px below the table */
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper {
+  padding-bottom: var(--space-block);
+}
+
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > h1 {
+  margin-bottom: var(--space-block-l);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p {
+  font-size: var(--body-font-size-l);
+  font-weight: 500;
+  line-height: var(--paragraph-line-height);
+}
+
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:not(:last-child) {
+  margin-bottom: var(--corp-patents-intro-gap-s);
+}
+
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:last-child {
+  margin-bottom: 0;
+}
+
+body.base.patents main > .section.table-container {
+  padding-bottom: calc(2 * var(--space-section));
+}
+
+@media (width >= 600px) {
+  body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p {
+    font-size: var(--body-font-size-xl);
+  }
+
+  body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:not(:last-child) {
+    margin-bottom: var(--corp-patents-intro-gap);
+  }
+
+  body.base.patents main > .section.separator > .default-content-wrapper {
+    padding-top: calc(var(--space-section) + var(--space-block));
+  }
+}
+
+/* people theme: leader and director pages (#515) */
+
+/* a people page that opens with its H1 (the leaders index; bios open with the Back fragment).
+   The margin collapses with the header's bottom margin, so it is the whole header -> H1 gap. */
+body.base.people main > .section:first-child > .default-content-wrapper > h1:first-child {
+  margin-top: var(--space-section);
+}
+
+body.base.people main > .section.disclaimer {
+  margin-top: var(--space-section-l);
+}
+
+@media (width >= 600px) {
+  body.base.people main > .section:first-child > .default-content-wrapper > h1:first-child {
+    margin-top: calc(var(--space-section) + var(--space-block-s));
+  }
+
+  body.base.people main:has(> .section > .columns-wrapper) {
+    display: grid;
+    grid-template-columns: 58.333% 41.667%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  body.base.people main:has(> .section > .columns-wrapper) > .section {
+    grid-column: 1 / -1;
+  }
+
+  body.base.people main:has(> .section > .columns-wrapper) > .section:has(> .default-content-wrapper > h1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  body.base.people main > .section > .columns-wrapper,
+  body.base.people main > .section > .columns-wrapper .columns,
+  body.base.people main > .section > .columns-wrapper .columns > div,
+  body.base.people main > .section.columns-container {
+    display: contents;
+  }
+
+  body.base.people main > .section > .columns-wrapper .columns > div > div:first-child {
+    grid-column: 1;
+    grid-row: 3;
+    margin-bottom: var(--space-section);
+  }
+
+  body.base.people main > .section > .columns-wrapper .columns > div > div:last-child {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    align-self: start;
+    margin-bottom: var(--space-section);
+  }
+}
+
+/* webinar theme: webinars and on-demand videos (#519) */
+body.base.webinar {
+  --webinar-h2-thank-you: 30.625px; /* measured: the 1.25em "Thank you for registering" h2 from 600px */
+  --webinar-title-offset: calc(2vw - 0.6px); /* measured: the webinar title sits 2% of the 30px-padded container (10px header gap added) under the header */
+  --webinar-thank-you-offset-s: 21px; /* measured: the thank-you title sits 31px (41px from 600px) under the header, less the 10px header gap */
+  --webinar-thank-you-offset: 31px;
+  --webinar-wordmark-width: 213px; /* measured: the FocusRN wordmark's natural width */
+  --webinar-wordmark-column: calc(41.667vw - 30.25px); /* measured: the source's 5/12 column less its 30px gutter; the wordmark fills it up to its natural width */
+  --webinar-wordmark-width-fluid: min(var(--webinar-wordmark-width), var(--webinar-wordmark-column));
+  --webinar-index-title-gap-s: 14px; /* measured: wordmark to title is 2vw + 19.4px (2vw + 29.3px from 600px), less the 5.2px the wordmark's line adds */
+  --webinar-index-title-gap: 24px;
+  --webinar-hero-title-line-height-s: 22.26px; /* measured: the page-hero title's lines below 1024px */
+}
+
+/* the page title under the header, as the source (as the legal theme): a sized
+   title (page hero) --space-section less 2px; a webinar title (`serif` first section) 2vw
+   (+ the 10px header gap, so 2vw + 9.4px as source); the thank-you title 31px (41px from 600px) */
+body.base.webinar main:has(> .section:first-child > .default-content-wrapper > h1) {
+  padding-top: calc(var(--space-section) - var(--corp-title-offset-trim));
+}
+
+body.base.webinar main:has(> .section.serif:first-child > .default-content-wrapper > h1) {
+  padding-top: var(--webinar-title-offset);
+}
+
+body.base.webinar main:has(> .section.h1-1-5:first-child > .default-content-wrapper > h1) {
+  padding-top: var(--webinar-thank-you-offset-s);
+}
+
+/* the title sits in one rich text with the text under it: no padded rule under the first
+   section, and the title, speaker and description one paragraph gap apart */
+body.base.webinar main > .section:first-child > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.base.webinar main > .section.serif:has(+ .section.p-1-25) {
+  margin-bottom: 0;
+}
+
+/* headings have no rule under them (the corp h2 default) */
+body.base.webinar main > .section > .default-content-wrapper h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* thank-you: the h2 is 1.25x the h2 (26.25px, 30.625px from 600px) */
+body.base.webinar main > .section.h1-1-5 > .default-content-wrapper h2 {
+  font-size: var(--heading-font-size-l-scaled);
+}
+
+/* page hero: the gold title 10px above the subhead (24.5px at every width); the hero ends in a content-width rule one heading gap under its text
+   (`separator`), with the video 20px (30px from 600px) under the rule */
+body.base.webinar main > .section:first-child:has(+ .section.separator) {
+  margin-bottom: 0;
+}
+
+body.base.webinar main > .section:first-child:has(+ .section.separator) h1 {
+  margin-bottom: var(--space-block-s);
+  line-height: var(--webinar-hero-title-line-height-s);
+}
+
+body.base.webinar main > .section:first-child:has(+ .section.separator) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+body.base.webinar main > .section.separator {
+  border-top: 0;
+}
+
+body.base.webinar main > .section.separator > div:first-child {
+  padding-top: var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* index: the back link 11px under the header, the wordmark centred in its column and
+   scaled to it (the source column is 5/12, 3/12 from 600px, 2/12 above 1200px of the viewport), the title 2vw + 29.3px under it */
+body.base.webinar main > .section.back-link {
+  margin-bottom: calc(var(--corp-large-headline-offset) + var(--webinar-index-title-gap-s));
+  padding-top: 0;
+}
+
+body.base.webinar main > .section.back-link p:has(img) {
+  margin-inline-start: max(0px, calc((var(--webinar-wordmark-column) - var(--webinar-wordmark-width-fluid)) / 2));
+}
+
+body.base.webinar main > .section.back-link p img {
+  width: var(--webinar-wordmark-width-fluid);
+  height: auto;
+}
+
+/* index copy: the intro and the webinar copy 17.5px (the speaker in Egyptienne), the webinar
+   titles under the panel labels (Bold h3, 14px; 17.5px from 600px) with a 1px black frame on
+   the thumbnails */
+body.base.webinar main > .section.back-link + .section > .default-content-wrapper p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* …and under the video, the speaker byline (17.5px serif; 21px from 600px) one paragraph gap
+   above the description */
+body.base.webinar main > .section.separator + .section.serif {
+  margin-bottom: 0;
+}
+
+body.base.webinar main > .section.separator + .section.serif p {
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  body.base.webinar {
+    --webinar-wordmark-column: calc(25vw - 30.25px);
+  }
+
+  body.base.webinar main:has(> .section.h1-1-5:first-child > .default-content-wrapper > h1) {
+    padding-top: var(--webinar-thank-you-offset);
+  }
+
+  body.base.webinar main > .section.back-link {
+    margin-bottom: calc(var(--corp-large-headline-offset) + var(--webinar-index-title-gap));
+  }
+
+  body.base.webinar main > .section.h1-1-5 > .default-content-wrapper h2 {
+    font-size: var(--webinar-h2-thank-you);
+  }
+
+  body.base.webinar main > .section.separator {
+    margin-bottom: var(--space-section);
+  }
+
+  body.base.webinar main > .section.separator > div:first-child {
+    padding-top: var(--space-section);
+  }
+
+  body.base.webinar main > .section.separator + .section.serif p {
+    font-size: var(--body-font-size-xl);
+  }
+}
+
+@media (width >= 900px) {
+  /* the hero text wraps in the left half (col-sm-6) */
+  body.base.webinar main > .section:first-child:has(+ .section.separator) :is(h1, h2) {
+    max-width: 50%;
+    line-height: var(--heading-line-height);
+  }
+}
+
+@media (width >= 1200px) {
+  body.base.webinar {
+    --webinar-wordmark-column: calc(min(16.667vw - 30.25px, 204.8px) + max(0px, calc((1201px - 100vw) * 100))); /* the source column is 2/12 above 1200px and 3/12 at 1200px: the ramp keeps the 3/12 column at exactly 1200px */
+  }
+}

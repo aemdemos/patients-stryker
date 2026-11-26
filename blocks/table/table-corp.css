@@ -1,0 +1,51 @@
+body.corp .table.block table {
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+body.corp .table.block table tbody tr {
+  border: 0;
+}
+
+body.corp .table.block table td {
+  padding: var(--corp-table-cell-padding);
+}
+
+body.corp .table.block.striped table tbody tr:nth-child(odd) {
+  background-color: var(--corp-color-table-stripe);
+}
+
+body.corp .table.block.stacked :is(table, tbody, tr, td) {
+  display: block;
+}
+
+body.corp .table.block.stacked td > p {
+  line-height: inherit;
+}
+
+@media (width >= 900px) {
+  body.corp .table.block.stacked table {
+    display: table;
+  }
+
+  body.corp .table.block.stacked tbody {
+    display: table-row-group;
+  }
+
+  body.corp .table.block.stacked tr {
+    display: table-row;
+  }
+
+  body.corp .table.block.stacked td {
+    display: table-cell;
+  }
+}
+
+/* body-bold: bold text in the body font, on the body line height (stryker.com legal tables) */
+body.corp .table.block.body-bold table td strong {
+  font-family: inherit;
+}
+
+body.corp .table.block.body-bold table td p {
+  line-height: var(--body-line-height);
+}

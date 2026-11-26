@@ -4,13 +4,15 @@
 // (/us/en/about/our-board-of-directors/directors/<id>) and the leaders index.
 
 // TRANSFORMER IMPORTS
-import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
-import xfFragmentPath from './xf-fragment-path.js';
+import cleanupTransformer from '../transformers/patients-stryker-cleanup.js';
+import { applyBaseMeta } from './shared.js';
+import dmImagesTransformer from '../transformers/patients-stryker-dm-images.js';
+import xfFragmentPath from '../xf-fragment-path.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
-  name: 'people',
+  name: 'base',
+  group: 'people',
   description: 'www.stryker.com People pages (#515). Bio pages: the shared Back link as a Fragment block; H1 (gold first name) + role in a `serif, p-1-75, h1-1-25` section; Columns [bio | portrait]. Leaders index: H1 + intro (`serif, p-2`), then per group an H2 (corp draws its grey rule) and a Cards Corp (people) block of [portrait | name / role / Meet link] tiles. `published` from the source date; `last-updated: show` where the source shows its Last Updated line.',
   urls: [
     'https://www.stryker.com/us/en/about/our-management/leaders.html',
@@ -68,10 +70,15 @@ function splitName(el) {
   return { first, last: clean(full.slice(first.length)) };
 }
 
-/** `**[[color-gold]First] Last**` into `parent` */
+/** `***First** Last**` (gold first name) into `parent` */
 function appendName(document, parent, { first, last }) {
   const strong = document.createElement('strong');
-  strong.textContent = [first && `[[color-gold]${first}]`, last].filter(Boolean).join(' ');
+  if (first) {
+    const em = document.createElement('em');
+    em.textContent = first;
+    strong.append(em, last ? ' ' : '');
+  }
+  strong.append(last);
   parent.append(strong);
 }
 
@@ -173,7 +180,7 @@ function buildBio(document, src, kind) {
   const imgSrc = rte.closest('.aem-Grid')?.querySelector('.c-standalone-image img')
     || src.querySelector('.c-standalone-image img');
   const imgCell = imgSrc ? [image(document, imgSrc)] : [];
-  nodes.push(WebImporter.Blocks.createBlock(document, { name: 'Columns', cells: [[bio, imgCell]] }));
+  nodes.push(WebImporter.Blocks.createBlock(document, { name: 'Columns (columns-58-42)', cells: [[bio, imgCell]] }));
   return nodes;
 }
 
@@ -273,7 +280,7 @@ export default {
     main.appendChild(document.createElement('hr'));
     if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
     meta.site = 'corp';
-    meta.template = PAGE_TEMPLATE.name;
+    applyBaseMeta(meta, url, PAGE_TEMPLATE.group);
     if (published) meta.published = published;
     if (published && showDate) meta['last-updated'] = 'show';
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
