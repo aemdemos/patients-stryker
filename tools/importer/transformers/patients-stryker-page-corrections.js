@@ -1080,6 +1080,20 @@ const CORRECTIONS = {
   ],
 
   // single news-detail pages
+  // how-augmented-reality-can-help-care-teams-plan--design-and-const
+  'https://www.stryker.com/us/en/about/news/2024/features/how-augmented-reality-can-help-care-teams-plan--design-and-const.html': [
+    (m, d) => {
+      // full width with the body-l theme (17.5px copy, italic H2 at 21px / 24.5px from 600px)
+      m.setAttribute('data-meta-theme', 'full-width, body-l');
+      tags(m, 'stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/news/Features, stryker:content-type/news/advanced-digital-healthcare');
+      // the full-bleed image row on a light gray band, as in DA
+      const cols = blockTable(m, 'columns');
+      if (cols && !sectionOf(m, cols).some(isSectionMetadata)) {
+        const section = sectionOf(m, cols);
+        section[section.length - 1].after(WebImporter.Blocks.createBlock(d, { name: 'Section Metadata', cells: { style: 'full-bleed', background: 'light-gray' } }));
+      }
+    },
+  ],
   // advancing-surgical-education-highlights-from-ispies-at-ircad
   'https://www.stryker.com/us/en/endoscopy/news/advancing-surgical-education-highlights-from-ispies-at-ircad.html': [
     (m, d) => {

@@ -42,6 +42,7 @@ const PAGE_TEMPLATE = {
     'https://www.stryker.com/us/en/about/news/2025/stryker-receives-fda-clearance-for-optablate-bvn-ablation-system.html',
     'https://www.stryker.com/us/en/about/news/2020/stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi.html',
     'https://www.stryker.com/us/en/about/news/2023/stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-.html',
+    'https://www.stryker.com/us/en/about/news/2024/features/how-augmented-reality-can-help-care-teams-plan--design-and-const.html',
   ],
   blocks: [
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
