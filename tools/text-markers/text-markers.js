@@ -13,6 +13,7 @@ import {
 } from '../../scripts/span-markers.js';
 import libraryOptions, { labelOf } from '../library-options.js';
 import { REVIEW_NOTE, documentPath, outsideReview } from '../review-pages.js';
+import { colourGroupOf, colourRows, paintSwatches } from '../colour-groups.js';
 
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
 
@@ -183,29 +184,14 @@ function updatePreview() {
   previewFrame.contentWindow.postMessage(message, window.location.origin);
 }
 
-/** colour swatches take their colour from the site's own color-* classes */
-function paintSwatches(container) {
-  const doc = previewFrame.contentDocument;
-  if (!doc?.body) return;
-  container.querySelectorAll('[data-colour]').forEach((button) => {
-    const probe = doc.createElement('span');
-    const { colour } = button.dataset;
-    // styled like a marked word on the page: the corp colours apply to span.text-marker only
-    probe.className = `text-marker ${COLOURS.includes(colour) ? `color-${colour}` : `ts-${colour}`}`;
-    probe.textContent = 'x';
-    doc.querySelector('main').append(probe);
-    button.style.setProperty('--swatch', doc.defaultView.getComputedStyle(probe).color);
-    probe.remove();
-  });
-}
-
 /** the preview page reports when it is ready and the height of each render */
 function listenToPreview(choices) {
   window.addEventListener('message', (e) => {
     if (e.origin !== window.location.origin || e.source !== previewFrame.contentWindow) return;
     if (e.data?.action === 'tm-preview-ready') {
       previewReady = true;
-      paintSwatches(choices);
+      // the swatches take their colour from the site's own styles (text colours, line boxes)
+      paintSwatches(choices, previewFrame);
       updatePreview();
     }
     if (e.data?.action === 'tm-preview-rendered') {
@@ -215,31 +201,36 @@ function listenToPreview(choices) {
   });
 }
 
+/**
+ * One group of choices (radio buttons); colours (text colours, line boxes) show their swatch dot,
+ * in the Light · Brand · Dark · Gradients rows (tools/colour-groups.js).
+ */
 function choiceGroup(title, options, current, onPick, { swatch = false } = {}) {
   const group = el('fieldset', { class: 'tm-group' }, el('legend', {}, title));
-  const row = el('div', { class: 'tm-choices', role: 'radiogroup', 'aria-label': title });
+  const rows = el('div', { class: 'tm-choice-rows', role: 'radiogroup', 'aria-label': title });
   const buttons = [];
   const select = (value) => {
     onPick(value);
     buttons.forEach((b) => b.setAttribute('aria-checked', String(b.dataset.value === value)));
     updatePreview();
   };
-  [['', 'None'], ...options.map((o) => [o, LABELS[o] || labelOf(o)])].forEach(([value, label]) => {
+  const items = [['', 'None'], ...options.map((o) => [o, LABELS[o] || labelOf(o)])].map(([value, label]) => {
+    const colour = swatch && colourGroupOf(value);
     const button = el('button', {
       type: 'button',
       role: 'radio',
-      class: `tm-choice${swatch && value ? ' tm-swatch' : ''}`,
+      class: `tm-choice${colour ? ' tm-swatch' : ''}`,
       'data-value': value,
+      'data-swatch': colour ? value : undefined,
       'aria-checked': String(value === current),
       title: value ? `${label} — word “${value}”` : 'No change',
-      // a choice that doesn't fit the selection (special looks) is greyed out with its reason
-      onclick: () => { if (button.getAttribute('aria-disabled') !== 'true') select(value); },
-    }, swatch && value ? el('span', { class: 'tm-dot', 'aria-hidden': 'true' }) : null, label);
-    if (swatch && value) button.dataset.colour = value;
+      onclick: () => select(value),
+    }, colour ? el('span', { class: 'tm-dot', 'aria-hidden': 'true' }) : null, label);
     buttons.push(button);
-    row.append(button);
+    return [swatch ? value : '', button];
   });
-  group.append(row);
+  rows.append(...colourRows(items, (list) => el('div', { class: 'tm-choices' }, ...list), el));
+  group.append(rows);
   group.select = select;
   return group;
 }
@@ -247,8 +238,9 @@ function choiceGroup(title, options, current, onPick, { swatch = false } = {}) {
 /*
  * Special looks fit only some text, as Block options fit only some blocks: the gold rule draws
  * a rule under a heading, and a box goes around a whole line (on part of a sentence it would
- * break the sentence apart). The panel greys out a look that doesn't fit the selection, with
- * the reason and what the look does on hover; a look the words already have stays available.
+ * break the sentence apart). The panel shows the looks only while words are selected, and only
+ * those that fit them (a look the words already have always shows); a look's tooltip says what
+ * it does.
  */
 const LOOK_HINTS = {
   'rule-gold': 'A gold rule under the heading (stryker.com feature titles)',
@@ -310,26 +302,25 @@ function lookUnfit(word) {
   return '';
 }
 
-/** greys out the looks that don't fit the selection, and drops a picked look that no longer fits */
+/** shows the looks that fit the selection (none without one); drops a picked look that no
+ * longer fits */
 function updateLooks() {
   if (!lookGroup) return;
-  let reasons = 0;
   const buttons = [...lookGroup.querySelectorAll('.tm-choice')].filter((b) => b.dataset.value);
   buttons.forEach((button) => {
     const word = button.dataset.value;
     const reason = lookUnfit(word);
     const label = button.textContent.trim();
     const hint = LOOK_HINTS[word] || (word.startsWith('box-') ? boxHint(word) : '');
-    button.classList.toggle('tm-unfit', !!reason);
-    if (reason) button.setAttribute('aria-disabled', 'true');
-    else button.removeAttribute('aria-disabled');
-    button.title = [reason ? `Not available here: ${reason}.` : '', hint ? `${hint}.` : '', `${label} — word “${word}”`]
-      .filter(Boolean).join(' ');
-    if (reason) reasons += 1;
+    button.hidden = !!reason;
+    button.title = [hint ? `${hint}.` : '', `${label} — word “${word}”`].filter(Boolean).join(' ');
     if (reason && state.look === word) lookGroup.select('');
   });
-  const note = lookGroup.querySelector('.tm-reason');
-  note.hidden = reasons !== buttons.length;
+  // a row of colours with none shown goes too; the group shows only with fitting looks
+  lookGroup.querySelectorAll('.tm-swatch-row').forEach((row) => {
+    row.hidden = !row.querySelector('.tm-choice:not([hidden])');
+  });
+  lookGroup.hidden = !buttons.some((b) => !b.hidden);
 }
 
 // containers the editor wraps a selection in (a selection inside a block comes back inside
@@ -880,8 +871,7 @@ function render() {
   }, name === 'desktop' ? 'Desktop' : 'Phone'));
   viewToggle = el('div', { class: 'tm-choices', role: 'radiogroup', 'aria-label': 'Preview width' }, ...viewButtons);
 
-  lookGroup = choiceGroup('Special look', lists.look, state.look, (v) => { state.look = v; });
-  lookGroup.append(el('p', { class: 'tm-hint tm-reason', hidden: true }, 'Greyed out: select the words in the document first.'));
+  lookGroup = choiceGroup('Special look', lists.look, state.look, (v) => { state.look = v; }, { swatch: true });
   const choices = el(
     'div',
     { class: 'tm-choices-wrap' },
@@ -889,7 +879,7 @@ function render() {
     styleGroups.font = choiceGroup('Font', lists.font, state.font, (v) => { state.font = v; }),
     styleGroups.size = choiceGroup('Size (relative to the text around it)', lists.size, state.size, (v) => { state.size = v; }),
     lookGroup,
-    el('p', { class: 'tm-hint' }, 'The gold rule goes under a heading; a box goes around a whole line. Looks that don’t fit the selection are greyed out: hover for why. Bold and italic stay normal editor formatting.'),
+    el('p', { class: 'tm-hint' }, 'Special looks show when words are selected: the gold rule for a heading, a box for a whole line. Bold and italic stay normal editor formatting.'),
   );
 
   const apply = el('button', { type: 'button', class: 'tm-primary', onclick: applyToSelection }, 'Style selected text');
@@ -916,8 +906,16 @@ function render() {
   root.append(
     el('h1', {}, 'Text style'),
     noticeEl,
-    el('div', { class: 'tm-result' }, codeEl, previewNote, viewToggle, frameBox),
-    el('div', { class: 'tm-actions' }, apply, removeButton),
+    // pinned at the top while the author scrolls the choices: the style, the words, the preview
+    el(
+      'div',
+      { class: 'tm-result tm-sticky' },
+      codeEl,
+      previewNote,
+      viewToggle,
+      frameBox,
+      el('div', { class: 'tm-actions' }, apply, removeButton),
+    ),
     statusEl,
     moreOptions,
     choices,

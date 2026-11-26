@@ -15,6 +15,9 @@ import {
   BLOCK_OPTIONS, SECTION_OPTIONS, knownOptions, withLibrary,
 } from './options.js';
 import { allLibraryOptions } from '../library-options.js';
+import {
+  COLOUR_GROUPS, colourGroupOf, colourRows, isColourList, paintSwatches,
+} from '../colour-groups.js';
 import { REVIEW_NOTE, documentPath, outsideReview } from '../review-pages.js';
 
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
@@ -43,6 +46,7 @@ let sourceCache = { at: 0, html: '' };
 // from: 'live' | 'header' }
 let current = null;
 let draft = []; // the options as the author is changing them
+let cardDraft = []; // Cards (corp): each card's own colour (box-…), '' = the row's Card box
 let sectionDraft = []; // the section's styles as the author is changing them
 const touched = new Set(); // groups the author changed (their older free values are dropped)
 let view = 'desktop';
@@ -52,6 +56,7 @@ let previewHeight = 160;
 let root;
 let statusEl;
 let titleEl;
+let stateEl;
 let groupsEl;
 let otherEl;
 let applyButton;
@@ -150,8 +155,8 @@ function selectedIn(group, options) {
     .sort((a, b) => tokensOf(b).length - tokensOf(a).length)[0] || '';
 }
 
-/** `when` names a layout (the group shows only with it) or another group (shown, greyed out
- * until that group has a choice, e.g. which cell holds the box) */
+/** `when` names a layout (the group shows only with it) or another group (shown once that
+ * group has a choice, e.g. which cell holds the box) */
 function shown(group) {
   if (!group.when) return true;
   const other = def().groups.find((g) => g.id === group.when && g.options);
@@ -291,6 +296,109 @@ function ordered(options) {
   return [...known, ...options.filter((o) => !order.includes(o))];
 }
 
+/* ---------------------------------------------------------------- choices */
+
+// a group's "" choice is its default, marked so; a none ("None", "Not set", "As written" …)
+// says what it is itself
+const NONE_LABEL = /^(none|not set|no\b|as |a normal)|default/i;
+const withDefault = (value, label) => (value || NONE_LABEL.test(label) ? label : `${label} — default`);
+
+// a box or text colour choice (box-…, stat-…; a "" colour names its own with `swatch`)
+const colourOf = (value, meta) => {
+  const swatch = meta?.swatch || value;
+  return /^(box|stat)-/.test(swatch) && colourGroupOf(swatch) ? swatch : '';
+};
+
+/** one choice of a group (a radio button); a colour shows its swatch dot */
+function choiceButton(value, label, meta, checked, onPick) {
+  const swatch = colourOf(value, meta);
+  const dot = swatch ? el('span', { class: 'tm-dot', 'aria-hidden': 'true' }) : null;
+  return el('button', {
+    type: 'button',
+    role: 'radio',
+    class: 'tm-choice',
+    'aria-checked': String(checked),
+    'data-swatch': dot ? swatch : undefined,
+    title: [meta?.hint, value ? `Option “${value}”` : 'No option'].filter(Boolean).join('\n'),
+    onclick: onPick,
+  }, dot, withDefault(value, label));
+}
+
+/**
+ * A group's radio buttons: one row, or a colour list in its Light · Brand · Dark · Gradients rows.
+ * @param {string} label The group's title
+ * @param {Array<[string, string, object]>} choices The choices shown
+ * @param {(value: string, label: string, meta: object) => Element} button Builds a choice
+ */
+function choiceLayout(label, choices, button) {
+  const items = choices
+    .map(([value, text, meta]) => [colourOf(value, meta), button(value, text, meta)]);
+  const box = el('div', { class: 'tm-choice-rows', role: 'radiogroup', 'aria-label': label });
+  const row = (buttons) => el('div', { class: 'tm-choices' }, ...buttons);
+  if (isColourList(choices.map(([value, , meta]) => (value || meta?.swatch ? colourOf(value, meta) || '-' : '')))) {
+    box.append(...colourRows(items, row, el));
+  } else {
+    box.append(row(items.map(([, b]) => b)));
+  }
+  return box;
+}
+
+/* ---------------------------------------------------------------- card colours */
+
+// Cards (corp): a card row may start with a cell holding one colour name, the card's own box
+// colour over the row's Card box (blocks/cards-corp/cards-corp.js reads it the same way)
+const CARD_WORDS = {
+  'light-gray': 'gray',
+  'dark-gray': 'dark',
+  'dark-blue-gradient': 'blue-gradient',
+  'dark-purple-gradient': 'purple-gradient',
+  'dark-teal-gradient': 'teal-gradient',
+  'dark-orange-gradient': 'orange-gradient',
+  'golden-gradient': 'gold-gradient',
+};
+const cardBoxChoices = () => (def()?.groups.find((g) => g.id === 'box')?.options || [])
+  .filter(([v]) => /^box-/.test(v));
+const hasCardColours = () => current?.name === 'cards-corp' && cardBoxChoices().length > 0;
+
+/** the colour a card row's colour cell names (box-…), or '' */
+function cardColourOf(row) {
+  const cell = row.firstElementChild;
+  if (!cell || row.children.length < 2 || cell.querySelector('picture, img, a, iframe, video')) return '';
+  const word = cell.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/grey/g, 'gray')
+    .replace(/^box-/, '');
+  const value = `box-${CARD_WORDS[word] || word}`;
+  return cardBoxChoices().some(([v]) => tokensOf(v)[0] === value) ? value : '';
+}
+
+/** the cards of a Cards (corp) block: each one's colour and first words */
+function cardsOf(html) {
+  if (!html) return [];
+  const block = new DOMParser().parseFromString(html, 'text/html').body.firstElementChild;
+  return [...(block?.children || [])].map((row) => {
+    const colour = cardColourOf(row);
+    const cells = [...row.children].slice(colour ? 1 : 0);
+    const words = cells.map((c) => c.textContent.trim()).filter(Boolean).join(' ').split(/\s+/);
+    return { colour, words: `${words.slice(0, 5).join(' ')}${words.length > 5 ? ' …' : ''}` };
+  });
+}
+
+const cardsChanged = () => hasCardColours()
+  && cardDraft.join(',') !== cardsOf(current.html).map((c) => c.colour).join(',');
+
+/** writes the card colours into a block: the colour cell set, changed or removed per card */
+function withCardColours(block) {
+  if (!hasCardColours()) return;
+  [...block.children].forEach((row, i) => {
+    if (cardColourOf(row)) row.firstElementChild.remove();
+    const value = cardDraft[i];
+    const choice = value && cardBoxChoices().find(([v]) => tokensOf(v)[0] === value);
+    if (!choice) return;
+    const cell = block.ownerDocument.createElement('div');
+    [, cell.textContent] = choice;
+    row.prepend(cell);
+  });
+}
+
 /* ---------------------------------------------------------------- preview */
 
 function sizePreview() {
@@ -307,10 +415,49 @@ function updatePreview() {
   const doc = new DOMParser().parseFromString(current.html, 'text/html');
   const block = doc.body.firstElementChild;
   block.className = [current.name, ...ordered(draft)].join(' ');
+  withCardColours(block);
   sizePreview();
   previewFrame.contentWindow.postMessage({
     action: 'tm-preview-render', block: block.outerHTML, sectionStyles: sectionDraft, words: '', marker: '',
   }, window.location.origin);
+}
+
+function renderCardColours(facts) {
+  const cards = cardsOf(current.html);
+  if (!hasCardColours() || !cards.length || (facts && !facts.text)) return;
+  const fieldset = el(
+    'fieldset',
+    { class: 'tm-group' },
+    el('legend', {}, 'Card colours'),
+    el('p', { class: 'tm-hint' }, 'A card’s own box colour, over the row’s Card box (stryker.com’s coloured cards).'),
+  );
+  cards.forEach((card, i) => {
+    const value = cardDraft[i] || '';
+    const select = el('select', {
+      'aria-label': `Card ${i + 1} colour`,
+      onchange: (e) => {
+        cardDraft[i] = e.target.value;
+        renderGroups();
+        updatePreview();
+      },
+    }, el('option', { value: '' }, 'Row colour'));
+    COLOUR_GROUPS.forEach((group) => {
+      const choices = cardBoxChoices().filter(([v]) => colourGroupOf(v) === group.id);
+      if (!choices.length) return;
+      select.append(el('optgroup', { label: group.label }, ...choices
+        .map(([v, label]) => el('option', { value: tokensOf(v)[0] }, label))));
+    });
+    select.value = value;
+    const dot = el('span', { class: 'tm-dot', 'aria-hidden': 'true', 'data-swatch': value || undefined });
+    fieldset.append(el(
+      'label',
+      { class: 'tm-card-colour' },
+      dot,
+      el('span', {}, `Card ${i + 1}${card.words ? `: ${card.words}` : ''}`),
+      select,
+    ));
+  });
+  groupsEl.append(fieldset);
 }
 
 /* ---------------------------------------------------------------- the section */
@@ -473,8 +620,8 @@ async function copySection() {
  * that can apply to it (side by side when the section holds 2 or more parts, tab or accordion
  * panel when it opens with a heading, carousel slide when it holds a Hero (corp) or Columns
  * block), and a follow-up choice (on phones, starts open, autoplay, split band) only once its
- * main choice is picked. A style the section already has always shows, so it can be removed.
- * The styles that can't apply are listed, with why, under "Other section styles".
+ * main choice is picked. A style the section already has always shows, so it can be removed;
+ * the others that can't apply are not shown.
  */
 function renderSection() {
   sectionEl.replaceChildren();
@@ -483,14 +630,6 @@ function renderSection() {
   const facts = sectionFactsOf(current.sectionHtml, current.neighbourRoles || []);
   const isOn = (value) => !!value && tokensOf(value).every((t) => sectionDraft.includes(t));
   const offered = (value, meta) => isOn(value) || !sectionUnfit(meta?.needs, facts);
-  // listed with why it isn't offered: a choice hidden by the section's content; a follow-up
-  // whose main choice is off (on phones, starts open, split …) is left out silently
-  const structural = (meta) => {
-    const needs = meta?.needs || [];
-    const follows = needs.filter((n) => SECTION_CHOICE_NEEDS.includes(n));
-    return needs.some((n) => !SECTION_CHOICE_NEEDS.includes(n)) && !sectionUnfit(follows, facts);
-  };
-  const hidden = [];
   const titleOf = (value, meta) => [meta?.hint, value ? `Style “${value.replace(' ', ', ')}”` : 'No style']
     .filter(Boolean).join('\n');
   sectionEl.append(
@@ -502,12 +641,10 @@ function renderSection() {
   SECTION_OPTIONS.groups.forEach((group) => {
     const choices = (group.options || group.flags).filter(([value]) => value);
     const visible = choices.filter(([value, , meta]) => offered(value, meta));
-    choices.filter(([value, , meta]) => !offered(value, meta) && structural(meta))
-      .forEach(([, label, meta]) => hidden.push([label, sectionUnfit(meta.needs, facts)]));
     if (!visible.length) return;
     groupsShown += 1;
     const fieldset = el('fieldset', { class: 'tm-group' }, el('legend', {}, group.label));
-    const row = el('div', { class: 'tm-choices', role: group.flags ? 'group' : 'radiogroup', 'aria-label': group.label });
+    let row = el('div', { class: 'tm-choices', role: 'group', 'aria-label': group.label });
     if (group.flags) {
       visible.forEach(([value, label, meta]) => {
         row.append(el('label', { class: 'tm-check', title: titleOf(value, meta) }, el('input', {
@@ -523,19 +660,15 @@ function renderSection() {
     } else {
       const selected = selectedIn(group, sectionDraft);
       const none = group.options.find(([value]) => !value);
-      [...(none ? [none] : []), ...visible].forEach(([value, label, meta]) => {
-        row.append(el('button', {
-          type: 'button',
-          role: 'radio',
-          class: 'tm-choice',
-          'aria-checked': String(value === selected),
-          title: titleOf(value, meta),
-          onclick: () => {
-            pickSection(group, value);
-            renderGroups();
-            updatePreview();
-          },
-        }, label));
+      const list = [...(none ? [none] : []), ...visible];
+      row = choiceLayout(group.label, list, (value, label, meta) => {
+        const button = choiceButton(value, label, meta, value === selected, () => {
+          pickSection(group, value);
+          renderGroups();
+          updatePreview();
+        });
+        button.title = titleOf(value, meta);
+        return button;
       });
     }
     fieldset.append(row);
@@ -551,14 +684,6 @@ function renderSection() {
   if (!groupsShown) {
     sectionEl.append(el('p', { class: 'tm-hint' }, 'No section style applies to this section as it is.'));
   }
-  if (hidden.length) {
-    sectionEl.append(el(
-      'details',
-      { class: 'tm-more' },
-      el('summary', {}, `Other section styles (${hidden.length}): why they aren’t offered here`),
-      el('ul', { class: 'tm-hint' }, ...hidden.map(([label, why]) => el('li', {}, `${label}: ${why}.`))),
-    ));
-  }
   // a change from the section as authored (older names count as changed once they'd be renamed)
   const changed = orderedSection(sectionDraft).join(',') !== orderedSection(current.sectionStyles).join(',');
   const copy = el('button', { type: 'button', onclick: copySection, disabled: !changed }, changed ? 'Copy section style' : 'No section changes');
@@ -573,9 +698,16 @@ function renderSection() {
 
 /* ---------------------------------------------------------------- panel */
 
+const listOf = (options) => (options.length ? options.join(', ') : 'no options');
+
+/**
+ * The selected block's groups: only the choices that fit it (and those it already has); a group
+ * with none of them is not shown. A choice's tooltip says what it does.
+ */
 function renderBlockGroups() {
   groupsEl.replaceChildren();
   otherEl.replaceChildren();
+  stateEl.textContent = '';
   if (!current) {
     titleEl.textContent = 'No block selected';
     applyButton.disabled = true;
@@ -592,69 +724,48 @@ function renderBlockGroups() {
   frameBox.hidden = !current.html;
   const facts = factsOf(current.html);
   visibleGroups().forEach((group) => {
-    const fieldset = el('fieldset', { class: 'tm-group' }, el('legend', {}, group.label));
-    const row = el('div', { class: 'tm-choices', role: group.flags ? 'group' : 'radiogroup', 'aria-label': group.label });
     // the whole group: what it needs, or the group it follows (which cell holds the box)
     const after = group.when && def().groups.find((g) => g.id === group.when && g.options);
-    const groupReason = (after && !selectedIn(after, draft) ? `pick a ${after.label} first` : '')
-      || unfit(group.needs, facts);
-    const reasonOf = (value, meta, on) => {
-      if (!value || on) return ''; // 'none' and a choice the block already has stay available
-      return groupReason || unfit(meta?.needs, facts);
-    };
-    // the tooltip: why it is greyed out first, then what it does, then the option name
-    const titleOf = (value, meta, reason) => [reason ? `Not available here: ${reason}.` : '', meta?.hint,
-      value ? `Option “${value}”` : 'No option'].filter(Boolean).join('\n');
-    // greyed out but not `disabled`, so the tooltip shows in every browser; clicks are ignored
-    const unavailable = (reason) => (reason ? { 'aria-disabled': 'true' } : {});
-    let greyed = 0;
+    const groupUnfit = (after && !selectedIn(after, draft)) || !!unfit(group.needs, facts);
+    const fits = (meta, on) => on || (!groupUnfit && !unfit(meta?.needs, facts));
+    const titleOf = (value, meta) => [meta?.hint, value ? `Option “${value}”` : 'No option']
+      .filter(Boolean).join('\n');
+    let row;
     if (group.flags) {
-      group.flags.forEach(([value, label, meta]) => {
-        const on = draft.includes(value);
-        const reason = reasonOf(value, meta, on);
-        if (reason) greyed += 1;
-        row.append(el('label', { class: `tm-check${reason ? ' tm-unfit' : ''}`, title: titleOf(value, meta, reason) }, el('input', {
+      const flags = group.flags.filter(([value, , meta]) => fits(meta, draft.includes(value)));
+      if (!flags.length) return;
+      row = el('div', { class: 'tm-choices', role: 'group', 'aria-label': group.label }, ...flags
+        .map(([value, label, meta]) => el('label', { class: 'tm-check', title: titleOf(value, meta) }, el('input', {
           type: 'checkbox',
-          checked: on,
-          ...unavailable(reason),
-          onclick: (e) => { if (reason) e.preventDefault(); },
+          checked: draft.includes(value),
           onchange: (e) => {
             toggle(value, e.target.checked, group);
             renderGroups();
             updatePreview();
           },
-        }), label));
-      });
+        }), label)));
     } else {
       const selected = selectedIn(group, draft);
-      group.options.forEach(([value, label, meta]) => {
-        const reason = reasonOf(value, meta, value === selected);
-        if (reason) greyed += 1;
-        row.append(el('button', {
-          type: 'button',
-          role: 'radio',
-          class: `tm-choice${reason ? ' tm-unfit' : ''}`,
-          'aria-checked': String(value === selected),
-          ...unavailable(reason),
-          title: titleOf(value, meta, reason),
-          onclick: () => {
-            if (reason) return;
-            pick(group, value);
-            renderGroups();
-            updatePreview();
-          },
-        }, label));
-      });
+      const choices = group.options
+        .filter(([value, , meta]) => value && fits(meta, value === selected));
+      if (!choices.length) return;
+      const none = group.options.find(([value]) => !value);
+      const list = [...(none ? [none] : []), ...choices];
+      row = choiceLayout(group.label, list, (value, label, meta) => choiceButton(
+        value,
+        label,
+        meta,
+        value === selected,
+        () => {
+          pick(group, value);
+          renderGroups();
+          updatePreview();
+        },
+      ));
     }
-    fieldset.append(row);
-    // a whole group greyed out for one reason (e.g. "pick a Cell box first"): said once under it;
-    // single choices say why in their tooltip
-    const choices = (group.flags || group.options).filter(([v]) => v).length;
-    if (groupReason && greyed && greyed === choices) {
-      fieldset.append(el('p', { class: 'tm-hint tm-reason' }, `Greyed out: ${groupReason}.`));
-    }
-    groupsEl.append(fieldset);
+    groupsEl.append(el('fieldset', { class: 'tm-group' }, el('legend', {}, group.label), row));
   });
+  renderCardColours(facts);
   const others = otherOptions(draft);
   if (others.length) {
     otherEl.append(el('p', { class: 'tm-hint' }, 'Other options on this block (kept as they are; older position or spacing values are replaced when you pick in the matching group):'));
@@ -667,14 +778,20 @@ function renderBlockGroups() {
     }, `${o} ✕`)));
     otherEl.append(row);
   }
-  const changed = ordered(draft).join(',') !== ordered(normalised(current.name, current.options)).join(',');
+  const applied = ordered(normalised(current.name, current.options));
+  const optionsChanged = ordered(draft).join(',') !== applied.join(',');
+  const changed = optionsChanged || cardsChanged();
   applyButton.disabled = !changed;
   applyButton.textContent = changed ? 'Apply options' : 'No changes';
+  stateEl.textContent = changed
+    ? `Not applied yet: ${listOf(ordered(draft))}${cardsChanged() ? ' (and card colours)' : ''}`
+    : `On the block: ${listOf(applied)}`;
 }
 
 renderGroups = () => {
   renderBlockGroups();
   renderSection();
+  paintSwatches(root, previewFrame);
 };
 
 function setBlock(next) {
@@ -688,6 +805,7 @@ function setBlock(next) {
       || next.sectionHtml !== current.sectionHtml
       || (next.neighbourRoles || []).join(',') !== (current.neighbourRoles || []).join(',');
     if (content || styles) {
+      if (next.html !== current.html) cardDraft = cardsOf(next.html).map((c) => c.colour);
       current = next;
       if (styles) sectionDraft = normalisedSection(next.sectionStyles);
       renderGroups();
@@ -697,6 +815,7 @@ function setBlock(next) {
   }
   current = next;
   draft = next ? normalised(next.name, next.options) : [];
+  cardDraft = next ? cardsOf(next.html).map((c) => c.colour) : [];
   sectionDraft = next ? normalisedSection(next.sectionStyles) : [];
   touched.clear();
   renderGroups();
@@ -741,10 +860,13 @@ async function readHeaderSelection() {
 async function apply() {
   if (!current || !sdk) return;
   const options = ordered(draft);
+  const cards = cardsChanged();
+  let note = '';
   if (current.from === 'live') {
     const doc = new DOMParser().parseFromString(live.html, 'text/html');
     const block = sourceBlocks(doc)[live.selection.blockIndex];
     block.className = [current.name, ...options].join(' ');
+    withCardColours(block);
     const result = await sdk.actions.sendHTML(block.outerHTML, {
       replace: true, expected: { html: live.html, blockIndex: live.selection.blockIndex },
     });
@@ -752,6 +874,7 @@ async function apply() {
       setStatus(`The block was not changed: ${result?.message || result?.error || 'the editor refused the change'}. Click in the block and try again.`, 'error');
       return;
     }
+    current = { ...current, html: block.outerHTML };
     if (typeof result.html === 'string') onLiveDocument(result);
   } else {
     // the name row is still the selection (it is replaced as text, inside its cell)
@@ -765,18 +888,25 @@ async function apply() {
     sdk.actions.sendText(`${current.name}${options.length ? ` (${options.join(', ')})` : ''}`);
     sourceCache.at = 0;
     current = { ...current, options };
+    // the card colours are cells of the block, which only Experience Workspace's guarded
+    // replace can write: here the author types them
+    if (cards) {
+      note = ' Card colours are not written in this editor: type the colour name (e.g. “Gold gradient”) in a new first cell of the card’s row, or use Experience Workspace.';
+      cardDraft = cardsOf(current.html).map((c) => c.colour);
+    }
   }
   touched.clear();
   draft = [...options];
   current = { ...current, options };
   renderGroups();
-  setStatus(`Applied: ${current.name}${options.length ? ` (${options.join(', ')})` : ''}`, 'ok');
+  setStatus(`Applied: ${current.name}${options.length ? ` (${options.join(', ')})` : ''}${cards && !note ? ', card colours' : ''}.${note}`, note ? 'info' : 'ok');
 }
 
 function render() {
   root = document.querySelector('.tm');
   statusEl = el('p', { class: 'tm-status', role: 'status' });
   titleEl = el('p', { class: 'tm-block-name' });
+  stateEl = el('p', { class: 'tm-hint tm-applied' });
   groupsEl = el('div', { class: 'tm-choices-wrap' });
   otherEl = el('div', { class: 'tm-group' });
   applyButton = el('button', { type: 'button', class: 'tm-primary', onclick: apply }, 'No changes');
@@ -799,10 +929,16 @@ function render() {
   root.append(
     el('h1', {}, 'Block options'),
     noticeEl,
-    titleEl,
-    el('div', { class: 'tm-choices', role: 'radiogroup', 'aria-label': 'Preview width' }, ...viewButtons),
-    frameBox,
-    el('div', { class: 'tm-actions' }, applyButton),
+    // pinned at the top while the author scrolls the choices: the block, what it has, its preview
+    el(
+      'div',
+      { class: 'tm-sticky' },
+      titleEl,
+      stateEl,
+      el('div', { class: 'tm-choices', role: 'radiogroup', 'aria-label': 'Preview width' }, ...viewButtons),
+      frameBox,
+      el('div', { class: 'tm-actions' }, applyButton),
+    ),
     statusEl,
     groupsEl,
     otherEl,
@@ -811,7 +947,11 @@ function render() {
   );
   window.addEventListener('message', (e) => {
     if (e.origin !== window.location.origin || e.source !== previewFrame.contentWindow) return;
-    if (e.data?.action === 'tm-preview-ready') { previewReady = true; updatePreview(); }
+    if (e.data?.action === 'tm-preview-ready') {
+      previewReady = true;
+      paintSwatches(root, previewFrame);
+      updatePreview();
+    }
     if (e.data?.action === 'tm-preview-rendered') {
       previewHeight = Math.max(60, Math.min(e.data.height, 1600));
       sizePreview();

@@ -63,8 +63,8 @@ block (`SECTION_OPTIONS` in `options.js`): side by side (`flex`, `flex, flex-67-
 `accordion-open`, `carousel` with `autoplay`, `fade`, `split` and the split band colour). Other
 styles on the section (e.g. `full-bleed`) are kept.
 
-The area follows the selected block's section, so it shows only what can apply there (unlike block
-options, which grey out what doesn't fit):
+The area follows the selected block's section, so it shows only what can apply there (as the block
+options do):
 
 | Shown when | Choices |
 |---|---|
@@ -105,18 +105,30 @@ until the standardisation is approved (`tools/review-pages.js`).
   `['box-white shadow', 'White with soft shadow']`). The panel adds and removes them together and
   shows the choice as selected when all of them are on the block.
 - **Dependent group:** `when` may name another group instead of a layout (e.g. `when: 'box'`): the
-  group is greyed out ("pick a Cell box first") until that group has a choice, and its option goes
-  when that choice is cleared.
+  group shows only once that group has a choice, and its option goes when that choice is cleared.
 - **What a choice needs:** `needs` on a group, or a choice's third item `{ needs, hint }` (e.g.
   `['caption-tight', 'Caption right under the photo', { needs: ['caption'], hint: '…' }]`). The
   panel reads the selected block (cells per row, images, captions, an image in the first cell,
-  links, lists of links, text) and greys out a choice that would do nothing. Hovering it shows why
-  first ("Not available here: needs images in the row." / "needs 3 cells (this row has 2 cells)"),
-  then its `hint`; a click on it does nothing. A group greyed out as a whole says it once under the
-  group ("Greyed out: pick a Cell box first."). A choice the block already has stays available, so
-  it can be removed.
+  links, lists of links, text) and doesn't show a choice that would do nothing; a group with no
+  fitting choice is not shown. Hovering a choice shows its `hint`. A choice the block already has
+  always shows, so it can be removed.
   Needs: `cells-2`, `cells-2+`, `cells-3`, `cells-3+`, `cells-4`, `images`, `caption`, `image-first`,
   `links`, `link-lists`, `text`, `box` (a cell box chosen). Library sheet rows keep them.
+- **Defaults:** a radio group's `''` choice is the default and shows "— default" after its label
+  (e.g. "Medium (5%) — default"), unless it is a none ("None", "Not set", "As written").
+- **Colours:** a radio group whose choices are all colours (`box-…`, `stat-…`) shows swatch dots
+  in the Light · Brand · Dark · Gradients rows of `tools/colour-groups.js` (the one grouping for
+  both panels); the dot's colour is read from the site's styles. A `''` colour names its dot with
+  `swatch` (e.g. Statistics' gold default: `{ swatch: 'stat-gold' }`).
+- **Card colours (Cards (corp)):** one dropdown per card (Row colour + the Card box colours). It
+  writes, changes or removes the card row's first colour cell (`blocks/cards-corp`) with the
+  Experience Workspace guarded replace; the DA editor only rewrites the name row, so there the
+  panel says to type the colour name in a new first cell.
+- **Preview pinned:** the block name, the applied options, the preview and Apply stay at the top
+  while the choices scroll.
+- **Older groups in the library sheet:** a sheet row for a group the block no longer has (Columns'
+  `looks` and `align`, now Images, Text, On phones, Lines and Links; Statistics' `colour`, now
+  `number-colour`) adds nothing: its choices stay in the groups that hold them.
 - **Older names:** a block's `aliases` map an old class to its new choices (e.g.
   `'gray-last': ['box-gray']`). The panel shows the new choices; the block is rewritten with them
   when the author changes something.

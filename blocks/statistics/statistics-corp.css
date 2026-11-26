@@ -4,7 +4,9 @@
  * (CORP_BLOCK_STYLES) on `site: corp` pages only.
  *
  * The standard choices (Block options panel, docs/standardisation/statistics.md): the number
- * colour (gold default, stat-navy, stat-purple, stat-teal, stat-white), the number size
+ * colour (the 11 Text style text colours, exact: gold default, stat-blue — the older stat-navy —,
+ * stat-purple, stat-teal, stat-dark-gold, stat-white, stat-light-gray, stat-pale-gray,
+ * stat-mid-gray, stat-grey, stat-black), the number size
  * (stat-s, medium default, stat-l: 3.25, 5 and 7.5 of the page width's hundredths, as the
  * stryker.com vw sizes, twice that share on phones), numbers per row (cols-1 … cols-6),
  * centred text (left by default) and `inline` (each number beside its text, the fast facts).
@@ -21,10 +23,17 @@ body.corp.std-draft .statistics {
   --statistics-number-size: calc(var(--statistics-corp-size) * var(--corp-headline-unit));
 }
 
-body.corp.std-draft .statistics.stat-navy { --statistics-corp-number: var(--color-navy-bright); }
+body.corp.std-draft .statistics.stat-gold { --statistics-corp-number: var(--color-accent); }
+body.corp.std-draft .statistics:is(.stat-blue, .stat-navy) { --statistics-corp-number: var(--color-navy-bright); }
 body.corp.std-draft .statistics.stat-purple { --statistics-corp-number: var(--color-purple); }
 body.corp.std-draft .statistics.stat-teal { --statistics-corp-number: var(--color-primary); }
+body.corp.std-draft .statistics.stat-dark-gold { --statistics-corp-number: var(--color-accent-link-hover); }
 body.corp.std-draft .statistics.stat-white { --statistics-corp-number: var(--color-white); }
+body.corp.std-draft .statistics.stat-light-gray { --statistics-corp-number: var(--color-surface); }
+body.corp.std-draft .statistics.stat-pale-gray { --statistics-corp-number: var(--color-surface-dim); }
+body.corp.std-draft .statistics.stat-mid-gray { --statistics-corp-number: var(--color-surface-muted); }
+body.corp.std-draft .statistics.stat-grey { --statistics-corp-number: var(--color-secondary); }
+body.corp.std-draft .statistics.stat-black { --statistics-corp-number: var(--color-black); }
 body.corp.std-draft .statistics.stat-s { --statistics-corp-size: 3.25; }
 body.corp.std-draft .statistics.stat-l { --statistics-corp-size: 7.5; }
 

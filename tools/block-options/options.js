@@ -11,8 +11,11 @@
  * image in the first cell, text beside it), 'links', 'link-lists', 'text', 'box' (a cell box
  * chosen), 'gradient-box' (a gradient box colour chosen), 'video' / 'dm-video' (a video link / a
  * Dynamic Media one), 'rows-2+' / 'rows-4+' / 'rows-6+' (that many rows) or 'bars' (a column or
- * bar chart, not a pie). The panel greys out
- * a choice that doesn't fit, with the reason; `hint` says what the choice does.
+ * bar chart, not a pie). The panel doesn't show
+ * a choice that doesn't fit (one the block already has always shows); `hint` says what the
+ * choice does (its tooltip). A group's "" choice is its default: the panel marks it "— default"
+ * unless it is a none ("None", "Not set", "As …"). Colour lists show as swatches in the groups
+ * of tools/colour-groups.js; a "" colour choice names its swatch (`swatch`).
  *
  * Keep in step with the block (its header comment lists the options) and its Block Library
  * entry. The Block Library sheet `panel-options` can replace a group's choices, add groups, or
@@ -218,17 +221,27 @@ export const BLOCK_OPTIONS = {
       'count-up': [],
       'count-once': [],
       'fast-facts': ['inline'],
+      // the earlier name of the blue
+      'stat-navy': ['stat-blue'],
     },
     groups: [
       {
-        id: 'colour',
+        // the 11 Text style text colours, exact (styles tokens); id number-colour since the
+        // 11-colour list (the library sheet's older `colour` row only names choices it has)
+        id: 'number-colour',
         label: 'Number colour',
         options: [
-          ['', 'Gold'],
-          ['stat-navy', 'Navy', { hint: 'The stryker.com blue (#1c5687)' }],
+          ['', 'Gold', { swatch: 'stat-gold' }],
+          ['stat-blue', 'Blue', { hint: 'The stryker.com blue (#1c5687)' }],
           ['stat-purple', 'Purple'],
           ['stat-teal', 'Teal'],
+          ['stat-dark-gold', 'Dark gold'],
           ['stat-white', 'White', { hint: 'For a dark section' }],
+          ['stat-light-gray', 'Light grey', { hint: 'For a dark section' }],
+          ['stat-pale-gray', 'Pale grey'],
+          ['stat-mid-gray', 'Mid grey'],
+          ['stat-grey', 'Grey', { hint: 'The stryker.com dark grey (#545857)' }],
+          ['stat-black', 'Black'],
         ],
       },
       {
@@ -517,10 +530,14 @@ export const BLOCK_OPTIONS = {
         ],
       },
       {
-        id: 'align',
+        // the row's text placement (the library sheet's older `align` row is read into it)
+        id: 'text',
         label: 'Text',
         flags: [
           ['text-center', 'Centred', { needs: ['text'], hint: 'All text in the row centred' }],
+          ['valign-middle', 'Text centred beside the image', { needs: ['cells-2', 'images', 'text'], hint: 'From 600px the text sits in the middle of the image’s height (stryker.com product rows); phones stack as usual' }],
+          ['label-right', 'First cell right-aligned (labels)', { needs: ['cells-2'], hint: 'The first cell’s text right-aligned beside the second (labels)' }],
+          ['title-row', 'Page title beside a photo', { needs: ['image-first'], hint: 'The page title in a white box beside a photo' }],
         ],
       },
       {
@@ -551,22 +568,41 @@ export const BLOCK_OPTIONS = {
         ],
       },
       {
-        id: 'looks',
-        label: 'Row looks',
+        // the row looks, split by what they change (the library sheet's older `looks` row is
+        // read into these groups)
+        id: 'images',
+        label: 'Images',
+        needs: ['images'],
         flags: [
           ['media-pair', 'Linked images', { needs: ['images'], hint: 'Each image links to the link on the line below it' }],
-          ['stack', 'One per row on phones', { needs: ['cells-3+'], hint: 'On phones each cell takes the full width' }],
-          ['related-links', 'Related links', { needs: ['links'], hint: 'Titles with a short text and a More link' }],
-          ['link-groups', 'Link groups', { needs: ['link-lists'], hint: 'Lists of links in groups' }],
-          ['icon-text', 'Icon beside text', { needs: ['image-first'], hint: 'A small icon beside its text' }],
-          ['valign-middle', 'Text centred beside the image', { needs: ['cells-2', 'images', 'text'], hint: 'From 600px the text sits in the middle of the image’s height (stryker.com product rows); phones stack as usual' }],
-          ['title-row', 'Page title beside a photo', { needs: ['image-first'], hint: 'The page title in a white box beside a photo' }],
-          ['caption-tight', 'Caption right under the photo', { needs: ['caption'], hint: 'No gap between a photo and its caption' }],
           ['image-centre', 'Images centred at their size', { needs: ['images'], hint: 'Images at their own size, centred in the cell' }],
           ['phone-image-2-3', 'Photo two thirds wide on phones', { needs: ['images'], hint: 'On phones the photo is two thirds of the width' }],
+          ['icon-text', 'Icon beside text', { needs: ['image-first'], hint: 'A small icon beside its text' }],
+          ['caption-tight', 'Caption right under the photo', { needs: ['caption'], hint: 'No gap between a photo and its caption' }],
+        ],
+      },
+      {
+        id: 'phones',
+        label: 'On phones',
+        flags: [
+          ['stack', 'One per row on phones', { needs: ['cells-3+'], hint: 'On phones each cell takes the full width' }],
+        ],
+      },
+      {
+        id: 'lines',
+        label: 'Lines',
+        flags: [
           ['left-border-bottom', 'Rule under the first cell', { needs: ['cells-2'], hint: 'A grey rule under the first cell’s text' }],
           ['border-bottom', 'Line below the row', { hint: 'A grey line under the whole row' }],
-          ['label-right', 'First cell right-aligned (labels)', { needs: ['cells-2'], hint: 'The first cell’s text right-aligned beside the second (labels)' }],
+        ],
+      },
+      {
+        id: 'links',
+        label: 'Links',
+        needs: ['links'],
+        flags: [
+          ['related-links', 'Related links', { needs: ['links'], hint: 'Titles with a short text and a More link' }],
+          ['link-groups', 'Link groups', { needs: ['link-lists'], hint: 'Lists of links in groups' }],
         ],
       },
     ],
@@ -961,7 +997,12 @@ export function withLibrary(defs, sheet) {
       const group = merged[name].groups.find((g) => g.id === key);
       // an older name the block reads as another choice (its `aliases`) is not offered
       const old = merged[name].aliases || {};
-      const choices = values.filter(([v]) => v && !old[v]);
+      // a row for a group the block no longer has (e.g. Columns' `looks`, split into Images,
+      // Text, Lines, Links): the choices another group holds stay there, not offered twice
+      const elsewhere = new Set(group ? [] : merged[name].groups
+        .flatMap((g) => (g.options || g.flags).map(([v]) => v)).filter(Boolean));
+      const choices = values.filter(([v]) => v && !old[v] && !elsewhere.has(v));
+      if (!group && !choices.length) return;
       // a sheet row names and orders the choices; what a built-in choice needs and its hint stay
       const named = (list) => choices.map(([v, l]) => {
         const base = list.find(([x]) => x === v);

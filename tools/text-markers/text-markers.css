@@ -25,6 +25,24 @@ body {
   gap: 8px;
 }
 
+/* both panels: the preview, its width toggle and what is applied stay pinned at the top while
+   the author scrolls the choices */
+.tm-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  gap: 8px;
+  margin: -12px -12px 0;
+  padding: 12px;
+  background: var(--s2-gray-25, #fff);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 12%);
+}
+
+.tm-hint.tm-applied {
+  overflow-wrap: anywhere;
+}
+
 .tm-code {
   display: block;
   padding: 8px;
@@ -40,6 +58,11 @@ body {
   overflow: hidden;
   border: 1px solid var(--s2-gray-200, #dadada);
   border-radius: 8px;
+}
+
+.tm-sticky .tm-frame {
+  max-height: 45vh;
+  overflow: hidden auto;
 }
 
 .tm-preview {
@@ -158,20 +181,41 @@ body {
   align-items: center;
 }
 
-/* Block options: a choice the selected block can't use, greyed out (why: its tooltip) */
-.tm .tm-unfit,
-.tm .tm-unfit input {
+/* colour lists in their Light · Brand · Dark · Gradients rows (tools/colour-groups.js) */
+.tm-choice-rows {
+  display: grid;
+  gap: 6px;
+}
+
+.tm-swatch-row {
+  display: grid;
+  gap: 2px;
+}
+
+.tm-sub {
+  color: var(--s2-gray-700, #505050);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Block options: Cards (corp) card colours, one line per card */
+.tm-card-colour {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 6px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.tm-card-colour select {
+  grid-column: 1 / -1;
+}
+
+/* Text style: Remove style when the selection has no style (why: its tooltip) */
+.tm .tm-unfit {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-.tm .tm-check.tm-unfit input {
-  opacity: 1;
-}
-
-.tm-hint.tm-reason {
-  margin-top: 6px;
-  font-style: italic;
 }
 
 .tm-hint {
