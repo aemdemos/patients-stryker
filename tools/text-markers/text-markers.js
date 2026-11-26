@@ -653,14 +653,22 @@ function textAt(root, pos) {
 }
 
 /** sends the changed target as a guarded replace; true when the canvas took it */
+// why the editor last refused a change ('' when it took it)
+let liveRefusal = '';
+
 async function sendLive({ html, blockIndex, target }) {
   let result;
+  // the editor guards a replace only inside a block (its check needs the block's number):
+  // a line outside blocks goes without it; the editor replaces the line holding the cursor
+  const options = { replace: true };
+  if (blockIndex !== null) options.expected = { html, blockIndex };
   try {
-    const expected = { html, blockIndex };
-    result = await sdk.actions.sendHTML(target.outerHTML, { replace: true, expected });
-  } catch {
+    result = await sdk.actions.sendHTML(target.outerHTML, options);
+  } catch (error) {
+    liveRefusal = error.message || 'the editor did not answer';
     return false;
   }
+  liveRefusal = result?.ok ? '' : (result?.message || result?.error || 'the editor refused the change');
   if (!result?.ok) return false;
   if (typeof result.html === 'string') {
     liveHtml = result.html;
@@ -888,7 +896,10 @@ async function applyToSelection() {
       return;
     }
     const all = `${run.before}${words}${run.after}`.trim();
-    setStatus(`“${words.trim()}” has the style :start-${run.name}: (on “${all}”). This editor lets the panel change only the selected text, so select from “:start-${run.name}:” to “:end:” and click again. In Experience Workspace, selecting the words is enough.`, 'error');
+    const why = liveHtml && liveRefusal
+      ? `The editor refused the change (${liveRefusal}): click in the line and try again, or select`
+      : 'This editor lets the panel change only the selected text, so select';
+    setStatus(`“${words.trim()}” has the style :start-${run.name}: (on “${all}”). ${why} from “:start-${run.name}:” to “:end:” and click again.`, 'error');
     return;
   }
   if (old) {
