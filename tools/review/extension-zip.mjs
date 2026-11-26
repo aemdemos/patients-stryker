@@ -13,7 +13,8 @@ import zlib from 'zlib';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SRC = join(HERE, 'extension');
 const OUT = join(HERE, 'review-live-extension.zip');
-const files = readdirSync(SRC).filter((f) => statSync(join(SRC, f)).isFile()).sort();
+// (its files only: no folders Chrome writes, no dotfiles such as the lint setting)
+const files = readdirSync(SRC).filter((f) => !f.startsWith('.') && statSync(join(SRC, f)).isFile()).sort();
 
 const locals = [];
 const centrals = [];
