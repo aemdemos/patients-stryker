@@ -99,6 +99,13 @@ try {
     const frame = p.frames().find((f) => /^https:\/\/www\.stryker\.com\//.test(f.url()));
     const inside = frame ? await frame.evaluate(() => ({ title: document.title, scripts: document.scripts.length, text: document.body.innerText.length })) : null;
     check('Live: the real stryker.com page, its scripts running', shown && inside && inside.scripts > 0 && inside.text > 200, JSON.stringify(inside));
+    // (its label fades out under the pointer: the bridge says where the pointer is)
+    const lb = await p.evaluate(() => { const r = document.querySelector('.rv-real .rv-tag').getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; });
+    await p.mouse.move(lb.x - 5, lb.y + 30);
+    await p.mouse.move(lb.x, lb.y, { steps: 4 });
+    const liveAway = await p.waitForFunction(() => document.querySelector('.rv-real .rv-tag').classList.contains('rv-tag-away'), null, { timeout: 5000 }).then(() => true).catch(() => false);
+    check('… its label fades out under the pointer', liveAway);
+    await p.mouse.move(10, 10);
     // 3. Scroll Sync: the migrated page moves the real one, and back
     const stdTo = async (y) => p.evaluate((top) => document.querySelector('.rv-std iframe').contentWindow.scrollTo(0, top), y);
     const realY = () => frame.evaluate(() => window.scrollY);

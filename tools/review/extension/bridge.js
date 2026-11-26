@@ -57,6 +57,17 @@
     window.clearTimeout(timer);
     timer = window.setTimeout(describe, 400);
   };
+  // where the pointer is (the tool moves its labels out of the way)
+  let moving = false;
+  window.addEventListener('mousemove', (e) => {
+    if (moving) return;
+    moving = true;
+    window.requestAnimationFrame(() => {
+      moving = false;
+      send({ type: 'pointer', x: e.clientX, y: e.clientY });
+    });
+  }, { passive: true });
+  document.documentElement.addEventListener('mouseleave', () => send({ type: 'pointer', out: true }));
   window.addEventListener('scroll', () => {
     if (Date.now() < quietUntil) return;
     window.requestAnimationFrame(where);

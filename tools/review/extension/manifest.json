@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Adobe Review: live stryker.com",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Pilot for the AOE team: shows the real, interactive stryker.com page inside the migration review tool (Compare with: Live), with Scroll Sync.",
   "permissions": [
     "declarativeNetRequest"

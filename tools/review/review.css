@@ -65,6 +65,8 @@ body {
 
 .rv-btn:hover { border-color: var(--c-ink); }
 .rv-btn[aria-pressed="true"] { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }
+.rv-btn:disabled { border-color: var(--c-line); background: var(--c-surface-2); color: var(--c-ink-3); cursor: not-allowed; }
+.rv-btn:disabled:hover { border-color: var(--c-line); }
 
 /* a set of choices (width, compare with, view): one joined control */
 .rv-group[role="group"] { gap: 0; }
@@ -265,7 +267,11 @@ body.rv-resizing iframe { pointer-events: none; }
   font-weight: 700;
   letter-spacing: 0.02em;
   pointer-events: none;
+  transition: opacity 0.15s ease;
 }
+
+/* a label with the pointer on it: out of the way (labelsAt in review.js) */
+.rv-tag.rv-tag-away { opacity: 0; }
 
 /* the migrated page: its tag in Adobe red */
 .rv-std .rv-tag { background: rgb(235 16 0 / 90%); }
