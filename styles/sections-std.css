@@ -91,22 +91,27 @@
   text-align: center;
 }
 
-/* line above: a 1px #b2b4ae line across the page at the top of the section, the section gap
-   above it, 20px below it on phones and 50px from 600px (stryker.com section separator: 30px
-   above / 50px below at 1440px, 20px / 20px at 390px) */
+/* divider (the patients section style; `line-above` is its earlier review name): a 1px #b2b4ae
+   line above the section, as wide as the content (stryker.com's section separator: the 1410px
+   container, 15px in from the window edges, not the whole window), the section gap above it,
+   20px below it on phones and 50px from 600px (stryker.com: 30px above / 50px below at 1440px,
+   20px / 20px at 390px). More space around it is a spacer section (`spacer`, `spacer, large` …) */
+:where(body.corp.std-draft) main > .section.divider,
 :where(body.corp.std-draft) main > .section.line-above {
   position: relative;
   padding-top: var(--space-block-l);
 }
 
+:where(body.corp.std-draft) main > .section.divider::before,
 :where(body.corp.std-draft) main > .section.line-above::before {
   content: "";
   position: absolute;
   top: 0;
   left: 50%;
-  width: 100vw;
-  margin-left: -50vw;
+  width: min(100%, var(--container-max));
+  margin-left: 0;
   border-top: 1px solid var(--color-surface-muted);
+  transform: translateX(-50%);
 }
 
 /* desktop or phone only (stryker.com hidden-xs / visible-xs: the switch at 840px → 600px) */
@@ -122,6 +127,7 @@
     max-width: calc(var(--container-max) * 2 / 3);
   }
 
+  :where(body.corp.std-draft) main > .section.divider,
   :where(body.corp.std-draft) main > .section.line-above {
     padding-top: var(--space-section-l);
   }

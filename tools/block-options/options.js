@@ -840,9 +840,10 @@ export const SECTION_OPTIONS = {
     'col-8-centre': ['narrow'],
     'col-10': ['narrow'],
     'column-10-12': ['narrow'],
-    divider: ['line-above'],
-    separator: ['line-above'],
-    'separator-row': ['line-above'],
+    // the line above is `divider`, the patients section style; `line-above` was its review name
+    'line-above': ['divider'],
+    separator: ['divider'],
+    'separator-row': ['divider'],
   },
   groups: [
     {
@@ -909,7 +910,7 @@ export const SECTION_OPTIONS = {
       flags: [
         ['text-center', 'Centred text', { hint: 'The section’s text centred' }],
         ['narrow', 'Narrow column', { hint: 'The content in the centred 8/12 column from 600px (full width on phones)' }],
-        ['line-above', 'Line above', { hint: 'A grey line across the page above the section' }],
+        ['divider', 'Line above (divider)', { hint: 'A grey line above the section, as wide as the content; more space around it is a spacer section' }],
       ],
     },
     {
