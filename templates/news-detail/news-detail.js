@@ -155,6 +155,26 @@ function markStandaloneBold(doc) {
 }
 
 /**
+ * Authoring convention (news articles): italic + underlined text in a paragraph or list item
+ * — not a link, nor around one — is navy (--color-navy-bright) and upright; with bold too it
+ * is navy Futura bold (bold + italic is Futura in news text), e.g. "AM, also known as 3D
+ * printing," of the additive manufacturing feature (stryker.com span.futura-bold in
+ * #1c5687). The <u> becomes <span class="text-navy"> (news-detail.css), so the underline
+ * rule below no longer sees it; the italic and bold around it stay.
+ * @param {Document} doc The document
+ */
+function decorateItalicUnderlineNavy(doc) {
+  doc.querySelectorAll('main :is(p, li) u').forEach((u) => {
+    if (u.closest('a, h1, h2, h3, h4, h5, h6') || u.querySelector('a')) return;
+    if (!u.closest('em, i') && !u.querySelector('em, i')) return;
+    const span = doc.createElement('span');
+    span.className = 'text-navy';
+    span.append(...u.childNodes);
+    u.replaceWith(span);
+  });
+}
+
+/**
  * Authoring convention (news articles): underlined text in a paragraph or list item — not a
  * link, nor around one — is bold in the body font (Humanist bold, no underline), also on a
  * line of its own, where plain Bold is Futura: e.g. the "For investor inquiries please
@@ -201,23 +221,29 @@ export default function decorate(doc) {
   decorateBoldBodyLinks(doc);
   sizeNewsVideos(doc);
   placeVideoRowButtons(doc);
+  decorateItalicUnderlineNavy(doc);
   decorateUnderlineBold(doc);
   markStandaloneBold(doc);
 
   // content that arrives after the template ran (the sections of a Fragment block, e.g.
   // the article body of "Technology helps improve colonoscopy…") gets the same bold
   // handling once it is in the page, and its videos their frame (e.g. the wide video of
-  // "Katherine's catastrophic stroke survivor story", in its body fragment)
+  // "Katherine's catastrophic stroke survivor story", in its body fragment). A fragment
+  // section that holds only a block (e.g. the Columns with the Bold + Underline contact
+  // labels of "Stryker announces leadership succession") arrives as a section without
+  // default content, so added sections count too
   const main = doc.querySelector('main');
   if (!main) return;
+  const content = '.section, .default-content-wrapper';
   new MutationObserver((mutations) => {
-    const content = mutations.some((mutation) => [...mutation.addedNodes]
+    const added = mutations.some((mutation) => [...mutation.addedNodes]
       .some((node) => node.nodeType === Node.ELEMENT_NODE
-        && (node.matches('.default-content-wrapper') || node.querySelector('.default-content-wrapper'))));
-    if (!content) return;
+        && (node.matches(content) || node.querySelector(content))));
+    if (!added) return;
     decorateBoldBodyLinks(doc);
     sizeNewsVideos(doc);
     placeVideoRowButtons(doc);
+    decorateItalicUnderlineNavy(doc);
     decorateUnderlineBold(doc);
     markStandaloneBold(doc);
   }).observe(main, { childList: true, subtree: true });

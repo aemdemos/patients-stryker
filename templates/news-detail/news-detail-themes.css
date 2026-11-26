@@ -630,6 +630,18 @@ body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + 
   margin-top: calc(var(--news-video-gap) + var(--news-video-caption-gap));
 }
 
+/* news-xf-body: in a Columns block, authored Bold is Futura bold — also a lead-in on a line
+   of its own or under an image, which the template otherwise sets in Humanist bold — and
+   Bold + Underline (not a link; news-detail.js strong.body-bold) is Humanist bold
+   (:nth-child(n) outranks the template's lead-in rules) */
+body.news-detail.news-xf-body main .columns.block > div:nth-child(n) > div:nth-child(n) :is(p, li) strong:not(.body-bold) {
+  font-family: var(--display-font-family);
+}
+
+body.news-detail.news-xf-body main .columns.block > div:nth-child(n) > div:nth-child(n) :is(p, li) strong.body-bold {
+  font-family: var(--body-font-family);
+}
+
 /* news-video: patient-story news pages whose text beside the video (the `video-text`
    section) is set as on the source — the serif text of e.g. Ellys' story, the Large
    Headline text of e.g. Matt's story (below) */
@@ -1175,6 +1187,54 @@ body.news-detail.multiple-video main > .section.video-text:has(+ .section.separa
   }
 }
 
+/* news-xf-body (theme `news-XF-body`): an article whose body comes from an Experience
+   Fragment (e.g. "How Stryker is accelerating innovation in additive manufacturing"). Its
+   images in default content sit on the left of the text column, as on stryker.com (the
+   template centres them), e.g. the "Stryker's additive manufacturing" image at the column's
+   left edge */
+body.news-detail.news-xf-body main > .section > .default-content-wrapper picture {
+  margin-inline: 0;
+  text-align: start;
+}
+
+/* news-xf-body: a Heading 2 keeps its 600px size (24.5px) on phones too, instead of the
+   corp 21px — plain or underlined (e.g. "A valued partner" of "Restoring spines and hope").
+   Section styles that size a heading (h2-1-5…) still win: the theme is in :where() */
+:where(body.news-detail.news-xf-body) main :is(h2, h2.underline, h2:has(> u)) {
+  font-size: var(--heading-font-size-xl);
+}
+
+/* news-xf-body: the rule an underlined heading draws below itself is gold (--color-accent)
+   instead of grey — a heading underlined as a whole (scripts.js .underline, e.g. "A valued
+   partner" of "Restoring spines and hope") or in part (e.g. the Italic + Underline "Spreading
+   truth about surgical smoke" under "Improving safety"). Italic + Underline words show no
+   underline of their own and stay Egyptienne (italic in a news heading) */
+body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6):is(.underline, :has(> u, > :is(strong, b, em, i) > u, > u > :is(em, i))) {
+  border-bottom-color: var(--color-accent);
+  padding-bottom: 16px;
+}
+
+body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6) :is(:is(em, i) > u, u:has(> :is(em, i))) {
+  text-decoration: none;
+}
+
+@media (width >= 600px) {
+  /* news-xf-body: a columns-67-33 row splits 62% / 38% (instead of two thirds / one third).
+     A cell that is a box of its own (boxed-last / gold-last / dark-last last cell, gold-first
+     first cell) keeps its variant's width, so it still fits beside the other cell */
+  body.news-detail.news-xf-body .columns.columns-67-33:not(.gold-first) > div > div:first-child {
+    flex: 0 0 62%;
+  }
+
+  body.news-detail.news-xf-body .columns.columns-67-33:not(.boxed-last, .gold-last, .dark-last) > div > div:last-child {
+    flex: 0 0 38%;
+  }
+
+  /* news-xf-body: the caption under a photo in a Columns cell starts one section gap (30px)
+     below it, not the template's 30px + 3% */
+  body.news-detail.news-xf-body main .columns.block:not(.large-headline, .caption-tight) > div > div > p.columns-img-col:has(+ p) {
+    margin-bottom: var(--space-section);
+  }
 /* basic: even spacing on both sides of the `separator` rule at every width (the rule's 50px
    above is set with the theme near the top of the file): the text below it starts 50px
    under the line on phones too, where the template's gap is 20px (50px only from 600px).

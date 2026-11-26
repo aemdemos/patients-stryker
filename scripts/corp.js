@@ -186,6 +186,34 @@ function decorateImageLinks(main) {
 }
 
 /**
+ * Section style `flex-corp`: the section's text (paragraphs and blocks such as a Panel) with
+ * an image beside it, as the stryker.com 75/25 text + image row (e.g. the Naomi Murray photo
+ * of "How Stryker is accelerating innovation in additive manufacturing"). The section's last
+ * image paragraph moves into a wrapper of its own (.flex-corp-media) at the end of the
+ * section; styles-corp.css sets it beside the text from 600px, after the text below. The
+ * paragraph is moved, not rebuilt; --flex-corp-rows is the number of text wrappers the
+ * image spans.
+ * @param {Element} main The container element
+ */
+function decorateFlexSections(main) {
+  main.querySelectorAll(':scope > .section.flex-corp').forEach((section) => {
+    const media = [...section.querySelectorAll(':scope > .default-content-wrapper > p')]
+      .filter((p) => p.querySelector(':scope > picture') && p.children.length === 1 && !p.textContent.trim())
+      .pop();
+    if (!media) return;
+    const from = media.parentElement;
+    const holder = document.createElement('div');
+    holder.className = 'default-content-wrapper flex-corp-media';
+    holder.append(media);
+    section.append(holder);
+    if (!from.children.length) from.remove();
+    const rows = [...section.children]
+      .filter((child) => child !== holder && child.childNodes.length);
+    section.style.setProperty('--flex-corp-rows', rows.length);
+  });
+}
+
+/**
  * Columns (product-tiles, challenge-cards, any Columns in an `image-link` section): a link
  * alone on the line right after an image makes the image clickable, as with the
  * `image-link` section style; each image paragraph is a .columns-img-col (columns.js tags
@@ -304,6 +332,7 @@ function decoratePurpleButtons(main) {
 export function decorateSections(main) {
   buildAccordionSections(main);
   decorateImageLinks(main);
+  decorateFlexSections(main);
   joinSplitHeadingUnderlines(main);
   decorateExclaimButtons(main);
   decoratePurpleButtons(main);
