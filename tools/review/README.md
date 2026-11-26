@@ -120,6 +120,11 @@ page and the summary.
   tooltip "No representative has been established or migrated for this page yet"); chosen
   already, such a page shows a message in its place. Note mode switches it to the Screenshot (a
   note belongs to the page reviewed). Test: `rep-tool.test.mjs`.
+- **Selecting on the status page** (26 Nov 2026): the header tick selects every page the filters
+  show, also those not loaded yet (half ticked: some). A change to selected pages not on screen asks
+  once more in the bar (how many aren't loaded / listed); after a filter change the bar says how
+  many selected pages the list doesn't show, with "Keep only the listed ones". Show more goes
+  once every page is shown. Test: `status-select-tool.test.mjs` (changes nothing).
 - **Approving a page of a group asks first** (26 Nov 2026): the dialog lists the group's other
   pages by what happens to them (not reviewed yet / in review: they count as approved; other
   statuses: kept, shown with the group's approval; already approved), with Approve the group /

@@ -149,6 +149,7 @@
 
 .st-bulk[hidden] { display: none; }
 .st-bulk-group { display: inline-flex; gap: 6px; align-items: center; }
+.st-bulk-note { display: inline-flex; gap: 6px; align-items: center; color: #ffd27a; font-weight: 700; }
 .st-bulk .rs-btn { min-block-size: 26px; padding: 2px 10px; border-color: #555; background: #2a2a2a; color: #fff; font-size: var(--fs-xs); }
 .st-bulk .rs-btn:hover:not(:disabled) { border-color: #fff; color: #fff; }
 .st-bulk :is(input, select) { min-block-size: 26px; padding-block: 2px; color: var(--c-ink); }
