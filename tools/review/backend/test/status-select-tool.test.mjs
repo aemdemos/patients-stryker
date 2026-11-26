@@ -2,10 +2,11 @@
 /*
  * The status page's selection (26 Nov 2026), in a browser on the review's dev server (Stage by
  * default), as a test AOE member, changing nothing: the header tick selects every page the
- * filters show, also those not loaded yet; a change to pages not on screen asks once more in the
- * bar (Cancel: nothing saved); after a filter change the bar says how many selected pages the list
+ * filters show, also those not loaded yet; a change to pages not on screen asks first in the
+ * tool's one confirmation dialog (ask.js), saying which are where and what they are in now
+ * (Cancel: nothing saved, the bar as it was); after a filter change the bar says how many selected pages the list
  * doesn't show, "Keep only the listed ones" drops them; Show more goes once every page is shown
- * (never a count below 0). And "Yes, change them" really saves: one page with no batch or group
+ * (never a count below 0). And the dialog's Move really saves: one page with no batch or group
  * (never the AOE team's own), selected and then filtered out of the list, moved to a test batch,
  * then the test's entry removed (purge-invite).
  * usage: node tools/review/backend/test/status-select-tool.test.mjs <dev server, e.g. http://localhost:3220>
@@ -44,11 +45,12 @@ try {
   await p.click('.st-table th input[type=checkbox]');
   const sel = await p.evaluate(() => document.querySelector('.st-bulk b')?.textContent || '');
   check(`the header tick selects every page the filters show (${total}), not only the ${loaded} loaded`, sel === `${total} pages selected:` && total > loaded, sel);
-  // 2. a change to pages not on screen: asked again; Cancel saves nothing
+  // 2. a change to pages not on screen: asked first, in the shared dialog; Cancel saves nothing
   await p.click('.st-bulk button:has-text("Take out of their batch")');
-  const ask = await p.evaluate(() => document.querySelector('.st-bulk').textContent);
-  check('… a change to them asks once more, saying how many are not loaded', /Take \d+ pages out of their batch\?/.test(ask) && /not loaded in the list below/.test(ask) && /Yes, change them/.test(ask), ask.slice(0, 200));
-  await p.click('.st-bulk button:has-text("Cancel")');
+  const ask = await p.waitForSelector('dialog.ui-dialog[open]', { timeout: 10000 }).then(() => p.textContent('dialog.ui-dialog')).catch(() => '');
+  const barWhileAsked = await p.evaluate(() => document.querySelector('.st-bulk b')?.textContent || '');
+  check('… a change to them asks first in the shared dialog: which are where, their batch now', /Take \d+ pages out of their batch\? \d+ of them are not on screen/.test(ask) && /shown in the list below/.test(ask) && /further down the list, not loaded yet/.test(ask) && /Their batch now/.test(ask) && /Take \d+ pages out/.test(ask) && barWhileAsked === `${total} pages selected:`, ask.slice(0, 300));
+  await p.click('dialog.ui-dialog button:has-text("Cancel")');
   await p.waitForTimeout(1500);
   const after = (await admin({ op: 'export' })).rows.length;
   const barBack = await p.evaluate(() => document.querySelector('.st-bulk b')?.textContent || '');
@@ -91,11 +93,11 @@ try {
     await p.waitForTimeout(800);
     await p.fill('.st-bulk input[aria-label="Batch number"]', '998');
     await p.click('.st-bulk .st-bulk-group:has(input[aria-label="Batch number"]) button:has-text("Move")');
-    const asked = await p.evaluate(() => document.querySelector('.st-bulk').textContent);
-    await p.click('.st-bulk button:has-text("Yes, change them")');
+    const asked = await p.waitForSelector('dialog.ui-dialog[open]', { timeout: 10000 }).then(() => p.textContent('dialog.ui-dialog')).catch(() => '');
+    await p.click('dialog.ui-dialog button.ui-ask-primary:has-text("Move 1 page")');
     const saved = await p.waitForFunction(() => /moved to batch 998/.test(document.querySelector('.st-org-msg').textContent), null, { timeout: 30000 }).then(() => true).catch(() => false);
     const entry = (await admin({ op: 'export' })).rows.find((r) => r.page === free && r.kind === 'batch');
-    check(`"Yes, change them" saves: ${free} in batch 998 (it was selected, then filtered out)`, /Move 1 page to batch 998\?/.test(asked) && saved && entry?.value === '998', JSON.stringify({ asked: asked.slice(0, 120), saved, entry }));
+    check(`"Move 1 page" in the dialog saves: ${free} in batch 998 (it was selected, then filtered out)`, /Move 1 page to batch 998\? 1 of them is not on screen/.test(asked) && /not in the list the filters show now/.test(asked) && saved && entry?.value === '998', JSON.stringify({ asked: asked.slice(0, 120), saved, entry }));
   } else console.log('(no page without a batch or group shown: the save step skipped)');
   check('no page errors', errors.length === 0, errors.join(' | '));
 } finally {

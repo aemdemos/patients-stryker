@@ -122,9 +122,16 @@ page and the summary.
   note belongs to the page reviewed). Test: `rep-tool.test.mjs`.
 - **Selecting on the status page** (26 Nov 2026): the header tick selects every page the filters
   show, also those not loaded yet (half ticked: some). A change to selected pages not on screen asks
-  once more in the bar (how many aren't loaded / listed); after a filter change the bar says how
-  many selected pages the list doesn't show, with "Keep only the listed ones". Show more goes
-  once every page is shown. Test: `status-select-tool.test.mjs` (changes nothing).
+  first in the confirmation dialog (below): their batch or group now, which are shown, further down
+  the list or not in it; after a filter change the bar says how many selected pages the list
+  doesn't show, with "Keep only the listed ones". Show more goes once every page is shown. Test:
+  `status-select-tool.test.mjs` (one test batch, removed after).
+- **One confirmation everywhere** (26 Nov 2026, the user's rule: consistent throughout the tool):
+  `ask.js` is the only way to confirm, a modal dialog with the question, boxes of what it touches
+  (up to six items each), a note, then the choices (the main one dark, a dangerous one red; Esc:
+  the last, Cancel / Keep it). Used for approving a page of a group, withdrawing a message, a
+  change to many pages on the status page and revoking an invitation. Never a question in place of
+  a page's own buttons. Styles: `ui.css` `.ui-dialog`.
 - **Approving a page of a group asks first** (26 Nov 2026): the dialog lists the group's other
   pages by what happens to them (not reviewed yet / in review: they count as approved; other
   statuses: kept, shown with the group's approval; already approved), with Approve the group /
@@ -458,8 +465,8 @@ with `backend/admin.mjs`):
 - **List**: every invitation of this review (another review's never), newest first: name, role,
   pages, made when and by whom, valid until, state (active, expired, revoked: when and by whom);
   revoked and expired ones on request; search by name.
-- **Revoke** any invitation of this review except one's own, in two steps (Revoke → Yes, revoke):
-  the link stops working at once, for good. The invitation stays listed as revoked.
+- **Revoke** any invitation of this review except one's own, asked first in the confirmation dialog
+  (Revoke → Revoke / Cancel): the link stops working at once, for good. The invitation stays listed as revoked.
 - Every make and revoke is in the review's audit (who, when, which invitation; never a token).
 
 Developers can still use `backend/admin.mjs invite | invites | revoke` (made "by admin"). Test

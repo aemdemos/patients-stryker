@@ -86,11 +86,13 @@ try {
     check('create: beyond its own pages refused', /not part of your own invitation/.test(await p.textContent('.iv-made')));
     const row = p.locator('.iv-table tbody tr', { hasText: 'tool test inv ui reviewer' });
     await row.locator('button', { hasText: 'Revoke' }).click();
-    check('revoke: asks first', await row.locator('.iv-revoke-yes').count() === 1);
-    await row.locator('button', { hasText: 'Cancel' }).click();
-    check('revoke: Cancel goes back', await row.locator('.iv-revoke-yes').count() === 0);
+    const asked = await p.waitForSelector('dialog.ui-dialog[open]', { timeout: 10000 }).then(() => p.textContent('dialog.ui-dialog')).catch(() => '');
+    check('revoke: asks first, in the shared dialog', /Revoke the invitation of tool test inv ui reviewer\?/.test(asked) && /stops working at once/.test(asked), asked);
+    await p.click('dialog.ui-dialog button:has-text("Cancel")');
+    await p.waitForTimeout(300);
+    check('revoke: Cancel: nothing revoked', await p.locator('dialog.ui-dialog').count() === 0 && await row.count() === 1);
     await row.locator('button', { hasText: 'Revoke' }).click();
-    await row.locator('.iv-revoke-yes').click();
+    await p.click('dialog.ui-dialog button.ui-ask-danger:has-text("Revoke")');
     await p.waitForFunction(() => ![...document.querySelectorAll('.iv-table tbody tr')].some((tr) => tr.cells[0].textContent === 'tool test inv ui reviewer'));
     check('revoke: gone from the active list', true);
     await p.check('.iv-all');

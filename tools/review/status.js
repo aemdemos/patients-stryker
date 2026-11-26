@@ -9,6 +9,7 @@
 import { call, inviteToken } from './store.js';
 import { keepFresh } from './live.js';
 import { mountBar } from './bar.js';
+import ask, { askMessage } from './ask.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl, scopeFacts } from './pages.js';
 import {
@@ -179,19 +180,37 @@ function drawBulk() {
   const loaded = new Set(listed.slice(0, loadedRows).map((p) => p.path));
   const outside = pages.filter((p) => !inList.has(p)).length;
   const unseen = pages.filter((p) => !loaded.has(p)).length;
-  // a change to pages not on screen: asked once more, in the bar
-  const sure = (what, go) => () => {
+  // a change to pages not on screen: asked first, in the tool's one confirmation (ask.js)
+  const byPath = new Map(all.map((p) => [p.path, p]));
+  const titleOf = (path) => byPath.get(path)?.title || path;
+  const now = (kind) => {
+    const counts = new Map();
+    pages.forEach((path) => {
+      const v = byPath.get(path)?.[kind] || '';
+      counts.set(v, (counts.get(v) || 0) + 1);
+    });
+    return [...counts].sort((a, b) => b[1] - a[1])
+      .map(([v, c]) => `${v ? `${kind[0].toUpperCase()}${kind.slice(1)} ${v}` : `No ${kind}`}: ${c} page${c === 1 ? '' : 's'}`);
+  };
+  const sure = (what, go, { yes, kind, foot } = {}) => async () => {
     if (!unseen) {
       go();
       return;
     }
-    const keep = [...bar.childNodes];
-    bar.replaceChildren(
-      el('b', {}, `${what}?`),
-      el('span', {}, ` ${unseen} of them ${unseen === 1 ? 'is' : 'are'} not loaded in the list below${outside ? ` (${outside} not in the list the filters show now)` : ''}.`),
-      el('button', { type: 'button', class: 'rs-btn rs-btn-primary', onclick: go }, 'Yes, change them'),
-      el('button', { type: 'button', class: 'rs-btn', onclick: () => bar.replaceChildren(...keep) }, 'Cancel'),
-    );
+    const shownHere = pages.filter((p) => loaded.has(p));
+    const further = pages.filter((p) => inList.has(p) && !loaded.has(p));
+    const gone = pages.filter((p) => !inList.has(p));
+    const message = askMessage({
+      head: `${what}? ${unseen} of them ${unseen === 1 ? 'is' : 'are'} not on screen:`,
+      parts: [
+        kind && { title: `Their ${kind} now`, items: now(kind) },
+        shownHere.length && { title: `${shownHere.length} shown in the list below`, items: shownHere.map(titleOf) },
+        further.length && { title: `${further.length} further down the list, not loaded yet (Show more)`, items: further.map(titleOf) },
+        gone.length && { title: `${gone.length} not in the list the filters show now (selected before a filter change)`, items: gone.map(titleOf) },
+      ],
+      foot: foot || 'Only the organising changes: the pages\' reviews, comments and notes stay as they are.',
+    });
+    if (await ask(message, [[yes || 'Change them', true, 'primary'], ['Cancel', false]])) go();
   };
   const move = (kind, input) => () => {
     const v = numberOf(input);
@@ -199,7 +218,7 @@ function drawBulk() {
       $('.st-org-msg').textContent = `Give the ${kind} number (1 to 999).`;
       return;
     }
-    sure(`Move ${n} to ${kind} ${v}`, () => organise([() => markOrg(pages, kind, v)], `${n} moved to ${kind} ${v}`))();
+    sure(`Move ${n} to ${kind} ${v}`, () => organise([() => markOrg(pages, kind, v)], `${n} moved to ${kind} ${v}`), { yes: `Move ${n}`, kind })();
   };
   const btn = (text, onclick, title = '') => el('button', {
     type: 'button', class: 'rs-btn', onclick, title,
@@ -210,13 +229,13 @@ function drawBulk() {
       [...selected].filter((p) => !inList.has(p)).forEach((p) => selected.delete(p));
       hooks.draw();
     })) : null,
-    el('span', { class: 'st-bulk-group' }, 'Batch ', batch, btn('Move', move('batch', batch)), btn('Take out of their batch', sure(`Take ${n} out of their batch`, () => organise([() => markOrg(pages, 'batch', null)], `${n} taken out of their batch`)))),
-    el('span', { class: 'st-bulk-group' }, 'Group ', group, btn('Move', move('group', group)), btn('Take out of their group', sure(`Take ${n} out of their group`, () => organise([() => markOrg(pages, 'group', null)], `${n} taken out of their group`)))),
+    el('span', { class: 'st-bulk-group' }, 'Batch ', batch, btn('Move', move('batch', batch)), btn('Take out of their batch', sure(`Take ${n} out of their batch`, () => organise([() => markOrg(pages, 'batch', null)], `${n} taken out of their batch`), { yes: `Take ${n} out`, kind: 'batch' }))),
+    el('span', { class: 'st-bulk-group' }, 'Group ', group, btn('Move', move('group', group)), btn('Take out of their group', sure(`Take ${n} out of their group`, () => organise([() => markOrg(pages, 'group', null)], `${n} taken out of their group`), { yes: `Take ${n} out`, kind: 'group', foot: 'A page taken out of its group no longer shares the group\'s approval or representative. Their reviews, comments and notes stay as they are.' }))),
     el(
       'span',
       { class: 'st-bulk-group' },
-      btn('Make representatives', sure(`Make ${n} representatives`, () => organise([() => makeRepresentatives(pages, orgMap())], 'Representatives chosen')), 'Each becomes its group\'s representative (one per group)'),
-      btn('Clear representative', sure(`Clear the representative of ${n}`, () => organise([() => clearRepresentatives(pages)], 'Representatives cleared (each group\'s first page stands in)'))),
+      btn('Make representatives', sure(`Make ${n} representatives`, () => organise([() => makeRepresentatives(pages, orgMap())], 'Representatives chosen'), { yes: 'Make them representatives', kind: 'group' }), 'Each becomes its group\'s representative (one per group)'),
+      btn('Clear representative', sure(`Clear the representative of ${n}`, () => organise([() => clearRepresentatives(pages)], 'Representatives cleared (each group\'s first page stands in)'), { yes: 'Clear them', kind: 'group' })),
     ),
     btn('Clear the selection', () => {
       selected.clear();

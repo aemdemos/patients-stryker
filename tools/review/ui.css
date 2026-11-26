@@ -186,6 +186,22 @@
   .ui-pagehead .rs-updated { display: block; margin-top: 2px; color: var(--c-muted); font-size: var(--fs-s); }
   .ui-actions { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; }
 
+  /* the one confirmation of every page (ask.js): a modal with what will happen, then the choices */
+  .ui-dialog { inline-size: min(520px, calc(100vw - 32px)); padding: 20px; border: 0; border-radius: var(--r-l); background: var(--c-surface); color: var(--c-ink); box-shadow: var(--shadow-pop); }
+  .ui-dialog::backdrop { background: rgb(20 20 20 / 55%); }
+  .ui-ask p { margin: 0 0 12px; }
+  .ui-ask-head { font-weight: 700; }
+  .ui-ask-part { margin: 0 0 10px; padding: 8px 10px; border-radius: var(--r-s); background: var(--c-surface-2); }
+  .ui-ask-part p { margin: 0 0 4px; font-size: var(--fs-xs); }
+  .ui-ask-part ul { margin: 0; padding-inline-start: 18px; font-size: var(--fs-xs); }
+  .ui-ask-foot { color: var(--c-ink-2); font-size: var(--fs-xs); }
+  .ui-ask-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .ui-ask-btn { min-block-size: 30px; padding: 3px 14px; border: 1px solid var(--c-line-2); border-radius: var(--r-pill); background: var(--c-surface); color: var(--c-ink); font-weight: 700; cursor: pointer; }
+  .ui-ask-btn:hover { border-color: var(--c-ink); }
+  .ui-ask-btn.ui-ask-primary { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }
+  .ui-ask-btn.ui-ask-primary:hover { background: #000; }
+  .ui-ask-btn.ui-ask-danger { border-color: var(--c-red-800); background: var(--c-red-800); color: #fff; }
+
   @media (width >= 600px) {
     .ui-bar { padding-inline: 20px; }
   }

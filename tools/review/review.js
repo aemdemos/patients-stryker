@@ -16,6 +16,7 @@ import {
 import { createNotes, CATEGORIES } from './notes.js';
 import { keepFresh } from './live.js';
 import { mountBar } from './bar.js';
+import ask, { askMessage } from './ask.js';
 import {
   picturesOf, picturesIn, prepare, upload, keepPicture, MAX_PICTURES, TYPES as PICTURE_TYPES,
 } from './pictures.js';
@@ -467,32 +468,6 @@ function keepChoice(id, patch) {
   Object.entries(patch).forEach(([kind, value]) => saveRow(id, kind, value));
 }
 
-/** a small dialog: resolves with the chosen button's value */
-function ask(text, choices) {
-  return new Promise((resolve) => {
-    const dialog = el('dialog', { class: 'rv-dialog' });
-    // (Esc: the last choice, Cancel / Keep it)
-    dialog.addEventListener('cancel', () => {
-      dialog.remove();
-      resolve(choices[choices.length - 1][1]);
-    });
-    dialog.append(
-      typeof text === 'string' ? el('p', {}, text) : text,
-      el('div', { class: 'rv-note-actions' }, ...choices.map(([text2, value, cls]) => el('button', {
-        type: 'button',
-        class: `rv-btn-light ${cls || ''}`,
-        onclick: () => {
-          dialog.close();
-          dialog.remove();
-          resolve(value);
-        },
-      }, text2))),
-    );
-    document.body.append(dialog);
-    dialog.showModal();
-  });
-}
-
 /** before leaving a page: anything still kept is sent now */
 async function leavePage() {
   window.clearTimeout(flushing);
@@ -671,7 +646,7 @@ function chatParts(item, kind) {
       class: 'rv-msg-withdraw',
       title: 'Withdraw this message: everyone sees that it was withdrawn',
       onclick: async () => {
-        const sure = await ask('Withdraw this message? Everyone then sees "Message withdrawn" instead of it.', [['Withdraw', true, 'rv-danger'], ['Keep it', false]]);
+        const sure = await ask('Withdraw this message? Everyone then sees "Message withdrawn" instead of it.', [['Withdraw', true, 'danger'], ['Keep it', false]]);
         if (sure) saveRow(item, r.kind, { withdrawn: true });
       },
     }, 'Withdraw') : null;
@@ -1335,22 +1310,17 @@ async function confirmGroupApproval() {
   const counted = others.filter((m) => ['unreviewed', 'in-review'].includes(stateOf(m.path)));
   const approved = others.filter((m) => ['approved', 'resolved'].includes(stateOf(m.path)));
   const kept = others.filter((m) => !counted.includes(m) && !approved.includes(m));
-  const names = (list) => {
-    const shown = list.slice(0, 6).map((m) => el('li', {}, `${name(m.path)} — ${stateName(stateOf(m.path))}`));
-    if (list.length > 6) shown.push(el('li', {}, `and ${list.length - 6} more`));
-    return el('ul', {}, ...shown);
-  };
-  const part = (title, list) => (list.length ? el('div', { class: 'rv-ask-part' }, el('p', {}, el('b', {}, title)), names(list)) : null);
-  const message = el(
-    'div',
-    { class: 'rv-ask' },
-    el('p', { class: 'rv-ask-head' }, `This page is in group ${own.group}, with ${others.length} other page${others.length > 1 ? 's' : ''}. Approving it approves the whole group:`),
-    part(`${counted.length} will count as approved (their status now: not reviewed yet or in review)`, counted),
-    part(`${kept.length} keep${kept.length > 1 ? '' : 's'} its status, shown with the group's approval`, kept),
-    part(`${approved.length} already approved`, approved),
-    el('p', { class: 'rv-ask-foot' }, 'Nothing is written on the other pages: taking this approval back (press Approve again), or moving a page out of the group, undoes it for them.'),
-  );
-  return ask(message, [['Approve the group', true, 'rv-primary'], ['Cancel', false]]);
+  const items = (list) => list.map((m) => `${name(m.path)} — ${stateName(stateOf(m.path))}`);
+  const message = askMessage({
+    head: `This page is in group ${own.group}, with ${others.length} other page${others.length > 1 ? 's' : ''}. Approving it approves the whole group:`,
+    parts: [
+      counted.length && { title: `${counted.length} will count as approved (their status now: not reviewed yet or in review)`, items: items(counted) },
+      kept.length && { title: `${kept.length} keep${kept.length > 1 ? '' : 's'} its status, shown with the group's approval`, items: items(kept) },
+      approved.length && { title: `${approved.length} already approved`, items: items(approved) },
+    ],
+    foot: 'Nothing is written on the other pages: taking this approval back (press Approve again), or moving a page out of the group, undoes it for them.',
+  });
+  return ask(message, [['Approve the group', true, 'primary'], ['Cancel', false]]);
 }
 
 /** the status banner (Feedback panel) and the toolbar badge: whose turn it is, prominently */
