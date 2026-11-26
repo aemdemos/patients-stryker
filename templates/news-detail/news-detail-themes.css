@@ -1235,6 +1235,8 @@ body.news-detail.news-xf-body main :is(h1, h2, h3, h4, h5, h6) :is(:is(em, i) > 
   body.news-detail.news-xf-body main .columns.block:not(.large-headline, .caption-tight) > div > div > p.columns-img-col:has(+ p) {
     margin-bottom: var(--space-section);
   }
+}
+
 /* basic: even spacing on both sides of the `separator` rule at every width (the rule's 50px
    above is set with the theme near the top of the file): the text below it starts 50px
    under the line on phones too, where the template's gap is 20px (50px only from 600px).
