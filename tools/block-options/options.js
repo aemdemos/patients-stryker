@@ -559,6 +559,7 @@ export const BLOCK_OPTIONS = {
           ['related-links', 'Related links', { needs: ['links'], hint: 'Titles with a short text and a More link' }],
           ['link-groups', 'Link groups', { needs: ['link-lists'], hint: 'Lists of links in groups' }],
           ['icon-text', 'Icon beside text', { needs: ['image-first'], hint: 'A small icon beside its text' }],
+          ['valign-middle', 'Text centred beside the image', { needs: ['cells-2', 'images', 'text'], hint: 'From 600px the text sits in the middle of the image’s height (stryker.com product rows); phones stack as usual' }],
           ['title-row', 'Page title beside a photo', { needs: ['image-first'], hint: 'The page title in a white box beside a photo' }],
           ['caption-tight', 'Caption right under the photo', { needs: ['caption'], hint: 'No gap between a photo and its caption' }],
           ['image-centre', 'Images centred at their size', { needs: ['images'], hint: 'Images at their own size, centred in the cell' }],

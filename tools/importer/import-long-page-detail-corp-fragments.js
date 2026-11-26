@@ -15,7 +15,7 @@
 import videoParser from './parsers/video.js';
 import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
 import longPageDetailSectionsTransformer, {
-  keepHeadlineBlankLines, edsLinkPaths, reviewFragmentPath,
+  keepHeadlineBlankLines, edsLinkPaths, reviewFragmentPath, markCentredRows,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import corpTextMarkersTransformer, { STD_DRAFT_IMPORT, STD_REVIEW_IMPORT } from './transformers/corp-text-markers.js';
@@ -151,9 +151,20 @@ function findBlocksOnPage(document, template) {
   return pageBlocks;
 }
 
+// in review (staging build): whether an XF is one of a product page's (or a review page's)
+const isProductXf = (key) => STD_DRAFT_IMPORT
+  && (Object.values(PRODUCT_XFS).some((xfs) => xfs.includes(key))
+    || (STD_REVIEW_IMPORT && Object.values(REVIEW_XFS).some((xfs) => xfs.includes(key))));
+
 export default {
   // before the importer's own cleanup, which drops empty paragraphs
-  preprocess: ({ document }) => keepHeadlineBlankLines(document),
+  preprocess: ({ document, url, params }) => {
+    keepHeadlineBlankLines(document);
+    // in review, product XFs: rows with their text centred to the image (Columns valign-middle)
+    if (STD_DRAFT_IMPORT && isProductXf(xfKey((params && params.originalURL) || url))) {
+      markCentredRows(document);
+    }
+  },
 
   transform: (payload) => {
     const { document, url, params } = payload;
@@ -161,9 +172,7 @@ export default {
     const key = xfKey(params.originalURL || url);
     // in review (staging build): an XF of a product page is imported with the product pages'
     // standardised rules (they read the source body's data-template) into the review folder
-    const productXf = STD_DRAFT_IMPORT
-      && (Object.values(PRODUCT_XFS).some((xfs) => xfs.includes(key))
-        || (STD_REVIEW_IMPORT && Object.values(REVIEW_XFS).some((xfs) => xfs.includes(key))));
+    const productXf = isProductXf(key);
     if (productXf) document.body.setAttribute('data-template', 'product-detail');
     const path = productXf ? reviewFragmentPath(key) : xfToFragmentPath(key);
     if (!path) throw new Error(`Not an Experience Fragment: ${key}`);

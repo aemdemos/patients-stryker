@@ -11,7 +11,7 @@ import heroFullWidthImageParser from './parsers/hero-full-width-image.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
 import longPageDetailSectionsTransformer, {
-  keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths,
+  keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths, markCentredRows,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import corpTextMarkersTransformer, { STD_REVIEW_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
@@ -101,6 +101,8 @@ export default {
     if (STD_REVIEW_IMPORT && REVIEW_XFS[new URL(params.originalURL).pathname]) {
       document.body.setAttribute('data-template', 'product-detail');
     }
+    // in review, product pages: rows with their text centred to the image (Columns valign-middle)
+    if (stdProductPage(document)) markCentredRows(document);
     keepHeadlineBlankLines(document);
     blankLineSpacers(document, params.originalURL);
   },

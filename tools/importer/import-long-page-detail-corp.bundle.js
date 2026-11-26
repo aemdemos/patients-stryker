@@ -43,9 +43,13 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/corp-text-markers.js
   var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
+  var STD_REVIEW_IMPORT = STD_DRAFT_IMPORT && typeof STD_REVIEW_PAGES !== "undefined" && STD_REVIEW_PAGES === true;
   function stdProductPage(doc) {
     var _a;
     return STD_DRAFT_IMPORT && ((_a = doc == null ? void 0 : doc.body) == null ? void 0 : _a.getAttribute("data-template")) === "product-detail";
+  }
+  function stdReviewPage(doc) {
+    return STD_REVIEW_IMPORT && stdProductPage(doc);
   }
   var SIZE_WORDS = {
     "0-8": "s",
@@ -281,6 +285,7 @@ var CustomImportScript = (() => {
   }
   var ADDRESS_GUARD = /((?:https?|urn)\S*?)(:(?:start-[a-z0-9-]+|end):)/gi;
   function keepMarkersReadable(main) {
+    if (stdReviewPage(main.ownerDocument)) main.normalize();
     const walker = main.ownerDocument.createTreeWalker(
       main,
       4
@@ -1149,7 +1154,8 @@ var CustomImportScript = (() => {
     }
   }
   function tagTextSize(root) {
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const product = stdReviewPage(root.ownerDocument);
+    const squash = (value) => (product ? value.replace(/\[\[[^\][]+\]|\]/g, "") : value).replace(/[\s\u00a0]+/g, "");
     SIZE_TAGS.forEach(([cls, tag]) => {
       [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
         if (span.parentElement.closest(`.${cls}`) || !text3(span)) return;
@@ -1202,7 +1208,15 @@ var CustomImportScript = (() => {
       mark.append(strong);
     });
   }
-  function tagGoldText(root) {
+  function regularText(el, root) {
+    const walker = root.ownerDocument.createTreeWalker(el, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      const bold = t.nodeValue.trim() && t.parentElement.closest(".futura-bold, b, strong");
+      if (bold && root.contains(bold)) return false;
+    }
+    return true;
+  }
+  function tagGoldText(root, { regular = false } = {}) {
     const tagged = /* @__PURE__ */ new Set();
     const wrap = (nodes) => markGold(nodes, root);
     const wrapRun = (nodes) => {
@@ -1211,6 +1225,10 @@ var CustomImportScript = (() => {
     };
     root.querySelectorAll('[style*="color"]').forEach((el) => {
       if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+      if (regular && !hasOtherColour(el) && regularText(el, root)) {
+        el.setAttribute("data-gold-regular", "");
+        return;
+      }
       if (!hasOtherColour(el)) {
         wrapRun([el]);
         return;
@@ -1267,8 +1285,10 @@ var CustomImportScript = (() => {
     };
     [...owners].sort((x, y) => depth(x) - depth(y)).forEach((el) => {
       const hex = hexOf(ownColour(el));
-      const name = (gold && GOLD.test(ownColour(el)) ? "gold" : STD_COLOURS[hex]) || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? "black" : "");
-      if (!name || !gold && GOLD.test(ownColour(el))) return;
+      const goldRun = GOLD.test(ownColour(el)) && (gold || el.hasAttribute("data-gold-regular"));
+      el.removeAttribute("data-gold-regular");
+      const name = (goldRun ? "gold" : STD_COLOURS[hex]) || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? "black" : "");
+      if (!name || !goldRun && GOLD.test(ownColour(el))) return;
       bracketTag([el], `color-${name}`, root);
       tagged.push(el);
     });
@@ -1298,7 +1318,7 @@ var CustomImportScript = (() => {
       }
     });
     tagPlainBoldLabels(root, wholeParagraphs);
-    tagGoldText(root);
+    tagGoldText(root, { regular: stdReviewPage(doc) });
     if (stdProductPage(doc)) tagStdColours(root);
     tagTextSize(root);
     if (stdProductPage(doc)) {
@@ -1431,7 +1451,21 @@ var CustomImportScript = (() => {
       const spans = [...h.querySelectorAll('[class*="fontsize-"]')].filter((span) => /\bfontsize-\d+(?:-\d+)?em\b/.test(span.className) && !span.parentElement.closest('[class*="fontsize-"]'));
       const classes = new Set(spans.map((span) => span.className.match(/\bfontsize-(\d+(?:-\d+)?)em\b/)[1]));
       if (classes.size !== 1 || squash(spans.map((span) => span.textContent).join("")) !== squash(h.textContent)) return;
-      const [n] = [...classes];
+      let [n] = [...classes];
+      if (spans.length === 1 && stdReviewPage(root.ownerDocument)) {
+        let factor = 1;
+        let span = spans[0];
+        while (span) {
+          const m = span.className.match(/\bfontsize-(\d+)(?:-(\d+))?em\b/);
+          if (m) factor *= m[1] === "8" && !m[2] ? 0.8 : Number(`${m[1]}.${m[2] || 0}`);
+          const outer = span;
+          span = [...outer.querySelectorAll('[class*="fontsize-"]')].find((inner) => /\bfontsize-\d+(?:-\d+)?em\b/.test(inner.className) && squash(inner.textContent) === squash(h.textContent) && inner.parentElement.closest('[class*="fontsize-"]') === outer);
+        }
+        const STEPS = ["0-8", "1", "1-25", "1-5", "1-75", "2", "2-5"];
+        const off = (step) => Math.abs(Math.log(Number(step.replace("-", ".")) / factor));
+        n = STEPS.reduce((x, y) => off(y) < off(x) ? y : x).replace("0-8", "8");
+        if (n === "1") return;
+      }
       sizes.set(h, `text-${n === "8" ? "0-8" : n}`);
     });
     return sizes;
@@ -1635,7 +1669,15 @@ var CustomImportScript = (() => {
     };
     const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length, depth(span)]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1] || b[2] - a[2]).map(([n]) => n)[0];
     const bold = [...el.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
-    const serif = squash(bold) !== squash(el.textContent);
+    const minor = el.matches("h4, h5, h6") ? el : el.querySelector(":scope > h4, :scope > h5, :scope > h6");
+    const futuraHeading = !!minor && STD_DRAFT_IMPORT && stdReviewPage(el.ownerDocument) && !minor.querySelector(".urw-egyptienne");
+    const serif = squash(bold) !== squash(el.textContent) && !futuraHeading;
+    if (futuraHeading && squash(bold) !== squash(minor.textContent)) {
+      const wrap = el.ownerDocument.createElement("span");
+      wrap.className = "futura-bold";
+      wrap.append(...minor.childNodes);
+      minor.append(wrap);
+    }
     const LEVEL_SIZES = {
       H1: "text-2",
       H2: "text-1-75",
@@ -2159,7 +2201,8 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-autocarousel")) {
-        if (!component.querySelector("img")) return;
+        const ambient = stdReviewPage(doc) && [...component.querySelectorAll("[data-asset-path]")].some((el) => !el.getAttribute("data-asset-path").startsWith("/content/dam/"));
+        if (!component.querySelector("img") && !ambient) return;
         startSection("hero").nodes.push(component);
         current = null;
         return;
@@ -2424,6 +2467,11 @@ var CustomImportScript = (() => {
         const parts = [...line.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter((el) => !el.parentElement.closest("h1, h2, h3, h4, h5, h6, p"));
         return parts.length ? parts : [line];
       });
+    } else if (!headings.length && lineEls.length && product && stdReviewPage(document)) {
+      lines = lineEls.flatMap((line) => {
+        const parts = [...line.querySelectorAll("p")].filter((el) => !el.parentElement.closest("p"));
+        return parts.length ? parts : [line];
+      });
     } else if (headings.length && lineEls.length) {
       lines = lineEls.map((line) => line.querySelector("h1, h2, h3, h4, h5, h6") || line);
     } else if (STD_DRAFT_IMPORT && headings.length) {
@@ -2458,11 +2506,52 @@ var CustomImportScript = (() => {
     });
     return out;
   }
+  function xfSlideCopy(slide, overlay, document) {
+    if (overlay && clean2(overlay.textContent)) return [];
+    const xf = slide.querySelector(".experienceFragment-ef") || slide.querySelector(".experienceFragment-ef-mobile");
+    const texts = xf ? [...xf.querySelectorAll(".c-rich-text-editor")] : [];
+    const LEVEL = {
+      H1: 2,
+      H2: 1.75,
+      H3: 1.5,
+      H4: 1.25
+    };
+    const STEPS = ["1-25", "1-5", "1-75", "2", "2-5"];
+    const step = (factor) => STEPS.reduce((x, y) => Math.abs(Math.log(Number(y.replace("-", ".")) / factor)) < Math.abs(Math.log(Number(x.replace("-", ".")) / factor)) ? y : x);
+    const sized = (line) => {
+      if (!LEVEL[line.tagName]) return;
+      const walker = document.createTreeWalker(line, 4);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        const m = t.nodeValue.match(/\[\[text-(\d+(?:-\d+)?)\]/);
+        if (m) {
+          t.nodeValue = t.nodeValue.replace(m[0], `[[text-${step(LEVEL[line.tagName] * Number(m[1].replace("-", ".")))}]`);
+          return;
+        }
+      }
+      line.prepend(document.createTextNode(`[[text-${step(LEVEL[line.tagName])}]`));
+      line.append(document.createTextNode("]"));
+    };
+    return texts.flatMap((rich) => headline(rich, document)).map((line) => {
+      sized(line);
+      if (!/^H[23]$/.test(line.tagName)) return line;
+      const bold = [...line.querySelectorAll("strong")].map((b) => b.textContent).join("");
+      const plain = clean2(line.textContent.replace(/\[\[[^\][]+\]|\]/g, ""));
+      if (clean2(bold.replace(/\[\[[^\][]+\]|\]/g, "")) === plain) return line;
+      line.querySelectorAll("strong").forEach((b) => {
+        b.prepend(document.createTextNode("[[std-sans]"));
+        b.append(document.createTextNode("]"));
+      });
+      line.prepend(document.createTextNode("[[serif]"));
+      line.append(document.createTextNode("]"));
+      return line;
+    });
+  }
   function percent(style, re) {
     const m = style.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
   }
   function parse5(element, context) {
+    var _a;
     const { document } = context;
     const slides = [...element.querySelectorAll(".carouselslide:not(.slick-cloned)")];
     if (STD_DRAFT_IMPORT && slides.length > 1 && !element.hasAttribute("data-std-slide")) {
@@ -2490,7 +2579,19 @@ var CustomImportScript = (() => {
     const desktop = slide.querySelector(".experienceFragment-ef img");
     const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
     const overlay = slide.querySelector(".overlayparsys");
-    const first = desktop || mobile || slide.querySelector("img");
+    let first = desktop || mobile || slide.querySelector("img");
+    let ambient = "";
+    if (!first && stdReviewPage(document)) {
+      const link2 = [...slide.querySelectorAll('table a[href*=".m3u8"]')].map((a) => a.getAttribute("href").match(/\/is\/content\/(.+?)\.m3u8/)).find(Boolean);
+      const path = ((_a = slide.querySelector("[data-asset-path]")) == null ? void 0 : _a.getAttribute("data-asset-path")) || (link2 ? decodeURIComponent(link2[1]) : "");
+      if (path && !path.startsWith("/content/dam/")) {
+        const base = "https://media-assets.stryker.com/is";
+        ambient = `${base}/content/${path}.m3u8?poster=${base}/image/${path}?fit=constrain,1&wid=909&hei=511`;
+        first = document.createElement("img");
+        first.setAttribute("src", `${base}/image/${path}?$max_width_1440$`);
+        first.setAttribute("alt", "");
+      }
+    }
     if (!first) return;
     if (stdProductPage(document) && productSlide(slide, overlay)) {
       const copy = introCopy(overlay);
@@ -2579,7 +2680,23 @@ var CustomImportScript = (() => {
       if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add("white");
       const copy = cells[cells.length - 1];
       if (copy && Array.isArray(copy[0])) dropColourTags(copy[0], colours);
-      const video = slideVideo(slide);
+      const lead = stdReviewPage(document) ? xfSlideCopy(slide, overlay, document) : [];
+      if (lead.length) {
+        cells.push([lead]);
+        const placed = [
+          "text-left",
+          "text-right",
+          "text-wide",
+          "text-top",
+          "text-upper",
+          "text-middle",
+          "text-lower",
+          "mobile-below",
+          "mobile-above"
+        ];
+        options.splice(0, options.length, ...options.filter((o) => !placed.includes(o)), "text-right", "text-top", "mobile-above");
+      }
+      const video = slideVideo(slide) || ambient;
       if (video) {
         const a = document.createElement("a");
         a.setAttribute("href", video);
@@ -2743,7 +2860,29 @@ var CustomImportScript = (() => {
       (component.closest(".tabs") || component).replaceWith(keepNodes(doc, nodes, style));
     });
   }
+  function plateColumns(main, doc, h) {
+    main.querySelectorAll(".colctrl").forEach((colctrl) => {
+      const row = colctrl.querySelector(":scope > .row");
+      const cols = row ? [...row.children].filter((c) => h.text(c) || c.querySelector("img")) : [];
+      const plate = (col) => {
+        const groups = col.querySelectorAll(".panel-group");
+        const panels = groups.length === 1 ? groups[0].querySelectorAll(":scope > .panel") : [];
+        return panels.length === 1 && !!panels[0].querySelector(".panel-collapse.in, .panel-collapse.show") && !!col.querySelector(".c-standalone-image img") && !col.querySelector(".colctrl");
+      };
+      if (cols.length < 2 || !cols.every(plate)) return;
+      cols.forEach((col) => {
+        const group = col.querySelector(".panel-group");
+        const title = doc.createElement("h4");
+        title.textContent = h.text(group.querySelector(".panel-title"));
+        const body = [...group.querySelectorAll(".panel-body .c-rich-text-editor")];
+        const target = group.closest(".accordion") || group.closest(".c-accordion") || group;
+        target.replaceWith(h.richText(doc, [title]), ...body);
+      });
+      colctrl.setAttribute("data-columns", "");
+    });
+  }
   function accordionsInColumns(main, doc, h) {
+    if (stdProductPage(doc)) plateColumns(main, doc, h);
     main.querySelectorAll(".panel-group").forEach((group) => {
       const col = group.closest('[class*="col-sm-"], [class*="col-md-"]');
       const row = col && col.parentElement;
@@ -2764,7 +2903,11 @@ var CustomImportScript = (() => {
     return [...table.querySelectorAll(":scope > tbody > tr, :scope > tr")].slice(1).flatMap((tr) => [...tr.children].flatMap((td) => [...td.childNodes]));
   }
   function tagPanelCopy(nodes, doc, h) {
-    nodes.filter((n) => n.nodeType === 1 && typeof n.copyStyle === "string" && n.copyStyle).forEach((n) => {
+    const product = stdReviewPage(doc);
+    if (product) {
+      nodes.filter((n) => n.nodeType === 1 && /^H[1-6]$/.test(n.tagName) && n.serifHeading).forEach((n) => h.tagCopy(n, "serif", doc));
+    }
+    nodes.filter((n) => n.nodeType === 1 && typeof n.copyStyle === "string" && n.copyStyle && !(product && /^H[1-6]$/.test(n.tagName))).forEach((n) => {
       const own = n.copyStyle.split(",").map((s) => s.trim());
       const size = own.find((s) => s.startsWith("p-") && /\d/.test(s[2]));
       const tags = [size ? `text-${size.slice(2)}` : "", own.includes("serif") ? "serif" : ""].filter(Boolean);
@@ -2970,7 +3113,7 @@ var CustomImportScript = (() => {
       const walker = el.ownerDocument.createTreeWalker(el, 4);
       let plain = 0;
       for (let t = walker.nextNode(); t; t = walker.nextNode()) {
-        if (squash(t.nodeValue) && !t.parentElement.closest(".futura-bold, b, strong")) {
+        if (squash(t.nodeValue) && !t.parentElement.closest(".futura-bold, b, strong") && !(stdReviewPage(el.ownerDocument) && t.parentElement.closest("sup, sub"))) {
           if (!t.parentElement.closest(".urw-egyptienne")) return false;
           plain += 1;
         }
@@ -3379,6 +3522,70 @@ var CustomImportScript = (() => {
       centred: !!widget.querySelector(".text-center")
     };
   }
+  function statRowLine(source, doc, base = 1) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const whole = squash(source.textContent);
+    const factor = [...source.querySelectorAll('[class*="fontsize-"]')].filter((span) => squash(span.textContent) === whole).map((span) => span.className.match(/\bfontsize-(\d+)(?:-(\d+))?em\b/) || []).filter((m) => m[1]).reduce((f, m) => f * (m[1] === "8" && !m[2] ? 0.8 : Number(`${m[1]}.${m[2] || 0}`)), 1);
+    const STEPS = [[0.8, "text-0-8"], [1, ""], [1.25, "text-1-25"], [1.5, "text-1-5"], [1.75, "text-1-75"], [2, "text-2"], [2.5, "text-2-5"]];
+    const off = ([step]) => Math.abs(Math.log(step / (factor / base)));
+    const size = STEPS.reduce((x, y) => off(y) < off(x) ? y : x)[1];
+    const serif = [...source.querySelectorAll(".urw-egyptienne")].some((span) => squash(span.textContent) === whole);
+    const line = doc.createElement("p");
+    line.append(...source.cloneNode(true).childNodes);
+    line.querySelectorAll("span.futura-bold, b").forEach((span) => {
+      const strong = doc.createElement("strong");
+      strong.append(...span.childNodes);
+      span.replaceWith(strong);
+    });
+    line.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
+    line.querySelectorAll("*").forEach((el) => [...el.attributes].forEach((at) => {
+      if (!(el.tagName === "A" && at.name === "href")) el.removeAttribute(at.name);
+    }));
+    const tag = [size, serif ? "serif" : ""].filter(Boolean).join(",");
+    if (tag && line.firstChild) {
+      line.prepend(doc.createTextNode(`[[${tag}]`));
+      line.append(doc.createTextNode("]"));
+    }
+    return line;
+  }
+  function statisticsRow(row, columns, doc) {
+    const paragraphs = (parts) => parts.flatMap((pt) => {
+      const ps = [...pt.querySelectorAll("p")].filter((p) => p.textContent.trim());
+      return ps.length ? ps : [pt].filter((x) => x.textContent.trim());
+    });
+    const stats = columns.map((ps) => {
+      const at = ps.findIndex((pt) => pt.matches(".numbercounter"));
+      const stat = statCell(ps[at], doc);
+      const after = paragraphs(ps.slice(at + 1));
+      const unit = after.length && after[0].textContent.trim().split(/\s+/).length <= 3 ? [after.shift()] : [];
+      const line = (base) => (p) => statRowLine(p, doc, base);
+      return __spreadProps(__spreadValues({}, stat), {
+        before: paragraphs(ps.slice(0, at)).map(line(1.5)),
+        unit: unit.map(line(1.5)),
+        rest: after.map(line(1))
+      });
+    });
+    const colours = [...new Set(stats.map((st) => st.colour))];
+    const options = [];
+    if (stats.length !== 3) options.push(`cols-${Math.min(stats.length, 6)}`);
+    if (colours.length === 1 && colours[0] !== "gold") options.push(`stat-${colours[0]}`);
+    const sizes = stats.map((st) => st.size).filter(Boolean);
+    const size = sizes.length ? sizes.sort((x, y) => x - y)[Math.floor(sizes.length / 2)] : 5;
+    if (size <= 4) options.push("stat-s");
+    else if (size >= 6.5) options.push("stat-l");
+    if (stats.some((st) => st.centred)) options.push("text-center");
+    const cells = stats.map((st) => {
+      const number = doc.createElement("div");
+      number.append(...st.before, st.value, ...st.unit);
+      const desc = doc.createElement("div");
+      desc.append(...st.rest.length ? st.rest : st.desc);
+      const keyword = colours.length > 1 ? [st.colour === "white" ? "gold" : st.colour] : [];
+      return [...keyword, number, desc];
+    });
+    const name = options.length ? `Statistics (${options.join(", ")})` : "Statistics";
+    const from = row.closest('[class^="cols"]') || row;
+    from.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells }), from));
+  }
   function statisticsBlocks(main, doc) {
     const done = /* @__PURE__ */ new Set();
     main.querySelectorAll(".numbercounter").forEach((component) => {
@@ -3387,6 +3594,14 @@ var CustomImportScript = (() => {
       const parts = row ? [...row.querySelectorAll(':scope > .row > [class*="col-"] > .row > *')] : [component];
       const counters = parts.filter((p) => p.matches(".numbercounter"));
       const others = parts.filter((p) => !p.matches(".numbercounter") && p.textContent.trim());
+      if (row && others.length && stdReviewPage(doc)) {
+        const columns = [...row.querySelectorAll(':scope > .row > [class*="col-"]')].map((col) => [...col.querySelectorAll(":scope > .row > *")]).filter((ps) => ps.some((pt) => pt.textContent.trim()));
+        if (columns.length >= 2 && columns.every((ps) => ps.filter((pt) => pt.matches(".numbercounter")).length === 1)) {
+          counters.forEach((c) => done.add(c));
+          statisticsRow(row, columns, doc);
+          return;
+        }
+      }
       if (row && (others.length || counters.length < 2)) return;
       counters.forEach((c) => done.add(c));
       const stats = counters.map((c) => statCell(c, doc));
@@ -5290,6 +5505,19 @@ var CustomImportScript = (() => {
     ]
   };
 
+  // tools/importer/review-pages-xf.js
+  var review_pages_xf_default = {
+    "/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html": [
+      "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/global-statistics/master",
+      "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/stryker_training_aca/sta-callout-and-signup-invite/master"
+    ],
+    "/us/en/communications/systems/-isuite-experience/connected-or-operating-system.html": [],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ]
+  };
+
   // tools/importer/transformers/long-page-detail-corp-sections.js
   var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments"];
   var STD_TABLE = "table[data-std-table]";
@@ -5413,9 +5641,15 @@ var CustomImportScript = (() => {
     return WebImporter.Blocks.createBlock(doc, { name: "Fragment", cells: [[a]] });
   }
   var STD_REVIEW_FRAGMENTS = "/drafts/astha/pages/fragments/";
+  var REVIEW_FRAGMENTS_V2 = [
+    "/mako_smartrobotics_o/global-statistics/master",
+    "/lifepak_35/product_page/intuitive-clinically-advanced-proven/master",
+    "/emergency-care/en/business_unit/footer/master"
+  ];
   function reviewFragmentPath(xf) {
     const path = xfToFragmentPath(xf);
-    return path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS);
+    const v2 = REVIEW_FRAGMENTS_V2.some((end) => (xf || "").endsWith(end));
+    return path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS).replace(/\/master$/, v2 ? "-v2/master" : "/master");
   }
   function productFragments(main, doc, xfs) {
     const slots = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment"));
@@ -5606,6 +5840,56 @@ var CustomImportScript = (() => {
     black: "image-border-black",
     blue: "image-border-teal"
   };
+  function smallImages(columns) {
+    const images = columns.map((col) => col.querySelector(".c-standalone-image img")).filter(Boolean);
+    if (!images.length || images.length !== columns.length) return false;
+    return images.every((img, i) => {
+      const { width } = img.getBoundingClientRect();
+      const room = columns[i].getBoundingClientRect().width - 30;
+      return width > 0 && room > 0 && width < room * 0.85;
+    });
+  }
+  function valignMiddle(columns) {
+    if (columns.length !== 2) return false;
+    const imageOf = (col) => [...col.querySelectorAll(".c-standalone-image img, img")].find((img) => img.getBoundingClientRect().height > 0);
+    const images = columns.map(imageOf);
+    const at = images.findIndex(Boolean);
+    if (at < 0 || images.filter(Boolean).length !== 1) return false;
+    const textCol = columns[1 - at];
+    if (textCol.querySelector("img") || !text4(textCol)) return false;
+    const lines = [];
+    const walker = textCol.ownerDocument.createTreeWalker(
+      textCol,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (node.nodeValue.trim() && !/^:(start-[a-z0-9-]+|end):$|^\[\[|^\]$/.test(node.nodeValue.trim())) {
+        const range = textCol.ownerDocument.createRange();
+        range.selectNodeContents(node);
+        const rect = range.getBoundingClientRect();
+        if (rect.height > 0) lines.push({ getBoundingClientRect: () => rect });
+      }
+    }
+    if (!lines.length) return false;
+    const ib = images[at].getBoundingClientRect();
+    const cb = columns[at].getBoundingClientRect();
+    const tb = textCol.getBoundingClientRect();
+    const sameRow = cb.top < tb.bottom && tb.top < cb.bottom && Math.abs(cb.left - tb.left) > 50;
+    if (!sameRow || ib.height < 80) return false;
+    const top = Math.min(...lines.map((el) => el.getBoundingClientRect().top));
+    const bottom = Math.max(...lines.map((el) => el.getBoundingClientRect().bottom));
+    const height = bottom - top;
+    const offset = (top + bottom) / 2 - (ib.top + ib.bottom) / 2;
+    return height < ib.height * 0.8 && top - ib.top > ib.height * 0.12 && Math.abs(offset) < ib.height * 0.15;
+  }
+  function markCentredRows(document) {
+    if (!STD_DRAFT_IMPORT) return;
+    document.querySelectorAll(".colctrl").forEach((colctrl) => {
+      const filled = rowColumns(colctrl).filter((col) => text4(col) || col.querySelector("img"));
+      if (valignMiddle(filled)) colctrl.setAttribute("data-std-valign", "middle");
+    });
+  }
   function imageBorder(columns) {
     const colours = columns.flatMap((col) => [...col.querySelectorAll('.c-standalone-image img[class*="bor-"]')].map((img) => (img.className.match(/\bbor-([a-z]+)/) || [])[1]));
     const counts = {};
@@ -5819,7 +6103,7 @@ var CustomImportScript = (() => {
     const a = n.nodeType === 1 && (n.matches("a[href]") ? n : n.querySelector("a[href]"));
     return a ? a.getAttribute("href").split("#")[0] : "";
   };
-  var TILE_KEEP = new RegExp("^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a-z]+|image-border(-[a-z]+)?|text-center)$");
+  var TILE_KEEP = new RegExp("^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a-z]+|image-border(-[a-z]+)?|text-center|image-centre)$");
   var TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
   var CARD_COLOUR_LABELS = {
     gray: "Light grey",
@@ -5853,6 +6137,7 @@ var CustomImportScript = (() => {
     const same = units.length > 0 && units.every((u) => u === units[0]);
     if (!same || filled.length < 3 && !(filled.length === 2 && boxed)) return null;
     if (!/^t?m?t?$/.test(units[0]) || names.some((v) => TILE_NOT.test(v))) return null;
+    if (stdProductPage(doc) && units[0] === "t" && cells.length === 4) return null;
     const filledColours = cells.map((c, i) => tileParts(c).length ? colours[i] || "" : null).filter((c) => c !== null);
     const perCard = filledColours.length === filled.length && filledColours.every(Boolean) && new Set(filledColours).size > 1;
     const rows = filled.map((nodes, i) => {
@@ -5920,6 +6205,8 @@ var CustomImportScript = (() => {
         cells.forEach(([span, item]) => {
           const col = doc.createElement("div");
           col.className = `col-sm-${span} col-md-${span}`;
+          const phone = num(item, /\baem-GridColumn--phone--(\d+)\b/);
+          if (stdProductPage(doc) && phone) col.className += ` col-xs-${phone}`;
           col.append(item);
           inner.append(col);
         });
@@ -6113,7 +6400,9 @@ var CustomImportScript = (() => {
         boxes,
         imageBorder(columns),
         centred ? "text-center" : "",
-        firstRule ? "left-border-bottom" : ""
+        firstRule ? "left-border-bottom" : "",
+        stdProductPage(doc) && smallImages(filled) ? "image-centre" : "",
+        stdProductPage(doc) && colctrl.getAttribute("data-std-valign") === "middle" ? "valign-middle" : ""
       ].filter(Boolean).join(", ");
       const cells = columns.map((col) => cellNodes(col, doc));
       const style = rowCopyStyle(cells, doc);
@@ -6121,7 +6410,7 @@ var CustomImportScript = (() => {
         const box = cellBox(col);
         return box && box.kind === "whole" && box.colour !== "boxed" ? box.colour : "";
       }) : [];
-      const block = STD_DRAFT_IMPORT && tileCards(cells, variant, doc, colours) || WebImporter.Blocks.createBlock(doc, {
+      const block = STD_DRAFT_IMPORT && !colctrl.hasAttribute("data-columns") && tileCards(cells, variant, doc, colours) || WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : "Columns",
         cells: [cells]
       });
@@ -6251,10 +6540,27 @@ var CustomImportScript = (() => {
       const desktop = ((_b = (_a = box.querySelector("source[srcset]") || {}).getAttribute) == null ? void 0 : _b.call(_a, "srcset")) || img.getAttribute("src");
       const phone = img.getAttribute("src");
       const alt = img.getAttribute("alt") || "";
+      const sources = [.../* @__PURE__ */ new Set([desktop, phone])].filter(Boolean);
+      if (stdReviewPage(doc)) {
+        box.replaceWith(...sources.map((src, i) => {
+          const one = doc.createElement("div");
+          one.setAttribute("data-keep", "nodes");
+          const device = ["desktop-only", "mobile-only"][i];
+          one.setAttribute("data-section-style", sources.length > 1 ? `full-width-image, ${device}` : "full-width-image");
+          const p = doc.createElement("p");
+          const image2 = doc.createElement("img");
+          image2.setAttribute("src", src);
+          image2.setAttribute("alt", alt);
+          p.append(image2);
+          one.append(p);
+          return one;
+        }));
+        return;
+      }
       const holder = doc.createElement("div");
       holder.setAttribute("data-keep", "nodes");
       holder.setAttribute("data-section-style", box.classList.contains("bg-shadow") ? "full-width-image, shadow" : "full-width-image");
-      [.../* @__PURE__ */ new Set([desktop, phone])].filter(Boolean).forEach((src) => {
+      sources.forEach((src) => {
         const p = doc.createElement("p");
         const image2 = doc.createElement("img");
         image2.setAttribute("src", src);
@@ -6282,7 +6588,12 @@ var CustomImportScript = (() => {
     const level = heading.tagName;
     const h1 = renameTo(heading, "h1", doc);
     const spans = [...h1.querySelectorAll('[class*="fontsize-"]')].filter((span) => text4(span) === text4(h1));
-    const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1]).find((n) => TITLE_SIZES.includes(n));
+    let size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1]).find((n) => TITLE_SIZES.includes(n));
+    if (size && stdReviewPage(doc)) {
+      const factor = spans.map((span) => /\bfontsize-(\d+)(?:-(\d+))?em\b/.exec(span.className) || []).filter((m) => m[1]).reduce((f, m) => f * Number(`${m[1]}.${m[2] || 0}`), 1);
+      const off = (n) => Math.abs(Math.log(Number(n.replace("-", ".")) / factor));
+      size = TITLE_SIZES.reduce((x, y) => off(y) < off(x) ? y : x);
+    }
     const h4Enlarged = level === "H4" && size === "2-5";
     if (size) spans.forEach((span) => span.classList.remove(...[...span.classList].filter((c) => c.startsWith("fontsize-"))));
     if (h4Enlarged) spans[0].classList.add("fontsize-h4-2-5");
@@ -6294,6 +6605,78 @@ var CustomImportScript = (() => {
     }
     if (size && !h4Enlarged) sizeTagged(h1, `text-${size}`, doc);
     return h1;
+  }
+  var assetName = (src) => ((src || "").match(/\/is\/(?:image|content)\/([^?#]+)/) || [])[1] || "";
+  function iconSources(main) {
+    const names = /* @__PURE__ */ new Set();
+    main.querySelectorAll('.standaloneimage[class*="aem-GridColumn--default--"]').forEach((col) => {
+      const grid = col.parentElement && col.parentElement.className.match(/\baem-Grid--default--(\d+)\b/);
+      const width = col.className.match(/\baem-GridColumn--default--(\d+)\b/);
+      const beside = col.nextElementSibling && col.nextElementSibling.matches(".text") && text4(col.nextElementSibling);
+      if (!grid || !width || !beside || Number(width[1]) * 4 > Number(grid[1])) return;
+      col.querySelectorAll("img").forEach((img) => names.add(assetName(img.getAttribute("src"))));
+    });
+    names.delete("");
+    return names;
+  }
+  function iconBlocks(root, icons, doc) {
+    root.querySelectorAll("table").forEach((table) => {
+      const trs = [...table.querySelectorAll(":scope > tbody > tr, :scope > tr")];
+      const head = trs[0] && trs[0].firstElementChild;
+      const m = head && head.textContent.trim().match(/^(Cards Corp|Columns)(?: \((.*)\))?$/);
+      if (!m) return;
+      const names = [...table.querySelectorAll("img")].map((img) => assetName(img.getAttribute("src"))).concat([...table.querySelectorAll("a[href]")].map((a) => assetName(a.getAttribute("href"))).filter((n) => n && !/\.(?:m3u8|mp4)$/.test(n)));
+      if (!names.length || !names.every((n) => icons.has(n))) return;
+      const media = (n) => {
+        var _a;
+        return n.nodeType === 1 && (n.matches("img, picture") || !!n.querySelector("img, picture") || n.matches("a[href], p") && icons.has(assetName((_a = n.matches("a") ? n : n.querySelector("a[href]")) == null ? void 0 : _a.getAttribute("href"))));
+      };
+      const units = [];
+      trs.slice(1).forEach((tr) => {
+        const cells2 = [...tr.children];
+        if (m[1] === "Cards Corp" && cells2.length === 2) {
+          units.push({ row: units.length, nodes: [...cells2[0].childNodes, ...cells2[1].childNodes] });
+          return;
+        }
+        const row = units.length ? units[units.length - 1].row + 1 : 0;
+        cells2.forEach((cell) => {
+          const nodes = [...cell.childNodes];
+          const at = nodes.findIndex(media);
+          if (at < 0) return;
+          units.push({ row, nodes: [nodes[at], ...nodes.filter((n, k) => k !== at)] });
+        });
+      });
+      if (!units.length) return;
+      const perRow = m[1] === "Cards Corp" ? { "two-up": 2, "three-up": 3 }[(m[2] || "").split(", ").find((v) => /-up$/.test(v))] || 3 : 0;
+      const grouped = [];
+      units.forEach((unit, i) => {
+        const at = perRow ? Math.floor(i / perRow) : unit.row;
+        (grouped[at] = grouped[at] || []).push(unit.nodes);
+      });
+      const rows = grouped.filter(Boolean);
+      const cells = rows.every((r) => r.length === 1) ? rows.map(([nodes]) => [[nodes[0]], nodes.slice(1)]) : rows.map((r) => r.map((nodes) => {
+        const [icon, ...rest] = nodes;
+        const paragraph = (inline2) => {
+          const p = doc.createElement("p");
+          p.append(...inline2);
+          return p;
+        };
+        const block = (n) => n.nodeType === 1 && /^(P|H[1-6]|UL|OL|DIV|TABLE)$/.test(n.tagName);
+        const filled = (list) => list.some((n) => n.nodeType === 1 || n.textContent.trim());
+        const out = [block(icon) ? icon : paragraph([icon])];
+        let run = [];
+        rest.forEach((n) => {
+          if (block(n)) {
+            if (filled(run)) out.push(paragraph(run));
+            run = [];
+            out.push(n);
+          } else run.push(n);
+        });
+        if (filled(run)) out.push(paragraph(run));
+        return out;
+      }));
+      table.replaceWith(WebImporter.Blocks.createBlock(doc, { name: "Columns (icon-text)", cells }));
+    });
   }
   function dropDamVideos(main) {
     main.querySelectorAll(".c-standalone-video").forEach((video) => {
@@ -6327,12 +6710,24 @@ var CustomImportScript = (() => {
     const path = sourcePath(payload);
     const productXf = stdProductPage(doc) && payload.template.name === "long-page-detail-corp-fragments";
     main.querySelectorAll(".hero-space").forEach((el) => el.remove());
+    if (stdReviewPage(doc)) {
+      const STEPS = ["8", "1-25", "1-5", "1-75", "2", "2-5"];
+      main.querySelectorAll('span[style*="font-size"]').forEach((span) => {
+        const m = (span.getAttribute("style") || "").match(/font-size:\s*(\d+(?:\.\d+)?)px/i);
+        if (!m) return;
+        const factor = Number(m[1]) / 14;
+        const off = (n) => Math.abs(Math.log((n === "8" ? 0.8 : Number(n.replace("-", "."))) / factor));
+        const step = STEPS.reduce((x, y) => off(y) < off(x) ? y : x);
+        if (Math.abs(factor - 1) > 0.1) span.classList.add(`fontsize-${step}em`);
+      });
+    }
     main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
     dropDamVideos(main);
     fullWidthImages(main, doc);
     spaceUrlColons(main, doc);
     const nav = localNav(main, doc);
-    if (!(stdProductPage(doc) && productFragments(main, doc, product_detail_xf_default[path]))) {
+    const pageXfs = product_detail_xf_default[path] || (STD_REVIEW_IMPORT ? review_pages_xf_default[path] : void 0);
+    if (!(stdProductPage(doc) && productFragments(main, doc, pageXfs))) {
       experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
     }
     sectionTitles(main, doc);
@@ -6360,6 +6755,7 @@ var CustomImportScript = (() => {
         if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);
       });
     }
+    const icons = stdProductPage(doc) ? iconSources(main) : null;
     const helpers = {
       cellNodes,
       richText,
@@ -6388,6 +6784,7 @@ var CustomImportScript = (() => {
       // review build of the shared fragments: Text style sizes, icon rows side by side
       stdText: STD_DRAFT_IMPORT && payload.template.name === "long-page-detail-corp-fragments"
     });
+    if (icons && icons.size) iconBlocks(element, icons, doc);
     if (nav) element.prepend(nav, doc.createElement("hr"));
   }
 
@@ -6720,6 +7117,10 @@ var CustomImportScript = (() => {
   var import_long_page_detail_corp_default = {
     // before the importer's own cleanup, which drops empty paragraphs
     preprocess: ({ document, params }) => {
+      if (STD_REVIEW_IMPORT && review_pages_xf_default[new URL(params.originalURL).pathname]) {
+        document.body.setAttribute("data-template", "product-detail");
+      }
+      if (stdProductPage(document)) markCentredRows(document);
       keepHeadlineBlankLines(document);
       blankLineSpacers(document, params.originalURL);
     },

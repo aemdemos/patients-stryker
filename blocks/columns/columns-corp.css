@@ -1460,3 +1460,16 @@ body.corp.std-draft main .columns.icon-text.block > div > div > .columns-img-col
     max-width: calc(100% / 3);
   }
 }
+
+/* Text centred beside the image (option valign-middle; in review, draft pages): from 600px the
+   text cell sits in the middle of the image cell's height (stryker.com product rows, e.g. Mako
+   SmartRobotics "Mako Total Knee"); phones stack as usual */
+@media (width >= 600px) {
+  body.corp.std-draft .columns.valign-middle > div {
+    align-items: center;
+  }
+
+  body.corp.std-draft .columns.valign-middle > div > div {
+    align-self: center;
+  }
+}

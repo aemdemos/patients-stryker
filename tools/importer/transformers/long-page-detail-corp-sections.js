@@ -514,6 +514,63 @@ function smallImages(columns) {
   });
 }
 
+/**
+ * Product pages (review build): whether a two-column image + text row shows its text in the
+ * middle of the image's height on the loaded source page (stryker.com authors set a top
+ * padding on the text for it, e.g. Mako SmartRobotics "Mako Total Knee": a 194px text block
+ * 73px below the top of a 330px image). Such a row takes `valign-middle`; text that starts at
+ * the top of the image (within 12% of its height) stays top-aligned. Columns not laid out (a
+ * closed tab, phone width) leave it off.
+ */
+function valignMiddle(columns) {
+  if (columns.length !== 2) return false;
+  const imageOf = (col) => [...col.querySelectorAll('.c-standalone-image img, img')]
+    .find((img) => img.getBoundingClientRect().height > 0);
+  const images = columns.map(imageOf);
+  const at = images.findIndex(Boolean);
+  if (at < 0 || images.filter(Boolean).length !== 1) return false;
+  const textCol = columns[1 - at];
+  if (textCol.querySelector('img') || !text(textCol)) return false;
+  // the laid-out boxes of its text (paragraphs, or lines joined by breaks)
+  const lines = [];
+  const walker = textCol.ownerDocument.createTreeWalker(textCol, 4 /* NodeFilter.SHOW_TEXT */);
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    if (node.nodeValue.trim() && !/^:(start-[a-z0-9-]+|end):$|^\[\[|^\]$/.test(node.nodeValue.trim())) {
+      const range = textCol.ownerDocument.createRange();
+      range.selectNodeContents(node);
+      const rect = range.getBoundingClientRect();
+      if (rect.height > 0) lines.push({ getBoundingClientRect: () => rect });
+    }
+  }
+  if (!lines.length) return false;
+  const ib = images[at].getBoundingClientRect();
+  const cb = columns[at].getBoundingClientRect();
+  const tb = textCol.getBoundingClientRect();
+  const sameRow = cb.top < tb.bottom && tb.top < cb.bottom && Math.abs(cb.left - tb.left) > 50;
+  if (!sameRow || ib.height < 80) return false;
+  const top = Math.min(...lines.map((el) => el.getBoundingClientRect().top));
+  const bottom = Math.max(...lines.map((el) => el.getBoundingClientRect().bottom));
+  const height = bottom - top;
+  const offset = (top + bottom) / 2 - (ib.top + ib.bottom) / 2;
+  return height < ib.height * 0.8 && top - ib.top > ib.height * 0.12
+    && Math.abs(offset) < ib.height * 0.15;
+}
+
+/**
+ * In review (staging build), product pages and their XFs: marks the two-column rows whose text
+ * sits vertically centred to the image (data-std-valign; Columns option valign-middle). Run
+ * from the import's preprocess, on the source layout before the importer's own cleanup drops
+ * the blank paragraphs that some rows use to push their text down (Pangea "Variable angle
+ * locking technology").
+ */
+export function markCentredRows(document) {
+  if (!STD_DRAFT_IMPORT) return;
+  document.querySelectorAll('.colctrl').forEach((colctrl) => {
+    const filled = rowColumns(colctrl).filter((col) => text(col) || col.querySelector('img'));
+    if (valignMiddle(filled)) colctrl.setAttribute('data-std-valign', 'middle');
+  });
+}
+
 function imageBorder(columns) {
   const colours = columns.flatMap((col) => [...col.querySelectorAll('.c-standalone-image img[class*="bor-"]')]
     .map((img) => (img.className.match(/\bbor-([a-z]+)/) || [])[1]));
@@ -1224,7 +1281,8 @@ function columnRows(main, doc) {
     const layout = COLUMN_VARIANTS[key] || COLUMN_VARIANTS[columns.map(desktopWidth).join(',')];
     const variant = [layout, linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes,
       imageBorder(columns), centred ? 'text-center' : '', firstRule ? 'left-border-bottom' : '',
-      stdProductPage(doc) && smallImages(filled) ? 'image-centre' : '']
+      stdProductPage(doc) && smallImages(filled) ? 'image-centre' : '',
+      stdProductPage(doc) && colctrl.getAttribute('data-std-valign') === 'middle' ? 'valign-middle' : '']
       .filter(Boolean).join(', ');
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = rowCopyStyle(cells, doc);
