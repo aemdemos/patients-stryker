@@ -119,6 +119,18 @@ body.news-detail.body-l main > .section:not(.disclaimer) > .default-content-wrap
   line-height: var(--body-line-height-l);
 }
 
+/* body-l: a heading 2 authored in italic (the Egyptienne subheads, e.g. "iSPIES: Minimally
+   Invasive Surgery") at 21px, 24.5px from 600px, whatever size style its section has */
+body.news-detail.body-l main > .section > .default-content-wrapper > h2:has(em) {
+  font-size: var(--heading-font-size-l);
+}
+
+@media (width >= 600px) {
+  body.news-detail.body-l main > .section > .default-content-wrapper > h2:has(em) {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
 body.news-detail.full-width.basic main > .section > .default-content-wrapper > h1 {
   font-size: var(--corp-heading-font-size-h1-1-5);
   line-height: var(--heading-line-height);
