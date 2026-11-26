@@ -118,7 +118,7 @@ export default function transform(hookName, element, payload) {
   // pages with their Back link fragments (import-people.js) and the corp Interventional
   // Spine footnotes with their Back link fragment (import-ivs-footnotes.js).
   const isNewsDetail = !!(payload && payload.template && [
-    'news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
+    'news-detail', 'news-detail-xf', 'text-only', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
     'event-detail', 'contact-division',
     'people', 'people-fragments',
     'ivs-footnotes', 'ivs-footnotes-fragments',
