@@ -116,7 +116,7 @@ body.news-detail.full-width.basic main > .section:not(.disclaimer) > .default-co
    Humanist 17.5px / 20.125px at 390 and 1440px) */
 body.news-detail.body-l main > .section:not(.disclaimer) > .default-content-wrapper :is(p, li) {
   font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
+  line-height: var(--paragraph-line-height);
 }
 
 /* body-l: a heading 2 authored in italic (the Egyptienne subheads, e.g. "iSPIES: Minimally
