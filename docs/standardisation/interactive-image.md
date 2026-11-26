@@ -142,7 +142,7 @@ sites at 1,440px and 390px: the 20 rings sit at the same places on the picture.
 
 ## Which choices fit
 
-The block has no options, so the Block options panel has nothing to grey out.
+The block has no Block options.
 
 ## Review status (draft pages only)
 

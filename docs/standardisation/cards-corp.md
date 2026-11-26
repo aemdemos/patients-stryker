@@ -329,7 +329,7 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 | One Cards block for every row of tiles instead of a dozen components and column looks | Rows of tiles change block (from Columns to Cards), which authors need to know |
 | The same colour list, image borders and spacing steps as Panel and Columns | Rows with a colour per card get one colour per row (or line boxes) |
 | Imported pages keep working: the earlier names are read as the new choices | The filtered product grids need new code before they fill themselves |
-| The panel greys out the choices that don't fit the selected cards, with the reason | |
+| The panel shows only the choices that fit the selected cards | |
 
 ---
 
@@ -373,9 +373,9 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 
 ## Which choices fit which cards
 
-The Block options panel reads the selected cards and greys out the choices that would do nothing.
-Hovering a greyed choice shows why ("Not available here: needs images in the row.", "pick a Card box
-first") and what it does.
+The Block options panel reads the selected cards and shows only the choices that fit them; a choice
+that would do nothing is not shown (e.g. *Image border* without images; *Text spacing in a box* until
+a Card box is picked). Hovering a choice shows what it does.
 
 | Needs | Choices |
 |---|---|

@@ -229,8 +229,9 @@ stryker.com.
 
 ## Which choices fit which table
 
-The Block options panel reads the selected table and greys out the choices that would do nothing.
-Hovering a greyed choice shows why.
+The Block options panel reads the selected table and shows only the choices that fit it; a
+choice that would do nothing is not shown.
+Hovering a choice shows what it does.
 
 | Needs | Choices |
 |---|---|

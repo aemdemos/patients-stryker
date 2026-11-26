@@ -170,7 +170,8 @@ Caregiver stories, SAFE, SAAN from its set link, RISE), measured on both sites a
 
 ## Which choices fit which gallery
 
-The Block options panel reads the selected gallery and greys out the choices that would do nothing.
+The Block options panel reads the selected gallery and shows only the choices that fit it; a
+choice that would do nothing is not shown.
 
 | Needs | Choices |
 |---|---|

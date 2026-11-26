@@ -164,7 +164,7 @@ widths and the 30px gap to the panel all match. The label row is 39px high (stry
 
 ## Which choices fit which tab set
 
-Tabs have no Block options, so there is nothing to grey out.
+Tabs have no Block options.
 
 ## Review status (draft pages only)
 

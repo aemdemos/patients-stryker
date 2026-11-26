@@ -75,8 +75,8 @@ of text): capitals (0 runs), navy (0 runs; still a box and number colour), spaci
 line in white, light grey or dark blue gradient (those are cell and card box colours).
 
 **Special looks fit only some text.** The gold rule goes under a **heading**; a line box goes around a
-**whole line**. The Text style panel greys out a look that doesn't fit the selected words and says why on
-hover ("it goes under a heading", "select the whole line"), as Block options do for blocks.
+**whole line**. The Text style panel shows only the looks that fit the selected words (the gold rule for a
+heading, a line box for a whole line), as Block options do for blocks.
 
 # 4. How values were grouped
 
@@ -282,8 +282,8 @@ most as many steps as it had values, never more.*
 | News list | show dates |
 | Social share | grey icons; right aligned |
 
-The Block options panel greys out a property that doesn't fit the selected block (for example *Image
-border* on a row without images) and says why on hover.
+The Block options panel shows only the properties that fit the selected block; one that would do
+nothing (for example *Image border* on a row without images) is not shown.
 
 # 7. Comparison with stryker.com: the review pages
 

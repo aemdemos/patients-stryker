@@ -228,7 +228,7 @@ These boxes don't fit a choice exactly. They take the nearest choice unless the 
 | Ten colour names, the same in Panel, Columns, Cards and Hero, instead of 27 written values | Boxes that overlapped the content above them (negative margins) no longer overlap unless the business asks for an option |
 | The text colour follows the box: no white-text markup on every dark box | Boxes with different spacing per side get one step all round |
 | Imported pages keep working: the old names are read as the new ones | Rows of boxes change block (to Cards), which authors need to know |
-| The panel greys out the gradient direction unless the box is a gradient, with the reason | |
+| The panel shows the gradient direction only for a gradient box | |
 
 ---
 
@@ -273,8 +273,9 @@ These boxes don't fit a choice exactly. They take the nearest choice unless the 
 
 ## Which choices fit which box
 
-The Block options panel reads the selected Panel and greys out the choices that would do nothing.
-Hovering a greyed choice shows why and what it does.
+The Block options panel reads the selected Panel and shows only the choices that fit it; a
+choice that would do nothing is not shown.
+Hovering a choice shows what it does.
 
 | Needs | Choices |
 |---|---|

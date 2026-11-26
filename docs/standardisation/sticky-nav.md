@@ -139,7 +139,7 @@ At 390px the bar is hidden and the ⋮ button opens the list (Futura 17.5px, 40p
 
 ## Which choices fit which bar
 
-The block has no Block options, so nothing is greyed out.
+The block has no Block options.
 
 ## Review status (draft pages only)
 

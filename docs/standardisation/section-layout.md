@@ -257,8 +257,7 @@ replaces.
 - The 24 number counter rows: **Statistics** (proposal) or a section layout?
 - The section styles in the **Block options panel**: built (in review). Below a block's options, a
   *Section* area offers side by side (equal, wide + narrow, narrow + wide, on phones too) and the
-  section's role (tab, accordion panel, carousel slide), greyed out with the reason when they don't fit
-  ("needs 2 or more parts in the section"). It copies the new Style to paste into the section's Section
+  section's role (tab, accordion panel, carousel slide), shown only when they fit the section. It copies the new Style to paste into the section's Section
   Metadata (or a whole Section Metadata table when the section has none): the editor lets an extension
   replace only the block at the cursor, not the section's metadata table.
 

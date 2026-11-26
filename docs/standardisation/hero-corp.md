@@ -291,7 +291,7 @@ otherwise.
 | One colour list across Hero, Panel, Columns and Cards | Headline sizes join 4 steps: a 2.5% headline is drawn at 3% |
 | The page intro becomes one hero layout instead of a row of columns | Authors learn one rule: whole hero in Block options, a few words in Text style |
 | Phones show the desktop image when there is no phone image, as on stryker.com | |
-| The panel greys out choices that don't fit the selected layout and says why | |
+| The panel shows only the choices that fit the selected layout | |
 
 ---
 
@@ -339,8 +339,8 @@ otherwise.
 
 ## Which choices fit which hero
 
-The Block options panel reads the selected hero and greys out the choices that would do nothing. Hovering
-a greyed choice shows why and what it does; a whole group greyed out says it once under the group.
+The Block options panel reads the selected hero and shows only the choices that fit it; a choice or a
+whole group that would do nothing is not shown. Hovering a choice shows what it does.
 
 | Needs | Choices |
 |---|---|

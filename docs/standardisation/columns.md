@@ -291,8 +291,8 @@ Only the package's limited sets are offered; every stryker.com value joins the n
 | Line box | the 6 colours stryker.com puts around a single line: gold, blue, purple, teal, dark grey, dark purple gradient | exact values |
 | Gold rule | a gold rule under a heading (stryker.com feature titles) | the heading's own rule, in gold |
 
-The panel greys out a look that doesn't fit the selection, with the reason on hover: the gold rule
-needs a heading, a line box needs the whole line selected.
+The panel shows only the looks that fit the selection: the gold rule for a heading, a line box when
+the whole line is selected.
 
 Two fixes make the text read as on stryker.com:
 
@@ -375,7 +375,7 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 | One colour list across banner, panel, cards and columns | Rows of tiles change block (to Cards), which authors need to know |
 | Imported pages keep working: the old option names are read as the new ones | The old names stay readable for existing pages, so two spellings exist until those pages are re-saved |
 | Phones behave exactly as today | |
-| The panel greys out choices that don't fit the selected row and says why, so authors don't pick options that do nothing | Authors learn one rule: whole row in Block options, a few words in Text style |
+| The panel shows only the choices that fit the selected row, so authors don't pick options that do nothing | Authors learn one rule: whole row in Block options, a few words in Text style |
 | Text keeps stryker.com's colours, sizes and fonts with normal and 6 text sizes, 4 headline sizes and 11 colours | Headlines between two steps (and 3.5× text) move by one step |
 
 ---
@@ -427,10 +427,9 @@ The other rows listed in section 7 follow the proposal shown there unless the bu
 
 ## Which choices fit which row
 
-The Block options panel reads the selected row and greys out the choices that would do nothing.
-Hovering a greyed choice shows why ("Not available here: needs images in the row.", "needs 3 cells
-(this row has 2 cells)") and what it does; a whole group greyed out says it once under the group
-("pick a Cell box first"). A choice the row already has stays available.
+The Block options panel reads the selected row and shows only the choices that fit it; a choice or a
+whole group that would do nothing is not shown (e.g. *Images* without images, *Which cell* until a
+Cell box is picked). A choice the row already has always shows, so it can be removed.
 
 | Needs | Choices |
 |---|---|

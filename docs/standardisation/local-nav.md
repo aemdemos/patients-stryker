@@ -153,7 +153,8 @@ line (the parent bold, the pages #404040, the current page bold and black).
 
 ## Which choices fit which navigation
 
-The Block options panel reads the selected block and greys out the choices that would do nothing.
+The Block options panel reads the selected block and shows only the choices that fit it; a
+choice that would do nothing is not shown.
 
 | Needs | Choices |
 |---|---|

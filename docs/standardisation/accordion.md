@@ -194,8 +194,8 @@ accordion; open panels open, closed panels closed. All match.
 
 ## Which choices fit which accordion
 
-The Block options panel reads the selected accordion and greys out the choices that would do nothing.
-Hovering a greyed choice shows why.
+The Block options panel reads the selected accordion and shows only the choices that fit it; a choice
+that would do nothing is not shown. Hovering a choice shows what it does.
 
 | Needs | Choices |
 |---|---|

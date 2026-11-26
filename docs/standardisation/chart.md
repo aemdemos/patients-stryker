@@ -190,7 +190,8 @@ measured the bars, steps, labels, values, legend and title on both sites at 1,44
 
 ## Which choices fit which chart
 
-The Block options panel reads the selected chart and greys out the choices that would do nothing.
+The Block options panel reads the selected chart and shows only the choices that fit it; a choice that
+would do nothing is not shown.
 
 | Needs | Choices |
 |---|---|
