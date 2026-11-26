@@ -1197,6 +1197,13 @@ body.news-detail.news-xf-body main > .section > .default-content-wrapper picture
   text-align: start;
 }
 
+/* news-xf-body: a Heading 2 keeps its 600px size (24.5px) on phones too, instead of the
+   corp 21px — plain or underlined (e.g. "A valued partner" of "Restoring spines and hope").
+   Section styles that size a heading (h2-1-5…) still win: the theme is in :where() */
+:where(body.news-detail.news-xf-body) main :is(h2, h2.underline, h2:has(> u)) {
+  font-size: var(--heading-font-size-xl);
+}
+
 /* news-xf-body: the rule an underlined heading draws below itself is gold (--color-accent)
    instead of grey — a heading underlined as a whole (scripts.js .underline, e.g. "A valued
    partner" of "Restoring spines and hope") or in part (e.g. the Italic + Underline "Spreading
