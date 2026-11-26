@@ -14,7 +14,7 @@ const el = (tag, attrs = {}, ...children) => {
 };
 
 export const ZIP = './review-live-extension.zip';
-export const ABOUT = 'A small browser extension (Chrome or Edge) lets the review tool show the real, clickable stryker.com page next to the migrated one (Compare with: Live), with Scroll Sync: menus, tabs and carousels work. 📷 Snap on it puts a picture of what it shows into the chat. Notes still go on the migrated page or the Screenshot.';
+export const ABOUT = 'A small browser extension (Chrome or Edge) lets the review tool show the real, clickable stryker.com page next to the migrated one (Compare with: Live), with Scroll Sync: menus, tabs and carousels work. Notes still go on the migrated page or the Screenshot.';
 
 /** the installed version in this browser ('' when none), from the extension's mark on the page */
 export const installed = () => document.documentElement.dataset.reviewLive || '';
@@ -51,7 +51,6 @@ export const steps = () => el('ol', { class: 'pl-steps' }, ...[
   ['Open ', el('code', {}, 'chrome://extensions'), ' (Edge: ', el('code', {}, 'edge://extensions'), ') and turn on Developer mode.'],
   ['Click Load unpacked and choose the unzipped folder.'],
   ['Reload the review tool: Live appears under Compare with.'],
-  ['For 📷 Snap: pin the extension (puzzle icon → pin) and, once per review tab, click its icon (or press Alt+Shift+S): a browser wants that one click before an extension may take a picture.'],
 ].map((parts) => el('li', {}, ...parts)));
 
 export const NOTE = 'It only lifts stryker.com\'s "don\'t show me inside other sites" rule when a review page shows it, and tells the tool where the page is scrolled to; it asks for no access to other sites. Updating: unzip the new version over the old folder, then Reload on the extension\'s card.';

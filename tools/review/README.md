@@ -83,9 +83,8 @@ keeps the invitation, later visits need no link.
   page (`rules.json`, aem.page / aem.live / localhost), and its bridge inside that page sends the
   tool its anchors and scroll position (as `sync.js` does) and scrolls on request: Scroll Sync both
   ways, the approach of fullyframe. Notes can't go on it (another site: note mode switches to the
-  Screenshot). **📷 Snap** (0.2.0) puts a picture of what it shows into the chat box last used
-  (`captureVisibleTab` with `activeTab`: once per tab the user clicks the extension's icon or
-  presses Alt+Shift+S; no access to any site is asked for). Without the extension nothing changes. After changing the extension: bump its
+  Screenshot). (Snap, 0.2.0, was removed in 0.3.0: no more than a screenshot of
+  one's own, pasted into the chat.) Without the extension nothing changes. After changing the extension: bump its
   version, `node tools/review/extension-zip.mjs`. Test: `live-extension-tool.test.mjs` (Chromium
   with the extension, from a copy: Chrome writes into the folder it loads).
 - **QA notes on the source screenshot** (25 Nov 2026): side `src`, the screenshot's version and a
