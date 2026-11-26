@@ -29,6 +29,8 @@
 .rs-btn:hover:not(:disabled) { border-color: var(--c-ink); color: var(--c-ink); }
 .rs-btn:active:not(:disabled) { transform: translateY(1px); }
 .rs-btn:disabled { opacity: 0.5; cursor: default; }
+/* (its display would win over hidden: e.g. Show more, once every page is shown) */
+.rs-btn[hidden] { display: none; }
 .rs-btn-primary { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }
 .rs-btn-primary:hover:not(:disabled) { background: #000; color: #fff; }
 

@@ -71,6 +71,9 @@ const picked = {
 const hooks = { draw: () => {}, load: () => {} };
 // the AOE team's organising: the pages ticked in the table, the page whose row is being edited
 const selected = new Set();
+// the list the filters show now (all of it, loaded or not) and the rows loaded: for the selection
+let listed = [];
+let loadedRows = 0;
 let editing = null;
 // the groups whose page list is open (kept across redraws)
 const openGroups = new Set();
@@ -171,32 +174,55 @@ function drawBulk() {
   const batch = num('Batch number');
   const group = num('Group number');
   const n = `${pages.length} page${pages.length === 1 ? '' : 's'}`;
+  // (selected pages the list doesn't show now, and those not loaded in it)
+  const inList = new Set(listed.map((p) => p.path));
+  const loaded = new Set(listed.slice(0, loadedRows).map((p) => p.path));
+  const outside = pages.filter((p) => !inList.has(p)).length;
+  const unseen = pages.filter((p) => !loaded.has(p)).length;
+  // a change to pages not on screen: asked once more, in the bar
+  const sure = (what, go) => () => {
+    if (!unseen) {
+      go();
+      return;
+    }
+    const keep = [...bar.childNodes];
+    bar.replaceChildren(
+      el('b', {}, `${what}?`),
+      el('span', {}, ` ${unseen} of them ${unseen === 1 ? 'is' : 'are'} not loaded in the list below${outside ? ` (${outside} not in the list the filters show now)` : ''}.`),
+      el('button', { type: 'button', class: 'rs-btn rs-btn-primary', onclick: go }, 'Yes, change them'),
+      el('button', { type: 'button', class: 'rs-btn', onclick: () => bar.replaceChildren(...keep) }, 'Cancel'),
+    );
+  };
   const move = (kind, input) => () => {
     const v = numberOf(input);
     if (!v) {
       $('.st-org-msg').textContent = `Give the ${kind} number (1 to 999).`;
       return;
     }
-    organise([() => markOrg(pages, kind, v)], `${n} moved to ${kind} ${v}`);
+    sure(`Move ${n} to ${kind} ${v}`, () => organise([() => markOrg(pages, kind, v)], `${n} moved to ${kind} ${v}`))();
   };
   const btn = (text, onclick, title = '') => el('button', {
     type: 'button', class: 'rs-btn', onclick, title,
   }, text);
-  bar.replaceChildren(
+  bar.replaceChildren(...[
     el('b', {}, `${n} selected:`),
-    el('span', { class: 'st-bulk-group' }, 'Batch ', batch, btn('Move', move('batch', batch)), btn('Take out of their batch', () => organise([() => markOrg(pages, 'batch', null)], `${n} taken out of their batch`))),
-    el('span', { class: 'st-bulk-group' }, 'Group ', group, btn('Move', move('group', group)), btn('Take out of their group', () => organise([() => markOrg(pages, 'group', null)], `${n} taken out of their group`))),
+    outside ? el('span', { class: 'st-bulk-note' }, `${outside} of them not in the list the filters show now`, btn('Keep only the listed ones', () => {
+      [...selected].filter((p) => !inList.has(p)).forEach((p) => selected.delete(p));
+      hooks.draw();
+    })) : null,
+    el('span', { class: 'st-bulk-group' }, 'Batch ', batch, btn('Move', move('batch', batch)), btn('Take out of their batch', sure(`Take ${n} out of their batch`, () => organise([() => markOrg(pages, 'batch', null)], `${n} taken out of their batch`)))),
+    el('span', { class: 'st-bulk-group' }, 'Group ', group, btn('Move', move('group', group)), btn('Take out of their group', sure(`Take ${n} out of their group`, () => organise([() => markOrg(pages, 'group', null)], `${n} taken out of their group`)))),
     el(
       'span',
       { class: 'st-bulk-group' },
-      btn('Make representatives', () => organise([() => makeRepresentatives(pages, orgMap())], 'Representatives chosen'), 'Each becomes its group\'s representative (one per group)'),
-      btn('Clear representative', () => organise([() => clearRepresentatives(pages)], 'Representatives cleared (each group\'s first page stands in)')),
+      btn('Make representatives', sure(`Make ${n} representatives`, () => organise([() => makeRepresentatives(pages, orgMap())], 'Representatives chosen')), 'Each becomes its group\'s representative (one per group)'),
+      btn('Clear representative', sure(`Clear the representative of ${n}`, () => organise([() => clearRepresentatives(pages)], 'Representatives cleared (each group\'s first page stands in)'))),
     ),
     btn('Clear the selection', () => {
       selected.clear();
       hooks.draw();
     }),
-  );
+  ].filter(Boolean));
 }
 
 /** the groups: each with its pages and its representative to choose (or none: its first page) */
@@ -429,16 +455,21 @@ function draw() {
   const aoe = me.role === 'aoe';
   const head = ['State', 'Page', 'Batch / group', 'Area', templates && 'Template', 'Threads', REVIEW.design && 'Design choices', 'Approved', 'Latest activity'].filter(Boolean);
   const visible = list.slice(0, shown);
-  // (the AOE team: a tick per page, and one for all the pages shown)
+  listed = list;
+  loadedRows = visible.length;
+  // (the AOE team: a tick per page, and one for every page the filters show, loaded or not)
+  const ticked = list.filter((p) => selected.has(p.path)).length;
   const tickAll = aoe ? el('input', {
     type: 'checkbox',
-    'aria-label': 'Select every page shown',
-    ...(visible.length && visible.every((p) => selected.has(p.path)) ? { checked: '' } : {}),
+    'aria-label': `Select every page the filters show (${list.length}), also those not loaded yet`,
+    title: `Every page the filters show (${list.length}), also those not loaded yet`,
+    ...(list.length && ticked === list.length ? { checked: '' } : {}),
     onchange: (e) => {
-      visible.forEach((p) => (e.target.checked ? selected.add(p.path) : selected.delete(p.path)));
+      list.forEach((p) => (e.target.checked ? selected.add(p.path) : selected.delete(p.path)));
       hooks.draw();
     },
   }) : null;
+  if (tickAll) tickAll.indeterminate = ticked > 0 && ticked < list.length;
   const rows = visible.map((p) => el(
     'tr',
     { class: `${p.isNew ? 'st-row-new' : ''}${selected.has(p.path) ? ' st-row-picked' : ''}` },
@@ -489,7 +520,7 @@ function draw() {
     ? el('table', {}, el('thead', {}, el('tr', {}, aoe ? el('th', {}, tickAll) : null, ...head.map((h) => el('th', {}, h)))), el('tbody', {}, ...rows))
     : el('p', { class: 'rs-none' }, 'No pages match.'));
   $('.st-more').hidden = list.length <= shown;
-  $('.st-more').textContent = `Show more (${list.length - shown} more)`;
+  $('.st-more').textContent = `Show more (${Math.max(0, list.length - shown)} more)`;
 }
 
 hooks.draw = draw;
