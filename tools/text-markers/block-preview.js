@@ -141,6 +141,18 @@ function renderLine(main, { tag = 'P', html, marker }) {
   return true;
 }
 
+let lastFound;
+let lastHeight = 0;
+
+/** tells the panel the full height of the render (the panel sizes and scrolls its frame) */
+function reportHeight() {
+  const { height } = document.querySelector('main').getBoundingClientRect();
+  if (Math.abs(height - lastHeight) < 1) return;
+  lastHeight = height;
+  window.parent.postMessage({ action: 'tm-preview-rendered', height: Math.ceil(height), found: lastFound }, window.location.origin);
+}
+const heightObserver = new ResizeObserver(() => reportHeight());
+
 async function render(data) {
   renderId += 1;
   const id = renderId;
@@ -152,7 +164,12 @@ async function render(data) {
   await Promise.all([...main.querySelectorAll('img')].map((img) => (img.complete ? null
     : new Promise((resolve) => { img.onload = resolve; img.onerror = resolve; }))));
   if (id !== renderId) return;
-  window.parent.postMessage({ action: 'tm-preview-rendered', height: document.body.scrollHeight, found }, window.location.origin);
+  lastFound = found;
+  lastHeight = -1; // every render reports once
+  reportHeight();
+  // fonts, block scripts and images can still change the height: report it again when they do
+  heightObserver.disconnect();
+  heightObserver.observe(main);
 }
 
 window.addEventListener('message', (e) => {

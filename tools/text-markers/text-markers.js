@@ -158,10 +158,13 @@ function sizePreview() {
   const box = previewFrame.parentElement;
   const width = previewBlock ? VIEWS[view] : box.clientWidth;
   const scale = Math.min(1, box.clientWidth / width);
+  // all of the render up to 45% of the panel's height; a taller one (a block stacked on
+  // phones) scrolls inside the preview page itself
+  const visible = Math.min(Math.ceil(previewHeight * scale), Math.round(window.innerHeight * 0.45));
   previewFrame.style.width = `${width}px`;
-  previewFrame.style.height = `${previewHeight}px`;
+  previewFrame.style.height = `${Math.ceil(visible / scale)}px`;
   previewFrame.style.transform = `scale(${scale})`;
-  box.style.height = `${Math.ceil(previewHeight * scale)}px`;
+  box.style.height = `${visible}px`;
   viewToggle.hidden = !previewBlock;
 }
 
@@ -195,7 +198,7 @@ function listenToPreview(choices) {
       updatePreview();
     }
     if (e.data?.action === 'tm-preview-rendered') {
-      previewHeight = Math.max(60, Math.min(e.data.height, 1600));
+      previewHeight = Math.max(60, e.data.height);
       sizePreview();
     }
   });

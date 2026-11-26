@@ -60,11 +60,6 @@ body {
   border-radius: 8px;
 }
 
-.tm-sticky .tm-frame {
-  max-height: 45vh;
-  overflow: hidden auto;
-}
-
 .tm-preview {
   display: block;
   border: 0;
