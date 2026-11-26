@@ -23,6 +23,7 @@ import { REVIEW_NOTE, documentPath, outsideReview } from '../review-pages.js';
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
 const PREVIEW = '/tools/text-markers/preview.html';
 const VIEWS = { desktop: 1200, phone: 375 };
+const PREVIEW_HEIGHT = 220; // the pinned preview's height in the panel (px)
 const SKIP = /^(section-metadata|metadata|da-metadata|library-metadata)$/;
 // the spacer sections (the patients section style `spacer`): an empty section, a fixed gap
 const SPACERS = [
@@ -42,8 +43,9 @@ let current = null;
 let draft = [];
 let view = 'desktop';
 let previewReady = false;
-let previewHeight = 160;
 let lastSelection = '';
+// the one task open ('' none); set for a new section to the first task the section uses
+let openTask = '';
 
 let statusEl;
 let titleEl;
@@ -167,8 +169,9 @@ async function readSelection() {
 function sizePreview() {
   const width = VIEWS[view];
   const scale = Math.min(1, frameBox.clientWidth / width);
-  // all of the section up to 45% of the panel's height; a taller one scrolls inside the preview
-  const visible = Math.min(Math.ceil(previewHeight * scale), Math.round(window.innerHeight * 0.45));
+  // one height whatever the section (the choices under it don't move while it re-renders); a
+  // taller section scrolls inside the preview
+  const visible = Math.max(120, Math.min(PREVIEW_HEIGHT, Math.round(window.innerHeight * 0.3)));
   previewFrame.style.width = `${width}px`;
   previewFrame.style.height = `${Math.ceil(visible / scale)}px`;
   previewFrame.style.transform = `scale(${scale})`;
@@ -288,9 +291,24 @@ function renderGroups() {
     facts: sectionFactsOf(current.sectionHtml, near, draft),
     near,
     tasks: TASKS,
+    open: openTask,
+    onOpen: (title, byAuthor) => {
+      openTask = title;
+      // the task the author just opened sits right under the pinned preview
+      const box = byAuthor && title && groupsEl.querySelector(`details.tm-task[data-task="${title}"]`);
+      const sticky = document.querySelector('.tm-sticky');
+      if (box && sticky) {
+        const offset = box.getBoundingClientRect().top - sticky.getBoundingClientRect().bottom - 8;
+        if (Math.abs(offset) > 1) document.scrollingElement.scrollTop += offset;
+      }
+    },
     onChange: (next) => {
       draft = next;
+      // the list is drawn again: the author stays where they were
+      const scroller = document.scrollingElement;
+      const top = scroller.scrollTop;
       renderGroups();
+      scroller.scrollTop = top;
     },
   });
   if (!shown) groupsEl.append(el('p', { class: 'tm-hint' }, 'No section style applies to this section as it is.'));
@@ -323,8 +341,17 @@ function setSection(next) {
   const keepDraft = current && next && current.index === next.index
     && current.sectionStyles.join(',') === next.sectionStyles.join(',');
   current = next;
-  if (!keepDraft) draft = next ? normalisedSection(next.sectionStyles) : [];
+  if (!keepDraft) {
+    draft = next ? normalisedSection(next.sectionStyles) : [];
+    openTask = '';
+  }
   renderGroups();
+  // a new section: its first task in use opens (the others show their value when closed)
+  if (!keepDraft && !openTask) {
+    const used = [...groupsEl.querySelectorAll('details.tm-task')]
+      .find((d) => d.querySelector('.tm-task-now'));
+    if (used) used.open = true;
+  }
 }
 
 async function check() {
@@ -347,7 +374,8 @@ function render() {
   const root = document.querySelector('.tm');
   statusEl = el('p', { class: 'tm-status', role: 'status' });
   titleEl = el('p', { class: 'tm-block-name' });
-  stateEl = el('p', { class: 'tm-hint tm-applied' });
+  // a fixed height, so the list under the pinned area doesn't move when the line changes
+  stateEl = el('p', { class: 'tm-hint tm-applied tm-applied-fixed' });
   whereEl = el('div', { class: 'tm-where' });
   groupsEl = el('div', { class: 'tm-choices-wrap' });
   actionsEl = el('div', { class: 'tm-actions' });
@@ -395,10 +423,6 @@ function render() {
       previewReady = true;
       paintSwatches(root, previewFrame);
       updatePreview();
-    }
-    if (e.data?.action === 'tm-preview-rendered') {
-      previewHeight = Math.max(60, e.data.height);
-      sizePreview();
     }
   });
   window.addEventListener('resize', sizePreview);

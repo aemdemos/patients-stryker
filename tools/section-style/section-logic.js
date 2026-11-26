@@ -293,11 +293,13 @@ export function renderSectionGroups(container, {
  * @param {Element} container Where the tasks go
  * @param {{draft: string[], facts: object, near: string[], onChange: Function,
  *   tasks: Array<{title: string, example?: string, groups: Array<string|{id: string,
- *   values: string[]}>, extra?: () => Element}>}} state The section and the tasks
+ *   values: string[]}>, extra?: () => Element}>, open?: string,
+ *   onOpen?: (title: string, byAuthor: boolean) => void}} state The section, the tasks, the
+ *   one task open and what to tell when another opens (byAuthor: the author's click)
  * @returns {number} How many tasks are shown
  */
 export function renderSectionTasks(container, {
-  draft, facts, near = [], onChange, tasks,
+  draft, facts, near = [], onChange, tasks, open, onOpen,
 }) {
   let shown = 0;
   tasks.forEach((task) => {
@@ -330,7 +332,26 @@ export function renderSectionTasks(container, {
     );
     const nearLabels = task.roles ? near.map((r) => ROLE_LABELS[r]).filter(Boolean) : [];
     if (nearLabels.length) box.append(el('p', { class: 'tm-hint' }, `The section next to it is ${[...new Set(nearLabels)].join(' and ')}: make this one the same to add it.`));
-    box.open = on.length > 0 || nearLabels.length > 0;
+    // one task open at a time (`open`, kept by the panel); without it, the tasks in use open
+    box.open = open === undefined ? on.length > 0 || nearLabels.length > 0 : open === task.title;
+    if (onOpen) {
+      // the author's click (not the panel opening it while drawing the list)
+      let byAuthor = false;
+      box.querySelector('summary').addEventListener('click', () => { byAuthor = true; });
+      box.addEventListener('toggle', () => {
+        const fromAuthor = byAuthor;
+        byAuthor = false;
+        if (box.open) {
+          container.querySelectorAll(':scope > details.tm-task[open]').forEach((other) => {
+            if (other !== box) other.open = false;
+          });
+          onOpen(task.title, fromAuthor);
+        } else if (!container.querySelector(':scope > details.tm-task[open]')) {
+          onOpen('', fromAuthor);
+        }
+      });
+    }
+    box.dataset.task = task.title;
     container.append(box);
   });
   return shown;

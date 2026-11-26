@@ -317,3 +317,8 @@ body {
   outline: 2px solid var(--s2-blue-800, #3b63fb);
   font-weight: 700;
 }
+
+/* Section style: the pinned "On the section / Not applied yet" line keeps three lines' height */
+.tm-applied-fixed {
+  min-height: calc(3 * 1.5em);
+}
