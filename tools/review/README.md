@@ -85,9 +85,11 @@ keeps the invitation, later visits need no link.
   already, such a page shows a message in its place. Note mode switches it to the Screenshot (a
   note belongs to the page reviewed). Test: `rep-tool.test.mjs`.
 - **Selecting on the status page** (26 Nov 2026): the header tick selects every page the filters
-  show, also those not loaded yet (half ticked: some). A change to selected pages not on screen asks
-  first in the confirmation dialog (below): their batch or group now, which are shown, further down
-  the list or not in it; after a filter change the bar says how many selected pages the list
+  show, also those not loaded yet (half ticked: some); selecting all is all, nothing ever mentions
+  how many rows are loaded (the user's rule, 26 Nov 2026). A change asks first in the confirmation
+  dialog (below) only when it replaces or removes what the pages are in (another batch or group, a
+  chosen representative) or touches selected pages the filters hide now: their batch or group now,
+  those hidden; else it is done at once. After a filter change the bar says how many selected pages the list
   doesn't show, with "Keep only the listed ones". Show more goes once every page is shown. Test:
   `status-select-tool.test.mjs` (one test batch, removed after).
 - **One confirmation everywhere** (26 Nov 2026, the user's rule: consistent throughout the tool):
