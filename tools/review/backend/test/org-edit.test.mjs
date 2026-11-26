@@ -162,6 +162,10 @@ try {
   await rowOf('two').locator('td input[type="checkbox"]').first().check();
   await rowOf('three').locator('td input[type="checkbox"]').first().check();
   await p.locator('.st-bulk button', { hasText: 'Take out of their group' }).click();
+  // (it removes what they are in: asked first, in the shared dialog)
+  const asked = await p.waitForSelector('dialog.ui-dialog[open]', { timeout: 10000 }).then(() => p.textContent('dialog.ui-dialog')).catch(() => '');
+  check('selection: taking them out of their group asks first (their group now)', /Take 2 pages out of their group\?/.test(asked) && /Group 902: 2 pages/.test(asked), asked.slice(0, 200));
+  await p.click('dialog.ui-dialog button.ui-ask-primary');
   await saved('taken out of their group');
   await p.waitForTimeout(800);
   check('selection: taken out of their group, the group gone', await tag('two') === '' && await tag('three') === '' && await p.locator('.st-group-row', { hasText: 'Group 902' }).count() === 0, await p.textContent('.st-groups-sum'));
