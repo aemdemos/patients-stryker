@@ -383,6 +383,7 @@ async function readSelection() {
 
 // the markers as authors see them in the document text
 const MARKER_TEXT = /:(?:start-[a-z0-9-]+|end):/g;
+const HAS_MARKER = /:(?:start-[a-z0-9-]+|end):/;
 
 /**
  * Whether the selection can be rewritten as plain text without losing anything: no links or
@@ -423,17 +424,55 @@ let liveEditable = true;
 // the DA editor's saved source, read at most every few seconds
 let sourceCache = { at: 0, html: '' };
 
+// spaces and punctuation at the edges of a styled run: a selection without them is the whole run
+const RUN_EDGE = /^[\s.,;:!?…'"“”‘’()[\]-]*$/;
+
 /**
- * The style already around the selected words on the page, when they sit right inside a
- * marker pair (`:start-gold:words:end:`) and the editor shares the document.
- * @param {string} words The selected words
- * @returns {string} The existing marker words, or ''
+ * The innermost styled run around the selected words in the document text (markers as text):
+ * its marker words, the run's text before and after the selection, and where the selection
+ * sits in it (`whole`: only spaces or punctuation around it; `start`, `end` or `middle`).
+ * Null when the words are not inside a run, or sit in runs of different styles on the page.
+ * @param {string} words The selected words (without markers)
+ * @param {string} text The document text
+ * @returns {{name: string, before: string, after: string, at: string}|null} The run
  */
-function styleAround(words, text = liveText) {
-  if (!text || !words.trim()) return '';
-  const escaped = words.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const m = text.match(new RegExp(`:start-([a-z0-9-]+):${escaped}:end:`));
-  return m ? m[1] : '';
+function findRun(words, text = liveText) {
+  if (!text || !words.trim()) return null;
+  const runs = [];
+  const open = [];
+  [...text.matchAll(MARKER_TEXT)].forEach((m) => {
+    if (m[0] === END_MARKER) {
+      const start = open.pop();
+      if (start) runs.push({ ...start, contentEnd: m.index });
+    } else {
+      open.push({ name: m[0].slice(7, -1), contentStart: m.index + m[0].length });
+    }
+  });
+  const found = [];
+  for (let i = text.indexOf(words); i >= 0; i = text.indexOf(words, i + 1)) {
+    const end = i + words.length;
+    const run = runs.filter((r) => r.contentStart <= i && end <= r.contentEnd)
+      .sort((a, b) => b.contentStart - a.contentStart)[0];
+    if (run) {
+      const before = text.slice(run.contentStart, i);
+      const after = text.slice(end, run.contentEnd);
+      // the run's own text only: a nested run inside it is left alone
+      if (!HAS_MARKER.test(before + after)) {
+        const edgeBefore = RUN_EDGE.test(before);
+        const edgeAfter = RUN_EDGE.test(after);
+        let at = 'middle';
+        if (edgeBefore && edgeAfter) at = 'whole';
+        else if (edgeBefore) at = 'start';
+        else if (edgeAfter) at = 'end';
+        found.push({
+          name: run.name, before, after, at,
+        });
+      }
+    }
+  }
+  const differs = found.some((f) => f.name !== found[0].name || f.at !== found[0].at);
+  if (!found.length || differs) return null;
+  return found[0];
 }
 
 /**
@@ -637,6 +676,41 @@ async function swapInLive(oldName, words, marker) {
   return sendLive(live);
 }
 
+/**
+ * Restyles selected words inside a styled run through the live document, so the new style
+ * replaces the old one instead of stacking on it: the whole run gets the new start marker; the
+ * start, end or middle of a run is split there (`:start-old:a :end::start-new:b:end:`).
+ * @param {{name: string, before: string, after: string, at: string}} run The run (findRun)
+ * @param {string} words The selected words
+ * @param {string} marker The new start marker
+ * @returns {Promise<boolean>} true when the canvas took the change
+ */
+async function restyleInLive(run, words, marker) {
+  const oldMarker = `:start-${run.name}:`;
+  const full = `${oldMarker}${run.before}${words}${run.after}${END_MARKER}`;
+  const live = liveTarget(full);
+  if (!live) return false;
+  const text = live.target.textContent;
+  const pos = text.indexOf(full);
+  if (pos < 0 || text.indexOf(full, pos + 1) >= 0) return false;
+  const from = pos + oldMarker.length + run.before.length;
+  const to = from + words.length;
+  // [where, how many characters it replaces, what goes in], applied from the end backwards
+  const edits = [];
+  if (run.at === 'whole' || run.at === 'start') edits.push([pos, oldMarker.length, marker]);
+  if (run.at === 'start' || run.at === 'middle') edits.push([to, 0, `${END_MARKER}${oldMarker}`]);
+  if (run.at === 'end' || run.at === 'middle') edits.push([from, 0, `${END_MARKER}${marker}`]);
+  edits.sort((a, b) => b[0] - a[0]);
+  const applied = edits.every(([at, length, insert]) => {
+    const hit = textAt(live.target, at);
+    if (!hit || (length && !hit.node.textContent.startsWith(oldMarker, hit.offset))) return false;
+    const value = hit.node.textContent;
+    hit.node.textContent = readable(`${value.slice(0, hit.offset)}${insert}${value.slice(hit.offset + length)}`);
+    return true;
+  });
+  return applied && sendLive(live);
+}
+
 async function replaceInLive(find, words, marker) {
   const live = liveTarget(find);
   if (!live || !markInTarget(live.target, find, words, marker)) return false;
@@ -700,9 +774,14 @@ async function removeStyle() {
   const { text, ok, markersApart } = analyseSelection(line.html);
   const inSelection = text.match(/:start-([a-z0-9-]+):/);
   const words = text.replace(MARKER_TEXT, '');
-  const old = inSelection ? inSelection[1] : styleAround(words, liveText || await documentText());
+  const run = inSelection ? null : findRun(words, liveText || await documentText());
+  const old = inSelection ? inSelection[1] : run?.name;
   if (!old) {
     setStatus('These words have no Text style to remove.', 'error');
+    return;
+  }
+  if (run && run.at !== 'whole') {
+    setStatus(`Only part of the style :start-${old}: is selected: select all of “${`${run.before}${words}${run.after}`.trim()}” to remove it.`, 'info');
     return;
   }
   if (!words.trim()) {
@@ -719,7 +798,7 @@ async function removeStyle() {
     updateRemove();
     updatePreview();
   };
-  if (await unwrapInLive(old, words)) {
+  if (await unwrapInLive(old, run ? `${run.before}${words}${run.after}` : words)) {
     finish();
     return;
   }
@@ -775,15 +854,25 @@ async function applyToSelection() {
     setStatus('Only markers are selected. Select the words too.', 'error');
     return;
   }
-  // the words alone, but already inside markers on the page: in Experience Workspace their
-  // start marker is swapped; elsewhere wrapping them again would stack a second style
-  const around = !old && styleAround(words, await documentText());
-  if (around) {
-    if (await swapInLive(around, words, marker)) {
-      done(around);
+  // the words alone, inside a styled run on the page: the new style replaces the run's old one
+  // for these words (the whole run, or a split at its start, middle or end) instead of
+  // stacking a second style inside it
+  const run = !old && findRun(words, await documentText());
+  if (run) {
+    if (await restyleInLive(run, words, marker)) {
+      done(run.name);
       return;
     }
-    setStatus(`These words already have the style :start-${around}:. To change it, select them together with their markers — from “:start-${around}:” to “:end:” — then click again.`, 'error');
+    // the DA editor changes only the selected text: at the end or in the middle of the run the
+    // split goes inside the selection; the old start marker sits outside it otherwise
+    if (run.at === 'end' || run.at === 'middle') {
+      const tail = run.at === 'middle' ? `${END_MARKER}:start-${run.name}:` : '';
+      sdk.actions.sendText(readable(`${END_MARKER}${marker}${words}${tail}`));
+      done(run.name);
+      return;
+    }
+    const all = `${run.before}${words}${run.after}`.trim();
+    setStatus(`“${words.trim()}” has the style :start-${run.name}: (on “${all}”). This editor lets the panel change only the selected text, so select from “:start-${run.name}:” to “:end:” and click again. In Experience Workspace, selecting the words is enough.`, 'error');
     return;
   }
   if (old) {
@@ -950,7 +1039,7 @@ function watchSelection() {
       // a selection that includes old markers is previewed without them
       const selectedText = line.html.replace(/<[^>]+>/g, '');
       line.old = (line.html.match(/:start-([a-z0-9-]+):/) || [])[1]
-        || styleAround(selectedText, liveText || await documentText()) || '';
+        || findRun(selectedText, liveText || await documentText())?.name || '';
       line.html = line.html.replace(MARKER_TEXT, '');
       line.words = new DOMParser().parseFromString(`<p>${line.html}</p>`, 'text/html').body.textContent;
     }
