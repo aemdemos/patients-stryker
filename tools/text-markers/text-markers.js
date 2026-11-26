@@ -260,6 +260,43 @@ const boxHint = (word) => `The whole line in a ${(LABELS[word] || labelOf(word))
 let selectionFacts = null;
 let lookGroup;
 
+// the colour, font and size groups (the look group is lookGroup), to show a style as chosen
+const styleGroups = {};
+
+/**
+ * The choices of an existing style (`:start-gold-serif-l:` → gold, serif, l), the longest known
+ * word first so that multi-word choices (light-gray, box-dark-purple-gradient) are read whole.
+ * @param {string} name The marker words, e.g. "gold-serif-l"
+ * @returns {{colour: string, font: string, size: string, look: string}} The choices ('' = none)
+ */
+function readStyle(name) {
+  const found = {
+    colour: '', font: '', size: '', look: '',
+  };
+  const words = name.split('-');
+  for (let i = 0; i < words.length;) {
+    const hit = [4, 3, 2, 1].map((n) => words.slice(i, i + n).join('-')).map((w, k) => [w, 4 - k])
+      .find(([w]) => Object.keys(found).some((key) => lists[key].includes(w)));
+    if (hit) {
+      const [word, n] = hit;
+      const key = Object.keys(found).find((k) => lists[k].includes(word));
+      found[key] = word;
+      i += n;
+    } else {
+      i += 1;
+    }
+  }
+  return found;
+}
+
+/** shows an existing style as the current choice in every group */
+function showStyle(name) {
+  const found = readStyle(name);
+  Object.entries({ ...styleGroups, look: lookGroup }).forEach(([key, group]) => {
+    if (group && state[key] !== found[key]) group.select(found[key]);
+  });
+}
+
 /**
  * Why a look doesn't fit the selection, or '' when it does.
  * @param {string} word The look's marker word
@@ -848,9 +885,9 @@ function render() {
   const choices = el(
     'div',
     { class: 'tm-choices-wrap' },
-    choiceGroup('Colour', lists.colour, state.colour, (v) => { state.colour = v; }, { swatch: true }),
-    choiceGroup('Font', lists.font, state.font, (v) => { state.font = v; }),
-    choiceGroup('Size (relative to the text around it)', lists.size, state.size, (v) => { state.size = v; }),
+    styleGroups.colour = choiceGroup('Colour', lists.colour, state.colour, (v) => { state.colour = v; }, { swatch: true }),
+    styleGroups.font = choiceGroup('Font', lists.font, state.font, (v) => { state.font = v; }),
+    styleGroups.size = choiceGroup('Size (relative to the text around it)', lists.size, state.size, (v) => { state.size = v; }),
     lookGroup,
     el('p', { class: 'tm-hint' }, 'The gold rule goes under a heading; a box goes around a whole line. Looks that don’t fit the selection are greyed out: hover for why. Bold and italic stay normal editor formatting.'),
   );
@@ -930,6 +967,8 @@ function watchSelection() {
     const whole = previewLine ? await isWholeLine(previewLine.words) : null;
     if (html !== lastSelection) return; // the selection moved on while the block was read
     selectionFacts = previewLine ? { tag: previewLine.tag, whole, old: previewLine.old || '' } : null;
+    // words that already have a style: the panel shows that style as the current choice
+    if (previewLine?.old) showStyle(previewLine.old);
     updateLooks();
     updateRemove();
     updatePreview();
