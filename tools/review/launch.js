@@ -10,6 +10,9 @@ import { REVIEW } from './config.js';
 import loadPages from './pages.js';
 import { keepFresh } from './live.js';
 import { mountHelp } from './help.js';
+import {
+  ABOUT, NOTE, installed, latest, stateText, steps, downloadButton,
+} from './pilot.js';
 
 const $ = (s) => document.querySelector(s);
 const SVG = 'http://www.w3.org/2000/svg';
@@ -129,24 +132,26 @@ function drawPilot(role) {
   const box = $('.ln-pilot');
   box.hidden = role !== 'aoe';
   if (box.hidden || box.childElementCount) return;
-  const version = document.documentElement.dataset.reviewLive;
+  const state = el('p', { class: 'ln-pilot-state' }, stateText(installed(), '').text);
+  const panel = el(
+    'div',
+    { class: `ln-pilot-box${installed() ? ' ln-pilot-on' : ''}` },
+    state,
+    steps(),
+    downloadButton('ln-btn-pilot'),
+    el('p', { class: 'ln-pilot-note' }, NOTE),
+  );
   box.append(
     el('h2', { class: 'ln-h2' }, 'Pilot: the live stryker.com page in the tool', el('span', { class: 'ln-tag' }, 'AOE team')),
-    el('p', { class: 'ln-sub' }, 'A small browser extension lets the review tool show the real, clickable stryker.com page next to the migrated one (Compare with: Live), with Scroll Sync. Menus, tabs and carousels work. 📷 Snap puts a picture of what it shows into the chat. Notes still go on the migrated page or the Screenshot.'),
-    el(
-      'div',
-      { class: `ln-pilot-box${version ? ' ln-pilot-on' : ''}` },
-      el('p', { class: 'ln-pilot-state' }, version ? `Installed in this browser (version ${version}): pick Live under Compare with.` : 'Not installed in this browser.'),
-      el('ol', { class: 'ln-pilot-steps' }, ...[
-        ['Download ', el('a', { href: './review-live-extension.zip', download: '' }, 'review-live-extension.zip'), ' and unzip it.'],
-        ['Open ', el('code', {}, 'chrome://extensions'), ' (Edge: ', el('code', {}, 'edge://extensions'), ') and turn on Developer mode.'],
-        ['Click Load unpacked and choose the unzipped folder.'],
-        ['Reload the review tool: Live appears under Compare with.'],
-        ['For 📷 Snap: pin the extension (puzzle icon → pin) and, once per review tab, click its icon (or press Alt+Shift+S); the browser wants that one click before an extension may take a picture.'],
-      ].map((parts) => el('li', {}, ...parts))),
-      el('p', { class: 'ln-pilot-note' }, 'It only lifts stryker.com\'s "don\'t show me inside other sites" rule when a review page shows it, and tells the tool where the page is scrolled to. Updating: unzip the new version over the old folder, then Reload on the extension\'s card.'),
-    ),
+    el('p', { class: 'ln-sub' }, ABOUT),
+    panel,
   );
+  // (a newer version out: said so)
+  latest().then((offer) => {
+    const s = stateText(installed(), offer);
+    state.textContent = s.text;
+    panel.classList.toggle('ln-pilot-update', s.state === 'update');
+  });
 }
 
 let cardsFor = null;
