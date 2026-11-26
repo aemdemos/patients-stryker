@@ -471,6 +471,25 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 
 /* the batch / area filter by the page picker (batches.js), the page's batch */
 .rv-filter { position: relative; }
+/* the AOE team's Extension button (the review extension pilot): like the filter, its panel below */
+.rv-ext { position: relative; }
+.rv-ext[hidden] { display: none; }
+.rv-ext summary { display: flex; gap: 6px; align-items: center; min-block-size: 30px; padding: 4px 12px; border: 1px solid var(--c-line-2); border-radius: var(--r-pill); background: var(--c-surface); font-weight: 700; white-space: nowrap; list-style: none; cursor: pointer; }
+.rv-ext summary::-webkit-details-marker { display: none; }
+.rv-ext summary::after { content: "▾"; opacity: 0.6; }
+.rv-ext[open] summary, .rv-ext summary:hover { border-color: var(--c-ink); }
+.rv-ext summary.rv-ext-update { border-color: #d4a72c; background: #fff6db; }
+.rv-ext-body { position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; display: flex; flex-direction: column; gap: 8px; inline-size: min(440px, 90vw); padding: 14px 16px; border: 1px solid var(--c-line); border-radius: var(--r-m); background: var(--c-surface); box-shadow: var(--shadow-pop); }
+.rv-ext-about, .rv-ext-note { margin: 0; color: var(--c-ink-2); font-size: var(--fs-xs); }
+.rv-ext-state { margin: 0; padding: 8px 10px; border-radius: var(--r-s); font-size: var(--fs-xs); font-weight: 700; }
+.rv-ext-off { background: var(--c-surface-2); }
+.rv-ext-on { background: #dcf3e2; color: #135c29; }
+.rv-ext-update { background: #fff1c2; color: #6b4b00; }
+.rv-ext-download { align-self: flex-start; padding: 8px 16px; border-radius: var(--r-pill); background: var(--c-red); color: #fff; font-size: var(--fs-s); font-weight: 800; text-decoration: none; }
+.rv-ext-download:hover { background: var(--c-red-600); color: #fff; }
+.rv-ext-body .pl-steps { margin: 0; padding-inline-start: 18px; font-size: var(--fs-xs); }
+.rv-ext-body .pl-steps li { margin: 3px 0; }
+.rv-ext-body code { padding: 0 4px; border-radius: 3px; background: #f1f1ef; }
 .rv-filter summary { display: flex; gap: 6px; align-items: center; min-block-size: 30px; padding: 4px 12px; border: 1px solid var(--c-line-2); border-radius: var(--r-pill); background: var(--c-surface); font-weight: 700; white-space: nowrap; list-style: none; cursor: pointer; }
 /* a filter set: dark, with how many */
 .rv-filter summary.rv-filter-on { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }

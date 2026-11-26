@@ -29,6 +29,9 @@ import {
   clearFilters, filtersSet, onFiltersChange, matches, sortPages,
 } from './batches.js';
 import { mountPicker } from './picker.js';
+import {
+  ABOUT, NOTE, installed, latest, stateText, steps, downloadButton,
+} from './pilot.js';
 
 // the design panel (variants, widths, backgrounds, text sets, groups) and the switcher it needs:
 // REVIEW.designPanel, else REVIEW.design (the standard review keeps design: true for the summary
@@ -2123,6 +2126,51 @@ function setUpShell() {
   }
 }
 
+/**
+ * the AOE team's Extension button (the pilot): what the review extension does, whether it is
+ * installed here (or a newer one is out), how to install it, the download; under the button
+ */
+function setUpExtensionButton() {
+  const body = el('div', { class: 'rv-ext-body' });
+  const box = el(
+    'details',
+    { class: 'rv-ext', hidden: '' },
+    el('summary', { title: 'The review extension (pilot): the real stryker.com page here, Snap' }, '⬇ Extension'),
+    body,
+  );
+  const draw = async () => {
+    const offer = await latest();
+    const s = stateText(installed(), offer);
+    box.querySelector('summary').classList.toggle('rv-ext-update', s.state === 'update');
+    body.replaceChildren(
+      el('p', { class: 'rv-filter-head' }, 'Live stryker.com: the review extension (pilot)'),
+      el('p', { class: 'rv-ext-about' }, ABOUT),
+      el('p', { class: `rv-ext-state rv-ext-${s.state}` }, s.text),
+      downloadButton('rv-ext-download'),
+      el('p', { class: 'rv-filter-head' }, 'Install it'),
+      steps(),
+      el('p', { class: 'rv-ext-note' }, NOTE),
+    );
+  };
+  box.addEventListener('toggle', () => {
+    if (box.open) draw();
+  });
+  // (closes on a click elsewhere or Esc)
+  document.addEventListener('mousedown', (e) => {
+    if (box.open && !box.contains(e.target)) box.open = false;
+  });
+  box.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') box.open = false;
+  });
+  $('[aria-label="Compare with"]').after(box);
+  // (an update out: the button says so, before it is opened)
+  latest().then((offer) => {
+    if (stateText(installed(), offer).state === 'update') box.querySelector('summary').classList.add('rv-ext-update');
+  });
+  return box;
+}
+let extensionButton = null;
+
 /* ---------- Snap: what the Live page shows, into a chat (the review extension) ---------- */
 
 // the chat whose message box was used last: the Snap goes there (else the page's own chat)
@@ -2342,6 +2390,7 @@ async function start() {
   });
   panes.live?.querySelector('.rv-live-again').addEventListener('click', () => loadLive(true));
   if (HAS_SNAP) setUpSnap();
+  extensionButton = setUpExtensionButton();
   scroller.addEventListener('scroll', () => {
     if (Date.now() < quietUntil.src) return;
     window.requestAnimationFrame(() => syncFrom('src'));
@@ -2373,6 +2422,8 @@ async function start() {
     helpHooks.setRole(me.role, who.name);
     // (the order "what waits for me first" depends on the side)
     if (allPages.length) applyFilters();
+    // (the extension pilot: the AOE team's)
+    if (extensionButton) extensionButton.hidden = me.role !== 'aoe';
     document.body.classList.toggle('rv-role-aoe', me.role === 'aoe');
     threadHooks.redraw();
     name.value = me.role === 'aoe' ? `${who.name} (AOE)` : who.name;

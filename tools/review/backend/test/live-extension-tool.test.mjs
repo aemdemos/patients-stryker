@@ -42,6 +42,30 @@ const rev = await admin({
   op: 'invite', name: 'tool test live extension', paths: [PAGE], days: 1,
 });
 const url = `${base}/tools/review/index.html?page=${encodeURIComponent(PAGE)}&mode=side&vp=375&invite=${encodeURIComponent(rev.token)}`;
+const aoeInv = await admin({
+  op: 'invite', name: 'tool test live extension AOE', paths: [PAGE], days: 1, role: 'aoe',
+});
+const aoeUrl = url.replace(encodeURIComponent(rev.token), encodeURIComponent(aoeInv.token));
+// the review page's Extension button (the AOE team's): its panel under it
+const extensionPanel = async (page) => {
+  await page.waitForFunction(() => document.querySelector('.rv-pagebox-body .rv-chat'), null, { timeout: 90000 });
+  await page.waitForTimeout(1500);
+  const shown = await page.evaluate(() => !!document.querySelector('.rv-ext') && !document.querySelector('.rv-ext').hidden);
+  if (!shown) return { shown };
+  await page.click('.rv-ext summary');
+  await page.waitForSelector('.rv-ext-download', { timeout: 10000 });
+  return page.evaluate(() => {
+    const b = document.querySelector('.rv-ext summary').getBoundingClientRect();
+    const body = document.querySelector('.rv-ext-body').getBoundingClientRect();
+    return {
+      shown: true,
+      below: body.top >= b.bottom && Math.abs(body.left - b.left) < 2,
+      state: document.querySelector('.rv-ext-state').textContent,
+      href: document.querySelector('.rv-ext-download').getAttribute('href'),
+      steps: document.querySelectorAll('.rv-ext-body .pl-steps li').length,
+    };
+  });
+};
 const errors = [];
 try {
   // 1. without the extension: no Live
@@ -51,6 +75,10 @@ try {
   await pp.goto(url);
   await pp.waitForSelector('[data-cmp="src"]', { timeout: 60000 });
   check('without the extension: no Live', !(await pp.$('[data-cmp="real"]')) && !(await pp.$('.rv-real')));
+  check('… a reviewer: no Extension button', !(await extensionPanel(pp)).shown);
+  await pp.goto(aoeUrl);
+  const off = await extensionPanel(pp);
+  check('… the AOE team: the Extension button, its panel under it: not installed, the steps, the download', off.shown && off.below && /Not installed/.test(off.state) && off.href === './review-live-extension.zip' && off.steps === 5, JSON.stringify(off));
   await plain.close();
 
   // 2. with it
@@ -92,6 +120,13 @@ try {
     const cmp = await p.evaluate(() => document.querySelector('[data-cmp="src"]').getAttribute('aria-pressed'));
     check('note mode with Live showing: the Screenshot shown', cmp === 'true', cmp);
     await p.click('[data-action="note"]');
+    // (the AOE team, with the extension: the button says installed)
+    const ap = await ctx.newPage();
+    await ap.route(/altcha|captcha/, (r) => r.abort());
+    await ap.goto(aoeUrl);
+    const on = await extensionPanel(ap);
+    check('with the extension, the Extension button: installed (its version)', on.shown && /Installed in this browser \(version \d/.test(on.state), JSON.stringify(on));
+    await ap.close();
     // 5. Snap, as shipped: the first time in a tab the browser wants the extension's icon clicked
     await p.click('[data-cmp="real"]');
     await p.waitForFunction(() => document.querySelector('.rv-real .rv-tag').textContent === 'Live stryker.com', null, { timeout: 60000 });
@@ -99,16 +134,12 @@ try {
     const ask = await p.waitForFunction(() => !document.querySelector('.rv-snap-msg').hidden && document.querySelector('.rv-snap-msg').textContent, null, { timeout: 15000 }).then((h) => h.jsonValue()).catch(() => '');
     check('Snap, first time in a tab: asks for one click on the extension\'s icon (or Alt+Shift+S)', /icon/.test(ask) && /Alt\+Shift\+S/.test(ask), ask);
     // 6. the start page: the pilot box for the AOE team (installed), none for reviewers
-    const aoe = await admin({
-      op: 'invite', name: 'tool test live extension AOE', paths: [PAGE], days: 1, role: 'aoe',
-    });
-    for (const [who, token, shownTo] of [['AOE member', aoe.token, true], ['reviewer', rev.token, false]]) {
+    for (const [who, token, shownTo] of [['AOE member', aoeInv.token, true], ['reviewer', rev.token, false]]) {
       await p.goto(`${base}/tools/review/launch.html?invite=${encodeURIComponent(token)}`);
       await p.waitForFunction(() => /Welcome/.test(document.querySelector('.ln-hello')?.textContent || ''), null, { timeout: 60000 });
       const box = await p.evaluate(() => ({ hidden: document.querySelector('.ln-pilot').hidden, on: !!document.querySelector('.ln-pilot-on'), zip: document.querySelector('.ln-pilot a[download]')?.getAttribute('href') }));
       check(`start page, ${who}: the pilot box ${shownTo ? 'shown, "installed", with the download' : 'not shown'}`, shownTo ? (!box.hidden && box.on && box.zip === './review-live-extension.zip') : box.hidden, JSON.stringify(box));
     }
-    await admin({ op: 'revoke', id: aoe.id });
     const zip = await fetch(`${base}/tools/review/review-live-extension.zip`);
     check('the download is served', zip.ok && (await zip.arrayBuffer()).byteLength > 1000, zip.status);
     check('no page errors', errors.length === 0, errors.join(' | '));
@@ -156,6 +187,7 @@ try {
     await ctx2.close();
   }
 } finally {
+  await admin({ op: 'revoke', id: aoeInv.id });
   await admin({ op: 'revoke', id: rev.id });
   await admin({ op: 'forget-test-invites' });
 }

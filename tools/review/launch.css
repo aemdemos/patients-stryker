@@ -123,9 +123,11 @@ body { margin: 0; background: var(--ln-bg); color: var(--ln-ink); font: 1rem/1.5
 .ln-pilot-on { border-style: solid; border-color: #8fd19e; }
 .ln-pilot-state { margin: 0 0 10px; font-weight: 800; }
 .ln-pilot-on .ln-pilot-state { color: #1a7f37; }
-.ln-pilot-steps { margin: 0 0 10px; padding-left: 22px; }
-.ln-pilot-steps li { margin: 4px 0; }
-.ln-pilot-steps a { color: var(--ln-red); font-weight: 800; }
-.ln-pilot-steps code { padding: 1px 6px; border-radius: 4px; background: #f1f1ef; font-size: 0.9em; }
+.ln-pilot .pl-steps { margin: 0 0 14px; padding-left: 22px; }
+.ln-pilot .pl-steps li { margin: 4px 0; }
+.ln-pilot .pl-steps code { padding: 1px 6px; border-radius: 4px; background: #f1f1ef; font-size: 0.9em; }
+.ln-pilot-update { border-style: solid; border-color: #d4a72c; }
+.ln-pilot .pl-download { display: inline-block; margin: 0 0 12px; padding: 10px 20px; border-radius: 999px; background: var(--ln-red); color: #fff; font-weight: 800; text-decoration: none; }
+.ln-pilot .pl-download:hover { background: var(--ln-red-deep); }
 .ln-pilot-note { margin: 0; color: var(--ln-ink-2); font-size: 14px; }
 .ln-tile-wait .ln-tile-n { color: #c8c8c8; }
