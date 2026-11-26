@@ -78,49 +78,10 @@ function decorateIconLinks(main) {
 }
 
 /**
- * Bundled block variants (at most 3 variants per block, the variant-only rule of corp
- * long-page-detail, 2026-11-17): one authored name stands for variants used together, so the
- * blocks' CSS for the parts applies. `faculty`: jr45's grey faculty boxes; `chapter-labels`:
- * TEACH's "Chapter N:" labels; `gray-cards`: CLOUT's grey evidence cards with plain Bold
- * labels; `course-cards`: the Mako refreshers course cards (their action links 21px,
- * columns-corp.css); `product-intro`: nse product rows, the Egyptienne copy with a 2vw title;
- * `product-details`: an nse product's intro beside a grey box of 14px details; `event-cards`:
- * neurosurgical events, a 21px Egyptienne subtitle under each title; `gold-lead-copy`: SKILL
- * NeuroElite, a gold lead bar over 17.5px copy; `gold-headline-first`: spine resources, a gold
- * box of 1.5vw copy beside the row's other cell.
- * `*-serif-copy`: a copy size with the Egyptienne copy.
- */
-const VARIANT_BUNDLES = {
-  'large-serif-copy': ['large-copy', 'serif'],
-  'xlarge-serif-copy': ['xlarge-copy', 'serif'],
-  'headline-serif-copy': ['headline-copy', 'serif'],
-  faculty: ['gray-last', 'large-subtitles', 'plain-bold'],
-  'chapter-labels': ['label-bold', 'plain-bold'],
-  'gray-cards': ['gray-all', 'plain-bold'],
-  'course-cards': ['large-titles', 'large-subtitles', 'large-copy'],
-  'product-intro': ['serif'],
-  'product-details': ['gray-last', 'plain-bold'],
-  'event-cards': ['large-subtitles'],
-  'gold-lead-copy': ['gold-lead', 'large-copy'],
-  'gold-headline-first': ['gold-first'],
-};
-
-// the blocks that author bundle names (a section style of the same name is left alone)
-const VARIANT_BUNDLE_BLOCKS = ['columns', 'hero-corp'];
-
-function expandVariantBundles(main) {
-  Object.entries(VARIANT_BUNDLES).forEach(([bundle, parts]) => {
-    const selector = VARIANT_BUNDLE_BLOCKS.map((name) => `div.${name}.${bundle}`).join(', ');
-    main.querySelectorAll(selector).forEach((block) => block.classList.add(...parts));
-  });
-}
-
-/**
  * Corp decoration of <main> (and of fragments, which run decorateMain too).
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
-  expandVariantBundles(main);
   // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
   decorateMapLinks(main, ':scope > div > p');
   main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {

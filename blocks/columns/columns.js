@@ -1,5 +1,6 @@
 import decorateDMAssets from '../../scripts/dm-support.js';
 import decorateMapLinks from '../../scripts/map-embed.js';
+import expandVariantBundles from '../../scripts/variant-bundles.js';
 
 // YouTube link signatures (watch, short youtu.be and nocookie embeds)
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
@@ -89,6 +90,8 @@ function decorateBoxes(block) {
 }
 
 export default function decorate(block) {
+  // a bundle name (e.g. `faculty`) stands for the variants it groups (scripts/variant-bundles.js)
+  expandVariantBundles(block);
   // convert DM links to <picture>/<video> before restructuring — the canvas
   // re-renders fields from source, so run here (idempotent), not just decorateMain
   decorateDMAssets(block);
