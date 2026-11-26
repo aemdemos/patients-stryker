@@ -76,11 +76,15 @@ keeps the invitation, later visits need no link.
   Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
   Colours: everything of the AOE team (Adobe) red, everything of the reviewers blue; the word is
   always "reviewer" (never "customer") on every page of the tool.
-- **Compare with: Representative** (26 Nov 2026): for a page of a group (not its representative),
-  the migrated page of the group's representative (chosen ★, else the group's first page ☆), side
-  by side / Flip / Overlay with Scroll Sync, like the as-is page; when the representative isn't
-  published yet, a message in its place (not migrated yet). Note mode switches it to the
-  Screenshot (a note belongs to the page reviewed). Test: `rep-tool.test.mjs`.
+- **Compare with: Representative** (26 Nov 2026): the migrated page of the group's representative
+  (chosen ★, else the group's first page ☆), labelled "Migrated representative", side by side /
+  Flip / Overlay with Scroll Sync, like the as-is page. Always there; disabled while the page has
+  no migrated representative (in no group, the representative itself, or not published yet:
+  tooltip "No representative has been established or migrated for this page yet"); chosen
+  already, such a page shows a message in its place. Note mode switches it to the Screenshot (a
+  note belongs to the page reviewed). Test: `rep-tool.test.mjs`.
+- **Labels out of the way** (26 Nov 2026): the pages' labels fade out while the pointer is on
+  them (and 14 px around): the frames' own mouse moves, the extension's bridge for Live (0.4.0).
 - **Live: the real stryker.com page** (25 Nov 2026, pilot for the AOE team, `extension/`): with the
   review extension (Chrome / Edge, loaded unpacked from `review-live-extension.zip`, linked on the
   start page for the AOE team) Compare with offers **Live**: the real, interactive stryker.com page.

@@ -2,11 +2,13 @@
 /*
  * Compare with: Representative (26 Nov 2026), in a browser on the review's dev server (Stage by
  * default). A test AOE invitation puts two published pages nobody used in a test group, the second
- * its representative: on the first page the tool offers Representative and shows the
- * representative's migrated page (Scroll Sync works with it); on the representative itself and on
- * a page in no group there is no such choice; with a page not published yet as the representative
- * (client review: from the migration scope), a message says it is not migrated yet. Everything the
- * test wrote is purged after.
+ * its representative: on the first page Representative shows the representative's migrated page,
+ * labelled "Migrated representative" (Scroll Sync works with it); on the representative itself
+ * and on a page in no group the button is there but disabled (its tooltip says why), and with
+ * Representative chosen such a page shows a message in its place; with a page not published yet as
+ * the representative (client review: from the migration scope), disabled too, and the message says
+ * it is not migrated yet. The pages' labels fade out under the pointer. Everything the test wrote
+ * is purged after.
  * usage: node tools/review/backend/test/rep-tool.test.mjs <dev server, e.g. http://localhost:3220>
  */
 import { createRequire } from 'module';
@@ -64,21 +66,37 @@ try {
   const p = await ctx.newPage();
   p.setDefaultTimeout(60000);
   p.on('pageerror', (e) => errors.push(String(e.stack || e).split('\n').slice(0, 2).join(' ').slice(0, 300)));
-  const open = async (page) => {
-    await p.goto(`${base}/tools/review/index.html?page=${encodeURIComponent(page)}&mode=side&vp=375&invite=${encodeURIComponent(rev.token)}`);
+  const NO_REP = 'No representative has been established or migrated for this page yet';
+  // the button: { shown, enabled, title }
+  const open = async (page, extra = '') => {
+    await p.goto(`${base}/tools/review/index.html?page=${encodeURIComponent(page)}&mode=side&vp=375${extra}&invite=${encodeURIComponent(rev.token)}`);
     await p.waitForFunction(() => document.querySelector('.rv-pagebox-body .rv-chat'), null, { timeout: 90000 });
     await p.waitForTimeout(1500);
-    return p.evaluate(() => !document.querySelector('[data-cmp="rep"]').hidden);
+    return p.evaluate(() => {
+      const b = document.querySelector('[data-cmp="rep"]');
+      return { shown: !b.hidden, enabled: !b.disabled, title: b.title };
+    });
   };
+  const message = () => p.evaluate(() => ({ hidden: document.querySelector('.rv-rep-msg').hidden, text: document.querySelector('.rv-rep-msg').textContent, tag: document.querySelector('.rv-rep .rv-tag').textContent }));
   // 1. a page of the group: Representative, the representative's migrated page
-  check('a page of a group: Compare with offers Representative', await open(A));
+  const onA = await open(A);
+  check('a page of a group: Representative there and usable', onA.shown && onA.enabled, JSON.stringify(onA));
   await p.click('[data-cmp="rep"]');
   const loaded = await p.waitForFunction((b) => {
     const f = document.querySelector('.rv-rep iframe');
     return f.contentWindow?.location.pathname.endsWith(b) && f.contentDocument?.querySelector('main .section');
   }, B, { timeout: 45000 }).then(() => true).catch(() => false);
   const shown = await p.evaluate(() => ({ tag: document.querySelector('.rv-rep .rv-tag').textContent, msg: document.querySelector('.rv-rep-msg').hidden }));
-  check('… it shows the representative\'s migrated page, said so (★, the group)', loaded && /Representative ★ \(group 997\)/.test(shown.tag) && shown.msg, JSON.stringify(shown));
+  check('… it shows the representative\'s migrated page, labelled "Migrated representative"', loaded && shown.tag === 'Migrated representative' && shown.msg, JSON.stringify(shown));
+  // (the labels: out of the way under the pointer, back after)
+  const tagBox = await p.evaluate(() => { const r = document.querySelector('.rv-std .rv-tag').getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; });
+  await p.mouse.move(tagBox.x, tagBox.y);
+  await p.waitForTimeout(300);
+  const away = await p.evaluate(() => document.querySelector('.rv-std .rv-tag').classList.contains('rv-tag-away'));
+  await p.mouse.move(tagBox.x - 200, tagBox.y + 300);
+  await p.waitForTimeout(300);
+  const back = await p.evaluate(() => !document.querySelector('.rv-std .rv-tag').classList.contains('rv-tag-away'));
+  check('the pages\' labels fade out under the pointer, and come back', away && back, JSON.stringify({ away, back }));
   // (once its sections have loaded: the sync waits for them)
   await p.waitForFunction(() => [...document.querySelector('.rv-rep iframe').contentDocument.querySelectorAll('main .section')].every((x) => x.dataset.sectionStatus === 'loaded'), null, { timeout: 30000 }).catch(() => null);
   await p.waitForTimeout(1500);
@@ -89,18 +107,25 @@ try {
   await p.click('[data-action="note"]');
   check('… note mode switches it to the Screenshot', await p.evaluate(() => document.querySelector('[data-cmp="src"]').getAttribute('aria-pressed') === 'true'));
   await p.click('[data-action="note"]');
-  // 2. the representative itself, and a page in no group: no Representative
-  check('the representative itself: no Representative', !(await open(B)));
-  check('a page in no group: no Representative', !(await open(C)));
+  // 2. the representative itself, and a page in no group: there, disabled, the tooltip says why
+  const onB = await open(B);
+  check('the representative itself: Representative there but disabled, said why', onB.shown && !onB.enabled && /is its group's representative/.test(onB.title), JSON.stringify(onB));
+  const onC = await open(C);
+  check(`a page in no group: there but disabled, the tooltip "${NO_REP}"`, onC.shown && !onC.enabled && onC.title === NO_REP, JSON.stringify(onC));
+  // (with Representative chosen, such a page: the message in its place)
+  await open(C, '&cmp=rep');
+  const none = await message();
+  check('… with Representative chosen: a message in its place', !none.hidden && /No representative/.test(none.text), JSON.stringify(none));
   // 3. a representative not migrated yet: the message
   if (unpublished) {
     const put2 = await save(A, [org(unpublished, 'group', GROUP), org(unpublished, 'representative', true), org(B, 'representative', false)]);
     check('the representative changed to a page not published yet', put2.results?.every((x) => x.ok), JSON.stringify(put2).slice(0, 200));
-    await open(A);
-    await p.click('[data-cmp="rep"]');
+    const notYet = await open(A);
+    check('… Representative disabled, the tooltip says so', !notYet.enabled && notYet.title === NO_REP, JSON.stringify(notYet));
+    await open(A, '&cmp=rep');
     await p.waitForTimeout(800);
-    const msg = await p.evaluate(() => ({ hidden: document.querySelector('.rv-rep-msg').hidden, text: document.querySelector('.rv-rep-msg').textContent, tag: document.querySelector('.rv-rep .rv-tag').textContent }));
-    check('… a message in its place: not migrated yet, its path', !msg.hidden && /Not migrated yet/.test(msg.text) && msg.text.includes(unpublished) && /Representative \(group 997\)/.test(msg.tag), JSON.stringify(msg));
+    const msg = await message();
+    check('… with Representative chosen: a message in its place: not migrated yet, its path', !msg.hidden && /Not migrated yet/.test(msg.text) && msg.text.includes(unpublished), JSON.stringify(msg));
   }
   check('no page errors', errors.length === 0, errors.join(' | '));
   await ctx.close();

@@ -1615,15 +1615,22 @@ function repOf(page) {
   };
 }
 
-/** Compare with: Representative, only for a page of a group (not the representative itself) */
+/**
+ * Compare with: Representative, always there; disabled while the page has no migrated
+ * representative (in no group, the representative itself, or it isn't published yet). Chosen
+ * already and stepping to such a page: the message shows in its place (loadRep)
+ */
+const NO_REP = 'No representative has been established or migrated for this page yet';
 function showRepChoice() {
   const r = repOf(state.page);
   const button = $('[data-cmp="rep"]');
   if (!button) return;
-  button.hidden = !r || r.self;
-  if (r && !r.self) button.title = `The migrated page of this page's group representative (group ${r.group}${r.chosen ? ', chosen' : ', its first page: none chosen yet'}), the page reviewed for the whole group`;
-  // (the page left its group, or is its representative: back to the first comparison)
-  if (button.hidden && state.cmp === 'rep') $(`[data-cmp="${REVIEW.compare[0]}"]`)?.click();
+  button.hidden = false;
+  const usable = !!r && !r.self && r.published;
+  button.disabled = !usable;
+  if (r?.self) button.title = 'This page is its group\'s representative: the page reviewed for the whole group';
+  else if (!usable) button.title = NO_REP;
+  else button.title = `The migrated page of this page's group representative (group ${r.group}${r.chosen ? ', chosen' : ', its first page: none chosen yet'}), the page reviewed for the whole group`;
 }
 
 /** the representative's migrated page, when Representative is shown; a message when it has none */
@@ -1632,18 +1639,27 @@ function loadRep() {
   const r = repOf(state.page);
   const msg = panes.rep.querySelector('.rv-rep-msg');
   const tag = panes.rep.querySelector('.rv-tag');
-  if (!r || r.self) return;
-  if (!r.published) {
+  tag.textContent = 'Migrated representative';
+  const say = (title, text) => {
     ready.rep = false;
     frames.rep.removeAttribute('src');
-    tag.textContent = `Representative (group ${r.group})`;
-    msg.replaceChildren(el('strong', {}, 'Not migrated yet'), el('span', {}, `The group's representative, ${r.path}, has no live page yet: there is nothing to compare with until it is migrated and published.`));
+    msg.replaceChildren(el('strong', {}, title), el('span', {}, text));
     msg.hidden = false;
+  };
+  if (!r) {
+    say('No representative', `${NO_REP}: this page is in no group.`);
+    return;
+  }
+  if (r.self) {
+    say('This page is the representative', `It is the page reviewed for group ${r.group}: there is no other representative to compare with.`);
+    return;
+  }
+  if (!r.published) {
+    say('Not migrated yet', `The group's representative, ${r.path}, has no live page yet: there is nothing to compare with until it is migrated and published.`);
     return;
   }
   msg.hidden = true;
-  // (short: the page shows its own title)
-  tag.textContent = `Representative${r.chosen ? ' ★' : ' ☆'} (group ${r.group})`;
+  tag.title = `Group ${r.group}${r.chosen ? ', chosen representative' : ', its first page (none chosen yet)'}`;
   const url = `${BASE}${r.path}`;
   if (frames.rep.getAttribute('src') !== url) {
     ready.rep = false;
@@ -1897,12 +1913,36 @@ function whenReady(side) {
   });
 }
 
+/*
+ * the pages' labels (Migrated, Screenshot, …) fade out while the pointer is on them (and a little
+ * around), so what is behind them shows; clicks always went through them
+ */
+const AWAY = 14;
+function labelsAt(x, y) {
+  document.querySelectorAll('.rv-frame .rv-tag').forEach((tag) => {
+    if (!tag.offsetParent) return;
+    const r = tag.getBoundingClientRect();
+    const near = x !== null && x >= r.left - AWAY && x <= r.right + AWAY
+      && y >= r.top - AWAY && y <= r.bottom + AWAY;
+    tag.classList.toggle('rv-tag-away', near);
+  });
+}
+/** a point in a frame (its own pixels) → the tool's window */
+function fromFrame(side, x, y) {
+  const f = frames[side];
+  const r = f.getBoundingClientRect();
+  const k = f.offsetWidth ? r.width / f.offsetWidth : 1;
+  return [r.left + x * k, r.top + y * k];
+}
+
 async function onFrameLoad(side) {
   ready[side] = false;
   const d = doc(side);
   if (!d) return;
   // (the live frame before its first copy is an empty page)
   if (side === 'live' && !live.url) return;
+  d.addEventListener('mousemove', (e) => labelsAt(...fromFrame(side, e.clientX, e.clientY)), { passive: true });
+  d.documentElement.addEventListener('mouseleave', () => labelsAt(null, null));
   await whenReady(side);
   const style = d.createElement('style');
   style.textContent = '.rv-hl { outline: 3px solid #ffb500 !important; outline-offset: 2px; }';
@@ -2364,8 +2404,20 @@ async function start() {
       }
     } else if (m.type === 'scroll' && Date.now() >= quietUntil.real) {
       window.requestAnimationFrame(() => syncFrom('real'));
+    } else if (m.type === 'pointer') {
+      real.pointer = true;
+      if (m.out) labelsAt(null, null);
+      else labelsAt(...fromFrame('real', Number(m.x) || 0, Number(m.y) || 0));
     }
   });
+  // (an older extension doesn't say where the pointer is: its label goes while the pointer is
+  // on the page)
+  frames.real?.addEventListener('mouseenter', () => {
+    if (!real.pointer) panes.real.querySelector('.rv-tag').classList.add('rv-tag-away');
+  });
+  frames.real?.addEventListener('mouseleave', () => labelsAt(null, null));
+  document.addEventListener('mousemove', (e) => labelsAt(e.clientX, e.clientY), { passive: true });
+  stage.addEventListener('mouseleave', () => labelsAt(null, null));
   frames.real?.addEventListener('load', () => {
     frames.real.contentWindow?.postMessage({ reviewLive: true, type: 'hello' }, REAL_ORIGIN);
   });
