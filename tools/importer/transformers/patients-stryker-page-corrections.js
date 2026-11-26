@@ -1080,6 +1080,26 @@ const CORRECTIONS = {
   ],
 
   // single news-detail pages
+  // school-safety-staff-communication
+  'https://www.stryker.com/us/en/smart-care/news/school-safety-staff-communication.html': [
+    (m, d) => {
+      // body-l theme (17.5px copy, italic H2 at 21px / 24.5px from 600px); no p-1-25 section
+      // size styles: the theme sets the copy size
+      m.setAttribute('data-meta-theme', 'body-l');
+      tags(m, 'stryker:content-type/news, stryker:business-unit/acute-care/news');
+      style(m, d, find(m, 'p', 'In today'), null);
+      // a section break before each Heading 3, for space above the subheads
+      m.querySelectorAll('h3').forEach((h3) => breakBefore(m, d, h3, null));
+      [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => {
+        const row = [...t.querySelectorAll('tr')].find((tr) => txt(tr.cells[0]).toLowerCase() === 'style');
+        if (!row) return;
+        const rest = txt(row.cells[1]).split(',').map((v) => v.trim()).filter((v) => v && v !== 'p-1-25');
+        if (rest.length) row.cells[1].textContent = rest.join(', ');
+        else if (t.querySelectorAll('tr').length <= 2) t.remove();
+        else row.remove();
+      });
+    },
+  ],
   // how-augmented-reality-can-help-care-teams-plan--design-and-const
   'https://www.stryker.com/us/en/about/news/2024/features/how-augmented-reality-can-help-care-teams-plan--design-and-const.html': [
     (m, d) => {
