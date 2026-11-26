@@ -181,7 +181,7 @@ body {
   align-items: center;
 }
 
-/* colour lists in their Light · Brand · Dark · Gradients rows (tools/colour-groups.js) */
+/* colour lists in their Light · Accent · Dark · Gradients rows (tools/colour-groups.js) */
 .tm-choice-rows {
   display: grid;
   gap: 6px;

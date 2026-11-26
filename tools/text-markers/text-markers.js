@@ -203,7 +203,7 @@ function listenToPreview(choices) {
 
 /**
  * One group of choices (radio buttons); colours (text colours, line boxes) show their swatch dot,
- * in the Light · Brand · Dark · Gradients rows (tools/colour-groups.js).
+ * in the Light · Accent · Dark · Gradients rows (tools/colour-groups.js).
  */
 function choiceGroup(title, options, current, onPick, { swatch = false } = {}) {
   const group = el('fieldset', { class: 'tm-group' }, el('legend', {}, title));

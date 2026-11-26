@@ -117,7 +117,7 @@ until the standardisation is approved (`tools/review-pages.js`).
 - **Defaults:** a radio group's `''` choice is the default and shows "— default" after its label
   (e.g. "Medium (5%) — default"), unless it is a none ("None", "Not set", "As written").
 - **Colours:** a radio group whose choices are all colours (`box-…`, `stat-…`) shows swatch dots
-  in the Light · Brand · Dark · Gradients rows of `tools/colour-groups.js` (the one grouping for
+  in the Light · Accent · Dark · Gradients rows of `tools/colour-groups.js` (the one grouping for
   both panels); the dot's colour is read from the site's styles. A `''` colour names its dot with
   `swatch` (e.g. Statistics' gold default: `{ swatch: 'stat-gold' }`).
 - **Card colours (Cards (corp)):** one dropdown per card (Row colour + the Card box colours). It

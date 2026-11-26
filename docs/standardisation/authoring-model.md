@@ -196,7 +196,7 @@ takes it off.
 | # | Today | Proposal | Why |
 |---|---|---|---|
 | 1 | Block options greys out choices that don't fit; the Section area hides them | one behaviour in both: show what fits, fold the rest under "Not available here (n)" with the reason | one rule to learn |
-| 2 | Colour lists are long plain buttons (Cell box: 18 choices) | colour swatches (as in Text style), grouped *Light · Brand · Dark · Gradients* | faster to scan, colours visible |
+| 2 | Colour lists are long plain buttons (Cell box: 18 choices) | colour swatches (as in Text style), grouped *Light · Accent · Dark · Gradients* | faster to scan, colours visible |
 | 3 | Defaults read like ordinary choices ("Medium (5%)", "Last cell") | mark the default ("Medium (5%) — default") | authors know what "nothing chosen" does |
 | 4 | Section styles are copied and pasted into Section Metadata | ask the DA / EW team for a way for extensions to write Section Metadata, then apply directly like block options | removes the most error-prone step |
 | 5 | A colour per card is a typed cell in the card ("Purple") | a *Card colours* list in Block options (one dropdown per card) that writes that cell | no hidden keywords to remember |

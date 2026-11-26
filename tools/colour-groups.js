@@ -1,5 +1,5 @@
 /*
- * The colours the authoring panels offer, grouped once for both panels: Light · Brand · Dark ·
+ * The colours the authoring panels offer, grouped once for both panels: Light · Accent · Dark ·
  * Gradients. Box and background colours (Block options: Cell box, Card box, Box colour, Headline
  * box, Card colours, the section's Background; Text style line boxes) are the 17 stryker.com box
  * colours; text colours (Text style colour, Statistics number colour) the 11 text colours. A
@@ -15,7 +15,7 @@ export const COLOUR_GROUPS = [
   },
   {
     id: 'brand',
-    label: 'Brand',
+    label: 'Accent',
     names: ['gold', 'dark-gold', 'darkgold', 'blue', 'navy', 'purple', 'teal'],
   },
   { id: 'dark', label: 'Dark', names: ['dark', 'grey', 'black'] },

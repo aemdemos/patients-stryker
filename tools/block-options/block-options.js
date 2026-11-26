@@ -325,7 +325,7 @@ function choiceButton(value, label, meta, checked, onPick) {
 }
 
 /**
- * A group's radio buttons: one row, or a colour list in its Light · Brand · Dark · Gradients rows.
+ * A group's radio buttons: one row, or a colour list in its Light · Accent · Dark · Gradients rows.
  * @param {string} label The group's title
  * @param {Array<[string, string, object]>} choices The choices shown
  * @param {(value: string, label: string, meta: object) => Element} button Builds a choice
