@@ -79,3 +79,18 @@ body.corp .accordion.divided .accordion-item-label {
 body.corp .accordion.divided .accordion-item-open .accordion-item-label {
   border-bottom: 0;
 }
+
+/* review pages: every item ends with a grey line, as on all stryker.com accordions: under a
+   closed item's label, under an open item's content 15px below its last line (Connected OR) */
+body.corp.std-draft .accordion .accordion-item:not(.accordion-item-open) .accordion-item-label,
+body.corp.std-draft .accordion .accordion-item-open .accordion-item-body {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.corp.std-draft .accordion .accordion-item-open .accordion-item-body {
+  padding-bottom: var(--space-block);
+}
+
+body.corp.std-draft .accordion .accordion-item-open .accordion-item-body > :last-child {
+  margin-bottom: 0;
+}
