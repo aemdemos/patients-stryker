@@ -168,6 +168,9 @@ function sizePreview() {
   viewToggle.hidden = !previewBlock;
 }
 
+// the block as the change would leave it (styledBlock, set below with the change's code)
+let blockForPreview = (html) => html;
+
 function updatePreview() {
   const marker = startMarker();
   codeEl.textContent = marker ? `${marker}Your text${END_MARKER}` : 'Pick a style below';
@@ -181,8 +184,12 @@ function updatePreview() {
   if (columnsNote) columnsNote.hidden = previewBlock?.name !== 'columns';
   if (!previewReady) return;
   const message = { action: 'tm-preview-render', marker, words: previewLine?.words || '' };
-  if (previewLine && previewBlock) Object.assign(message, previewBlock, { tag: previewLine.tag });
-  else if (previewLine) Object.assign(message, { tag: previewLine.tag, html: previewLine.html });
+  if (previewLine && previewBlock) {
+    // the block as the change would leave it (the old style replaced, not stacked)
+    Object.assign(message, previewBlock, {
+      tag: previewLine.tag, block: blockForPreview(previewBlock.block, previewLine.words, marker), words: '',
+    });
+  } else if (previewLine) Object.assign(message, { tag: previewLine.tag, html: previewLine.html });
   sizePreview();
   previewFrame.contentWindow.postMessage(message, window.location.origin);
 }
@@ -444,6 +451,22 @@ let sourceCache = { at: 0, html: '' };
 const RUN_EDGE = /^[\s.,;:!?…'"“”‘’()[\]-]*$/;
 
 /**
+ * Where the selected words are in a text: every occurrence, with the text as it is there (a
+ * line break or a run of spaces in the document may be one space, or none, in the selection).
+ * @param {string} text The text to search
+ * @param {string} words The selected words
+ * @returns {{index: number, matched: string}[]} The occurrences
+ */
+function matchesOf(text, words) {
+  const parts = words.trim().split(/\s+/).filter(Boolean)
+    .map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  if (!parts.length) return [];
+  const lead = words.match(/^\s*/)[0].length ? '\\s*' : '';
+  const re = new RegExp(`${lead}${parts.join('\\s*')}`, 'g');
+  return [...text.matchAll(re)].map((m) => ({ index: m.index, matched: m[0] }));
+}
+
+/**
  * The innermost styled run around the selected words in the document text (markers as text):
  * its marker words, the run's text before and after the selection, and where the selection
  * sits in it (`whole`: only spaces or punctuation around it; `start`, `end` or `middle`).
@@ -465,8 +488,8 @@ function findRun(words, text = liveText) {
     }
   });
   const found = [];
-  for (let i = text.indexOf(words); i >= 0; i = text.indexOf(words, i + 1)) {
-    const end = i + words.length;
+  matchesOf(text, words).forEach(({ index: i, matched }) => {
+    const end = i + matched.length;
     const run = runs.filter((r) => r.contentStart <= i && end <= r.contentEnd)
       .sort((a, b) => b.contentStart - a.contentStart)[0];
     if (run) {
@@ -481,11 +504,11 @@ function findRun(words, text = liveText) {
         else if (edgeBefore) at = 'start';
         else if (edgeAfter) at = 'end';
         found.push({
-          name: run.name, before, after, at,
+          name: run.name, before, after, at, matched,
         });
       }
     }
-  }
+  });
   const differs = found.some((f) => f.name !== found[0].name || f.at !== found[0].at);
   if (!found.length || differs) return null;
   return found[0];
@@ -522,7 +545,34 @@ async function documentText() {
 }
 
 const plain = (text) => text.replace(MARKER_TEXT, '').replace(/\s+/g, ' ').trim();
+// for finding words: a line break in the document may be one space, or none, in the selection
+const squash = (text) => text.replace(MARKER_TEXT, '').replace(/\s+/g, '');
 const toClassName = (s) => s.trim().toLowerCase().replace(/[^0-9a-z]+/g, '-').replace(/^-|-$/g, '');
+
+// the lines and blocks of the live document (the lines outside blocks; blocks other than metadata)
+const LIVE_LINES = ':scope > div > :is(p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote)';
+const LIVE_SKIP = /^(section-metadata|metadata|da-metadata|library-metadata)$/;
+
+/**
+ * The text to look for the selection's styled run in: in Experience Workspace the block
+ * holding the cursor, or outside blocks the one line holding the words (the same words can be
+ * elsewhere on the page with another style, e.g. a nav or a heading); else the whole document.
+ * @param {string} words The selected words
+ * @returns {Promise<string>} The text, markers as text
+ */
+async function runContext(words) {
+  if (!liveHtml) return documentText();
+  const doc = parseDoc(liveHtml);
+  const root = doc.querySelector('main') || doc.body;
+  if (liveBlockIndex !== null) {
+    const block = [...root.querySelectorAll(':scope > div > div[class]')]
+      .filter((b) => !LIVE_SKIP.test(b.classList[0]))[liveBlockIndex];
+    if (block && squash(block.textContent).includes(squash(words))) return block.textContent;
+  }
+  const lines = [...root.querySelectorAll(LIVE_LINES)]
+    .filter((l) => squash(l.textContent).includes(squash(words)));
+  return lines.length === 1 ? lines[0].textContent : liveText;
+}
 
 /**
  * The block the selected words sit in, from the document's markup (sections hold blocks as
@@ -538,7 +588,10 @@ async function findBlock(words) {
   const root = doc.querySelector('main') || doc.body;
   const blocks = [...root.querySelectorAll(':scope > div > div[class]')]
     .filter((b) => !/^(section-metadata|metadata)$/.test(b.classList[0]));
-  const block = blocks.find((b) => plain(b.textContent).includes(target));
+  const holds = (b) => squash(b.textContent).includes(squash(words));
+  // the block holding the cursor first (the same words can be in other blocks, e.g. a nav)
+  const atCursor = liveHtml && liveBlockIndex !== null ? blocks[liveBlockIndex] : null;
+  const block = (atCursor && holds(atCursor) ? atCursor : null) || blocks.find(holds);
   if (!block) return null;
   const meta = block.parentElement.querySelector(':scope > .section-metadata');
   const styleRow = meta && [...meta.children]
@@ -559,9 +612,9 @@ async function isWholeLine(words) {
   if (!html || !target) return null;
   const doc = parseDoc(html);
   const lines = [...doc.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')]
-    .filter((line) => plain(line.textContent).includes(target));
+    .filter((line) => squash(line.textContent).includes(squash(target)));
   if (!lines.length) return null;
-  return lines.some((line) => plain(line.textContent) === target);
+  return lines.some((line) => squash(line.textContent) === squash(target));
 }
 
 /*
@@ -570,8 +623,6 @@ async function isWholeLine(words) {
  * block, so the canvas re-renders the styled text at once. Typed text (sendText) changes the
  * document but leaves the canvas as it was.
  */
-const LIVE_LINES = ':scope > div > :is(p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote)';
-const LIVE_SKIP = /^(section-metadata|metadata|da-metadata|library-metadata)$/;
 
 /** the text nodes of an element that hold `text` */
 function textNodesWith(root, text) {
@@ -644,12 +695,14 @@ function liveTarget(find) {
 function textAt(root, pos) {
   const walker = root.ownerDocument.createTreeWalker(root, NodeFilter.SHOW_TEXT);
   let start = 0;
+  let last = null;
   while (walker.nextNode()) {
     const { length } = walker.currentNode.textContent;
     if (pos < start + length) return { node: walker.currentNode, offset: pos - start };
     start += length;
+    last = walker.currentNode;
   }
-  return null;
+  return last && pos === start ? { node: last, offset: last.textContent.length } : null;
 }
 
 /** sends the changed target as a guarded replace; true when the canvas took it */
@@ -701,39 +754,70 @@ async function swapInLive(oldName, words, marker) {
 }
 
 /**
- * Restyles selected words inside a styled run through the live document, so the new style
- * replaces the old one instead of stacking on it: the whole run gets the new start marker; the
- * start, end or middle of a run is split there (`:start-old:a :end::start-new:b:end:`).
- * @param {{name: string, before: string, after: string, at: string}} run The run (findRun)
+ * Gives the selected words a style in an element (its text holds the markers as text), the
+ * way the panel applies it: inside a styled run the new style replaces the run's old one (the
+ * whole run gets the new start marker; its start, middle or end is split off), elsewhere the
+ * words are wrapped in the new markers. Used for the change and for the preview alike.
+ * @param {Element} root The block or line
  * @param {string} words The selected words
  * @param {string} marker The new start marker
- * @returns {Promise<boolean>} true when the canvas took the change
+ * @param {{name: string, before: string, after: string, at: string, matched: string}|null} run
+ *   The styled run around the words (findRun), or null
+ * @returns {boolean} false when the words are not exactly once in the element
  */
-async function restyleInLive(run, words, marker) {
-  const oldMarker = `:start-${run.name}:`;
-  const full = `${oldMarker}${run.before}${words}${run.after}${END_MARKER}`;
-  const live = liveTarget(full);
-  if (!live) return false;
-  const text = live.target.textContent;
-  const pos = text.indexOf(full);
-  if (pos < 0 || text.indexOf(full, pos + 1) >= 0) return false;
-  const from = pos + oldMarker.length + run.before.length;
-  const to = from + words.length;
+function styleIn(root, words, marker, run) {
+  const text = root.textContent;
+  const oldMarker = run ? `:start-${run.name}:` : '';
+  const find = run ? `${oldMarker}${run.before}${run.matched}${run.after}${END_MARKER}` : '';
+  const hits = run ? matchesOf(text, find) : matchesOf(text, words);
+  if (hits.length !== 1) return false;
+  const [{ index, matched }] = hits;
+  const from = run ? index + oldMarker.length + run.before.length : index;
+  const to = run ? from + run.matched.length : index + matched.length;
   // [where, how many characters it replaces, what goes in], applied from the end backwards
   const edits = [];
-  if (run.at === 'whole' || run.at === 'start') edits.push([pos, oldMarker.length, marker]);
-  if (run.at === 'start' || run.at === 'middle') edits.push([to, 0, `${END_MARKER}${oldMarker}`]);
-  if (run.at === 'end' || run.at === 'middle') edits.push([from, 0, `${END_MARKER}${marker}`]);
-  edits.sort((a, b) => b[0] - a[0]);
-  const applied = edits.every(([at, length, insert]) => {
-    const hit = textAt(live.target, at);
+  if (!run) edits.push([to, 0, END_MARKER], [from, 0, marker]);
+  if (run?.at === 'whole' || run?.at === 'start') edits.push([index, oldMarker.length, marker]);
+  if (run?.at === 'start' || run?.at === 'middle') edits.push([to, 0, `${END_MARKER}${oldMarker}`]);
+  if (run?.at === 'end' || run?.at === 'middle') edits.push([from, 0, `${END_MARKER}${marker}`]);
+  edits.sort((x, y) => y[0] - x[0]);
+  return edits.every(([at, length, insert]) => {
+    const hit = textAt(root, at);
     if (!hit || (length && !hit.node.textContent.startsWith(oldMarker, hit.offset))) return false;
     const value = hit.node.textContent;
     hit.node.textContent = readable(`${value.slice(0, hit.offset)}${insert}${value.slice(hit.offset + length)}`);
     return true;
   });
-  return applied && sendLive(live);
 }
+
+/**
+ * Restyles selected words inside a styled run through the live document (styleIn), so the new
+ * style replaces the old one instead of stacking on it.
+ * @returns {Promise<boolean>} true when the canvas took the change
+ */
+async function restyleInLive(run, words, marker) {
+  const live = liveTarget(`:start-${run.name}:${run.before}${run.matched}${run.after}${END_MARKER}`);
+  if (!live || !styleIn(live.target, words, marker, run)) return false;
+  return sendLive(live);
+}
+
+/**
+ * The selected words in their block with the chosen style, as applying it would give them
+ * (styleIn), for the preview; the block as it is when nothing is chosen or the words aren't
+ * found in it.
+ * @param {string} blockHtml The block (markers as text)
+ * @param {string} words The selected words
+ * @param {string} marker The chosen start marker
+ * @returns {string} The block's HTML
+ */
+function styledBlock(blockHtml, words, marker) {
+  if (!marker || !words.trim()) return blockHtml;
+  const block = parseDoc(`<body>${blockHtml}</body>`).body.firstElementChild;
+  if (!block) return blockHtml;
+  const run = findRun(words, block.textContent);
+  return styleIn(block, words, marker, run) ? block.outerHTML : blockHtml;
+}
+blockForPreview = styledBlock;
 
 async function replaceInLive(find, words, marker) {
   const live = liveTarget(find);
@@ -798,7 +882,7 @@ async function removeStyle() {
   const { text, ok, markersApart } = analyseSelection(line.html);
   const inSelection = text.match(/:start-([a-z0-9-]+):/);
   const words = text.replace(MARKER_TEXT, '');
-  const run = inSelection ? null : findRun(words, liveText || await documentText());
+  const run = inSelection ? null : findRun(words, await runContext(words));
   const old = inSelection ? inSelection[1] : run?.name;
   if (!old) {
     setStatus('These words have no Text style to remove.', 'error');
@@ -837,6 +921,32 @@ async function removeStyle() {
   setStatus(`To remove the style, delete “:start-${old}:” before the words and “:end:” after them. The words keep their formatting.`, 'info');
 }
 
+/**
+ * Styles a selection that typing over would spoil (a line break, a link, mixed formatting)
+ * through the live document: the old style of a styled run is replaced, other words are
+ * wrapped (styleIn). Reports the result; false when the live document can't take it.
+ * @param {string} text The selection's text (with any markers)
+ * @param {string} marker The new start marker
+ * @returns {Promise<boolean>} true when the change was made
+ */
+async function styleWithLineBreaks(text, marker) {
+  if (!liveText || HAS_MARKER.test(text)) return false;
+  const run = findRun(text, await runContext(text));
+  const hits = run ? [] : matchesOf(liveText, text);
+  if (!run && hits.length !== 1) return false;
+  const find = run
+    ? `:start-${run.name}:${run.before}${run.matched}${run.after}${END_MARKER}` : hits[0].matched;
+  const live = liveTarget(find);
+  if (!live || !styleIn(live.target, text, marker, run) || !(await sendLive(live))) return false;
+  setStatus(run ? `Changed the style of “${text.trim()}” from :start-${run.name}: to ${marker}`
+    : `Styled “${text.trim()}” with ${marker} … ${END_MARKER}`, 'ok');
+  previewLine = null;
+  previewBlock = null;
+  lastSelection = '';
+  updatePreview();
+  return true;
+}
+
 async function applyToSelection() {
   const marker = startMarker();
   if (!marker || !sdk) return;
@@ -853,11 +963,14 @@ async function applyToSelection() {
     return;
   }
   const { text, ok, markersApart } = analyseSelection(inner);
-  if (!ok) {
+  // a link, a line break or mixed formatting would be lost by typing over the selection;
+  // Experience Workspace changes the line or block instead, so it keeps them
+  if (!ok && !(await styleWithLineBreaks(text, marker))) {
     setStatus('The selection has a link, a line break or mixed formatting, which rewriting it would lose. Use “Insert start” before the words and “Insert end” after them instead (More options).', 'error');
     moreOptions.open = true;
     return;
   }
+  if (!ok) return;
   // a restyle: the selection includes the old markers, which the new ones replace
   const old = text.match(/:start-([a-z0-9-]+):/);
   const words = text.replace(MARKER_TEXT, '');
@@ -881,7 +994,7 @@ async function applyToSelection() {
   // the words alone, inside a styled run on the page: the new style replaces the run's old one
   // for these words (the whole run, or a split at its start, middle or end) instead of
   // stacking a second style inside it
-  const run = !old && findRun(words, await documentText());
+  const run = !old && findRun(words, await runContext(words));
   if (run) {
     if (await restyleInLive(run, words, marker)) {
       done(run.name);
@@ -1066,7 +1179,7 @@ function watchSelection() {
       // a selection that includes old markers is previewed without them
       const selectedText = line.html.replace(/<[^>]+>/g, '');
       line.old = (line.html.match(/:start-([a-z0-9-]+):/) || [])[1]
-        || findRun(selectedText, liveText || await documentText())?.name || '';
+        || findRun(selectedText, await runContext(selectedText))?.name || '';
       line.html = line.html.replace(MARKER_TEXT, '');
       line.words = parseDoc(`<p>${line.html}</p>`).body.textContent;
     }
