@@ -466,6 +466,13 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 .rv-dialog { max-inline-size: 380px; padding: 20px; border: 0; border-radius: var(--r-l); box-shadow: var(--shadow-pop); }
 .rv-dialog::backdrop { background: rgb(20 20 20 / 55%); }
 .rv-dialog p { margin: 0 0 12px; }
+/* the group approval's confirmation */
+.rv-dialog:has(.rv-ask) { max-inline-size: 520px; }
+.rv-ask-head { font-weight: 700; }
+.rv-ask-part { margin: 0 0 10px; padding: 8px 10px; border-radius: var(--r-s); background: var(--c-surface-2); }
+.rv-ask-part p { margin: 0 0 4px; font-size: var(--fs-xs); }
+.rv-ask-part ul { margin: 0; padding-inline-start: 18px; font-size: var(--fs-xs); }
+.rv-ask-foot { color: var(--c-ink-2); font-size: var(--fs-xs); }
 
 /* groups */
 .rv-group-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 6px; margin-top: 4px; padding-top: 4px; border-top: 1px dashed var(--c-line-2); }

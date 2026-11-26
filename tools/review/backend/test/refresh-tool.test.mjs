@@ -27,7 +27,10 @@ const check = (label, ok, detail = '') => {
 };
 
 // a published page of the review nobody wrote on
-const used = new Set((await admin({ op: 'export' })).rows.map((r) => r.page));
+// (pages with review activity; the AOE team's batches and groups don't count: this test writes
+// none, and leaves them alone)
+const ORG = ['batch', 'group', 'representative'];
+const used = new Set((await admin({ op: 'export' })).rows.filter((r) => !ORG.includes(r.kind)).map((r) => r.page));
 const live = await (await fetch('https://main--stryker-com--strykerenterprise.aem.live/us/en/query-index.json?limit=2000')).json();
 const PAGE = live.data.map((p) => p.path).find((p) => !used.has(p) && /\/news\//.test(p));
 console.log(`test page: ${PAGE}`);
@@ -155,7 +158,7 @@ try {
     await admin({ op: 'revoke', id: i.id });
   }
   await admin({ op: 'forget-test-invites' });
-  const left = (await admin({ op: 'export' })).rows.filter((r) => r.page === PAGE).length;
+  const left = (await admin({ op: 'export' })).rows.filter((r) => r.page === PAGE && !ORG.includes(r.kind)).length;
   check('clean-up: nothing left on the test page', left === 0, left);
 }
 console.log(failed ? `${failed} FAILED` : 'all passed');
