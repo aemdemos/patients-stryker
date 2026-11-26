@@ -1,10 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Adobe Review: live stryker.com",
-  "version": "0.1.0",
-  "description": "Pilot for the AOE team: shows the real, interactive stryker.com page inside the migration review tool (Compare with: Live), with Scroll Sync.",
+  "version": "0.2.0",
+  "description": "Pilot for the AOE team: shows the real, interactive stryker.com page inside the migration review tool (Compare with: Live), with Scroll Sync, and snaps what it shows into a chat.",
   "permissions": [
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "activeTab"
   ],
   "host_permissions": [
     "https://www.stryker.com/*"
@@ -45,5 +46,24 @@
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Snap the Live page into the chat (Alt+Shift+S)",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "commands": {
+    "snap": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Snap the Live page into the chat"
+    }
   }
 }

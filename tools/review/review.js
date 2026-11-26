@@ -90,6 +90,8 @@ const quietUntil = {
 // where its texts and images are and where it is scrolled to (it can't be read from here)
 const REAL_ORIGIN = 'https://www.stryker.com';
 const HAS_REAL = !!document.documentElement.dataset.reviewLive && REVIEW.compare.includes('src');
+// Snap (extension 0.2.0): a picture of what the Live page shows, into a chat
+const HAS_SNAP = HAS_REAL && !!document.documentElement.dataset.reviewSnap;
 const real = {
   url: '', leaves: [], y: 0, h: 0, at: '',
 };
@@ -2121,6 +2123,85 @@ function setUpShell() {
   }
 }
 
+/* ---------- Snap: what the Live page shows, into a chat (the review extension) ---------- */
+
+// the chat whose message box was used last: the Snap goes there (else the page's own chat)
+let lastChat = 'page|comment';
+const chatName = (key) => {
+  if (key === 'page|comment') return 'General page comments';
+  if (key.startsWith('note:')) return `QA note ${notes.list().find((n) => `note:${n.id}|note` === key)?.n || ''}`;
+  return 'the chat you last wrote in';
+};
+
+function snapMessage(text, error = false) {
+  const msg = panes.real.querySelector('.rv-snap-msg');
+  msg.textContent = text;
+  msg.classList.toggle('rv-snap-error', error);
+  msg.hidden = !text;
+  window.clearTimeout(msg.timer);
+  if (text && !error) msg.timer = window.setTimeout(() => { msg.hidden = true; }, 5000);
+}
+
+/** a picture of the tab (from the extension) cut to the Live page, into the last chat's box */
+async function takeSnap(dataUrl) {
+  const img = new Image();
+  img.src = dataUrl;
+  await img.decode();
+  // (the Live page when it shows, else the pages)
+  const shown = state.cmp === 'real' && !panes.real.classList.contains('rv-hidden');
+  const r = (shown ? panes.real : stage).getBoundingClientRect();
+  const k = img.naturalWidth / window.innerWidth;
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.round(r.width * k);
+  canvas.height = Math.round(r.height * k);
+  canvas.getContext('2d').drawImage(img, r.left * k, r.top * k, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
+  const blob = await new Promise((done) => { canvas.toBlob(done, 'image/png'); });
+  const pic = await prepare(new File([blob], 'snap.png', { type: 'image/png' }));
+  const key = lastChat;
+  attached.set(key, [...(attached.get(key) || []), pic].slice(0, MAX_PICTURES));
+  openChats.add(key);
+  threadHooks.redraw();
+  focusChat(key);
+  snapMessage(`Snap added to ${chatName(key)}: write a line and Send.`);
+}
+
+function setUpSnap() {
+  const button = el('button', {
+    type: 'button', class: 'rv-snap', title: 'A picture of what the Live page shows now, into the chat you last wrote in (General page comments by default)',
+  }, '📷 Snap');
+  panes.real.append(button, el('p', { class: 'rv-snap-msg', 'aria-live': 'polite', hidden: '' }));
+  document.addEventListener('focusin', (e) => {
+    const chat = e.target.closest?.('[data-chat]');
+    if (chat && e.target.matches('textarea.rv-reply')) lastChat = chat.dataset.chat;
+  });
+  let waiting = null;
+  window.addEventListener('message', (e) => {
+    if (e.source !== window || !e.data?.reviewSnap || e.data.type !== 'result') return;
+    // (the extension's icon or Alt+Shift+S snaps too: id 'icon')
+    if (e.data.id !== waiting && e.data.id !== 'icon') return;
+    waiting = null;
+    button.style.visibility = '';
+    if (e.data.dataUrl) takeSnap(e.data.dataUrl).catch(() => snapMessage('The snap could not be read: try again.', true));
+    else if (e.data.error === 'needs-click') snapMessage('First time in this tab: click the extension\'s icon (the red L in the browser\'s toolbar) or press Alt+Shift+S. That snaps, and this button works in this tab after that.', true);
+    else snapMessage(`No snap: ${e.data.error || 'the extension did not answer'}.`, true);
+  });
+  button.addEventListener('click', () => {
+    waiting = `s${Date.now()}`;
+    // (the button itself is not in the picture)
+    button.style.visibility = 'hidden';
+    snapMessage('');
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+      window.postMessage({ reviewSnap: true, type: 'request', id: waiting }, window.location.origin);
+    }));
+    window.setTimeout(() => {
+      if (!waiting) return;
+      waiting = null;
+      button.style.visibility = '';
+      snapMessage('The extension did not answer: reload this page (or the extension) and try again.', true);
+    }, 8000);
+  });
+}
+
 async function start() {
   setUpShell();
   // the two panels fold to a strip (kept per browser); the page view takes the space
@@ -2260,6 +2341,7 @@ async function start() {
     frames.real.contentWindow?.postMessage({ reviewLive: true, type: 'hello' }, REAL_ORIGIN);
   });
   panes.live?.querySelector('.rv-live-again').addEventListener('click', () => loadLive(true));
+  if (HAS_SNAP) setUpSnap();
   scroller.addEventListener('scroll', () => {
     if (Date.now() < quietUntil.src) return;
     window.requestAnimationFrame(() => syncFrom('src'));

@@ -132,7 +132,7 @@ function drawPilot(role) {
   const version = document.documentElement.dataset.reviewLive;
   box.append(
     el('h2', { class: 'ln-h2' }, 'Pilot: the live stryker.com page in the tool', el('span', { class: 'ln-tag' }, 'AOE team')),
-    el('p', { class: 'ln-sub' }, 'A small browser extension lets the review tool show the real, clickable stryker.com page next to the migrated one (Compare with: Live), with Scroll Sync. Menus, tabs and carousels work. Notes still go on the migrated page or the Screenshot.'),
+    el('p', { class: 'ln-sub' }, 'A small browser extension lets the review tool show the real, clickable stryker.com page next to the migrated one (Compare with: Live), with Scroll Sync. Menus, tabs and carousels work. 📷 Snap puts a picture of what it shows into the chat. Notes still go on the migrated page or the Screenshot.'),
     el(
       'div',
       { class: `ln-pilot-box${version ? ' ln-pilot-on' : ''}` },
@@ -142,6 +142,7 @@ function drawPilot(role) {
         ['Open ', el('code', {}, 'chrome://extensions'), ' (Edge: ', el('code', {}, 'edge://extensions'), ') and turn on Developer mode.'],
         ['Click Load unpacked and choose the unzipped folder.'],
         ['Reload the review tool: Live appears under Compare with.'],
+        ['For 📷 Snap: pin the extension (puzzle icon → pin) and, once per review tab, click its icon (or press Alt+Shift+S); the browser wants that one click before an extension may take a picture.'],
       ].map((parts) => el('li', {}, ...parts))),
       el('p', { class: 'ln-pilot-note' }, 'It only lifts stryker.com\'s "don\'t show me inside other sites" rule when a review page shows it, and tells the tool where the page is scrolled to. Updating: unzip the new version over the old folder, then Reload on the extension\'s card.'),
     ),
