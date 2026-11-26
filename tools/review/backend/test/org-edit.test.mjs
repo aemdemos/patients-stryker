@@ -3,12 +3,16 @@
  * The status page's organising for the AOE team, in the browser: a page's row editor (batch,
  * group, representative; empty takes out), the selection bar (move, take out, representatives),
  * the groups with their representative to choose (or none: the first page stands in) and their
- * pages to take out (its own group 902 only: real groups may exist). On three pages nobody has organised (checked first), with a test AOE
- * invitation whose entries are all removed after (purge-invite) and which is revoked.
- * usage: node tools/review/backend/test/org-edit.test.mjs <base> [space] [path prefix of 3 pages]
+ * pages to take out (its own group 902 only: real groups may exist). On three pages nobody has
+ * used in any way (no review entries, batches or groups) and all published (a group's stand-in ☆
+ * is its first published page): the test finds a search of the status page that lists exactly
+ * three such pages (a folder, else a folder and a word; 26 Nov 2026: fixed pages got the AOE
+ * team's batches), or takes the search given (checked the same way). A test AOE invitation whose
+ * entries are all removed after (purge-invite) and which is revoked.
+ * usage: node tools/review/backend/test/org-edit.test.mjs <base> [space] [search listing 3 pages]
  */
 import { createRequire } from 'module';
-import { actionUrl } from '../target.mjs';
+import { actionUrl, webBase, TEST } from '../target.mjs';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
@@ -19,16 +23,67 @@ async function admin(p) {
   });
   return JSON.parse(await resp.text()).body;
 }
-const [base = 'http://localhost:3220', SPACE = 'main', PREFIX = '/us/en/joint-replacement/sps-blog/2018/meet-the-bpci-a-team-take'] = process.argv.slice(2);
+const [base = 'http://localhost:3220', SPACE = 'main', GIVEN = ''] = process.argv.slice(2);
 const sp = SPACE === 'std' ? {} : { space: SPACE };
+const usedRows = (await admin({ op: 'export', ...sp })).rows;
+const used = new Set(usedRows.map((r) => r.page));
+// the review's pages (the migration scope's for the client review, else pages.json)
+const scopeAoe = await admin({
+  op: 'invite', name: 'tool test org edit scope', paths: ['/'], days: 1, role: 'aoe', ...sp,
+});
+let listed = [];
+try {
+  const headers = { 'x-review-invite': scopeAoe.token, origin: 'http://localhost:3220' };
+  listed = (await (await fetch(`${webBase(TEST.ns)}/pages`, { headers })).json()).pages || [];
+} catch (e) {
+  listed = [];
+}
+if (!listed.length) {
+  const json = await (await fetch(`${base}/tools/review/pages.json`)).json().catch(() => ({}));
+  listed = json.pages || [];
+}
+await admin({ op: 'revoke', id: scopeAoe.id, ...sp });
+const free = (x) => !used.has(x.path) && x.published !== false;
+// (the status page's search: every word in the title or path)
+const textOf = (x) => `${x.title || ''} ${x.path}`.toLowerCase();
+const matches = (search) => {
+  const words = search.toLowerCase().split(/\s+/).filter(Boolean);
+  return listed.filter((x) => words.every((w) => textOf(x).includes(w)));
+};
+const fits = (search) => {
+  const m = matches(search);
+  return m.length === 3 && m.every(free);
+};
+/** a search listing exactly three pages, all published and none of them used in any way */
+function freeSearch() {
+  const folders = [...new Set(listed.filter(free).map((x) => x.path.replace(/[^/]+\/?$/, '')))]
+    .filter((f) => f.length > 7).sort();
+  const plain = folders.find(fits);
+  if (plain) return plain;
+  let hit = '';
+  folders.find((folder) => {
+    const words = new Set(listed.filter((x) => free(x) && x.path.startsWith(folder))
+      .flatMap((x) => textOf(x).split(/[^a-z0-9]+/).filter((w) => w.length > 3)));
+    hit = [...words].sort().map((w) => `${folder} ${w}`).find(fits) || '';
+    return hit;
+  });
+  return hit;
+}
+const SEARCH = GIVEN || freeSearch();
+if (!SEARCH) {
+  console.log('refused: no search lists exactly three published pages nobody has used (give one)');
+  process.exit(2);
+}
+const PAGES = new Set(matches(SEARCH).map((x) => x.path));
+console.log(`test pages: the search "${SEARCH}" (${[...PAGES].join(', ')})`);
 let failed = 0;
 const check = (what, ok, detail = '') => {
   if (!ok) failed += 1;
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}${ok ? '' : ` ${detail}`}`);
 };
-const before = (await admin({ op: 'export', ...sp })).rows.filter((r) => r.page.startsWith(PREFIX));
-if (before.length) {
-  console.log(`refused: ${before.length} entries on these pages already (only pages nobody has used)`);
+const before = usedRows.filter((r) => PAGES.has(r.page));
+if (!fits(SEARCH)) {
+  console.log(`refused: "${SEARCH}" lists ${PAGES.size} pages, ${before.length} entries on them (only three published pages nobody has used)`);
   process.exit(2);
 }
 const aoe = await admin({
@@ -42,9 +97,10 @@ try {
   p.on('pageerror', (e) => errors.push(String(e).slice(0, 200)));
   await p.goto(`${base}/tools/review/status.html?invite=${encodeURIComponent(aoe.token)}`, { waitUntil: 'load' });
   await p.waitForFunction(() => /pages/.test(document.querySelector('.st-count')?.textContent || ''));
-  await p.fill('.st-search', PREFIX);
+  await p.fill('.st-search', SEARCH);
   await p.waitForTimeout(500);
-  // the three pages in path order (P[0] < P[1] < P[2]: P[0] stands in for a group without a chosen representative)
+  // the three pages in path order (P[0] < P[1] < P[2]: P[0] stands in for a group without a
+  // chosen representative)
   const P = (await p.$$eval('.st-table tbody tr small', (ss) => ss.map((x) => x.textContent))).sort();
   const name = { two: P[2], three: P[1], four: P[0] };
   const rowOf = (end) => p.locator('.st-table tbody tr', { has: p.locator(`small:text-is("${name[end]}")`) });
@@ -114,7 +170,7 @@ try {
   const purged = await admin({ op: 'purge-invite', id: aoe.id, ...sp });
   await admin({ op: 'revoke', id: aoe.id });
   await admin({ op: 'forget-test-invites' });
-  const left = (await admin({ op: 'export', ...sp })).rows.filter((r) => r.page.startsWith(PREFIX));
+  const left = (await admin({ op: 'export', ...sp })).rows.filter((r) => PAGES.has(r.page));
   check('test entries removed', left.length === 0, `${purged.deleted} purged, ${left.length} left`);
   check('no page errors', !errors.length, errors.join(' | '));
 }
