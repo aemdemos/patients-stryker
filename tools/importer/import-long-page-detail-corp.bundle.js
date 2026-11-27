@@ -2042,7 +2042,9 @@ var CustomImportScript = (() => {
     const boxed = styles.includes("headline-box");
     styles.forEach((st) => {
       if (st === "headline-box") {
-        if (!styles.some((o) => o !== st && SECTION_OPTIONS.aliases[o])) out.push("box-white");
+        const coloured = styles.some((o) => o !== st && SECTION_OPTIONS.aliases[o]);
+        const doc = elements[0] && elements[0].ownerDocument;
+        if (!coloured && !stdProductPage(doc)) out.push("box-white");
         return;
       }
       if (st === "body-font-bold") {

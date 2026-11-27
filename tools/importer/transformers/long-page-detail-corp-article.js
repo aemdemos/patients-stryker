@@ -1539,8 +1539,12 @@ function stdSectionStyle(section, labels) {
   const boxed = styles.includes('headline-box');
   styles.forEach((st) => {
     if (st === 'headline-box') {
-      // a Large Headline in a box: the box at the content width (a white box when no colour)
-      if (!styles.some((o) => o !== st && SECTION_OPTIONS.aliases[o])) out.push('box-white');
+      // a Large Headline in a box: the box at the content width (a white box when no colour).
+      // Product pages: a white box on the white page is no box, its text at the content edge
+      // (stryker.com bg-white headlines draw nothing; Pangea "Related products", "Contact us")
+      const coloured = styles.some((o) => o !== st && SECTION_OPTIONS.aliases[o]);
+      const doc = elements[0] && elements[0].ownerDocument;
+      if (!coloured && !stdProductPage(doc)) out.push('box-white');
       return;
     }
     if (st === 'body-font-bold') {
