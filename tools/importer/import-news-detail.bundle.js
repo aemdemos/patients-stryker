@@ -4425,7 +4425,6 @@ var CustomImportScript = (() => {
           cImg.replaceWith(block);
         }
         tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2");
-        style(m, d, blockTable(m, "marketo form"), null);
       }
     ],
     // why-powered-fleet-is-key-ems-fire-departments

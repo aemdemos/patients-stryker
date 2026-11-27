@@ -1295,8 +1295,6 @@ const CORRECTIONS = {
       // the product teaser as in DA: a `cards-corp` (teaser, three-up) block, the image beside its text and Learn more link
       const cImg = m.querySelector('a[href*="Sage-CHG-Cloths-Thumbnail"]')?.closest('p'); const cText = find(m, 'p', 'Help address bacteria'); const cMore = [...m.querySelectorAll('p')].find((x) => txt(x) === 'Learn more'); if (cImg && cText && cMore) { [cImg, cText, cMore].forEach((el) => sectionOf(m, el).filter(isSectionMetadata).forEach((t) => t.remove())); const dup = cImg.nextElementSibling; if (dup && dup.tagName === 'P' && !dup.querySelector('strong') && dup.querySelector('a[href="/us/en/sage/products/sage-chg-cloths"]')) dup.remove(); mergeWithPrevious(m, cText); mergeWithPrevious(m, cMore); const block = WebImporter.Blocks.createBlock(d, { name: 'Cards Corp (teaser, three-up)', cells: [[cImg.querySelector('a'), [cText, cMore]]] }); cImg.replaceWith(block); }
       tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2");
-      // the form has nothing beside it: no `form-with-aside` (as in DA)
-      style(m, d, blockTable(m, 'marketo form'), null);
     },
   ],
   // why-powered-fleet-is-key-ems-fire-departments
