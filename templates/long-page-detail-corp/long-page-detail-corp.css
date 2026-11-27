@@ -8,16 +8,23 @@
    - the content starts 15px below the H1, and the sections follow each other 15px apart
      (the source runs them as one column of components with 15px margins) */
 
+/* the paragraph of a `[[box-<colour>]…]` title bar (below): no space under it, the bar
+   filling it */
+body.long-page-detail-corp main .columns p:has(> span:is(.box-orange, .box-blue, .box-teal, .box-purple)) {
+  display: flex;
+  margin-bottom: 0;
+}
+
 /* ---- section style `headline-box`: a large headline the source sets in a white box
    (.largeheadline.has-background.bg-white, 31 pages, e.g. plastic-surgery "Resources",
    "Videos and animations"): its text 20px in at every width, 20px below the box top from
    600px (source padding 20px, top 0 below 840px; below a separator see `separator`) ---- */
-body.long-page-detail-corp main > .section.headline-box > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   padding-inline: calc(var(--container-gutter) + var(--space-block-l));
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.headline-box > .default-content-wrapper {
+  body.long-page-detail-corp main > .section.headline-box > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
     padding-top: var(--space-block-l);
   }
 }
@@ -55,10 +62,29 @@ body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container))
   padding-top: var(--space-block-l);
 }
 
+/* …on phones not above the local navigation card, which keeps the source's own space: 25px
+   under the header (SKILL, TEACH talks, foot & ankle toolkit) */
+body.long-page-detail-corp main:has(> .section:first-child.local-nav-corp-container) {
+  padding-top: 0;
+}
+
 @media (width >= 600px) {
   body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container)) {
     padding-top: var(--space-section);
   }
+}
+
+/* ---- headings that stand for stryker.com's fixed em sizes keep them on phones (the corp
+   heading sizes step down below 600px, as the news pages' real headings do): a Heading 3 with
+   Bold words is 21px (1.5em Futura bold lines, e.g. the endoscopy video titles, webinars
+   "Check back for in-person programs later this year!"), a Heading 2 that is not an
+   underlined section title 24.5px (1.75em, e.g. courses "Webinars") ---- */
+body.long-page-detail-corp main h3:has(strong) {
+  font-size: var(--heading-font-size-l);
+}
+
+body.long-page-detail-corp main h2:not(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xl);
 }
 
 /* ---- a rich-text Heading 2 (not a section title): no rule below it, as on stryker.com
@@ -68,6 +94,25 @@ body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container))
 body.long-page-detail-corp main > .section > .default-content-wrapper h2:not(.underline) {
   padding-bottom: 0;
   border-bottom: 0;
+}
+
+/* ---- gold words (Bold + Italic) in a heading keep the heading's size: the shared styles.css
+   sets them to the patients site's compact gold label size in a Heading 2 (16.8 / 19.9px),
+   but on stryker.com they are the size of the words around them (OR staff form "In the OR"
+   in its 28px statement) ---- */
+body.long-page-detail-corp main :is(h1, h2, h3, h4, h5, h6) :is(em strong, strong em) {
+  font-size: inherit;
+}
+
+/* ---- heading + italic: Egyptienne light, upright (stryker.com span.urw-egyptienne lines at
+   heading sizes, e.g. jr45 "Watch Darwin Chen, M.D. …" 24.5px, the OR staff form statement).
+   A heading's plain words keep the level's font, Bold is Futura bold, Bold + Italic the gold
+   Futura accent (also Bold words inside the Italic, as the markdown merges them; the DA
+   editor's Italic-around-Bold gold words are turned around by long-page-detail-corp.js) ---- */
+body.long-page-detail-corp main :is(h1, h2, h3, h4, h5, h6) em:not(strong em) {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-regular);
 }
 
 /* ---- title section ---- */
@@ -87,45 +132,52 @@ body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .
   background: none;
 }
 
-body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   border-inline: var(--container-gutter) solid transparent;
   padding: var(--space-block-l);
   background-clip: padding-box;
 }
 
-body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > .default-content-wrapper > :last-child {
+/* on a gold headline box the Bold + Italic words are white (stryker.com white Futura bold on
+   .bg-gold: spine resources "The goal of this program is to provide physicians…"), as on the
+   gold panels */
+body.long-page-detail-corp main > .section.headline-box.gold > .default-content-wrapper :is(strong em, em strong) {
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) > :last-child {
   margin-bottom: 0;
 }
 
-body.long-page-detail-corp main > .section.headline-box.gold > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.gold > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-color: var(--color-accent);
 }
 
-body.long-page-detail-corp main > .section.headline-box.light-gray > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.light-gray > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-color: var(--color-surface);
 }
 
-body.long-page-detail-corp main > .section.headline-box.blue > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.blue > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-color: var(--color-navy-bright);
   color: var(--color-white);
 }
 
-body.long-page-detail-corp main > .section.headline-box.dark > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.dark > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-image: var(--panel-dark-gradient);
   color: var(--color-white);
 }
 
-body.long-page-detail-corp main > .section.headline-box.purple > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.purple > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-color: var(--color-purple);
   color: var(--color-white);
 }
 
-body.long-page-detail-corp main > .section.headline-box.purple-gradient > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.purple-gradient > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-image: var(--long-page-detail-corp-purple-gradient);
   color: var(--color-white);
 }
 
-body.long-page-detail-corp main > .section.headline-box.gray-gradient > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.gray-gradient > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-image: var(--long-page-detail-corp-gray-gradient);
   color: var(--color-white);
 }
@@ -180,6 +232,18 @@ body.long-page-detail-corp main > .section {
    rep-portal 320px icons; columns-corp makes images fill the cell) ---- */
 body.long-page-detail-corp main > .section .columns .columns-img-col img {
   width: auto;
+}
+
+/* section style `spaced-items`: the section's list as in the source's padded white rich-text
+   box, 10px in on every side, with a blank line after each item but the last (stryker.com
+   line breaks at the end of the items: spine resources BioSkills "Offering six stations…";
+   line breaks at the end of a list item do not render on Edge Delivery) */
+body.long-page-detail-corp main > .section.spaced-items :is(ul, ol) {
+  margin: var(--space-block-s);
+}
+
+body.long-page-detail-corp main > .section.spaced-items li:not(:last-child) {
+  margin-bottom: 1lh;
 }
 
 /* ---- downloads (Cards Corp resources) ----
@@ -261,6 +325,26 @@ body.long-page-detail-corp main .columns :is(.columns-img-col, p:has(.dm-video-w
   }
 }
 
+/* ---- Large Headlines (`Columns (large-headline)`) in this template: the last line of a cell
+   ends the box (no heading gap under it: the Mako Live thank-you title 4px above its subtitle
+   on stryker.com); on phones the 1.5vw text lines sit on the source paragraph's 21px line
+   boxes, 28.875px apart (biologics, foot & ankle, courses intro: 11.25px text); a title line
+   (Heading 1) is followed by the next line with no gap either (courses "Events", 7px above
+   "Your opportunity to learn is here." on stryker.com, its 1.35 line box) ---- */
+body.long-page-detail-corp main .columns.large-headline > div > div > :is(:last-child, h1) {
+  margin-bottom: 0;
+}
+
+body.long-page-detail-corp main .columns.large-headline > div > div > p {
+  line-height: calc(var(--body-font-size-xl) * var(--paragraph-line-height));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns.large-headline > div > div > p {
+    line-height: var(--heading-line-height-hero);
+  }
+}
+
 /* ---- section style `column-10-12`: the Virtual Learning Center video item ----
    A centred 10/12 column, as the stryker.com AEM grid sets it (10 columns, offset 1:
    1175px at 1440px), the copy 15px in (1144px at x=148). The downloads row is 11/12 wide
@@ -314,6 +398,12 @@ body.long-page-detail-corp main > .section.column-10-12:not(.disclaimer):has(> .
 
 body.long-page-detail-corp main > .section.disclaimer.column-10-12 p {
   line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
+}
+
+/* Bold in the small print is the running font's bold (stryker.com Humanist bold: CLOUT
+   "References", "Caution", SKILL "This website is intended solely for…"), not Futura */
+body.long-page-detail-corp main > .section.disclaimer strong {
+  font-family: var(--body-font-family);
 }
 
 @media (width >= 600px) {
@@ -380,6 +470,23 @@ body.long-page-detail-corp main .dm-video-wrapper:not(.is-playing) .dm-video {
   object-fit: cover;
 }
 
+/* a hero video slide keeps the stryker.com slide's 3:1 shape, the video's top showing (the
+   instruments 16:9 video: 1440x480 of it, under the gold bar; the 3:1 CR and endoscopy videos
+   fill it as they are), not the video's own shape */
+body.long-page-detail-corp main .hero-corp .dm-video-wrapper:not(.is-fullscreen) .dm-video {
+  width: 100%;
+  border: 0;
+}
+
+/* (on phones the video keeps its own shape, as stryker.com shows it there) */
+@media (width >= 600px) {
+  body.long-page-detail-corp main .hero-corp .dm-video-wrapper:not(.is-fullscreen) .dm-video {
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
 /* ---- large headline in a Columns cell (medical-education pages, e.g. jr45 "What would you
    do? / Complex revision total hip"): one font per line, 1.35x the size apart (75.6px at
    56px on the source; columns-corp spaces mixed-font news headlines 1.66x) ---- */
@@ -400,6 +507,22 @@ body.long-page-detail-corp main .default-content-wrapper > h1:has(+ p > span[cla
    styles `p-2` / `p-2-5` for copy that is all 28px / 35px (e.g. room-design intro) ---- */
 body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
+  --long-page-detail-corp-scale-0-8: 0.8em; /* source span.fontsize-8em */
+
+  /* the column box gradients (stryker.com .bg-*-gradient in a .inverse box: dark on the right) */
+  --long-page-detail-corp-box-line-height: 1.55; /* the box lines on phones (21px, 32.5px) */
+  --long-page-detail-corp-box-gold-gradient: linear-gradient(-90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+  --long-page-detail-corp-box-gray-gradient: linear-gradient(-90deg, var(--color-secondary), var(--color-surface-muted) 20%);
+  --long-page-detail-corp-box-dark-purple-gradient: linear-gradient(-90deg, var(--color-secondary), #594b61);
+  --long-page-detail-corp-box-dark-teal-gradient: linear-gradient(-90deg, var(--color-secondary), #3e5245);
+  --long-page-detail-corp-box-dark-blue-gradient: linear-gradient(-90deg, var(--color-secondary), #425361);
+  --long-page-detail-corp-box-dark-orange-gradient: linear-gradient(-90deg, var(--color-secondary), #635c4f);
+  --long-page-detail-corp-scale-1-5: 1.5em; /* size spans in a heading, relative to it */
+  --long-page-detail-corp-scale-1-75: 1.75em;
+  --long-page-detail-corp-scale-2: 2em;
+  --long-page-detail-corp-hero-line-height: 1.35; /* measured: stryker.com hero headline lines (103.95px at 77px, 28.35px at 21px) */
+  --long-page-detail-corp-arrow-0-8-height: 5px; /* half the link arrow in 11.2px text (stryker.com: a 9.52px icon, 9px tall, its top level with the capitals) */
+  --long-page-detail-corp-arrow-0-8-width: 5px;
   --long-page-detail-corp-serif-copy-line-height: 1.6; /* measured: a 14px Egyptienne span in a 14px / 19.25px source paragraph renders 22.4px lines */
   --long-page-detail-corp-serif-item-line-height: 1.643; /* the same in a 20px source list item: 23px */
   --long-page-detail-corp-fast-facts-title: 27px; /* measured: the source band title (.c-fastfacts-title) from 840px, OR staff */
@@ -412,6 +535,12 @@ body.long-page-detail-corp {
   --long-page-detail-corp-headline-unit: 2vw; /* 1 of a `headline-N` size, below 600px */
   --long-page-detail-corp-download-box: 240px; /* a download cover's box outside the VLC column */
   --long-page-detail-corp-download-cover: 238px; /* the cover's maximum height there */
+}
+
+/* `[[text-0-8]…]`: 0.8x the text around it (stryker.com span.fontsize-8em on part of a
+   paragraph, e.g. the TEACH talks "• TSA • RSA • ReUnion S" link groups: 11.2px) */
+body.long-page-detail-corp main span.text-0-8 {
+  font-size: var(--long-page-detail-corp-scale-0-8);
 }
 
 body.long-page-detail-corp main span.text-1-5 {
@@ -445,6 +574,13 @@ body.long-page-detail-corp main > .section.p-2-5 > div :is(p, li) {
   line-height: var(--heading-line-height);
 }
 
+/* `p-3-5`: copy that is all 49px (stryker.com 1.75em in 2em: build-your-asc "You only get one
+   chance to launch your ASC. We help you do it right.", at every width) */
+body.long-page-detail-corp main > .section.p-3-5 > div :is(p, li) {
+  font-size: var(--long-page-detail-corp-copy-3-5);
+  line-height: var(--heading-line-height);
+}
+
 /* `full-width-image` with a phone image: the phone image (2nd) below 600px, the desktop
    image (1st) from 600px */
 body.long-page-detail-corp main > .section.full-width-image > .default-content-wrapper > p:first-child:has(+ p) {
@@ -458,6 +594,28 @@ body.long-page-detail-corp main > .section.full-width-image > .default-content-w
 
   body.long-page-detail-corp main > .section.full-width-image > .default-content-wrapper > p:first-child + p {
     display: none;
+  }
+}
+
+/* section style `light-gray-titles`: a fully Bold paragraph of the section (in its tab panels
+   too) is a light-grey 21px Futura bold title (stryker.com nse MIS attachments accessories
+   "Precision Match Head" #b2b4ae over each product row); Bold paragraphs inside blocks keep
+   their look. Bold paragraphs, not headings: in a `tabbed` section headings become tabs */
+body.long-page-detail-corp main > .section.light-gray-titles .default-content-wrapper > p:has(> strong:only-child) {
+  color: var(--color-surface-muted);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+/* …right under a heading (the underlined "Distal" / "Proximal" title): the source title's own
+   gap below it too, 35px under the heading (45px from 600px) */
+body.long-page-detail-corp main > .section.light-gray-titles .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) + p:has(> strong:only-child) {
+  margin-top: calc(var(--space-block) + var(--space-block-l));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.light-gray-titles .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) + p:has(> strong:only-child) {
+    margin-top: calc(var(--space-block) + var(--space-section));
   }
 }
 
@@ -544,8 +702,33 @@ body.long-page-detail-corp main > .section.spacer.xxlarge:not(.separator) {
   }
 }
 
+/* `spacer, wide`: a source percentage margin (environmental programs, 3% of the width):
+   30px from 600px, no space on phones */
+body.long-page-detail-corp main > .section.spacer.wide:not(.separator) {
+  height: 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.spacer.wide:not(.separator) {
+    height: var(--space-section);
+  }
+}
+
 body.long-page-detail-corp main > .section.spacer + .section.separator {
   margin-top: 0;
+}
+
+/* a separator under a headline box that ends in a Heading 2: the box keeps the heading's 15px
+   margin and its own 20px bottom padding under it, 35px from the heading to the rule (65px from
+   600px; stryker.com SKILL "Contact your local representative to find out more!") */
+body.long-page-detail-corp main > .section.headline-box:has(> .default-content-wrapper > h2:last-child) + .section.separator {
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.headline-box:has(> .default-content-wrapper > h2:last-child) + .section.separator {
+    margin-top: calc(var(--space-section) + var(--space-block) + var(--space-block-l));
+  }
 }
 
 /* a separator right after downloads: 55px from the last titles, as on the source (its top
@@ -556,7 +739,7 @@ body.long-page-detail-corp main > .section:not(.column-10-12):has(> .cards-corp-
 
 /* a `headline-box` right below the rule: the box's 20px top on the rule's 50px (from 600px) */
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.separator.headline-box > .default-content-wrapper:first-child {
+  body.long-page-detail-corp main > .section.separator.headline-box > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)):first-child {
     padding-top: calc(var(--space-section-l) + var(--space-block-l));
   }
 }
@@ -602,7 +785,7 @@ body.long-page-detail-corp main > .section.headline-box:has(+ .section.headline-
   margin-bottom: 0;
 }
 
-body.long-page-detail-corp main > .section.headline-box + .section.headline-box:not(.separator) > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box + .section.headline-box:not(.separator) > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   padding-top: 0;
 }
 
@@ -741,11 +924,23 @@ body.long-page-detail-corp main span.headline-6 {
   --long-page-detail-corp-headline-size: 6;
 }
 
+body.long-page-detail-corp main span.headline-6-5 {
+  --long-page-detail-corp-headline-size: 6.5;
+}
+
+body.long-page-detail-corp main span.headline-7 {
+  --long-page-detail-corp-headline-size: 7;
+}
+
+body.long-page-detail-corp main span.headline-8 {
+  --long-page-detail-corp-headline-size: 8;
+}
+
 body.long-page-detail-corp main span.headline-9 {
   --long-page-detail-corp-headline-size: 9;
 }
 
-body.long-page-detail-corp main span:is(.headline-1-5, .headline-2, .headline-2-5, .headline-3, .headline-3-5, .headline-4, .headline-4-5, .headline-5, .headline-5-5, .headline-6, .headline-9) {
+body.long-page-detail-corp main span:is(.headline-1-5, .headline-2, .headline-2-5, .headline-3, .headline-3-5, .headline-4, .headline-4-5, .headline-5, .headline-5-5, .headline-6, .headline-6-5, .headline-7, .headline-8, .headline-9) {
   font-size: calc(var(--long-page-detail-corp-headline-size) * var(--long-page-detail-corp-headline-unit));
   line-height: var(--heading-line-height-hero);
 }
@@ -760,6 +955,11 @@ body.long-page-detail-corp main span[class*="headline-"]:not(.serif) {
 body.long-page-detail-corp main span.serif {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-regular);
+}
+
+/* `**[[serif]…]**`: bold Egyptienne (stryker.com plain bold in Egyptienne text) */
+body.long-page-detail-corp main :is(strong, b) > span.serif {
+  font-weight: inherit;
 }
 
 /* this template's colour section styles (stryker.com .bg-purple, .bg-dark-purple-gradient,
@@ -781,6 +981,27 @@ body.long-page-detail-corp main > .section.gray-gradient:not(.headline-box) {
   background-image: var(--long-page-detail-corp-gray-gradient);
 }
 
+/* section style `teal-titles`: the section's titles teal (stryker.com #4c7d7a Futura bold on
+   environmental programs "Stryker's locations using renewable energy", the subtitle "Doing more
+   with less through additive manufacturing"): a Heading 3, or the Heading 4 under one (the
+   Heading 3 over a subtitle keeps the text colour); the subtitle at 17.5px right under it */
+body.long-page-detail-corp main > .section.teal-titles > .default-content-wrapper > :is(h3:not(:has(+ h4)), h4) {
+  color: var(--color-primary);
+}
+
+body.long-page-detail-corp main > .section.teal-titles > .default-content-wrapper > h3 + h4 {
+  margin-top: 0;
+  font-size: var(--body-font-size-l);
+}
+
+/* section style `gold-titles`: the section's headings gold in all their words (stryker.com
+   instruments new accounts "New Accounts" on blue: Futura bold and Egyptienne both gold); in a
+   `headline-box` its Heading 3 is the 3vw title (themes) */
+body.long-page-detail-corp main > .section.gold-titles > .default-content-wrapper > :is(h1, h2, h3, h4),
+body.long-page-detail-corp main > .section.gold-titles > .default-content-wrapper > :is(h1, h2, h3, h4) :is(em, strong) {
+  color: var(--color-accent);
+}
+
 /* section style `gold-bar`: an empty stryker.com gold panel (OR staff, under the title), a
    34px gold bar the container width (edge to edge on phones) */
 body.long-page-detail-corp main > .section.gold-bar {
@@ -790,6 +1011,7 @@ body.long-page-detail-corp main > .section.gold-bar {
   margin-inline: auto;
   background-color: var(--color-accent);
 }
+
 
 /* section style `image-aside` (with `tabbed`; Mako surgeon campaign clinical studies / HRO
    tabs): in each tab, the image beside the accordion from 600px, a third and two thirds of the
@@ -855,7 +1077,7 @@ body.long-page-detail-corp main > .section.headline-box.column-8-12 > :is(.defau
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
+  body.long-page-detail-corp main > .section.headline-box.column-8-12 > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
     max-width: calc(var(--container-max) * 2 / 3);
     margin-inline: max(0px, calc((100% - var(--container-max)) / 2)) auto;
     margin-bottom: calc(2 * var(--space-block));
@@ -900,7 +1122,7 @@ body.long-page-detail-corp main .accordion .accordion-item-body > :last-child:no
 /* `column-8-12` title boxes (ispies): the source box's own padding, 4% at the top and 3% on
    the left of its width (36 / 27px at 1440) from 600px */
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
+  body.long-page-detail-corp main > .section.headline-box.column-8-12 > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
     padding-block-start: 2.5vw;
     padding-inline-start: 1.9vw;
   }
@@ -1056,6 +1278,19 @@ body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple
   padding-block: var(--space-section);
 }
 
+/* ---- the two-tone display heading in Columns (a Heading 2 with Egyptienne words and gold Bold +
+   Italic words): 35px at every width on lines 1.06 apart, as stryker.com's 2.5em rich text on
+   this template's pages (webinars "Check out past recordings on iSPIESOnDemand.", 37.1px lines
+   at 375 / 1000 / 1440); the corp news size from 600px (43.75px, lines 1.33) is the news
+   pages' ---- */
+body.long-page-detail-corp main .columns {
+  --columns-corp-display-size: var(--columns-corp-display-size-s);
+}
+
+body.long-page-detail-corp main .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
+  line-height: var(--heading-line-height);
+}
+
 body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple) > .default-content-wrapper > h2:only-child {
   margin-bottom: var(--space-block-l);
   padding-bottom: var(--space-block-xs);
@@ -1119,4 +1354,335 @@ body.long-page-detail-corp main .columns .columns-box:has(span[class*="headline-
   body.long-page-detail-corp main .columns .columns-box:has(span[class*="headline-"]):has(+ p .dm-video-wrapper) {
     margin-bottom: var(--space-section);
   }
+}
+
+/* ---- a bold + underline link inside a sentence or a list of links (stryker.com
+   span.standalone-link, always uppercase: TEACH talks "• TSA • RSA • REUNION S") ---- */
+body.long-page-detail-corp main strong > a:any-link:has(u) u {
+  text-transform: uppercase;
+}
+
+/* ---- the local navigation keeps the source's space below it, not this template's 15px
+   section gap: 20px under the phone card (it has its own 20px) and 30px under the bar from
+   600px (TEACH talks: 60px to the logo with the empty large headline after it) ---- */
+body.long-page-detail-corp main > .section.local-nav-corp-container {
+  margin-bottom: calc(2 * var(--space-block-l));
+}
+
+body.long-page-detail-corp main > .section.local-nav-corp-container .local-nav-corp-nav {
+  margin-top: calc(var(--space-block-l) + var(--space-block-xs));
+}
+
+/* …above a slide hero (corporate responsibility, ASC, instruments, spine medical education):
+   the card 30px from the edges and 15px under the header (40px above the hero, as the others) */
+body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) .local-nav-corp-nav {
+  margin: var(--space-block) var(--space-block) 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.local-nav-corp-container {
+    margin-bottom: var(--space-section);
+  }
+
+  body.long-page-detail-corp main > .section.local-nav-corp-container .local-nav-corp-nav,
+  body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) .local-nav-corp-nav {
+    margin: 0;
+  }
+}
+
+/* `[[text-0-8]…]`: its bold + underline links too (the standalone link look sets its own 14px) */
+body.long-page-detail-corp main span.text-0-8 strong > a:any-link,
+body.long-page-detail-corp main span.text-0-8 strong > a:any-link u {
+  font-size: inherit;
+}
+
+/* …and their arrow at the source's size for 11.2px text (9 × 5px, from the capitals' top to
+   0.5px below the baseline) */
+body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::after {
+  border-width: var(--long-page-detail-corp-arrow-0-8-height) 0 var(--long-page-detail-corp-arrow-0-8-height) var(--long-page-detail-corp-arrow-0-8-width);
+  vertical-align: -0.5px;
+}
+
+/* ---- the hero (Hero Corp, slide and banner): its text sizes are the bracket tags of the
+   text (`[[headline-3-5,serif]…]`, `[[text-1-5]…]`), so its plain copy is the 14px copy, not
+   the block's 2vw default (stryker.com hero overlays and banner text boxes); the title of a
+   `large` / `xlarge` hero keeps the variant's size, the copy of a `large-copy` hero its 17.5px */
+body.long-page-detail-corp main .hero-corp:not(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy, .xlarge-copy, .xlarge-serif-copy, .headline-copy, .headline-serif-copy) > div:last-child > :not(h1, h2),
+body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge, .serif-gold-title, .fixed-xlarge-title) > div:last-child > :is(h1, h2) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* …on phones its headline lines sit on 21px lines, as the large headline paragraphs above
+   (stryker.com: the line in 21px, 28.875px lines; build-your-asc "Expertise" 34px under the
+   11px line above it) */
+body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) {
+  font-size: var(--body-font-size-xl);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+/* …on phones a slide whose text goes below its image ends 15px under its text, and the page
+   goes on 30px below the hero (stryker.com: the button's 15px, the section's 30px) */
+body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp.text-below > div:last-child {
+  padding-bottom: var(--space-block);
+}
+
+body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.text-below) {
+  margin-bottom: var(--space-section);
+}
+
+/* …a slide shown as its text alone on phones, or with its video (instruments), starts 20px
+   under the page's local nav, its text box at the top (stryker.com contact information) */
+body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:is(.text-alone, .video-on-phones)) {
+  margin-bottom: var(--space-block-l);
+}
+
+/* (a video shown on phones: its text box right under it, as on stryker.com) */
+body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp:is(.text-alone, .video-on-phones) > div:last-child {
+  padding-top: 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp.text-below > div:last-child {
+    padding-bottom: 0;
+  }
+
+  body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.text-below) {
+    margin-bottom: var(--space-block);
+  }
+
+  /* right under a hero the gold panel touches the slide's bottom edge (stryker.com instruments
+     pages) */
+  body.long-page-detail-corp main > .section.hero-corp-container:has(+ .section.gold-bar) {
+    margin-bottom: 0;
+  }
+}
+
+/* …the copy 20px under the title (Heading 1), a button right under it 20px, 30px from 600px
+   (stryker.com: the Large Headline's spacing; build-your-asc / implants-and-disposables "TALK
+   WITH US" 30-45px under the title at 1440, 20-35px at 390) */
+body.long-page-detail-corp main .hero-corp > div:last-child > :is(h1, h2) + :not(.button-wrapper) {
+  margin-top: var(--space-block-l);
+}
+
+body.long-page-detail-corp main .hero-corp > div:last-child > :is(h1, h2) + .button-wrapper {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .hero-corp > div:last-child > :is(h1, h2) + .button-wrapper {
+    margin-top: var(--space-section);
+  }
+}
+
+/* ---- the hero title (Heading 1) of a `Hero Corp` without a size variant: 2.5vw, the most
+   common stryker.com hero size (span.fontsize-2-5-vw: 35px at 1440, 18.75px at 375; forms,
+   instruments, environmental programs, SKILL), Egyptienne light, Bold words Futura bold.
+   `large` / `xlarge` (blocks/hero-corp) set 4vw / 5.5vw. A title that still holds size tags
+   (pages not yet re-imported) keeps their sizes ---- */
+body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge, .serif-gold-title, .fixed-xlarge-title) > div:last-child :is(h1, h2):not(:has(span[class*="text-"], span[class*="headline-"])) {
+  font-family: var(--heading-font-family);
+  font-size: calc(2.5 * var(--hero-corp-title-unit));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--hero-corp-title-line-height);
+}
+
+/* …its headline lines 1.35x their size apart (stryker.com hero lines: 103.95px at 77px) */
+body.long-page-detail-corp main .hero-corp span[class*="headline-"] {
+  line-height: var(--long-page-detail-corp-hero-line-height);
+}
+
+/* size tags inside a Heading 2 / 3: relative to the heading, as the source span in it
+   (build-your-asc "ASC New Build Playbook": 1.75em of the 26.25px `h3-1-25` heading, 45.9px;
+   38.3px on phones) */
+body.long-page-detail-corp main :is(h2, h3) span.text-1-25 { font-size: var(--corp-font-scale-1-25); }
+body.long-page-detail-corp main :is(h2, h3) span.text-1-5 { font-size: var(--long-page-detail-corp-scale-1-5); }
+body.long-page-detail-corp main :is(h2, h3) span.text-1-75 { font-size: var(--long-page-detail-corp-scale-1-75); }
+body.long-page-detail-corp main :is(h2, h3) span.text-2 { font-size: var(--long-page-detail-corp-scale-2); }
+
+/* `[[box-<gradient>]…]`: a Large Headline in a coloured gradient box in a column (stryker.com
+   .c-largeheadline .has-background.bg-*-gradient, build-your-asc phases): 20px padding, the
+   lines centred */
+body.long-page-detail-corp main span:is(.box-gold-gradient, .box-gray-gradient, .box-dark-purple-gradient, .box-dark-teal-gradient, .box-dark-blue-gradient, .box-dark-orange-gradient) {
+  display: block;
+  padding: var(--space-block-l);
+  font-size: var(--body-font-size-xl);
+  margin-bottom: var(--space-block-l);
+  line-height: var(--long-page-detail-corp-box-line-height);
+  text-align: center;
+}
+
+/* (on phones the lines sit on 21px lines, 32.5px apart as stryker.com's 35 + 30px line boxes,
+   a 105px box; 14px lines from 600px); 20px to what follows on phones, 30px from 600px (the
+   margin collapses with the paragraph's) */
+@media (width >= 600px) {
+  body.long-page-detail-corp main span:is(.box-gold-gradient, .box-gray-gradient, .box-dark-purple-gradient, .box-dark-teal-gradient, .box-dark-blue-gradient, .box-dark-orange-gradient) {
+    margin-bottom: calc(2 * var(--space-block));
+    font-size: var(--body-font-size-m);
+    line-height: var(--paragraph-line-height);
+  }
+}
+
+body.long-page-detail-corp main span.box-gold-gradient { background: var(--long-page-detail-corp-box-gold-gradient); }
+body.long-page-detail-corp main span.box-gray-gradient { background: var(--long-page-detail-corp-box-gray-gradient); }
+body.long-page-detail-corp main span.box-dark-purple-gradient { background: var(--long-page-detail-corp-box-dark-purple-gradient); }
+body.long-page-detail-corp main span.box-dark-teal-gradient { background: var(--long-page-detail-corp-box-dark-teal-gradient); }
+body.long-page-detail-corp main span.box-dark-blue-gradient { background: var(--long-page-detail-corp-box-dark-blue-gradient); }
+body.long-page-detail-corp main span.box-dark-orange-gradient { background: var(--long-page-detail-corp-box-dark-orange-gradient); }
+
+/* section style `cell-padding`: a 5% bottom padding in each column cell, of the cell's width
+   (on its last element, so the 5% is of the cell, not the row; stryker.com column rich text
+   with padding-bottom 5%, build-your-asc phases: 22px at 440px) */
+body.long-page-detail-corp main > .section.cell-padding .columns > div > div > :last-child {
+  padding-bottom: 5%;
+}
+
+/* the boxed cards of a row (`boxed-all`, CLOUT design cards): as tall as the row's tallest,
+   as stryker.com's dimensional boxes, from 600px where they sit side by side */
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns.boxed-all > div > div {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  body.long-page-detail-corp main .columns.boxed-all .columns-box {
+    flex: 1;
+  }
+}
+
+/* grey cards of a title and a link (`gray-all`, CLOUT clinical evidence "See results"): the
+   link at the card's bottom, level across the row (stryker.com pads the shorter cards) */
+body.long-page-detail-corp main > .section .columns.stack:is(.gray-all, .gray-cards) .columns-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* `[[box-<colour>]…]`: a solid colour title bar over the rest of a column (stryker.com rich
+   text .has-background.bg-orange / -blue / -teal / -purple, giving-back tiles): white text,
+   10px in (5% on the left), the paragraph's 15px below the text inside the bar, the image
+   right under it; the bars of a row as tall as the tallest */
+
+body.long-page-detail-corp main span:is(.box-orange, .box-blue, .box-teal, .box-purple) {
+  flex: 1;
+  padding: var(--space-block-s) var(--space-block-s) calc(var(--space-block-s) + var(--space-block)) 5%;
+  color: var(--color-white);
+  line-height: var(--heading-line-height);
+}
+
+body.long-page-detail-corp main span.box-orange { background: var(--color-accent-link-hover); }
+body.long-page-detail-corp main span.box-blue { background: var(--color-navy-bright); }
+body.long-page-detail-corp main span.box-teal { background: var(--color-primary); }
+body.long-page-detail-corp main span.box-purple { background: var(--color-purple); }
+
+/* line spacing in the boxed and purple-last rows (stryker.com: CLOUT design card lists 1.15;
+   giving-back partner titles and the purple stats 1.15, its lists 1.43) */
+body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns.purple-last.block .columns-box p {
+  line-height: var(--body-line-height-l);
+}
+
+body.long-page-detail-corp main > .section .columns-wrapper .columns.boxed-all > div > div li,
+body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns.purple-last.block > div > div p:has(> span.text-1-25) {
+  line-height: var(--body-line-height-l);
+}
+
+body.long-page-detail-corp main > .section .columns-wrapper .columns.purple-last > div > div li {
+  line-height: var(--body-line-height);
+}
+
+/* the grey jump bar (Sticky Nav) right under a hero, as on stryker.com (CLOUT, CR hub, spine
+   medical education resources: no gap) */
+body.long-page-detail-corp main > .section.hero-corp-container:has(+ .section.sticky-nav-container) {
+  margin-bottom: 0;
+}
+
+/* a list label over its nested list in the CLOUT design cards (`boxed-all`: "Variables
+   Collected:", "Inclusion:", "Patients were assessed at") in the list's own 17.5px, as on
+   stryker.com (its 1.25em tag is relative to the 1.25x copy already) */
+body.long-page-detail-corp main .columns.boxed-all li > p > span.text-1-25 {
+  font-size: inherit;
+}
+
+/* Statistics (count-up): stryker.com number counters (CLOUT safety outcomes) in their source
+   sizes, as the Large Headline figures: the figure 6.5x the headline unit (91px at 1440px,
+   49px on phones; the lone 94% 7x), the label 1.5x (21px / 11.25px) in Futura bold, its
+   "(n=…)" in the body font */
+body.long-page-detail-corp main .statistics {
+  --statistics-number-size: calc(6.5 * var(--long-page-detail-corp-headline-unit));
+}
+
+body.long-page-detail-corp main .statistics.cols-1 {
+  --statistics-number-size: calc(7 * var(--long-page-detail-corp-headline-unit));
+}
+
+body.long-page-detail-corp main .statistics .statistics-value {
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp main .statistics .statistics-desc {
+  --statistics-desc-size: calc(1.5 * var(--long-page-detail-corp-headline-unit));
+
+  font-size: var(--statistics-desc-size);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp main .statistics .statistics-desc strong {
+  font-family: var(--display-font-family);
+}
+
+/* a banner with `shadow` (stryker.com .imgBoxId.bg-shadow: rep-portal, e-Lab): the soft
+   shadow around the banner, at every width; a `half-text` banner has it around its image only,
+   not the gold text box stacked above the image on phones (e-Lab: the source's shadow is on the
+   image box) */
+body.long-page-detail-corp main > .section.shadow .hero-corp.banner:not(.half-text),
+body.long-page-detail-corp main > .section.shadow .hero-corp.banner.half-text > div:first-child {
+  box-shadow: var(--shadow-soft);
+}
+
+/* buttons in a banner (rep-portal "Register" / "Sign in"): 25px in from the text, as the
+   stryker.com curated CTA box */
+body.long-page-detail-corp main .hero-corp.banner :is(p.button-wrapper, p.button-wrapper + p:has(> a.link-strong)) {
+  margin-left: calc(var(--space-block) + var(--space-block-s));
+}
+
+/* a banner subheading (`[[text-1-75]…]`, rep-portal "Rep portal"): 21px on phones, 24.5px from
+   600px, as the stryker.com large-headline h2 */
+body.long-page-detail-corp main .hero-corp.banner span.text-1-75 {
+  font-size: var(--body-font-size-xl);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .hero-corp.banner span.text-1-75 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* link groups in a column (CR hub "Good business"): a group label 20px above its first link and
+   stryker.com's blank line above it after the group before (45px from the last link) */
+body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns p:is(:has(> span.text-1-25:only-child > strong:only-child), :has(> strong:only-child > span.text-1-25:only-child)):has(+ p > a.link-strong) {
+  margin-bottom: calc(var(--space-block) + var(--space-block-xs));
+}
+
+body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns p:has(> a.link-strong) + p:is(:has(> span.text-1-25:only-child > strong:only-child), :has(> strong:only-child > span.text-1-25:only-child)) {
+  margin-top: calc(var(--space-section) + var(--space-block));
+}
+
+/* section style `right`: right-aligned text (stryker.com rich text set right, environmental
+   programs "*As of 12/31/24…") */
+body.long-page-detail-corp main > .section.right {
+  text-align: right;
+}
+
+/* a standalone link (bold + underline) in a section with a copy size or serif style (bunion
+   "PATIENTS.STRYKER.COM ▸" under 17.5px Egyptienne copy): Futura bold 14px, as the stryker.com
+   action link, not the copy's font and size */
+body.long-page-detail-corp main > .section:is(.serif, .p-1-25, .p-1-5, .p-1-75, .p-2) a.link-strong:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
 }

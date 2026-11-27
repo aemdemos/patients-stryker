@@ -28,6 +28,35 @@ body.corp .accordion .accordion-item-body {
   border: 0;
 }
 
+/* large-copy: 17.5px panel copy (stryker.com .fontsize-1-25em on the panel text: Mako
+   surgeon campaign, SKILL, ispies), lines 21.25px apart */
+body.corp .accordion.large-copy .accordion-item-body :is(p, ul, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+/* large-titles: a panel's Heading 2 at 28px, lines 1.06 apart, with a blank line under it
+   (stryker.com Mako surgeon campaign "Mako Total Knee key clinical studies / Soft tissue",
+   .fontsize-2em) */
+body.corp .accordion.large-titles .accordion-item-body h2 {
+  margin-bottom: var(--space-section-l);
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
+/* blue-titles: the panels' Bold headings in the body font, Humanist bold; a Heading 3 navy
+   (stryker.com SKILL Assist MAX "Intuitive", "Autonomous": 21px #1c5687; "Invite your
+   guest/viewers": a 17.5px Heading 4, black) */
+body.corp .accordion.blue-titles .accordion-item-body :is(h3, h4),
+body.corp .accordion.blue-titles .accordion-item-body :is(h3, h4) strong {
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp .accordion.blue-titles .accordion-item-body h3 {
+  color: var(--color-navy-bright);
+}
+
 /* a panel made of several sections (`accordion-continue`): the corp section gap
    between them, 20px (30px from 600px) */
 body.corp .accordion .accordion-item-body > .section:not(:last-child) {

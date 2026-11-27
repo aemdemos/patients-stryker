@@ -32,6 +32,10 @@ function decorateYouTube(block) {
     const p = a.parentElement;
     const text = a.textContent.trim();
     if (!YOUTUBE.test(a.href) || p.textContent.trim() !== text) return;
+    // in `media-pair`, a link alone right under an image is that image's link (an image that
+    // opens the video on YouTube, stryker.com SKILL Assist MAX), not a player
+    const prev = p.previousElementSibling;
+    if (block.classList.contains('media-pair') && prev?.matches('p') && prev.querySelector(':scope > picture')) return;
     const id = youTubeId(a.href);
     if (!id) return;
 
@@ -51,6 +55,15 @@ function decorateYouTube(block) {
 // the box variants (columns-corp.css): which cells hold a coloured text box, and whether the
 // box is the cell's text (`-last`, `-2`, `-all`) or only its first line (`-lead`)
 const BOX_VARIANT = /\b(?:(?:gray|purple)-last|gray-2|(?:gray|boxed|blue)-all|(?:gold|dark)-lead)\b/;
+// variants that include a box variant (their CSS groups with it, columns-corp.css): jr45
+// faculty and MIS product details (grey last cell), CLOUT grey cards (every cell), SKILL
+// NeuroElite gold lead bar
+const BOX_BUNDLES = {
+  faculty: 'gray-last',
+  'product-details': 'gray-last',
+  'gray-cards': 'gray-all',
+  'gold-lead-copy': 'gold-lead',
+};
 const MEDIA = '.columns-img-col, .columns-youtube, .dm-video-wrapper';
 
 /**
@@ -60,9 +73,10 @@ const MEDIA = '.columns-img-col, .columns-youtube, .dm-video-wrapper';
  * @param {Element} block The columns block
  */
 function decorateBoxes(block) {
+  const bundle = Object.keys(BOX_BUNDLES).find((name) => block.classList.contains(name));
   const match = block.className.match(BOX_VARIANT);
-  if (!match) return;
-  const variant = match[0];
+  if (!match && !bundle) return;
+  const variant = match ? match[0] : BOX_BUNDLES[bundle];
   [...block.children].forEach((row) => {
     const cells = [...row.children];
     let targets = cells;
@@ -194,13 +208,62 @@ export default function decorate(block) {
       // tell them from text that only opens in bold (e.g. "John: …"), which CSS cannot
       col.querySelectorAll('p, h1, h2').forEach((el) => {
         const strong = el.querySelector(':scope > strong:only-child');
-        if (strong && strong.textContent.trim() === el.textContent.trim()) {
+        // …or Bold line by line (one Bold per line around the line breaks, as the importer and
+        // the DA editor write it: ASC "**Mako SmartRobotics™**<br>**robotic-arm assisted
+        // surgery**"), with no plain and no Italic words; not a Heading 1 (a cell title, not
+        // a stat number: jr45 "Who, why and how?" over its Bold second line)
+        const boldLines = el.tagName !== 'H1' && el.querySelector(':scope > br')
+          && [...el.childNodes].every((n) => n.nodeName === 'BR' || (n.nodeType === 3 && !n.textContent.trim())
+            || (n.nodeName === 'STRONG' && !n.querySelector('em, i')));
+        // a Heading 1 all in gold with no digit is a cell title, not a stat number (jr45 "Who,
+        // why and how? Exploring partial knee procedures", 4vw)
+        const goldTitle = el.tagName === 'H1' && strong?.querySelector('em, i') && !/\d/.test(el.textContent);
+        const wholeBold = strong && strong.textContent.trim() === el.textContent.trim();
+        if (!goldTitle && (wholeBold || boldLines)) {
           el.classList.add('columns-bold');
         }
       });
 
+      // fully Italic Heading 2/3s too (Large Headline Egyptienne lines): every word in
+      // italic, however the italic is split (the DA editor ends an italic run at each line
+      // break)
+      col.querySelectorAll('h2, h3').forEach((el) => {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        let italic = false;
+        let plain = false;
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          if (node.textContent.trim()) {
+            if (node.parentElement.closest('em, i') && el.contains(node.parentElement.closest('em, i'))) {
+              italic = true;
+            } else plain = true;
+          }
+        }
+        if (italic && !plain) el.classList.add('columns-italic');
+      });
+
+      // a Heading 2 all in Bold with a gold (Bold + Italic) part and no plain words (stryker.com
+      // ASC operating room "A. Mako": a Futura bold heading with a gold letter), not the
+      // two-tone display heading (gold words + plain serif words)
+      col.querySelectorAll('h2').forEach((el) => {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        const found = { plain: false, bold: false, gold: false };
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          if (node.textContent.trim()) {
+            const inBold = el.contains(node.parentElement.closest('strong, b'));
+            const inItalic = el.contains(node.parentElement.closest('em, i'));
+            if (!inBold) found.plain = true;
+            else if (inItalic) found.gold = true;
+            else found.bold = true;
+          }
+        }
+        if (found.gold && found.bold && !found.plain) el.classList.add('columns-bold-gold');
+      });
+
       // Headings in one font: fully gold (Bold + Italic) Heading 1/2, or a Heading 1 with a
-      // gold number alone on its first line (gold part, then a line break) - styles give
+      // gold number alone on its first line (gold part with a digit, then a line break; a gold
+      // first line of words is a title line: jr45 "What would you do?") - styles give
       // these their own line spacing and sizing
       col.querySelectorAll('h1, h2').forEach((heading) => {
         const first = heading.firstElementChild;
@@ -210,7 +273,8 @@ export default function decorate(block) {
         if (!gold || !text.startsWith(first.textContent.trim())) return;
         if (heading.children.length === 1 && first.textContent.trim() === text) {
           heading.classList.add('columns-gold');
-        } else if (heading.tagName === 'H1' && first.nextSibling && first.nextSibling.nodeName === 'BR') {
+        } else if (heading.tagName === 'H1' && first.nextSibling && first.nextSibling.nodeName === 'BR'
+          && /\d/.test(first.textContent)) {
           heading.classList.add('columns-number');
         }
       });

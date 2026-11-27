@@ -12,6 +12,42 @@
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
+/* media-text in a stack: a Bold "• " product link line under "View more information" is the
+   source's small print link, the bullet and link 11.2px on 13.66px lines (stryker.com TEACH
+   talks "• STAR", "• RSA", "• ReUnion RFX": 0.8em) */
+body.corp :where(.columns.stack.media-text.block p > strong:has(> a:any-link)) {
+  font-size: var(--footnote-font-size);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+
+/* course-boxes: each cell a soft-shadowed colour box holding its link, in cell order blue, teal,
+   orange, purple (stryker.com TE Virtual Learning Center "SHOULDER ARTHROPLASTY" … "BLUEPRINT"
+   dimensional boxes, 10px around them): 8% of the cell above the white Futura bold link,
+   centred, 72px tall */
+body.corp .columns.course-boxes > div > :where(div:nth-child(4n + 1)) { --columns-course-box: var(--color-navy-bright); }
+body.corp .columns.course-boxes > div > :where(div:nth-child(4n + 2)) { --columns-course-box: var(--color-primary); }
+body.corp .columns.course-boxes > div > :where(div:nth-child(4n + 3)) { --columns-course-box: var(--color-accent-link-hover); }
+body.corp .columns.course-boxes > div > :where(div:nth-child(4n + 4)) { --columns-course-box: var(--color-purple); }
+
+body.corp .columns.course-boxes > div > div > :where(p) {
+  margin: var(--space-block-xs) var(--space-block-s) 0;
+  padding: 8% var(--space-block-s) calc(var(--space-block) + var(--space-block-s));
+  background-color: var(--columns-course-box);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+/* …20px apart where they stack (5px above each, the row's 15px gap), the source's 10px all
+   round from 600px */
+@media (width >= 600px) {
+  body.corp .columns.course-boxes > div > div > :where(p) {
+    margin: var(--space-block-s);
+  }
+}
+
+
+
 /* ---- corp text: the corp body style instead of the patients 17.5px column copy ---- */
 
 body.corp .columns p,
@@ -26,11 +62,25 @@ body.corp .columns p strong {
   font-family: var(--display-font-family);
 }
 
+/* plain-bold: bold keeps the running font (stryker.com plain <b>: the jr45 faculty
+   "Residency:" labels, TEACH talks "Course instructor:"), Humanist bold, Egyptienne bold
+   in `serif` cells and in a large headline (jr45 October "Complex total hip through DA",
+   the source's bold Egyptienne Light second title line); gold (Bold + Italic) stays Futura bold (TEACH "View more information") */
+body.corp .columns:is(.plain-bold, .faculty, .chapter-labels, .gray-cards, .product-details) :is(p, h1) strong:not(:where(em > strong, :has(> em))) {
+  font-family: inherit;
+}
+
 /* …except a Bold lead-in of the text right under an image (a paragraph not Bold as a
    whole, columns.js .columns-bold), which keeps the body font (stryker.com <b> in the
    iSuite product tiles: "Surgical tables at Stryker are designed…") */
-body.corp .columns .columns-img-col + p:not(.columns-bold) strong {
+body.corp .columns .columns-img-col + p:not(.columns-bold) strong:not(:where(em > strong, :has(> em))) {
   font-family: var(--body-font-family);
+}
+
+/* label-bold: a line's first Bold before another Bold is a Futura bold label, the Bold after
+   it the row's (stryker.com TEACH talks "Chapter 1:" in Futura, its title in Humanist bold) */
+body.corp .columns:is(.label-bold, .chapter-labels) p > strong:first-child:has(~ strong) {
+  font-family: var(--display-font-family);
 }
 
 body.corp .columns > div > div h2 {
@@ -48,6 +98,61 @@ body.corp .columns.columns-20-80 h4 {
   font-size: var(--body-font-size-m);
 }
 
+/* ---- copy and title sizes, fonts (variants; stryker.com sets them with size and font
+   spans on whole paragraphs: measured on ASC operating room, jr45 October, CLOUT) ---- */
+
+/* large-copy: 17.5px copy (.fontsize-1-25em; ASC rows, jr45 intro rows, Mako refreshers
+   lists), the source's lines 21.25px apart */
+body.corp .columns.large-copy,
+body.corp .columns.large-serif-copy,
+body.corp .columns.course-cards,
+body.corp .columns.gold-lead-copy {
+  --columns-corp-copy-size: var(--body-font-size-l);
+}
+
+body.corp .columns.xlarge-copy,
+body.corp .columns.xlarge-serif-copy {
+  --columns-corp-copy-size: var(--body-font-size-xl);
+}
+
+body.corp .columns:is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy) :is(p, ul, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+/* xlarge-copy: 21px copy (.fontsize-1-5em; CLOUT, OR staff, neurosurgical events) */
+body.corp .columns:is(.xlarge-copy, .xlarge-serif-copy) :is(p, ul, li) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* serif: Egyptienne light copy (span.urw-egyptienne on whole paragraphs: jr45 faculty
+   rows, spine, foot & ankle); at 14px its lines 22.4px apart and list items 23px, as the
+   source's Egyptienne in a Humanist paragraph sets them */
+body.corp .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) :is(p, li) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+body.corp .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) p {
+  line-height: var(--corp-serif-copy-line-height);
+}
+
+body.corp .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro) li {
+  line-height: var(--corp-serif-item-line-height);
+}
+
+body.corp .columns:is(.serif, .large-serif-copy, .xlarge-serif-copy, .headline-serif-copy, .product-intro):is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy) :is(p, li) {
+  line-height: var(--body-line-height-l);
+}
+
+/* a standalone link (bold + underline) in those cells stays the 14px Futura bold action link
+   (stryker.com: bunion "PATIENTS.STRYKER.COM ▸" under 17.5px Egyptienne copy) */
+body.corp .columns:is(.large-copy, .large-serif-copy, .course-cards, .gold-lead-copy, .xlarge-copy, .xlarge-serif-copy, .serif, .headline-serif-copy, .product-intro) a.link-strong:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+}
+
 /* image caption (a fully Bold paragraph right under an image): its text; the image's
    caption gap is with the caption variables below */
 body.corp .columns .columns-img-col + p.columns-bold {
@@ -56,11 +161,21 @@ body.corp .columns .columns-img-col + p.columns-bold {
   text-align: center;
 }
 
+/* product-names: that fully Bold line is the product's name, not a caption: Futura bold at the
+   row's copy size (14px; 17.5px / 21px with large-copy / xlarge-copy), left-aligned
+   (stryker.com nse attachments "440 Elite 7 cm straight attachment black"; corporate
+   responsibility employee benefits "Physical", 21px) */
+body.corp .columns.product-names .columns-img-col + p.columns-bold {
+  font-size: var(--columns-corp-copy-size, var(--body-font-size-m));
+  line-height: var(--paragraph-line-height);
+  text-align: start;
+}
+
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
    text gets a blank line above it, on top of the paragraph gap, like the empty line
    stryker.com puts there (not a lead-in line right before a button); large-headline
-   keeps its own rhythm */
-body.corp .columns:not(.large-headline) p:not(.columns-img-col, .columns-bold, .button-wrapper) + p.columns-bold:not(:has(+ p.button-wrapper)) {
+   , event-cards and gold-headline-first keep their own rhythm */
+body.corp .columns:not(.large-headline, .event-cards, .gold-headline-first) p:not(.columns-img-col, .columns-bold, .button-wrapper) + p.columns-bold:not(:has(+ p.button-wrapper)) {
   margin-top: calc(1lh + var(--space-block));
 }
 
@@ -160,10 +275,90 @@ body.corp .columns.large-headline p:has(> em:only-child) {
   font-size: var(--columns-corp-lh-small-size);
 }
 
+/* large-subtitles: the plain line right under a cell's Heading 3 at 17.5px (stryker.com
+   .fontsize-1-25em: the jr45 faculty cities "New York, NY" under the names) */
+body.corp .columns:is(.large-subtitles, .faculty, .course-cards, .event-cards).block > div > div h3 + p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+/* …right under the heading, as the next line of the source paragraph (build-your-ASC "that
+   simplies a complex process…" under "Step-by-step playbook") */
+body.corp .columns:is(.large-subtitles, .faculty, .course-cards, .event-cards).block > div > div h3:where(:has(+ p)) {
+  margin-bottom: 0;
+}
+
+/* event-cards (bundles large-subtitles: scripts/corp.js): the event title (Heading 3) over its
+   subject in the 21px Egyptienne light (stryker.com neurosurgical events "Fundamentals in Open
+   Skull Base Surgery"), the date a paragraph gap below it */
+body.corp .columns.event-cards.block > div > div h3 + p {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+/* lowered-text / lowered-text-m / lowered-text-s: the text beside the image starts lower, by
+   20% / 15% / 7% of its column's width (stryker.com rich text margin-top 20% / 15% / 7%: SKILL
+   Centers of Excellence, Connect, NeuroElite; training centers; e-Lab); under a lead bar
+   (`gold-lead`) the text after the bar does. The cells keep the source's full column width,
+   no 50-50 inset between text and image */
+body.corp .columns:where(.lowered-text, .lowered-text-m, .lowered-text-s) {
+  --col-5050-inset: var(--space-block);
+}
+
+body.corp .columns.lowered-text > div > div:not(:has(img, picture, video, iframe)) > :is(:first-child:not(.columns-box), .columns-box:first-child + *) {
+  margin-top: 20%;
+}
+
+body.corp .columns.lowered-text-m > div > div:not(:has(img, picture, video, iframe)) > :is(:first-child:not(.columns-box), .columns-box:first-child + *) {
+  margin-top: 15%;
+}
+
+body.corp .columns.lowered-text-s > div > div:not(:has(img, picture, video, iframe)) > :is(:first-child:not(.columns-box), .columns-box:first-child + *) {
+  margin-top: 7%;
+}
+
+/* gray-titles: the cells' headings in dark grey (stryker.com #545857: build-your-ASC
+   "Step-by-step playbook", "Best practices", "Peer-to-peer education") */
+body.corp .columns.gray-titles.block > div > div :is(h2, h3, h4) {
+  color: var(--color-secondary);
+}
+
 body.corp .columns.large-headline p > em:only-child {
   font-family: var(--display-font-family);
   font-style: normal;
   font-weight: var(--font-weight-bold);
+}
+
+/* a Heading 3 all in Italic (columns.js .columns-italic): a 3.5vw Egyptienne light line, upright, with no gap around it
+   (stryker.com .fontsize-3-5-vw lines: endoscopy resources "Plastic Surgery" and "Videos and
+   animations", 49px at 1440, 26.25px at 375); a gold (Bold + Italic) Heading 3 is not one */
+body.corp .columns.large-headline h3.columns-italic:not(:has(strong)) {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(3.5 * var(--body-font-size-m)), calc(3.5 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.large-headline h3.columns-italic:not(:has(strong)) em {
+  font-style: normal;
+}
+
+/* a Heading 5: a 5vw Futura bold line, Bold + Italic words gold (stryker.com .fontsize-5vw
+   futura-bold: "Coming soon!" on the VLC biologics and foot & ankle pages, 70px at 1440,
+   37.5px at 375) */
+body.corp .columns.large-headline h5 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(5 * var(--body-font-size-m)), calc(5 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.large-headline h5 :is(em, strong) {
+  font-style: normal;
 }
 
 /* lists: 17.5px serif items, a blank line apart (stryker.com .fontsize-1-25em
@@ -178,15 +373,36 @@ body.corp .columns.large-headline li + li {
   margin-top: var(--space-section);
 }
 
+/* large-titles: the cells' Heading 2 at 28px (stryker.com .fontsize-2em Futura bold: jr45
+   "Program objectives" / "Product focus", Mako refreshers), lines 1.06. A fully Bold Heading 2
+   is the 35px display line (below) */
+body.corp .columns:is(.large-titles, .course-cards) > div > div h2 {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
+/* …a title under other text keeps the blank line the source has above it (stryker.com jr45
+   "Product focus" 49px under the list above, "Program objectives" under the cell headline) */
+body.corp .columns:is(.large-titles, .course-cards) > div > div > :where(:not(:first-child, h2)) + h2 {
+  margin-top: var(--corp-blank-line);
+}
+
 /* gold display heading: a Heading 2 with Bold + Italic words (stryker.com .fontsize-2-5em:
    Futura 700 gold, 35px below 840px, 43.75px above). Its plain words are the light serif
    (two-tone, as "We build trust."); the gold marker keeps the heading size (columns.css
    sizes gold h2 markers). large-headline has its own heading scale. */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em) {
+body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(:where(.columns-bold-gold)) {
   font-family: var(--heading-font-family);
   font-size: var(--columns-corp-display-size);
   font-weight: var(--font-weight-regular);
   line-height: var(--heading-line-height);
+}
+
+/* large-titles: a two-tone Heading 2 with a gold marker is the variant's 28px title too, not
+   the 35px display line (stryker.com spine resources "Highlights of each interactive S2S
+   visit", .fontsize-2em) */
+body.corp .columns:is(.large-titles, .course-cards) > div > div h2:has(> em > strong, > strong > em) {
+  font-size: var(--heading-font-size-xxl);
 }
 
 /* large-headline: an Underlined Heading 2 (title with a rule, stryker.com rich text 2em) stays 28px */
@@ -194,8 +410,23 @@ body.corp .columns.large-headline h2:is(.underline, :has(> u)) {
   font-size: var(--heading-font-size-xxl);
 }
 
+/* a Heading 2 all in Italic (columns.js .columns-italic): a 4vw Egyptienne light statement line, upright (stryker.com
+   .fontsize-4vw urw-egyptienne: the endoscopy pages' "Together with our customers, we are
+   driven to make healthcare better.", 56px at 1440, 30px at 375) */
+body.corp .columns.large-headline h2.columns-italic:not(:has(strong)) {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--columns-corp-headline-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.large-headline h2.columns-italic:not(:has(strong)) em {
+  font-style: normal;
+}
+
 /* a two-tone display heading's mixed-font lines render 1.33x apart (58px at 43.75px) */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
+body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold, .columns-bold-gold) {
   line-height: 1.33;
 }
 
@@ -208,6 +439,17 @@ body.corp .columns h2 :is(em strong, strong em) {
 body.corp .columns:not(.large-headline) > div > div h2.columns-bold {
   margin-bottom: var(--space-inset-m);
   font-size: var(--columns-corp-display-size-s);
+  line-height: var(--heading-line-height);
+}
+
+/* a Bold Heading 2 with a gold marker (columns.js .columns-bold-gold: Bold words and a Bold +
+   Italic part, no plain words) is the 24.5px Futura bold heading, not a display line
+   (stryker.com ASC operating room "A. Mako": .fontsize-1-75em .futura-bold, 24.5px at
+   every width) */
+body.corp .columns:not(.large-headline) > div > div h2.columns-bold-gold {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height);
 }
 
@@ -244,6 +486,21 @@ body.corp .columns > div > div h1.columns-bold {
   font-size: max(var(--body-font-size-xs), min(calc(6 * var(--body-font-size-m)), calc(6 * var(--columns-corp-vw))));
 }
 
+/* large-headline, title: a fully Bold Heading 1 is the 4vw Futura bold page title, not a stat
+   number (stryker.com Large Headline titles in .fontsize-4vw futura-bold: endoscopy "Resources",
+   "Webinars", the Mako Live thank-you title; Bold + Italic words gold) */
+body.corp .columns.large-headline.title > div > div h1.columns-bold {
+  font-family: var(--display-font-family);
+  font-size: var(--columns-corp-headline-size);
+  font-weight: var(--font-weight-bold);
+}
+
+/* …and the line under the title 20px lower (stryker.com iSPIES "October 16th – 18th 2025",
+   13px under the title's text) */
+body.corp .columns.large-headline.title > div > div h1.columns-bold + h2 {
+  margin-top: var(--space-block-l);
+}
+
 /* buttons in a row: consecutive button paragraphs sit side by side, 10px apart, and
    wrap when the cell is too narrow (stryker.com horizontal button group) */
 body.corp .columns p.button-wrapper:has(+ p.button-wrapper),
@@ -261,6 +518,13 @@ body.corp .columns.large-headline .columns-img-col ~ p.button-wrapper {
 /* large-headline: a button right under a video keeps the source's 30px component gap */
 body.corp .columns.large-headline p:has(> .dm-video-wrapper) + p.button-wrapper {
   margin-top: var(--space-section);
+}
+
+/* button-gap: a button under the text of a cell keeps the blank line the source has above it
+   (stryker.com: an empty paragraph, then the Button Set: ASC operating room "Learn more" 49px
+   under the text) */
+body.corp .columns.button-gap.block > div > div > p:not(.button-wrapper) + p.button-wrapper {
+  margin-top: calc(1lh + var(--space-block));
 }
 
 /* image cells: no patients 3% inset or 30px drop; stacked images sit one paragraph
@@ -284,6 +548,37 @@ body.corp .columns.large-headline .columns-img-col {
    on mobile, two per row from 600px, 20px apart on mobile and 30px from 600px */
 body.corp .columns.media-pair .columns-img-col {
   margin-bottom: var(--space-block-l);
+}
+
+/* image-captions: a line right under an image is its caption, with no gap between them
+   (stryker.com standalone image caption p.u-white-space-pre: SKILL Assist MAX "Watch SKILL
+   Assist MAX in action with Pr. Laurent Spelle") */
+body.corp .columns.media-pair.image-captions .columns-img-col:has(+ p) {
+  margin-bottom: 0;
+}
+
+/* …the row keeps the source image row's own margin below it (20px, 30px from 600px) on top of
+   the section gap */
+body.corp .columns.media-pair.image-captions.block {
+  padding-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.media-pair.image-captions.block {
+    padding-bottom: var(--space-section);
+  }
+}
+
+/* …and on phones, where the captioned images stack, 20px more between them (the source's
+   image component margin) */
+body.corp .columns:where(.media-pair.image-captions) > div > div + div {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .columns:where(.media-pair.image-captions) > div > div + div {
+    margin-top: 0;
+  }
 }
 
 body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
@@ -317,6 +612,16 @@ body.corp .columns .columns-img-col video {
 body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
   font-size: var(--body-font-size-m);
 }
+
+/* headline-copy: a cell of one plain paragraph alone (no image, video, link or Bold: not a video
+   caption cell) at the Large Headline 1.5vw
+   size, 2N vw on phones, capped at 21px (stryker.com .fontsize-1-5-vw: jr45 "Watch Darwin
+   Chen, M.D., … as they discuss …": 21px at 1440, 11.7px at 390 → never under 12px here) */
+body.corp .columns:is(.headline-copy, .headline-serif-copy).block > div > div > p:only-child:not(:has(strong)) {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
 
 /* gray-lead: the text cell (the one without the video, last or first — a mirrored row
    puts it first) opens with a light-grey box (stryker.com bg-light-gray Large Headline:
@@ -363,6 +668,13 @@ body.corp .columns.columns-4-cols > div {
   row-gap: var(--space-block);
 }
 
+/* media-text: cells that alternate media and text (TEACH talks chapters: video, text,
+   video, text). No gap between the cells, the video has its own space below it (stryker.com:
+   the text follows the video's 20px on phones) */
+body.corp .columns.media-text > div {
+  row-gap: 0;
+}
+
 /* ---- cells ---- */
 
 body.corp .columns.columns-4-cols > div > div {
@@ -390,14 +702,43 @@ body.corp .columns.boxed-last > div > div:last-child {
 
 /* gold-first: the first cell is a gold box (stryker.com bg-gold component: 20px
    padding inside its 15px column gutter); Bold text in it is white */
-body.corp .columns.gold-first > div > div:first-child {
+body.corp .columns:is(.gold-first, .gold-headline-first) > div > div:first-child {
   margin-inline: var(--space-block);
   padding: var(--space-block-l);
   background-color: var(--color-accent);
 }
 
-body.corp .columns.gold-first > div > div:first-child strong {
+body.corp .columns:is(.gold-first, .gold-headline-first) > div > div:first-child strong {
   color: var(--color-white);
+}
+
+/* gold-headline-first (bundles gold-first: scripts/corp.js): the gold box's text at the Large
+   Headline 1.5vw size, 2N vw on phones, never under 12px (stryker.com spine resources
+   "Located within our headquarters…": 21px at 1440, 11.7px at 390) on the source paragraph's
+   28.875px lines at every width (a 21px paragraph's line height), the paragraphs one after
+   the other as the source's line breaks */
+body.corp .columns.gold-headline-first.block > div > div:first-child :is(p, li) {
+  margin-bottom: 0;
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: calc(var(--body-font-size-xl) * var(--paragraph-line-height));
+}
+
+/* …on phones, where the cells stack, 20px between the gold box and
+   the cell under it */
+body.corp .columns.gold-headline-first.block > div > :where(div:first-child) {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.gold-headline-first.block > div > :where(div:first-child) {
+    margin-bottom: 0;
+  }
+}
+
+/* …and the Bold name that opens the text under an image, its sizes on the next line (stryker.com
+   MIS cutting accessories "Precision round" / "2.0 mm, 3.0 mm…"): Futura bold */
+body.corp .columns.product-names .columns-img-col + p:not(.columns-bold) > strong:first-child {
+  font-family: var(--display-font-family);
 }
 
 /* gold-last: the last cell is a gold box beside the text (stryker.com bg-gold rich text in
@@ -429,18 +770,29 @@ body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n):has(> s
    know?" on "Is it a heart attack or sudden cardiac arrest?": 322px wide at 1440px, padded
    16px / 20px / 20px), its text the headline's 1.5vw light serif (21px at 1440px, 3vw on
    phones), a Bold line Futura bold */
-body.corp .columns.gray-last > div > div:last-child {
+body.corp .columns:is(.gray-last, .faculty, .product-details) > div > div:last-child {
   padding: var(--space-block) var(--space-block-l) var(--space-block-l);
   background-color: var(--color-surface);
 }
 
-body.corp .columns.gray-last.block > div > div:last-child :is(p, li):nth-child(n) {
+body.corp .columns:is(.gray-last, .faculty).block > div > div:last-child :is(p, li):nth-child(n) {
   font-family: var(--heading-font-family);
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
   line-height: var(--heading-line-height-hero);
 }
 
-body.corp .columns.gray-last.block > div > div:last-child > :last-child {
+/* …except a video's caption under it in the box: the 14px copy (stryker.com jr45 December
+   "Mako SmartRobotics™ in my practice" Futura bold, "43:09 minutes" Egyptienne, 14px) */
+body.corp .columns:is(.gray-last, .faculty, .product-details).block > div > div:last-child p:has(> .dm-video-wrapper) ~ p:nth-child(n) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp .columns:is(.gray-last, .faculty, .product-details).block > div > div:last-child p:has(> .dm-video-wrapper) ~ p:nth-child(n) strong {
+  font-family: var(--display-font-family);
+}
+
+body.corp .columns:is(.gray-last, .faculty, .product-details).block > div > div:last-child > :last-child {
   margin-bottom: 0;
 }
 
@@ -540,13 +892,13 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   /* boxed-last / gold-first: the box takes what the other cell leaves (its margins
      sit inside the column) and hugs its content */
   body.corp .columns.boxed-last > div > div:last-child,
-  body.corp .columns.gold-first > div > div:first-child {
+  body.corp .columns:is(.gold-first, .gold-headline-first) > div > div:first-child {
     flex: 1 1 0;
     align-self: flex-start;
   }
 
   /* gray-last: the box hugs its content, level with the row top */
-  body.corp .columns.gray-last > div > div:last-child {
+  body.corp .columns:is(.gray-last, .faculty, .product-details) > div > div:last-child {
     align-self: flex-start;
   }
 
@@ -659,7 +1011,7 @@ body.corp .columns .columns-box > :last-child {
   margin-bottom: 0;
 }
 
-body.corp .columns:is(.gray-last, .gray-2, .gray-all) {
+body.corp .columns:is(.gray-last, .faculty, .product-details, .gray-2, .gray-all, .gray-cards) {
   --columns-corp-box-bg: var(--color-surface);
 }
 
@@ -678,8 +1030,100 @@ body.corp .columns.boxed-all {
   --columns-corp-box-shadow: var(--shadow-soft);
 }
 
-body.corp .columns.gold-lead {
+/* the purple titles of these rows (stryker.com purple Futura bold): the partner names
+   (Heading 4) in the text cell of the giving-back purple-last row, the design card titles
+   (Heading 3) of the CLOUT boxed-all row */
+body.corp .columns.purple-last > div > div:where(:not(:last-child)) h4,
+body.corp .columns.boxed-all.block > div > div h3 {
+  color: var(--color-purple);
+}
+
+/* contact-boxes: the instruments contact boxes (with blue-all; stryker.com contact information,
+   tech support): a Heading 2 title at 3vw, all gold (Bold words Futura bold, the rest
+   Egyptienne light) with its text at 1.5vw Egyptienne; a gold (Bold + Italic) name at 28px Futura
+   bold; the contact lines at 2vw Egyptienne light (28px at 1440, 15.6px at 390), an email on its
+   own line after them at 1.5vw */
+body.corp .columns.contact-boxes.block > div > div :where(h2) {
+  margin: 0;
+  color: var(--color-accent);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(3 * var(--body-font-size-m)), calc(3 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.contact-boxes.block > div > div :where(h2) :is(em, strong) {
+  color: inherit;
+  font-style: normal;
+}
+
+body.corp .columns.contact-boxes.block > div > div :where(p) {
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.contact-boxes.block > div > div :where(h2 + p, p:has(> em > strong) + p + p) {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+}
+
+/* product-intro (bundles serif: scripts/corp.js): the nse product rows, a cell's Heading 2 the
+   2vw Futura bold title (stryker.com heavy duty accessories "Heritage Heavy Duty": 28px at 1440,
+   15.6px at 390) over its Egyptienne copy, 21px on phones and 14px from 600px */
+body.corp .columns.product-intro.block > div > div :where(h2).columns-bold {
+  margin-bottom: var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.product-intro.block > div > div :where(p) {
+  font-size: var(--body-font-size-xl);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.product-intro.block > div > div :where(p) {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+/* product-details (bundles gray-last, plain-bold: scripts/corp.js): an nse product's intro
+   beside a grey box of details (stryker.com MIS cutting accessories "Choose from more than 50…"
+   / "Expandable options"): the first cell's paragraphs 17.5px Egyptienne light, its list and
+   the box's text the 14px body copy, the box's Bold label Humanist bold */
+body.corp .columns.product-details.block > div > div:first-child :where(p) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--body-line-height-l);
+}
+
+/* course-cards (bundles large-titles, large-subtitles, large-copy: scripts/corp.js): the
+   Mako refreshers course cards; their action links ("REGISTER") at 21px (stryker.com) */
+body.corp .columns.course-cards.block a.link-strong:any-link {
+  font-size: var(--heading-font-size-l);
+}
+
+/* goal-cards: the cards' labels (Heading 3) teal Futura bold 21px and their values 28px
+   Egyptienne light (stryker.com environmental programs "Goal" / "Progress") */
+body.corp .columns.goal-cards.block > div > div h3 {
+  margin-bottom: 0;
+  color: var(--color-primary);
+  font-size: var(--heading-font-size-l);
+}
+
+body.corp .columns.goal-cards.block > div > div :where(p) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .columns:is(.gold-lead, .gold-lead-copy) {
   --columns-corp-box-bg: var(--color-accent);
+  --col-5050-inset: var(--space-block);
 }
 
 body.corp .columns.dark-lead {
@@ -687,14 +1131,41 @@ body.corp .columns.dark-lead {
   --columns-corp-box-color: var(--color-white);
 }
 
-body.corp .columns:is(.gold-lead, .dark-lead) .columns-box {
+body.corp .columns:is(.gold-lead, .gold-lead-copy, .dark-lead) .columns-box {
   margin-bottom: var(--space-block);
   text-align: center;
 }
 
+/* gold-lead: the bar 4% of the cell width above its line, 10px at the sides and 25px below
+   (10px + the source line's paragraph margin), and the
+   cells the source's full column width, no 50-50 inset (stryker.com SKILL e-Lab "The SKILL
+   e-Lab offers what you need": .bg-gold padding-top 4%; the inset with the bar colour above) */
+body.corp .columns:is(.gold-lead, .gold-lead-copy) .columns-box {
+  padding: 4% var(--space-block-s) calc(var(--space-block-s) + var(--space-block));
+}
+
+/* on the gold bar the Bold + Italic (accent) words are white (stryker.com white Futura bold
+   on .bg-gold: SKILL e-Lab "The SKILL e-Lab offers what you need") */
+body.corp .columns:is(.gold-lead, .gold-lead-copy) .columns-box :is(strong em, em strong) {
+  color: var(--color-white);
+}
+
 /* an image right under a title bar touches it (Mako refreshers) */
-body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-col) {
+body.corp .columns:is(.gold-lead, .gold-lead-copy, .dark-lead) .columns-box:has(+ .columns-img-col) {
   margin-bottom: 0;
+}
+
+/* an empty cell (a source column left empty: the jr45 episodes' four-column video rows) takes
+   no place on phones, where the cells stack and each would add a row gap; from 600px it keeps
+   its column */
+body.corp .columns > div > :where(div:empty) {
+  display: none;
+}
+
+@media (width >= 600px) {
+  body.corp .columns > div > div:empty {
+    display: block;
+  }
 }
 
 /* ---- stack (cells: above): two per row from 600px, four from 900px, on a grid whose
@@ -727,7 +1198,7 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
     grid-row: 1 / -1;
   }
 
-  body.corp .columns.stack.gray-last > div > div > .columns-box:only-child {
+  body.corp .columns.stack:is(.gray-last, .faculty, .product-details) > div > div > .columns-box:only-child {
     align-self: start;
   }
 
@@ -737,7 +1208,7 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
 
   /* jr45 faculty (`stack, gray-last`): the image and its text are one source column, the name
      24px under the image */
-  body.corp .columns.stack.gray-last .columns-img-col {
+  body.corp .columns.stack:is(.gray-last, .faculty, .product-details) .columns-img-col {
     margin-bottom: var(--space-section);
   }
 }
@@ -754,6 +1225,32 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
     margin-bottom: calc(var(--space-block-l) + var(--space-section));
     padding-bottom: calc(var(--space-block-l) + var(--space-section));
   }
+}
+
+@media (width >= 600px) {
+  /* media-text: no gap between the rows of cells either (the stack rows' 15px), and each cell
+     keeps its own height; the shared rows are for tiles (an image and its name under it) */
+  body.corp .columns.stack.media-text > div {
+    row-gap: 0;
+  }
+
+  body.corp .columns.stack.media-text > div > div {
+    display: block;
+    grid-row: auto;
+  }
+}
+
+/* `right-last`: the last column's text right-aligned (stryker.com rep-portal "HOME ▸" beside
+   "BLUEPRINT 3D PLANNING", at every width) */
+body.corp main .columns.right-last > div > div:last-child:where(:not(:first-child)) {
+  text-align: right;
+}
+
+/* `image-border`: a 1px grey line around the first image of each cell (stryker.com
+   img.bor-dark_gray_40T, environmental programs' location maps; not the icons under them) */
+body.corp .columns.image-border > div > div > :where(:nth-child(1 of .columns-img-col)) img {
+  box-sizing: border-box;
+  border: 1px solid var(--corp-color-image-border);
 }
 
 /* icon-text: a small icon beside its text (stryker.com 1/12 image column + 11/12 rich
@@ -1298,4 +1795,248 @@ body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-
   body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
     margin-top: calc(var(--space-section) + var(--space-inset-m));
   }
+}
+
+/* ---- phase-boxes: each cell's first heading in a gradient box (stryker.com Large Headlines
+   .has-background.bg-*-gradient, build-your-asc phases): white, centred, 20px in; plain words
+   Egyptienne light, Bold words Futura bold, at 2vw (15px at 375, 28px from 1400). The colours
+   follow the source's order, by row and cell: gold, grey, dark purple, then dark teal, dark
+   blue, dark orange. On phones the lines are 32.5px apart (the source's 21px line boxes: a
+   105px box), 1.35x from 600px (a 116px box at 1440); 20px / 30px to what follows ---- */
+body.corp .columns.phase-boxes > div:nth-child(odd) > div:nth-child(3n+1) > :first-child { --columns-corp-phase-box: linear-gradient(-90deg, var(--color-accent-link-hover), var(--color-accent) 20%); }
+body.corp .columns.phase-boxes > div:nth-child(odd) > div:nth-child(3n+2) > :first-child { --columns-corp-phase-box: linear-gradient(-90deg, var(--color-secondary), var(--color-surface-muted) 20%); }
+body.corp .columns.phase-boxes > div:nth-child(odd) > div:nth-child(3n) > :first-child { --columns-corp-phase-box: linear-gradient(-90deg, var(--color-secondary), #594b61); }
+body.corp .columns.phase-boxes > div:nth-child(even) > div:nth-child(3n+1) > :first-child { --columns-corp-phase-box: linear-gradient(-90deg, var(--color-secondary), #3e5245); }
+body.corp .columns.phase-boxes > div:nth-child(even) > div:nth-child(3n+2) > :first-child { --columns-corp-phase-box: linear-gradient(-90deg, var(--color-secondary), #425361); }
+body.corp .columns.phase-boxes > div:nth-child(even) > div:nth-child(3n) > :first-child { --columns-corp-phase-box: linear-gradient(-90deg, var(--color-secondary), #635c4f); }
+
+body.corp .columns.phase-boxes > div > div > :is(h2, h3, h4):first-child {
+  margin: 0 0 var(--space-block-l);
+  padding: var(--space-block-l);
+  background: var(--columns-corp-phase-box);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: calc(1.55 * var(--body-font-size-xl));
+  text-align: center;
+}
+
+/* the two fonts of a line share its line box (no taller box from their different heights) */
+body.corp .columns:is(.phase-boxes, .title-bars) > div > div > :is(h2, h3, h4):first-child > :is(strong, em) {
+  line-height: 1;
+  vertical-align: top;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.phase-boxes > div > div > :is(h2, h3, h4):first-child {
+    margin-bottom: calc(2 * var(--space-block));
+    line-height: var(--heading-line-height-hero);
+  }
+}
+
+/* ---- title-bars: each cell's first heading a solid colour title bar over the rest of the
+   cell (stryker.com rich text .has-background.bg-orange / -blue / -teal / -purple, giving-back
+   tiles): white, 10px in (5% on the left), the source's two blank lines below the text (124px
+   bars); in a `stack` row the bars share the row's height. Colours by cell: orange, blue,
+   teal, purple ---- */
+body.corp .columns.title-bars > div > div:nth-child(4n+1) > :first-child { --columns-corp-title-bar: var(--color-accent-link-hover); }
+body.corp .columns.title-bars > div > div:nth-child(4n+2) > :first-child { --columns-corp-title-bar: var(--color-navy-bright); }
+body.corp .columns.title-bars > div > div:nth-child(4n+3) > :first-child { --columns-corp-title-bar: var(--color-primary); }
+body.corp .columns.title-bars > div > div:nth-child(4n) > :first-child { --columns-corp-title-bar: var(--color-purple); }
+
+body.corp .columns.title-bars > div > div > :is(h2, h3, h4):first-child {
+  margin: 0;
+  padding: var(--space-block-s) var(--space-block-s) calc(var(--space-block-s) + 2lh) 5%;
+  background: var(--columns-corp-title-bar);
+  color: var(--color-white);
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* media-text in a stack: a bullet list of links is the chapter's topic links (stryker.com TEACH
+   talks "• TSA • RSA" under "View more information"): one per line on the copy's 19.25px
+   lines, no gap; blue Humanist bullets and Futura bold links at 0.8x (11.2px) */
+body.corp .columns.stack.media-text ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.corp .columns.stack.media-text li {
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp .columns.stack.media-text li::before {
+  content: "• ";
+  color: var(--color-navy-bright);
+  font-family: var(--body-font-family);
+  font-size: 0.8em;
+}
+
+body.corp .columns.stack.media-text li > :is(a, strong) {
+  font-size: 0.8em;
+}
+
+/* …the links teal and uppercase with the action link's arrow at that size (9 x 5px), not
+   underlined (stryker.com: the TEACH talks topic links) */
+body.corp .columns.stack.media-text li a:any-link {
+  color: var(--color-primary);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body.corp .columns.stack.media-text li a:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+body.corp .columns.stack.media-text li a:any-link u {
+  text-decoration: none;
+}
+
+body.corp .columns.stack.media-text li a:any-link::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent currentcolor;
+  vertical-align: -0.5px;
+}
+
+/* course-boxes (top of the file): the link white, not underlined */
+body.corp .columns.course-boxes.block > div > div > p a:any-link:not(.button) {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* media-text "• " product links (top of the file): the link and its underlined text at the
+   line's 11.2px (the bold + underline link look sets 14px on the text), and the arrow the
+   source's 9.52px icon size, as the list links above */
+body.corp .columns.stack.media-text p > strong > a.link-inline:any-link,
+body.corp .columns.stack.media-text p > strong > a.link-inline:any-link > u {
+  font-size: inherit;
+}
+
+body.corp .columns.stack.media-text p > strong > a.link-inline:any-link > u::after {
+  border-width: 5px 0 5px 5px;
+  vertical-align: -0.5px;
+}
+
+/* page-title: the source's page hero (stryker.com TEACH thank-you .c-page-hero: h1.title,
+   h2.subhead and a photo, a grey rule under it). The Heading 1 is the 28px Futura bold page
+   title, not a large headline (lines 22.26px apart in one column, 1.06 from 600px; 28px above
+   it, 10px below); the Heading 2 is the Egyptienne Light subhead on its own 26px lines; the
+   rule is 10px under the photo (no image margin under the photo) */
+body.corp .columns.page-title.block {
+  padding-bottom: var(--space-block-s);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.corp .columns.page-title.block :where(.columns-img-col) {
+  margin-bottom: 0;
+}
+
+body.corp .columns.page-title.block > div > div > h1:nth-child(n):nth-child(n) {
+  margin: var(--corp-page-title-margin-top) 0 var(--space-block-s);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-page-title-line-height-s);
+}
+
+body.corp .columns.page-title.block > div > div > h2:nth-child(n):nth-child(n) {
+  font-family: var(--heading-font-family);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.page-title.block > div > div > h1:nth-child(n):nth-child(n) {
+    line-height: var(--heading-line-height);
+  }
+}
+
+/* faculty (jr45, bundles gray-last): only the text box is grey, not the cell around it (and the
+   episode video under it), 15px in on both sides at every width, as in the source column
+   (stryker.com jr45 April: a 360px box at 390px, 440px in the 470px column at 1440px). On phones the box
+   sits 10px under the faculty above it and 20px above what follows; a video under it is 20px
+   below it (30px from 600px: December); its lines are 25px apart on phones (the source's
+   21px Large Headline line around its 3vw text) */
+body.corp main .columns.faculty.block > div > :where(div:last-child:has(> .columns-box)) {
+  padding: var(--space-block-s) var(--space-block) var(--space-block-l);
+  background: none;
+}
+
+body.corp main .columns.faculty.block > div > div > .columns-box + :where(*) {
+  margin-top: var(--space-block-l);
+}
+
+body.corp main .columns.faculty.block > div > div:last-child > .columns-box > :is(p, li):nth-child(n):nth-child(n) {
+  line-height: var(--corp-headline-copy-line-height-s);
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.faculty.block > div > :where(div:last-child:has(> .columns-box)) {
+    padding-block: 0;
+  }
+
+  body.corp main .columns.faculty.block > div > div > .columns-box + :where(*) {
+    margin-top: var(--space-section);
+  }
+
+  body.corp main .columns.faculty.block > div > div:last-child > .columns-box > :is(p, li):nth-child(n):nth-child(n) {
+    line-height: var(--heading-line-height-hero);
+  }
+}
+
+/* headline-copy (above) also when a box variant puts that paragraph in its box (jr45 October
+   `gray-2` "Watch Darwin Chen, M.D., …"), its lines 25px apart on phones (the source's 21px
+   Large Headline line around the 3vw text) */
+body.corp .columns:is(.headline-copy, .headline-serif-copy).block > div > div > .columns-box > :where(p:only-child:not(:has(strong))) {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: var(--corp-headline-copy-line-height-s);
+}
+
+@media (width >= 600px) {
+  body.corp .columns:is(.headline-copy, .headline-serif-copy).block > div > div > .columns-box > :where(p:only-child:not(:has(strong))) {
+    line-height: var(--heading-line-height-hero);
+  }
+}
+
+/* gray-2 (jr45 October): the grey box sits 10px under the row top on phones, 15px from 600px
+   (stryker.com: the bg-light-gray Large Headline's 10.8px / 13.2px top margin at 390 / 1440),
+   and 20px above the video stacked under it on phones */
+body.corp main .columns.gray-2.block > div > div:nth-child(2) > .columns-box:first-child {
+  margin: var(--space-block-s) 0 var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.gray-2.block > div > div:nth-child(2) > .columns-box:first-child {
+    margin-top: var(--space-block);
+  }
+}
+
+/* large-box-copy: the box variants' text box holds the source's 1.75em light serif copy
+   (stryker.com jr45 August, September, seasons 2 and 3: span.fontsize-1-75em in a
+   bg-light-gray rich text box): 24.5px Egyptienne Light on 1.06 lines at every width, the
+   box padded 5% of its width (22px at 440px), 25px at the bottom (10px and the text's 15px
+   paragraph margin) */
+body.corp main .columns.large-box-copy.block > div > div > .columns-box:nth-child(n):nth-child(n) {
+  padding: 5% 5% calc(var(--space-block-s) + var(--space-block));
+}
+
+body.corp main .columns.large-box-copy.block > div > div > .columns-box > :is(p, li):nth-child(n):nth-child(n):nth-child(n) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+/* …on phones the box follows the faculty without the faculty row's extra 10px above and 20px
+   below it (stryker.com jr45 season 2 December: 18px under the last fellowship line, 41px
+   above "On-demand learning" at 390px) */
+body.corp main .columns.large-box-copy.block > div > :where(div:has(> .columns-box)) {
+  padding-block: 0;
 }
