@@ -12,7 +12,7 @@ import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
 import longPageDetailSectionsTransformer, {
   keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths, markCentredRows, slideFragments,
-  dropEmptySections, markBandGaps,
+  dropEmptySections, markBandGaps, markPlainBoldCells,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import corpTextMarkersTransformer, { STD_DRAFT_IMPORT, STD_REVIEW_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
@@ -107,6 +107,8 @@ export default {
     if (stdProductPage(document)) markCentredRows(document);
     // …and the space below each band, as a spacer step
     if (stdProductPage(document)) markBandGaps(document);
+    // …and a cell's plain-bold paragraph (a caption) keeps the body font
+    if (stdProductPage(document)) markPlainBoldCells(document);
     keepHeadlineBlankLines(document);
     blankLineSpacers(document, params.originalURL);
   },

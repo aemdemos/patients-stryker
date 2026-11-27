@@ -313,6 +313,29 @@ export function slideFragments(main, document, page) {
 }
 
 /**
+ * In review (product pages, staging build; run from the import's preprocess): a paragraph in a
+ * column cell that is plain bold (<b>, not Futura bold) as a whole is the body font in bold on
+ * stryker.com (Pangea video captions "Proximal Humerus": Humanist 712 bold 14px), where Bold on
+ * the site is Futura: it keeps the body font as Text style (`[[body-font]…]` → Body).
+ * @param {Document} document The source document
+ */
+export function markPlainBoldCells(document) {
+  if (!stdProductPage(document)) return;
+  const squash = (v) => (v || '').replace(/[\s\u00a0]+/g, '');
+  document.querySelectorAll('.colctrl [class*="col-"] .c-rich-text-editor p').forEach((p) => {
+    const bolds = [...p.querySelectorAll('b')].filter((b) => !b.parentElement.closest('b'));
+    if (bolds.length !== 1 || !squash(p.textContent)) return;
+    const [b] = bolds;
+    if (squash(b.textContent) !== squash(p.textContent)) return;
+    if (b.closest('.futura-bold') || b.querySelector('.futura-bold') || p.querySelector('a, img')) return;
+    if (/\[\[/.test(b.textContent)) return;
+    // (around the bold: Text style markers go outside the formatting)
+    b.before(document.createTextNode('[[body-font]'));
+    b.after(document.createTextNode(']'));
+  });
+}
+
+/**
  * In review (product pages, staging build; run from the import's preprocess, on the source
  * layout): the space stryker.com shows below each band (.c-full-bleed-panel) before the next
  * text, image, box or band, in px (data-std-space-after). A band on EDS meets the next

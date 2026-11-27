@@ -6391,6 +6391,20 @@ var CustomImportScript = (() => {
     });
     return "";
   }
+  function markPlainBoldCells(document) {
+    if (!stdProductPage(document)) return;
+    const squash = (v) => (v || "").replace(/[\s\u00a0]+/g, "");
+    document.querySelectorAll('.colctrl [class*="col-"] .c-rich-text-editor p').forEach((p) => {
+      const bolds = [...p.querySelectorAll("b")].filter((b2) => !b2.parentElement.closest("b"));
+      if (bolds.length !== 1 || !squash(p.textContent)) return;
+      const [b] = bolds;
+      if (squash(b.textContent) !== squash(p.textContent)) return;
+      if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || p.querySelector("a, img")) return;
+      if (/\[\[/.test(b.textContent)) return;
+      b.before(document.createTextNode("[[body-font]"));
+      b.after(document.createTextNode("]"));
+    });
+  }
   function markBandGaps(document) {
     if (!stdProductPage(document)) return;
     const bands = [...document.querySelectorAll(".c-full-bleed-panel")].filter((b) => !b.parentElement.closest(".c-full-bleed-panel") && b.getBoundingClientRect().height > 0);
@@ -7926,6 +7940,7 @@ var CustomImportScript = (() => {
       }
       if (stdProductPage(document)) markCentredRows(document);
       if (stdProductPage(document)) markBandGaps(document);
+      if (stdProductPage(document)) markPlainBoldCells(document);
       keepHeadlineBlankLines(document);
       blankLineSpacers(document, params.originalURL);
     },
