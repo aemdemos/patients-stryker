@@ -1,6 +1,7 @@
 /*
  * While the standardisation is reviewed, the new looks (Block options, Text style) render only
- * on review pages: paths under /drafts/, /us/en/drafts/ and /tools/ (body.std-draft, scripts/corp.js). Both
+ * on review pages: paths under /drafts/, /us/en/drafts/ and /tools/ (body.std-draft,
+ * scripts/corp.js). Both
  * authoring panels say so on any other page, so an author doesn't wonder why nothing changes.
  */
 export const REVIEW_NOTE = 'These choices show on review pages (/drafts/…) only until the standardisation is approved. On this page they are saved but don’t change the look yet.';
