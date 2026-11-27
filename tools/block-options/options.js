@@ -7,7 +7,8 @@
  * choices, or only those in `clearsWhen`): picking one removes them.
  * `needs` (on a group, or a choice's third item `{ needs, hint }`) is what the selected block
  * must hold for the choice to do something: 'cells-2' (exactly 2 cells), 'cells-2+', 'cells-3',
- * 'cells-3+', 'cells-4', 'images', 'caption' (a photo with text under it), 'image-first' (an
+ * 'cells-3+', 'cells-4', 'images', 'media' (an image or a video), 'caption' (a photo with
+ * text under it), 'image-first' (an
  * image in the first cell, text beside it), 'links', 'link-lists', 'text', 'box' (a cell box
  * chosen), 'gradient-box' (a gradient box colour chosen), 'video' / 'dm-video' (a video link / a
  * Dynamic Media one), 'rows-2+' / 'rows-4+' / 'rows-6+' (that many rows) or 'bars' (a column or
@@ -535,7 +536,7 @@ export const BLOCK_OPTIONS = {
         label: 'Text',
         flags: [
           ['text-center', 'Centred', { needs: ['text'], hint: 'All text in the row centred' }],
-          ['valign-middle', 'Text centred beside the image', { needs: ['cells-2', 'images', 'text'], hint: 'From 600px the text sits in the middle of the image’s height (stryker.com product rows); phones stack as usual' }],
+          ['valign-middle', 'Text centred beside the image or video', { needs: ['cells-2', 'media', 'text'], hint: 'From 600px the text sits in the middle of the image’s or video’s height (stryker.com product rows); phones stack as usual' }],
           ['label-right', 'First cell right-aligned (labels)', { needs: ['cells-2'], hint: 'The first cell’s text right-aligned beside the second (labels)' }],
           ['title-row', 'Page title beside a photo', { needs: ['image-first'], hint: 'The page title in a white box beside a photo' }],
         ],

@@ -412,6 +412,32 @@ function hlsDuration(src) {
 }
 
 /**
+ * Sizes a Dynamic Media video's frame to the video's own shape instead of the fixed 16:9 (a wide
+ * stryker.com video shows without empty bars above and below it). The shape comes from the
+ * poster image (the player loads no video data before playback when it has a poster), or from
+ * the video once it knows its size. Called on review pages only (scripts/corp.js, the Video
+ * block).
+ * @param {HTMLVideoElement} video The video
+ */
+export function fitVideoFrame(video) {
+  if (!video || video.dataset.fitted) return;
+  video.dataset.fitted = 'true';
+  const fit = (width, height) => {
+    if (width > 0 && height > 0) video.style.aspectRatio = `${width} / ${height}`;
+  };
+  if (video.videoWidth) fit(video.videoWidth, video.videoHeight);
+  video.addEventListener('loadedmetadata', () => fit(video.videoWidth, video.videoHeight), { once: true });
+  const poster = video.getAttribute('poster');
+  if (poster && !video.videoWidth) {
+    const img = new Image();
+    img.addEventListener('load', () => {
+      if (!video.videoWidth) fit(img.naturalWidth, img.naturalHeight);
+    }, { once: true });
+    img.src = poster;
+  }
+}
+
+/**
  * Build a native <video> (wrapped with a centered play-icon overlay) for a DM /
  * streaming video URL. An optional poster frame is supported via a `poster` query
  * param on the authored URL (its value is a poster image URL); it is applied to the

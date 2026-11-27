@@ -5,7 +5,7 @@
  *   - Dynamic Media / video file → native <video>, via dm-support's renderVideo.
  */
 
-import { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
+import { fitVideoFrame, isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
 
 // YouTube link signatures (watch, short youtu.be, and nocookie embeds).
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
@@ -137,28 +137,8 @@ function setPlayback(block, player) {
   observer.observe(player);
 }
 
-/**
- * In review: a Dynamic Media video's frame takes the video's own shape (stryker.com shows a
- * 2.4:1 video at 2.4:1, not in a 16:9 frame with empty bars and the controls under them). The
- * shape comes from the poster image (the player loads no video data before playback when it
- * has a poster), or from the video itself once it knows its size.
- * @param {Element} block The video block
- */
-function fitToVideo(block) {
-  block.querySelectorAll('video.dm-video').forEach((video) => {
-    const fit = (width, height) => {
-      if (width > 0 && height > 0) video.style.aspectRatio = `${width} / ${height}`;
-    };
-    if (video.videoWidth) fit(video.videoWidth, video.videoHeight);
-    video.addEventListener('loadedmetadata', () => fit(video.videoWidth, video.videoHeight), { once: true });
-    const poster = video.getAttribute('poster');
-    if (poster && !video.videoWidth) {
-      const img = new Image();
-      img.addEventListener('load', () => { if (!video.videoWidth) fit(img.naturalWidth, img.naturalHeight); }, { once: true });
-      img.src = poster;
-    }
-  });
-}
+/** in review: the Dynamic Media videos' frames take their own shape (dm-support.js) */
+const fitToVideo = (block) => block.querySelectorAll('video.dm-video').forEach(fitVideoFrame);
 
 /**
  * loads and decorates the video block

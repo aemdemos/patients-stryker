@@ -194,6 +194,7 @@ function unfit(needs, facts) {
     'cells-3+': facts.cells >= 3 ? '' : `needs 3 or more cells (this row has ${cells})`,
     'cells-4': facts.cells === 4 ? '' : `needs 4 cells (this row has ${cells})`,
     images: facts.images ? '' : 'needs images in the row',
+    media: facts.images || facts.video ? '' : 'needs an image or a video in the row',
     caption: facts.caption ? '' : 'needs a photo with a caption under it',
     'image-first': facts.imageFirst ? '' : 'needs an image in the first cell and text beside it',
     links: facts.links ? '' : 'needs links in the row',

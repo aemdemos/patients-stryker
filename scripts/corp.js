@@ -23,7 +23,7 @@ import {
   loadSection,
   waitForFirstImage,
 } from './aem.js';
-import { previewDMLinkEditors } from './dm-support.js';
+import { fitVideoFrame, previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
 import decorateSpanMarkers from './span-markers.js';
 import previewTextMarkers from './span-markers-canvas.js';
@@ -491,6 +491,11 @@ export function decorateLayout(main) {
   if (document.body.classList.contains('std-draft')) {
     groupFlexColumns(main);
     buildCarousels(main);
+    // Dynamic Media videos (in Columns cells, cards …) in their own shape, not 16:9; a hero's
+    // background video fills its slide
+    main.querySelectorAll('video.dm-video').forEach((video) => {
+      if (!video.closest('.hero-corp')) fitVideoFrame(video);
+    });
   }
 }
 
