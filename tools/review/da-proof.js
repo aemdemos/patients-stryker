@@ -163,9 +163,10 @@ async function run() {
   const { context = {}, token, email } = hello;
   const { host } = window.location;
   let where = host;
-  if (/\.aem\.page$/.test(host)) where = 'the review host (the branch preview, where the tool runs today): the app moved here and DA\'s hello came again';
+  if (/\.aem\.page$/.test(host)) where = 'the review host (the branch preview, where the tool runs today)';
   else if (/\.preview\.da\.live$/.test(host)) where = 'Document Authoring\'s preview of the site (DA content as it is now, for signed-in DA users)';
   else if (/\.aem\.live$/.test(host)) where = 'the published site (what is live)';
+  if (before()) where += ': the app moved here from DA\'s preview, and DA\'s hello with your sign-in came again';
   report('Where the app runs', null, `${host}: ${where}. Site ${context.org}/${context.repo}, branch ${context.ref}.`);
   report('Document Authoring says you are', email ? null : false, email || 'No email in DA\'s hello.');
   if (!token) {
@@ -203,15 +204,24 @@ async function run() {
       ? 'No: this host serves the page without a doctype, so the browser uses quirks mode (lines with mixed text sizes come out shorter than on the real page, with the same computed line height).'
       : 'Yes: it has a doctype, like the real page.');
   }
-  // DA's preview host: move the app to the review host (DA says hello again after every load
-  // of the app's frame), where the tool runs today and its pages are the real ones
-  if (!/\.aem\.page$/.test(host)) {
-    const target = `https://${branch()}--${SITE.site}--${SITE.org}.aem.page/tools/review/da-proof.html#before=${encodeURIComponent(btoa(unescape(encodeURIComponent(copyText()))))}`;
+  // DA's preview host: move the app to a host whose pages are the real ones (DA says hello
+  // again after every load of the app's frame): the branch preview, where the tool runs today
+  // (behind the site's login: Sidekick adds it), or the published site (public, what is live)
+  if (/\.preview\.da\.live$/.test(host) && !before()) {
+    const carried = `#before=${encodeURIComponent(btoa(unescape(encodeURIComponent(copyText()))))}`;
+    const to = (suffix) => `https://${branch()}--${SITE.site}--${SITE.org}.${suffix}/tools/review/da-proof.html${carried}`;
     $('.dp-checks').append(el(
       'li',
       { class: 'dp-hop' },
-      el('p', {}, el('b', {}, 'Last step: '), 'the tool would move itself to the review host, where its pages are the real ones. Copy the results above first if you like, then:'),
-      el('button', { type: 'button', class: 'dp-move', onclick: () => window.location.assign(target) }, 'Continue on the review host'),
+      el('p', {}, el('b', {}, 'Last step: '), 'the tool would move itself to a host whose pages are the real ones. Try one, then come back here (the browser\'s Back) and try the other:'),
+      el(
+        'p',
+        { class: 'dp-moves' },
+        el('button', { type: 'button', class: 'dp-move', onclick: () => window.location.assign(to('aem.page')) }, 'Continue on the review host'),
+        el('span', { class: 'dp-detail' }, 'The branch preview, where the tool runs today: needs Sidekick, signed in to this site (not in an incognito window unless Sidekick is allowed there).'),
+        el('button', { type: 'button', class: 'dp-move', onclick: () => window.location.assign(to('aem.live')) }, 'Continue on the published site'),
+        el('span', { class: 'dp-detail' }, 'Public, no login needed: the pages as they are live.'),
+      ),
     ));
   }
 }

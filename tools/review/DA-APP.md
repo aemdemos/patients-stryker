@@ -56,6 +56,19 @@ Still to learn from a real run: whether a reviewer without DA editing rights can
 (and which host they get), and whether the pages shown there are the ones under review (DA's
 preview shows DA's current content; the published site shows what is live).
 
+## What the proof showed (27 Nov 2026, the user's runs)
+
+- Opened in DA, the hello comes from https://da.live, on a first, uncached load too (the SDK must
+  be a module script of the page itself, listening before the page's load event).
+- Adobe confirms the email through the backend (`whoami`); a faked token and no token are refused.
+- DA's preview host (`*.preview.da.live`) shows DA's current content, not the published one, and
+  serves pages without a doctype (quirks mode: shorter mixed-size lines, the same computed line
+  height). So the tool must not show its pages from there: the app moves itself to a host whose
+  pages are the real ones, and DA says hello again after every load of the app's frame.
+- Moving to the branch preview (`*.aem.page`) inside DA gave 401 in one run (the site's login is
+  added by Sidekick; in an incognito window Sidekick is off unless allowed). The published site
+  (`*.aem.live`) is public. Both are being tried.
+
 ## Steps 2–4 (after the proof, to be agreed)
 
 2. **Backend:**

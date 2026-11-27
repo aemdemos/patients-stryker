@@ -21,3 +21,4 @@
 .dp-copied { color: var(--c-ink-2); font-size: var(--fs-s); }
 .dp-hop { display: grid; gap: 8px; justify-items: start; padding: 12px; border: 1px dashed var(--c-line-2); border-radius: var(--r-s); }
 .dp-hop p { margin: 0; }
+.dp-moves { display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; align-items: center; }
