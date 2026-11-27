@@ -1804,6 +1804,14 @@ export default function buildArticle(element, {
       if (heading && text(heading)) {
         const h2 = doc.createElement('h2');
         h2.textContent = text(heading);
+        // product pages (review build): a title with a line under it on stryker.com
+        // (h2.border-bottom-gold, drawn grey; TPX HD "Related products") is an underlined
+        // heading, as the section titles are
+        if (stdProductPage(doc) && heading.classList.contains('border-bottom-gold')) {
+          const u = doc.createElement('u');
+          u.append(...h2.childNodes);
+          h2.append(u);
+        }
         section.nodes.push(h2);
         heading.remove();
       }

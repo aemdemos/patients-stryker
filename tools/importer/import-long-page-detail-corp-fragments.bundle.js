@@ -1817,6 +1817,11 @@ var CustomImportScript = (() => {
         if (heading && text2(heading)) {
           const h2 = doc.createElement("h2");
           h2.textContent = text2(heading);
+          if (stdProductPage(doc) && heading.classList.contains("border-bottom-gold")) {
+            const u = doc.createElement("u");
+            u.append(...h2.childNodes);
+            h2.append(u);
+          }
           section.nodes.push(h2);
           heading.remove();
         }
