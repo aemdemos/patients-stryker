@@ -525,10 +525,11 @@ function serifBanner(main, doc) {
  * (body-l sets the copy size, so the p-1-x styles go), a spacer under the title, the gold
  * banner above the form ("Want to learn more? …") a Heading 2 in a section of its own
  * (`h2-1-5`, background `bg-gold`) with its Egyptienne question in Italic, the form section
- * `form-with-aside`, and the references a numbered list without the typed numbers in a
- * `disclaimer` section.
+ * `form-with-aside` (keeping its other styles), no `join`; with `references`, the references
+ * a numbered list without the typed numbers in a `disclaimer` section (the small print is
+ * left as imported otherwise).
  */
-function formPageBodyL(main, doc) {
+function formPageBodyL(main, doc, { references = false } = {}) {
   main.setAttribute('data-meta-theme', 'full-width, body-l');
   const sizes = /^p-1(-\d+)?$/;
   [...main.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => {
@@ -551,11 +552,31 @@ function formPageBodyL(main, doc) {
     sec[sec.length - 1].after(WebImporter.Blocks.createBlock(doc, { name: 'Section Metadata', cells: { style: 'h2-1-5', background: 'bg-gold' } }));
   }
   serifBanner(main, doc);
-  style(main, doc, blockTable(main, 'marketo form'), 'form-with-aside');
-  const first = [...main.querySelectorAll('ol > li')].find((li) => /^1\.\s/.test(txt(li))
+  const form = blockTable(main, 'marketo form');
+  const formMeta = form && sectionOf(main, form).find(isSectionMetadata);
+  const formRow = formMeta && [...formMeta.querySelectorAll('tr')].find((tr) => txt(tr.cells[0]).toLowerCase() === 'style');
+  const formStyle = formRow ? txt(formRow.cells[1]).split(',').map((x) => x.trim()).filter(Boolean) : [];
+  if (form && !formStyle.includes('form-with-aside')) style(main, doc, form, ['form-with-aside', ...formStyle].join(', '));
+  // `join` goes: body-l sets the gaps (as in DA)
+  [...main.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => {
+    const v = txt(td).split(',').map((x) => x.trim());
+    if (!v.includes('join')) return;
+    const rest = v.filter((x) => x !== 'join');
+    if (rest.length) td.textContent = rest.join(', ');
+    else t.remove();
+  }));
+  const first = references && [...main.querySelectorAll('ol > li')].find((li) => /^1\.\s/.test(txt(li))
     && sectionOf(main, li).some((n) => isSectionMetadata(n) && txt(n).includes('disclaimer')));
   if (first) {
     stripListNumbers(main, first);
+    // a typed number in Bold ("<strong>1.</strong> Pereira B…") goes too
+    first.parentElement.querySelectorAll(':scope > li').forEach((li) => {
+      const lead = li.firstElementChild;
+      if (lead && lead === li.firstChild && lead.matches('strong, b') && /^\d+[.:]$/.test(txt(lead))) {
+        lead.remove();
+        if (li.firstChild && li.firstChild.nodeType === 3) li.firstChild.textContent = li.firstChild.textContent.replace(/^\s+/, '');
+      }
+    });
     style(main, doc, first, 'disclaimer');
   }
 }
@@ -1271,11 +1292,43 @@ const CORRECTIONS = {
   ],
 
   // single news-detail pages
+  // reduce-cauti-icu-primafit
+  'https://www.stryker.com/us/en/sage/news/2024/reduce-cauti-icu-primafit.html': [
+    (m, d) => {
+      // the body-l form page layout
+      formPageBodyL(m, d);
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+      // the reference as in DA: the label on its own line, the entry a numbered list
+      inlineReferencesToList(m, d);
+    },
+  ],
+  // surgical-site-infections-safety-savings
+  'https://www.stryker.com/us/en/sage/news/2024/surgical-site-infections-safety-savings.html': [
+    (m, d) => {
+      // the body-l form page layout
+      formPageBodyL(m, d, { references: true });
+      tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+      // the form section as in DA: `form-with-aside, bold-body`
+      style(m, d, blockTable(m, 'marketo form'), 'form-with-aside, bold-body');
+    },
+  ],
+  // successful-virtual-care-partnership-in-hospitals
+  'https://www.stryker.com/us/en/smart-care/news/successful-virtual-care-partnership-in-hospitals.html': [
+    (m, d) => {
+      // the body-l form page layout
+      formPageBodyL(m, d);
+      // the banner as on stryker.com: the call to action on a line of its own, the box in 8 columns (`col-8`)
+      const vBanner = [...m.querySelectorAll('h2')].find((h) => txt(h).startsWith('Interested in learning more?')); if (vBanner) { const em = vBanner.querySelector('em'); if (em && em.nextSibling?.nodeName !== 'BR') { if (em.nextSibling && em.nextSibling.nodeType === 3 && !em.nextSibling.textContent.trim()) em.nextSibling.remove(); em.after(d.createElement('br')); } style(m, d, vBanner, 'h2-1-5, col-8'); }
+      tags(m, "stryker:content-type/news");
+      // the footer links fragment as in DA (the body-copy one)
+      m.querySelectorAll('a[href="/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"]').forEach((a) => { a.href = '/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/body-copy/master'; if (a.textContent.includes('/fragments/')) a.textContent = a.getAttribute('href'); });
+    },
+  ],
   // hospital-fall-prevention-with-smart-stretchers
   'https://www.stryker.com/us/en/acute-care/news/hospital-fall-prevention-with-smart-stretchers.html': [
     (m, d) => {
       // the body-l form page layout
-      formPageBodyL(m, d);
+      formPageBodyL(m, d, { references: true });
       tags(m, "stryker:content-type/news");
     },
   ],
@@ -1283,7 +1336,7 @@ const CORRECTIONS = {
   'https://www.stryker.com/us/en/sage/news/2025/hospital-acquired-infection-prevention-strategies.html': [
     (m, d) => {
       // the body-l form page layout
-      formPageBodyL(m, d);
+      formPageBodyL(m, d, { references: true });
       tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
     },
   ],
@@ -1291,7 +1344,7 @@ const CORRECTIONS = {
   'https://www.stryker.com/us/en/sage/news/2025/patient-skin-integrity-a-critical-factor-in-infection-prevention.html': [
     (m, d) => {
       // the body-l form page layout
-      formPageBodyL(m, d);
+      formPageBodyL(m, d, { references: true });
       // the product teaser as in DA: a `cards-corp` (teaser, three-up) block, the image beside its text and Learn more link
       const cImg = m.querySelector('a[href*="Sage-CHG-Cloths-Thumbnail"]')?.closest('p'); const cText = find(m, 'p', 'Help address bacteria'); const cMore = [...m.querySelectorAll('p')].find((x) => txt(x) === 'Learn more'); if (cImg && cText && cMore) { [cImg, cText, cMore].forEach((el) => sectionOf(m, el).filter(isSectionMetadata).forEach((t) => t.remove())); const dup = cImg.nextElementSibling; if (dup && dup.tagName === 'P' && !dup.querySelector('strong') && dup.querySelector('a[href="/us/en/sage/products/sage-chg-cloths"]')) dup.remove(); mergeWithPrevious(m, cText); mergeWithPrevious(m, cMore); const block = WebImporter.Blocks.createBlock(d, { name: 'Cards Corp (teaser, three-up)', cells: [[cImg.querySelector('a'), [cText, cMore]]] }); cImg.replaceWith(block); }
       tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2");
