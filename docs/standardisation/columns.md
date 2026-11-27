@@ -235,7 +235,7 @@ pages (not package numbers).*
 
 | Group | Choices | Rows on imported pages |
 |---|---|---|
-| First line of the text | in a light grey box, a gold bar, a dark grey bar, a **blue bar** (stryker.com coloured heads) | 79, 2, 1, 1 |
+| First line of the text | in a light grey box, a gold bar, a dark grey bar, a **blue bar** (stryker.com coloured heads), **in a white box with a soft shadow** (Mako "More integrated technologies" titles; review pages) | 79, 2, 1, 1, 1 |
 | Text look (switches) | large headline type, serif lead paragraph, serif captions, pull quote in the last cell, large pull quote beside a photo, numbered quotes | 479, 1, 3, 1, 1, 4 |
 | Row looks (switches) | linked images, one per row on phones, related links, link groups, icon beside text, page title beside a photo, caption right under the photo, images centred at their size, photo two thirds wide on phones, rule under the first cell, **line below the row**, **first cell right-aligned (labels)** | 315, 72, 11, 1, 4, 1, 1, 1, 3, 3, **750**, **7** |
 

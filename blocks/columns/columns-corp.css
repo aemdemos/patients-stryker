@@ -710,8 +710,10 @@ body.corp.std-draft .columns.white-lead {
   --columns-corp-box-padding: 5%;
 }
 
+/* 10px in from the cell, as the soft shadow box (`shadow`) is: room for the shadow
+   (stryker.com: 655px boxes 10px inside their 675px columns) */
 body.corp.std-draft .columns.white-lead .columns-box {
-  margin-bottom: var(--space-block);
+  margin: var(--space-block-s) var(--space-block-s) var(--space-block);
 }
 
 /* an image right under a title bar touches it (Mako refreshers) */
