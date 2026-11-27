@@ -21,6 +21,7 @@
  */
 
 import { loadCSS } from '../../scripts/aem.js';
+import decorateDMAssets from '../../scripts/dm-support.js';
 
 // image-slide swaps its desktop / mobile crops at 600px
 const CROSSOVER = '(width >= 600px)';
@@ -97,6 +98,39 @@ const lazy = (pic) => {
   const img = pic && pic.querySelector('img');
   if (img) { img.setAttribute('loading', 'lazy'); img.removeAttribute('fetchpriority'); }
 };
+
+/**
+ * A media row that links to a fragment (stryker.com: each slide's image or video is an
+ * Experience Fragment; the headline belongs to the page): the fragment's media takes the link's
+ * place before the rows are sorted, so the slide always has its image when it lays out.
+ * @param {Element} block the hero-corp block
+ */
+async function loadMediaFragments(block) {
+  const cells = [...block.querySelectorAll(':scope > div > div')].filter((cell) => {
+    const links = cell.querySelectorAll('a[href*="/fragments/"]');
+    return links.length === 1 && cell.textContent.trim() === links[0].textContent.trim();
+  });
+  await Promise.all(cells.map(async (cell) => {
+    const link = cell.querySelector('a');
+    const url = new URL(link.getAttribute('href'), window.location);
+    try {
+      const resp = await fetch(`${url.pathname}.plain.html`);
+      if (!resp.ok) return;
+      const doc = new DOMParser().parseFromString(await resp.text(), 'text/html');
+      // images the fragment serves itself are relative to the fragment
+      doc.querySelectorAll('img[src^="./media_"], source[srcset^="./media_"]').forEach((el) => {
+        const attr = el.tagName === 'IMG' ? 'src' : 'srcset';
+        el.setAttribute(attr, new URL(el.getAttribute(attr), url).href);
+      });
+      const media = [...doc.body.querySelectorAll(':scope > div > *')]
+        .filter((node) => !node.matches('.section-metadata'));
+      cell.replaceChildren(...media.map((node) => document.importNode(node, true)));
+      decorateDMAssets(cell);
+    } catch {
+      // the link stays; the slide shows without that image
+    }
+  }));
+}
 
 /**
  * Sorts the rows into media (desktop picture or video, mobile picture) and the content cell,
@@ -251,6 +285,7 @@ export default async function decorate(block) {
   Object.entries(ALIASES).forEach(([old, name]) => {
     if (block.classList.contains(old)) block.classList.add(name);
   });
+  await loadMediaFragments(block);
   setupRows(block);
   if (block.classList.contains('image-slide')) setupImageSlide(block);
   if (block.classList.contains('page-hero')) setupPageHero(block);

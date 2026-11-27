@@ -92,8 +92,10 @@ function buildWidgetAutoBlocks(main) {
  */
 function buildAutoBlocks(main) {
   try {
-    // auto load `*/fragments/*` references (tabs load their own panel fragments)
-    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment, .tabs'));
+    // auto load `*/fragments/*` references (tabs load their own panel fragments; in review,
+    // a Hero (corp) loads its media fragments itself, before it lays out — hero-corp-std.js)
+    const own = document.body.classList.contains('std-draft') ? '.fragment, .tabs, .hero-corp' : '.fragment, .tabs';
+    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest(own));
     if (fragments.length > 0) {
       // eslint-disable-next-line import/no-cycle
       import('../blocks/fragment/fragment.js').then(({ loadFragment }) => {
