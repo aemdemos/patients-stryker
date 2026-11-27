@@ -75,20 +75,85 @@ preview shows DA's current content; the published site shows what is live).
 **The proof passed:** the tool can run as a DA app, know who is signed in from the Adobe sign-in
 alone, and show the real pages, readable for side by side and Scroll Sync.
 
-## Steps 2–4 (after the proof, to be agreed)
+## The plan for steps 2–4 (draft, 27 Nov 2026: for the user's review before building)
 
-2. **Backend:**
-   - a people list replaces invitations: email, role (AOE team / reviewer), the pages they review,
-     added by whom and when, removed;
-   - every action takes the DA token (checked with Adobe, the email kept for a few minutes per
-     token so pages stay fast), and the audit records emails;
-   - per project: the site (org/site) and its people, so the same backend serves other projects.
-3. **Tool:**
-   - an authorisation admin replaces the Invitations page;
-   - every page of the tool opens through its DA address (an old address forwards there) and reads
-     the sign-in from the SDK;
-   - the frames use the app's host;
-   - optionally, the admin keeps the site's access list (`access.preview.allow`) in step.
-4. **Switch-over:** on one agreed day, with no period running both logins. Each invitation's
-   entries move to its person's email (the AOE team provides the emails), then all invitation
-   links are revoked.
+### Who sees what: by role (the user's choice)
+
+- **The AOE team:** the tool moves to the branch preview (`*.aem.page`). It shows preview content,
+  pages not published yet included. They need Sidekick signed in to the site (they have it).
+- **Reviewers:** the tool moves to the published site (`*.aem.live`). It shows only what is live,
+  the rule that reviewers see published pages. They sign in with the normal Adobe sign-in page
+  that DA shows. A free Adobe account on their own email is enough: no Sidekick, no DA editing
+  rights, no entry in the site's access list. The review's people list decides what they may do.
+- What follows from it:
+  1. **A fix reaches reviewers only once it's published.** Today they see the preview. When the
+     AOE team hands a page to the reviewers, the tool warns if the page's preview is newer than
+     what is live ("publish it first, or the reviewer still sees the old page").
+  2. **The source screenshots in DA** (`/review-snapshots-main`, the first shots) are on the
+     preview only, so the published site answers 404 for them. They move into the backend's
+     storage, where the newer shots already are (recommended), or get published.
+  3. **DA's warning**, once per browser: "may take any action on your behalf, including deleting
+     content". For a reviewer without DA rights, the token can't change the site's content. The
+     start page and the welcome email say so in a sentence.
+  4. **Signed in, but not on the list** (often another email): the tool says "You're signed in as
+     x@y.com, which isn't part of this review: ask the AOE team", and the AOE team adds that email.
+  5. The tool must run on the published site: today the review and status pages refuse it.
+
+### Step 2: backend
+
+- **Projects:** `{ id, org, site, title, space, hosts: { aoe, reviewer } }`; stryker.com is the
+  first one (space `main`). Another project is a new entry, with its own people, scope and
+  entries.
+- **People (in the App Builder database):** per project, `{ email (lower case), name, role
+  (aoe | reviewer), paths, addedBy, addedAt, removedBy, removedAt }`. Admin ops: add, change,
+  remove, list; the first AOE admins are added by an admin op (names from the user).
+- **Sign-in on every web action:** `authorization: Bearer <DA token>`.
+  - The backend checks it with Adobe once and keeps the email for 10 minutes per token
+    (its hash, never the token), so page loads stay fast.
+  - It looks the email up in the project's people list.
+  - It gives the actions the same internal shape as an invitation today (name, role, scope), so
+    the actions barely change.
+  - The audit records emails.
+- Invitations keep working for the existing branches until the switch-over: the live review
+  doesn't change.
+- **Allowed addresses (CORS):** the published site and DA's preview are added.
+- **Tests:** real Adobe tokens can't be made in tests, so the Stage backend gets test sign-ins.
+  They are signed by the backend itself, issued by an admin op, refused on Production.
+
+### Step 3: the tool
+
+- **One way in:** `https://da.live/app/strykerenterprise/stryker-com/tools/review/<page>?…`.
+  - The page loads DA's SDK first, asks the backend who you are, then moves to your role's host,
+    keeping the page and its parameters. DA passes them on and says hello again.
+  - Opened outside DA (old links, bookmarks), any tool page forwards to its DA address.
+- **Every page** keeps the token in memory only, takes DA's refreshed tokens, and sends the
+  token instead of the invitation. The top bar shows the name, email and role.
+- **People page (AOE team)** replaces Invitations: list and search; add an email with name, role
+  and pages; change; remove (asked first, in the shared dialog).
+- **The not-on-the-list page** (above).
+- **Links** in the Summary, Status and emails become DA addresses.
+- **The published site** opens for reviewers; the source screenshots come from the backend.
+- The hand-over warning (step 2, point 1).
+- **Tests:** the stand-in for DA used for the proof (a page that frames the tool and says hello
+  like DA) plus Stage test sign-ins, for the start, the move, the People page and refusals.
+
+### Step 4: switch-over (one agreed day)
+
+- The AOE team gives an email for each person invited today.
+- Their invitations' entries keep the names; each person's email is added with the same name and
+  role.
+- All invitation links are revoked; the old addresses forward to DA.
+
+### Other projects
+
+- The tool has to run on each project's own hosts: only there can it read the project's pages
+  in its frames (side by side, Scroll Sync).
+- So each project gets a copy of the `tools/review` folder with its own `config.js`, and shares
+  the backend, with one project entry per site.
+- A central copy of the tool on one site could not read other sites' pages.
+
+### Open decisions
+
+- The hand-over warning before reviewers see a page (point 1).
+- The first source screenshots: into the backend's storage, or published.
+- Who the first AOE admins are.
