@@ -5494,9 +5494,6 @@ var CustomImportScript = (() => {
         const h2 = doc.createElement("h2");
         const u = doc.createElement("u");
         u.textContent = text3(heading);
-        if (stdProductPage(doc) && heading.classList.contains("border-bottom-gold")) {
-          u.textContent = `[[rule-gold]${text3(heading)}]`;
-        }
         h2.append(u);
         nodes.push(h2);
       }
@@ -6010,7 +6007,7 @@ var CustomImportScript = (() => {
       const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
       if (stdProductPage(doc) && all.length === 2 && filled.length === 1 && all.every((col) => columnWidth(col) === 6)) {
         const box = filled[0].querySelector('.c-largeheadline .has-background[class*="bg-"]');
-        const colour = box && { "bg-gold": "box-gold", "bg-light-gray": "box-gray", "bg-white": "box-white" }[[...box.classList].find((c) => /^bg-/.test(c))];
+        const colour = box && { "bg-gold": "box-gold", "bg-light-gray": "box-gray" }[[...box.classList].find((c) => /^bg-/.test(c))];
         if (colour) {
           const nodes = cellNodes(filled[0], doc);
           rowCopyStyle([nodes], doc);

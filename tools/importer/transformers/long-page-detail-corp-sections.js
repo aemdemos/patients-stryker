@@ -381,12 +381,9 @@ function sectionTitles(main, doc) {
     if (heading && text(heading)) {
       const h2 = doc.createElement('h2');
       const u = doc.createElement('u');
+      // the underlined title keeps the standard grey line: stryker.com draws its
+      // h2.border-bottom-gold titles' line grey too (rgb 178 180 174), not gold
       u.textContent = text(heading);
-      // product pages: a title with stryker.com's gold rule (h2.border-bottom-gold) has the Text
-      // style gold rule under it
-      if (stdProductPage(doc) && heading.classList.contains('border-bottom-gold')) {
-        u.textContent = `[[rule-gold]${text(heading)}]`;
-      }
       h2.append(u);
       nodes.push(h2);
     }
@@ -1114,11 +1111,13 @@ function columnRows(main, doc) {
       ? colctrl.parentElement : colctrl;
     // product pages: a coloured Large Headline box in one half of a row whose other half is
     // empty (SafeAir "SafeAir compact smoke evacuator": a gold band over the left half) is
-    // Columns two equal with that cell's box, the other cell empty (as the source row)
+    // Columns two equal with that cell's box, the other cell empty (as the source row). A white
+    // box (bg-white, no shadow) on the white page is no box, as everywhere else: its text is
+    // plain text at the content edge, in line with the text under it (Mako "Mako 4")
     if (stdProductPage(doc) && all.length === 2 && filled.length === 1
       && all.every((col) => columnWidth(col) === 6)) {
       const box = filled[0].querySelector('.c-largeheadline .has-background[class*="bg-"]');
-      const colour = box && { 'bg-gold': 'box-gold', 'bg-light-gray': 'box-gray', 'bg-white': 'box-white' }[
+      const colour = box && { 'bg-gold': 'box-gold', 'bg-light-gray': 'box-gray' }[
         [...box.classList].find((c) => /^bg-/.test(c))];
       if (colour) {
         const nodes = cellNodes(filled[0], doc);
