@@ -157,6 +157,39 @@ function xfSlideCopy(slide, overlay, document) {
   });
 }
 
+/**
+ * Where a padded slide headline's text starts, in % of the slide's height: measured where the
+ * import page draws the headline over the slide; else from its top padding (% of the overlay's
+ * width) and the slide image's shape (Connected OR: 10% of the 90% overlay on a 2.95:1 image →
+ * 26.6%, stryker.com draws it at 25.5%); null when neither is known.
+ */
+function measuredTextTop(slide, overlay, { top, left, right, padTop }) {
+  const doc = overlay.ownerDocument;
+  const box = slide.getBoundingClientRect();
+  const view = doc.defaultView;
+  if (box.height && view && view.getComputedStyle(overlay).position === 'absolute') {
+    const walker = doc.createTreeWalker(overlay, 4);
+    const tops = [];
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      if (t.nodeValue.trim()) {
+        const range = doc.createRange();
+        range.selectNodeContents(t);
+        const rect = range.getBoundingClientRect();
+        if (rect.height > 0) tops.push(rect.top);
+      }
+    }
+    const at = tops.length ? ((Math.min(...tops) - box.top) / box.height) * 100 : -1;
+    if (at >= 0 && at <= 100) return Math.round(at * 10) / 10;
+  }
+  // the slide image's shape; a video slide (Connected OR) has the stryker.com banner shape,
+  // 1440 × 488 (Mako's 1220 × 410 too)
+  const img = slide.querySelector('.experienceFragment-ef img') || slide.querySelector('img');
+  const w = (img && (img.naturalWidth || Number(img.getAttribute('width')))) || 1440;
+  const h = (img && (img.naturalHeight || Number(img.getAttribute('height')))) || 488;
+  const width = 100 - (left || 0) - (right || 0);
+  return Math.round(((top || 0) + (padTop * width * w) / (100 * h)) * 10) / 10;
+}
+
 /** A % value of the overlay's inline style as a class token (7.5 → 7-5). */
 function percent(style, re) {
   const m = style.match(re);
@@ -312,10 +345,23 @@ export default function parse(element, context) {
     const inset = padded
       ? parseFloat(((padded.getAttribute('style') || '').match(/padding-left:\s*(\d+(?:\.\d+)?)%/i) || [])[1] || '0')
       : 0;
+    // …and its own top padding (% of the width, Connected OR 10%: the text starts a quarter of
+    // the way down, the overlay at the top): the height comes from where its text starts
+    const paddedTop = stdProductPage(document)
+      && overlay.querySelector('.largeheadline[style*="padding-top"]');
+    const padTop = paddedTop
+      ? parseFloat(((paddedTop.getAttribute('style') || '').match(/padding-top:\s*(\d+(?:\.\d+)?)%/i) || [])[1] || '0')
+      : 0;
+    const top = num(/top:\s*(\d+(?:\.\d+)?)%/i);
+    const left = num(/margin-left:\s*(\d+(?:\.\d+)?)%/i);
+    const right = num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
+    const textTop = padTop > 0 ? measuredTextTop(slide, overlay, {
+      top, left, right, padTop,
+    }) : null;
     const options = slideOptions({
-      left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
-      right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
-      top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
+      left,
+      right,
+      top: textTop !== null ? textTop : top,
       overlay,
       headline: overlay.querySelector('.c-largeheadline') || overlay,
       inset,

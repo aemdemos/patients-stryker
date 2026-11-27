@@ -473,9 +473,13 @@ function localNav(main, doc) {
   if (!nav) return null;
   const parent = nav.querySelector('a.parent-node');
   const links = [...nav.querySelectorAll('ul.links > li > a[href]')];
-  // review build: the grey rule above it (.margin-hr.rule-separator) or `no-top-line`
+  // review build: the grey rule above it (.margin-hr.rule-separator) or `no-top-line`. A
+  // navigation that is the page's first item (.localpagenavigation.first-item, Connected OR)
+  // draws no rule on stryker.com, though the rule's element is there
   const widget = nav.closest('[data-widget="local-page-nav"]') || nav.parentElement;
-  const noTopLine = STD_DRAFT_IMPORT && !(widget && widget.querySelector('.margin-hr.rule-separator'));
+  const firstItem = stdProductPage(doc) && nav.closest('.localpagenavigation').classList.contains('first-item');
+  const noTopLine = STD_DRAFT_IMPORT
+    && (firstItem || !(widget && widget.querySelector('.margin-hr.rule-separator')));
   nav.closest('.localpagenavigation').remove();
   if (!parent && !links.length) return null;
   const rows = [];
@@ -571,7 +575,10 @@ function spaceStep(boxes) {
   if (!values.length) return '';
   const sorted = [...values].sort((a, b) => a - b);
   const median = sorted[Math.floor(sorted.length / 2)];
-  return SPACE_STEPS.reduce((best, step) => (Math.abs(step[0] - median) < Math.abs(best[0] - median)
+  // product pages: `None` only for a box without padding (as Panel, components.js panelOptions)
+  const steps = stdProductPage(boxes[0].ownerDocument) && median > 0
+    ? SPACE_STEPS.filter(([v]) => v > 0) : SPACE_STEPS;
+  return steps.reduce((best, step) => (Math.abs(step[0] - median) < Math.abs(best[0] - median)
     ? step : best))[1];
 }
 
@@ -708,6 +715,9 @@ function boxVariant(columns) {
   const space = spaceStep(used.flatMap((b) => b.boxes || []));
   const standard = (cell) => [...colour, cell, space].filter(Boolean).join(', ');
   if (kinds[0] === 'lead' && used.length === textCols.length) {
+    // product pages: a white shadow box around each cell's first line (Mako "MICS 3") is
+    // `white-lead`
+    if (colours[0] === 'boxed' && stdProductPage(columns[0].ownerDocument)) return 'white-lead';
     const lead = `${colours[0]}-lead`;
     return BOX_VARIANTS.has(lead) ? lead : '';
   }
@@ -1266,8 +1276,11 @@ function columnRows(main, doc) {
     // intuitive touch screen": a gold heading box over a white shadow box, the photo beside)
     // is the package's "box beside other content": a side-by-side section of Panel blocks (one
     // per box, stacked in their column, scripts/corp.js) and the other column's content — only
-    // where the Columns cell box can't carry it (a single box in a cell stays the cell box)
-    if (stdProductPage(doc) && columns.length === 2 && !boxVariant(columns)) {
+    // where the Columns cell box can't carry it (a single box in a cell stays the cell box;
+    // several separate boxes in one cell are Panels, Mako "Q Guidance System display monitors",
+    // "FP8000 camera", "Small OR footprint")
+    const severalBoxes = columns.some((col) => ((cellBox(col) || {}).boxes || []).length > 1);
+    if (stdProductPage(doc) && columns.length === 2 && (!boxVariant(columns) || severalBoxes)) {
       const boxOf = (c) => c.querySelector(':scope > .dimensional-box, :scope > .has-background, :scope > div > .dimensional-box');
       const squash = (v) => (v || '').replace(/[\s\u00a0]+/g, '');
       const texts = columns.map((col) => [...col.querySelectorAll('.c-rich-text-editor')]

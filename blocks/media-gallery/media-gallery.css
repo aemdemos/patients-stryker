@@ -140,6 +140,11 @@ body.corp.std-draft .media-gallery .media-gallery-spin img[hidden] {
   display: none;
 }
 
+/* the focus ring for the keyboard only (a click to drag draws none) */
+body.corp.std-draft .media-gallery .media-gallery-spin:focus:not(:focus-visible) {
+  outline: none;
+}
+
 body.corp.std-draft .media-gallery .media-gallery-spin-buttons {
   display: flex;
   justify-content: center;

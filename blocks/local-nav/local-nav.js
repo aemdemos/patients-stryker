@@ -35,7 +35,12 @@ export default function decorate(block) {
   const parent = parentRow && parentRow.querySelector('a[href]');
   const pages = links.filter((a) => a !== parent);
   const here = pathOf(window.location.href);
-  const isCurrent = (a) => pathOf(a.href) === here;
+  // a review copy of a page (/drafts/…/connected-or-operating-system-v5) is that page: its
+  // name without the -vN version
+  const lastName = (path) => path.split('/').pop().replace(/-v\d+$/, '');
+  const review = here.startsWith('/drafts/');
+  const isCurrent = (a) => pathOf(a.href) === here
+    || (review && lastName(pathOf(a.href)) === lastName(here));
 
   const nav = document.createElement('nav');
   nav.className = 'local-nav-bar';

@@ -314,10 +314,36 @@ export function keepMarkersReadable(main) {
   }
 }
 
+/**
+ * Product pages: a space at the start or end of bold, italic, underline or a link (stryker.com
+ * colour runs: "See</span> Mako SmartRobotics", "<span> Neurotechnology Cart") moves just
+ * outside it. The document conversion drops a space inside the formatting's edge, which joined
+ * the words ("SeeMako", "RISENeurotechnology").
+ * @param {Element} root The page content
+ */
+export function spacesOutsideFormatting(root) {
+  const doc = root.ownerDocument;
+  [...root.querySelectorAll('strong, b, em, i, u, a')].reverse().forEach((el) => {
+    const first = el.firstChild;
+    if (first && first.nodeType === 3 && /^[\s\u00a0]+\S/.test(first.nodeValue)) {
+      first.nodeValue = first.nodeValue.replace(/^[\s\u00a0]+/, '');
+      const prev = el.previousSibling;
+      if (!(prev && prev.nodeType === 3 && /[\s\u00a0]$/.test(prev.nodeValue))) el.before(doc.createTextNode(' '));
+    }
+    const last = el.lastChild;
+    if (last && last.nodeType === 3 && /\S[\s\u00a0]+$/.test(last.nodeValue)) {
+      last.nodeValue = last.nodeValue.replace(/[\s\u00a0]+$/, '');
+      const next = el.nextSibling;
+      if (!(next && next.nodeType === 3 && /^[\s\u00a0]/.test(next.nodeValue))) el.after(doc.createTextNode(' '));
+    }
+  });
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'afterTransform' || !STD_DRAFT_IMPORT) return;
   const dropped = bracketsToMarkers(element);
   keepMarkersReadable(element);
+  if (stdProductPage(element.ownerDocument)) spacesOutsideFormatting(element);
   // the classes without a word, for the import report
   if (payload && dropped.length) payload.textMarkersDropped = dropped;
 }

@@ -298,10 +298,28 @@ var CustomImportScript = (() => {
       node = walker.nextNode();
     }
   }
+  function spacesOutsideFormatting(root) {
+    const doc = root.ownerDocument;
+    [...root.querySelectorAll("strong, b, em, i, u, a")].reverse().forEach((el) => {
+      const first = el.firstChild;
+      if (first && first.nodeType === 3 && /^[\s\u00a0]+\S/.test(first.nodeValue)) {
+        first.nodeValue = first.nodeValue.replace(/^[\s\u00a0]+/, "");
+        const prev = el.previousSibling;
+        if (!(prev && prev.nodeType === 3 && /[\s\u00a0]$/.test(prev.nodeValue))) el.before(doc.createTextNode(" "));
+      }
+      const last = el.lastChild;
+      if (last && last.nodeType === 3 && /\S[\s\u00a0]+$/.test(last.nodeValue)) {
+        last.nodeValue = last.nodeValue.replace(/[\s\u00a0]+$/, "");
+        const next = el.nextSibling;
+        if (!(next && next.nodeType === 3 && /^[\s\u00a0]/.test(next.nodeValue))) el.after(doc.createTextNode(" "));
+      }
+    });
+  }
   function transform(hookName, element, payload) {
     if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
     const dropped = bracketsToMarkers(element);
     keepMarkersReadable(element);
+    if (stdProductPage(element.ownerDocument)) spacesOutsideFormatting(element);
     if (payload && dropped.length) payload.textMarkersDropped = dropped;
   }
 
@@ -2557,6 +2575,30 @@ var CustomImportScript = (() => {
       return line;
     });
   }
+  function measuredTextTop(slide, overlay, { top, left, right, padTop }) {
+    const doc = overlay.ownerDocument;
+    const box = slide.getBoundingClientRect();
+    const view = doc.defaultView;
+    if (box.height && view && view.getComputedStyle(overlay).position === "absolute") {
+      const walker = doc.createTreeWalker(overlay, 4);
+      const tops = [];
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        if (t.nodeValue.trim()) {
+          const range = doc.createRange();
+          range.selectNodeContents(t);
+          const rect = range.getBoundingClientRect();
+          if (rect.height > 0) tops.push(rect.top);
+        }
+      }
+      const at = tops.length ? (Math.min(...tops) - box.top) / box.height * 100 : -1;
+      if (at >= 0 && at <= 100) return Math.round(at * 10) / 10;
+    }
+    const img = slide.querySelector(".experienceFragment-ef img") || slide.querySelector("img");
+    const w = img && (img.naturalWidth || Number(img.getAttribute("width"))) || 1440;
+    const h = img && (img.naturalHeight || Number(img.getAttribute("height"))) || 488;
+    const width = 100 - (left || 0) - (right || 0);
+    return Math.round(((top || 0) + padTop * width * w / (100 * h)) * 10) / 10;
+  }
   function percent(style, re) {
     const m = style.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
@@ -2682,10 +2724,21 @@ var CustomImportScript = (() => {
       };
       const padded = stdProductPage(document) && overlay.querySelector('.largeheadline[style*="padding-left"]');
       const inset = padded ? parseFloat(((padded.getAttribute("style") || "").match(/padding-left:\s*(\d+(?:\.\d+)?)%/i) || [])[1] || "0") : 0;
+      const paddedTop = stdProductPage(document) && overlay.querySelector('.largeheadline[style*="padding-top"]');
+      const padTop = paddedTop ? parseFloat(((paddedTop.getAttribute("style") || "").match(/padding-top:\s*(\d+(?:\.\d+)?)%/i) || [])[1] || "0") : 0;
+      const top = num(/top:\s*(\d+(?:\.\d+)?)%/i);
+      const left = num(/margin-left:\s*(\d+(?:\.\d+)?)%/i);
+      const right = num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
+      const textTop = padTop > 0 ? measuredTextTop(slide, overlay, {
+        top,
+        left,
+        right,
+        padTop
+      }) : null;
       const options = slideOptions({
-        left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
-        right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
-        top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
+        left,
+        right,
+        top: textTop !== null ? textTop : top,
         overlay,
         headline: overlay.querySelector(".c-largeheadline") || overlay,
         inset
@@ -3022,17 +3075,31 @@ var CustomImportScript = (() => {
       const style = [colour, "full-bleed", centred ? "text-center" : ""].filter(Boolean).join(", ");
       const out = [];
       let run = [];
+      let runStyle = style;
       const flush = () => {
         if (product) tagPanelCopy(run, doc, h);
-        if (run.length) out.push(keepNodes(doc, run, style));
+        if (run.length) out.push(keepNodes(doc, run, runStyle));
         run = [];
+        runStyle = style;
       };
       contentUnits(component).forEach((unit) => {
-        if (unit.getAttribute("data-keep") === "nodes" && unit.hasAttribute("data-section-style")) {
+        const keep = unit.getAttribute("data-keep");
+        const flex = product && keep === "section" && /\bflex\b/.test(unit.getAttribute("data-section-style") || "");
+        if (keep === "nodes" && unit.hasAttribute("data-section-style")) {
           flush();
           unit.setAttribute("data-section-style", `${style}, ${unit.getAttribute("data-section-style")}`);
           out.push(unit);
-        } else run.push(...unitNodes(unit, doc, h));
+        } else if (flex) {
+          flush();
+          runStyle = `${style}, ${unit.getAttribute("data-section-style")}`;
+          unit.removeAttribute("data-section-style");
+          run.push(...unitNodes(unit, doc, h));
+        } else if (runStyle !== style && keep === "join") {
+          run.push(...unitNodes(unit, doc, h));
+        } else {
+          if (runStyle !== style) flush();
+          run.push(...unitNodes(unit, doc, h));
+        }
       });
       flush();
       if (!out.length && /^(bg-)?gold$/.test(colour) && !h.text(component)) {
@@ -3078,7 +3145,8 @@ var CustomImportScript = (() => {
     let space = "space-s";
     if (values.length) {
       const median = values[Math.floor(values.length / 2)];
-      [, space] = PANEL_SPACE_STEPS.reduce((best, step) => Math.abs(step[0] - median) < Math.abs(best[0] - median) ? step : best);
+      const steps = stdProductPage(box.ownerDocument) && median > 0 ? PANEL_SPACE_STEPS.filter(([v]) => v > 0) : PANEL_SPACE_STEPS;
+      [, space] = steps.reduce((best, step) => Math.abs(step[0] - median) < Math.abs(best[0] - median) ? step : best);
     }
     const items = [...component.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => el.textContent.trim());
     const centred = items.length > 0 && items.every((el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]'));
@@ -3218,6 +3286,15 @@ var CustomImportScript = (() => {
       let nodes = contentNodes(component, doc, h);
       if (!nodes.length) return;
       if (STD_DRAFT_IMPORT) nodes = panelCopy(nodes, variant, doc, h, component);
+      const halves = row && [...row.children].filter((c) => /\bcol-(sm|md)-6\b/.test(c.className));
+      if (stdProductPage(doc) && halves && halves.length === 2 && row.children.length === 2) {
+        const first = halves[0] === col;
+        const cells = first ? [nodes, ""] : ["", nodes];
+        const name2 = `Columns (columns-50-50, ${variant}${first ? ", box-first" : ""})`;
+        const block = WebImporter.Blocks.createBlock(doc, { name: name2, cells: [cells] });
+        (col.closest(".colctrl") || component).replaceWith(keepBlock(block));
+        return;
+      }
       const name = variant ? `Panel (${variant})` : "Panel";
       (component.closest(".text") || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells: [[nodes]] })));
     });
@@ -6341,7 +6418,8 @@ var CustomImportScript = (() => {
     const parent = nav.querySelector("a.parent-node");
     const links = [...nav.querySelectorAll("ul.links > li > a[href]")];
     const widget = nav.closest('[data-widget="local-page-nav"]') || nav.parentElement;
-    const noTopLine = STD_DRAFT_IMPORT && !(widget && widget.querySelector(".margin-hr.rule-separator"));
+    const firstItem = stdProductPage(doc) && nav.closest(".localpagenavigation").classList.contains("first-item");
+    const noTopLine = STD_DRAFT_IMPORT && (firstItem || !(widget && widget.querySelector(".margin-hr.rule-separator")));
     nav.closest(".localpagenavigation").remove();
     if (!parent && !links.length) return null;
     const rows = [];
@@ -6418,7 +6496,8 @@ var CustomImportScript = (() => {
     if (!values.length) return "";
     const sorted = [...values].sort((a, b) => a - b);
     const median = sorted[Math.floor(sorted.length / 2)];
-    return SPACE_STEPS.reduce((best, step) => Math.abs(step[0] - median) < Math.abs(best[0] - median) ? step : best)[1];
+    const steps = stdProductPage(boxes[0].ownerDocument) && median > 0 ? SPACE_STEPS.filter(([v]) => v > 0) : SPACE_STEPS;
+    return steps.reduce((best, step) => Math.abs(step[0] - median) < Math.abs(best[0] - median) ? step : best)[1];
   }
   var IMAGE_BORDERS = {
     gray: "image-border",
@@ -6515,6 +6594,7 @@ var CustomImportScript = (() => {
     const space = spaceStep(used.flatMap((b) => b.boxes || []));
     const standard = (cell) => [...colour, cell, space].filter(Boolean).join(", ");
     if (kinds[0] === "lead" && used.length === textCols.length) {
+      if (colours[0] === "boxed" && stdProductPage(columns[0].ownerDocument)) return "white-lead";
       const lead = `${colours[0]}-lead`;
       return BOX_VARIANTS.has(lead) ? lead : "";
     }
@@ -6905,7 +6985,8 @@ var CustomImportScript = (() => {
           return;
         }
       }
-      if (stdProductPage(doc) && columns.length === 2 && !boxVariant(columns)) {
+      const severalBoxes = columns.some((col) => ((cellBox(col) || {}).boxes || []).length > 1);
+      if (stdProductPage(doc) && columns.length === 2 && (!boxVariant(columns) || severalBoxes)) {
         const boxOf = (c) => c.querySelector(":scope > .dimensional-box, :scope > .has-background, :scope > div > .dimensional-box");
         const squash = (v) => (v || "").replace(/[\s\u00a0]+/g, "");
         const texts = columns.map((col) => [...col.querySelectorAll(".c-rich-text-editor")].filter((c) => c.closest(".colctrl") === colctrl && !c.parentElement.closest(".c-rich-text-editor") && text4(c)).map((c) => ({ c, box: boxOf(c) })).map((t) => __spreadProps(__spreadValues({}, t), { variant: t.box ? panelOptions(t.box, t.c) : "" })));

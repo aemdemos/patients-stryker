@@ -160,6 +160,8 @@ function buildSpin(block, items) {
   const frames = items.map((item, i) => {
     const img = imageEl(item.src, '', 1440, false);
     img.hidden = i > 0;
+    // a drag turns the product: the browser's own image drag would take the pointer instead
+    img.draggable = false;
     // the other frames load once the first one has
     if (i > 0) img.loading = 'lazy';
     stage.append(img);
@@ -187,6 +189,8 @@ function buildSpin(block, items) {
     startX = e.clientX;
     startFrame = current;
     stage.setPointerCapture(e.pointerId);
+    // no image drag or text selection while turning
+    e.preventDefault();
   });
   stage.addEventListener('pointermove', (e) => {
     if (startX === null) return;

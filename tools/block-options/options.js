@@ -550,6 +550,7 @@ export const BLOCK_OPTIONS = {
           ['gold-lead', 'In a gold bar', { needs: ['text'], hint: 'The first line of the text cell in a gold bar, centred' }],
           ['dark-lead', 'In a dark grey bar', { needs: ['text'], hint: 'The first line of the text cell in a dark grey bar, centred' }],
           ['blue-lead', 'In a blue bar', { needs: ['text'], hint: 'The first line of each cell in a blue bar, centred' }],
+          ['white-lead', 'In a white box with a soft shadow', { needs: ['text'], hint: 'The first line of each text cell in a white box with the soft shadow, the image and text below it' }],
         ],
         // the bars are the cell's box, so they clear a cell box
         clears: /^(box-.+|shadow)$/,

@@ -383,20 +383,39 @@ function fullBleedPanels(main, doc, h) {
     // campaign: `blue, full-bleed, tabbed`)
     const out = [];
     let run = [];
+    // the style of the band section being collected (the band's, or a side-by-side part's)
+    let runStyle = style;
     const flush = () => {
       // review build, product pages: the band's copy keeps its own size and font as Text style
       // (a band has no copy style of its own; SafeAir testimonial 1.75x Futura bold quote over a
       // 1.5x Egyptienne attribution), as an Accordion panel's copy does
       if (product) tagPanelCopy(run, doc, h);
-      if (run.length) out.push(keepNodes(doc, run, style));
+      if (run.length) out.push(keepNodes(doc, run, runStyle));
       run = [];
+      runStyle = style;
     };
     contentUnits(component).forEach((unit) => {
-      if (unit.getAttribute('data-keep') === 'nodes' && unit.hasAttribute('data-section-style')) {
+      const keep = unit.getAttribute('data-keep');
+      const flex = product && keep === 'section'
+        && /\bflex\b/.test(unit.getAttribute('data-section-style') || '');
+      if (keep === 'nodes' && unit.hasAttribute('data-section-style')) {
         flush();
         unit.setAttribute('data-section-style', `${style}, ${unit.getAttribute('data-section-style')}`);
         out.push(unit);
-      } else run.push(...unitNodes(unit, doc, h));
+      } else if (flex) {
+        // review build, product pages: a side-by-side part (its first part, the parts joined to
+        // it after) is a band section of its own, with the band's style (Mako "Q Guidance
+        // System display monitors" Panels beside the photo, under the band's heading)
+        flush();
+        runStyle = `${style}, ${unit.getAttribute('data-section-style')}`;
+        unit.removeAttribute('data-section-style');
+        run.push(...unitNodes(unit, doc, h));
+      } else if (runStyle !== style && keep === 'join') {
+        run.push(...unitNodes(unit, doc, h));
+      } else {
+        if (runStyle !== style) flush();
+        run.push(...unitNodes(unit, doc, h));
+      }
     });
     flush();
     // an empty gold panel (OR staff: the 34px gold band under the page title): `gold-bar`
@@ -460,7 +479,11 @@ export function panelOptions(box, component) {
   let space = 'space-s';
   if (values.length) {
     const median = values[Math.floor(values.length / 2)];
-    [, space] = PANEL_SPACE_STEPS.reduce((best, step) => (Math.abs(step[0] - median)
+    // product pages: `None` only for a box without padding; a little padding (the STA "Your
+    // next step…" blue box: 1%) is the nearest step that keeps the text off the box's edge
+    const steps = stdProductPage(box.ownerDocument) && median > 0
+      ? PANEL_SPACE_STEPS.filter(([v]) => v > 0) : PANEL_SPACE_STEPS;
+    [, space] = steps.reduce((best, step) => (Math.abs(step[0] - median)
       < Math.abs(best[0] - median) ? step : best));
   }
   const items = [...component.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')]
@@ -630,6 +653,18 @@ function textBoxes(main, doc, h) {
     let nodes = contentNodes(component, doc, h);
     if (!nodes.length) return;
     if (STD_DRAFT_IMPORT) nodes = panelCopy(nodes, variant, doc, h, component);
+    // product pages: the box in one half of a two-half row whose other half is empty (Mako
+    // "Mako SmartRobotics™ Global statistics", a white shadow box over the left half) keeps its
+    // width: Columns two equal with that cell's box (the Panel's box options), the other empty
+    const halves = row && [...row.children].filter((c) => /\bcol-(sm|md)-6\b/.test(c.className));
+    if (stdProductPage(doc) && halves && halves.length === 2 && row.children.length === 2) {
+      const first = halves[0] === col;
+      const cells = first ? [nodes, ''] : ['', nodes];
+      const name = `Columns (columns-50-50, ${variant}${first ? ', box-first' : ''})`;
+      const block = WebImporter.Blocks.createBlock(doc, { name, cells: [cells] });
+      (col.closest('.colctrl') || component).replaceWith(keepBlock(block));
+      return;
+    }
     const name = variant ? `Panel (${variant})` : 'Panel';
     (component.closest('.text') || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells: [[nodes]] })));
   });

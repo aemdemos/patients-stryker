@@ -50,7 +50,7 @@ function decorateYouTube(block) {
 
 // the box variants (columns-corp.css): which cells hold a coloured text box, and whether the
 // box is the cell's text (`-last`, `-2`, `-all`) or only its first line (`-lead`)
-const BOX_VARIANT = /\b(?:(?:gray|purple)-last|gray-2|(?:gray|boxed|blue)-all|(?:gold|dark|blue)-lead)\b/;
+const BOX_VARIANT = /\b(?:(?:gray|purple)-last|gray-2|(?:gray|boxed|blue)-all|(?:gold|dark|blue|white)-lead)\b/;
 // the standard choices (Block options panel): a box colour, in the last cell unless box-first /
 // box-all says otherwise
 const BOX_COLOUR = /\bbox-(?:white|gray|gold|blue|purple|teal|dark|dark-blue-gradient|dark-purple-gradient)\b/;

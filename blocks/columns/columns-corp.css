@@ -700,6 +700,20 @@ body.corp .columns:is(.gold-lead, .dark-lead, .blue-lead) .columns-box {
   text-align: center;
 }
 
+/* white-lead, in review: the first line of each text cell in a white box with the soft shadow,
+   left-aligned, the standard box spacing inside (stryker.com Mako "More integrated
+   technologies": "Mako Spine with Copilot's automatic depth stop*", "MICS 3"), the cell's
+   image and text below it */
+body.corp.std-draft .columns.white-lead {
+  --columns-corp-box-bg: var(--color-white);
+  --columns-corp-box-shadow: var(--shadow-soft);
+  --columns-corp-box-padding: 5%;
+}
+
+body.corp.std-draft .columns.white-lead .columns-box {
+  margin-bottom: var(--space-block);
+}
+
 /* an image right under a title bar touches it (Mako refreshers) */
 body.corp .columns:is(.gold-lead, .dark-lead, .blue-lead) .columns-box:has(+ .columns-img-col) {
   margin-bottom: 0;
