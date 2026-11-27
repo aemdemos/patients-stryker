@@ -98,6 +98,9 @@ export const spaceOf = (scope) => (scope && SPACES[scope.space] && scope.space) 
 const prefixOf = (space) => (!space || space === 'std' ? '' : `${space}.`);
 const ORIGINS = [
   /^https:\/\/[a-z0-9-]+--stryker-com--strykerenterprise\.aem\.page$/,
+  // (the published site: the reviewers' host with the DA sign-in; DA's preview: its sign-in page)
+  /^https:\/\/[a-z0-9-]+--stryker-com--strykerenterprise\.aem\.live$/,
+  /^https:\/\/[a-z0-9-]+--stryker-com--strykerenterprise\.preview\.da\.live$/,
   /^https:\/\/preview-aemcoder\.adobe\.io$/,
   /^http:\/\/localhost(:\d+)?$/,
 ];
@@ -190,11 +193,45 @@ export async function secretOf(files, create = false) {
 }
 
 /** an invitation token → its reviewer, or an error code */
+/** a person's key (people.mjs; dbstate.mjs: the people collection): u.<space>.<email, base64url> */
+export const personKey = (space, email) => `u.${space}.${Buffer.from(String(email).toLowerCase()).toString('base64url')}`;
+
+/**
+ * a review session's person (people.mjs; branch da-app-v3, 27 Nov 2026), read on every call (a
+ * removed person is refused at once), in the shape of an invitation
+ */
+async function sessionIdentity(state, payload) {
+  const stored = await state.get(personKey(payload.sp, payload.e));
+  const person = stored && JSON.parse(stored.value);
+  if (!person || person.removed) return { error: 'removed' };
+  const role = person.role === 'aoe' ? 'aoe' : 'reviewer';
+  return {
+    invite: {
+      id: `p:${person.email}`,
+      name: person.name,
+      email: person.email,
+      // (as an invitation's scope: the results for everyone, groups shown)
+      scope: {
+        paths: person.paths?.length ? person.paths : ['/'],
+        groups: true,
+        results: true,
+        role,
+        ...(payload.sp === 'std' ? {} : { space: payload.sp }),
+      },
+      exp: payload.exp,
+      role,
+      session: true,
+    },
+  };
+}
+
 export async function checkInvite({ state, files }, token) {
   if (!token) return { error: 'no-invite' };
   const payload = verify(token, await secretOf(files));
   if (!payload) return { error: 'bad-invite' };
   if (payload.exp && Date.parse(payload.exp) < Date.now()) return { error: 'expired' };
+  // (a review session: the DA sign-in's, for a person of the review)
+  if (payload.k === 's') return sessionIdentity(state, payload);
   const stored = await state.get(`i.${payload.id}`);
   const invite = stored && JSON.parse(stored.value);
   if (!invite || invite.revoked) return { error: 'revoked' };
@@ -309,7 +346,7 @@ export function cors(params) {
   return {
     'access-control-allow-origin': origin,
     'access-control-allow-methods': 'GET, POST, OPTIONS',
-    'access-control-allow-headers': 'content-type, x-review-invite',
+    'access-control-allow-headers': 'content-type, x-review-invite, authorization',
     'access-control-max-age': '600',
     vary: 'origin',
   };

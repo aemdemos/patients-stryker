@@ -19,6 +19,34 @@ let facts = null;
 /** the AOE team's facts about the scope from the last load (null for reviewers / no scope) */
 export const scopeFacts = () => facts;
 
+/** the table's rows as the backend's copy keeps them (backend lib/scope.mjs scopeRows) */
+const scopeRows = (data) => (Array.isArray(data) ? data : []).map((r) => ({
+  source: String(r?.source || '').trim(), eds: String(r?.eds || '').trim(), template: String(r?.template || '').trim(),
+})).filter((r) => r.source || r.eds);
+
+/**
+ * The AOE team (27 Nov 2026): the scope table behind the site login, which the backend can't
+ * read; this browser can (the site login comes with it), reads it and hands it to the backend
+ * when the backend's copy differs → { at, rows } handed over, { same: true }, or null (not read)
+ */
+export async function handOverScope() {
+  const copy = facts?.scopeCopy;
+  if (!copy || !REVIEW.pages.scopeTable) return null;
+  try {
+    const resp = await fetch(`${REVIEW.pages.scopeTable}?limit=20000`, { cache: 'no-store' });
+    if (!resp.ok) return null;
+    const rows = scopeRows((await resp.json()).data);
+    if (!rows.length) return null;
+    const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(rows)));
+    const hash = [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
+    if (hash === copy.hash) return { same: true };
+    const { status, body } = await call('pages', { method: 'POST', body: JSON.stringify({ op: 'scope-copy', data: rows }) });
+    return status === 200 ? body : null;
+  } catch (e) {
+    return null;
+  }
+}
+
 async function fromIndex() {
   const resp = await fetch(`${REVIEW.pages.index}?limit=5000`);
   if (!resp.ok) return [];
@@ -77,6 +105,7 @@ export default async function loadPages({ all = false, fresh = false } = {}) {
           problems: body.problems || [],
           capture: body.capture,
           changes: body.changes,
+          scopeCopy: body.scopeCopy || null,
         } : null;
         return body.pages.filter((p) => all || p.published);
       }

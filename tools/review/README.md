@@ -208,6 +208,13 @@ pages). The backend's `pages` action reads both (the previewed sheet: edit it in
   (`scope-sheet.py`): the 568 pages with a first shot keep their known pair, the others have
   their EDS path by the importer's rule (renamed pages: change the row). The AOE team removes
   what is out of scope. A local copy is in the workspace (`content/review/migration-scope.json`).
+- **Behind the site login** (27 Nov 2026): since the site login is on for the preview addresses,
+  the backend can't read the previewed table (401). It falls back to **its own copy**
+  (`main/scope-copy.json` in its storage, `lib/scope.mjs`). An AOE member's Status page reads the
+  table through the site login, compares fingerprints and hands it over when it changed (`pages`
+  POST `scope-copy`). The admin op `scope-copy` writes it too (with `data`) or tells its date.
+  The Migration scope box says when the copy is in use. A site secret for the backend (needs the
+  site's configuration admin role) would end the need for the copy.
 
 ## Live: the source page, rendered now
 

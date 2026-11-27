@@ -6,6 +6,8 @@
  *   primary (always the newest write); an entry is written in place, the rev check inside the
  *   write (saveEntry).
  * - collection `invites`: one document per invitation, `_id` = its id, `value` its record (JSON).
+ * - collection `people`: one document per person of a review (the DA sign-in), `_id` =
+ *   <space>.<email, base64url>, `value` its record (JSON; people.mjs).
  * The rest of the backend keeps its key–value view (`p.<page>.<item>.<kind>`, `g.…`, `i.<id>`,
  * the space as prefix): kv(client) gives it get / put / delete / deleteAll / list on these
  * documents; the paths that matter (a page's rows, every row of a space, a save) have their own
@@ -27,8 +29,13 @@ const spaceOfPrefix = (key) => {
 };
 
 /** a key of the key–value view → where it lives */
+// the collections of one document per key (value as stored): invitations, the people of a
+// review (the DA sign-in, branch da-app-v3: keys u.<space>.<email, base64url>)
+const DOCS = { i: 'invites', u: 'people' };
+const DOC_PREFIX = Object.fromEntries(Object.entries(DOCS).map(([p, c]) => [c, p]));
 function where(key) {
-  if (key.startsWith('i.')) return { coll: 'invites', id: key.slice(2) };
+  const doc = DOCS[key.slice(0, 1)];
+  if (doc && key[1] === '.') return { coll: doc, id: key.slice(2) };
   const { space, rest } = spaceOfPrefix(key);
   const parts = rest.split('.');
   if (parts[0] === 'p' && parts.length === 4) {
@@ -138,28 +145,32 @@ const globRe = (glob) => new RegExp(`^${glob.replace(/[.+?^${}()|[\]\\]/g, '\\$&
 export function kv(client) {
   const coll = (name) => client.collection(name);
   const allKeys = async () => {
-    const [pages, invites] = await Promise.all([coll('pages').find({}).toArray(), coll('invites').find({}, { projection: { _id: 1 } }).toArray()]);
+    const [pages, ...docs] = await Promise.all([coll('pages').find({}).toArray(),
+      ...Object.values(DOCS).map((c) => coll(c).find({}, { projection: { _id: 1 } }).toArray())]);
     return [
       ...pages.flatMap((d) => Object.keys(d.e || {}).map((f) => keyOf(d.space, d.page, f))),
-      ...invites.map((d) => `i.${d._id}`),
+      ...Object.values(DOCS).flatMap((c, n) => docs[n].map((d) => `${DOC_PREFIX[c]}.${d._id}`)),
     ];
   };
   return {
     // every key with its value, as State's backups held them ({ value, expiration })
     async entries() {
-      const [pages, invites] = await Promise.all([coll('pages').find({}).toArray(), coll('invites').find({}).toArray()]);
+      const [pages, ...docs] = await Promise.all([coll('pages').find({}).toArray(),
+        ...Object.values(DOCS).map((c) => coll(c).find({}).toArray())]);
       const out = {};
       pages.forEach((doc) => Object.entries(doc.e || {}).forEach(([f, e]) => {
         out[keyOf(doc.space, doc.page, f)] = { value: JSON.stringify(e), expiration: null };
       }));
-      invites.forEach((doc) => { out[`i.${doc._id}`] = { value: doc.value, expiration: null }; });
+      Object.values(DOCS).forEach((c, n) => docs[n].forEach((doc) => {
+        out[`${DOC_PREFIX[c]}.${doc._id}`] = { value: doc.value, expiration: null };
+      }));
       return out;
     },
     async get(key) {
       const w = where(key);
       if (!w) return undefined;
-      if (w.coll === 'invites') {
-        const d = await coll('invites').findOne({ _id: w.id }, PRIMARY).catch(() => null);
+      if (w.coll !== 'pages') {
+        const d = await coll(w.coll).findOne({ _id: w.id }, PRIMARY).catch(() => null);
         return d ? { value: d.value, expiration: null } : undefined;
       }
       const d = await coll('pages').findOne({ _id: w.id }, PRIMARY).catch(() => null);
@@ -169,8 +180,8 @@ export function kv(client) {
     async put(key, value) {
       const w = where(key);
       if (!w) throw new Error(`not a review key: ${key}`);
-      if (w.coll === 'invites') {
-        await once(() => coll('invites').replaceOne({ _id: w.id }, { _id: w.id, value }, { upsert: true }));
+      if (w.coll !== 'pages') {
+        await once(() => coll(w.coll).replaceOne({ _id: w.id }, { _id: w.id, value }, { upsert: true }));
       } else {
         await once(() => coll('pages').updateOne({ _id: w.id }, { $set: { [`e.${w.field}`]: JSON.parse(value), space: w.space, page: w.page } }, { upsert: true }));
       }
@@ -179,7 +190,7 @@ export function kv(client) {
     async delete(key) {
       const w = where(key);
       if (!w) return null;
-      if (w.coll === 'invites') await coll('invites').deleteOne({ _id: w.id });
+      if (w.coll !== 'pages') await coll(w.coll).deleteOne({ _id: w.id });
       else {
         await coll('pages').updateOne({ _id: w.id }, { $unset: { [`e.${w.field}`]: '' } });
         // (a page without entries any more: its document gone too)

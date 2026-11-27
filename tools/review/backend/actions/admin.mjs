@@ -53,8 +53,13 @@
 import crypto from 'crypto';
 import {
   open, secretOf, readAll, saveChanges, entryKey, pagePattern, groupPattern, parseKey, replyProblem, SPACES,
+  personKey,
 } from '../lib/core.mjs';
 import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
+import { readScopeCopy, writeScopeCopy } from '../lib/scope.mjs';
+import {
+  listPeople, putPerson, removePerson, personProblem, issueSession, getPerson, cleanEmail,
+} from '../lib/people.mjs';
 import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
 import {
@@ -140,6 +145,12 @@ async function run(params) {
     }
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
     // the daily source change check (lib/changes.mjs)
+    if (op === 'scope-copy') {
+      // the backend's copy of the scope table (lib/scope.mjs): written with data, else read
+      if (Array.isArray(params.data)) return ok(await writeScopeCopy(files, space, params.data, { name: 'developers (admin)' }));
+      const kept = await readScopeCopy(files, space);
+      return ok(kept ? { at: kept.at, by: kept.by, hash: kept.hash, rows: kept.data.length } : { none: true });
+    }
     if (op === 'changes-scope') {
       if (Array.isArray(params.pages)) {
         const pages = params.pages.filter((p) => p && typeof p.page === 'string' && /^https:\/\/www\.stryker\.com\//.test(p.source || ''))
@@ -192,6 +203,35 @@ async function run(params) {
       const test = (await listInvites(state)).filter((i) => i.revoked && /^(tool test |zz-test-|backend test( \(|$))/.test(i.name || ''));
       await Promise.all(test.map((i) => state.delete(`i.${i.id}`)));
       return ok({ forgotten: test.length });
+    }
+    // the people of a review (the DA sign-in, branch da-app-v3): list, add or change, remove
+    if (op === 'people') return ok({ space, people: await listPeople(state, space) });
+    if (op === 'person-put') {
+      const fields = {
+        email: params.email, name: params.name, role: params.role, paths: params.paths,
+      };
+      const problem = personProblem(fields);
+      if (problem) return bad(problem);
+      return ok({ person: await putPerson(state, space, fields, { name: 'developers (admin)' }) });
+    }
+    if (op === 'person-remove') {
+      const person = await removePerson(state, space, cleanEmail(params.email), { name: 'developers (admin)' });
+      return person ? ok({ person }) : bad('no such person');
+    }
+    if (op === 'person-forget') {
+      // a test person out of the list for good (emails @example.com only)
+      const email = cleanEmail(params.email);
+      if (!/@example\.com$/.test(email)) return bad('only test people (@example.com) are forgotten');
+      await state.delete(personKey(space, email));
+      return ok({ forgotten: email });
+    }
+    if (op === 'test-session') {
+      // a review session without the Adobe sign-in, for the tests: on Stage only, for a person
+      // of the list (real Adobe tokens can't be made in a test)
+      if (!/-stage$/.test(process.env.__OW_NAMESPACE || '')) return bad('test sessions are made on Stage only');
+      const person = await getPerson(state, space, params.email);
+      if (!person || person.removed) return bad('no such person (add them first: person-put)');
+      return ok({ ...(await issueSession(files, space, person.email)), person });
     }
     if (op === 'invites') {
       // (the invitations of every space, each with its space)
