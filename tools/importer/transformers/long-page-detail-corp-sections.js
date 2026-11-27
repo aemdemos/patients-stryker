@@ -43,6 +43,7 @@ import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
 import PRODUCT_XFS from '../product-detail-xf.js';
 import REVIEW_XFS from '../review-pages-xf.js';
+import SLIDE_XFS from '../product-detail-slide-xf.js';
 import {
   STD_DRAFT_IMPORT, STD_REVIEW_IMPORT, stdProductPage, stdReviewPage,
 } from './corp-text-markers.js';
@@ -241,14 +242,74 @@ const REVIEW_FRAGMENTS_V2 = [
   '/mako_smartrobotics_o/global-statistics/master',
   '/lifepak_35/product_page/intuitive-clinically-advanced-proven/master',
   '/emergency-care/en/business_unit/footer/master',
+  // 2026-11-27: the slides' media-only fragments (their image or video, as on stryker.com) next
+  // to the review documents that held a whole slide
+  '/isolibrium_770039638/hero/master',
+  '/lifepak_35/hero/master',
+  '/lifepak_35/product_page/quotes/master',
+  '/lifepak_35/product_page/quotes/hospital-workflow',
+  '/lifepak_35/product_page/quotes/navigation',
+  '/tpx_hd/total-joint-and-trauma-hero/master',
+  '/tpx_hd/foot-and-ankle-hero/master',
+  '/tpx_hd/oral-and-maxillofacial/master',
+  '/pangea/ambient-video-banner/master',
+  '/mako_smartrobotics_o/mako-means-more-hero/master',
+  '/isuite_experience/connected-or/master',
+  '/or_integration/rise/hero---desktop/master',
 ];
 
 /** The review fragment document of an XF (its /us/en/fragments/… path in the review folder). */
 export function reviewFragmentPath(xf) {
   const path = xfToFragmentPath(xf);
   const v2 = REVIEW_FRAGMENTS_V2.some((end) => (xf || '').endsWith(end));
-  return path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS)
-    .replace(/\/master$/, v2 ? '-v2/master' : '/master');
+  const review = path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS);
+  if (!review || !v2) return review;
+  return /\/master$/.test(review) ? review.replace(/\/master$/, '-v2/master') : `${review}-v2`;
+}
+
+// a Hero (corp) row that holds only media: an image or a Dynamic Media video / image link
+const MEDIA_LINK = /\/is\/(image|content)\/|\.(m3u8|mp4)(\?|$)/i;
+function isMediaRow(row) {
+  const cell = row.cells && row.cells.length === 1 ? row.cells[0] : null;
+  if (!cell || cell.querySelector('h1, h2, h3, h4, h5, h6')) return false;
+  const media = cell.querySelector('img, picture') || [...cell.querySelectorAll('a[href]')]
+    .some((a) => MEDIA_LINK.test(a.getAttribute('href')));
+  const words = cell.textContent.replace(/https?:\/\/\S+/g, ' ').trim().split(/\s+/).filter(Boolean);
+  return !!media && words.length < 25;
+}
+
+/**
+ * In review (product pages, staging build): a carousel slide's content is an Experience
+ * Fragment on stryker.com — its image or video (the slide's mobile XF its phone image); the
+ * headline belongs to the page. Each Hero (corp) block keeps its headline and options; its
+ * media rows link to the slides' fragment documents (product-detail-slide-xf.js, page order),
+ * which the fragment import writes (their XFs count as product XFs there).
+ * @param {Element} main The page content (after the parsers and the DM transformer)
+ * @param {Document} document The source document
+ * @param {string} page The source page path (/us/en/….html)
+ * @returns {string} '' when done or the page has no slide XFs; why not, otherwise (report)
+ */
+export function slideFragments(main, document, page) {
+  const slides = SLIDE_XFS[page];
+  if (!slides) return '';
+  const heroes = [...main.querySelectorAll('table')]
+    .filter((t) => /^hero corp\b/i.test((t.rows[0] && t.rows[0].textContent.trim()) || ''));
+  if (heroes.length !== slides.length) {
+    return `${heroes.length} Hero (corp) blocks for ${slides.length} slide XFs: slides left inline`;
+  }
+  const link = (xf) => {
+    const a = document.createElement('a');
+    a.setAttribute('href', reviewFragmentPath(xf));
+    a.textContent = reviewFragmentPath(xf);
+    return a;
+  };
+  heroes.forEach((table, i) => {
+    const [desktop, mobile] = slides[i];
+    const media = [...table.rows].slice(1).filter(isMediaRow);
+    if (media[0]) media[0].cells[0].replaceChildren(link(desktop));
+    if (mobile && media[1]) media[1].cells[0].replaceChildren(link(mobile));
+  });
+  return '';
 }
 
 /**

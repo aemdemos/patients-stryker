@@ -11,10 +11,10 @@ import heroFullWidthImageParser from './parsers/hero-full-width-image.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
 import longPageDetailSectionsTransformer, {
-  keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths, markCentredRows,
+  keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths, markCentredRows, slideFragments,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import corpTextMarkersTransformer, { STD_REVIEW_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
+import corpTextMarkersTransformer, { STD_DRAFT_IMPORT, STD_REVIEW_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
 import REVIEW_XFS from './review-pages-xf.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
@@ -133,6 +133,9 @@ export default {
 
     // 3. afterTransform: links, DM images, final cleanup
     executeTransformers('afterTransform', main, payload);
+    // in review, product pages: the slides' media as links to their XF fragments
+    const slideReport = STD_DRAFT_IMPORT && stdProductPage(document)
+      ? slideFragments(main, document, new URL(params.originalURL).pathname) : '';
     // links to site pages: their EDS paths (after the cleanup's .html rewrite)
     edsLinkPaths(main);
 
@@ -171,6 +174,7 @@ export default {
         template: PAGE_TEMPLATE.name,
         blocks: pageBlocks.map((b) => b.name),
         ...(unresolvedXfs ? { 'xf-unresolved': unresolvedXfs } : {}),
+        ...(slideReport ? { 'slide-xfs': slideReport } : {}),
       },
     }];
   },

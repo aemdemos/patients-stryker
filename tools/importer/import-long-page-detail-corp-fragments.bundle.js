@@ -41,6 +41,270 @@ var CustomImportScript = (() => {
     default: () => import_long_page_detail_corp_fragments_default
   });
 
+  // tools/importer/transformers/corp-text-markers.js
+  var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
+  var STD_REVIEW_IMPORT = STD_DRAFT_IMPORT && typeof STD_REVIEW_PAGES !== "undefined" && STD_REVIEW_PAGES === true;
+  function stdProductPage(doc) {
+    var _a;
+    return STD_DRAFT_IMPORT && ((_a = doc == null ? void 0 : doc.body) == null ? void 0 : _a.getAttribute("data-template")) === "product-detail";
+  }
+  function stdReviewPage(doc) {
+    return STD_REVIEW_IMPORT && stdProductPage(doc);
+  }
+  var SIZE_WORDS = {
+    "0-8": "s",
+    "1-25": "l",
+    "1-5": "xl",
+    "1-75": "xxl",
+    2: "xxxl",
+    "2-5": "xxxxl"
+  };
+  var COLOURS = ["gold", "white", "blue", "purple", "teal", "grey", "light-gray"];
+  var EXTRA_COLOURS = {
+    black: "black",
+    "dark-gold": "darkgold",
+    "mid-grey": "midgrey",
+    "pale-grey": "palegrey"
+  };
+  var LOOKS = [
+    "rule-gold",
+    "box-gold",
+    "box-blue",
+    "box-purple",
+    "box-teal",
+    "box-dark",
+    "box-dark-purple-gradient",
+    "box-dark-blue-gradient",
+    "box-dark-gold",
+    "box-gold-gradient",
+    "box-gray-gradient",
+    "box-teal-gradient",
+    "box-orange-gradient",
+    "box-mid-gray",
+    "box-pale-gray",
+    "box-black"
+  ];
+  var HEADLINE_STEPS = [1.5, 2, 3, 4.5];
+  var STEP_OF = {
+    s: 0.8,
+    l: 1.25,
+    xl: 1.5,
+    xxl: 1.75,
+    xxxl: 2,
+    xxxxl: 2.5
+  };
+  var stepOff = (w, n) => Math.abs(Math.log(STEP_OF[w] / n));
+  var nearestStep = (n) => Object.keys(STEP_OF).reduce((a, b) => stepOff(b, n) < stepOff(a, n) ? b : a);
+  var oneSize = (words) => {
+    const sizes = words.filter((w) => STEP_OF[w]);
+    if (sizes.length < 2) return words;
+    const step = nearestStep(sizes.reduce((p, w) => p * STEP_OF[w], 1));
+    return [...words.filter((w) => !STEP_OF[w]), step];
+  };
+  var headlineWord = (n) => {
+    const off = (step2) => Math.abs(Math.log(step2 / n));
+    const step = HEADLINE_STEPS.reduce((a, b) => off(b) < off(a) ? b : a);
+    return `hl${String(step).replace(".", "")}`;
+  };
+  function markerWords(raw, dropped) {
+    return raw.split(",").map((c) => c.trim().toLowerCase()).flatMap((c) => {
+      let m = c.match(/^(?:text|size)-(\d+(?:-\d+)?)(?:em)?$/);
+      if (m && SIZE_WORDS[m[1]]) return [SIZE_WORDS[m[1]]];
+      if (m && m[1] === "1") return [];
+      if (m && /^\d+(-\d+)?$/.test(m[1])) {
+        const n = Number(m[1].replace("-", "."));
+        const steps = Object.keys(SIZE_WORDS).map((k) => [Number(String(k).replace("-", ".")), SIZE_WORDS[k]]);
+        const off = ([v]) => Math.abs(Math.log(v / n));
+        return [steps.reduce((a, b) => off(b) < off(a) ? b : a)[1]];
+      }
+      m = c.match(/^(?:headline-(\d+(?:-\d+)?)|size-(\d+(?:-\d+)?)-?vw)$/);
+      if (m) return [headlineWord(Number((m[1] || m[2]).replace("-", ".")))];
+      m = c.match(/^color-([a-z-]+)$/);
+      if (m && COLOURS.includes(m[1])) return [m[1]];
+      if (m && EXTRA_COLOURS[m[1]]) return [EXTRA_COLOURS[m[1]]];
+      if (c === "serif") return ["serif"];
+      if (c === "body-font") return ["body"];
+      if (c === "futura-bold") return ["sans"];
+      if (c === "std-sans") return ["std-sans"];
+      if (LOOKS.includes(c)) return [c];
+      dropped.add(c);
+      return [];
+    });
+  }
+  var INLINE = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
+  var TOKEN = /\[\[([^\][]+)\]|\]/g;
+  var containerOf = (node) => {
+    let el = node.parentElement;
+    while (el && INLINE.has(el.tagName) && el.parentElement) el = el.parentElement;
+    return el;
+  };
+  var SIZE_SET = /* @__PURE__ */ new Set([...Object.values(SIZE_WORDS), "hl15", "hl2", "hl3", "hl45"]);
+  var COLOUR_SET = /* @__PURE__ */ new Set([...COLOURS, ...Object.values(EXTRA_COLOURS)]);
+  function kindOf(word) {
+    if (SIZE_SET.has(word)) return "size";
+    if (COLOUR_SET.has(word)) return "colour";
+    if (["serif", "body", "sans"].includes(word)) return "font";
+    return "";
+  }
+  function convertContainer(nodes, dropped, chains = false) {
+    const tokens = [];
+    let offset = 0;
+    let all = "";
+    nodes.forEach((node) => {
+      const value = node.nodeValue;
+      TOKEN.lastIndex = 0;
+      let m = TOKEN.exec(value);
+      while (m) {
+        const end = m.index + m[0].length;
+        tokens.push({
+          node,
+          start: m.index,
+          end,
+          at: offset + m.index,
+          to: offset + end,
+          raw: m[1]
+        });
+        m = TOKEN.exec(value);
+      }
+      offset += value.length;
+      all += value;
+    });
+    const stack = [];
+    const pairs = [];
+    tokens.forEach((t) => {
+      if (t.raw !== void 0) {
+        stack.push(t);
+      } else if (stack.length) {
+        const open = stack.pop();
+        open.close = t;
+        t.pair = open;
+        pairs.push(open);
+      } else {
+        t.literal = true;
+      }
+    });
+    stack.forEach((t) => {
+      t.literal = true;
+    });
+    const between = (a, b) => all.slice(a.to, b.at);
+    const gap = (a, b) => (chains ? between(a, b).replace(/\[\[[^\][]+\]|\]/g, "") : between(a, b)).trim() === "";
+    pairs.sort((a, b) => a.at - b.at).forEach((p) => {
+      p.words = markerWords(p.raw, dropped);
+    });
+    pairs.forEach((inner) => {
+      const outer = pairs.find((o) => o !== inner && o.at < inner.at && o.close.at > inner.close.at && gap(o, inner) && gap(inner.close, o.close));
+      if (!outer) return;
+      let target = outer;
+      while (target.into) target = target.into;
+      if (chains) {
+        const kinds = inner.words.map(kindOf);
+        const innerText = inner.words.some((x) => STEP_OF[x]);
+        target.words = target.words.filter((w) => !kindOf(w) || !kinds.includes(kindOf(w)) || innerText && STEP_OF[w]);
+      }
+      target.words.push(...inner.words);
+      inner.merged = true;
+      inner.into = target;
+    });
+    pairs.forEach((p) => {
+      p.hadFont = p.words.some((w) => w === "serif" || w === "body");
+    });
+    pairs.forEach((p) => {
+      if (!p.words.includes("std-sans")) return;
+      const target = p.merged ? p.into : p;
+      if (p.merged) {
+        const font = target.words.some((w) => w === "serif" || w === "body") || target.hadFont;
+        target.words = target.words.filter((w) => w !== "serif" && w !== "body" && w !== "std-sans");
+        if (font) target.words.push("sans");
+        return;
+      }
+      const around = pairs.some((o) => o !== p && o.at < p.at && o.close.at > p.close.at && (o.merged ? o.into : o).words.some((w) => w === "serif" || w === "body"));
+      p.words = p.words.filter((w) => w !== "std-sans");
+      if (around) p.words.push("sans");
+    });
+    tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
+      const open = t.raw !== void 0 ? t : t.pair;
+      const unique = [...new Set(oneSize(open.words))];
+      const words = [...unique.filter((w) => !/\d/.test(w)), ...unique.filter((w) => /\d/.test(w))];
+      let out = "";
+      if (!open.merged && words.length) out = t.raw !== void 0 ? `:start-${words.join("-")}:` : ":end:";
+      t.node.nodeValue = t.node.nodeValue.slice(0, t.start) + out + t.node.nodeValue.slice(t.end);
+    });
+  }
+  function bracketsToMarkers(main) {
+    const doc = main.ownerDocument;
+    const walker = doc.createTreeWalker(
+      main,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    const byContainer = /* @__PURE__ */ new Map();
+    let node = walker.nextNode();
+    while (node) {
+      if (node.nodeValue.includes("[") || node.nodeValue.includes("]")) {
+        const container = containerOf(node);
+        if (container && !container.closest("code, pre, script, style")) {
+          if (!byContainer.has(container)) byContainer.set(container, []);
+        }
+      }
+      node = walker.nextNode();
+    }
+    const dropped = /* @__PURE__ */ new Set();
+    byContainer.forEach((_, container) => {
+      const texts = [];
+      const tw = doc.createTreeWalker(container, 4);
+      let t = tw.nextNode();
+      while (t) {
+        if (containerOf(t) === container) texts.push(t);
+        t = tw.nextNode();
+      }
+      if (texts.some((x) => x.nodeValue.includes("[["))) convertContainer(texts, dropped, stdProductPage(doc));
+      if (!texts.some((x) => x.nodeValue.includes(":start-sans:") || x.nodeValue.includes("-sans:"))) return;
+      container.normalize();
+      const joined = [];
+      const jw = doc.createTreeWalker(container, 4);
+      for (let j = jw.nextNode(); j; j = jw.nextNode()) joined.push(j);
+      joined.forEach((x) => {
+        x.nodeValue = x.nodeValue.replace(
+          /:start-sans::start-([a-z0-9-]+):([^:]*?):end::end:/g,
+          (all, inner, words) => {
+            const list = [.../* @__PURE__ */ new Set([...inner.split("-"), "sans"])];
+            const ordered = [...list.filter((w) => !/\d/.test(w)), ...list.filter((w) => /\d/.test(w))];
+            return `:start-${ordered.join("-")}:${words}:end:`;
+          }
+        ).replace(
+          /:start-([a-z0-9-]*?)-?sans::start-([a-z0-9-]+):([^:]*?):end::end:/g,
+          (all, outer, inner, words) => {
+            const list = [.../* @__PURE__ */ new Set([...outer.split("-").filter(Boolean), ...inner.split("-"), "sans"])];
+            const ordered = [...list.filter((w) => !/\d/.test(w)), ...list.filter((w) => /\d/.test(w))];
+            return `:start-${ordered.join("-")}:${words}:end:`;
+          }
+        );
+      });
+    });
+    return [...dropped];
+  }
+  var ADDRESS_GUARD = /((?:https?|urn)\S*?)(:(?:start-[a-z0-9-]+|end):)/gi;
+  function keepMarkersReadable(main) {
+    if (stdReviewPage(main.ownerDocument)) main.normalize();
+    const walker = main.ownerDocument.createTreeWalker(
+      main,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    let node = walker.nextNode();
+    while (node) {
+      ADDRESS_GUARD.lastIndex = 0;
+      if (ADDRESS_GUARD.test(node.nodeValue)) node.nodeValue = node.nodeValue.replace(ADDRESS_GUARD, "$1 $2");
+      node = walker.nextNode();
+    }
+  }
+  function transform(hookName, element, payload) {
+    if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
+    const dropped = bracketsToMarkers(element);
+    keepMarkersReadable(element);
+    if (payload && dropped.length) payload.textMarkersDropped = dropped;
+  }
+
   // tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
@@ -68,11 +332,23 @@ var CustomImportScript = (() => {
     a.textContent = iframe.getAttribute("title") || a.href;
     return a;
   }
+  function videoOptions(element) {
+    var _a;
+    const box = element.closest(".c-standalone-video") || element.querySelector(".c-standalone-video") || element;
+    const options = [];
+    if (box.matches(".black-border, .gray-border") && !box.matches(".hide-border")) options.push("border");
+    const modifiers = ((_a = element.querySelector("[data-viewermodifiers]")) == null ? void 0 : _a.getAttribute("data-viewermodifiers")) || "";
+    if (/(?:^|&)VideoPlayer\.autoplay=1/i.test(modifiers)) options.push("autoplay");
+    if (/(?:^|&)VideoPlayer\.loop=1/i.test(modifiers)) options.push("loop");
+    return options;
+  }
   function parse(element, { document }) {
     const link = videoLink(element, document);
     if (!link) return;
     const cells = [[link]];
-    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
+    const options = STD_DRAFT_IMPORT ? videoOptions(element) : [];
+    const name = options.length ? `Video (${options.join(", ")})` : "Video";
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells }));
   }
 
   // tools/importer/parsers/cards-corp-resources.js
@@ -121,6 +397,181 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
   }
 
+  // tools/block-options/options.js
+  var SECTION_OPTIONS = {
+    label: "Section",
+    // older section style names read as the standard choices (replaced when the author copies the
+    // section's style): today's bg-* bands are a background + full width, a dimensional box is a
+    // white background with a soft shadow, the old dividers are the line above
+    aliases: {
+      "bg-white": ["box-white", "full-bleed"],
+      "bg-light-gray": ["box-gray", "full-bleed"],
+      "light-gray": ["box-gray", "full-bleed"],
+      "bg-gold": ["box-gold", "full-bleed"],
+      gold: ["box-gold", "full-bleed"],
+      "bg-blue": ["box-blue", "full-bleed"],
+      blue: ["box-blue", "full-bleed"],
+      "bg-purple": ["box-purple", "full-bleed"],
+      purple: ["box-purple", "full-bleed"],
+      "bg-teal": ["box-teal", "full-bleed"],
+      "bg-dark-gray": ["box-dark", "full-bleed"],
+      dark: ["box-dark", "full-bleed"],
+      "bg-golden-gradient": ["box-gold-gradient", "full-bleed"],
+      "gold-gradient": ["box-gold-gradient", "full-bleed"],
+      "bg-dark-orange-gradient": ["box-orange-gradient", "full-bleed"],
+      "bg-dark-teal-gradient": ["box-teal-gradient", "full-bleed"],
+      "bg-gray-gradient": ["box-gray-gradient", "full-bleed"],
+      "bg-black": ["box-black", "full-bleed"],
+      "bg-lighter-gray": ["box-pale-gray", "full-bleed"],
+      "bg-orange": ["box-dark-gold", "full-bleed"],
+      "bg-dark-blue-gradient": ["box-blue-gradient", "full-bleed"],
+      "bg-dark-purple-gradient": ["box-purple-gradient", "full-bleed"],
+      "purple-gradient": ["box-purple-gradient", "full-bleed"],
+      // the same stryker.com colours under the older migration's names (exact, never the nearest):
+      // bg-silver and bg-gray are stryker.com's bg-gray (mid grey #b2b4ae), bg-dark-gold its
+      // bg-orange (#af6d04)
+      "bg-silver": ["box-mid-gray", "full-bleed"],
+      "bg-gray": ["box-mid-gray", "full-bleed"],
+      "gray-gradient": ["box-gray-gradient", "full-bleed"],
+      "bg-dark-gold": ["box-dark-gold", "full-bleed"],
+      boxed: ["box-white", "shadow"],
+      "shadow-box": ["box-white", "shadow"],
+      "gradient-inverse": ["gradient-reverse"],
+      "gradient-top-to-bottom": ["gradient-up"],
+      center: ["text-center"],
+      "col-8": ["narrow"],
+      "col-8-centre": ["narrow"],
+      "col-10": ["narrow"],
+      "column-10-12": ["narrow"],
+      // the line above is `divider`, the patients section style; `line-above` was its review name
+      "line-above": ["divider"],
+      separator: ["divider"],
+      "separator-row": ["divider"]
+    },
+    groups: [
+      {
+        id: "side",
+        label: "Side by side",
+        options: [
+          ["", "No (one under the other)"],
+          ["flex", "Equal parts", { needs: ["parts-2+"], hint: "The parts of the section side by side in equal widths from 600px" }],
+          ["flex flex-67-33", "Wide + narrow (2/3 + 1/3)", { needs: ["parts-2+"], hint: "The first parts two thirds wide, the last part one third" }],
+          ["flex flex-33-67", "Narrow + wide (1/3 + 2/3)", { needs: ["parts-2+"], hint: "The first part one third wide, the others two thirds" }]
+        ]
+      },
+      {
+        id: "side-phones",
+        label: "On phones",
+        flags: [
+          ["flex-row-mobile", "Side by side on phones too", { needs: ["flex"], hint: "The row never stacks (e.g. social icons)" }]
+        ]
+      },
+      {
+        id: "background",
+        label: "Background",
+        options: [
+          ["", "None"],
+          ["box-white", "White", { hint: "A white box around the section\u2019s content" }],
+          ["box-gray", "Light grey", { hint: "A light grey box around the section\u2019s content" }],
+          ["box-gold", "Gold", { hint: "A gold box around the section\u2019s content" }],
+          ["box-blue", "Blue", { hint: "A blue box, white text" }],
+          ["box-purple", "Purple", { hint: "A purple box, white text" }],
+          ["box-teal", "Teal", { hint: "A teal box, white text" }],
+          ["box-dark", "Dark grey", { hint: "A dark grey box, white text" }],
+          ["box-gold-gradient", "Gold gradient", { hint: "Dark gold into gold" }],
+          ["box-blue-gradient", "Dark slate gradient", { hint: "stryker.com dark blue gradient: dark grey into slate, so it looks close to dark grey; white text" }],
+          ["box-purple-gradient", "Purple gradient", { hint: "Dark grey into plum, white text" }],
+          ["box-black", "Black", { hint: "A black box around the section\u2019s content" }],
+          ["box-pale-gray", "Pale grey", { hint: "A pale grey box around the section\u2019s content" }],
+          ["box-mid-gray", "Mid grey", { hint: "A mid grey box around the section\u2019s content" }],
+          ["box-dark-gold", "Dark gold", { hint: "A dark gold box around the section\u2019s content, white text" }],
+          ["box-gray-gradient", "Grey gradient", { hint: "A grey gradient box around the section\u2019s content, white text" }],
+          ["box-teal-gradient", "Dark teal gradient", { hint: "A dark teal gradient box around the section\u2019s content, white text" }],
+          ["box-orange-gradient", "Dark orange gradient", { hint: "A dark orange gradient box around the section\u2019s content, white text" }]
+        ]
+      },
+      {
+        id: "background-look",
+        label: "The background",
+        flags: [
+          ["full-bleed", "Full width (a band)", { needs: ["background"], hint: "The background runs to the page edges, the content stays in the page width" }],
+          ["shadow", "Soft shadow", { needs: ["background"], hint: "A soft shadow around the box (stryker.com dimensional box)" }]
+        ]
+      },
+      {
+        id: "gradient",
+        label: "Gradient direction",
+        options: [
+          ["", "Left to right"],
+          ["gradient-reverse", "Right to left", { needs: ["gradient"] }],
+          ["gradient-up", "Bottom to top", { needs: ["gradient"] }]
+        ]
+      },
+      {
+        id: "text",
+        label: "Text and width",
+        flags: [
+          ["text-center", "Centred text", { hint: "The section\u2019s text centred" }],
+          ["narrow", "Narrow column", { hint: "The content in the centred 8/12 column from 600px (full width on phones)" }],
+          ["divider", "Line above (divider)", { hint: "A grey line above the section, as wide as the content; more space around it is a spacer section" }]
+        ]
+      },
+      {
+        id: "buttons",
+        label: "Buttons",
+        options: [
+          ["", "As authored (gold, teal)"],
+          ["btn-purple", "Purple", { needs: ["buttons"], hint: "The section\u2019s buttons in purple" }],
+          ["btn-blue", "Blue", { needs: ["buttons"], hint: "The section\u2019s buttons in blue" }]
+        ]
+      },
+      {
+        id: "show",
+        label: "Show on",
+        options: [
+          ["", "Desktop and phones"],
+          ["desktop-only", "Desktop only", { hint: "Hidden on phones (under 600px)" }],
+          ["mobile-only", "Phones only", { hint: "Hidden from 600px" }]
+        ]
+      },
+      {
+        id: "role",
+        label: "Section is",
+        options: [
+          ["", "A normal section"],
+          ["tab-panel", "A tab", { needs: ["heading-first"], hint: "Its first heading is the tab label; tab sections in a row make one tab set" }],
+          ["accordion-panel", "An accordion panel", { needs: ["heading-first"], hint: "Its heading is the label; panel sections in a row make one accordion" }],
+          ["carousel", "A carousel slide", { needs: ["slide-block"], hint: "Slide sections in a row make one carousel" }]
+        ]
+      },
+      {
+        id: "accordion",
+        label: "Accordion panel",
+        flags: [
+          ["accordion-open", "Starts open", { needs: ["accordion-panel"], hint: "The panel is open when the page loads" }]
+        ]
+      },
+      {
+        id: "carousel",
+        label: "Carousel",
+        flags: [
+          ["autoplay", "Autoplay (5 seconds)", { needs: ["carousel"], hint: "The slides move on by themselves; set on the slides of one carousel" }],
+          ["fade", "Cross-fade", { needs: ["carousel"], hint: "The slides fade instead of sliding" }],
+          ["split", "Split slide", { needs: ["carousel", "columns-block"], hint: "An image beside a title on a coloured band (a Columns row)" }]
+        ]
+      },
+      {
+        id: "band",
+        label: "Split slide band",
+        options: [
+          ["", "Purple gradient (default)"],
+          ["box-blue-gradient", "Dark slate gradient", { needs: ["split"], hint: "stryker.com dark blue gradient: dark grey into slate, so it looks close to dark grey" }],
+          ["box-dark", "Dark grey", { needs: ["split"] }]
+        ]
+      }
+    ]
+  };
+
   // tools/importer/transformers/long-page-detail-corp-article.js
   var SOURCE_ORIGIN2 = "https://www.stryker.com";
   var COMPONENTS = [
@@ -140,11 +591,14 @@ var CustomImportScript = (() => {
   ].join(", ");
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
-    // data-btn-style: the section style a link asks for (buildArticle adds it to its section)
+    // data-btn-style / data-section-style: the section style a link / a paragraph asks for
+    // (buildArticle adds it to its section)
     A: ["href", "data-btn-style"],
     IMG: ["src", "alt"],
     TD: ["colspan", "rowspan"],
-    TH: ["colspan", "rowspan"]
+    TH: ["colspan", "rowspan"],
+    P: ["data-section-style"],
+    LI: ["data-section-style"]
   };
   function text2(el) {
     return (el.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
@@ -197,7 +651,15 @@ var CustomImportScript = (() => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
       return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
     });
-    const size = SIZE_STYLES.find(([cls]) => covers(cls));
+    let size = SIZE_STYLES.find(([cls]) => covers(cls));
+    const doc = root.ownerDocument || root;
+    const nested = STD_DRAFT_IMPORT && stdProductPage(doc) ? SIZE_STYLES.filter(([cls, style]) => /^p-\d/.test(style) && covers(cls)) : [];
+    if (nested.length > 1) {
+      const em = ([, style]) => Number(style.slice(2).replace("-", "."));
+      const product = nested.reduce((p, s) => p * em(s), 1);
+      const off = (s) => Math.abs(Math.log(em(s) / product));
+      size = SIZE_STYLES.filter(([, style]) => /^p-\d/.test(style)).reduce((a, b) => off(b) < off(a) ? b : a);
+    }
     const coversFont = (cls) => copy.every((el) => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
       const bold = [...el.querySelectorAll(".futura-bold")].filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest(".futura-bold"));
@@ -217,15 +679,13 @@ var CustomImportScript = (() => {
     return value.replace(/[\s\u00a0]+/g, "");
   }
   function tagPlainBoldLabels(root, wholeParagraphs) {
-    const doc = root.ownerDocument;
     [...root.querySelectorAll("b")].forEach((b) => {
       if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
       if (!text2(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
       const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
       if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
       if (!wholeParagraphs && text2(block) === text2(b)) return;
-      b.before(doc.createTextNode("[[body-font]"));
-      b.after(doc.createTextNode("]"));
+      block.setAttribute("data-section-style", "body-font-bold");
     });
   }
   var GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
@@ -262,7 +722,8 @@ var CustomImportScript = (() => {
     }
   }
   function tagTextSize(root) {
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const product = stdReviewPage(root.ownerDocument);
+    const squash = (value) => (product ? value.replace(/\[\[[^\][]+\]|\]/g, "") : value).replace(/[\s\u00a0]+/g, "");
     SIZE_TAGS.forEach(([cls, tag]) => {
       [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
         if (span.parentElement.closest(`.${cls}`) || !text2(span)) return;
@@ -278,15 +739,64 @@ var CustomImportScript = (() => {
       });
     });
   }
-  function tagGoldText(root) {
+  function markGold(nodes, root) {
+    const run = [...nodes];
+    const loose = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim();
+    while (run.length && loose(run[0])) run.shift();
+    while (run.length && loose(run[run.length - 1])) run.pop();
+    if (!run.length || !run.some((n) => n.textContent.trim())) return;
+    const mark = root.ownerDocument.createElement("span");
+    mark.className = "gold-text";
+    run[0].before(mark);
+    mark.append(...run);
+  }
+  function goldBoldItalic(root) {
+    const doc = root.ownerDocument;
+    const inside = (node, tag) => {
+      for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
+        if (el.tagName === tag) return true;
+      }
+      return false;
+    };
+    root.querySelectorAll("span.gold-text").forEach((mark) => {
+      const texts = [];
+      const walker = doc.createTreeWalker(mark, 4);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        if (t.textContent.trim()) texts.push(t);
+      }
+      if (!texts.length || texts.every((t) => inside(t, "STRONG") && inside(t, "EM"))) return;
+      const em = doc.createElement("em");
+      em.append(...mark.childNodes);
+      if (inside(mark, "STRONG")) {
+        mark.append(em);
+        return;
+      }
+      const strong = doc.createElement("strong");
+      strong.append(em);
+      mark.append(strong);
+    });
+  }
+  function regularText(el, root) {
+    const walker = root.ownerDocument.createTreeWalker(el, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      const bold = t.nodeValue.trim() && t.parentElement.closest(".futura-bold, b, strong");
+      if (bold && root.contains(bold)) return false;
+    }
+    return true;
+  }
+  function tagGoldText(root, { regular = false } = {}) {
     const tagged = /* @__PURE__ */ new Set();
-    const wrap = (nodes) => bracketTag(nodes, "color-gold", root);
+    const wrap = (nodes) => markGold(nodes, root);
     const wrapRun = (nodes) => {
       nodes.filter((n) => n.nodeType === 1).forEach((n) => tagged.add(n));
       wrap(nodes);
     };
     root.querySelectorAll('[style*="color"]').forEach((el) => {
       if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+      if (regular && !hasOtherColour(el) && regularText(el, root)) {
+        el.setAttribute("data-gold-regular", "");
+        return;
+      }
       if (!hasOtherColour(el)) {
         wrapRun([el]);
         return;
@@ -299,6 +809,56 @@ var CustomImportScript = (() => {
         } else run.push(child);
       });
       wrapRun(run);
+    });
+  }
+  var STD_COLOURS = {
+    "1c5687": "blue",
+    "85458a": "purple",
+    "4c7d7a": "teal",
+    545857: "grey",
+    ffffff: "white",
+    edeeec: "light-gray",
+    af6d04: "dark-gold",
+    b2b4ae: "mid-grey",
+    dfe1de: "pale-grey"
+  };
+  function hexOf(value) {
+    const v = (value || "").trim().toLowerCase();
+    let m = v.match(/^#([0-9a-f]{3})$/);
+    if (m) return m[1].split("").map((c) => c + c).join("");
+    m = v.match(/^#([0-9a-f]{6})$/);
+    if (m) return m[1];
+    m = v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+    return m ? m.slice(1, 4).map((n) => Number(n).toString(16).padStart(2, "0")).join("") : "";
+  }
+  function tagStdColours(root, { gold = false } = {}) {
+    const coloured = (el) => ownColour(el) !== "";
+    const nearest = (node) => {
+      for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
+        if (el.matches('[style*="color"]') && coloured(el)) return el;
+      }
+      return null;
+    };
+    const owners = /* @__PURE__ */ new Set();
+    const walker = root.ownerDocument.createTreeWalker(root, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      const owner = t.nodeValue.trim() && nearest(t);
+      if (owner) owners.add(owner);
+    }
+    const tagged = [];
+    const depth = (el) => {
+      let n = 0;
+      for (let e = el; e && e !== root; e = e.parentElement) n += 1;
+      return n;
+    };
+    [...owners].sort((x, y) => depth(x) - depth(y)).forEach((el) => {
+      const hex = hexOf(ownColour(el));
+      const goldRun = GOLD.test(ownColour(el)) && (gold || el.hasAttribute("data-gold-regular"));
+      el.removeAttribute("data-gold-regular");
+      const name = (goldRun ? "gold" : STD_COLOURS[hex]) || (/^(000000|323232)$/.test(hex) && tagged.some((t) => t.contains(el)) ? "black" : "");
+      if (!name || !goldRun && GOLD.test(ownColour(el))) return;
+      bracketTag([el], `color-${name}`, root);
+      tagged.push(el);
     });
   }
   function cleanRichText(root, { wholeParagraphs = false } = {}) {
@@ -326,8 +886,16 @@ var CustomImportScript = (() => {
       }
     });
     tagPlainBoldLabels(root, wholeParagraphs);
-    tagGoldText(root);
+    tagGoldText(root, { regular: stdReviewPage(doc) });
+    if (stdProductPage(doc)) tagStdColours(root);
     tagTextSize(root);
+    if (stdProductPage(doc)) {
+      root.querySelectorAll("li").forEach((li) => {
+        const links = li.querySelectorAll("a[href]");
+        if (links.length !== 1 || text2(li) !== text2(links[0])) return;
+        links[0].querySelectorAll("b, strong").forEach((bold) => bold.replaceWith(...bold.childNodes));
+      });
+    }
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const a = span.closest("a") || span.querySelector("a");
@@ -352,9 +920,27 @@ var CustomImportScript = (() => {
       while (a.firstChild) u.append(a.firstChild);
       a.append(u);
     });
+    if (STD_DRAFT_IMPORT) {
+      const squash = (t) => (t || "").replace(/[\s\u00a0]+/g, "");
+      root.querySelectorAll("h2").forEach((h) => {
+        const bolds = [...h.querySelectorAll("span.futura-bold")].filter((el) => !el.parentElement.closest(".futura-bold"));
+        const sized = h.querySelector('[class*="fontsize-"]') || h.closest('[class*="fontsize-"]') || /\[\[[^\]]*\b(text|headline|size)-/.test(h.textContent) || h.querySelector('[style*="color"]') || h.closest('[style*="color"]');
+        if (!sized && bolds.length && squash(bolds.map((el) => el.textContent).join("")) === squash(h.textContent)) {
+          bolds.forEach(unwrap);
+        }
+      });
+    }
+    if (stdProductPage(root.ownerDocument)) {
+      root.querySelectorAll("span.futura-bold").forEach((el) => {
+        if (el.parentElement.closest(".futura-bold") || !el.textContent.trim()) return;
+        el.prepend(root.ownerDocument.createTextNode("[[std-sans]"));
+        el.append(root.ownerDocument.createTextNode("]"));
+      });
+    }
     root.querySelectorAll("span.futura-bold").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("b").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("i").forEach((el) => rename(el, "em"));
+    goldBoldItalic(root);
     root.querySelectorAll("span, font").forEach(unwrap);
     root.querySelectorAll("strong strong, em em").forEach(unwrap);
     root.querySelectorAll("strong, em").forEach((el) => {
@@ -404,6 +990,7 @@ var CustomImportScript = (() => {
   function labelHeadingsToParagraphs(root) {
     root.querySelectorAll("h2, h3, h4, h5, h6").forEach((h) => {
       if (!LABEL_HEADING.test(text2(h))) return;
+      if (stdProductPage(root.ownerDocument) && h.querySelector("u")) return;
       const p = root.ownerDocument.createElement("p");
       while (h.firstChild) p.append(h.firstChild);
       p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
@@ -425,6 +1012,32 @@ var CustomImportScript = (() => {
     // long-page-detail-corp-sections.js → titleFromHeading)
     ["H1", "fontsize-h4-2-5", "h4-2-5"]
   ];
+  function headingSpanSizes(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const sizes = /* @__PURE__ */ new Map();
+    root.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((h) => {
+      const spans = [...h.querySelectorAll('[class*="fontsize-"]')].filter((span) => /\bfontsize-\d+(?:-\d+)?em\b/.test(span.className) && !span.parentElement.closest('[class*="fontsize-"]'));
+      const classes = new Set(spans.map((span) => span.className.match(/\bfontsize-(\d+(?:-\d+)?)em\b/)[1]));
+      if (classes.size !== 1 || squash(spans.map((span) => span.textContent).join("")) !== squash(h.textContent)) return;
+      let [n] = [...classes];
+      if (spans.length === 1 && stdReviewPage(root.ownerDocument)) {
+        let factor = 1;
+        let span = spans[0];
+        while (span) {
+          const m = span.className.match(/\bfontsize-(\d+)(?:-(\d+))?em\b/);
+          if (m) factor *= m[1] === "8" && !m[2] ? 0.8 : Number(`${m[1]}.${m[2] || 0}`);
+          const outer = span;
+          span = [...outer.querySelectorAll('[class*="fontsize-"]')].find((inner) => /\bfontsize-\d+(?:-\d+)?em\b/.test(inner.className) && squash(inner.textContent) === squash(h.textContent) && inner.parentElement.closest('[class*="fontsize-"]') === outer);
+        }
+        const STEPS = ["0-8", "1", "1-25", "1-5", "1-75", "2", "2-5"];
+        const off = (step) => Math.abs(Math.log(Number(step.replace("-", ".")) / factor));
+        n = STEPS.reduce((x, y) => off(y) < off(x) ? y : x).replace("0-8", "8");
+        if (n === "1") return;
+      }
+      sizes.set(h, `text-${n === "8" ? "0-8" : n}`);
+    });
+    return sizes;
+  }
   function smallHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const styles = /* @__PURE__ */ new Map();
@@ -525,6 +1138,7 @@ var CustomImportScript = (() => {
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
+    const spanSizes = STD_DRAFT_IMPORT ? headingSpanSizes(box) : /* @__PURE__ */ new Map();
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = blockNodes(box, doc);
@@ -532,6 +1146,11 @@ var CustomImportScript = (() => {
       if (plainBold.has(node)) node.boldBody = true;
       if (serifHeads.has(node)) node.serifHeading = true;
       if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
+      if (spanSizes.has(node)) node.stdHeadingSize = spanSizes.get(node);
+      if (node.stdHeadingSize && !node.headingStyle && /^H[1-3]$/.test(node.tagName)) {
+        node.prepend(doc.createTextNode(`[[${node.stdHeadingSize}]`));
+        node.append(doc.createTextNode("]"));
+      }
     });
     let last = null;
     nodes.forEach((node) => {
@@ -618,8 +1237,23 @@ var CustomImportScript = (() => {
     };
     const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length, depth(span)]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1] || b[2] - a[2]).map(([n]) => n)[0];
     const bold = [...el.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
-    const serif = squash(bold) !== squash(el.textContent);
-    return [size ? `headline-${size}` : "", serif ? "serif" : ""].filter(Boolean).join(",");
+    const minor = el.matches("h4, h5, h6") ? el : el.querySelector(":scope > h4, :scope > h5, :scope > h6");
+    const futuraHeading = !!minor && STD_DRAFT_IMPORT && stdReviewPage(el.ownerDocument) && !minor.querySelector(".urw-egyptienne");
+    const serif = squash(bold) !== squash(el.textContent) && !futuraHeading;
+    if (futuraHeading && squash(bold) !== squash(minor.textContent)) {
+      const wrap = el.ownerDocument.createElement("span");
+      wrap.className = "futura-bold";
+      wrap.append(...minor.childNodes);
+      minor.append(wrap);
+    }
+    const LEVEL_SIZES = {
+      H1: "text-2",
+      H2: "text-1-75",
+      H3: "text-1-5",
+      H4: "text-1-25"
+    };
+    const levelSize = !size && STD_DRAFT_IMPORT && stdProductPage(el.ownerDocument) ? LEVEL_SIZES[el.tagName] : "";
+    return [size ? `headline-${size}` : levelSize || "", serif ? "serif" : ""].filter(Boolean).join(",");
   }
   function blankLineAfter(p, doc) {
     const end = p.lastChild && p.lastChild.nodeType === 3 && p.lastChild.textContent === "]" ? p.lastChild : null;
@@ -706,6 +1340,7 @@ var CustomImportScript = (() => {
     if (whiteBox(headline)) return "headline-box";
     const box = headline.querySelector(".has-background");
     const bg = (box && box.className.match(/\bbg-([a-z-]+)\b/) || [])[1] || "";
+    if (STD_DRAFT_IMPORT && bg && SECTION_OPTIONS.aliases[`bg-${bg}`]) return `headline-box, bg-${bg}`;
     if (/^(gold|golden-gradient)$/.test(bg)) return "headline-box, gold";
     if (bg === "gray-gradient") return "headline-box, gray-gradient";
     if (bg === "purple") return "headline-box, purple";
@@ -789,12 +1424,13 @@ var CustomImportScript = (() => {
     box.querySelectorAll(".futura-bold").forEach((span) => {
       const strong = doc.createElement("strong");
       while (span.firstChild) strong.append(span.firstChild);
-      if (/^[“”"‘’']+$/.test(text2(strong))) {
+      if (/^[“”"‘’']+$/.test(text2(strong)) && strong.querySelector(".gold-text")) {
         const em = doc.createElement("em");
         em.append(strong);
         span.replaceWith(em);
       } else span.replaceWith(strong);
     });
+    goldBoldItalic(box);
     box.querySelectorAll("span, font").forEach(unwrap);
     box.querySelectorAll("strong strong").forEach(unwrap);
     [...box.querySelectorAll("strong")].forEach((strong) => {
@@ -899,7 +1535,126 @@ var CustomImportScript = (() => {
     out.converted = out.some((node) => node.tagName === "OL" && !nodes.includes(node));
     return out;
   }
-  function buildArticle(element, { keep = "", spacer = true, componentStyle = null } = {}) {
+  function stdFragmentText(sections) {
+    const sizes = new Map(SIZE_STYLES.filter(([, style]) => /^p-\d/.test(style)).map(([cls, style]) => [style, (SIZE_TAGS.find(([c]) => c === cls) || [])[1]]));
+    sections.forEach((section) => {
+      const styles = (section.style || "").split(", ").filter(Boolean);
+      const size = styles.find((st) => sizes.get(st));
+      if (!size) return;
+      section.nodes.filter((n) => n.nodeType === 1).forEach((node) => {
+        const lines = node.matches("p, li") ? [node] : [...node.querySelectorAll("p, li")];
+        lines.filter((line) => text2(line) && !line.querySelector("p, li")).forEach((line) => bracketTag([...line.childNodes], sizes.get(size), line));
+      });
+      section.style = styles.filter((st) => st !== size).join(", ") || void 0;
+    });
+    const isIcon = (section) => /^image-link(, center)?$/.test(section.style || "") && section.nodes.length === 2 && /\b(icon|logo)\b/i.test(text2(section.nodes[1]));
+    for (let i = 0; i < sections.length - 1; i += 1) {
+      if (isIcon(sections[i]) && isIcon(sections[i + 1])) {
+        let n = i + 1;
+        while (sections[n] && isIcon(sections[n])) {
+          sections[i].nodes.push(...sections[n].nodes);
+          n += 1;
+        }
+        sections.splice(i + 1, n - i - 1);
+        sections[i].style = "flex, flex-row-mobile, image-link";
+      }
+    }
+  }
+  var STD_TEMPLATE_LOOKS = [
+    "disclaimer",
+    "references-spaced",
+    "references-body-lines",
+    "contact-aside",
+    "connect-band",
+    "bu-resources",
+    "talent-banner",
+    "curated-cta",
+    "back-link",
+    "link-list",
+    "cta-inset",
+    "standalone-url"
+  ];
+  var STD_SECTION_STYLES = /* @__PURE__ */ new Set([
+    ...SECTION_OPTIONS.groups.flatMap((g) => (g.options || g.flags).flatMap(([value]) => value.split(/[\s,]+/))).filter(Boolean),
+    ...STD_TEMPLATE_LOOKS
+  ]);
+  var SIZE_CLASS = (n) => n === "1" ? "" : `text-${n === "8" ? "0-8" : n}`;
+  var STD_TEXT_LOOKS = [
+    [/^p-(\d+(?:-\d+)?)$/, () => "p, li", (m) => SIZE_CLASS(m[1]), "size"],
+    [/^h([1-6])-(\d+(?:-\d+)?)$/, (m) => `h${m[1]}`, (m) => SIZE_CLASS(m[2]), "size"],
+    [/^h-(\d+(?:-\d+)?)$/, () => "h2, h3", (m) => SIZE_CLASS(m[1]), "size"],
+    [
+      /^label-(\d+(?:-\d+)?)$/,
+      () => "p:has(> strong:only-child)",
+      (m) => SIZE_CLASS(m[1]),
+      "size"
+    ],
+    [/^h-serif$/, () => "h2, h3", () => "serif", "font"],
+    [/^serif$/, () => "p, li", () => "serif", "font"],
+    [/^bold-body$/, () => "p, li", () => "body-font", "bold"]
+  ];
+  var TAGGED = {
+    size: /\[\[[^\]]*\b(text|size|headline)-\d/,
+    font: /\[\[[^\]]*\b(serif|body-font|futura-bold)\b/,
+    bold: /\[\[[^\]]*\bbody-font\b/
+  };
+  function bodyFontBold(line) {
+    [...line.querySelectorAll("strong, b")].filter((b) => !b.parentElement.closest("strong, b")).forEach((b) => bracketTag([b], "body-font", line));
+  }
+  function stdSectionStyle(section, labels) {
+    const styles = (section.style || "").split(",").map((st) => st.trim()).filter(Boolean);
+    const elements = section.nodes.filter((n) => n.nodeType === 1 && n.tagName !== "TABLE");
+    const lines = (selector) => elements.flatMap((n) => [...n.matches(selector) ? [n] : [], ...n.querySelectorAll(selector)]).filter((line) => !line.closest("table") && text2(line) && !line.querySelector("p, li"));
+    const out = [];
+    const boxed = styles.includes("headline-box");
+    styles.forEach((st) => {
+      if (st === "headline-box") {
+        if (!styles.some((o) => o !== st && SECTION_OPTIONS.aliases[o])) out.push("box-white");
+        return;
+      }
+      if (st === "body-font-bold") {
+        labels.forEach(bodyFontBold);
+        return;
+      }
+      const look = STD_TEXT_LOOKS.find(([re]) => re.test(st));
+      if (look) {
+        const [re, selector, cls, prop] = look;
+        const m = st.match(re);
+        const tag = cls(m);
+        if (tag) {
+          const own = (line) => TAGGED[prop].test(line.textContent);
+          lines(selector(m)).filter((line) => !own(line)).forEach((line) => {
+            if (prop === "bold") bodyFontBold(line);
+            else bracketTag([...line.childNodes], tag, line);
+          });
+        }
+        return;
+      }
+      const alias = SECTION_OPTIONS.aliases[st];
+      if (alias) out.push(...boxed ? alias.filter((a) => a !== "full-bleed") : alias);
+      else if (STD_SECTION_STYLES.has(st)) out.push(st);
+    });
+    return [...new Set(out)].join(", ");
+  }
+  function stdDropSpacers(sections) {
+    for (let i = sections.length - 1; i >= 0; i -= 1) {
+      const sec = sections[i];
+      if (sec.kind === "spacer" && !sec.nodes.length) {
+        const next = sections.slice(i + 1).find((s) => s.nodes.length);
+        if (sec.anchor && next) next.anchor = [sec.anchor, next.anchor].filter(Boolean).join(", ");
+        if (/\b(separator|divider)\b/.test(sec.style || "") && next) {
+          next.style = ["separator", next.style].filter(Boolean).join(", ");
+        }
+        if (!sec.anchor || next) sections.splice(i, 1);
+      }
+    }
+  }
+  function buildArticle(element, {
+    keep = "",
+    spacer = true,
+    componentStyle = null,
+    stdText = false
+  } = {}) {
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
     const selector = keep ? `${COMPONENTS}, ${keep}` : COMPONENTS;
@@ -1003,13 +1758,19 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-largeheadline") && !isFirst && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-        sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer` : "spacer", nodes: [] });
+        const anchor = STD_DRAFT_IMPORT ? component.getAttribute("data-anchor") : null;
+        sections.push(__spreadValues({
+          kind: "spacer",
+          style: separatorNext ? `${separatorNext}, spacer` : "spacer",
+          nodes: []
+        }, anchor ? { anchor } : {}));
         separatorNext = false;
         current = null;
         return;
       }
       if (component.matches(".c-autocarousel")) {
-        if (!component.querySelector("img")) return;
+        const ambient = stdReviewPage(doc) && [...component.querySelectorAll("[data-asset-path]")].some((el) => !el.getAttribute("data-asset-path").startsWith("/content/dam/"));
+        if (!component.querySelector("img") && !ambient) return;
         startSection("hero").nodes.push(component);
         current = null;
         return;
@@ -1216,40 +1977,103 @@ var CustomImportScript = (() => {
       let n = 1;
       while (sections[i].kind === "spacer" && sections[i].style === "spacer" && sections[i + n] && sections[i + n].kind === "spacer" && sections[i + n].style === "spacer" && n < 4) n += 1;
       if (n > 1) {
+        const anchors = sections.slice(i, i + n).map((sec) => sec.anchor).filter(Boolean);
+        if (anchors.length) sections[i].anchor = anchors.join(", ");
         sections.splice(i + 1, n - 1);
         sections[i].style = `spacer, ${SIZES[n - 1]}`;
       }
     }
+    if (stdText) stdFragmentText(sections);
+    if (STD_DRAFT_IMPORT) stdDropSpacers(sections);
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
       out.push(...section.nodes);
-      const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches("[data-btn-style]") ? [node] : [], ...node.querySelectorAll("[data-btn-style]")] : []);
-      [...new Set(marked.map((a) => a.getAttribute("data-btn-style")))].forEach((style) => {
+      const MARKS = ["data-btn-style", "data-section-style"];
+      const markSelector = MARKS.map((m) => `[${m}]`).join(", ");
+      const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches(markSelector) ? [node] : [], ...node.querySelectorAll(markSelector)] : []);
+      const markStyles = marked.flatMap((el) => MARKS.map((m) => el.getAttribute(m)).filter(Boolean));
+      [...new Set(markStyles)].forEach((style) => {
+        if ((section.style || "").split(", ").includes(style)) return;
         section.style = [section.style, style].filter(Boolean).join(", ");
       });
-      marked.forEach((a) => a.removeAttribute("data-btn-style"));
+      if (STD_DRAFT_IMPORT) {
+        const labels = marked.filter((el) => el.getAttribute("data-section-style") === "body-font-bold");
+        section.style = stdSectionStyle(section, labels) || void 0;
+      }
+      marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
       section.nodes.forEach((node) => {
         if (node.nodeType === 1) node.removeAttribute("data-keep");
       });
-      if (section.style) {
-        out.push(WebImporter.Blocks.createBlock(doc, {
-          name: "Section Metadata",
-          cells: { style: section.style }
-        }));
+      if (section.style || section.anchor) {
+        const cells = section.style ? { style: section.style } : {};
+        if (section.anchor) cells.anchor = section.anchor;
+        out.push(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells }));
       }
     });
     element.replaceChildren(...out);
+  }
+
+  // tools/importer/event-calendar-std-import.js
+  function sitePath(aemPath) {
+    const path = String(aemPath || "").replace(/^\/content\/stryker/, "").replace(/\.html?$/, "");
+    return path.split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")).join("/");
+  }
+  function eventCalendarBlocks(main, doc) {
+    main.querySelectorAll(".c-event").forEach((component) => {
+      const sp = component.querySelector("[data-sp]");
+      const from = component.closest(".event") || component;
+      if (!sp) {
+        from.remove();
+        return;
+      }
+      const parts = [];
+      const title = component.querySelector(".title-container h2");
+      if (title && title.textContent.trim()) {
+        const h2 = doc.createElement("h2");
+        h2.textContent = title.textContent.trim();
+        h2.setAttribute("data-keep", "section");
+        parts.push(h2);
+      }
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: "Event Calendar",
+        cells: [["Folder", sitePath(sp.getAttribute("data-sp"))]]
+      });
+      block.setAttribute("data-std-table", "");
+      block.setAttribute("data-keep", "section");
+      parts.push(block);
+      from.replaceWith(...parts);
+    });
   }
 
   // tools/importer/transformers/long-page-detail-corp-components.js
   var COMPONENT = '[class^="c-"], [class*=" c-"]';
   var UNIT = `[data-keep], ${COMPONENT}, .buttonset, table`;
   var PARSED = ".c-resourcesanddownload, .c-customizeable, .c-autocarousel";
+  var STD_BACKGROUNDS = /* @__PURE__ */ new Set([
+    "white",
+    "gold",
+    "light-gray",
+    "lighter-gray",
+    "gray",
+    "dark-gray",
+    "black",
+    "blue",
+    "purple",
+    "teal",
+    "orange",
+    "golden-gradient",
+    "gray-gradient",
+    "dark-blue-gradient",
+    "dark-purple-gradient",
+    "dark-teal-gradient",
+    "dark-orange-gradient"
+  ]);
   function colourStyle(el) {
     const m = (el.className || "").match(/\bbg-([a-z-]+)\b/);
     if (!m) return "";
     const bg = m[1];
+    if (STD_DRAFT_IMPORT && STD_BACKGROUNDS.has(bg)) return bg === "white" ? "" : `bg-${bg}`;
     if (/^(gold|golden-gradient|yellow)$/.test(bg)) return "gold";
     if (bg === "gray-gradient") return "gray-gradient";
     if (bg === "purple") return "purple";
@@ -1318,18 +2142,47 @@ var CustomImportScript = (() => {
       const deepest = Math.max(0, ...contents.flat().map(headingLevel));
       const level = Math.min(6, Math.max(2, deepest + 1));
       const nodes = [];
+      const panelSections = [];
       contents.forEach((content, i) => {
         if (!content.length) return;
         const heading = doc.createElement(`h${level}`);
         heading.textContent = labels[i] || `Tab ${i + 1}`;
         nodes.push(heading, ...content);
+        panelSections.push([heading, ...content]);
       });
       if (!nodes.length) return;
+      if (STD_DRAFT_IMPORT) {
+        const style2 = ["tab-panel", component.hasAttribute("data-image-aside") ? "image-aside" : ""].filter(Boolean).join(", ");
+        (component.closest(".tabs") || component).replaceWith(...panelSections.map((panel) => keepNodes(doc, panel, style2)));
+        return;
+      }
       const style = component.hasAttribute("data-image-aside") ? "tabbed, image-aside" : "tabbed";
       (component.closest(".tabs") || component).replaceWith(keepNodes(doc, nodes, style));
     });
   }
+  function plateColumns(main, doc, h) {
+    main.querySelectorAll(".colctrl").forEach((colctrl) => {
+      const row = colctrl.querySelector(":scope > .row");
+      const cols = row ? [...row.children].filter((c) => h.text(c) || c.querySelector("img")) : [];
+      const plate = (col) => {
+        const groups = col.querySelectorAll(".panel-group");
+        const panels = groups.length === 1 ? groups[0].querySelectorAll(":scope > .panel") : [];
+        return panels.length === 1 && !!panels[0].querySelector(".panel-collapse.in, .panel-collapse.show") && !!col.querySelector(".c-standalone-image img") && !col.querySelector(".colctrl");
+      };
+      if (cols.length < 2 || !cols.every(plate)) return;
+      cols.forEach((col) => {
+        const group = col.querySelector(".panel-group");
+        const title = doc.createElement("h4");
+        title.textContent = h.text(group.querySelector(".panel-title"));
+        const body = [...group.querySelectorAll(".panel-body .c-rich-text-editor")];
+        const target = group.closest(".accordion") || group.closest(".c-accordion") || group;
+        target.replaceWith(h.richText(doc, [title]), ...body);
+      });
+      colctrl.setAttribute("data-columns", "");
+    });
+  }
   function accordionsInColumns(main, doc, h) {
+    if (stdProductPage(doc)) plateColumns(main, doc, h);
     main.querySelectorAll(".panel-group").forEach((group) => {
       const col = group.closest('[class*="col-sm-"], [class*="col-md-"]');
       const row = col && col.parentElement;
@@ -1350,7 +2203,11 @@ var CustomImportScript = (() => {
     return [...table.querySelectorAll(":scope > tbody > tr, :scope > tr")].slice(1).flatMap((tr) => [...tr.children].flatMap((td) => [...td.childNodes]));
   }
   function tagPanelCopy(nodes, doc, h) {
-    nodes.filter((n) => n.nodeType === 1 && typeof n.copyStyle === "string" && n.copyStyle).forEach((n) => {
+    const product = stdReviewPage(doc);
+    if (product) {
+      nodes.filter((n) => n.nodeType === 1 && /^H[1-6]$/.test(n.tagName) && n.serifHeading).forEach((n) => h.tagCopy(n, "serif", doc));
+    }
+    nodes.filter((n) => n.nodeType === 1 && typeof n.copyStyle === "string" && n.copyStyle && !(product && /^H[1-6]$/.test(n.tagName))).forEach((n) => {
       const own = n.copyStyle.split(",").map((s) => s.trim());
       const size = own.find((s) => s.startsWith("p-") && /\d/.test(s[2]));
       const tags = [size ? `text-${size.slice(2)}` : "", own.includes("serif") ? "serif" : ""].filter(Boolean);
@@ -1374,6 +2231,19 @@ var CustomImportScript = (() => {
       }));
       items.forEach(({ body }) => tagPanelCopy(body, doc, h));
       const target = group.closest(".c-accordion") || group;
+      const subheading = STD_DRAFT_IMPORT && [...target.querySelectorAll(".component-subheading")].find((el) => !el.closest(".panel") && h.text(el));
+      const title = subheading ? doc.createElement("h3") : null;
+      if (title) {
+        const bold = doc.createElement("strong");
+        bold.textContent = h.text(subheading);
+        title.append(bold);
+      }
+      const keepWithTitle = (block2) => {
+        if (!title) return [block2];
+        title.setAttribute("data-keep", "section");
+        block2.setAttribute("data-keep", "join");
+        return [title, block2];
+      };
       const nested = items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches("table") || n.querySelector("table"))));
       if (nested && target.closest(".tab-content")) {
         items.forEach((item) => {
@@ -1386,14 +2256,16 @@ var CustomImportScript = (() => {
           return [p, body];
         });
         const block2 = WebImporter.Blocks.createBlock(doc, { name, cells: rows2 });
-        target.replaceWith(keepBlock(block2, target));
+        target.replaceWith(...keepWithTitle(keepBlock(block2, target)));
         return;
       }
       if (nested) {
+        if (title) target.before(keepNodes(doc, [title]));
+        const style = STD_DRAFT_IMPORT && options.split(", ").includes("open") ? "accordion-panel, accordion-open" : "accordion-panel";
         items.forEach(({ label, body }) => {
           const heading = doc.createElement("h4");
           heading.textContent = label;
-          target.before(keepNodes(doc, [heading, ...body], "accordion-panel"));
+          target.before(keepNodes(doc, [heading, ...body], style));
         });
         target.remove();
         return;
@@ -1404,7 +2276,7 @@ var CustomImportScript = (() => {
         return [p, body];
       });
       const block = WebImporter.Blocks.createBlock(doc, { name, cells: rows });
-      target.replaceWith(keepBlock(block, target));
+      target.replaceWith(...keepWithTitle(keepBlock(block, target)));
     });
   }
   function headingId(label) {
@@ -1430,10 +2302,14 @@ var CustomImportScript = (() => {
   function fullBleedPanels(main, doc, h) {
     main.querySelectorAll(".c-full-bleed-panel").forEach((component) => {
       const colour = colourStyle(component);
-      const style = [colour, "full-bleed"].filter(Boolean).join(", ");
+      const product = stdProductPage(doc);
+      const lines = product ? [...component.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => el.textContent.trim()) : [];
+      const centred = lines.length > 0 && lines.every((el) => el.closest('[style*="text-align: center"], [style*="text-align:center"], .text-center'));
+      const style = [colour, "full-bleed", centred ? "text-center" : ""].filter(Boolean).join(", ");
       const out = [];
       let run = [];
       const flush = () => {
+        if (product) tagPanelCopy(run, doc, h);
         if (run.length) out.push(keepNodes(doc, run, style));
         run = [];
       };
@@ -1445,7 +2321,7 @@ var CustomImportScript = (() => {
         } else run.push(...unitNodes(unit, doc, h));
       });
       flush();
-      if (!out.length && colour === "gold" && !h.text(component)) {
+      if (!out.length && /^(bg-)?gold$/.test(colour) && !h.text(component)) {
         const bar = keepNodes(doc, [], "gold-bar");
         const end = component.getAttribute("data-row-end");
         if (end) bar.setAttribute("data-row-end", end);
@@ -1454,6 +2330,153 @@ var CustomImportScript = (() => {
       if (!out.length) return;
       (component.closest(".fullbleedpanel") || component).replaceWith(...out);
     });
+  }
+  var PANEL_BOX_COLOURS = {
+    white: "box-white",
+    gold: "box-gold",
+    orange: "box-dark-gold",
+    "light-gray": "box-gray",
+    "lighter-gray": "box-pale-gray",
+    gray: "box-mid-gray",
+    black: "box-black",
+    "golden-gradient": "box-gold-gradient",
+    "gray-gradient": "box-gray-gradient",
+    "dark-orange-gradient": "box-orange-gradient",
+    blue: "box-blue",
+    "dark-blue-gradient": "box-blue-gradient",
+    "dark-teal-gradient": "box-teal-gradient",
+    teal: "box-teal",
+    purple: "box-purple",
+    "dark-gray": "box-dark",
+    "dark-purple-gradient": "box-purple-gradient"
+  };
+  var PANEL_SPACE_STEPS = [[0, "space-none"], [3, "space-s"], [5, ""], [10, "space-l"]];
+  function panelOptions(box, component) {
+    const bg = (box.className.match(/\bbg-([a-z-]+)/) || [])[1] || "";
+    const shadow = box.classList.contains("dimensional-box");
+    const colour = PANEL_BOX_COLOURS[bg] || (shadow ? "box-white" : "");
+    if (!colour || colour === "box-white" && !shadow) return "";
+    let gradient = "";
+    if (colour.endsWith("-gradient") && box.classList.contains("inverse")) {
+      gradient = box.classList.contains("top-to-bottom") ? "gradient-up" : "gradient-reverse";
+    }
+    const values = ["top", "right", "bottom", "left"].map((side) => (box.getAttribute("style") || "").match(new RegExp(`padding-${side}\\s*:\\s*([\\d.]+)%`))).filter(Boolean).map((m) => Number(m[1])).sort((a, b) => a - b);
+    let space = "space-s";
+    if (values.length) {
+      const median = values[Math.floor(values.length / 2)];
+      [, space] = PANEL_SPACE_STEPS.reduce((best, step) => Math.abs(step[0] - median) < Math.abs(best[0] - median) ? step : best);
+    }
+    const items = [...component.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => el.textContent.trim());
+    const centred = items.length > 0 && items.every((el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]'));
+    return [colour, shadow ? "shadow" : "", gradient, space, centred ? "text-center" : ""].filter(Boolean).join(", ");
+  }
+  var PANEL_SIZE_TAGS = {
+    "p-1-25": "text-1-25",
+    "p-1-5": "text-1-5",
+    "p-1-75": "text-1-75",
+    "p-2": "text-2",
+    "p-2-5": "text-2-5",
+    disclaimer: "text-0-8",
+    "h2-0-8": "text-0-8",
+    "h2-1-5": "text-1-5",
+    "h1-1-25": "text-1-25"
+  };
+  function panelCopy(cellNodes2, options, doc, h, component) {
+    const parts = (style) => (style || "").split(",").map((x) => x.trim()).filter(Boolean);
+    const squash = (value) => value.replace(/\[\[[^\][]+\]|\]/g, "").replace(/[\s\u00a0]+/g, "");
+    const nodes = [];
+    cellNodes2.forEach((n) => {
+      const inline = n.nodeType === 3 || n.nodeType === 1 && n.matches("a, b, br, em, i, span, strong, sub, sup, u");
+      if (!inline) {
+        nodes.push(n);
+        return;
+      }
+      let last = nodes[nodes.length - 1];
+      if (!last || !last.panelParagraph) {
+        if (n.nodeType === 3 && !n.textContent.trim()) return;
+        last = doc.createElement("p");
+        last.panelParagraph = true;
+        last.copyStyle = n.copyStyle;
+        nodes.push(last);
+      }
+      last.append(n);
+    });
+    const sources = new Map([...component.querySelectorAll("p, h1, h2, h3, h4, h5, h6")].map((el) => [squash(el.textContent), el]));
+    const STEPS = [[0.8, "text-0-8"], [1.25, "text-1-25"], [1.5, "text-1-5"], [1.75, "text-1-75"], [2, "text-2"], [2.5, "text-2-5"]];
+    const sizeOf = (el) => {
+      const factor = [...el.querySelectorAll('[class*="fontsize-"]')].filter((span) => squash(span.textContent) === squash(el.textContent)).map((span) => span.className.match(/fontsize-(\d+)(?:-(\d+))?em/) || []).filter((m) => m[1]).reduce((f, m) => f * (m[1] === "8" && !m[2] ? 0.8 : Number(`${m[1]}.${m[2] || 0}`)), 1);
+      if (Math.abs(factor - 1) < 0.05) return "";
+      const off = ([step]) => Math.abs(Math.log(step / factor));
+      return STEPS.reduce((a, b) => off(b) < off(a) ? b : a)[1];
+    };
+    const serifPlain = (el) => {
+      const walker = el.ownerDocument.createTreeWalker(el, 4);
+      let plain = 0;
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        if (squash(t.nodeValue) && !t.parentElement.closest(".futura-bold, b, strong") && !(stdReviewPage(el.ownerDocument) && t.parentElement.closest("sup, sub"))) {
+          if (!t.parentElement.closest(".urw-egyptienne")) return false;
+          plain += 1;
+        }
+      }
+      return plain > 0;
+    };
+    const TOKENS = /(\[\[[^\][]+\]|\])/;
+    const SIZE = /^text-\d/;
+    const tagRuns = (el, size, serif) => {
+      if (!size && !serif) return;
+      el.normalize();
+      const hasTags = el.textContent.includes("[[");
+      const hasBold = [...el.querySelectorAll("strong, b")].some((b) => b.textContent.trim());
+      if (!hasTags && !(serif && hasBold)) {
+        if (!el.firstChild) return;
+        el.firstChild.before(doc.createTextNode(`[[${[size, serif ? "serif" : ""].filter(Boolean).join(",")}]`));
+        el.lastChild.after(doc.createTextNode("]"));
+        return;
+      }
+      const walker = doc.createTreeWalker(el, 4);
+      const texts = [];
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) texts.push(t);
+      const open = [];
+      texts.forEach((t) => {
+        const b = t.parentElement.closest("strong, b");
+        const inBold = !!b && el.contains(b);
+        t.nodeValue = t.nodeValue.split(TOKENS).map((x, i) => {
+          if (i % 2 === 1) {
+            if (x === "]") open.pop();
+            else open.push(x.slice(2, -1).split(",").map((c) => c.trim()));
+            return x;
+          }
+          if (!x.trim()) return x;
+          const has = (test) => open.some((tags2) => tags2.some(test));
+          const tags = [
+            size && !has((c) => SIZE.test(c)) ? size : "",
+            serif && !inBold && !has((c) => c === "serif") ? "serif" : ""
+          ].filter(Boolean);
+          return tags.length ? `[[${tags.join(",")}]${x}]` : x;
+        }).join("");
+      });
+    };
+    nodes.filter((n) => n.nodeType === 1).forEach((n) => {
+      const heading = /^H\d$/.test(n.tagName);
+      const style = heading ? parts(n.headingStyle) : parts(n.copyStyle);
+      const src = sources.get(squash(n.textContent));
+      const size = src && sizeOf(src) || style.map((x) => PANEL_SIZE_TAGS[x]).find(Boolean) || "";
+      const serif = (heading ? n.serifHeading : style.includes("serif")) || !!src && serifPlain(src);
+      if (n.matches("ul, ol")) {
+        if (size || serif) h.tagCopy(n, [size, serif ? "serif" : ""].filter(Boolean).join(","), doc);
+      } else tagRuns(n, size, serif);
+    });
+    if (!/\bbox-(blue|teal|purple|dark|blue-gradient|purple-gradient)\b/.test(options)) return nodes;
+    nodes.forEach((n) => {
+      const walker = doc.createTreeWalker(n, 4);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        t.nodeValue = t.nodeValue.replace(/\[\[([^\][]+)\]/g, (all, raw) => {
+          const kept = raw.split(",").map((c) => c.trim()).filter((c) => c !== "color-white");
+          return `[[${kept.length ? kept.join(",") : "panel-text"}]`;
+        });
+      }
+    });
+    return nodes;
   }
   function textBoxes(main, doc, h) {
     main.querySelectorAll(".c-rich-text-editor").forEach((component) => {
@@ -1464,7 +2487,10 @@ var CustomImportScript = (() => {
       const row = col && col.parentElement;
       if (row && [...row.children].filter((c) => c !== col && h.text(c)).length) return;
       let variant = "";
-      if (box.classList.contains("dimensional-box")) variant = "left";
+      if (STD_DRAFT_IMPORT) {
+        variant = panelOptions(box, component);
+        if (!variant) return;
+      } else if (box.classList.contains("dimensional-box")) variant = "left";
       else {
         const colour = colourStyle(box);
         variant = {
@@ -1475,8 +2501,9 @@ var CustomImportScript = (() => {
         }[colour] || "";
         if (!variant) return;
       }
-      const nodes = contentNodes(component, doc, h);
+      let nodes = contentNodes(component, doc, h);
       if (!nodes.length) return;
+      if (STD_DRAFT_IMPORT) nodes = panelCopy(nodes, variant, doc, h, component);
       const name = variant ? `Panel (${variant})` : "Panel";
       (component.closest(".text") || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells: [[nodes]] })));
     });
@@ -1516,6 +2543,24 @@ var CustomImportScript = (() => {
     });
   }
   function fastFacts(main, doc, h) {
+    if (STD_DRAFT_IMPORT) {
+      main.querySelectorAll(".c-fastfacts").forEach((component) => {
+        const items = [...component.querySelectorAll(".c-fastfacts-item")].map((item) => [item.querySelector(".c-fastfacts-number"), item.querySelector(".c-fastfacts-text")]).filter(([n]) => n && h.text(n));
+        if (!items.length) return;
+        const title = component.querySelector(".c-fastfacts-title");
+        const out = [];
+        if (title && h.text(title)) {
+          const h2 = doc.createElement("h2");
+          h2.textContent = h.text(title);
+          out.push(h.richText(doc, [h2]));
+        }
+        const cells = items.map(([n, t]) => [n.textContent.trim(), t ? t.textContent.trim() : ""]);
+        const options = [items.length !== 3 ? `cols-${Math.min(items.length, 6)}` : "", "inline"].filter(Boolean);
+        const from = component.closest(".fastfacts") || component;
+        out.push(keepBlock(WebImporter.Blocks.createBlock(doc, { name: `Statistics (${options.join(", ")})`, cells }), from));
+        from.replaceWith(...out);
+      });
+    }
     main.querySelectorAll(".c-fastfacts").forEach((component) => {
       const nodes = [...component.querySelectorAll("h2, h3, h4, p, li")].filter((el) => h.text(el) && !el.querySelector("h2, h3, h4, p, li")).map((el) => {
         const copy = doc.createElement(el.matches(".c-fastfacts-title") ? "h2" : "p");
@@ -1530,7 +2575,7 @@ var CustomImportScript = (() => {
     });
   }
   function pageHeroes(main, doc, h) {
-    main.querySelectorAll(".c-page-hero").forEach((component) => {
+    main.querySelectorAll(STD_DRAFT_IMPORT ? ".c-page-hero, .c-hero" : ".c-page-hero").forEach((component) => {
       const columnNodes = (col) => [...col.querySelectorAll("h1, h2, p, img")].flatMap((el) => {
         var _a;
         if (el.matches("img")) {
@@ -1545,16 +2590,69 @@ var CustomImportScript = (() => {
         if (!h.text(el)) return [];
         const copy = doc.createElement(el.tagName.toLowerCase());
         const gold = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i.test(((_a = ((el.getAttribute("style") || "").match(/color\s*:\s*([^;]+)/i) || [])[1]) == null ? void 0 : _a.trim()) || "");
-        if (el.matches("h1")) {
+        const goldText = () => {
           const strong = doc.createElement("strong");
-          strong.textContent = h.text(el);
-          copy.append(doc.createTextNode(gold ? "[[text-2][[color-gold]" : "[[text-2]"), strong, doc.createTextNode(gold ? "]]" : "]"));
+          const em = doc.createElement("em");
+          em.textContent = h.text(el);
+          strong.append(em);
+          return strong;
+        };
+        if (el.matches("h1")) {
+          let strong = goldText();
+          if (!gold) {
+            strong = doc.createElement("strong");
+            strong.textContent = h.text(el);
+          }
+          copy.append(doc.createTextNode("[[text-2]"), strong, doc.createTextNode("]"));
         } else if (el.matches("h2")) {
           copy.textContent = `[[text-1-75,serif]${h.text(el)}]`;
-        } else copy.textContent = gold ? `[[color-gold]${h.text(el)}]` : h.text(el);
+        } else if (gold) copy.append(goldText());
+        else copy.textContent = h.text(el);
         return [copy];
       });
       const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector("img"));
+      if (STD_DRAFT_IMPORT) {
+        const copy = [];
+        const pics = [];
+        cols.forEach((col) => col.querySelectorAll("h1, h2, p, img").forEach((el) => {
+          if (el.matches("img")) {
+            const source = el.closest("picture") && el.closest("picture").querySelector("source[srcset]");
+            const img = doc.createElement("img");
+            img.setAttribute("src", source ? source.getAttribute("srcset").split(/\s+/)[0] : el.getAttribute("src"));
+            img.setAttribute("alt", el.getAttribute("alt") || "");
+            pics.push(img);
+            return;
+          }
+          if (!h.text(el) || el.parentElement && el.parentElement.closest("h1, h2")) return;
+          let tag = "p";
+          if (el.matches("h1, p.title")) tag = "h1";
+          else if (el.matches("h2, p.subhead")) tag = "h2";
+          if (tag === "h1" && copy.some((n) => n.tagName === "H1")) return;
+          const node = doc.createElement(tag);
+          const styled = el.matches('[style*="color"]') ? el : el.querySelector('[style*="color"]');
+          const black = styled && /#000\b|#000000|rgba?\(\s*0\s*,\s*0\s*,\s*0\s*[,)]/i.test(styled.getAttribute("style") || "");
+          const titleGold = tag === "h1" && !black;
+          if (tag === "h1") {
+            const strong = doc.createElement("strong");
+            if (titleGold) {
+              const em = doc.createElement("em");
+              em.textContent = h.text(el);
+              strong.append(em);
+            } else strong.textContent = h.text(el);
+            node.append(strong);
+          } else node.textContent = h.text(el);
+          copy.push(node);
+        }));
+        if (!copy.length && !pics.length) return;
+        const options = ["page-hero"];
+        if (!pics.length) options.push("no-image");
+        if (!component.querySelector(".border-bottom-gold")) options.push("no-rule");
+        const rows = [[copy]];
+        if (pics.length) rows.push([pics[0]]);
+        const block = keepBlock(WebImporter.Blocks.createBlock(doc, { name: `Hero Corp (${options.join(", ")})`, cells: rows }));
+        (component.closest(".pagehero, .hero") || component).replaceWith(block);
+        return;
+      }
       const cells = cols.map(columnNodes).filter((nodes) => nodes.length);
       if (!cells.length) return;
       const out = cells.length === 2 ? [keepBlock(WebImporter.Blocks.createBlock(doc, { name: "Columns (columns-50-50)", cells: [cells] }))] : [h.richText(doc, cells.flat())];
@@ -1589,12 +2687,55 @@ var CustomImportScript = (() => {
       (component.closest(".engagementcta") || component).replaceWith(h.richText(doc, nodes));
     });
   }
+  function hotspotsOf(path) {
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", `https://media-assets.stryker.com/is/image/${encodeURI(path)}?req=set,json`, false);
+      xhr.send();
+      if (xhr.status !== 200) return [];
+      const text5 = xhr.responseText;
+      const { item } = JSON.parse(text5.slice(text5.indexOf("{"), text5.lastIndexOf("}") + 1)).set || {};
+      const areas = item && item.map && [].concat(item.map.area || []);
+      if (!areas || !Number(item.dx) || !Number(item.dy)) return [];
+      const pct = (v, of) => Math.round(v / of * 1e3) / 10;
+      return areas.map((area) => {
+        const c = String(area.coords || "").split(",").map(Number);
+        const xs = c.filter((_, i) => i % 2 === 0);
+        const ys = c.filter((_, i) => i % 2 === 1);
+        if (!xs.length || !area.href) return null;
+        return {
+          label: area.alt || "",
+          x: pct((Math.min(...xs) + Math.max(...xs)) / 2, Number(item.dx)),
+          y: pct((Math.min(...ys) + Math.max(...ys)) / 2, Number(item.dy)),
+          href: area.href
+        };
+      }).filter(Boolean);
+    } catch (e) {
+      return [];
+    }
+  }
   function interactiveImages(main, doc) {
     main.querySelectorAll(".interactivemedia").forEach((component) => {
       const asset = component.querySelector("[data-asset-path]");
       const path = asset && asset.getAttribute("data-asset-path");
       if (!path) {
         component.remove();
+        return;
+      }
+      const spots = STD_DRAFT_IMPORT ? hotspotsOf(path) : [];
+      if (spots.length) {
+        const image = doc.createElement("a");
+        image.href = `https://media-assets.stryker.com/is/image/${encodeURI(path)}?$max_width_1440$`;
+        image.textContent = image.href;
+        const rows = [[image], ...spots.map((s) => {
+          const a = doc.createElement("a");
+          a.href = s.href;
+          a.textContent = s.label ? `${s.label}` : s.href;
+          return [s.label, `${s.x}, ${s.y}`, a];
+        })];
+        const block = WebImporter.Blocks.createBlock(doc, { name: "Interactive Image", cells: rows });
+        block.setAttribute("data-std-table", "");
+        component.replaceWith(keepBlock(block, component));
         return;
       }
       const img = doc.createElement("img");
@@ -1606,7 +2747,348 @@ var CustomImportScript = (() => {
       component.replaceWith(box);
     });
   }
+  var STAT_COLOURS = {
+    "255,181,0": "gold",
+    "175,109,4": "gold",
+    "28,86,135": "navy",
+    "133,69,138": "purple",
+    "76,125,122": "teal",
+    "255,255,255": "white"
+  };
+  var TEXT_COLOURS = {
+    "255,181,0": "gold",
+    "28,86,135": "blue",
+    "133,69,138": "purple",
+    "76,125,122": "teal",
+    "255,255,255": "white"
+  };
+  var rgbOf = (el) => {
+    var _a;
+    return (_a = (el && el.getAttribute("style") || "").replace(/\s/g, "").match(/color:rgba?\((\d+,\d+,\d+)/i)) == null ? void 0 : _a[1];
+  };
+  function statFigure(widget) {
+    const end = widget.getAttribute("data-numbercounter-end-number") || "";
+    const type = widget.getAttribute("data-numbercounter-number-type");
+    const currency = widget.getAttribute("data-numbercounter-currency-type") || "";
+    if (type === "3") return `${end}%`;
+    if (type === "2") return `${currency}${end}`;
+    return end;
+  }
+  function statLine(line, doc) {
+    const p = doc.createElement("p");
+    const classes = [line, ...line.querySelectorAll("span[class]")].flatMap((s) => [...s.classList]);
+    const tags = [];
+    const vw = classes.map((c) => c.match(/^fontsize-(\d+(?:-\d+)?)-?vw$/)).find(Boolean);
+    const em = classes.map((c) => c.match(/^fontsize-(\d+(?:-\d+)?)em$/)).find(Boolean);
+    if (vw) tags.push(`size-${vw[1]}-vw`);
+    else if (em) tags.push(`text-${em[1]}`);
+    if (classes.includes("urw-egyptienne")) tags.push("serif");
+    const bold = classes.includes("futura-bold");
+    const coloured = [line, ...line.querySelectorAll('[style*="color"]')].find((el) => rgbOf(el));
+    const colour = TEXT_COLOURS[rgbOf(coloured)];
+    if (colour) tags.push(`color-${colour}`);
+    const copy = line.cloneNode(true);
+    copy.querySelectorAll("sup span").forEach((s) => s.replaceWith(...s.childNodes));
+    const sups = [...copy.querySelectorAll("sup")];
+    sups.forEach((s) => s.remove());
+    const text5 = copy.textContent.replace(/\s+/g, " ").trim();
+    if (!text5) return null;
+    const run = doc.createTextNode(tags.length ? `[[${tags.join(",")}]${text5}]` : text5);
+    const inRun = stdProductPage(doc) && sups.length;
+    const nodes = inRun && tags.length ? [doc.createTextNode(`[[${tags.join(",")}]${text5}`), ...sups, doc.createTextNode("]")] : [run];
+    const after = inRun ? [] : sups;
+    if (inRun && !tags.length) nodes.push(...sups);
+    if (bold) {
+      const strong = doc.createElement("strong");
+      strong.append(...nodes);
+      p.append(strong, ...after);
+    } else p.append(...nodes, ...after);
+    return p;
+  }
+  function statCell(component, doc) {
+    const widget = component.querySelector('[data-widget="numbercounter"]');
+    const number = widget.querySelector(".numbercounter-number");
+    const value = doc.createElement("p");
+    value.textContent = statFigure(widget);
+    const label = [...widget.children].find((el) => !el.querySelector(".numbercounter-number") && el.textContent.trim());
+    const lines = label ? [...label.children].filter((c) => c.textContent.trim()) : [];
+    const desc = (lines.length ? lines : [label].filter(Boolean)).map((l) => statLine(l, doc)).filter(Boolean);
+    const vw = (number.className.match(/fontsize-(\d+(?:-\d+)?)-?vw/) || [])[1];
+    return {
+      value,
+      desc,
+      colour: STAT_COLOURS[rgbOf(number)] || "gold",
+      size: vw ? Number(vw.replace("-", ".")) : 0,
+      centred: !!widget.querySelector(".text-center")
+    };
+  }
+  function statRowLine(source, doc, base = 1) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const whole = squash(source.textContent);
+    const factor = [...source.querySelectorAll('[class*="fontsize-"]')].filter((span) => squash(span.textContent) === whole).map((span) => span.className.match(/\bfontsize-(\d+)(?:-(\d+))?em\b/) || []).filter((m) => m[1]).reduce((f, m) => f * (m[1] === "8" && !m[2] ? 0.8 : Number(`${m[1]}.${m[2] || 0}`)), 1);
+    const STEPS = [[0.8, "text-0-8"], [1, ""], [1.25, "text-1-25"], [1.5, "text-1-5"], [1.75, "text-1-75"], [2, "text-2"], [2.5, "text-2-5"]];
+    const off = ([step]) => Math.abs(Math.log(step / (factor / base)));
+    const size = STEPS.reduce((x, y) => off(y) < off(x) ? y : x)[1];
+    const serif = [...source.querySelectorAll(".urw-egyptienne")].some((span) => squash(span.textContent) === whole);
+    const line = doc.createElement("p");
+    line.append(...source.cloneNode(true).childNodes);
+    line.querySelectorAll("span.futura-bold, b").forEach((span) => {
+      const strong = doc.createElement("strong");
+      strong.append(...span.childNodes);
+      span.replaceWith(strong);
+    });
+    line.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
+    line.querySelectorAll("*").forEach((el) => [...el.attributes].forEach((at) => {
+      if (!(el.tagName === "A" && at.name === "href")) el.removeAttribute(at.name);
+    }));
+    const tag = [size, serif ? "serif" : ""].filter(Boolean).join(",");
+    if (tag && line.firstChild) {
+      line.prepend(doc.createTextNode(`[[${tag}]`));
+      line.append(doc.createTextNode("]"));
+    }
+    return line;
+  }
+  function statisticsRow(row, columns, doc) {
+    const paragraphs = (parts) => parts.flatMap((pt) => {
+      const ps = [...pt.querySelectorAll("p")].filter((p) => p.textContent.trim());
+      return ps.length ? ps : [pt].filter((x) => x.textContent.trim());
+    });
+    const stats = columns.map((ps) => {
+      const at = ps.findIndex((pt) => pt.matches(".numbercounter"));
+      const stat = statCell(ps[at], doc);
+      const after = paragraphs(ps.slice(at + 1));
+      const unit = after.length && after[0].textContent.trim().split(/\s+/).length <= 3 ? [after.shift()] : [];
+      const line = (base) => (p) => statRowLine(p, doc, base);
+      return __spreadProps(__spreadValues({}, stat), {
+        before: paragraphs(ps.slice(0, at)).map(line(1.5)),
+        unit: unit.map(line(1.5)),
+        rest: after.map(line(1))
+      });
+    });
+    const colours = [...new Set(stats.map((st) => st.colour))];
+    const options = [];
+    if (stats.length !== 3) options.push(`cols-${Math.min(stats.length, 6)}`);
+    if (colours.length === 1 && colours[0] !== "gold") options.push(`stat-${colours[0]}`);
+    const sizes = stats.map((st) => st.size).filter(Boolean);
+    const size = sizes.length ? sizes.sort((x, y) => x - y)[Math.floor(sizes.length / 2)] : 5;
+    if (size <= 4) options.push("stat-s");
+    else if (size >= 6.5) options.push("stat-l");
+    if (stats.some((st) => st.centred)) options.push("text-center");
+    const cells = stats.map((st) => {
+      const number = doc.createElement("div");
+      number.append(...st.before, st.value, ...st.unit);
+      const desc = doc.createElement("div");
+      desc.append(...st.rest.length ? st.rest : st.desc);
+      const keyword = colours.length > 1 ? [st.colour === "white" ? "gold" : st.colour] : [];
+      return [...keyword, number, desc];
+    });
+    const name = options.length ? `Statistics (${options.join(", ")})` : "Statistics";
+    const from = row.closest('[class^="cols"]') || row;
+    from.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells }), from));
+  }
+  function statisticsBlocks(main, doc) {
+    const done = /* @__PURE__ */ new Set();
+    main.querySelectorAll(".numbercounter").forEach((component) => {
+      if (done.has(component) || !component.querySelector('[data-widget="numbercounter"]')) return;
+      const row = component.closest(".colctrl");
+      const parts = row ? [...row.querySelectorAll(':scope > .row > [class*="col-"] > .row > *')] : [component];
+      const counters = parts.filter((p) => p.matches(".numbercounter"));
+      const others = parts.filter((p) => !p.matches(".numbercounter") && p.textContent.trim());
+      if (row && others.length && stdReviewPage(doc)) {
+        const columns = [...row.querySelectorAll(':scope > .row > [class*="col-"]')].map((col) => [...col.querySelectorAll(":scope > .row > *")]).filter((ps) => ps.some((pt) => pt.textContent.trim()));
+        if (columns.length >= 2 && columns.every((ps) => ps.filter((pt) => pt.matches(".numbercounter")).length === 1)) {
+          counters.forEach((c) => done.add(c));
+          statisticsRow(row, columns, doc);
+          return;
+        }
+      }
+      if (row && (others.length || counters.length < 2)) return;
+      counters.forEach((c) => done.add(c));
+      const stats = counters.map((c) => statCell(c, doc));
+      const colours = [...new Set(stats.map((s) => s.colour))];
+      const options = [];
+      if (counters.length !== 3) options.push(`cols-${Math.min(counters.length, 6)}`);
+      if (colours.length === 1 && colours[0] !== "gold") options.push(`stat-${colours[0]}`);
+      const sizes = stats.map((s) => s.size).filter(Boolean);
+      const size = sizes.length ? sizes.sort((a, b) => a - b)[Math.floor(sizes.length / 2)] : 5;
+      if (size <= 4) options.push("stat-s");
+      else if (size >= 6.5) options.push("stat-l");
+      if (stats.some((s) => s.centred)) options.push("text-center");
+      const cells = stats.map((s) => {
+        const desc = doc.createElement("div");
+        desc.append(...s.desc);
+        const keyword = colours.length > 1 ? [s.colour === "white" ? "gold" : s.colour] : [];
+        return [...keyword, s.value, desc];
+      });
+      const name = options.length ? `Statistics (${options.join(", ")})` : "Statistics";
+      const from = row ? row.closest('[class^="cols"]') || row : component;
+      from.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells }), from));
+    });
+  }
+  var WIDGET_VARIANTS = [
+    [/medical-information-request/, "medical-information-request"],
+    [/mapbox|coverage|map\b/, "map"],
+    [/calculator|surfaces-rental/, "calculator"]
+  ];
+  function widgetBlock(doc, variant, href) {
+    const a = doc.createElement("a");
+    a.setAttribute("href", href);
+    a.textContent = href;
+    return keepBlock(WebImporter.Blocks.createBlock(doc, { name: `Widget (${variant})`, cells: [[a]] }));
+  }
+  function microApps(main, doc) {
+    main.querySelectorAll(".c-remoteComponent").forEach((component) => {
+      const value = (component.querySelector(".hdnSelComp") || {}).value || component.querySelector(".hdnSelComp") && component.querySelector(".hdnSelComp").getAttribute("value") || "";
+      const raw = value.split("|")[1];
+      if (!raw) return;
+      let url;
+      try {
+        url = new URL(raw.trim());
+      } catch (e) {
+        return;
+      }
+      url.host = "microapp.stryker.com";
+      const hit = WIDGET_VARIANTS.find(([re]) => re.test(url.pathname.toLowerCase()));
+      const from = component.closest(".remotecomponent") || component;
+      from.replaceWith(widgetBlock(doc, hit ? hit[1] : "product-explorer", url.href));
+    });
+    main.querySelectorAll(".c-cventComponent").forEach((component) => {
+      const box = component.querySelector("[data-calendar-id]");
+      if (!box) return;
+      const href = `https://www.cvent.com/c/calendar/${box.getAttribute("data-calendar-id")}?widget=${box.getAttribute("data-widget-id") || ""}`;
+      (component.closest(".cventcomponent") || component).replaceWith(widgetBlock(doc, "cvent", href));
+    });
+  }
+  var hexOf2 = (rgba) => {
+    const m = String(rgba).match(/(\d+)\D+(\d+)\D+(\d+)/);
+    return m ? `#${m.slice(1, 4).map((c) => Number(c).toString(16).padStart(2, "0")).join("")}` : "";
+  };
+  function chartBlock(component, doc) {
+    const value = (cls) => {
+      const input = component.querySelector(`input.${cls}`);
+      return input ? (input.value || input.getAttribute("value") || "").trim() : "";
+    };
+    const pie = component.matches('[data-widget="pie-chart"]');
+    const rows = [];
+    const title = value("chartTitle");
+    if (title) {
+      const cell = doc.createElement("div");
+      if (/<p[\s>]/.test(title)) {
+        const parsed = new DOMParser().parseFromString(title, "text/html");
+        [...parsed.body.querySelectorAll("span")].reverse().forEach((span) => {
+          const size = (span.className.match(/\bfontsize-(\d+(?:-\d+)?)em\b/) || [])[1];
+          const tags = [size ? `text-${size}` : "", /\burw-egyptienne\b/.test(span.className) ? "serif" : ""].filter(Boolean);
+          const inner = [...span.childNodes];
+          if (/\bfutura-bold\b/.test(span.className)) {
+            const strong = doc.createElement("strong");
+            strong.append(...inner);
+            span.replaceWith(strong);
+            return;
+          }
+          if (tags.length) span.replaceWith(doc.createTextNode(`[[${tags.join(",")}]`), ...inner, doc.createTextNode("]"));
+          else span.replaceWith(...inner);
+        });
+        cell.append(...parsed.body.childNodes);
+      } else {
+        const p = doc.createElement("p");
+        p.textContent = title;
+        cell.append(p);
+      }
+      rows.push([cell]);
+    }
+    [...component.querySelectorAll("select option")].forEach((option) => {
+      const raw = option.textContent.trim();
+      const parts = pie ? raw.split(/\s*\+\s*/) : raw.split("|");
+      const label = pie ? parts[0] : parts[1];
+      const colour = hexOf2(pie ? parts[2] : parts[0]);
+      if (label === void 0) return;
+      rows.push([label.trim(), option.getAttribute("value") || "", colour]);
+    });
+    if (!pie && value("yAxisTitle")) rows.push(["Axis title", value("yAxisTitle")]);
+    if (!pie && value("maxValue")) rows.push(["Axis maximum", value("maxValue")]);
+    let type = value("chartType").toLowerCase() === "bar" ? "bar" : "column";
+    if (pie) type = "pie";
+    const options = [type];
+    if (!pie && value("dataLabelDisplay") === "true") options.push("data-labels");
+    return WebImporter.Blocks.createBlock(doc, { name: `Chart (${options.join(", ")})`, cells: rows });
+  }
+  function charts(main, doc) {
+    main.querySelectorAll('.c-animated-bar-chart, [data-widget="pie-chart"]').forEach((component) => {
+      if (!component.querySelector("select option")) return;
+      const from = component.closest(".animatedbarchart, .pieChart") || component;
+      const block = chartBlock(component, doc);
+      block.setAttribute("data-std-table", "");
+      from.replaceWith(keepBlock(block, from));
+    });
+  }
+  function dmSetImages(path) {
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", `https://media-assets.stryker.com/is/image/${path}?req=set,json`, false);
+      xhr.send();
+      if (xhr.status !== 200) return [];
+      const text5 = xhr.responseText;
+      const json = JSON.parse(text5.slice(text5.indexOf("{"), text5.lastIndexOf("}") + 1));
+      return [].concat(json.set && json.set.item || []).map((item) => item.i && item.i.n).filter(Boolean);
+    } catch (e) {
+      return [];
+    }
+  }
+  function mediaGalleries(main, doc) {
+    main.querySelectorAll(".mixedmediagallery").forEach((component) => {
+      const asset = component.querySelector("[data-asset-path]");
+      const path = asset && asset.getAttribute("data-asset-path");
+      if (!path) {
+        component.remove();
+        return;
+      }
+      const type = (asset.getAttribute("data-asset-type") || "").toLowerCase();
+      const link = (name) => {
+        const a = doc.createElement("a");
+        a.href = `https://media-assets.stryker.com/is/image/${name.replace(/ /g, "%20")}`;
+        a.textContent = a.href;
+        return a;
+      };
+      const images = dmSetImages(path);
+      const rows = (images.length ? images : [path]).map((name) => [link(name)]);
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: type === "spinset" ? "Media Gallery (spin-set)" : "Media Gallery",
+        cells: rows
+      });
+      block.setAttribute("data-std-table", "");
+      component.replaceWith(keepBlock(block, component));
+    });
+  }
+  function newsLists(main, doc) {
+    main.querySelectorAll(".c-newsandannouncements").forEach((component) => {
+      const canonical = doc.querySelector('link[rel="canonical"]');
+      let folder = "";
+      try {
+        folder = new URL(canonical ? canonical.href : doc.location.href).pathname.replace(/\/index\.html$/, "").replace(/\.html$/, "");
+      } catch (e) {
+        folder = "";
+      }
+      if (!folder) return;
+      const labels = [...component.querySelectorAll(".tab-link")].map((t) => t.textContent.trim());
+      const rows = [["Folder", folder]];
+      if (labels[0]) rows.push(["All", labels[0]]);
+      labels.slice(1).forEach((label) => rows.push(["Tab", label, label]));
+      const dates = !!component.querySelector(".news h5");
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: dates ? "News List (show-dates)" : "News List",
+        cells: rows
+      });
+      block.setAttribute("data-std-table", "");
+      const from = component.closest(".newsandannouncements") || component;
+      from.replaceWith(keepBlock(block, from));
+    });
+  }
   function numberCounters(main, doc, h) {
+    if (STD_DRAFT_IMPORT) newsLists(main, doc);
+    if (STD_DRAFT_IMPORT) mediaGalleries(main, doc);
+    if (STD_DRAFT_IMPORT) microApps(main, doc);
+    if (STD_DRAFT_IMPORT) statisticsBlocks(main, doc);
+    if (STD_DRAFT_IMPORT) charts(main, doc);
     main.querySelectorAll(".numbercounter").forEach((component) => {
       const widget = component.querySelector('[data-widget="numbercounter"]');
       if (!widget) return;
@@ -1646,7 +3128,11 @@ var CustomImportScript = (() => {
       el.setAttribute("data-white-tag", "");
     });
   }
-  function eventCalendars(main) {
+  function eventCalendars(main, doc) {
+    if (STD_DRAFT_IMPORT) {
+      eventCalendarBlocks(main, doc);
+      return;
+    }
     main.querySelectorAll(".c-event").forEach((component) => (component.closest(".event") || component).remove());
   }
   function convertBeforeRows(main, doc, h) {
@@ -1655,7 +3141,7 @@ var CustomImportScript = (() => {
     interactiveImages(main, doc);
     numberCounters(main, doc, h);
     accordionsInColumns(main, doc, h);
-    eventCalendars(main);
+    eventCalendars(main, doc);
     pageHeroes(main, doc, h);
     engagementCtas(main, doc, h);
     groupLists(main, doc, h);
@@ -1865,8 +3351,1989 @@ var CustomImportScript = (() => {
     "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge/master"]
   };
 
+  // tools/importer/product-detail-xf.js
+  var product_detail_xf_default = {
+    "/us/en/acute-care/products/arise-1000-ex.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/bari-10a.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/barimatt-plus.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/bedside-stands.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/comfortgel-se.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/comfortgel.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/cub.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/eye-surgery.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/fluoroscopy-stretcher.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/gynnie.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/ibed-wireless.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master"
+    ],
+    "/us/en/acute-care/products/intouch.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isoair.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      null,
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isoflex-lal.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isoflex-se.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isolibrium.html": [
+      "/content/experience-fragments/stryker/acute-care/en/products/isolibrium_770039638/hotspot/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/isotour.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/ld-304.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/michael-graves-with-stryker.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/mv3.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/nara-bassinet.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/prime-series.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/prime-tc.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/primex-x-ray.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/procuity-icu.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/procuity.html": [
+      "/content/experience-fragments/stryker/acute-care/en/products/analytics/analytics-cta/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/proform.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/s3.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/side-seating.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/sofcare-chair-cushion.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/sofcare-overlay.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/spr-plus.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/stretcher-chairs.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/surgistool.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/symmetry-plus.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/transport.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/tru-fit.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/trurize.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/ultracomfort--se.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/unity-furniture.html": [
+      "/content/experience-fragments/stryker/acute-care/en/products/unity_furniture/sleeper-bench/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"
+    ],
+    "/us/en/acute-care/products/vocera-analytics.html": [
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/communications/products/Fortress-wall-system.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/accend-surgical-light.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/berchtold-led-f-gen.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/connected-or-ip.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/connected-or-lite.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/customized-suspension-solutions.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/equipment-management-accessories.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/hospital-status.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/isuite-diagnostic-4k-large-monitor-systems.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/isuite-ehr-connectivity.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/isuite-live-video.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/isuite-media-management.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/nurse-documentation-stations.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/oculan.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/operon-accessories.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/operon-d770.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/operon-d830.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/operon-d860.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/or-renovation-services.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/project-services.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/room-cameras.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/s-series-equipment-management-system.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/slx-surgical-light.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/sterile-control--.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/strykecam-4k.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/surgical-monitor-mounting.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/teletom.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/universal-device-connection.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/universal-display-mount.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/visum-blade-led.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/visum-led-ii.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/wall-control.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/wall-control/sirca-exam-light.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/communications/products/wall-mounted-lcd-displays.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master"
+    ],
+    "/us/en/craniomaxillofacial/products/pediatric-mandibular-distractor.html": [
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/pediatric-mandibular-distractor/master"
+    ],
+    "/us/en/craniomaxillofacial/products/sternalplate.html": [
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/count-on-us/count-on-us-v2",
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/pull-out-force/pull-out-force-v2",
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/related-products/master"
+    ],
+    "/us/en/craniomaxillofacial/products/tmj-concepts.html": [
+      "/content/experience-fragments/stryker/craniomaxillofacial/en/products/tmj-concepts/master"
+    ],
+    "/us/en/emergency-care/products/code-stat.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/data-professional-services.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master"
+    ],
+    "/us/en/emergency-care/products/evacuation-chair.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/heartsine-samaritan-pad-360p.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master"
+    ],
+    "/us/en/emergency-care/products/heartsine-samaritan-pad-450p.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master"
+    ],
+    "/us/en/emergency-care/products/lifelink-central.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifenet-care.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifenet-system.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/data_solutions/professional-services/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifepak-1000-defibrillator.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifepak-15.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifepak-35.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/intuitive-clinically-advanced-proven/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lifepak-cr2.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_cr2/callout/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lithium-ion-battery.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/lucas-3.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/lucas/lucas-clinical-evidence/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/lucas/lucas-product-specifications/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/lucas/sidebar-links/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/mcgrath-mac-ems.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/mx-pro-bariatric-transport.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/performance-load.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/performance-pro-xt.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/power-load.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master"
+    ],
+    "/us/en/emergency-care/products/power-pro-2.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/pp2/sem/master1",
+      "/content/experience-fragments/stryker/emergency-care/en/products/pp2/sem/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/pp2/sem/master2",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/tech-support-and-procare",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/stair-pro.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/xpedition-powered-stair-chair.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master"
+    ],
+    "/us/en/emergency-care/products/xpr-restraints.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/emergency-care/products/xps-siderails.html": [
+      "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+      "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    ],
+    "/us/en/endoscopy/products/10-0-mm-laparoscopic-instruments.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1488-hd-3-chip-camera-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1588-aim-camera-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1588-aim-laproscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1588-sterilization-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1688-camera-head-with-4k-image-resolution0.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/1788-platform.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/4k-32--surgical-display.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/4k-32--surgical-monitor-.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/5-0-mm-laparoscopic-instruments.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/5-0-mm-sliding-lock-graspers.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/ahto-pump.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/aim-4k-autoclavable-camera.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/arthroscopic-instrument-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/breisky-adapt-and-deaver-adapt.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/connected-or-hub0.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/cystoscope-hardware.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/cystoscope-instrumentation.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/dermacell.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/eikon-lt-adapt-se.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/eikon-lt.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/flexible-instruments.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/gynecologic-laparscopy-instruments.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/hardware.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/ideal-eyes-hd-autocalvable-eyepiece-arthroscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/insufflator-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/iris-u-kits.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/l-11-light-source-and-auto-light-technology0.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/l10-aim-light-source.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/laparoscope-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/laparoscopic-instrument-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/laparoscopic-instrument-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/laser-cystoscope-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/microcart.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/molli.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/products/molli/molli-marker/master",
+      "/content/experience-fragments/stryker/endoscopy/en/products/molli/white-paper/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/or-control--device-voice-.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/photonguide-and-photonguide-adapt.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/pinpoint.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/pneumoclear.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/pneumosurexl.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/precision-ac.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/precision-ideal-eyes-hd-autocalvable-c-mount-arthorscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/precision-ideal-eyes-hd-autoclavable-laparoscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/precision-light-source.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/printers.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/pump-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/reposable-electro-surgical-tips.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/resectoscope-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/resectoscope.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/rev360-22-24-fr-resection-products.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/rev360-ideal-eyes-autocalvable-hysteroscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/rev360-kits.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/rev360-semi-flexible-instrumentation.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/semi-rigid-autoclavable-uretroscopes.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/serfas.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/shavers.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/soloassist-ii-robotic-scope-holder.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/spy-elite.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/spy-phi.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/sterilization-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/strykeflow2-pump.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/suction-irrigation-tips.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/suction-irrigation.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/synk-wireless-platform.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/thermedx-fluidsmart-fluid-management-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/ureteroscope-accessories.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/urology-gynecology-sterilization-trays.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/video-carts.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/vip-package.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/endoscopy/products/visual-urethrotome.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ],
+    "/us/en/interventional-spine/campaign/mild-procedure.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/campaigns/mild/body-copy/master"
+    ],
+    "/us/en/interventional-spine/campaign/vertebral-compression-fractures.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/campaigns/vertebral_compressio/signs-of-a-vcf/master"
+    ],
+    "/us/en/interventional-spine/products/bone-cements-and-mixer-and-delivery-systems.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/dekompressor-disc-removal-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/ivas-elite-balloon-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/mild-procedure.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/multigen2-rf-generator-and-venom-cannula-and-electrode-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/omnicurve-curved-balloon-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/optablate-bone-tumor-ablation-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/optablate-bvn.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/spinejack-system.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/interventional-spine/products/vcf-accessories.html": [
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+      "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master"
+    ],
+    "/us/en/joint-replacement/products/Insignia.html": [
+      "/content/experience-fragments/stryker/joint-replacement/en/products/insignia/size-specific-collar/master",
+      "/content/experience-fragments/stryker/joint-replacement/en/products/insignia/instrumentation/master"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst--6.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-catalyst-6/master"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst-5.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/kb---axs-catalyst-5/axs-5-v2"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst-7.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-catalyst-7/master"
+    ],
+    "/us/en/neurovascular/products/axs-infinity-ls.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-infinity-ls/master"
+    ],
+    "/us/en/neurovascular/products/axs-infinity-plus.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-infinity-plus/body"
+    ],
+    "/us/en/neurovascular/products/axs-lift.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-lift-intracranial-base-catheter/master",
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-lift-intracranial-base-catheter/2-in-1",
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-lift-intracranial-base-catheter/axs-lift-anatomy"
+    ],
+    "/us/en/neurovascular/products/axs-offset.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/axs-offset/master"
+    ],
+    "/us/en/neurovascular/products/broadway-system.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/broadway-system/master"
+    ],
+    "/us/en/neurovascular/products/excelsior--1018--microcatheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-1018/master"
+    ],
+    "/us/en/neurovascular/products/excelsior--sl-10--microcatheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-sl-10/master"
+    ],
+    "/us/en/neurovascular/products/excelsior--xt-17-microcatheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-xt-17/master"
+    ],
+    "/us/en/neurovascular/products/excelsior--xt-27--microcatheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-xt-27/master"
+    ],
+    "/us/en/neurovascular/products/flowgate2--balloon-guide-catheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/flowgate2/flowgate2us"
+    ],
+    "/us/en/neurovascular/products/guider-softip-xf.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/guider-softip-xf/master"
+    ],
+    "/us/en/neurovascular/products/inzone-detachment-system.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/inzone-hero/inzone-hero-us"
+    ],
+    "/us/en/neurovascular/products/merci-balloon-guide-catheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/merci-balloon-guide-catheter/master"
+    ],
+    "/us/en/neurovascular/products/neuroform-ez-stent-system.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/neuroform-ez/master"
+    ],
+    "/us/en/neurovascular/products/surpass-evolve.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/surpass-evolve/master"
+    ],
+    "/us/en/neurovascular/products/surpass-streamline-flow-diverter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/surpass-streamline/master"
+    ],
+    "/us/en/neurovascular/products/synchro-select-guidewires.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/synchro-select-guidewires/master"
+    ],
+    "/us/en/neurovascular/products/target--360-detachable-coils.html": [
+      null
+    ],
+    "/us/en/neurovascular/products/target--3d-detachable-coils.html": [
+      null
+    ],
+    "/us/en/neurovascular/products/target-helical-detachable-coils.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/target-helical-detachable-coils/master"
+    ],
+    "/us/en/neurovascular/products/trak-21.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/trevo-trak-21/master"
+    ],
+    "/us/en/neurovascular/products/transend--guidewires.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/transend/master"
+    ],
+    "/us/en/neurovascular/products/transform-occlusion-balloon-catheter.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/transform/master"
+    ],
+    "/us/en/neurovascular/products/trevo--xp-provue-retriever-.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/trevo-xp/master"
+    ],
+    "/us/en/neurovascular/products/wingspan-stent-system.html": [
+      "/content/experience-fragments/stryker/neurovascular/en/products/wingspan-stent-system/master"
+    ],
+    "/us/en/nse/products/bone-vac/bone-dust-viability.html": [
+      "/content/experience-fragments/stryker/neurosurgical/en/products/bone_vac/bone_dust_viability/bone-dust-viability-chart/master"
+    ],
+    "/us/en/nse/products/qosmic-led-headlight.html": [
+      "/content/experience-fragments/stryker/neurosurgical/en/products/qosmic_led_headlight/a-new-stratosphere-of-quality/master"
+    ],
+    "/us/en/nse/products/sonopet-iq.html": [
+      "/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/header/master",
+      "/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/rapid-readiness-image-labels/master",
+      "/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/right-sized-for-mis/master"
+    ],
+    "/us/en/orthopaedic-instruments/products/npseal.html": [
+      "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/the-power-of-npwt/master",
+      "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/incisions/simple-design-in-a-slim-footprint",
+      "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/effective-care-doesn-t-have-to-be-complicated/master",
+      "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/simple-design/master"
+    ],
+    "/us/en/peripheral-vascular/products/artix-thrombectomy-system.html": [
+      "/content/experience-fragments/stryker/peripheral_vascular/en/contact/social-media/master"
+    ],
+    "/us/en/peripheral-vascular/products/clottriever-system.html": [
+      "/content/experience-fragments/stryker/peripheral_vascular/en/contact/social-media/master"
+    ],
+    "/us/en/peripheral-vascular/products/flowtriever-system.html": [
+      "/content/experience-fragments/stryker/peripheral_vascular/en/contact/social-media/master"
+    ],
+    "/us/en/sage/products/hygh-tec.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-air-pump.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-airtap-lc.html": [
+      "/content/experience-fragments/stryker/sage/en/products/airtap_lc/did-you-know/master",
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-airtap-xxl.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-airtap.html": [
+      "/content/experience-fragments/stryker/sage/en/products/prevalon_airtap/did-you-know/master",
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-barrier-cream-cloths.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-bath-cloths.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-chg-cloths.html": [
+      "/content/experience-fragments/stryker/sage/en/products/sage_2_chlorhexidine/features/features-2",
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-foot-and-leg-stabilizer-wedge.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-halfmats.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-heel-protector-i.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-heel-protector-ii.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-heel-protector-iii.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-heel-protector-or.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-incontinence-clean-up-cloths.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-m--microclimate-body-pads.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-m-care.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-mats.html": [
+      "/content/experience-fragments/stryker/sage/en/products/prevalon_mats/did-you-know/master",
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-multi-position-mats.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-nose-to-toes.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-systems-for-non-ventilated-patients.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-systems-for-ventilated-patients.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-tools.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-oral-solutions-and-moisturizers.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-primafit.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-primofit.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-rinse-free-shampoo-caps.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-self-oral-care.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-sps.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-tap-1-0.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-tap-2-0.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-tap-lc.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-tap-xl-xxl.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/sage/products/sage-traptex.html": [
+      "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+      "/content/experience-fragments/stryker/sage/en/footer/footer/master"
+    ],
+    "/us/en/smart-care/products/ambient-monitoring.html": [
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master",
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master1",
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master2",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master"
+    ],
+    "/us/en/smart-care/products/sync-badge.html": [
+      "/content/experience-fragments/stryker/smart_care/en/products/us/sync_badge/interpreter-callout/master",
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/virtual-monitoring.html": [
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master",
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master1",
+      "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master2",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master"
+    ],
+    "/us/en/smart-care/products/virtual-nursing.html": [
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-accessories.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-collaboration-suite.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-ease.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-edge.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-engage.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-smartbadge.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/smart-care/products/vocera-vina.html": [
+      "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+      "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+    ],
+    "/us/en/spine/systems/niagara.html": [
+      "/content/experience-fragments/stryker/spine/en/products/now_sold_by_vb_spine/now-sold-by-vb-spine/master"
+    ],
+    "/us/en/sports-medicine/products/2-0-knot-pusher-suture-cutter-and-slotted-cannula-set.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/Adaptable-Arm-Positioner.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/sm-test/sm-test"
+    ],
+    "/us/en/sports-medicine/products/All-inside-meniscal-repair-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/AlphaVent-hard-body-screw-in-anchor-platform.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/AlphaVent_Knotless.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/FlowPort-Touch-cannula-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/GraftJacket-Now-Ultra-Thick.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/Iconix-HA-plus.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/Iconix-Knotless.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/ProCinch-adjustable-suspensory-fixation-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/allosource-tissue-bank.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/big-dog.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/biosteon-intraline-ha-plla-composite-anchors.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/champion-shoulder-instrumentation-set.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/champion-sliders.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/champion-slingshot-single-portal-suture-passing-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/champion-suture-passer.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/cinchlock-ss-and-cinchlock-flex-knotless-anchor-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/cobra.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/conquest-manual-instruments.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossblade-series-cutters.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossblade-xl-diamond-burs.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossfire-2-integrated-resection-and-energy-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossflow-integrated-arthroscopy-pump.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/crossflow-tubing.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/cutter-cannula-set.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/dri-lok-cannula.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/flosteady-select.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/flosteady-tubing.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/formula-series-cutters-and-burs.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/formula-shaver-handpieces.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/g--force-tenodesis-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/gateway.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/gravity.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/hip-check.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/iconix-all-suture-anchor.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/iconix-speed.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/injector-ii-capsule-closure.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/inspace.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/verma-quote/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/shorter-op-time/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/pain-relief/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/safe-and-effective/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/knotilus-knotless-anchor-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/knotilus-plus.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/microfx-osteochondral-drilling-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/nano-tack-peek-anchor.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/nanopass-suture-management-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/nanotack-tt.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/omega.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/peek-intraline.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/peek-zip-anchor.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/phoenix-microfracture-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/pivot-complete-hip-arthroscopy-access-and-instrumentation-kit.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/pivot-guardian-distraction-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/portal-entry-kit.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/reelx-stt-reelx-knotless-peek-anchor.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/samurai-blade.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/serfas-energy-platform.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/sharpshooter-inside-out-meniscal-repair-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/slingshot-capsule-restoration-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/slot-meniscal-transplantation-set.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/speed.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/sportsuite-vision.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/header---waitlist",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/suture-and-tape-offerings.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/tps-small-joint-series-cutters-and-burs.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/transport-and-flowport-cannulas.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/twinloop-flex-anchor-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/versitomic-flexible-reaming-system.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/sports-medicine/products/versitomic-isi.html": [
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master"
+    ],
+    "/us/en/surgical-technologies/products/cactus-controlled-substance-waste-management-system.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/neptune-s.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/neptune-waste-management-system.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/photonblade-3-se.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/procedural-oxygen-mask.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/products/procedural_oxygen_ma/page-body/master"
+    ],
+    "/us/en/surgical-technologies/products/safeair-smoke-evacuation.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/surgical-technologies/products/surgicount-safety-sponge-system.html": [
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+      "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master"
+    ],
+    "/us/en/sustainability/products/Conference.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/ReprocessedSoundStar.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/acunav.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/agilis.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/covidien-kendall.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/ensite-x.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/ep-sustainability.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/harmonic.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/inquiry.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/ivus.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/masimo-lncs.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/myosure.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/nellcor-oximax.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/quality.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/rd-set.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/save-simply-philips-ecg.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/save-simply-sage-prevalon-mats.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/sss-impact.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/sss-impact/Supplychain.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ],
+    "/us/en/sustainability/products/viewflex.html": [
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"
+    ]
+  };
+
+  // tools/importer/review-pages-xf.js
+  var review_pages_xf_default = {
+    "/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html": [
+      "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/global-statistics/master",
+      "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/stryker_training_aca/sta-callout-and-signup-invite/master"
+    ],
+    "/us/en/communications/systems/-isuite-experience/connected-or-operating-system.html": [],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master"
+    ]
+  };
+
+  // tools/importer/product-detail-slide-xf.js
+  var product_detail_slide_xf_default = {
+    "/us/en/acute-care/products/arise-1000-ex.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/arise_1000_ex/hero/master", null]
+    ],
+    "/us/en/acute-care/products/bari-10a.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/bari10a/hero/master", null]
+    ],
+    "/us/en/acute-care/products/barimatt-plus.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/barimatt_plus/hero/master", null]
+    ],
+    "/us/en/acute-care/products/bedside-stands.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/bedside_stands/hero-desktop/master", null]
+    ],
+    "/us/en/acute-care/products/comfortgel-se.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/comfortgel_se/hero/master", null]
+    ],
+    "/us/en/acute-care/products/comfortgel.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/comfortgel_1033612095/hero/master", null]
+    ],
+    "/us/en/acute-care/products/cub.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/cub_2002854361/hero/master", null]
+    ],
+    "/us/en/acute-care/products/eye-surgery.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/eyesurgery/hero/master", null]
+    ],
+    "/us/en/acute-care/products/fluoroscopy-stretcher.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/fluoroscopy_682225560/hero/master", null]
+    ],
+    "/us/en/acute-care/products/gynnie.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/gynnie_296930044/hero/master", null]
+    ],
+    "/us/en/acute-care/products/ibed-wireless.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/connected_solutions/hero-/master", "/content/experience-fragments/stryker/acute-care/en/products/connected_solutions/hero-/hero-mobile"]
+    ],
+    "/us/en/acute-care/products/intouch.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/intouch_176844626/hero/master", null]
+    ],
+    "/us/en/acute-care/products/isoair.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/isoair/master", null]
+    ],
+    "/us/en/acute-care/products/isoflex-lal.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/isoflex_lal/hero/master", null]
+    ],
+    "/us/en/acute-care/products/isoflex-se.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/isoflex_se/hero/master", null]
+    ],
+    "/us/en/acute-care/products/isolibrium.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/isolibrium_770039638/hero/master", null]
+    ],
+    "/us/en/acute-care/products/isotour.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/isotour_124925642/hero/master", null]
+    ],
+    "/us/en/acute-care/products/ld-304.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/ld304_1664320189/hero/master", null]
+    ],
+    "/us/en/acute-care/products/michael-graves-with-stryker.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/michael_graves/hero/master", null]
+    ],
+    "/us/en/acute-care/products/mv3.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/mv3_927218581/hero/master", null]
+    ],
+    "/us/en/acute-care/products/nara-bassinet.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/nara_2117989796/hero/master", null]
+    ],
+    "/us/en/acute-care/products/prime-series.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/prime_series/hero/master", "/content/experience-fragments/stryker/acute-care/en/products/prime_series/hero/hero-mobile"]
+    ],
+    "/us/en/acute-care/products/prime-tc.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/prime_tc/hero/master", null]
+    ],
+    "/us/en/acute-care/products/primex-x-ray.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/prime_x_ray/hero/master", null]
+    ],
+    "/us/en/acute-care/products/procuity-icu.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/procuity/zm-x--hero-desktop/master", "/content/experience-fragments/stryker/acute-care/en/products/procuity/zm-x--hero-desktop/zm-x--hero-mobile"]
+    ],
+    "/us/en/acute-care/products/procuity.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/procuity/hero-desktop/master", "/content/experience-fragments/stryker/acute-care/en/products/procuity/hero-desktop/le-x----z-x--hero-mobile"]
+    ],
+    "/us/en/acute-care/products/proform.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/proform_2029112971/hero/master", null]
+    ],
+    "/us/en/acute-care/products/s3.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/s3/hero/master", null]
+    ],
+    "/us/en/acute-care/products/side-seating.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/side_seating/hero/master", null]
+    ],
+    "/us/en/acute-care/products/sofcare-chair-cushion.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/sofcare_chair_cushio/hero/master", null]
+    ],
+    "/us/en/acute-care/products/sofcare-overlay.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/sofcare_overlay/hero/master", null]
+    ],
+    "/us/en/acute-care/products/spr-plus.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/spr_plus/hero/master", null]
+    ],
+    "/us/en/acute-care/products/stretcher-chairs.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/stretcher_chair/hero/master", null]
+    ],
+    "/us/en/acute-care/products/surgistool.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/surgistool_chair/hero/master", null]
+    ],
+    "/us/en/acute-care/products/symmetry-plus.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/symmetry_plus/hero/master", null]
+    ],
+    "/us/en/acute-care/products/transport.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/transport_843230611/hero/master", null]
+    ],
+    "/us/en/acute-care/products/tru-fit.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/tru_fit/hero/master", null]
+    ],
+    "/us/en/acute-care/products/trurize.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/trurize_1491731121/hero/master", null]
+    ],
+    "/us/en/acute-care/products/ultracomfort--se.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/ultracomfort_se/hero/master", null]
+    ],
+    "/us/en/acute-care/products/unity-furniture.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/unity_furniture/hero/master", null]
+    ],
+    "/us/en/communications/products/oculan.html": [
+      ["/content/experience-fragments/stryker/communications/en/products/oculan/master", "/content/experience-fragments/stryker/communications/en/products/oculan/oculan-mobile"]
+    ],
+    "/us/en/communications/products/operon-d860.html": [
+      ["/content/experience-fragments/stryker/communications/en/products/operon-d860/hero", "/content/experience-fragments/stryker/communications/en/products/operon-d860/hero---mobile"]
+    ],
+    "/us/en/communications/products/strykecam-4k.html": [
+      ["/content/experience-fragments/stryker/communications/en/products/strykecam-hd/hero", "/content/experience-fragments/stryker/communications/en/products/strykecam-hd/hero---mobile"]
+    ],
+    "/us/en/communications/systems/-isuite-experience/connected-or-operating-system.html": [
+      ["/content/experience-fragments/stryker/communications/en/systems/isuite_experience/connected-or/master", null]
+    ],
+    "/us/en/craniomaxillofacial/products/sternalplate.html": [
+      ["/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/carousel-test/carousel-test-desktop-2", "/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/carousel-test/carousel-test-mobile"],
+      ["/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/pull-out-force/carousel-test-desktop", "/content/experience-fragments/stryker/craniomaxillofacial/en/products/sternal_plate/pull-out-force/carousel-test-mobile"]
+    ],
+    "/us/en/craniomaxillofacial/products/titanium-palatal-splints.html": [
+      ["/content/experience-fragments/stryker/craniomaxillofacial/en/products/titanium_palatal_spl/carousel/carousel-video/master", "/content/experience-fragments/stryker/craniomaxillofacial/en/products/titanium_palatal_spl/carousel/carousel-video/mobile"]
+    ],
+    "/us/en/emergency-care/products/code-stat.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/code_stat/hero/master", null],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/code_stat/full-width-image/master", null]
+    ],
+    "/us/en/emergency-care/products/data-professional-services.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/data_professional_se/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/evacuation-chair.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/evacuation_chair/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/heartsine-samaritan-pad-360p.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/heartsine_samaritan__1358105743/hero/master", null],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/heartsine_samaritan__1358105743/full-width-image/master", null]
+    ],
+    "/us/en/emergency-care/products/heartsine-samaritan-pad-450p.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/heartsine_samaritan_/hero/master", null],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/heartsine_samaritan_/full-width-image/master", null]
+    ],
+    "/us/en/emergency-care/products/lifelink-central.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifelink_central/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/lifenet-care.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/lifenet_care/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/lifenet-system.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifenet_system/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/lifepak-1000-defibrillator.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_1000_defibri/hero/master", null],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_1000_defibri/full-width-image/master", null]
+    ],
+    "/us/en/emergency-care/products/lifepak-15.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_15/hero/hero-v4", null],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_15/full-width-image/full-width-v4", null],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_15/full-width-image/quote-v4", null]
+    ],
+    "/us/en/emergency-care/products/lifepak-35.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/hero/master", null],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/master", "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/master-mobile"],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/hospital-workflow", "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/minimal-mobile"],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/navigation", "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/navigation-mobile"]
+    ],
+    "/us/en/emergency-care/products/lifepak-cr2.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_cr2/hero/master", "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_cr2/hero/master"],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_cr2/lifestyle-photos/master", "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_cr2/lifestyle-photos/lifestyle-collage-mobile"]
+    ],
+    "/us/en/emergency-care/products/lithium-ion-battery.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lithium_ion/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/lucas-3.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/lucas_3/hero/master", "/content/experience-fragments/stryker/emergency-care/en/products/us/lucas_3/hero/hero-mobile"]
+    ],
+    "/us/en/emergency-care/products/mcgrath-mac-ems.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/mcgrath_mac_ems/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/mx-pro-bariatric-transport.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/mx_pro_bariatric/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/performance-load.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/performance_load/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/performance-pro-xt.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/performance_pro_xt/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/power-pro-2.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/pp2/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/stair-pro.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/stair_pro/hero/master", null]
+    ],
+    "/us/en/emergency-care/products/xpedition-powered-stair-chair.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/xpedition/image/header", null],
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/xpedition/image/master", null]
+    ],
+    "/us/en/emergency-care/products/xpr-restraints.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/xpr/hero/master1", null]
+    ],
+    "/us/en/emergency-care/products/xps-siderails.html": [
+      ["/content/experience-fragments/stryker/emergency-care/en/products/us/xps_siderails/hero/master", null]
+    ],
+    "/us/en/endoscopy/products/1788-platform.html": [
+      ["/content/experience-fragments/stryker/endoscopy/en/products/_1788_platform/hero-image/master", "/content/experience-fragments/stryker/endoscopy/en/products/_1788_platform/hero-image/mobile"]
+    ],
+    "/us/en/endoscopy/products/molli.html": [
+      ["/content/experience-fragments/stryker/endoscopy/en/products/molli/hero/master", "/content/experience-fragments/stryker/endoscopy/en/products/molli/hero/hero---mobile"]
+    ],
+    "/us/en/endoscopy/products/spy-phi.html": [
+      ["/content/experience-fragments/stryker/endoscopy/en/products/spy_phi/hero/master", "/content/experience-fragments/stryker/endoscopy/en/products/spy_phi/hero/hero---mobile"]
+    ],
+    "/us/en/foot-and-ankle/products/augment.html": [
+      ["/content/experience-fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master", null],
+      ["/content/experience-fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master", null],
+      ["/content/experience-fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master", null],
+      ["/content/experience-fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master", null]
+    ],
+    "/us/en/foot-and-ankle/products/prostep.html": [
+      ["/content/experience-fragments/stryker/foot-and-ankle/en/products/prostep/master", null]
+    ],
+    "/us/en/joint-replacement/products/Insignia.html": [
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/insignia/insignia_carousel/carousel---desktop/master", "/content/experience-fragments/stryker/joint-replacement/en/products/insignia/insignia_carousel/carousel---desktop/mobile-hero"]
+    ],
+    "/us/en/joint-replacement/products/Triathlon_Revision.html": [
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/triathlon_revision/hero/master", "/content/experience-fragments/stryker/joint-replacement/en/products/triathlon_revision/hero/mobile"]
+    ],
+    "/us/en/joint-replacement/products/accolade-ii.html": [
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-1", null],
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-2", null],
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-3", null],
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-4", null],
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-5", null]
+    ],
+    "/us/en/joint-replacement/products/gmrs.html": [
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/gmrs-hero/master", "/content/experience-fragments/stryker/joint-replacement/en/products/gmrs-hero/mobile"]
+    ],
+    "/us/en/joint-replacement/products/triathlon-hinge.html": [
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/traithlon_hinge/hero/master", "/content/experience-fragments/stryker/joint-replacement/en/products/traithlon_hinge/hero/mobile"]
+    ],
+    "/us/en/joint-replacement/products/triathlon-ts.html": [
+      ["/content/experience-fragments/stryker/joint-replacement/en/products/triathlon_ts/gmrs-hero/v2", "/content/experience-fragments/stryker/joint-replacement/en/products/triathlon_ts/gmrs-hero/mobile"]
+    ],
+    "/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html": [
+      ["/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/mako-means-more-hero/master", "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/mako-means-more-hero/mobile"]
+    ],
+    "/us/en/nse/products/core-2-console.html": [
+      ["/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/master", "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-1---mobile"],
+      ["/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-3", "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-30"],
+      ["/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-2", "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-2---mobile"]
+    ],
+    "/us/en/nse/products/qosmic-led-headlight.html": [
+      ["/content/experience-fragments/stryker/neurosurgical/en/products/qosmic_led_headlight/carousel/master", null]
+    ],
+    "/us/en/nse/products/sonopet-iq.html": [
+      ["/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/pulse-control-carousel/master", null],
+      ["/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/lap-tip-carousel-video/master", null],
+      ["/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/right-sized-for-mis/carousel---desktop", "/content/experience-fragments/stryker/neurosurgical/en/products/sonopet_iq/right-sized-for-mis/carousel---mobile"]
+    ],
+    "/us/en/nse/products/spine-guidance-software-copilot.html": [
+      ["/content/experience-fragments/stryker/neurosurgical/en/products/copilot/copilot-carousel/master", null]
+    ],
+    "/us/en/orthopaedic-instruments/products/System-9-Power-Tools.html": [
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/system_9/hero-banner/master", "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/system_9/hero-banner/mobile"]
+    ],
+    "/us/en/orthopaedic-instruments/products/bpx.html": [
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/bpx/desktop-hero/master", null],
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/bpx/your-grip-your-way-desktop/master", null]
+    ],
+    "/us/en/orthopaedic-instruments/products/cd-nxt.html": [
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/cd_nxt/hero-ambient-video/master", "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/cd_nxt/hero-ambient-video/mobile"]
+    ],
+    "/us/en/orthopaedic-instruments/products/npseal.html": [
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/portable-healing-carousel/master", "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/npseal/portable-healing-carousel/master1"]
+    ],
+    "/us/en/orthopaedic-instruments/products/steri-shield-8.html": [
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/steri_shield_8/carousel/master", "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/steri_shield_8/carousel/mobile"],
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/steri_shield_8/lightest-stryker-helmet/master", null],
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/steri_shield_8/the-toga/master", null]
+    ],
+    "/us/en/orthopaedic-instruments/products/tpx-hd.html": [
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/tpx_hd/total-joint-and-trauma-hero/master", null],
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/tpx_hd/foot-and-ankle-hero/master", null],
+      ["/content/experience-fragments/stryker/orthopaedic-instruments/en/products/tpx_hd/oral-and-maxillofacial/master", null]
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise.html": [
+      ["/content/experience-fragments/stryker/corporate/en/portfolios/medical_and_surgical/integration_and_conn/or_integration/rise/hero---desktop/master", "/content/experience-fragments/stryker/corporate/en/portfolios/medical_and_surgical/integration_and_conn/or_integration/rise/hero---desktop/hero---mobile"]
+    ],
+    "/us/en/sage/products/hygh-tec.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/hygh_tec/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-air-pump.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_air_pump/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-airtap-lc.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/airtap_lc/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-airtap-xxl.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_airtap_xxl/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-airtap.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_airtap/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-barrier-cream-cloths.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/comfort_shield_barri/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-bath-cloths.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/sage_bath_cloths/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-chg-cloths.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/sage_2_chlorhexidine/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-foot-and-leg-stabilizer-wedge.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_foot_and_le/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-halfmats.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/halfmats/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-heel-protector-i.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_heel_protec/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-heel-protector-ii.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_heel_protec_1531116922/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-heel-protector-iii.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_heel_protec_1409719329/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-heel-protector-or.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_heel_protec_1686015655/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-incontinence-clean-up-cloths.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/incontinence_clean_u/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-m--microclimate-body-pads.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/sage_m2_microclimate/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-m-care.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/m_care/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-mats.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_mats/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-multi-position-mats.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/mp_mats/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-nose-to-toes.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/nose_to_toes/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-systems-for-non-ventilated-patients.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/sage_oral_hygiene_sy/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-systems-for-ventilated-patients.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/oral_care_ventilator/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-tools.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/oral_hygiene_tools/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-oral-solutions-and-moisturizers.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/oral_solutions_and_m/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-primafit.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/sage_primafit_extern/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-primofit.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/sage_primofit_extern/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-rinse-free-shampoo-caps.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/sage_rinse_free_sham/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-self-oral-care.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/self_oral_care/hero/master", null],
+      ["/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master", "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile"]
+    ],
+    "/us/en/sage/products/sage-sps.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_sps/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-tap-1-0.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_tap_1_0/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-tap-2-0.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_tap_2_0/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-tap-lc.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_tap_lc/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-tap-xl-xxl.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/prevalon_tap_xl_xxl/hero/master", null]
+    ],
+    "/us/en/sage/products/sage-traptex.html": [
+      ["/content/experience-fragments/stryker/sage/en/products/traptex_plumbing/hero/master", null]
+    ],
+    "/us/en/smart-care/products/ambient-monitoring.html": [
+      ["/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/hero/master", "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/hero/master"]
+    ],
+    "/us/en/smart-care/products/sync-badge.html": [
+      ["/content/experience-fragments/stryker/acute-care/en/products/sync_badge/hero/master", "/content/experience-fragments/stryker/acute-care/en/products/sync_badge/hero/hero-mobile"]
+    ],
+    "/us/en/smart-care/products/virtual-monitoring.html": [
+      ["/content/experience-fragments/stryker/smart_care/en/products/us/virtual_monitoring/hero/master", "/content/experience-fragments/stryker/smart_care/en/products/us/virtual_monitoring/hero/master"]
+    ],
+    "/us/en/smart-care/products/virtual-nursing.html": [
+      ["/content/experience-fragments/stryker/smart_care/en/products/us/virtual_nursing/hero/master", null]
+    ],
+    "/us/en/sports-medicine/products/ProCinch-adjustable-suspensory-fixation-system.html": [
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/procinch/procinch-family-overview/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/procinch/procinch-st-rt/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/procinch/procinch-open-loop/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/procinch/procinch-no-button/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/procinch/slotted-buttons/master", null]
+    ],
+    "/us/en/sports-medicine/products/iconix-all-suture-anchor.html": [
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/iconix_517328090/Iconix/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/iconix_517328090/iconix-intellibraid-technology-slide/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/iconix_517328090/iconix-indication-locations/master", null]
+    ],
+    "/us/en/sports-medicine/products/inspace.html": [
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/InSpace-balloon-implant/master1", "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/InSpace-balloon-implant/master"],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/patient-testimonials/master", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/inspace_carousel_and/hero-image/mobile"],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/jbjs-banner/master", "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/jbjs-banner/master"]
+    ],
+    "/us/en/sports-medicine/products/pivot-guardian-distraction-system.html": [
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/pivot_guardian/total-hip-system/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/pivot_guardian/pivot-guardian-distraction-hip-system/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/pivot_guardian/pivot-guardian-direct-system/master", null]
+    ],
+    "/us/en/sports-medicine/products/sportsuite-vision.html": [
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/ssv/hero/master", "/content/experience-fragments/stryker/sports-medicine/en/products/ssv/hero/hero---mobile"]
+    ],
+    "/us/en/sports-medicine/products/versitomic-flexible-reaming-system.html": [
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/versitomic_flexible_/hero-image-3/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/versitomic_flexible_/hero-image-2/master", null],
+      ["/content/experience-fragments/stryker/sports-medicine/en/products/versitomic_flexible_/hero-image-1/master", null]
+    ],
+    "/us/en/surgical-technologies/products/procedural-oxygen-mask.html": [
+      ["/content/experience-fragments/stryker/surgical-technologies/en/products/procedural_oxygen_ma/header-carousel/master", null]
+    ],
+    "/us/en/trauma-and-extremities/products/Pangea.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/pangea/ambient-video-banner/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/pangea/ambient-video-banner/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/T2-Alpha-Humeral-Nail.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/T2-Alpha-Humerus/T2-Alpha-Humerus/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/T2-Alpha-Humerus/T2-Alpha-Humerus/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/blueprint.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/blueprint/us/hero_images/ambient-video/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/blueprint/us/hero_images/ambient-video/master"]
+    ],
+    "/us/en/trauma-and-extremities/products/gamma4.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/gamma4/ambient-video-banner/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/gamma4/ambient-video-banner/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/hoffmann-compact.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/hoffmann_compact/hoffmann-compact/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/hoffmann_compact/hoffmann-compact/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/pangea-femur-reconstruction.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/pangea-frs/ambient-video-banner/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/pangea-frs/ambient-video-banner/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/pro-pelvis.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/pro_pelvis/pro-pelvis/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/pro_pelvis/pro-pelvis/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/shoulder-id.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/shoulder_id/ambient-video/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/shoulder_id/ambient-video/master"]
+    ],
+    "/us/en/trauma-and-extremities/products/t2-alpha-femur-antegrade-gt-pf.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/t2_alpha_femur_anteg_1690556205/t2-alpha-femur-antegrade/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/t2_alpha_femur_anteg_1690556205/t2-alpha-femur-antegrade/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/t2-alpha-femur-retrograde.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/t2_alpha_femur_retro_1938167867/t2-alpha-femur-retrograde/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/t2_alpha_femur_retro_1938167867/t2-alpha-femur-retrograde/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/t2-alpha-tibia.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/t2_alpha_tibia/t2-alpha-tibia/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/t2_alpha_tibia/t2-alpha-tibia/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-hrs.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/tornier_hrs_max/carousel/master", null]
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-pyrocarbon-humeral-head.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/tornier_pyrocarbon/carousel-image/master", null]
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-clavicle-plating-system.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/variax_2_clavicle/hero-banner/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/variax_2_clavicle/hero-banner/mobile"]
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-distal-radius-and-distal-ulna.html": [
+      ["/content/experience-fragments/stryker/trauma-and-extremities/en/products/variax_2_distal_radi/hero-banner/master", "/content/experience-fragments/stryker/trauma-and-extremities/en/products/variax_2_distal_radi/hero-banner/mobile"]
+    ]
+  };
+
   // tools/importer/transformers/long-page-detail-corp-sections.js
   var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments"];
+  var STD_TABLE = "table[data-std-table]";
   var XF_PAGES = Object.values(long_page_detail_corp_xf_default).flat().reduce((counts, xf) => {
     counts[xf] = (counts[xf] || 0) + 1;
     return counts;
@@ -1946,6 +5413,49 @@ var CustomImportScript = (() => {
     a.textContent = path;
     return WebImporter.Blocks.createBlock(doc, { name: "Fragment", cells: [[a]] });
   }
+  var STD_REVIEW_FRAGMENTS = "/drafts/astha/pages/fragments/";
+  var REVIEW_FRAGMENTS_V2 = [
+    "/mako_smartrobotics_o/global-statistics/master",
+    "/lifepak_35/product_page/intuitive-clinically-advanced-proven/master",
+    "/emergency-care/en/business_unit/footer/master",
+    // 2026-11-27: the slides' media-only fragments (their image or video, as on stryker.com) next
+    // to the review documents that held a whole slide
+    "/isolibrium_770039638/hero/master",
+    "/lifepak_35/hero/master",
+    "/lifepak_35/product_page/quotes/master",
+    "/lifepak_35/product_page/quotes/hospital-workflow",
+    "/lifepak_35/product_page/quotes/navigation",
+    "/tpx_hd/total-joint-and-trauma-hero/master",
+    "/tpx_hd/foot-and-ankle-hero/master",
+    "/tpx_hd/oral-and-maxillofacial/master",
+    "/pangea/ambient-video-banner/master",
+    "/mako_smartrobotics_o/mako-means-more-hero/master",
+    "/isuite_experience/connected-or/master",
+    "/or_integration/rise/hero---desktop/master"
+  ];
+  function reviewFragmentPath(xf) {
+    const path = xfToFragmentPath(xf);
+    const v2 = REVIEW_FRAGMENTS_V2.some((end) => (xf || "").endsWith(end));
+    const review = path && path.replace(/^\/us\/en\/fragments\//, STD_REVIEW_FRAGMENTS);
+    if (!review || !v2) return review;
+    return /\/master$/.test(review) ? review.replace(/\/master$/, "-v2/master") : `${review}-v2`;
+  }
+  function productFragments(main, doc, xfs) {
+    const slots = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment"));
+    if (!xfs || slots.length !== xfs.length) return false;
+    slots.forEach((slot, i) => {
+      const path = xfs[i] && reviewFragmentPath(xfs[i]);
+      const empty = !text3(slot) && !slot.querySelector("img, [data-asset-path], iframe");
+      if (!path || empty) {
+        slot.remove();
+        return;
+      }
+      const block = fragmentBlock(doc, path);
+      block.setAttribute("data-keep", "section");
+      slot.replaceWith(block);
+    });
+    return true;
+  }
   function experienceFragments(main, doc, xfs, slots) {
     const filled = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment")).filter((slot) => {
       if (text3(slot) || slot.querySelector("img, [data-asset-path], iframe")) return true;
@@ -1984,6 +5494,9 @@ var CustomImportScript = (() => {
         const h2 = doc.createElement("h2");
         const u = doc.createElement("u");
         u.textContent = text3(heading);
+        if (stdProductPage(doc) && heading.classList.contains("border-bottom-gold")) {
+          u.textContent = `[[rule-gold]${text3(heading)}]`;
+        }
         h2.append(u);
         nodes.push(h2);
       }
@@ -1994,6 +5507,8 @@ var CustomImportScript = (() => {
       if (!nodes.length) {
         const spacer = doc.createElement("div");
         spacer.className = "c-largeheadline";
+        const label = STD_DRAFT_IMPORT && (title.getAttribute("data-title") || "").trim();
+        if (label) spacer.setAttribute("data-anchor", label.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, ""));
         title.replaceWith(spacer);
         return;
       }
@@ -2028,6 +5543,8 @@ var CustomImportScript = (() => {
     if (!nav) return null;
     const parent = nav.querySelector("a.parent-node");
     const links = [...nav.querySelectorAll("ul.links > li > a[href]")];
+    const widget = nav.closest('[data-widget="local-page-nav"]') || nav.parentElement;
+    const noTopLine = STD_DRAFT_IMPORT && !(widget && widget.querySelector(".margin-hr.rule-separator"));
     nav.closest(".localpagenavigation").remove();
     if (!parent && !links.length) return null;
     const rows = [];
@@ -2047,7 +5564,7 @@ var CustomImportScript = (() => {
       ul.append(li);
     });
     rows.push([ul]);
-    return WebImporter.Blocks.createBlock(doc, { name: "Local Nav", cells: rows });
+    return WebImporter.Blocks.createBlock(doc, { name: noTopLine ? "Local Nav (no-top-line)" : "Local Nav", cells: rows });
   }
   function marketoBlock(container, doc) {
     const form = container.querySelector("form[data-marketo-form-id]");
@@ -2081,21 +5598,96 @@ var CustomImportScript = (() => {
     blue: "blue",
     gold: "gold",
     purple: "purple",
-    "dark-gray": "dark"
+    teal: "teal",
+    "dark-gray": "dark",
+    "dark-blue-gradient": "dark-blue-gradient",
+    "dark-purple-gradient": "dark-purple-gradient"
   };
-  var BOX_VARIANTS = /* @__PURE__ */ new Set([
-    "gray-last",
-    "gray-2",
-    "gray-all",
-    "boxed-all",
-    "blue-all",
-    "gold-lead",
-    "dark-lead",
-    "purple-last",
-    "gold-first",
-    "boxed-last",
-    "gray-lead"
-  ]);
+  var BOX_COLOURS_STD = __spreadProps(__spreadValues({}, BOX_COLOURS), {
+    gray: "mid-gray",
+    "lighter-gray": "pale-gray",
+    orange: "dark-gold",
+    black: "black",
+    "golden-gradient": "gold-gradient",
+    "gray-gradient": "gray-gradient",
+    "dark-teal-gradient": "teal-gradient",
+    "dark-orange-gradient": "orange-gradient"
+  });
+  var boxColours = () => STD_DRAFT_IMPORT ? BOX_COLOURS_STD : BOX_COLOURS;
+  var BOX_VARIANTS = /* @__PURE__ */ new Set(["gray-2", "gold-lead", "dark-lead", "gray-lead"]);
+  var SPACE_STEPS = [[0, "space-none"], [3, "space-s"], [5, ""], [10, "space-l"]];
+  function spaceStep(boxes) {
+    const values = boxes.flatMap((b) => ["top", "right", "bottom", "left"].map((side) => (b.getAttribute("style") || "").match(new RegExp(`padding-${side}\\s*:\\s*([\\d.]+)%`))).filter(Boolean).map((m) => Number(m[1])));
+    if (!values.length) return "";
+    const sorted = [...values].sort((a, b) => a - b);
+    const median = sorted[Math.floor(sorted.length / 2)];
+    return SPACE_STEPS.reduce((best, step) => Math.abs(step[0] - median) < Math.abs(best[0] - median) ? step : best)[1];
+  }
+  var IMAGE_BORDERS = {
+    gray: "image-border",
+    teal: "image-border-teal",
+    black: "image-border-black",
+    blue: "image-border-teal"
+  };
+  function smallImages(columns) {
+    const images = columns.map((col) => col.querySelector(".c-standalone-image img")).filter(Boolean);
+    if (!images.length || images.length !== columns.length) return false;
+    return images.every((img, i) => {
+      const { width } = img.getBoundingClientRect();
+      const room = columns[i].getBoundingClientRect().width - 30;
+      return width > 0 && room > 0 && width < room * 0.85;
+    });
+  }
+  function valignMiddle(columns) {
+    if (columns.length !== 2) return false;
+    const imageOf = (col) => [...col.querySelectorAll(".c-standalone-image img, img")].find((img) => img.getBoundingClientRect().height > 0);
+    const images = columns.map(imageOf);
+    const at = images.findIndex(Boolean);
+    if (at < 0 || images.filter(Boolean).length !== 1) return false;
+    const textCol = columns[1 - at];
+    if (textCol.querySelector("img") || !text3(textCol)) return false;
+    const lines = [];
+    const walker = textCol.ownerDocument.createTreeWalker(
+      textCol,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (node.nodeValue.trim() && !/^:(start-[a-z0-9-]+|end):$|^\[\[|^\]$/.test(node.nodeValue.trim())) {
+        const range = textCol.ownerDocument.createRange();
+        range.selectNodeContents(node);
+        const rect = range.getBoundingClientRect();
+        if (rect.height > 0) lines.push({ getBoundingClientRect: () => rect });
+      }
+    }
+    if (!lines.length) return false;
+    const ib = images[at].getBoundingClientRect();
+    const cb = columns[at].getBoundingClientRect();
+    const tb = textCol.getBoundingClientRect();
+    const sameRow = cb.top < tb.bottom && tb.top < cb.bottom && Math.abs(cb.left - tb.left) > 50;
+    if (!sameRow || ib.height < 80) return false;
+    const top = Math.min(...lines.map((el) => el.getBoundingClientRect().top));
+    const bottom = Math.max(...lines.map((el) => el.getBoundingClientRect().bottom));
+    const height = bottom - top;
+    const offset = (top + bottom) / 2 - (ib.top + ib.bottom) / 2;
+    return height < ib.height * 0.8 && top - ib.top > ib.height * 0.12 && Math.abs(offset) < ib.height * 0.15;
+  }
+  function markCentredRows(document) {
+    if (!STD_DRAFT_IMPORT) return;
+    document.querySelectorAll(".colctrl").forEach((colctrl) => {
+      const filled = rowColumns(colctrl).filter((col) => text3(col) || col.querySelector("img"));
+      if (valignMiddle(filled)) colctrl.setAttribute("data-std-valign", "middle");
+    });
+  }
+  function imageBorder(columns) {
+    const colours = columns.flatMap((col) => [...col.querySelectorAll('.c-standalone-image img[class*="bor-"]')].map((img) => (img.className.match(/\bbor-([a-z]+)/) || [])[1]));
+    const counts = {};
+    colours.forEach((c) => {
+      counts[c] = (counts[c] || 0) + 1;
+    });
+    const main = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
+    return IMAGE_BORDERS[main] || "";
+  }
   function cellBox(col) {
     const row = col.closest(".colctrl");
     const boxes = [...col.querySelectorAll(".has-background:not(.bg-white), .dimensional-box")].filter((b) => b.closest(".colctrl") === row && text3(b)).filter((b) => !b.parentElement.closest(".has-background:not(.bg-white), .dimensional-box"));
@@ -2103,15 +5695,15 @@ var CustomImportScript = (() => {
     const colourOf = (b) => {
       const bg = (b.className.match(/\bbg-([a-z-]+)/) || [])[1];
       if (b.classList.contains("dimensional-box") && (!bg || bg === "white")) return "boxed";
-      return BOX_COLOURS[bg] || "";
+      return boxColours()[bg] || "";
     };
     const colours = [...new Set(boxes.map(colourOf))];
     if (colours.length !== 1 || !colours[0]) return { colour: "", kind: "" };
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const boxed = squash(boxes.map((b) => b.textContent).join(""));
-    if (boxed === squash(col.textContent)) return { colour: colours[0], kind: "whole" };
+    if (boxed === squash(col.textContent)) return { colour: colours[0], kind: "whole", boxes };
     const first = [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS) && text3(c))[0];
-    if (boxes.length === 1 && first && first.contains(boxes[0])) return { colour: colours[0], kind: "lead" };
+    if (boxes.length === 1 && first && first.contains(boxes[0])) return { colour: colours[0], kind: "lead", boxes };
     return { colour: "", kind: "" };
   }
   function boxVariant(columns) {
@@ -2122,22 +5714,28 @@ var CustomImportScript = (() => {
     const kinds = [...new Set(used.map((b) => b.kind))];
     if (colours.length !== 1 || !colours[0] || kinds.length !== 1) return "";
     const textCols = columns.filter((col) => text3(col));
-    let name = "";
-    if (kinds[0] === "lead" && used.length === textCols.length) name = `${colours[0]}-lead`;
+    const colour = colours[0] === "boxed" ? ["box-white", "shadow"] : [`box-${colours[0]}`];
+    const space = spaceStep(used.flatMap((b) => b.boxes || []));
+    const standard = (cell) => [...colour, cell, space].filter(Boolean).join(", ");
+    if (kinds[0] === "lead" && used.length === textCols.length) {
+      const lead = `${colours[0]}-lead`;
+      return BOX_VARIANTS.has(lead) ? lead : "";
+    }
     const last = columns[columns.length - 1];
     if (kinds[0] === "lead" && used.length === 1 && boxes[columns.length - 1] && last.querySelector(".c-standalone-video, .c-standalone-image, [data-asset-path]")) {
-      name = `${colours[0]}-last`;
+      return standard("");
     }
     if (kinds[0] === "whole") {
-      if (used.length > 1 && used.length === textCols.length) name = `${colours[0]}-all`;
-      else if (used.length === 1) {
+      if (used.length > 1 && used.length === textCols.length) return standard("box-all");
+      if (used.length === 1) {
         const i = boxes.findIndex(Boolean);
-        if (i === columns.length - 1) name = `${colours[0]}-last`;
-        else if (i === 0) name = `${colours[0]}-first`;
-        else name = `${colours[0]}-${i + 1}`;
+        if (i === columns.length - 1) return standard("");
+        if (i === 0) return standard("box-first");
+        const middle = `${colours[0]}-${i + 1}`;
+        return BOX_VARIANTS.has(middle) ? middle : "";
       }
     }
-    return BOX_VARIANTS.has(name) ? name : "";
+    return "";
   }
   function cellNodes(col, doc) {
     const out = [];
@@ -2208,6 +5806,17 @@ var CustomImportScript = (() => {
   }
   function rowCopyStyle(cells, doc) {
     const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== void 0 && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
+    const serif = (style) => (style || "").split(",").map((x) => x.trim()).includes("serif");
+    if (STD_DRAFT_IMPORT) {
+      copy.filter((n) => sizeTag(n.copyStyle) || serif(n.copyStyle)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) ? "serif" : ""].filter(Boolean).join(","), doc));
+      cells.flat().filter((n) => n.nodeType === 1 && /^H[1-3]$/.test(n.tagName) && n.stdHeadingSize).forEach((n) => tagCopy(n, n.stdHeadingSize, doc));
+      const product = stdProductPage(doc);
+      if (product) {
+        copy.filter((n) => (n.copyStyle || "").split(",").map((x) => x.trim()).includes("disclaimer")).forEach((n) => tagCopy(n, "text-0-8", doc));
+      }
+      const rest = new Set(copy.flatMap((n) => (n.copyStyle || "").split(",").map((x) => x.trim())).filter((x) => x && x !== "serif" && !/^p-\d/.test(x) && !(product && x === "disclaimer")));
+      return [...rest].join(", ");
+    }
     const weight = {};
     copy.forEach((n) => {
       weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text3(n).length;
@@ -2216,15 +5825,24 @@ var CustomImportScript = (() => {
     if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
       dominant = dominant.split(",").map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(", ");
     }
-    const serif = (style) => (style || "").split(",").map((x) => x.trim()).includes("serif");
     copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) && !serif(dominant) ? "serif" : ""].filter(Boolean).join(","), doc));
     const parts = dominant.split(",").map((s) => s.trim()).filter(Boolean);
     if (parts.includes("serif") && !parts.some((s) => sizeTag(s))) return ["p-1", ...parts].join(", ");
     return dominant;
   }
-  var COLUMN_VARIANTS = { "8,4": "columns-67-33", "4,8": "columns-33-67", "6,6": "columns-50-50" };
+  var COLUMN_VARIANTS = {
+    "8,4": "columns-67-33",
+    "4,8": "columns-33-67",
+    "6,6": "columns-50-50",
+    "4,4,4": "columns-3-cols",
+    "3,3,3,3": "columns-4-cols"
+  };
   function columnWidth(col) {
     const m = col.className.match(/\bcol-sm-(\d+)/) || col.className.match(/\bcol-md-(\d+)/);
+    return m ? Number(m[1]) : 12;
+  }
+  function desktopWidth(col) {
+    const m = col.className.match(/\bcol-md-(\d+)/) || col.className.match(/\bcol-sm-(\d+)/);
     return m ? Number(m[1]) : 12;
   }
   function markRowEnds(main) {
@@ -2260,34 +5878,301 @@ var CustomImportScript = (() => {
       if (last) mark(last);
     });
   }
+  var TILE_MEDIA = 'img, picture, video, iframe, a[href*="/is/content/"], a[href*="/is/image/"], a[href*="youtube.com/"], a[href*="youtu.be/"]';
+  var TILE_VIDEO = 'a[href*="/is/content/"], a[href*="youtube.com/"], a[href*="youtu.be/"]';
+  var nodeText = (n) => (n.textContent || "").trim();
+  var holdsMedia = (n) => n.nodeType === 1 && (n.matches(TILE_MEDIA) || !!n.querySelector(TILE_MEDIA));
+  var isTileMedia = (n) => holdsMedia(n) && [...n.querySelectorAll("a")].every((a) => a.matches(TILE_MEDIA)) && !n.querySelector("h1, h2, h3, h4, h5, h6, ul, ol") && (n.matches(TILE_MEDIA) || n.children.length === 1);
+  var tileParts = (nodes) => nodes.filter((n) => nodeText(n) || holdsMedia(n));
+  var unitOf = (nodes) => {
+    const kinds = tileParts(nodes).map((n) => isTileMedia(n) ? "m" : "t");
+    return kinds.filter((k, i) => k !== kinds[i - 1]).join("");
+  };
+  var hrefOf = (n) => {
+    const a = n.nodeType === 1 && (n.matches("a[href]") ? n : n.querySelector("a[href]"));
+    return a ? a.getAttribute("href").split("#")[0] : "";
+  };
+  var TILE_KEEP = new RegExp("^(box-(?!all$|first$|last$)[a-z-]+|shadow|space-[a-z]+|image-border(-[a-z]+)?|text-center|image-centre)$");
+  var TILE_NOT = /-lead$|^box-first$|^left-border-bottom$/;
+  var CARD_COLOUR_LABELS = {
+    gray: "Light grey",
+    dark: "Dark grey",
+    "dark-blue-gradient": "Blue gradient",
+    "dark-purple-gradient": "Purple gradient",
+    "mid-gray": "Mid grey",
+    "pale-gray": "Pale grey",
+    "gray-gradient": "Grey gradient",
+    "teal-gradient": "Dark teal gradient",
+    "orange-gradient": "Dark orange gradient"
+  };
+  var cardColourLabel = (c) => CARD_COLOUR_LABELS[c] || c.replace(/-/g, " ").replace(/^./, (x) => x.toUpperCase());
+  function dropLineBoxes(nodes, colour) {
+    nodes.filter((n) => n.nodeType === 1).forEach((n) => {
+      [...n.matches("p, h1, h2, h3, h4, h5, h6, li") ? [n] : [], ...n.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].forEach((line) => {
+        var _a, _b;
+        if (((_a = line.firstChild) == null ? void 0 : _a.nodeType) === 3 && line.firstChild.nodeValue === `[[box-${colour}]` && ((_b = line.lastChild) == null ? void 0 : _b.nodeType) === 3 && line.lastChild.nodeValue === "]") {
+          line.firstChild.remove();
+          line.lastChild.remove();
+        }
+      });
+    });
+  }
+  function tileCards(cells, variant, doc, colours = []) {
+    if (cells.some((c) => c.some((n) => n.nodeType === 1 && (n.matches("table") || n.querySelector("table"))))) return null;
+    const filled = cells.filter((c) => tileParts(c).length);
+    const units = filled.map(unitOf);
+    const names = variant.split(", ").filter(Boolean);
+    const boxed = names.some((v) => v.startsWith("box-") && v !== "box-first");
+    const same = units.length > 0 && units.every((u) => u === units[0]);
+    if (!same || filled.length < 3 && !(filled.length === 2 && boxed)) return null;
+    if (!/^t?m?t?$/.test(units[0]) || names.some((v) => TILE_NOT.test(v))) return null;
+    if (stdProductPage(doc) && units[0] === "t" && cells.length === 4) return null;
+    const filledColours = cells.map((c, i) => tileParts(c).length ? colours[i] || "" : null).filter((c) => c !== null);
+    const perCard = filledColours.length === filled.length && filledColours.every(Boolean) && new Set(filledColours).size > 1;
+    const rows = filled.map((nodes, i) => {
+      if (perCard) dropLineBoxes(nodes, filledColours[i]);
+      const parts = tileParts(nodes);
+      const at = parts.findIndex(isTileMedia);
+      if (at < 0) return [parts];
+      const media = parts[at];
+      const next = parts[at + 1];
+      let rest = parts.filter((n) => n !== media);
+      const others = rest.filter((n) => n !== next).map(hrefOf).filter(Boolean);
+      if (next && next.nodeType === 1 && hrefOf(next) && !next.querySelector("strong, u") && others.includes(hrefOf(next))) {
+        rest = rest.filter((n) => n !== next);
+      }
+      return [[media], rest];
+    });
+    const textCards = rows.every((r) => r.length === 1);
+    const video = units[0].includes("m") && filled.every((c) => c.some((n) => n.nodeType === 1 && (n.matches(TILE_VIDEO) || !!n.querySelector(TILE_VIDEO))));
+    const perRow = { 2: "two-up", 3: "three-up" }[cells.length] || "";
+    const imageOnly = units[0] === "m" || names.includes("media-pair") && rows.every((r) => r.length === 2 && r[1].length === 1 && hrefOf(r[1][0]) && nodeText(r[1][0]) === nodeText(r[1][0].querySelector("a") || r[1][0]));
+    const options = [
+      textCards ? "text" : "",
+      video ? "video" : "",
+      perRow,
+      ...names.filter((v) => TILE_KEEP.test(v)),
+      units[0].startsWith("tm") ? "title-above" : "",
+      imageOnly ? "no-text" : ""
+    ].filter(Boolean);
+    const cardRows = perCard ? rows.map((r, i) => [cardColourLabel(filledColours[i]), ...r]) : rows;
+    const named = options.map((o) => o.replace(/^box-dark-(blue|purple)-gradient$/, "box-$1-gradient"));
+    return WebImporter.Blocks.createBlock(doc, {
+      name: named.length ? `Cards Corp (${named.join(", ")})` : "Cards Corp",
+      cells: cardRows
+    });
+  }
+  function xfGridRows(main, doc, selector = ".experiencefragment .aem-Grid") {
+    const num = (el, re) => Number(((el.className || "").match(re) || [])[1]) || 0;
+    const filled = (el) => !!text3(el) || !!el.querySelector("img, [data-asset-path], iframe");
+    [...main.querySelectorAll(selector)].forEach((grid) => {
+      if (grid.closest("header, footer, .modal, .colctrl")) return;
+      const n = num(grid, /\baem-Grid--(\d+)\b/) || 12;
+      const rows = [];
+      let row = null;
+      [...grid.children].filter((el) => el.classList.contains("aem-GridColumn")).forEach((item) => {
+        const span = num(item, /\baem-GridColumn--default--(\d+)\b/) || n;
+        const offset = num(item, /\baem-GridColumn--offset--default--(\d+)\b/);
+        if (row && row.used + offset + span <= n) {
+          row.items.push([span, item]);
+          row.used += offset + span;
+        } else {
+          row = { used: offset + span, items: [[span, item]] };
+          rows.push(row);
+        }
+      });
+      rows.forEach((r) => {
+        const cells = r.items.filter(([, item]) => filled(item));
+        if (cells.length < 2 || cells.some(([, item]) => item.querySelector(".colctrl"))) return;
+        if (stdProductPage(doc) && cells.every(([, item]) => !text3(item) && item.querySelector("a[href] img"))) return;
+        const colctrl = doc.createElement("div");
+        colctrl.className = "colctrl";
+        const inner = doc.createElement("div");
+        inner.className = "row";
+        colctrl.append(inner);
+        cells[0][1].before(colctrl);
+        cells.forEach(([span, item]) => {
+          const col = doc.createElement("div");
+          col.className = `col-sm-${span} col-md-${span}`;
+          const phone = num(item, /\baem-GridColumn--phone--(\d+)\b/);
+          if (stdProductPage(doc) && phone) col.className += ` col-xs-${phone}`;
+          col.append(item);
+          inner.append(col);
+        });
+      });
+    });
+  }
   function columnRows(main, doc) {
     [...main.querySelectorAll(".colctrl")].reverse().forEach((colctrl) => {
       const all = rowColumns(colctrl);
       const filled = all.filter((col) => text3(col) || col.querySelector("img, [data-asset-path], iframe, form, table"));
       const columns = filled.length && filled.length < all.length && all.length >= 3 ? all : filled;
-      if (columns.length < 2) return;
       const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+      if (stdProductPage(doc) && all.length === 2 && filled.length === 1 && all.every((col) => columnWidth(col) === 6)) {
+        const box = filled[0].querySelector('.c-largeheadline .has-background[class*="bg-"]');
+        const colour = box && { "bg-gold": "box-gold", "bg-light-gray": "box-gray", "bg-white": "box-white" }[[...box.classList].find((c) => /^bg-/.test(c))];
+        if (colour) {
+          const nodes = cellNodes(filled[0], doc);
+          rowCopyStyle([nodes], doc);
+          const cells2 = all.map((col) => col === filled[0] ? nodes : "");
+          const first = all[0] === filled[0];
+          const block2 = WebImporter.Blocks.createBlock(doc, {
+            name: `Columns (columns-50-50, ${colour}${first ? ", box-first" : ""})`,
+            cells: [cells2]
+          });
+          block2.setAttribute("data-keep", "section");
+          wrapper.replaceWith(block2);
+          return;
+        }
+      }
+      if (columns.length < 2) return;
       const form = marketoBlock(colctrl, doc);
       if (form) {
         form.setAttribute("data-keep", "section");
         const asides = [...colctrl.querySelectorAll("table")].filter((t) => t.getAttribute("data-keep"));
         asides.forEach((t) => t.setAttribute("data-keep", "join"));
-        const others = columns.filter((col) => !col.querySelector(".c-marketo-form") && !col.querySelector("table[data-keep]")).map((col) => cellNodes(col, doc)).filter((nodes) => nodes.length).map((nodes) => {
-          const box = doc.createElement("div");
-          box.setAttribute("data-keep", "join");
-          box.append(...nodes);
-          return box;
-        });
+        const box = (nodes) => {
+          const div = doc.createElement("div");
+          div.setAttribute("data-keep", "join");
+          div.append(...nodes);
+          return div;
+        };
+        const at = columns.findIndex((col) => col.querySelector(".c-marketo-form"));
+        if (STD_DRAFT_IMPORT && at >= 0) {
+          const ratio = { 8: "flex-67-33", 4: "flex-33-67" }[columnWidth(columns[0])];
+          const side = [];
+          const formColumn = (col) => {
+            let top = col.querySelector(".c-marketo-form");
+            while (top.parentElement && top.parentElement !== col && !top.parentElement.matches(".row")) {
+              top = top.parentElement;
+            }
+            const items = top.parentElement ? [...top.parentElement.children] : [top];
+            return items.flatMap((item) => {
+              if (item === top) return [form];
+              const holder = doc.createElement("div");
+              holder.append(item.cloneNode(true));
+              const nodes = cellNodes(holder, doc);
+              if (!nodes.length) return [];
+              side.push(nodes);
+              return [box(nodes)];
+            });
+          };
+          const parts2 = columns.map((col, i) => {
+            if (i === at) return stdProductPage(doc) ? formColumn(col) : [form];
+            if (col.querySelector("table[data-keep]")) return asides.filter((t) => col.contains(t));
+            const nodes = cellNodes(col, doc);
+            if (nodes.length) side.push(nodes);
+            return nodes.length ? [box(nodes)] : [];
+          }).flat();
+          const copy = rowCopyStyle(side, doc);
+          form.setAttribute("data-keep", "join");
+          parts2[0].setAttribute("data-keep", "section");
+          parts2[0].setAttribute("data-section-style", ["flex", ratio, copy].filter(Boolean).join(", "));
+          wrapper.replaceWith(...parts2);
+          return;
+        }
+        const others = columns.filter((col) => !col.querySelector(".c-marketo-form") && !col.querySelector("table[data-keep]")).map((col) => cellNodes(col, doc)).filter((nodes) => nodes.length).map(box);
         wrapper.replaceWith(form, ...asides, ...others);
         return;
+      }
+      if (STD_DRAFT_IMPORT && colctrl.querySelector(STD_TABLE)) {
+        const box = (nodes) => {
+          const div = doc.createElement("div");
+          div.setAttribute("data-keep", "join");
+          div.append(...nodes);
+          return div;
+        };
+        const perColumn = columns.map((col) => {
+          const out = [];
+          let run = [];
+          cellNodes(col, doc).forEach((n) => {
+            if (n.nodeType === 1 && n.matches(STD_TABLE)) {
+              if (run.length) out.push(box(run));
+              run = [];
+              n.setAttribute("data-keep", "join");
+              out.push(n);
+            } else run.push(n);
+          });
+          if (run.length) out.push(box(run));
+          return out;
+        }).filter((p) => p.length);
+        const parts2 = perColumn.flat();
+        if (parts2.length) {
+          const ratio = { 8: "flex-67-33", 4: "flex-33-67" }[columnWidth(columns[0])];
+          const narrow = ratio === "flex-67-33" ? perColumn[perColumn.length - 1] : perColumn[0];
+          const side = perColumn.every((p) => p.length === 1) || ratio && perColumn.length === 2 && narrow.length === 1;
+          parts2[0].setAttribute("data-keep", "section");
+          if (side) parts2[0].setAttribute("data-section-style", ["flex", ratio].filter(Boolean).join(", "));
+          if (wrapper.hasAttribute("data-row-end")) parts2[0].setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
+          wrapper.replaceWith(...parts2);
+          return;
+        }
+      }
+      if (stdProductPage(doc) && columns.length === 2 && !boxVariant(columns)) {
+        const boxOf = (c) => c.querySelector(":scope > .dimensional-box, :scope > .has-background, :scope > div > .dimensional-box");
+        const squash = (v) => (v || "").replace(/[\s\u00a0]+/g, "");
+        const texts = columns.map((col) => [...col.querySelectorAll(".c-rich-text-editor")].filter((c) => c.closest(".colctrl") === colctrl && !c.parentElement.closest(".c-rich-text-editor") && text3(c)).map((c) => ({ c, box: boxOf(c) })).map((t) => __spreadProps(__spreadValues({}, t), { variant: t.box ? panelOptions(t.box, t.c) : "" })));
+        const onlyBoxes = (i) => texts[i].length > 0 && texts[i].every((t) => t.variant) && squash(texts[i].map((t) => t.c.textContent).join("")) === squash(columns[i].textContent);
+        const at = [0, 1].find((i) => onlyBoxes(i) && !texts[1 - i].some((t) => t.variant));
+        if (at !== void 0) {
+          const panels = texts[at].map(({ c, variant: variant2 }) => {
+            const holder = doc.createElement("div");
+            holder.append(c.cloneNode(true));
+            const nodes = cellNodes(holder, doc);
+            rowCopyStyle([nodes], doc);
+            nodes.filter((n) => n.nodeType === 1 && /^H[1-6]$/.test(n.tagName) && n.querySelector("strong")).forEach((h) => {
+              const walker = doc.createTreeWalker(h, 4);
+              const runs = [];
+              for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+                if (!t.parentElement.closest("strong") && t.nodeValue.replace(/\[\[[^\]]*\]|\]/g, "").trim()) runs.push(t);
+              }
+              runs.forEach((t) => {
+                const m = t.nodeValue.match(/^(\s*(?:\[\[[^\]]*\])*)([\s\S]*?)(\]*\s*)$/);
+                if (!m || !m[2].trim()) return;
+                t.nodeValue = `${m[1]}[[serif]${m[2]}]${m[3]}`;
+              });
+            });
+            const block2 = WebImporter.Blocks.createBlock(doc, { name: `Panel (${variant2})`, cells: [[nodes]] });
+            block2.setAttribute("data-keep", "join");
+            return block2;
+          });
+          const otherNodes = cellNodes(columns[1 - at], doc);
+          rowCopyStyle([otherNodes], doc);
+          const other = doc.createElement("div");
+          other.setAttribute("data-keep", "join");
+          other.append(...otherNodes);
+          const parts2 = at === 0 ? [...panels, other] : [other, ...panels];
+          const ratio = { 8: "flex-67-33", 4: "flex-33-67" }[columnWidth(columns[0])];
+          parts2[0].setAttribute("data-keep", "section");
+          parts2[0].setAttribute("data-section-style", ["flex", ratio].filter(Boolean).join(", "));
+          if (wrapper.hasAttribute("data-row-end")) parts2[0].setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
+          wrapper.replaceWith(...parts2);
+          return;
+        }
       }
       const key = columns.map(columnWidth).join(",");
       const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
       const boxes = boxVariant(columns);
+      const lineBoxed = /* @__PURE__ */ new Set();
+      if (!boxes && STD_DRAFT_IMPORT) {
+        columns.flatMap((col) => [...col.querySelectorAll(".has-background:not(.bg-white)")]).filter((b) => b.closest(".colctrl") === colctrl && text3(b) && !b.parentElement.closest(".has-background:not(.bg-white), .dimensional-box")).forEach((b) => {
+          const colour = boxColours()[(b.className.match(/\bbg-([a-z-]+)/) || [])[1]];
+          if (!colour) return;
+          const lines = b.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li").length ? b.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li") : b.querySelectorAll(".line");
+          lines.forEach((line) => {
+            if (!text3(line) || line.parentElement.closest("p, h1, h2, h3, h4, h5, h6, li")) return;
+            const into = line.matches(".line") && line.querySelector(":scope > div") ? line.querySelector(":scope > div") : line;
+            into.prepend(doc.createTextNode(`[[box-${colour}]`));
+            into.append(doc.createTextNode("]"));
+          });
+          lineBoxed.add(b);
+        });
+      }
       if (!boxes) {
         colctrl.querySelectorAll("[data-white-tag]").forEach((el) => {
           const inBox = el.closest(".has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel");
           if (!inBox || inBox.matches(".c-full-bleed-panel") || inBox.closest(".colctrl") !== colctrl) return;
+          if (lineBoxed.has(inBox)) return;
           if (el.firstChild && el.firstChild.nodeValue === "[[color-white]") el.firstChild.remove();
           if (el.lastChild && el.lastChild.nodeValue === "]") el.lastChild.remove();
           el.removeAttribute("data-white-tag");
@@ -2295,17 +6180,26 @@ var CustomImportScript = (() => {
       }
       const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)].filter((c) => c.closest(".colctrl") === colctrl && (text3(c) || c.matches(".sectionseparator"))) : [];
       const firstRule = parts.length > 1 && parts[parts.length - 1].matches(".sectionseparator");
+      const centred = filled.every(centredColumn);
+      const layout = COLUMN_VARIANTS[key] || COLUMN_VARIANTS[columns.map(desktopWidth).join(",")];
       const variant = [
-        COLUMN_VARIANTS[key],
+        layout,
         linked ? "media-pair" : "",
         stackRow(columns) ? "stack" : "",
         boxes,
-        firstRule ? "left-border-bottom" : ""
+        imageBorder(columns),
+        centred ? "text-center" : "",
+        firstRule ? "left-border-bottom" : "",
+        stdProductPage(doc) && smallImages(filled) ? "image-centre" : "",
+        stdProductPage(doc) && colctrl.getAttribute("data-std-valign") === "middle" ? "valign-middle" : ""
       ].filter(Boolean).join(", ");
-      const centred = filled.every(centredColumn);
       const cells = columns.map((col) => cellNodes(col, doc));
-      const style = [rowCopyStyle(cells, doc), centred ? "center" : ""].filter(Boolean).join(", ");
-      const block = WebImporter.Blocks.createBlock(doc, {
+      const style = rowCopyStyle(cells, doc);
+      const colours = STD_DRAFT_IMPORT && !boxes ? columns.map((col) => {
+        const box = cellBox(col);
+        return box && box.kind === "whole" && box.colour !== "boxed" ? box.colour : "";
+      }) : [];
+      const block = STD_DRAFT_IMPORT && !colctrl.hasAttribute("data-columns") && tileCards(cells, variant, doc, colours) || WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : "Columns",
         cells: [cells]
       });
@@ -2319,6 +6213,62 @@ var CustomImportScript = (() => {
       if (!form) return;
       form.setAttribute("data-keep", "section");
       (component.closest(".marketoform") || component).replaceWith(form);
+    });
+  }
+  function tableCellNodes(td, doc) {
+    const cell = td.cloneNode(true);
+    cell.querySelectorAll(".cell-mobile-title").forEach((el) => el.remove());
+    cell.querySelectorAll(".cell-content").forEach((el) => el.replaceWith(...el.childNodes));
+    if (!text3(cell)) return [];
+    cell.querySelectorAll("a[href]").forEach((a) => {
+      a.setAttribute("href", newTabHref(a, absoluteAsset(a.getAttribute("href"))));
+    });
+    const div = doc.createElement("div");
+    div.append(...cell.childNodes);
+    return [div];
+  }
+  function headerRow(tr) {
+    const cells = [...tr.children].filter((c) => /^T[HD]$/.test(c.tagName));
+    if (cells.some((c) => c.tagName === "TH" && text3(c))) return true;
+    const filled = cells.filter((c) => text3(c));
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    return filled.length > 0 && filled.every((c) => squash([...c.querySelectorAll("b, strong")].filter((b) => !b.parentElement.closest("b, strong")).map((b) => b.textContent).join("")) === squash(c.textContent));
+  }
+  function dataTables(main, doc) {
+    main.querySelectorAll(".c-patenttables, .c-table").forEach((component) => {
+      if (!component.isConnected || component.parentElement.closest(".c-patenttables, .c-table")) return;
+      const table = component.querySelector("table");
+      const trs = table ? [...table.querySelectorAll("tr")].filter((tr) => text3(tr)) : [];
+      if (!trs.length) return;
+      const header = headerRow(trs[0]);
+      if (header) {
+        trs[0].querySelectorAll("b, strong").forEach((b) => b.replaceWith(...b.childNodes));
+      }
+      const sheet = component.matches(".c-patenttables");
+      const options = [
+        header ? "" : "no-header",
+        sheet || component.matches(".mobile-enabled") ? "mobile-stacked" : "",
+        sheet ? "sheet" : ""
+      ].filter(Boolean);
+      let rows = trs.map((tr) => [...tr.children].filter((c) => /^T[HD]$/.test(c.tagName)).map((td) => tableCellNodes(td, doc)));
+      const width = Math.max(...rows.map((r) => r.length));
+      const used = [...Array(width).keys()].filter((i) => rows.some((r) => r[i] && r[i].length));
+      rows = rows.map((r) => used.map((i) => r[i] || []));
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: options.length ? `Table (${options.join(", ")})` : "Table",
+        cells: rows
+      });
+      block.setAttribute("data-std-table", "");
+      block.setAttribute("data-keep", "body");
+      const subheading = component.querySelector(".component-subheading");
+      const parts = [block];
+      if (subheading && text3(subheading)) {
+        const h3 = doc.createElement("h3");
+        h3.textContent = text3(subheading);
+        h3.setAttribute("data-keep", "body");
+        parts.unshift(h3);
+      }
+      (component.closest(".table.parbase, .patenttables") || component).replaceWith(...parts);
     });
   }
   function tableRows(table) {
@@ -2379,10 +6329,27 @@ var CustomImportScript = (() => {
       const desktop = ((_b = (_a = box.querySelector("source[srcset]") || {}).getAttribute) == null ? void 0 : _b.call(_a, "srcset")) || img.getAttribute("src");
       const phone = img.getAttribute("src");
       const alt = img.getAttribute("alt") || "";
+      const sources = [.../* @__PURE__ */ new Set([desktop, phone])].filter(Boolean);
+      if (stdReviewPage(doc)) {
+        box.replaceWith(...sources.map((src, i) => {
+          const one = doc.createElement("div");
+          one.setAttribute("data-keep", "nodes");
+          const device = ["desktop-only", "mobile-only"][i];
+          one.setAttribute("data-section-style", sources.length > 1 ? `full-width-image, ${device}` : "full-width-image");
+          const p = doc.createElement("p");
+          const image = doc.createElement("img");
+          image.setAttribute("src", src);
+          image.setAttribute("alt", alt);
+          p.append(image);
+          one.append(p);
+          return one;
+        }));
+        return;
+      }
       const holder = doc.createElement("div");
       holder.setAttribute("data-keep", "nodes");
       holder.setAttribute("data-section-style", box.classList.contains("bg-shadow") ? "full-width-image, shadow" : "full-width-image");
-      [.../* @__PURE__ */ new Set([desktop, phone])].filter(Boolean).forEach((src) => {
+      sources.forEach((src) => {
         const p = doc.createElement("p");
         const image = doc.createElement("img");
         image.setAttribute("src", src);
@@ -2410,7 +6377,12 @@ var CustomImportScript = (() => {
     const level = heading.tagName;
     const h1 = renameTo(heading, "h1", doc);
     const spans = [...h1.querySelectorAll('[class*="fontsize-"]')].filter((span) => text3(span) === text3(h1));
-    const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1]).find((n) => TITLE_SIZES.includes(n));
+    let size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1]).find((n) => TITLE_SIZES.includes(n));
+    if (size && stdReviewPage(doc)) {
+      const factor = spans.map((span) => /\bfontsize-(\d+)(?:-(\d+))?em\b/.exec(span.className) || []).filter((m) => m[1]).reduce((f, m) => f * Number(`${m[1]}.${m[2] || 0}`), 1);
+      const off = (n) => Math.abs(Math.log(Number(n.replace("-", ".")) / factor));
+      size = TITLE_SIZES.reduce((x, y) => off(y) < off(x) ? y : x);
+    }
     const h4Enlarged = level === "H4" && size === "2-5";
     if (size) spans.forEach((span) => span.classList.remove(...[...span.classList].filter((c) => c.startsWith("fontsize-"))));
     if (h4Enlarged) spans[0].classList.add("fontsize-h4-2-5");
@@ -2422,6 +6394,78 @@ var CustomImportScript = (() => {
     }
     if (size && !h4Enlarged) sizeTagged(h1, `text-${size}`, doc);
     return h1;
+  }
+  var assetName = (src) => ((src || "").match(/\/is\/(?:image|content)\/([^?#]+)/) || [])[1] || "";
+  function iconSources(main) {
+    const names = /* @__PURE__ */ new Set();
+    main.querySelectorAll('.standaloneimage[class*="aem-GridColumn--default--"]').forEach((col) => {
+      const grid = col.parentElement && col.parentElement.className.match(/\baem-Grid--default--(\d+)\b/);
+      const width = col.className.match(/\baem-GridColumn--default--(\d+)\b/);
+      const beside = col.nextElementSibling && col.nextElementSibling.matches(".text") && text3(col.nextElementSibling);
+      if (!grid || !width || !beside || Number(width[1]) * 4 > Number(grid[1])) return;
+      col.querySelectorAll("img").forEach((img) => names.add(assetName(img.getAttribute("src"))));
+    });
+    names.delete("");
+    return names;
+  }
+  function iconBlocks(root, icons, doc) {
+    root.querySelectorAll("table").forEach((table) => {
+      const trs = [...table.querySelectorAll(":scope > tbody > tr, :scope > tr")];
+      const head = trs[0] && trs[0].firstElementChild;
+      const m = head && head.textContent.trim().match(/^(Cards Corp|Columns)(?: \((.*)\))?$/);
+      if (!m) return;
+      const names = [...table.querySelectorAll("img")].map((img) => assetName(img.getAttribute("src"))).concat([...table.querySelectorAll("a[href]")].map((a) => assetName(a.getAttribute("href"))).filter((n) => n && !/\.(?:m3u8|mp4)$/.test(n)));
+      if (!names.length || !names.every((n) => icons.has(n))) return;
+      const media = (n) => {
+        var _a;
+        return n.nodeType === 1 && (n.matches("img, picture") || !!n.querySelector("img, picture") || n.matches("a[href], p") && icons.has(assetName((_a = n.matches("a") ? n : n.querySelector("a[href]")) == null ? void 0 : _a.getAttribute("href"))));
+      };
+      const units = [];
+      trs.slice(1).forEach((tr) => {
+        const cells2 = [...tr.children];
+        if (m[1] === "Cards Corp" && cells2.length === 2) {
+          units.push({ row: units.length, nodes: [...cells2[0].childNodes, ...cells2[1].childNodes] });
+          return;
+        }
+        const row = units.length ? units[units.length - 1].row + 1 : 0;
+        cells2.forEach((cell) => {
+          const nodes = [...cell.childNodes];
+          const at = nodes.findIndex(media);
+          if (at < 0) return;
+          units.push({ row, nodes: [nodes[at], ...nodes.filter((n, k) => k !== at)] });
+        });
+      });
+      if (!units.length) return;
+      const perRow = m[1] === "Cards Corp" ? { "two-up": 2, "three-up": 3 }[(m[2] || "").split(", ").find((v) => /-up$/.test(v))] || 3 : 0;
+      const grouped = [];
+      units.forEach((unit, i) => {
+        const at = perRow ? Math.floor(i / perRow) : unit.row;
+        (grouped[at] = grouped[at] || []).push(unit.nodes);
+      });
+      const rows = grouped.filter(Boolean);
+      const cells = rows.every((r) => r.length === 1) ? rows.map(([nodes]) => [[nodes[0]], nodes.slice(1)]) : rows.map((r) => r.map((nodes) => {
+        const [icon, ...rest] = nodes;
+        const paragraph = (inline) => {
+          const p = doc.createElement("p");
+          p.append(...inline);
+          return p;
+        };
+        const block = (n) => n.nodeType === 1 && /^(P|H[1-6]|UL|OL|DIV|TABLE)$/.test(n.tagName);
+        const filled = (list) => list.some((n) => n.nodeType === 1 || n.textContent.trim());
+        const out = [block(icon) ? icon : paragraph([icon])];
+        let run = [];
+        rest.forEach((n) => {
+          if (block(n)) {
+            if (filled(run)) out.push(paragraph(run));
+            run = [];
+            out.push(n);
+          } else run.push(n);
+        });
+        if (filled(run)) out.push(paragraph(run));
+        return out;
+      }));
+      table.replaceWith(WebImporter.Blocks.createBlock(doc, { name: "Columns (icon-text)", cells }));
+    });
   }
   function dropDamVideos(main) {
     main.querySelectorAll(".c-standalone-video").forEach((video) => {
@@ -2440,23 +6484,46 @@ var CustomImportScript = (() => {
       }
     }
   }
-  function transform(hookName, element, payload) {
+  function transform2(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
+    if (STD_DRAFT_IMPORT) {
+      element.querySelectorAll(".overlayparsys").forEach((overlay) => {
+        const box = overlay.querySelector('.has-background[class*="bg-"]');
+        const bg = box && [...box.classList].find((c) => /^bg-/.test(c));
+        if (bg) overlay.setAttribute("data-std-box", bg);
+      });
+    }
     if (!payload || !payload.template || !TEMPLATES.includes(payload.template.name)) return;
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
     const path = sourcePath(payload);
+    const productXf = stdProductPage(doc) && payload.template.name === "long-page-detail-corp-fragments";
     main.querySelectorAll(".hero-space").forEach((el) => el.remove());
+    if (stdReviewPage(doc)) {
+      const STEPS = ["8", "1-25", "1-5", "1-75", "2", "2-5"];
+      main.querySelectorAll('span[style*="font-size"]').forEach((span) => {
+        const m = (span.getAttribute("style") || "").match(/font-size:\s*(\d+(?:\.\d+)?)px/i);
+        if (!m) return;
+        const factor = Number(m[1]) / 14;
+        const off = (n) => Math.abs(Math.log((n === "8" ? 0.8 : Number(n.replace("-", "."))) / factor));
+        const step = STEPS.reduce((x, y) => off(y) < off(x) ? y : x);
+        if (Math.abs(factor - 1) > 0.1) span.classList.add(`fontsize-${step}em`);
+      });
+    }
     main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
     dropDamVideos(main);
     fullWidthImages(main, doc);
     spaceUrlColons(main, doc);
     const nav = localNav(main, doc);
-    experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
+    const pageXfs = product_detail_xf_default[path] || (STD_REVIEW_IMPORT ? review_pages_xf_default[path] : void 0);
+    if (!(stdProductPage(doc) && productFragments(main, doc, pageXfs))) {
+      experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
+    }
     sectionTitles(main, doc);
     downloadTitles(main, doc);
     videoCaptions(main, doc);
-    const hasTitle = !!(main.querySelector(".h1-title h1") && text3(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
+    if (STD_DRAFT_IMPORT) dataTables(main, doc);
+    const hasTitle = productXf || !!(main.querySelector(".h1-title h1") && text3(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
     let firstTitle = !hasTitle && [...main.querySelectorAll(".c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)")].find((el) => text3(el) && !el.closest(".h1-title"));
     const firstHeadline = firstTitle && firstTitle.matches(".c-largeheadline") ? firstTitle : null;
     if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);
@@ -2477,6 +6544,7 @@ var CustomImportScript = (() => {
         if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);
       });
     }
+    const icons = stdProductPage(doc) ? iconSources(main) : null;
     const helpers = {
       cellNodes,
       richText,
@@ -2485,6 +6553,7 @@ var CustomImportScript = (() => {
     };
     convertBeforeRows(main, doc, helpers);
     markRowEnds(main);
+    if (STD_DRAFT_IMPORT) xfGridRows(main, doc, productXf ? ".aem-Grid" : void 0);
     columnRows(main, doc);
     gridRows(main);
     convertAfterRows(main, doc, helpers);
@@ -2500,8 +6569,11 @@ var CustomImportScript = (() => {
     buildArticle(element, {
       keep: ".c-resourcesanddownload, [data-keep]",
       spacer: false,
-      componentStyle: columnStyle
+      componentStyle: columnStyle,
+      // review build of the shared fragments: Text style sizes, icon rows side by side
+      stdText: STD_DRAFT_IMPORT && payload.template.name === "long-page-detail-corp-fragments"
     });
+    if (icons && icons.size) iconBlocks(element, icons, doc);
     if (nav) element.prepend(nav, doc.createElement("hr"));
   }
 
@@ -2527,11 +6599,14 @@ var CustomImportScript = (() => {
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
-    if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+    if (hostRe === CORP_HOST_RE) {
+      edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+      edsPath = edsPath.split("/").map((seg) => seg.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")).join("/");
+    }
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
-  function transform2(hookName, element, payload) {
+  function transform3(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
     const isNewsDetail = !!(payload && payload.template && [
@@ -2540,7 +6615,11 @@ var CustomImportScript = (() => {
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
       "event-detail",
-      "contact-division"
+      "contact-division",
+      "people",
+      "people-fragments",
+      "ivs-footnotes",
+      "ivs-footnotes-fragments"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
@@ -2737,7 +6816,7 @@ var CustomImportScript = (() => {
   function altToLinkText(alt, src) {
     return alt || src;
   }
-  function transform3(hookName, element, payload) {
+  function transform4(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const doc = element.ownerDocument;
     element.querySelectorAll("img").forEach((img) => {
@@ -2776,7 +6855,12 @@ var CustomImportScript = (() => {
     video: parse,
     "cards-corp-resources": parse2
   };
-  var transformers = [transform, transform2, transform3];
+  var transformers = [
+    transform2,
+    transform3,
+    transform4,
+    transform
+  ];
   function executeTransformers(hookName, element, payload) {
     const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
     transformers.forEach((fn) => {
@@ -2870,14 +6954,22 @@ var CustomImportScript = (() => {
     });
     return pageBlocks;
   }
+  var isProductXf = (key) => STD_DRAFT_IMPORT && (Object.values(product_detail_xf_default).some((xfs) => xfs.includes(key)) || STD_REVIEW_IMPORT && Object.values(review_pages_xf_default).some((xfs) => xfs.includes(key)) || Object.values(product_detail_slide_xf_default).some((slides) => slides.some((pair) => pair.includes(key))));
   var import_long_page_detail_corp_fragments_default = {
     // before the importer's own cleanup, which drops empty paragraphs
-    preprocess: ({ document }) => keepHeadlineBlankLines(document),
+    preprocess: ({ document, url, params }) => {
+      keepHeadlineBlankLines(document);
+      if (STD_DRAFT_IMPORT && isProductXf(xfKey(params && params.originalURL || url))) {
+        markCentredRows(document);
+      }
+    },
     transform: (payload) => {
       const { document, url, params } = payload;
       const main = document.body;
       const key = xfKey(params.originalURL || url);
-      const path = xfToFragmentPath(key);
+      const productXf = isProductXf(key);
+      if (productXf) document.body.setAttribute("data-template", "product-detail");
+      const path = productXf ? reviewFragmentPath(key) : xfToFragmentPath(key);
       if (!path) throw new Error(`Not an Experience Fragment: ${key}`);
       const src = document.querySelector(".xf-content-height") || main;
       if (/\/contact_information\/(header|contact)\/master$/.test(key)) {

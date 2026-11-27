@@ -20,6 +20,7 @@ import longPageDetailSectionsTransformer, {
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import corpTextMarkersTransformer, { STD_DRAFT_IMPORT, STD_REVIEW_IMPORT } from './transformers/corp-text-markers.js';
 import PRODUCT_XFS from './product-detail-xf.js';
+import SLIDE_XFS from './product-detail-slide-xf.js';
 import REVIEW_XFS from './review-pages-xf.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 import { xfToFragmentPath, xfKey } from './xf-fragment-path.js';
@@ -154,7 +155,9 @@ function findBlocksOnPage(document, template) {
 // in review (staging build): whether an XF is one of a product page's (or a review page's)
 const isProductXf = (key) => STD_DRAFT_IMPORT
   && (Object.values(PRODUCT_XFS).some((xfs) => xfs.includes(key))
-    || (STD_REVIEW_IMPORT && Object.values(REVIEW_XFS).some((xfs) => xfs.includes(key))));
+    || (STD_REVIEW_IMPORT && Object.values(REVIEW_XFS).some((xfs) => xfs.includes(key)))
+    // a product page's slide XFs (its image or video, desktop and mobile)
+    || Object.values(SLIDE_XFS).some((slides) => slides.some((pair) => pair.includes(key))));
 
 export default {
   // before the importer's own cleanup, which drops empty paragraphs
