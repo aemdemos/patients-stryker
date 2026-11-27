@@ -3677,6 +3677,63 @@ var CustomImportScript = (() => {
     const from = row.closest('[class^="cols"]') || row;
     from.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells }), from));
   }
+  function typedStatistics(main, doc) {
+    const NUMBER = /^[$€£]?\d[\d.,]*\s*[%+KMBx]*$/;
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const factorOf = (el) => [...el.querySelectorAll('[class*="fontsize-"]')].filter((span) => squash(span.textContent) === squash(el.textContent)).map((span) => span.className.match(/\bfontsize-(\d+)(?:-(\d+))?em\b/) || []).filter((m) => m[1]).reduce((f, m) => f * Number(`${m[1]}.${m[2] || 0}`), 1);
+    const colourOf2 = (el) => {
+      const view = doc.defaultView;
+      let rgb = "";
+      for (let n = el; n && !rgb; n = n.parentElement) rgb = rgbOf(n) || "";
+      if (!rgb && view) rgb = view.getComputedStyle(el).color.replace(/[^\d,]/g, "");
+      return STAT_COLOURS[rgb] || "gold";
+    };
+    main.querySelectorAll(".colctrl").forEach((row) => {
+      if (!row.isConnected || row.closest("[data-keep]")) return;
+      const columns = [...row.querySelectorAll(':scope > .row > [class*="col-"]')].filter((col) => col.textContent.trim() || col.querySelector("img"));
+      if (columns.length < 2) return;
+      const stats = columns.map((col) => {
+        const texts = [...col.querySelectorAll(".c-rich-text-editor")].filter((c) => c.textContent.trim());
+        if (texts.length !== 1 || col.querySelector("img, video, iframe, .numbercounter")) return null;
+        const ps = [...texts[0].querySelectorAll("p")].filter((p) => p.textContent.trim());
+        const [first, ...rest] = ps;
+        const raw = first ? first.textContent : "";
+        const tagged = (raw.match(/\[\[color-([a-z-]+)\]/) || [])[1];
+        const figure = raw.replace(/\[\[[^\][]*\]|\]/g, "").trim();
+        if (!figure || !NUMBER.test(figure) || !rest.length || !first.querySelector(".futura-bold, b, strong")) return null;
+        const factor = factorOf(first);
+        if (factor < 2.5) return null;
+        const value = doc.createElement("p");
+        value.textContent = figure;
+        return {
+          value,
+          rest: rest.map((p) => statRowLine(p, doc, 1)),
+          colour: (tagged && Object.values(STAT_COLOURS).includes(tagged) ? tagged : "") || colourOf2([...first.querySelectorAll("*")].pop() || first),
+          // the number's share of the 1440px page width (14px base text)
+          size: factor * 14 * 100 / 1440
+        };
+      });
+      if (stats.some((st) => !st)) return;
+      const colours = [...new Set(stats.map((st) => st.colour))];
+      const options = [];
+      if (stats.length !== 3) options.push(`cols-${Math.min(stats.length, 6)}`);
+      if (colours.length === 1 && colours[0] !== "gold") options.push(`stat-${colours[0]}`);
+      const size = stats.map((st) => st.size).sort((x, y) => x - y)[Math.floor(stats.length / 2)];
+      if (size <= 4) options.push("stat-s");
+      else if (size >= 6.5) options.push("stat-l");
+      const cells = stats.map((st) => {
+        const number = doc.createElement("div");
+        number.append(st.value);
+        const desc = doc.createElement("div");
+        desc.append(...st.rest);
+        const keyword = colours.length > 1 ? [st.colour] : [];
+        return [...keyword, number, desc];
+      });
+      const name = options.length ? `Statistics (${options.join(", ")})` : "Statistics";
+      const from = row.closest('[class^="cols"]') || row;
+      from.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells }), from));
+    });
+  }
   function statisticsBlocks(main, doc) {
     const done = /* @__PURE__ */ new Set();
     main.querySelectorAll(".numbercounter").forEach((component) => {
@@ -3879,6 +3936,7 @@ var CustomImportScript = (() => {
     if (STD_DRAFT_IMPORT) mediaGalleries(main, doc);
     if (STD_DRAFT_IMPORT) microApps(main, doc);
     if (STD_DRAFT_IMPORT) statisticsBlocks(main, doc);
+    if (stdProductPage(doc)) typedStatistics(main, doc);
     if (STD_DRAFT_IMPORT) charts(main, doc);
     main.querySelectorAll(".numbercounter").forEach((component) => {
       const widget = component.querySelector('[data-widget="numbercounter"]');
