@@ -148,6 +148,20 @@ body.news-detail.full-width.basic main > .section > .default-content-wrapper li 
   font-family: var(--display-font-family);
 }
 
+/* body-l: the gold banner above a form (section style `h2-1-5` with `background: bg-gold`,
+   e.g. "Interested in learning more?" of "What you're not seeing on a 12-lead ECG") keeps
+   the h2-1-5 heading size, also when the heading is authored in italic: 31.5px, 36.75px
+   from 600px (stryker.com h2 > span.fontsize-1-5em) */
+body.news-detail.body-l main > .section.h2-1-5.bg-gold > .default-content-wrapper > h2 {
+  font-size: var(--corp-heading-font-size-h2-1-5-s);
+}
+
+@media (width >= 600px) {
+  body.news-detail.body-l main > .section.h2-1-5.bg-gold > .default-content-wrapper > h2 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+}
+
 /* full-width: news pages whose source runs the title, the small print and the "Last
    Updated" line across the whole container (stryker.com StrykerTalks podcast pages, e.g.
    .../2024/stryker-s-pierce-shares-how-our-latest-digital-innovations-help-.html: h1, date

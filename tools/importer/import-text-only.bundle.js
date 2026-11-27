@@ -4383,6 +4383,66 @@ var CustomImportScript = (() => {
       }
     ],
     // single news-detail pages
+    // lifepak35-15-lead-ecg-integration
+    "https://www.stryker.com/us/en/emergency-care/news/2026/lifepak35-15-lead-ecg-integration.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:business-unit/ems/news, stryker:business-unit/ems, stryker:business-unit/ems/news/case-studies");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => /^p-1(-\d+)?$/.test(x))) return;
+          const rest = v.filter((x) => !/^p-1(-\d+)?$/.test(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        const box = [...m.querySelectorAll("h2")].find((h) => /learn(ing)? more\?/i.test(txt(h)));
+        if (box) {
+          const t = sectionOf(m, box).find(isSectionMetadata);
+          if (t) t.remove();
+          const sec = sectionOf(m, box);
+          sec[sec.length - 1].after(WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
+        }
+        style(m, d, blockTable(m, "marketo form"), "form-with-aside");
+        const refsLabel = [...m.querySelectorAll("p")].find((x) => txt(x) === "References:");
+        if (refsLabel) {
+          const b = refsLabel.querySelector("strong");
+          const u = d.createElement("u");
+          u.textContent = "References:";
+          (b || refsLabel).replaceWith(u);
+          if (!b) refsLabel.append(u);
+        }
+        stripListNumbers(m, find(m, "li", "1. Thygesen"));
+        style(m, d, find(m, "li", "Thygesen"), "disclaimer");
+      }
+    ],
+    // close-the-gap-in-fecal-management
+    "https://www.stryker.com/us/en/sage/news/2026/close-the-gap-in-fecal-management.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:business-unit/SAGE");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => /^p-1(-\d+)?$/.test(x))) return;
+          const rest = v.filter((x) => !/^p-1(-\d+)?$/.test(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        const box = [...m.querySelectorAll("h2")].find((h) => /learn(ing)? more\?/i.test(txt(h)));
+        if (box) {
+          const t = sectionOf(m, box).find(isSectionMetadata);
+          if (t) t.remove();
+          const sec = sectionOf(m, box);
+          sec[sec.length - 1].after(WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
+        }
+        style(m, d, blockTable(m, "marketo form"), "form-with-aside");
+      }
+    ],
     // life-saving-journey-inspires-community
     "https://www.stryker.com/us/en/emergency-care/news/2024/life-saving-journey-inspires-community.html": [
       (m, d) => {
