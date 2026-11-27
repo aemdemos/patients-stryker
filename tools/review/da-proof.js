@@ -59,6 +59,8 @@ async function helloFromDa(ms) {
   try {
     const { default: sdk } = await import(DA_SDK_URL);
     const hello = await Promise.race([sdk, new Promise((r) => { setTimeout(() => r(null), ms); })]);
+    // (the SDK resolves inside its own message listener, before ours has seen the same message)
+    await new Promise((r) => { setTimeout(r, 0); });
     return hello ? { ...hello, from: helloOrigin } : null;
   } catch (e) {
     return null;
