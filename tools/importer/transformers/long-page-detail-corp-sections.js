@@ -35,6 +35,7 @@
 
 import buildArticle, {
   richTextNodes, imageNodes, buttonNodes, headlineNodes, titleHeading, absoluteAsset, newTabHref,
+  heroText, heroTextRows, heroImage,
 } from './long-page-detail-corp-article.js';
 import { videoLink } from '../parsers/video.js';
 import { convertBeforeRows, convertAfterRows } from './long-page-detail-corp-components.js';
@@ -43,6 +44,13 @@ import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
+
+// links whose stryker.com page redirects (301): the final page instead (AGENTS.md, link
+// rewriting), found by checking every site link of the pages
+const SOURCE_REDIRECTS = {
+  '/us/en/surgical-technologies/products/surgicount-safety-sponge-system/surgicount-index/badge-request---contact-us.html':
+    '/us/en/surgical-technologies/products/surgicount-safety-sponge-system.html',
+};
 
 // the shared XFs: on 2 or more long-page-detail pages in the export
 const XF_PAGES = Object.values(PAGE_XFS).flat().reduce((counts, xf) => {
@@ -66,6 +74,23 @@ export function sharedFragmentPath(xf) {
  * breaks (headlineNodes keeps them).
  * @param {Document} document
  */
+/**
+ * Run as the import's `preprocess` (before the importer's cleanup drops empty paragraphs): a
+ * Button Set right after a rich text that ends on a blank paragraph (stryker.com ASC operating
+ * room, pre- / post-operative "Learn more": `<p>&nbsp;</p>`, then the button, 49px under the
+ * text) is marked `data-blank-before`; its buttons carry it to the Columns `button-gap` variant
+ * (semantic transformer). SKILL Connect's buttons, with no blank line, are not marked.
+ */
+export function markBlankBeforeButtons(document) {
+  const blank = (p) => p && p.tagName === 'P' && !p.textContent.replace(/\u00a0/g, ' ').trim()
+    && !p.querySelector('img, picture, iframe');
+  document.querySelectorAll('.buttonset').forEach((set) => {
+    const prev = set.previousElementSibling;
+    const box = prev && prev.matches('.text, .parbase') && prev.querySelector('.c-rich-text-editor > div');
+    if (box && blank(box.lastElementChild)) set.setAttribute('data-blank-before', '');
+  });
+}
+
 export function keepHeadlineBlankLines(document) {
   const blank = (node) => !(node.textContent || '').replace(/\u00a0/g, ' ').trim()
     && !(node.nodeType === 1 && node.querySelector('img, picture, iframe'));
@@ -86,6 +111,8 @@ export function keepHeadlineBlankLines(document) {
 // pages whose blank rich-text paragraphs are kept as space (blankLineSpacers), page by page
 const BLANK_LINE_PAGES = new Set([
   '/us/en/training-and-education/orthopaedics/joint-replacement/Mako_surgeon_campaign.html',
+  // the blank lines around the climate goals and under "Stryker locations*"
+  '/us/en/about/corporate-responsibility/environmental-programs.html',
 ]);
 
 /**
@@ -99,13 +126,21 @@ const BLANK_LINE_PAGES = new Set([
  * @param {string} url the source page URL
  */
 export function blankLineSpacers(document, url) {
-  if (!BLANK_LINE_PAGES.has(new URL(url).pathname)) return;
+  // on every page (decided 2026-11-17): a blank line between two parts of the page's own text;
+  // on the listed pages also the blank lines after a text and the percentage margins below
+  const listed = BLANK_LINE_PAGES.has(new URL(url).pathname);
   const blank = (node) => node.nodeType !== 1 || (node.tagName === 'P'
     && !node.textContent.replace(/\u00a0/g, ' ').trim() && !node.querySelector('img, picture, iframe'));
+  // text inside a block keeps its own spacing: a row of several columns (a Columns block)
+  const inBlock = (component) => {
+    const row = component.closest('.colctrl .row');
+    return !!row && row.querySelectorAll(':scope > [class*="col-"]').length > 1;
+  };
   document.querySelectorAll('.text.parbase > .c-rich-text-editor > div').forEach((box) => {
     const component = box.parentElement.parentElement;
     // text in tabs and accordion panels keeps its own spacing
     if (component.closest('.c-tabs, .panel, .c-accordion')) return;
+    if (!listed && inBlock(component)) return;
     // the text parts and blank lines in order (blank lines before the first text dropped)
     const items = [];
     [...box.childNodes].forEach((node) => {
@@ -115,7 +150,54 @@ export function blankLineSpacers(document, url) {
       } else if (prev) prev.push(node);
       else if (!blank(node) || items.length) items.push([node]);
     });
-    if (!items.includes(null)) return;
+    if (!listed) {
+      // only the blank lines between two text parts (a blank line closing a text may already
+      // be the gap to what follows: build-your-ASC "Wherever you are…", 45px with none, 47px)
+      while (items.length && items[items.length - 1] === null) items.pop();
+    }
+    // a last paragraph closing on a line break and a no-break space (environmental programs
+    // "To achieve these carbon goals…<br>&nbsp;"): a blank line after the text as well
+    const lastP = [...box.children].filter((el) => el.tagName === 'P').pop();
+    if (listed && lastP && lastP === box.lastElementChild
+      && items.length && items[items.length - 1]) {
+      const tail = [...lastP.childNodes];
+      const nbsp = tail.length > 1 && tail[tail.length - 1].nodeType === 3
+        && tail[tail.length - 1].textContent.includes('\u00a0') && !tail[tail.length - 1].textContent.replace(/\u00a0/g, ' ').trim();
+      if (nbsp && tail[tail.length - 2].nodeName === 'BR') {
+        tail[tail.length - 1].remove();
+        tail[tail.length - 2].remove();
+        items.push(null);
+      }
+    }
+    // a percentage bottom margin / top padding on the text box (2% or more: "Energy
+    // efficiency" 3%, "Design for sustainability" padding 2%): space that scales with the width,
+    // about 30px on desktop and little on phones: a `spacer, wide` after / before it (on every
+    // page since 2026-11-17, for the page's own text: promoting global health "Addressing
+    // affordability" 3%, "Medical education" padding 2%)
+    const boxStyle = box.getAttribute('style') || '';
+    const pct = (prop) => Number((new RegExp(`(?:^|;)\\s*${prop}:\\s*(\\d+(?:\\.\\d+)?)%`).exec(boxStyle) || [])[1] || 0);
+    const wideSpacer = () => {
+      const spacer = document.createElement('div');
+      spacer.className = 'largeheadline';
+      const headline = document.createElement('div');
+      headline.className = 'c-largeheadline page-section container';
+      headline.setAttribute('data-spacer-wide', '');
+      spacer.append(headline);
+      return spacer;
+    };
+    // (on other pages than the listed ones: a plain text box, not a coloured one, whose padding
+    // is inside it, and not a hero's text)
+    const plain = listed || (!box.matches('.has-background, .dimensional-box')
+      && !component.closest('.c-autocarousel, .overlayparsys, .pDiv, .fullWidthImageHero, .c-full-bleed-panel'));
+    if (plain && pct('padding-top') >= 2) component.before(wideSpacer());
+    if (plain && pct('margin-bottom') >= 2) {
+      // after the text (and its blank lines, below)
+      component.setAttribute('data-wide-after', '');
+    }
+    if (!items.includes(null)) {
+      if (component.hasAttribute('data-wide-after')) component.after(wideSpacer());
+      return;
+    }
     const parts = items.filter(Boolean);
     box.replaceChildren(...parts[0]);
     let last = component;
@@ -136,6 +218,15 @@ export function blankLineSpacers(document, url) {
       last.after(copy);
       last = copy;
     });
+    if (component.hasAttribute('data-wide-after')) {
+      const spacer = document.createElement('div');
+      spacer.className = 'largeheadline';
+      const headline = document.createElement('div');
+      headline.className = 'c-largeheadline page-section container';
+      headline.setAttribute('data-spacer-wide', '');
+      spacer.append(headline);
+      last.after(spacer);
+    }
   });
 }
 
@@ -318,35 +409,43 @@ function videoCaptions(main, doc) {
 }
 
 /**
- * The source local navigation (.localpagenavigation nav: the parent page link, then the
- * links of its section) → `Local Nav` block: row 1 the parent link, row 2 the list of
- * links. Removed from the page; null when the page has none.
+ * The source local navigation (.localpagenavigation nav) → `Local Nav Corp` block: row 1 the
+ * parent page link, row 2 the links shown in the bar, row 3 (when the source has them) the
+ * links under its "⋮" more menu (.hidden-links: stryker.com fixes that split per page);
+ * `border` when the source draws the 1px rule under the bar (nav-border-bottom). The current
+ * page's name is not authored (local-nav-corp.js takes the page title). Removed from the
+ * page; null when the page has none.
  */
 function localNav(main, doc) {
   const nav = main.querySelector('.localpagenavigation nav');
   if (!nav) return null;
   const parent = nav.querySelector('a.parent-node');
   const links = [...nav.querySelectorAll('ul.links > li > a[href]')];
+  const more = [...nav.querySelectorAll('ul.hidden-links > li > a[href]')];
+  const border = nav.classList.contains('nav-border-bottom');
   nav.closest('.localpagenavigation').remove();
-  if (!parent && !links.length) return null;
-  const rows = [];
-  if (parent) {
-    const a = doc.createElement('a');
-    a.href = parent.getAttribute('href');
-    a.textContent = text(parent);
-    rows.push([a]);
-  }
-  const ul = doc.createElement('ul');
-  links.forEach((source) => {
-    const li = doc.createElement('li');
+  if (!parent && !links.length && !more.length) return null;
+  const link = (source) => {
     const a = doc.createElement('a');
     a.href = source.getAttribute('href');
     a.textContent = text(source);
-    li.append(a);
-    ul.append(li);
+    return a;
+  };
+  const list = (sources) => {
+    const ul = doc.createElement('ul');
+    sources.forEach((source) => {
+      const li = doc.createElement('li');
+      li.append(link(source));
+      ul.append(li);
+    });
+    return ul;
+  };
+  const rows = [[parent ? link(parent) : ''], [list(links)]];
+  if (more.length) rows.push([list(more)]);
+  return WebImporter.Blocks.createBlock(doc, {
+    name: border ? 'Local Nav Corp (border)' : 'Local Nav Corp',
+    cells: rows,
   });
-  rows.push([ul]);
-  return WebImporter.Blocks.createBlock(doc, { name: 'Local Nav', cells: rows });
 }
 
 /** A source Marketo form (form[data-marketo-form-id]) → `Marketo Form` block, or null. */
@@ -366,6 +465,47 @@ const CELL_COMPONENTS = [
   '.c-curatedcta', '.buttonset', 'table',
 ].join(', ');
 
+// the gradient boxes a column's Large Headline can sit in → its `[[box-<gradient>]…]` tag
+const CELL_BOXES = {
+  'golden-gradient': 'box-gold-gradient',
+  'gray-gradient': 'box-gray-gradient',
+  'dark-purple-gradient': 'box-dark-purple-gradient',
+  'dark-teal-gradient': 'box-dark-teal-gradient',
+  'dark-blue-gradient': 'box-dark-blue-gradient',
+  'dark-orange-gradient': 'box-dark-orange-gradient',
+};
+
+// the solid colours a column's rich-text title bar can have → its `[[box-<colour>]…]` tag
+const SOLID_BOXES = {
+  orange: 'box-orange', blue: 'box-blue', teal: 'box-teal', purple: 'box-purple',
+};
+
+/**
+ * Marks the rich-text title bars of a row the Columns variants cannot draw (a different
+ * colour per column, giving-back "Advancing healthcare" orange, "Supporting education" blue…):
+ * a coloured rich text box with more content after it in its column gets `data-box-tag`.
+ */
+function markTitleBars(columns, colctrl) {
+  columns.forEach((col) => {
+    const parts = [...col.querySelectorAll(CELL_COMPONENTS)]
+      .filter((c) => c.closest('.colctrl') === colctrl && !c.parentElement.closest(CELL_COMPONENTS));
+    parts.forEach((c, i) => {
+      if (!c.matches('.c-rich-text-editor') || i === parts.length - 1) return;
+      const box = c.querySelector(':scope > .has-background');
+      const name = box && (/\bbg-([a-z]+)\b/.exec(box.className) || [])[1];
+      if (SOLID_BOXES[name]) c.setAttribute('data-box-tag', SOLID_BOXES[name]);
+    });
+  });
+}
+
+/** The box tag of a Large Headline set in a gradient box inside a column, or ''. */
+function headlineBoxTag(component) {
+  if (!component.closest('[class*="col-sm-"], [class*="col-md-"]')) return '';
+  const box = component.querySelector('.has-background[class*="-gradient"]') || (component.matches('.has-background') ? component : null);
+  const name = box && (/\bbg-([a-z-]+-gradient)\b/.exec(box.className) || [])[1];
+  return CELL_BOXES[name] || '';
+}
+
 /** The link around a standalone image (a[href] > img), or null. */
 function linkedImage(component) {
   const img = component.querySelector('img');
@@ -379,6 +519,23 @@ function linkedImage(component) {
  */
 function stackRow(columns) {
   return columns.length === 4 && columns.every((col) => !/\bcol-xs-([1-9]|1[01])\b/.test(col.className));
+}
+
+/**
+ * A `stack` row whose columns alternate media and text (TEACH talks chapters: video, text,
+ * video, text): `Columns (stack, media-text)`, each cell its own height and no gap between a
+ * video and its text (columns-corp). Empty columns (a last row of two) don't break it.
+ */
+function mediaTextRow(columns) {
+  const media = 'img, iframe, video, [data-asset-path]';
+  const isMedia = (col) => !text(col) && !!col.querySelector(media);
+  const isText = (col) => !!text(col) && !col.querySelector(media);
+  const isEmpty = (col) => !text(col) && !col.querySelector(media);
+  // at least one media column followed by its text (not a lone image in a row of empty
+  // columns: the nse grids' last row)
+  const pair = columns.some((col, i) => i % 2 === 0 && isMedia(col)
+    && !!columns[i + 1] && isText(columns[i + 1]));
+  return pair && columns.every((col, i) => isEmpty(col) || (i % 2 ? isText(col) : isMedia(col)));
 }
 
 // a source box colour (.has-background.bg-…, a .dimensional-box without a colour: `boxed`)
@@ -441,7 +598,10 @@ function boxVariant(columns) {
     name = `${colours[0]}-last`;
   }
   if (kinds[0] === 'whole') {
-    if (used.length > 1 && used.length === textCols.length) name = `${colours[0]}-all`;
+    // (one boxed card in a row padded with empty columns, CLOUT's 9th evidence card: `-all`)
+    const padded = used.length === 1 && textCols.length === 1 && columns.length > 1
+      && columns.some((col) => !text(col) && !col.querySelector('img, [data-asset-path], iframe'));
+    if ((used.length > 1 || padded) && used.length === textCols.length) name = `${colours[0]}-all`;
     else if (used.length === 1) {
       const i = boxes.findIndex(Boolean);
       if (i === columns.length - 1) name = `${colours[0]}-last`;
@@ -462,8 +622,15 @@ function cellNodes(col, doc) {
   [...col.querySelectorAll(CELL_COMPONENTS)]
     .filter((c) => !c.parentElement.closest(CELL_COMPONENTS))
     .forEach((c) => {
-      if (c.matches('.c-rich-text-editor')) out.push(...richTextNodes(c, doc).nodes);
-      else if (c.matches('.c-standalone-image')) {
+      if (c.matches('.c-rich-text-editor')) {
+        const { nodes } = richTextNodes(c, doc);
+        // a title bar in a solid colour over the rest of the column (giving-back tiles): its
+        // paragraph gets the `[[box-<colour>]…]` tag, outermost, once the row's size tags are
+        // in (columnRows; template CSS draws the bar)
+        const tag = c.getAttribute('data-box-tag');
+        if (tag && nodes.length === 1 && nodes[0].tagName === 'P') nodes[0].boxTag = tag;
+        out.push(...nodes);
+      } else if (c.matches('.c-standalone-image')) {
         const nodes = imageNodes(c, doc);
         // a linked image (the endoscopy resources specialty tiles): the link alone on the
         // line after it makes the image clickable (`Columns (media-pair)`, columns.js), its
@@ -475,6 +642,9 @@ function cellNodes(col, doc) {
           a.textContent = link.querySelector('img').getAttribute('alt') || text(link) || a.getAttribute('href');
           const p = doc.createElement('p');
           p.append(a);
+          // an image that opens a video (YouTube, new tab: SKILL Assist MAX) stays that image
+          // with its link, as on the source (not a player; columns.js keeps a YouTube link
+          // under a `media-pair` image as the image's link)
           nodes.splice(1, 0, p);
         }
         out.push(...nodes);
@@ -487,8 +657,20 @@ function cellNodes(col, doc) {
         }
       } else if (c.matches('.c-largeheadline')) {
         const lines = headlineNodes(c, doc);
+        const box = headlineBoxTag(c);
         if (c.hasAttribute('data-page-title') && lines.length) {
           out.push(titleHeading(lines, doc));
+        } else if (box && lines.length) {
+          // a Large Headline in a gradient box in a column (build-your-asc phases): its lines
+          // in one paragraph, in the `[[box-<gradient>]…]` tag (template CSS draws the box)
+          const p = doc.createElement('p');
+          lines.forEach((line, i) => {
+            if (i) p.append(doc.createElement('br'));
+            p.append(...line.childNodes);
+          });
+          p.prepend(doc.createTextNode(`[[${box}]`));
+          p.append(doc.createTextNode(']'));
+          out.push(p);
         } else out.push(...lines);
       } else if (c.matches('.c-curatedcta, .buttonset')) out.push(...buttonNodes(c, doc));
       else out.push(c);
@@ -501,7 +683,10 @@ function cellNodes(col, doc) {
  * with text-align: center; e.g. the rep-portal icon + link cells): the row gets `center`.
  */
 function centredColumn(col) {
-  const centred = (el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
+  const CENTRED = '.text-center, [style*="text-align: center"], [style*="text-align:center"]';
+  // a Large Headline line is centred by the box inside it (build-your-asc phase boxes)
+  const centred = (el) => !!el.closest(CENTRED) || (el.matches('.line') && !!el.querySelector(CENTRED)
+    && [...el.querySelectorAll(':scope > *')].every((c) => c.matches(CENTRED)));
   const images = [...col.querySelectorAll('.c-standalone-image img')];
   // the text too: rich text, Large Headline lines and an image's title (OR staff tiles,
   // instruments contact information: centred images over left-aligned text, not centred)
@@ -509,6 +694,77 @@ function centredColumn(col) {
     .filter((el) => text(el));
   const items = [...images, ...paragraphs];
   return items.length > 0 && items.every(centred);
+}
+
+/**
+ * A source column whose last text is rich text with a 5% bottom padding (build-your-asc
+ * phases: the gold "… months prior to first cases" lines): with every column of the row so,
+ * the row gets `cell-padding`.
+ */
+function paddedColumn(col, colctrl) {
+  const parts = [...col.querySelectorAll(CELL_COMPONENTS)]
+    .filter((c) => c.closest('.colctrl') === colctrl && text(c));
+  const last = parts[parts.length - 1];
+  const box = last && last.matches('.c-rich-text-editor') && last.querySelector(':scope > div');
+  return !!box && /padding-bottom:\s*5%/.test(box.getAttribute('style') || '');
+}
+
+/**
+ * Drops a `[[<tag>]…]` around all the text of a paragraph (only other tags before it): the row
+ * sizes the paragraph already (build-your-asc gold "36-48+ months prior to first cases": a
+ * `text-1-25` tag in a `p-1-25` section, 21.9px instead of 17.5px).
+ */
+function dropWholeTag(n, tag) {
+  const texts = [];
+  // (a list item: its own text, not its nested list's)
+  const walk = (node) => node.childNodes.forEach((c) => {
+    if (c.nodeType === 3) texts.push(c);
+    else if (c.nodeType === 1 && !(n.matches('li') && c.matches('ul, ol'))) walk(c);
+  });
+  walk(n);
+  const open = `[[${tag}]`;
+  const onlyTags = (value) => !value.replace(/\[\[[a-z0-9,-]+\]/g, '').trim();
+  // the opening tag in the leading text (other tags' openings only before it; the tags can
+  // be separate text nodes: "[[color-gold]", "[[text-1-25]")
+  let first = null;
+  let at = -1;
+  texts.every((t) => {
+    at = t.nodeValue.indexOf(open);
+    if (at >= 0) {
+      first = onlyTags(t.nodeValue.slice(0, at)) ? t : null;
+      return false;
+    }
+    return onlyTags(t.nodeValue);
+  });
+  const last = [...texts].reverse().find((t) => t.nodeValue.trim());
+  // (the tag can open and close in one text: "[[text-1-25]Inclusion:]")
+  if (!first || !last.nodeValue.trimEnd().endsWith(']')) return;
+  if (first === last && first.nodeValue.trimEnd().length <= at + open.length) return;
+  first.nodeValue = first.nodeValue.slice(0, at) + first.nodeValue.slice(at + open.length);
+  const end = last.nodeValue.lastIndexOf(']');
+  last.nodeValue = last.nodeValue.slice(0, end) + last.nodeValue.slice(end + 1);
+}
+
+/**
+ * A source column whose text is all right-aligned (rep-portal "HOME ▸" beside "BLUEPRINT 3D
+ * PLANNING"): with the last column of a row so, the row gets `right-last`.
+ */
+function rightColumn(col) {
+  const RIGHT = '[style*="text-align: right"], [style*="text-align:right"], .text-right';
+  const blocks = [...col.querySelectorAll('.c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li)')]
+    .filter((el) => text(el));
+  return blocks.length > 0 && blocks.every((el) => !!el.closest(RIGHT));
+}
+
+/**
+ * A row whose columns open with an image with a stryker.com border class (img.bor-dark_gray_40T,
+ * bor-gray: environmental programs' location maps, the icons under them without): the row
+ * gets `image-border` (the first image of each cell framed).
+ */
+function borderedImages(columns, colctrl) {
+  const firsts = columns.map((col) => [...col.querySelectorAll('.c-standalone-image')]
+    .find((c) => c.closest('.colctrl') === colctrl && c.querySelector('img'))).filter(Boolean);
+  return firsts.length > 0 && firsts.every((c) => c.hasAttribute('data-image-border'));
 }
 
 /** The size tag of a copy style: 'p-1-25' → 'text-1-25', '' when it sets no size. */
@@ -558,9 +814,19 @@ function rowCopyStyle(cells, doc) {
   const weight = {};
   copy.forEach((n) => { weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text(n).length; });
   let dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || '';
-  if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
+  // …and when some is 1.25x (the `text-1-25` tag is relative to the text around it: in a
+  // larger section copy it grows, ASC operating room "Advanced imaging modalities" 30.5px
+  // instead of 17.5px), each size gets its own tag
+  const relative = (style) => sizeTag(style) === 'text-1-25';
+  const ownTags = (n) => !sizeTag(n.copyStyle) || (relative(n.copyStyle) && !relative(dominant));
+  if (sizeTag(dominant) && copy.some(ownTags)) {
     dominant = dominant.split(',').map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(', ');
   }
+  // a paragraph all in 1.25x is sized by the row (the section style or its own tag below): no
+  // 1.25x tag of its own as well (the tag is relative, the two would multiply)
+  copy.filter((n) => relative(n.copyStyle)).forEach((n) => {
+    dropWholeTag(n, 'text-1-25');
+  });
   // a serif cell in a row that is not serif keeps the font in its tag (jr45 season 3 March:
   // the Egyptienne 24.5px intro in the grey box beside the faculty)
   const serif = (style) => (style || '').split(',').map((x) => x.trim()).includes('serif');
@@ -672,9 +938,15 @@ function columnRows(main, doc) {
       return;
     }
     const key = columns.map(columnWidth).join(',');
-    // linked images (the endoscopy resources specialty tiles): `media-pair`
-    const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')].some(linkedImage));
+    // linked images (the endoscopy resources specialty tiles, SKILL Assist MAX's images that
+    // open YouTube videos): `media-pair`; with a caption line under them, `image-captions`
+    const linkedImages = filled.flatMap((col) => [...col.querySelectorAll('.c-standalone-image')]
+      .filter((c) => linkedImage(c)));
+    const linked = linkedImages.length > 0;
+    const captioned = linkedImages.some((c) => [...c.querySelectorAll('.c-standalone-image-content > p.u-white-space-pre')]
+      .some((caption) => text(caption)));
     const boxes = boxVariant(columns);
+    if (!boxes) markTitleBars(columns, colctrl);
     // white text in a coloured box the row has no variant for (a colour per cell, a gradient)
     // stays in the text colour, so it stays readable
     if (!boxes) {
@@ -682,6 +954,9 @@ function columnRows(main, doc) {
         // only the boxes of this row (not a band around it, not a nested row's)
         const inBox = el.closest('.has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel');
         if (!inBox || inBox.matches('.c-full-bleed-panel') || inBox.closest('.colctrl') !== colctrl) return;
+        // a gradient box that becomes a box tag keeps its white text
+        const headline = el.closest('.c-largeheadline');
+        if ((headline && headlineBoxTag(headline)) || el.closest('[data-box-tag]')) return;
         if (el.firstChild && el.firstChild.nodeValue === '[[color-white]') el.firstChild.remove();
         if (el.lastChild && el.lastChild.nodeValue === ']') el.lastChild.remove();
         el.removeAttribute('data-white-tag');
@@ -692,11 +967,31 @@ function columnRows(main, doc) {
     const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)]
       .filter((c) => c.closest('.colctrl') === colctrl && (text(c) || c.matches('.sectionseparator'))) : [];
     const firstRule = parts.length > 1 && parts[parts.length - 1].matches('.sectionseparator');
-    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes,
-      firstRule ? 'left-border-bottom' : ''].filter(Boolean).join(', ');
-    const centred = filled.every(centredColumn);
+    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', captioned ? 'image-captions' : '',
+      stackRow(columns) ? 'stack' : '',
+      stackRow(columns) && mediaTextRow(columns) ? 'media-text' : '', boxes,
+      firstRule ? 'left-border-bottom' : '',
+      filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? 'right-last' : '',
+      borderedImages(columns, colctrl) ? 'image-border' : '']
+      .filter(Boolean).join(', ');
+    // captioned images (SKILL Assist MAX) keep their captions on the left, as on the source: the
+    // row is not centred even though the source centres the image itself
+    const centred = !captioned && filled.every(centredColumn);
+    const padded = filled.every((col) => paddedColumn(col, colctrl));
     const cells = columns.map((col) => cellNodes(col, doc));
-    const style = [rowCopyStyle(cells, doc), centred ? 'center' : ''].filter(Boolean).join(', ');
+    const style = [rowCopyStyle(cells, doc), centred ? 'center' : '', padded ? 'cell-padding' : '']
+      .filter(Boolean).join(', ');
+    cells.flat().filter((n) => n.boxTag).forEach((n) => {
+      // a blank last line the source keeps in the bar (giving-back "Advancing healthcare<br>
+      // &nbsp;": three lines, as the other bars) stays: a second break after the last one
+      const closing = (t) => t.nodeType === 3 && !t.textContent.split(']').join('').trim();
+      let last = n.lastChild;
+      while (last && closing(last)) last = last.previousSibling;
+      while (last && last.nodeType === 1 && last.nodeName !== 'BR' && last.lastChild) last = last.lastChild;
+      if (last && last.nodeName === 'BR') last.after(doc.createElement('br'));
+      n.prepend(doc.createTextNode(`[[${n.boxTag}]`));
+      n.append(doc.createTextNode(']'));
+    });
     const block = WebImporter.Blocks.createBlock(doc, {
       name: variant ? `Columns (${variant})` : 'Columns',
       cells: [cells],
@@ -786,6 +1081,77 @@ function gridRows(main) {
 }
 
 /**
+ * A banner (stryker.com .pDiv or .fullWidthImageHero with a text box and its image: a text
+ * column over the image's top left from 840px, the text first on phones) → `Hero Corp
+ * (banner)` in a section of its own: rows the image (the desktop one, picture source
+ * ≥840px), then the text. The column width (col-sm-4 / 6 / 8) → the section's `Text width`
+ * (33 / 50 / 67; none for the full width).
+ */
+function banners(main, doc) {
+  main.querySelectorAll('.pDiv, .fullWidthImageHero').forEach((banner) => {
+    const box = banner.querySelector('.textBoxId');
+    const img = banner.querySelector('.imgBoxId img');
+    if (!box || !img || !text(box)) return;
+    const source = banner.querySelector('.imgBoxId source[srcset]');
+    const src = source ? source.getAttribute('srcset').split(/\s+/)[0] : img.getAttribute('src');
+    // a Heading 2 line in the banner's large headline (rep-portal "Rep portal", 24.5px):
+    // its text in `[[text-1-75]…]`, as the copy around it is 14px
+    const subheads = [...box.querySelectorAll('.c-largeheadline .line h2')].map((h2) => text(h2)).filter(Boolean);
+    const heroRows = heroTextRows(heroText(box, doc));
+    if (!heroRows.rows.length) return;
+    const untag = (value) => value.replace(/\[\[[a-z0-9,-]+\]/g, '').split(']').join('').trim();
+    heroRows.rows.flat(2).flatMap((cell) => (cell.querySelectorAll ? [cell, ...cell.querySelectorAll('p, h2')] : []))
+      .filter((p) => ['P', 'H2'].includes(p.tagName) && subheads.includes(untag(p.textContent)))
+      .forEach((p) => {
+        p.prepend(doc.createTextNode('[[text-1-75]'));
+        p.append(doc.createTextNode(']'));
+      });
+    // a banner H1 (SKILL "SKILL Centers of Excellence") is the page title: the headings below
+    // stay as they are
+    if (box.querySelector('h1')) main.setAttribute('data-banner-title', '');
+    // a phone image of its own (another asset than the desktop one, rep-portal): a second row
+    const asset = (url) => (url || '').split('?')[0];
+    const rows = [[heroImage(img, doc, src)]];
+    if (source && asset(img.getAttribute('src')) !== asset(src)) rows.push([heroImage(img, doc)]);
+    const block = WebImporter.Blocks.createBlock(doc, {
+      name: 'Hero Corp (banner)',
+      cells: [...rows, ...heroRows.rows],
+    });
+    block.setAttribute('data-keep', 'section');
+    const props = {};
+    const cols = Number((/\bcol-sm-(\d+)\b/.exec(box.className) || [])[1] || 12);
+    if (cols < 12) props['Text width'] = String(Math.round((cols / 12) * 100));
+    // a text box holding a column row with one text column, the others empty (bunion, total
+    // ankle replacement: "Our patient education brochures…" in the right half, "It's important
+    // that you have…" in the left half, over the image's white side): the text as wide as its
+    // column, after the empty columns before it
+    const row = box.querySelector(':scope > div > .colctrl > .row, :scope > .colctrl > .row');
+    if (row) {
+      const rowCols = [...row.children].filter((el) => /\bcol-sm-\d+/.test(el.className));
+      const width = (el) => Number((/\bcol-sm-(\d+)\b/.exec(el.className) || [])[1] || 12);
+      const firstText = rowCols.findIndex((el) => text(el));
+      const alone = rowCols.slice(firstText + 1).every((el) => !text(el));
+      if (firstText >= 0 && rowCols.length > 1 && alone) {
+        const before = rowCols.slice(0, firstText).reduce((sum, el) => sum + width(el), 0);
+        const share = (n) => String(Math.round(((n / 12) * cols * 100) / 12));
+        if (before) props['Text position'] = `0, ${share(before)}, 0`;
+        // less the text box's own right padding (bunion "It's important that you have…": 12%
+        // of its column, so it stays clear of the image on the right)
+        const textBox = rowCols[firstText].querySelector('.c-rich-text-editor > div');
+        const padRight = Number((/padding-right:\s*(\d+(?:\.\d+)?)%/.exec(textBox ? textBox.getAttribute('style') || '' : '') || [])[1] || 0);
+        const colShare = (width(rowCols[firstText]) / 12) * (1 - padRight / 100);
+        props['Text width'] = String(Math.round((colShare * cols * 100) / 12));
+      }
+    }
+    if (heroRows.box) props['Text box'] = heroRows.box;
+    if (Object.keys(props).length) block.setAttribute('data-section-props', JSON.stringify(props));
+    // the image box's soft shadow (.bg-shadow: rep-portal, e-Lab): the `shadow` section style
+    if (banner.querySelector('.imgBoxId.bg-shadow')) block.setAttribute('data-section-style', 'shadow');
+    banner.replaceWith(block);
+  });
+}
+
+/**
  * A full-width image (stryker.com .imgBoxId.full-width-img, 22 boxes on 17 pages: the
  * container width, edge to edge on phones): its image in a section with the
  * `full-width-image` style, `shadow` for .bg-shadow (template CSS). The desktop image
@@ -858,6 +1224,16 @@ function titleFromHeading(heading, doc) {
     h1.append(bold);
   }
   if (size && !h4Enlarged) sizeTagged(h1, `text-${size}`, doc);
+  // a rich-text Heading 2 keeps its source look as the page H1: the H2's 24.5px (21px on
+  // phones on the source), in Egyptienne unless it is all bold (SKILL e-Lab "A 24/7 online
+  // training platform"; the H1 is 28px Futura bold)
+  if (!size && level === 'H2') {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+    const bold = [...h1.querySelectorAll('.futura-bold, b, strong')]
+      .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'));
+    const serif = squash(bold.map((b) => b.textContent).join('')) !== squash(h1.textContent);
+    sizeTagged(h1, serif ? 'text-1-75,serif' : 'text-1-75', doc);
+  }
   return h1;
 }
 
@@ -890,19 +1266,41 @@ export default function transform(hookName, element, payload) {
   const main = doc.querySelector('[role="main"]') || element;
 
   const path = sourcePath(payload);
+  main.querySelectorAll('a[href]').forEach((a) => {
+    const href = a.getAttribute('href').replace(/^https:\/\/www\.stryker\.com/, '');
+    if (SOURCE_REDIRECTS[href]) a.setAttribute('href', SOURCE_REDIRECTS[href]);
+  });
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
-  main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
+  // images with a border class (img.bor-dark_gray_40T: environmental programs' maps), marked
+  // on their component before the image classes go (borderedImages)
+  main.querySelectorAll('.c-standalone-image img[class*="bor-"]').forEach((img) => {
+    img.closest('.c-standalone-image').setAttribute('data-image-border', '');
+  });
   dropDamVideos(main);
+  banners(main, doc);
+  main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
   fullWidthImages(main, doc);
   spaceUrlColons(main, doc);
   const nav = localNav(main, doc);
+  // below the local nav, an empty Large Headline opening the page is its 30px of space
+  // (TEACH talks: before the logo): a spacer, as the empty Large Headlines further down
+  if (nav) {
+    const COMPONENT = '[class^="c-"], [class*=" c-"]';
+    const first = [...main.querySelectorAll(COMPONENT)]
+      .find((c) => !c.parentElement.closest(COMPONENT));
+    const empty = first && first.matches('.c-largeheadline') && !text(first)
+      && !first.querySelector('img, picture, video, iframe, [data-asset-path]');
+    if (empty) first.setAttribute('data-spacer', '');
+  }
   experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
   sectionTitles(main, doc);
   downloadTitles(main, doc);
   videoCaptions(main, doc);
   const hasTitle = !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
-    || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1');
+    || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1')
+    || main.hasAttribute('data-banner-title');
+  main.removeAttribute('data-banner-title');
   // no title: the first non-empty Large Headline or rich-text heading (in source order) is
   // the page H1 (e.g. the Mako thank-you page's "Thank you for registering." H4); any other
   // rich-text H1 is an H2 (the OR staff form has two), so the page has one H1

@@ -63,7 +63,7 @@
 .statistics .statistics-desc p {
   margin: 0;
   font-family: var(--body-font-family);
-  font-size: var(--heading-font-size-m);
+  font-size: var(--statistics-desc-size, var(--heading-font-size-m));
   line-height: var(--heading-line-height-h4);
   color: var(--color-black);
 }

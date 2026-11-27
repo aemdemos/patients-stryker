@@ -9,8 +9,9 @@
  * - phones: every field the full width of the form, 18px field text;
  * - from 600px (source 480px): 420px fields with 14px text, two side by side (430px
  *   apart) only where the form has room for both, else one per line.
- * It also holds the corp rules for every form (textarea height, rich-text rows) and for
- * the `stacked` variant from 600px (the nurses nomination form).
+ * It also holds the corp rules for every form (textarea height, rich-text rows), for
+ * the `stacked` variant from 600px (the nurses nomination form), for `with-aside` (the
+ * form 2/3 beside the section's text 1/3) and `two-thirds` (the form alone in the left 2/3).
  * The .mkto* class names are Marketo's, so kebab-case linting is disabled below.
  */
 
@@ -128,6 +129,79 @@ body.corp .marketo-form .mktoForm .mktoCheckboxList label {
 
 body.corp .marketo-form .mktoForm .mktoCheckboxList label::after {
   content: none;
+}
+
+/* two-thirds: the form in the left two thirds from 600px, its fields as the default form (two
+   per row where they fit; stryker.com col-sm-8: spine medical education on-demand webinars).
+   with-aside: the form in the left two thirds, the section's text after it (a contact or
+   social media column) in the right third, side by side from 600px (stryker.com col-sm-8 /
+   col-sm-4: spine medical education contact), 30px under the section above (15px more than
+   the section gap); its fields one per line */
+@media (width >= 600px) {
+  body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form:is(.with-aside, .two-thirds)) {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-top: var(--space-block);
+  }
+
+  body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form:is(.with-aside, .two-thirds)) > div {
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  body.corp .marketo-form:is(.with-aside, .two-thirds) {
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  body.corp .marketo-form.with-aside {
+    padding-block: 0 calc(var(--space-section) + var(--space-inset-m));
+  }
+
+  /* one field per line at every width, as on phones, each at most 420px (stryker.com: the
+     form in its 2/3 column lists its fields one under the other) */
+  body.corp .marketo-form.with-aside .mktoForm .mktoFormRow {
+    flex-direction: column;
+  }
+
+  body.corp .marketo-form.with-aside .mktoForm .mktoFormCol,
+  body.corp .marketo-form.with-aside .mktoForm .mktoFormCol:has(.mktoCheckboxList) {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: var(--form-field-max-width);
+  }
+
+  /* the column's text starts at the column's edge, level with the form's top */
+  body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form.with-aside) > .default-content-wrapper {
+    padding-inline-start: 0;
+  }
+}
+
+/* …the column's buttons are the source's engagement CTAs: 200px x 43px, 15px in (30px from
+   600px), the first 40px under the column's title, 99px apart (each CTA's own section
+   margins) */
+body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form.with-aside) > .default-content-wrapper > p.button-wrapper {
+  margin-block: calc(var(--space-inset-m) + var(--space-block)) calc(var(--space-section) + var(--space-inset-m));
+  padding-inline-start: var(--space-block);
+}
+
+body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form.with-aside) > .default-content-wrapper > p.button-wrapper > a.button {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--corp-engagement-cta-width);
+  min-height: var(--corp-engagement-cta-height);
+  margin: 0;
+}
+
+@media (width >= 600px) {
+  body.corp main > .section:has(> .marketo-form-wrapper > .marketo-form.with-aside) > .default-content-wrapper > p.button-wrapper {
+    padding-inline-start: var(--space-inset-l);
+  }
 }
 
 /* stylelint-enable selector-class-pattern */

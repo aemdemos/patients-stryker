@@ -44,11 +44,13 @@
  * fontsize-1-5em, fontsize-1-75em) or font span (urw-egyptienne) gets the matching section
  * style (p-1-25, p-1-5, p-1-75, serif), and an h3 all in urw-egyptienne adds `h-serif`; a
  * paragraph that is plain bold (<b>) as a whole gets a section of its own with the
- * `bold-body` style (bold in the body font); black `span.futura-bold` and `<b>` become
- * <strong>, gold buttons (a.btn-gold) become bold + italic links (the authoring convention
- * for the gold .button.accent), other buttons bold links, and standalone links
- * (span.standalone-link) bold + underline links (a.link-strong). Gold text (colour
- * #ffb500) is Bold + Italic (gold).
+ * `bold-body` style (bold in the body font); inline `span.futura-bold` becomes
+ * <strong><em> (Futura bold) and `<b>` <strong> (body-font bold), gold buttons (a.btn-gold)
+ * become bold + italic links (the
+ * authoring convention for the gold .button.accent), other buttons bold links, and
+ * standalone links (span.standalone-link) bold + underline links (a.link-strong).
+ * Gold text (colour #ffb500) is the `[[color-gold]…]` bracket tag around its formatting
+ * (bold + italic alone renders black in news articles).
  * Asset links (/content/dam/...) point at www.stryker.com, where the files live; links
  * that open in a new tab on the source get the `#_blank` marker.
  */
@@ -75,14 +77,10 @@ const COMPONENTS = [
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = {
-  // data-btn-style / data-section-style: the section style a link / a paragraph asks for
-  // (buildArticle adds it to its section)
-  A: ['href', 'data-btn-style'],
-  IMG: ['src', 'alt'],
-  TD: ['colspan', 'rowspan'],
-  TH: ['colspan', 'rowspan'],
-  P: ['data-section-style'],
-  LI: ['data-section-style'],
+  // data-btn-style: the section style a link asks for (buildArticle adds it to its section);
+  // data-blank-before: a blank line above its button on the source (the semantic transformer's
+  // Columns `button-gap`)
+  A: ['href', 'data-btn-style', 'data-blank-before'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'],
 };
 
 function text(el) {
@@ -128,11 +126,29 @@ const SIZE_STYLES = [
   // long-page-detail-corp: 28px and 35px copy (p-2 / p-2-5, template CSS)
   ['fontsize-2em', 'p-2'],
   ['fontsize-2-5em', 'p-2-5'],
+  // 49px: nested sizes only (1.75em in 2em, build-your-asc)
+  ['fontsize-3-5em', 'p-3-5'],
 ];
 
+// headings the source sizes with a span (the whole text in it): [tag, span class, style]
+const HEADING_SIZES = [
+  ['H2', 'fontsize-8em', 'h2-0-8'],
+  ['H2', 'fontsize-1-5em', 'h2-1-5'],
+  ['H1', 'fontsize-1-25em', 'h1-1-25'],
+  // build-your-asc "ASC New Build Playbook" (an H3 in 1.25em, then 1.75em inside it)
+  ['H3', 'fontsize-1-25em', 'h3-1-25'],
+  // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
+  // long-page-detail-corp-sections.js → titleFromHeading)
+  ['H1', 'fontsize-h4-2-5', 'h4-2-5'],
+];
+
+// the size tags a Heading 2 / 3 can hold (relative to the heading, template CSS)
+const HEADING_TAGS = ['text-1-25', 'text-1-5', 'text-1-75', 'text-2'];
 // source size spans on part of a line → the bracket size tags (styles-corp.css: text-1-25;
 // long-page-detail-corp template CSS: the larger sizes)
 const SIZE_TAGS = [
+  // 0.8em on part of a paragraph (TEACH talks: the 11.2px "• TSA • RSA" link groups)
+  ['fontsize-8em', 'text-0-8'],
   ['fontsize-1-25em', 'text-1-25'],
   ['fontsize-1-5em', 'text-1-5'],
   ['fontsize-1-75em', 'text-1-75'],
@@ -142,6 +158,16 @@ const SIZE_TAGS = [
 const FONT_STYLES = [
   ['urw-egyptienne', 'serif'],
 ];
+// the size of each source size span, relative to the text around it
+const SIZE_FACTORS = {
+  'fontsize-8em': 0.8,
+  'fontsize-1-25em': 1.25,
+  'fontsize-1-5em': 1.5,
+  'fontsize-1-75em': 1.75,
+  'fontsize-2em': 2,
+  'fontsize-2-5em': 2.5,
+  'fontsize-3-5em': 3.5,
+};
 
 /**
  * The copy section styles of a rich-text fragment: when the whole text of every
@@ -161,7 +187,16 @@ function copyStyles(root) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
     return squash(spans.map((span) => span.textContent).join('')) === squash(el.textContent);
   });
-  const size = SIZE_STYLES.find(([cls]) => covers(cls));
+  // nested size spans multiply, as on the source (TEACH talks "Course overview": a 1.5em
+  // span in a 1.75em span is 2.625em): the nearest size style; none when they cancel out
+  const covering = SIZE_STYLES.filter(([cls]) => covers(cls));
+  let size = covering[0];
+  if (covering.length > 1) {
+    const factor = covering.reduce((f, [cls]) => f * SIZE_FACTORS[cls], 1);
+    const nearest = SIZE_STYLES.reduce((best, entry) => (Math.abs(SIZE_FACTORS[entry[0]] - factor)
+      < Math.abs(SIZE_FACTORS[best[0]] - factor) ? entry : best));
+    size = Math.abs(factor - 1) < Math.abs(SIZE_FACTORS[nearest[0]] - factor) ? undefined : nearest;
+  }
   // the running font: Futura bold words (span.futura-bold → <strong>, Futura in any
   // section) don't count, e.g. room-design "Design your OR with Stryker and" (serif) + "see
   // the difference." (Futura bold) is a serif paragraph
@@ -183,58 +218,66 @@ function copyStyles(root) {
  * paragraph of the fragment is centred and its copy section styles (copyStyles).
  */
 /**
- * The text next to a node on its own line: its siblings up to the next <br> (or the
- * start / end of the parent) in one direction.
- */
-function sameLineText(node, direction) {
-  let value = '';
-  let sibling = node[direction];
-  while (sibling && sibling.nodeName !== 'BR') {
-    value += sibling.textContent;
-    sibling = sibling[direction];
-  }
-  return value.replace(/[\s\u00a0]+/g, '');
-}
-
-/**
- * Plain-bold (<b>) labels on a line of their own ("For investor inquiries:") are in the
- * body font on the source, while bold labels are Futura on the site. Both become
- * <strong> on import, so the label's paragraph is marked (data-section-style) and its
- * section gets the `body-font-bold` section style (styles-corp.css: plain bold in the
- * section stays Humanist bold; it replaces the removed `[[body-font]` bracket tag). A
- * paragraph that is plain bold as a whole gets the `bold-body` section style instead,
+ * Plain bold (<b>) is in the body font on the source (Humanist bold), while bold is Futura on
+ * the site: a label on a line of its own ("For investor inquiries:"), beside Futura bold
+ * (TEACH talks "Chapter 1: Positioning…") or beside normal text (jr45 "Residency:", TEACH
+ * "• Section 1 - …", CLOUT "ClotTriever Registry…"). Both become <strong> on import, so
+ * plain bold is wrapped in the `[[body-font]…]` bracket tag (scripts/span-tags.js →
+ * span.body-font, styles-corp.css). Not plain bold in Egyptienne or a link (the link style).
+ * A paragraph that is plain bold as a whole gets the `bold-body` section style instead,
  * unless wholeParagraphs is set (small print, which stays one section).
  */
 function tagPlainBoldLabels(root, wholeParagraphs) {
+  const doc = root.ownerDocument;
   [...root.querySelectorAll('b')].forEach((b) => {
-    if (b.closest('.futura-bold') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
-    if (!text(b) || sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling')) return;
-    const block = b.closest('p, li, h1, h2, h3, h4, h5, h6');
+    if (b.closest('.futura-bold, .standalone-link') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
+    // plain bold in Egyptienne text is Egyptienne bold on the source (foot & ankle toolkit "To
+    // learn more and request a copy…"): `[[serif]…]` inside the bold (the site's bold is Futura)
+    if (b.closest('.urw-egyptienne') && !b.closest('a') && text(b)) {
+      b.prepend(doc.createTextNode('[[serif]'));
+      b.append(doc.createTextNode(']'));
+      return;
+    }
+    if (b.closest('.urw-egyptienne, a') || b.querySelector('.urw-egyptienne, a') || !text(b)) return;
+    // (small print authored in divs, CLOUT "Indications for Use" / "Caution": a label all the same)
+    const block = b.closest(wholeParagraphs ? 'p, li, div, h1, h2, h3, h4, h5, h6' : 'p, li, h1, h2, h3, h4, h5, h6');
     if (!block || block.matches('h1, h2, h3, h4, h5, h6')) return;
     if (!wholeParagraphs && text(block) === text(b)) return;
-    block.setAttribute('data-section-style', 'body-font-bold');
+    b.before(doc.createTextNode('[[body-font]'));
+    b.after(doc.createTextNode(']'));
   });
 }
 
 /**
- * Gold text (inline colour #ffb500 / rgb(255,181,0)) is Bold + Italic (gold Futura bold, the
- * corp authoring convention; black Futura bold is plain Bold). A text is gold when its
- * nearest colour is gold (a gold span around a black one, e.g. a quote name, is not).
- * tagGoldText marks each gold run with a `span.gold-text` wrapper; goldBoldItalic turns the
- * marked runs into Bold + Italic once the source bold has become <strong>.
+ * Gold text (inline colour #ffb500 / rgb(255,181,0)) is the `[[color-gold]…]` bracket tag
+ * (corp authoring conventions: in news articles bold + italic alone is black, gold Futura
+ * text is bold + italic inside the tag). A text is gold when its nearest colour is gold
+ * (a gold span around a black one, e.g. a quote name, is not). The tag goes around the
+ * formatting it fills (`[[color-gold]<span class=futura-bold>…</span>]` →
+ * `[[color-gold]***…***]`), not past a paragraph, heading, list item or link.
  */
 const GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
+// the corp blue (#1c5687, `[[color-blue]…]`)
+const BLUE = /^(?:#1c5687|rgb\(\s*28\s*,\s*86\s*,\s*135\s*\))$/i;
 
 function ownColour(el) {
   const m = (el.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
   return m ? m[1].trim() : '';
 }
 
-/** Whether a node holds text in a colour other than gold. */
-function hasOtherColour(node) {
+// the corp purple (#85458a, `[[color-purple]…]`: CLOUT labels and figures, giving-back names)
+const PURPLE = /^(?:#85458a|rgb\(\s*133\s*,\s*69\s*,\s*138\s*\))$/i;
+// the corp teal (#4c7d7a, `[[color-teal]…]`: environmental programs title lines)
+const TEAL = /^(?:#4c7d7a|rgb\(\s*76\s*,\s*125\s*,\s*122\s*\))$/i;
+// the corp dark grey (#545857, `[[color-grey]…]`: build-your-asc icon titles)
+const DARK_GREY = /^(?:#545857|rgb\(\s*84\s*,\s*88\s*,\s*87\s*\))$/i;
+const LIGHT_GRAY = /^(?:#b2b4ae|rgb\(\s*178\s*,\s*180\s*,\s*174\s*\))$/i;
+
+/** Whether a node holds text in a colour other than the given one (default gold). */
+function hasOtherColour(node, own = GOLD) {
   if (node.nodeType !== 1) return false;
   const coloured = [node, ...node.querySelectorAll('[style*="color"]')]
-    .filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
+    .filter((el) => ownColour(el) && !own.test(ownColour(el)));
   return coloured.some((el) => [...el.childNodes].some((child) => (child.nodeType === 3
     ? child.textContent.trim() : !ownColour(child) && text(child))));
 }
@@ -287,73 +330,41 @@ function tagTextSize(root) {
         bracketTag([span], tag, root);
         return;
       }
+      // a size span inside a Heading 2 / 3 (not the heading's own size style): its tag, sized
+      // relative to the heading (template CSS; build-your-asc "ASC New Build Playbook" 1.75em)
+      const heading = span.closest('h2, h3');
+      if (heading) {
+        const own = HEADING_SIZES.filter(([t]) => t === heading.tagName).map(([, c]) => c);
+        if (!own.includes(cls) && HEADING_TAGS.includes(tag)) {
+          bracketTag([...span.childNodes], tag, root);
+        }
+        return;
+      }
       const block = span.closest('p, li');
       if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
       if (squash(block.textContent) === squash(span.textContent)) return;
-      bracketTag([span], tag, root);
+      // the span's content without the line breaks (alone or in formatting) at its ends, so they
+      // stay outside the tag (TEACH talks: "View more information<br>[[text-0-8]• TSA…]")
+      const nodes = [...span.childNodes];
+      const blank = (n) => !n.textContent.trim() && !(n.nodeType === 1 && n.querySelector('img'));
+      while (nodes.length && blank(nodes[0])) nodes.shift();
+      while (nodes.length && blank(nodes[nodes.length - 1])) nodes.pop();
+      bracketTag(nodes, tag, root);
     });
   });
 }
 
-/**
- * Wraps a run of sibling nodes in a `span.gold-text` marker (line breaks and spaces at
- * either end stay outside).
- */
-function markGold(nodes, root) {
-  const run = [...nodes];
-  const loose = (n) => n.nodeName === 'BR' || (n.nodeType === 3 && !n.textContent.trim());
-  while (run.length && loose(run[0])) run.shift();
-  while (run.length && loose(run[run.length - 1])) run.pop();
-  if (!run.length || !run.some((n) => n.textContent.trim())) return;
-  const mark = root.ownerDocument.createElement('span');
-  mark.className = 'gold-text';
-  run[0].before(mark);
-  mark.append(...run);
-}
-
-/**
- * The gold runs (span.gold-text, tagGoldText) as Bold + Italic: inside a bold run only the
- * italic is added, elsewhere both (bold inside the run then merges into it). Runs already
- * Bold + Italic throughout stay as they are. Call once the source bold is <strong>.
- */
-function goldBoldItalic(root) {
-  const doc = root.ownerDocument;
-  const inside = (node, tag) => {
-    for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
-      if (el.tagName === tag) return true;
-    }
-    return false;
-  };
-  root.querySelectorAll('span.gold-text').forEach((mark) => {
-    const texts = [];
-    const walker = doc.createTreeWalker(mark, 4);
-    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
-      if (t.textContent.trim()) texts.push(t);
-    }
-    if (!texts.length || texts.every((t) => inside(t, 'STRONG') && inside(t, 'EM'))) return;
-    const em = doc.createElement('em');
-    em.append(...mark.childNodes);
-    if (inside(mark, 'STRONG')) {
-      mark.append(em);
-      return;
-    }
-    const strong = doc.createElement('strong');
-    strong.append(em);
-    mark.append(strong);
-  });
-}
-
-function tagGoldText(root) {
+function tagColourText(root, own, tag) {
   const tagged = new Set();
-  const wrap = (nodes) => markGold(nodes, root);
+  const wrap = (nodes) => bracketTag(nodes, tag, root);
   // `tagged`: the nodes already inside a gold tag (a gold element in them needs no tag of its own)
   const wrapRun = (nodes) => {
     nodes.filter((n) => n.nodeType === 1).forEach((n) => tagged.add(n));
     wrap(nodes);
   };
   root.querySelectorAll('[style*="color"]').forEach((el) => {
-    if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
-    if (!hasOtherColour(el)) {
+    if (!own.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+    if (!hasOtherColour(el, own)) {
       wrapRun([el]);
       return;
     }
@@ -362,7 +373,7 @@ function tagGoldText(root) {
     // black span in a gold span)
     let run = [];
     [...el.childNodes].forEach((child) => {
-      if (hasOtherColour(child)) {
+      if (hasOtherColour(child, own)) {
         wrapRun(run);
         run = [];
       } else run.push(child);
@@ -371,10 +382,20 @@ function tagGoldText(root) {
   });
 }
 
+/** Gold text → `[[color-gold]…]`, purple → `[[color-purple]…]`. */
+function tagGoldText(root) {
+  tagColourText(root, GOLD, 'color-gold');
+  tagColourText(root, PURPLE, 'color-purple');
+  tagColourText(root, DARK_GREY, 'color-grey');
+}
+
 function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
+  // all right-aligned (environmental programs "*As of 12/31/24…"): the section style `right`
+  const right = blocks.length > 0
+    && blocks.every((el) => /text-align:\s*right/i.test(el.getAttribute('style') || ''));
   const size = copyStyles(root);
   const doc = root.ownerDocument;
   // links without an address (<a> wrappers, e.g. a Large Headline title) are plain text
@@ -418,8 +439,27 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   // convention for that CTA (a.link-strong): <strong><a><u>text</u></a></strong>
   const standalone = new Set();
   root.querySelectorAll('.standalone-link').forEach((span) => {
-    const a = span.closest('a') || span.querySelector('a');
-    if (a) standalone.add(a);
+    // every link of the span (TEACH talks: "• TSA • RSA • ReUnion S" in one span)
+    const links = span.closest('a') ? [span.closest('a')] : [...span.querySelectorAll('a')];
+    links.forEach((a) => standalone.add(a));
+  });
+  // the bullets of a link group (TEACH talks "• TSA • RSA • ReUnion S"): plain bold on the
+  // source (<b>: Humanist bold, not Futura) in the span's colour (#1c5687: `color-blue`)
+  root.querySelectorAll('.standalone-link').forEach((span) => {
+    if (span.closest('a')) return;
+    const walker = doc.createTreeWalker(span, 4);
+    const bullets = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (!n.parentElement.closest('a') && n.textContent.includes('•')) bullets.push(n);
+    }
+    let coloured = span;
+    while (coloured && coloured !== root && !ownColour(coloured)) coloured = coloured.parentElement;
+    const blue = coloured && coloured !== root && BLUE.test(ownColour(coloured));
+    bullets.forEach((n) => {
+      const bullet = n.splitText(n.textContent.indexOf('•'));
+      bullet.splitText(1);
+      bracketTag([bullet], blue ? 'color-blue,body-font' : 'body-font', root);
+    });
   });
   standalone.forEach((a) => {
     const u = doc.createElement('u');
@@ -447,12 +487,11 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   });
 
   // span.futura-bold → <strong>: on corp pages <strong> is Futura bold in the text colour
-  // (styles-corp.css); gold text → Bold + Italic (gold, the authoring convention).
-  // <b> → <strong>.
+  // (styles-corp.css). (news-detail-sections.js makes it <strong><em> for its own template
+  // CSS; without it bold + italic renders gold, the authoring convention.) <b> → <strong>.
   root.querySelectorAll('span.futura-bold').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('b').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('i').forEach((el) => rename(el, 'em'));
-  goldBoldItalic(root);
   root.querySelectorAll('span, font').forEach(unwrap);
   // bold inside bold (e.g. <b><span class="futura-bold">) is one bold run
   root.querySelectorAll('strong strong, em em').forEach(unwrap);
@@ -476,7 +515,7 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     }
     if (!text(el) && !el.querySelector('img')) el.remove();
   });
-  return { centred, size };
+  return { centred, right, size };
 }
 
 /** The rich-text content of a component as top-level block elements. */
@@ -549,20 +588,10 @@ function labelHeadingsToParagraphs(root) {
  * h2 headings the source sets at 0.8em (the whole text in span.fontsize-8em, e.g. a news
  * subtitle): their own section with the `h2-0-8` style (styles-corp.css).
  */
-// headings the source sizes with a span (the whole text in it): [tag, span class, style]
-const HEADING_SIZES = [
-  ['H2', 'fontsize-8em', 'h2-0-8'],
-  ['H2', 'fontsize-1-5em', 'h2-1-5'],
-  ['H1', 'fontsize-1-25em', 'h1-1-25'],
-  // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
-  // long-page-detail-corp-sections.js → titleFromHeading)
-  ['H1', 'fontsize-h4-2-5', 'h4-2-5'],
-];
-
 function smallHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   const styles = new Map();
-  root.querySelectorAll('h1, h2').forEach((h) => {
+  root.querySelectorAll('h1, h2, h3').forEach((h) => {
     if (!text(h)) return;
     const match = HEADING_SIZES.find(([tag, cls]) => {
       if (h.tagName !== tag) return false;
@@ -600,6 +629,26 @@ function splitStyledLeads(root) {
     // drop the blank-line breaks between the lead and the text
     while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
     p.before(lead);
+  });
+}
+
+/**
+ * A link-group label that shares its paragraph with the group's first link (CR hub
+ * "Product quality<br><br>" in its bold span, then the "Global quality" link): the label is
+ * a paragraph of its own, as the other group labels ("Human Rights", "Supply Chain").
+ */
+function splitGroupLabels(root) {
+  const doc = root.ownerDocument;
+  [...root.children].filter((el) => el.tagName === 'P').forEach((p) => {
+    const first = p.firstElementChild;
+    if (!first || first !== p.firstChild || !first.matches('.futura-bold') || first.querySelector('a')) return;
+    const breaks = [...first.querySelectorAll('br')];
+    if (breaks.length < 2 || !text(first)) return;
+    const rest = [...p.childNodes].slice(1);
+    if (!rest.some((n) => n.nodeType === 1 && (n.matches('a') || n.querySelector('a')))) return;
+    const label = doc.createElement('p');
+    label.append(first);
+    p.before(label);
   });
 }
 
@@ -676,15 +725,39 @@ function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
+  // a bold title line authored as a div of inline text (environmental programs "Climate",
+  // "Stryker locations*"): a paragraph, so its size and colour tags apply as in the others
+  const BLOCK = 'p, div, ul, ol, table, h1, h2, h3, h4, h5, h6, blockquote';
+  [...box.children].filter((el) => el.tagName === 'DIV' && !el.querySelector(BLOCK) && text(el)
+    && el.firstElementChild && el.firstElementChild === el.firstChild && el.firstElementChild.matches('.futura-bold'))
+    .forEach((div) => {
+      const p = doc.createElement('p');
+      p.append(...div.childNodes);
+      div.replaceWith(p);
+      // the teal title text in it ("Stryker locations*", "Doing more with less…")
+      tagColourText(p, TEAL, 'color-teal');
+      // the gold rule paragraph under it ("________"): on the title's next line, 2px under it
+      // as on stryker.com (the title is a div there, without a paragraph's space below)
+      const next = p.nextElementSibling;
+      if (next && next.tagName === 'P' && /^_{5,}$/.test(text(next))) {
+        // (without the title's own closing break: `<span class="urw-egyptienne"><br></span>`)
+        const breaks = [...p.querySelectorAll('br')];
+        const last = breaks[breaks.length - 1];
+        if (last && !text(p).endsWith('\n') && ![...p.childNodes].slice(-1)[0].textContent.trim()) last.remove();
+        p.append(doc.createElement('br'), ...next.childNodes);
+        next.remove();
+      }
+    });
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
+  splitGroupLabels(box);
   const plainBold = plainBoldParagraphs(box);
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
-  const { centred, size } = cleanRichText(box);
+  const { centred, right, size } = cleanRichText(box);
   const nodes = blockNodes(box, doc);
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
@@ -702,7 +775,9 @@ function richTextNodes(component, doc) {
   nodes.forEach((node) => {
     if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
   });
-  return { nodes, centred, size };
+  return {
+    nodes, centred, right, size,
+  };
 }
 
 /**
@@ -740,6 +815,14 @@ function imageNodes(component, doc) {
       h4.textContent = text(title);
       nodes.push(h4);
     });
+    // a caption line under the image (p.u-white-space-pre, body text on the source: SKILL
+    // Assist MAX "Watch SKILL Assist MAX in action with Pr. Laurent Spelle"): its paragraph
+    component.querySelectorAll('.c-standalone-image-content > p.u-white-space-pre').forEach((caption) => {
+      if (!text(caption)) return;
+      const p = doc.createElement('p');
+      p.textContent = text(caption);
+      nodes.push(p);
+    });
   }
   return nodes;
 }
@@ -765,6 +848,9 @@ function buttonNodes(component, doc) {
     // the btn-purple / btn-blue style (authoring conventions); marked here, set on the section
     const colour = ['btn-purple', 'btn-blue'].find((cls) => source.classList.contains(cls));
     if (colour) a.setAttribute('data-btn-style', colour);
+    // a blank line above the Button Set on the source (markBlankBeforeButtons): carried to the
+    // Columns `button-gap` variant by the semantic transformer
+    if (component.hasAttribute('data-blank-before')) a.setAttribute('data-blank-before', '');
     const strong = doc.createElement('strong');
     if (source.classList.contains('btn-gold')) {
       const em = doc.createElement('em');
@@ -847,6 +933,23 @@ function headlineNodes(component, doc) {
     return blocks.length > 1 ? blocks : [line];
   });
   const tags = segments.map(headlineTag);
+  // another vw size inside a line (CLOUT figures: a 5vw "99.4%" over 1.5vw labels in one line):
+  // its own `headline-N` tag inside the line's tag (not a span inside another sized span)
+  const VW = /\bfontsize-(\d+(?:-\d+)?)-?vw\b/;
+  segments.forEach((segment, i) => {
+    const own = (/\bheadline-(\d+(?:-\d+)?)\b/.exec(tags[i] || '') || [])[1];
+    if (!own) return;
+    [...segment.querySelectorAll('[class*="fontsize-"]')].forEach((span) => {
+      const n = (VW.exec(span.className) || [])[1];
+      if (!n || n === own || !text(span)) return;
+      const outer = span.parentElement.closest('[class*="fontsize-"]');
+      if (outer && segment.contains(outer) && VW.test(outer.className)) return;
+      // a span around the line's own size (Mako refreshers: 1.5vw > 2vw is 2vw) keeps no tag
+      if ([...span.querySelectorAll('[class*="fontsize-"]')].some((inner) => (VW.exec(inner.className) || [])[1] === own)) return;
+      span.classList.remove(...[...span.classList].filter((cls) => cls.startsWith('fontsize-')));
+      bracketTag([...span.childNodes], `headline-${n}`, segment);
+    });
+  });
   const centredSegments = segments.map((segment) => segment !== box && centredLine(segment));
   // a heading other than h1 in the line (rep-portal "Rep portal" h2): marked, so a page
   // title keeps it as a heading of its own
@@ -1037,8 +1140,8 @@ function videoTextColumns(video, rte, doc) {
 
 /**
  * A quote Large Headline under the grey box (survivor stories: the quote, a rule, the
- * name, the role) as the library's Video + quote cell: gold quote marks → Bold + Italic
- * (gold), Futura words → Bold, one paragraph per line (the
+ * name, the role) as the library's Video + quote cell: gold quote marks →
+ * `[[color-gold]` Bold + Italic `]`, Futura words → Bold, one paragraph per line (the
  * name a fully Bold paragraph).
  */
 function quoteNodes(headline, doc) {
@@ -1046,7 +1149,7 @@ function quoteNodes(headline, doc) {
   box.innerHTML = headline.innerHTML;
   // a gold quote mark at the start or end of a longer bold run
   // (<span class=futura-bold><span style="color: rgb(255,181,0)">”</span>The first…</span>)
-  // is a bold run of its own, so it can be Bold + Italic
+  // is a bold run of its own, so it can take the gold tag
   box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
     const bold = span.closest('.futura-bold');
     if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text(span)) || text(bold) === text(span)) return;
@@ -1061,13 +1164,12 @@ function quoteNodes(headline, doc) {
   box.querySelectorAll('.futura-bold').forEach((span) => {
     const strong = doc.createElement('strong');
     while (span.firstChild) strong.append(span.firstChild);
-    if (/^[“”"‘’']+$/.test(text(strong)) && strong.querySelector('.gold-text')) {
+    if (/^[“”"‘’']+$/.test(text(strong))) {
       const em = doc.createElement('em');
       em.append(strong);
       span.replaceWith(em);
     } else span.replaceWith(strong);
   });
-  goldBoldItalic(box);
   box.querySelectorAll('span, font').forEach(unwrap);
   box.querySelectorAll('strong strong').forEach(unwrap);
   // bold runs that touch are one run (two would merge on import and take the paragraph
@@ -1207,6 +1309,173 @@ function footnoteList(nodes, doc) {
 }
 
 /**
+ * The text of a hero (a slide overlay or a banner text box) as block cell content: Large
+ * Headline lines with their `headline-N` / `serif` / colour tags and rich text with its
+ * copy sizes and font as tags (`[[text-1-5,serif]…]`; a hero cell has no section style).
+ */
+// white and the near-white light grey (#edeeec, white for now) text over a hero image
+const HERO_WHITE = /^(?:#fff|#ffffff|white|#edeeec|rgb\(\s*255\s*,\s*255\s*,\s*255\s*\)|rgb\(\s*237\s*,\s*238\s*,\s*236\s*\))$/i;
+
+// a rich-text heading's size (stryker.com corp H1 / H2, 28px) and the copy size tags (px)
+const HERO_HEADING_SIZE = 28;
+const HERO_TEXT_SIZES = {
+  'text-1-5': 21, 'text-1-75': 24.5, 'text-2': 28, 'text-2-5': 35, 'text-3-5': 49,
+};
+// the source box colours a hero's `Text box` can take (stryker.com .bg-<colour>)
+const HERO_BOXES = ['gold', 'white', 'purple', 'teal', 'blue', 'dark-purple-gradient'];
+
+const HERO_BLACK = /^(?:#000|#000000|black|rgb\(\s*0\s*,\s*0\s*,\s*0\s*\))$/i;
+
+function heroText(container, doc) {
+  if (!container) return [];
+  // white text: the `[[color-white]…]` tag (the outermost white element of a run)
+  container.querySelectorAll('[style*="color"]').forEach((el) => {
+    if (!HERO_WHITE.test(ownColour(el)) || !text(el)) return;
+    // text a nested colour overrides is not white
+    const own = el.cloneNode(true);
+    own.querySelectorAll('[style*="color"]').forEach((c) => { if (HERO_BLACK.test(ownColour(c))) c.remove(); });
+    if (!text(own)) return;
+    const outer = el.parentElement.closest('[style*="color"]');
+    if (outer && container.contains(outer) && HERO_WHITE.test(ownColour(outer))) return;
+    // links keep their own colour (teal on the source): the tag around the runs between them
+    if (!el.querySelector('a[href]')) {
+      el.prepend(doc.createTextNode('[[color-white]'));
+      el.append(doc.createTextNode(']'));
+      return;
+    }
+    let run = [];
+    const flush = () => {
+      if (run.some((n) => n.textContent.trim())) bracketTag(run, 'color-white', container);
+      run = [];
+    };
+    [...el.childNodes].forEach((child) => {
+      if (child.nodeType === 1 && (child.matches('a[href]') || child.querySelector('a[href]'))) flush();
+      else run.push(child);
+    });
+    flush();
+  });
+  const tagCopy = (n) => {
+    if (typeof n.copyStyle !== 'string' || !n.copyStyle || !n.firstChild) return;
+    const own = n.copyStyle.split(',').map((v) => v.trim());
+    const size = own.find((v) => /^p-\d/.test(v));
+    const tags = [size ? `text-${size.slice(2)}` : '', own.includes('serif') ? 'serif' : ''].filter(Boolean);
+    if (!tags.length || n.matches('ul, ol')) return;
+    n.prepend(doc.createTextNode(`[[${tags.join(',')}]`));
+    n.append(doc.createTextNode(']'));
+  };
+  const TEXT = '.c-largeheadline, .c-rich-text-editor, .buttonset, .c-curatedcta';
+  // the colour of a source box the component's text is in (`Text box`, on its nodes)
+  const boxColour = (c) => {
+    const box = c.matches('.has-background, [class*="bg-"]') ? c : c.querySelector('.has-background');
+    const name = box && (/\bbg-([a-z-]+)/.exec(box.className) || [])[1];
+    return HERO_BOXES.includes(name) ? name : '';
+  };
+  return [...container.querySelectorAll(TEXT)]
+    .filter((c) => !c.parentElement.closest(TEXT) && text(c))
+    .flatMap((c) => {
+      // light grey hero text (#b2b4ae: the BACS banner lists, the 1788 urology slide)
+      tagColourText(c, LIGHT_GRAY, 'color-light-gray');
+      const colour = boxColour(c);
+      const mark = (nodes) => {
+        nodes.forEach((n) => { if (colour) n.heroBox = colour; });
+        return nodes;
+      };
+      if (c.matches('.c-largeheadline')) return mark(headlineNodes(c, doc));
+      // buttons (build-your-asc "TALK WITH US"): each link on its own line
+      if (c.matches('.buttonset, .c-curatedcta')) return buttonNodes(c, doc);
+      // rich text in vw sizes (CLOUT "CLOUT Registry", 5vw): the `headline-N` tag, as a Large
+      // Headline line (the outermost sized span; rich text otherwise only knows em sizes)
+      c.querySelectorAll('[class*="fontsize-"]').forEach((span) => {
+        const vw = (/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className) || [])[1];
+        if (!vw || !text(span) || span.parentElement.closest('[class*="-vw"], [class*="vw "]')) return;
+        span.classList.remove(...[...span.classList].filter((cls) => cls.startsWith('fontsize-')));
+        bracketTag([...span.childNodes], `headline-${vw}`, c);
+      });
+      // a size span in a heading (SKILL "SKILL Centers of Excellence": 1.25em of the 28px H1,
+      // 35px at every width): the copy size tag of that size, as the heading drops the span
+      c.querySelectorAll('h1, h2, h3').forEach((h) => {
+        h.querySelectorAll('[class*="fontsize-"]').forEach((span) => {
+          const factor = SIZE_FACTORS[(/\bfontsize-[\d-]+em\b/.exec(span.className) || [])[0]];
+          if (!factor || !text(span) || span.parentElement.closest('[class*="fontsize-"]')) return;
+          const px = factor * HERO_HEADING_SIZE;
+          const tag = Object.entries(HERO_TEXT_SIZES)
+            .sort((a, b) => Math.abs(a[1] - px) - Math.abs(b[1] - px))[0][0];
+          span.classList.remove(...[...span.classList].filter((cls) => cls.startsWith('fontsize-')));
+          bracketTag([...span.childNodes], tag, c);
+        });
+      });
+      const { nodes } = richTextNodes(c, doc);
+      nodes.forEach(tagCopy);
+      return mark(nodes);
+    });
+}
+
+/**
+ * The text rows of a hero and its `Text box`: when the text opens with a source box, the
+ * boxed text is the first row and the rest a second row; otherwise one row.
+ */
+function heroTextRows(nodes) {
+  const colour = nodes.length ? nodes[0].heroBox : '';
+  if (!colour) return { rows: nodes.length ? [[nodes]] : [], box: '' };
+  const end = nodes.findIndex((n) => n.heroBox !== colour);
+  const boxed = end < 0 ? nodes : nodes.slice(0, end);
+  const rest = end < 0 ? [] : nodes.slice(end);
+  return { rows: [[boxed], ...(rest.length ? [[rest]] : [])], box: colour };
+}
+
+/** A source image as a new <img> (alt text copied as is). */
+function heroImage(img, doc, src) {
+  const out = doc.createElement('img');
+  out.setAttribute('src', src || img.getAttribute('src'));
+  out.setAttribute('alt', img.getAttribute('alt') || '');
+  return out;
+}
+
+/**
+ * A single-slide `.c-autocarousel` → `Hero Corp` (the slide): rows desktop image, phone
+ * image (when the slide has one) or the slide's video, then the text. The overlay's inline
+ * box (top / margin-left / width) → the section's `Text position` (top, left, right in %),
+ * `.mobile_Bottom` → `Text on phones: below`.
+ * @returns {{block: Element, props: object}|null}
+ */
+function heroSlide(component, doc) {
+  const slide = component.querySelector('.carouselslide:not(.slick-cloned)') || component;
+  const desktop = slide.querySelector('.experienceFragment-ef img');
+  const mobile = slide.querySelector('.experienceFragment-ef-mobile img');
+  const first = desktop || mobile || slide.querySelector('img');
+  const videoComponent = slide.querySelector('.c-standalone-video');
+  const video = !desktop && videoComponent ? videoLink(videoComponent, doc) : null;
+  const rows = [];
+  if (video) rows.push([video]);
+  if (first) rows.push([heroImage(first, doc)]);
+  if (first && desktop && mobile) rows.push([heroImage(mobile, doc)]);
+  if (!rows.length) return null;
+  const overlay = slide.querySelector('.overlayparsys');
+  const heroRows = heroTextRows(heroText(overlay, doc));
+  rows.push(...heroRows.rows);
+  const props = {};
+  const style = overlay ? overlay.getAttribute('style') || '' : '';
+  const pct = (re) => {
+    const found = style.match(re);
+    return found ? String(parseFloat(found[1])) : null;
+  };
+  const top = pct(/top:\s*(-?\d+(?:\.\d+)?)%/i);
+  const left = pct(/margin-left:\s*(-?\d+(?:\.\d+)?)%/i);
+  const right = pct(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(-?\d+(?:\.\d+)?)%\s*\)/i);
+  if (top !== null || left !== null || right !== null) {
+    props['Text position'] = [top || 0, left || 0, right || 0].join(', ');
+  }
+  if (overlay && overlay.classList.contains('mobile_Bottom')) props['Text on phones'] = 'below';
+  // no phone image: stryker.com shows the text alone on phones
+  if (!mobile) props['Text on phones'] = 'alone';
+  if (heroRows.box) props['Text box'] = heroRows.box;
+  // one text colour on phones (build-your-asc: dark grey; 1788 thoracic, ThermaClear: black)
+  const phoneColour = overlay && (/\bmobile-text-(dark_gray|black)\b/.exec(overlay.className) || [])[1];
+  if (phoneColour) props['Text colour on phones'] = phoneColour.replace('_', '-');
+  return { block: WebImporter.Blocks.createBlock(doc, { name: 'Hero Corp', cells: rows }), props };
+}
+
+/**
  * Rebuilds <body> as the article content (steps 1.-5. above).
  * @param {Element} element the import body
  * @param {Object} [options]
@@ -1325,9 +1594,13 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     }
     if (keep && component.matches(keep)) {
       if (component.getAttribute('data-keep') === 'section') {
-        startSection('kept', component.getAttribute('data-section-style') || undefined)
-          .nodes.push(component);
+        const kept = startSection('kept', component.getAttribute('data-section-style') || undefined);
+        kept.nodes.push(component);
+        if (component.hasAttribute('data-section-props')) {
+          kept.props = JSON.parse(component.getAttribute('data-section-props'));
+        }
         component.removeAttribute('data-section-style');
+        component.removeAttribute('data-section-props');
         lastKept = sections[sections.length - 1];
         current = null;
         return;
@@ -1354,17 +1627,26 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     // section (consecutive ones merge into `spacer, large / xlarge` below). Right after a
     // rule, the rule with the space below it: a `separator, spacer` section (Mako surgeon
     // campaign "INSIGHTFUL DATA ANALYTICS", Mako thank-you page)
-    if (component.matches('.c-largeheadline') && !isFirst && !text(component)
+    // (the page's first one too when it follows the local nav: data-spacer, sections.js)
+    if (component.matches('.c-largeheadline') && (!isFirst || component.hasAttribute('data-spacer')) && !text(component)
       && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
-      && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-      sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer` : 'spacer', nodes: [] });
+      && (!component.closest('[class*="col-sm-"], [class*="col-md-"]')
+        // a percentage margin's spacer may be in a row of one column (page text: promoting
+        // global health)
+        || (component.hasAttribute('data-spacer-wide')
+          && component.closest('.row').parentElement.closest('.row')?.querySelectorAll(':scope > [class*="col-"]').length === 1))) {
+      // (a percentage margin on the source, blankLineSpacers in sections.js: `spacer, wide`)
+      const wide = component.hasAttribute('data-spacer-wide') ? ', wide' : '';
+      sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer${wide}` : `spacer${wide}`, nodes: [] });
       separatorNext = false;
       current = null;
       return;
     }
     if (component.matches('.c-autocarousel')) {
-      if (!component.querySelector('img')) return;
-      startSection('hero').nodes.push(component);
+      const hero = heroSlide(component, doc);
+      if (!hero) return;
+      startSection('hero').props = hero.props;
+      current.nodes.push(hero.block);
       current = null;
       return;
     }
@@ -1569,9 +1851,12 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       current.nodes.push(...nodes);
       return;
     }
-    const { nodes, centred, size } = component.matches('.c-rich-text-editor')
+    const {
+      nodes, centred, right, size,
+    } = component.matches('.c-rich-text-editor')
       ? richTextNodes(component, doc)
       : { nodes: headlineNodes(component, doc), centred: false };
+    const align = (centred && 'center') || (right && 'right') || '';
     if (!nodes.length) return;
     // a run of rich text with the same alignment and copy styles is one section; the
     // copy styles sit next to `center` (e.g. `center, p-1-25, serif`). A plain-bold
@@ -1580,8 +1865,8 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
       const extra = node.headingStyle ? [node.headingStyle]
         : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
-      const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
-      const kind = [centred ? 'center' : 'body', ...extra].join(' ');
+      const styles = [align, ...extra].filter(Boolean);
+      const kind = [align || 'body', ...extra].join(' ');
       // an Egyptienne h3 (or h2) adds `h-serif` to its section (it stays with the copy around
       // it); a Futura h3 in the same run starts a new section
       let h3Font = null;
@@ -1652,24 +1937,20 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
   sections.filter((section) => section.nodes.length || section.kind === 'spacer').forEach((section, i) => {
     if (i > 0) out.push(doc.createElement('hr'));
     out.push(...section.nodes);
-    // a section holding purple / blue buttons gets the btn-purple / btn-blue style, one
-    // holding a plain-bold label (tagPlainBoldLabels) the body-font-bold style
-    const MARKS = ['data-btn-style', 'data-section-style'];
-    const markSelector = MARKS.map((m) => `[${m}]`).join(', ');
+    // a section holding purple / blue buttons gets the btn-purple / btn-blue style
     const marked = section.nodes.flatMap((node) => (node.nodeType === 1
-      ? [...(node.matches(markSelector) ? [node] : []), ...node.querySelectorAll(markSelector)]
-      : []));
-    const markStyles = marked.flatMap((el) => MARKS.map((m) => el.getAttribute(m)).filter(Boolean));
-    [...new Set(markStyles)].forEach((style) => {
-      if ((section.style || '').split(', ').includes(style)) return;
+      ? [...(node.matches('[data-btn-style]') ? [node] : []), ...node.querySelectorAll('[data-btn-style]')] : []));
+    [...new Set(marked.map((a) => a.getAttribute('data-btn-style')))].forEach((style) => {
       section.style = [section.style, style].filter(Boolean).join(', ');
     });
-    marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
+    marked.forEach((a) => a.removeAttribute('data-btn-style'));
     section.nodes.forEach((node) => { if (node.nodeType === 1) node.removeAttribute('data-keep'); });
-    if (section.style) {
+    // the section's style, then its properties (the hero's `Text position` …)
+    const props = section.props || {};
+    if (section.style || Object.keys(props).length) {
       out.push(WebImporter.Blocks.createBlock(doc, {
         name: 'Section Metadata',
-        cells: { style: section.style },
+        cells: { ...(section.style ? { style: section.style } : {}), ...props },
       }));
     }
   });
@@ -1679,5 +1960,6 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
 // helpers for the long-page-detail-corp column rows (long-page-detail-corp-sections.js)
 export {
   SIZE_STYLES, SIZE_TAGS, text, cleanRichText, richTextNodes, imageNodes, buttonNodes,
-  headlineNodes, titleHeading, blockNodes, absoluteAsset, newTabHref,
+  headlineNodes, titleHeading, blockNodes, absoluteAsset, newTabHref, heroText, heroTextRows,
+  heroImage,
 };
