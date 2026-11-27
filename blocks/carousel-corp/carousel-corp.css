@@ -18,9 +18,13 @@ body.corp .carousel-corp .carousel-corp-slide {
   min-width: 0;
 }
 
-/* the slides' own blocks keep no outer gap inside the carousel */
+/* the slides' own blocks keep no outer gap inside the carousel, also when the slide is a
+   fragment (stryker.com: each slide an Experience Fragment) — its sections and their blocks */
 body.corp .carousel-corp .carousel-corp-slide > div,
-body.corp .carousel-corp .carousel-corp-slide > div > .block {
+body.corp .carousel-corp .carousel-corp-slide > div > .block,
+body.corp .carousel-corp .carousel-corp-slide .fragment > .section,
+body.corp .carousel-corp .carousel-corp-slide .fragment > .section > div,
+body.corp .carousel-corp .carousel-corp-slide .fragment > .section > div > .block {
   margin-block: 0;
 }
 
