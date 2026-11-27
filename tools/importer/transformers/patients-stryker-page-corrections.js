@@ -1200,6 +1200,59 @@ const CORRECTIONS = {
   ],
 
   // single news-detail pages
+  // life-saving-journey-inspires-community
+  'https://www.stryker.com/us/en/emergency-care/news/2024/life-saving-journey-inspires-community.html': [
+    (m, d) => {
+      tags(m, "stryker:business-unit/ems/news/articles, stryker:content-type/news, stryker:business-unit/ems/news");
+      // a spacer section under the title (as in DA)
+      const titleSection = sectionOf(m, m.querySelector('h1')); const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+      spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, 'spacer');
+      // body-l (17.5px copy, 21px / 24.5px subheads) on the full-width layout; body-l sets the sizes, so the size styles go
+      m.setAttribute('data-meta-theme', 'full-width, body-l');
+      [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => { const v = txt(td).split(',').map((x) => x.trim()); if (!v.some((x) => BODY_L_REPLACES.includes(x))) return; const rest = v.filter((x) => !BODY_L_REPLACES.includes(x)); if (rest.length) td.textContent = rest.join(', '); else t.remove(); }));
+      // a section break above each subhead, for space above it
+      m.querySelectorAll('h2').forEach((h2) => breakBefore(m, d, h2, null));
+      // the references: a numbered list without the typed numbers, small print `disclaimer`
+      stripListNumbers(m, find(m, 'li', '1. Beseems'));
+      style(m, d, find(m, 'li', 'Beseems'), 'disclaimer');
+      // a spacer section above the small print
+      spacerBefore(m, d, find(m, 'li', 'Beseems'), 'spacer');
+    },
+  ],
+  // acute-care-training-and-education-resources
+  'https://www.stryker.com/us/en/acute-care/news/acute-care-training-and-education-resources.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:business-unit/acute-care/news, stryker:business-unit/acute-care/news/articles");
+      // a spacer section under the title (as in DA)
+      const titleSection = sectionOf(m, m.querySelector('h1')); const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+      spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, 'spacer');
+      // body-l (17.5px copy, 21px / 24.5px subheads) on the full-width layout; body-l sets the sizes, so the size styles go
+      m.setAttribute('data-meta-theme', 'full-width, body-l');
+      [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => { const v = txt(td).split(',').map((x) => x.trim()); if (!v.some((x) => BODY_L_REPLACES.includes(x))) return; const rest = v.filter((x) => !BODY_L_REPLACES.includes(x)); if (rest.length) td.textContent = rest.join(', '); else t.remove(); }));
+      // a section break above each subhead, for space above it
+      m.querySelectorAll('h2').forEach((h2) => breakBefore(m, d, h2, null));
+      // a spacer section above the small print
+      spacerBefore(m, d, [...m.querySelectorAll('table')].filter(isSectionMetadata).find((t) => txt(t).includes('disclaimer')), 'spacer');
+    },
+  ],
+  // nurse-led-innovation-and-the-power-of-partnership
+  'https://www.stryker.com/us/en/acute-care/news/nurse-led-innovation-and-the-power-of-partnership.html': [
+    (m, d) => {
+      tags(m, "stryker:content-type/news, stryker:custom/acute-care/acute-care-bu-news");
+      // a spacer section under the title (as in DA)
+      const titleSection = sectionOf(m, m.querySelector('h1')); const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+      spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, 'spacer');
+      // body-l (17.5px copy, 21px / 24.5px subheads) on the full-width layout; body-l sets the sizes, so the size styles go
+      m.setAttribute('data-meta-theme', 'full-width, body-l');
+      [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => { const v = txt(td).split(',').map((x) => x.trim()); if (!v.some((x) => BODY_L_REPLACES.includes(x))) return; const rest = v.filter((x) => !BODY_L_REPLACES.includes(x)); if (rest.length) td.textContent = rest.join(', '); else t.remove(); }));
+      // a section break above each subhead, for space above it
+      m.querySelectorAll('h2').forEach((h2) => breakBefore(m, d, h2, null));
+      // a spacer section above the small print
+      spacerBefore(m, d, [...m.querySelectorAll('table')].filter(isSectionMetadata).find((t) => txt(t).includes('disclaimer')), 'spacer');
+      // the references: a numbered list without the typed numbers (as in DA)
+      const refs = [...m.querySelectorAll('p')].filter((p) => /^\d+\s/.test(txt(p)) && sectionOf(m, p).some((n) => isSectionMetadata(n) && txt(n).includes('disclaimer'))); if (refs.length) { const ol = d.createElement('ol'); refs[0].before(ol); refs.forEach((p) => { const li = d.createElement('li'); li.append(...p.childNodes); li.normalize(); if (li.firstChild && li.firstChild.nodeType === 3) li.firstChild.textContent = li.firstChild.textContent.replace(/^\s*\d+\s+/, ''); ol.append(li); p.remove(); }); }
+    },
+  ],
   // stryker-highlights-commitment-to-advanced-digital-healthcare
   'https://www.stryker.com/us/en/about/news/2021/stryker-highlights-commitment-to-advanced-digital-healthcare.html': [
     (m, d) => {
