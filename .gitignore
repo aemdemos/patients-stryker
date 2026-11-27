@@ -20,3 +20,5 @@ tools/importer/reports/
 # Playwright / a11y test artifacts
 playwright-report/
 test-results/
+# keyboard test runs (kept per run, local only)
+a11y-results/

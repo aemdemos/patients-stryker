@@ -9,6 +9,8 @@
     "lint": "npm run lint:js && npm run lint:css && npm run lint:breakpoints",
     "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
     "test:a11y": "node tests/a11y/run.js",
+    "test:a11y:keyboard": "node tests/a11y/run-keyboard.js",
+    "test:a11y:keyboard:report": "node tests/a11y/report-keyboard.js",
     "postinstall": "playwright install chromium",
     "build:fragment-index": "node tools/importer/build-fragment-index.js",
     "lint:breakpoints": "node tools/check-breakpoints.mjs"
