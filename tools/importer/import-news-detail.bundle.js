@@ -3592,6 +3592,45 @@ var CustomImportScript = (() => {
       p.replaceWith(lead, ol);
     });
   }
+  function photoPairColumns(main, doc, el) {
+    var _a;
+    const first = el && el.closest("p");
+    if (!first) return;
+    const paras = [first];
+    while (paras.length < 4 && ((_a = paras[paras.length - 1].nextElementSibling) == null ? void 0 : _a.tagName) === "P") {
+      paras.push(paras[paras.length - 1].nextElementSibling);
+    }
+    if (paras.length < 4) return;
+    const table = sectionOf(main, first).find(isSectionMetadata);
+    const hr = doc.createElement("hr");
+    first.before(hr);
+    if (table) hr.before(table);
+    const after = paras[3].nextElementSibling;
+    const block = WebImporter.Blocks.createBlock(doc, { name: "Columns", cells: [[[paras[0], paras[1]], [paras[2], paras[3]]]] });
+    hr.after(block);
+    if (after && after.tagName !== "HR") block.after(doc.createElement("hr"));
+  }
+  function sizedTextToH3(main, doc) {
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => {
+      const row = [...t.querySelectorAll("tr")].find((tr) => txt(tr.cells[0]).toLowerCase() === "style");
+      const values = row ? txt(row.cells[1]).split(",").map((v) => v.trim()) : [];
+      if (!values.includes("p-1-5")) return;
+      const serif = values.includes("serif");
+      sectionOf(main, t).filter((n) => n.tagName === "P").forEach((para) => {
+        const h3 = retag(main, doc, para, "h3");
+        const only = h3.children.length === 1 && h3.firstElementChild.matches("strong, b") && txt(h3.firstElementChild) === txt(h3);
+        if (only) h3.firstElementChild.replaceWith(...h3.firstElementChild.childNodes);
+        if (serif && !h3.querySelector("em")) {
+          const em = doc.createElement("em");
+          em.append(...h3.childNodes);
+          h3.append(em);
+        }
+      });
+      const rest = values.filter((v) => v !== "p-1-5" && !(serif && v === "serif"));
+      if (rest.length) row.cells[1].textContent = rest.join(", ");
+      else t.remove();
+    });
+  }
   function tags(main, value) {
     main.setAttribute("data-meta-tags", value);
   }
@@ -4302,6 +4341,163 @@ var CustomImportScript = (() => {
       }
     ],
     // single news-detail pages
+    // stryker-highlights-commitment-to-advanced-digital-healthcare
+    "https://www.stryker.com/us/en/about/news/2021/stryker-highlights-commitment-to-advanced-digital-healthcare.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/Features");
+      }
+    ],
+    // fda-authorizes-production-of-non-sterile-hoods-and-togas
+    "https://www.stryker.com/us/en/about/news/2020/fda-authorizes-production-of-non-sterile-hoods-and-togas.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/covid-19");
+      }
+    ],
+    // stryker-is-a-gallup-exceptional-workplace-for-the-13th-year
+    "https://www.stryker.com/us/en/about/news/2020/stryker-is-a-gallup-exceptional-workplace-for-the-13th-year.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // people-magazine-names-stryker-as-one-of-its-companies-that-care
+    "https://www.stryker.com/us/en/about/news/2021/people-magazine-names-stryker-as-one-of-its-companies-that-care-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/awards, stryker:content-type/news, stryker:content-type/news/Features, stryker:content-type/corporatenews, stryker:content-type/news/cr");
+        superscript(m, d);
+        m.querySelectorAll('a[href="/us/en/about/corporate-responsibility"] u').forEach((u) => {
+          u.textContent = u.textContent.toUpperCase();
+        });
+      }
+    ],
+    // people-magazine-names-stryker-as-one-of-its-companies-that-care-2022
+    "https://www.stryker.com/us/en/about/news/2022/people-magazine-names-stryker-as-one-of-its-companies-that-care-2022.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        superscript(m, d);
+      }
+    ],
+    // stryker-announces-definitive-agreement-to-acquire-inari-medical-inc
+    "https://www.stryker.com/us/en/about/news/2025/stryker-announces-definitive-agreement-to-acquire-inari-medical-inc.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        dropSpacerAfter(m, m.querySelector("h1"));
+      }
+    ],
+    // stryker-signs-definitive-agreement-acquire-amplitude-vascular-systems
+    "https://www.stryker.com/us/en/about/news/2026/stryker-signs-definitive-agreement-acquire-amplitude-vascular-systems.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        socialShareAfter(m, d, find(m, "p", "Read full press release here"));
+      }
+    ],
+    // rebuilding-what-s-been-broken
+    "https://www.stryker.com/us/en/about/news/features/rebuilding-what-s-been-broken-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/Features");
+        m.querySelectorAll("ol > li").forEach((li) => {
+          const t = li.firstChild;
+          if (t && t.nodeType === 3) t.textContent = t.textContent.replace(/^\s*\d+:\s*/, "");
+        });
+        style(m, d, m.querySelector("ol > li"), "disclaimer");
+      }
+    ],
+    // revealing-character-rebuilding-lives
+    "https://www.stryker.com/us/en/about/news/features/revealing-character--rebuilding-lives-.html": [
+      (m, d) => {
+        tags(m, "stryker:Stryker-SEO-Tags/covid19, stryker:content-type/news, stryker:Stryker-SEO-Tags/coronavirus, stryker:Stryker-SEO-Tags/covid-19, stryker:content-type/news/Features, stryker:content-type/news/covid-19");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (v.includes("join")) {
+            const rest = v.filter((x) => x !== "join");
+            if (rest.length) td.textContent = rest.join(", ");
+            else t.remove();
+          }
+        }));
+        sizedTextToH3(m, d);
+      }
+    ],
+    // trees-landfills-and-the-environment
+    "https://www.stryker.com/us/en/about/news/features/trees--landfills-and-the-environment.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/Features");
+        style(m, d, m.querySelector("h1"), "h1-42");
+      }
+    ],
+    // bpci-a-team-last-but-not-least
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/_bpci_-a-team-_-last-but-not-least-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // bpci-advanced-calendar-updated
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/bpci-advanced-calendar--updated-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // meet-the-bpci-a-team-take-two
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/meet-the--bpci--a-team---take-two-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // meet-the-bpci-a-team-take-four
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/meet-the-_bpci_-a-team--take-four-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // meet-the-bpci-a-team-take-three
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/meet-the-_bpci_-a-team--take-three-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // target-tetra-gets-510k-clearance
+    "https://www.stryker.com/us/en/neurovascular/news/target-tetra-gets-510k-clearance.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:custom/neurovascular/neurovascular-bu-news");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (v.includes("join")) {
+            const rest = v.filter((x) => x !== "join");
+            if (rest.length) td.textContent = rest.join(", ");
+            else t.remove();
+          }
+        }));
+      }
+    ],
+    // stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-a
+    "https://www.stryker.com/us/en/about/news/2021/stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-a.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        dropEmptyLastCells(m, "columns");
+      }
+    ],
+    // changing-the-course-of-healthcare-in-under-resourced-communities
+    "https://www.stryker.com/us/en/about/news/features/changing-the-course-of-healthcare-in-under-resourced-communities.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/Features");
+        photoPairColumns(m, d, m.querySelector('a[href*="Rwanda%20surgical%20center%20img-2"]'));
+        photoPairColumns(m, d, m.querySelector('a[href*="Jess%20F%20with%20baby%20Sandrine"]'));
+        sizedTextToH3(m, d);
+      }
+    ],
     // cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females
     "https://www.stryker.com/us/en/sage/news/2021/cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females.html": [
       (m, d) => {
