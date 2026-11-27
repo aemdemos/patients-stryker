@@ -11,7 +11,7 @@ import newsDetailSectionsTransformer from './transformers/news-detail-sections.j
 import newsTypographyTransformer from './transformers/news-typography.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
-import pageCorrectionsTransformer from './transformers/patients-stryker-page-corrections.js';
+import pageCorrectionsTransformer from './transformers/corp-page-corrections.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
@@ -130,7 +130,7 @@ export default {
     // keywords, as on the source page (<meta name="keywords">, e.g. "News, Our impact")
     const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
     if (keywords) meta.Keywords = keywords;
-    // metadata a page correction sets (patients-stryker-page-corrections.js: `data-meta-<name>`
+    // metadata a page correction sets (corp-page-corrections.js: `data-meta-<name>`
     // on the body, e.g. the `tags` authors added in DA, which the source page does not carry);
     // an empty value removes the row
     const dropMeta = [];

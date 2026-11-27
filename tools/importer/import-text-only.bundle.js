@@ -3269,7 +3269,7 @@ var CustomImportScript = (() => {
     dropSpacersBeforeSeparators(element);
   }
 
-  // tools/importer/transformers/patients-stryker-page-corrections.js
+  // tools/importer/transformers/corp-page-corrections.js
   var txt = (el) => (el ? el.textContent : "").replace(/[\s ]+/g, " ").trim();
   var isBlank = (n) => n && n.nodeType === 3 && !n.textContent.trim();
   function nextOf(n) {
