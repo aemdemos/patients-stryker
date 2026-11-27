@@ -6210,6 +6210,23 @@ var CustomImportScript = (() => {
     });
     return "";
   }
+  function dropEmptySections(main) {
+    const doc = main.ownerDocument;
+    let prev = null;
+    main.querySelectorAll("hr").forEach((hr) => {
+      if (!prev) {
+        prev = hr;
+        return;
+      }
+      const range = doc.createRange();
+      range.setStartAfter(prev);
+      range.setEndBefore(hr);
+      const between = range.cloneContents();
+      const empty = !between.textContent.trim() && !between.querySelector("img, picture, video, iframe, table, a, [data-keep]");
+      if (empty) hr.remove();
+      else prev = hr;
+    });
+  }
   function productFragments(main, doc, xfs) {
     const slots = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment"));
     if (!xfs || slots.length !== xfs.length) return false;
@@ -7700,6 +7717,7 @@ var CustomImportScript = (() => {
       });
       executeTransformers("afterTransform", main, payload);
       const slideReport = STD_DRAFT_IMPORT && stdProductPage(document) ? slideFragments(main, document, new URL(params.originalURL).pathname) : "";
+      if (stdProductPage(document)) dropEmptySections(main);
       edsLinkPaths(main);
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);

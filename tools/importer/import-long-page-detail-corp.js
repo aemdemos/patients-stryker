@@ -12,6 +12,7 @@ import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
 import longPageDetailSectionsTransformer, {
   keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths, markCentredRows, slideFragments,
+  dropEmptySections,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import corpTextMarkersTransformer, { STD_DRAFT_IMPORT, STD_REVIEW_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
@@ -136,6 +137,8 @@ export default {
     // in review, product pages: the slides' media as links to their XF fragments
     const slideReport = STD_DRAFT_IMPORT && stdProductPage(document)
       ? slideFragments(main, document, new URL(params.originalURL).pathname) : '';
+    // in review, product pages: no empty sections (two section breaks in a row are one)
+    if (stdProductPage(document)) dropEmptySections(main);
     // links to site pages: their EDS paths (after the cleanup's .html rewrite)
     edsLinkPaths(main);
 

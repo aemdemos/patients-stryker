@@ -313,6 +313,31 @@ export function slideFragments(main, document, page) {
 }
 
 /**
+ * In review (product pages, staging build): no empty sections. Two section breaks with nothing
+ * between them (a carousel's own breaks next to the page's, LIFEPAK 35) are one break; space
+ * between sections is the section gap, or a `spacer` section where the source has more.
+ * @param {Element} main The page content
+ */
+export function dropEmptySections(main) {
+  const doc = main.ownerDocument;
+  let prev = null;
+  main.querySelectorAll('hr').forEach((hr) => {
+    if (!prev) {
+      prev = hr;
+      return;
+    }
+    const range = doc.createRange();
+    range.setStartAfter(prev);
+    range.setEndBefore(hr);
+    const between = range.cloneContents();
+    const empty = !between.textContent.trim()
+      && !between.querySelector('img, picture, video, iframe, table, a, [data-keep]');
+    if (empty) hr.remove();
+    else prev = hr;
+  });
+}
+
+/**
  * In review (product pages, staging build): every XF the page places becomes a Fragment block
  * in its place (docs/standardisation/fragment.md), matched to the export's list by order (the
  * page shows its XF components in the export's order). A slot count that doesn't match the
