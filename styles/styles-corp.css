@@ -71,6 +71,8 @@
   --corp-local-nav-arrow-top: 16px; /* the up arrow's top below the card's top */
   --corp-gold-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%); /* source .bg-golden-gradient */
   --corp-dark-purple-gradient: linear-gradient(90deg, var(--color-secondary), #594b61); /* source .bg-dark-purple-gradient */
+  --corp-hotspot-size: 56px; /* measured: stryker.com interactive image hotspot icon (ImageMapEffect_icon1_light_up_touch), 56 x 56px at every width */
+  --corp-hotspot-opacity: 0.6; /* measured: that icon's opacity */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;

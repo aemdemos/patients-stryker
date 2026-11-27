@@ -24,7 +24,9 @@
  *   - page heroes (.c-page-hero): their content (H1, subhead, text, image) as text
  *   - engagement CTAs (.c-engagementcta): their description, and each button as a button
  *     link (label: its text or its icon's alt text; the icon is not imported)
- *   - interactive images (.interactivemedia): the image (its hotspots are not imported)
+ *   - interactive images (.interactivemedia): `Image Hotspots Corp`, the image and one row
+ *     per hotspot of its Dynamic Media image map (label | left, top % | link); without a map,
+ *     the image alone
  *   - number counters (.numbercounter): the figure in bold and its label, as text
  *   - event calendars (.c-event): dropped (the events load in the browser on stryker.com)
  */
@@ -503,6 +505,81 @@ function engagementCtas(main, doc, h) {
   });
 }
 
+/**
+ * The image map of a Dynamic Media interactive image, as the stryker.com viewer reads it
+ * (`<asset>?req=set,json`: the image size and one area per hotspot: alt, coords, href), or
+ * null when it can't be read. A synchronous request: the import runs in the browser and
+ * Dynamic Media allows any origin.
+ */
+function imageMap(path) {
+  try {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `https://media-assets.stryker.com/is/image/${path}?req=set,json`, false);
+    xhr.send();
+    if (xhr.status !== 200) return null;
+    // a JSONP answer: /*jsonp*/s7jsonResponse({…},"");
+    const body = xhr.responseText;
+    const json = body.slice(body.indexOf('(') + 1, body.lastIndexOf(')')).replace(/,\s*"[^"]*"\s*$/, '');
+    const { item } = JSON.parse(json).set;
+    const areas = item.map && item.map.area;
+    const list = areas && (Array.isArray(areas) ? areas : [areas]);
+    if (!list || !list.length || !Number(item.dx) || !Number(item.dy)) return null;
+    return { width: Number(item.dx), height: Number(item.dy), areas: list };
+  } catch (e) {
+    return null;
+  }
+}
+
+/**
+ * A hotspot's label: its letter (stryker.com names the areas "A", "B" … or "Hotspot D"); a
+ * number ("Hotspot 1", ASC post-operative) as the letter of the lettered product list under
+ * the graphic (1 → A), decided 2026-11-27.
+ */
+function hotspotLabel(alt) {
+  const text = (alt || '').trim();
+  const letter = text.match(/\b([A-Z])$/);
+  if (letter) return letter[1];
+  const number = text.match(/(\d+)$/);
+  return number ? String.fromCharCode(64 + Number(number[1])) : text;
+}
+
+/**
+ * The names of the lettered products after the graphic ("A. Mako", "B. 1688 AIM* 4K
+ * Platform" … paragraphs), by letter: each hotspot link's text (where it goes).
+ */
+function productNames(component, main) {
+  const names = {};
+  // the paragraphs after the graphic only (document order: the graphic, then its list)
+  const nodes = [...main.querySelectorAll('p, .interactivemedia')];
+  nodes.slice(nodes.indexOf(component) + 1).filter((el) => el.matches('p')).forEach((p) => {
+    const m = p.textContent.replace(/\s+/g, ' ').trim().match(/^([A-Z])\.\s+(.+)$/);
+    if (m && !names[m[1]]) [, , names[m[1]]] = m;
+  });
+  return names;
+}
+
+/** One hotspot row: label | position (the centre of its area, in % of the image) | link. */
+function hotspotRow(area, map, names, doc) {
+  const coords = String(area.coords || '').split(',').map(Number);
+  const xs = coords.filter((_, i) => i % 2 === 0);
+  const ys = coords.filter((_, i) => i % 2 === 1);
+  if (!area.href || !xs.length || xs.some(Number.isNaN) || ys.some(Number.isNaN)) return null;
+  // the centre of the area in % of the image, 2 decimals
+  const percent = (v, size) => `${Math.round(((Math.min(...v) + Math.max(...v)) / 2 / size) * 10000) / 100}%`;
+  const label = hotspotLabel(area.alt);
+  const a = doc.createElement('a');
+  // the AEM page path as the published stryker.com path; the cleanup transformer and
+  // edsLinkPaths then rewrite it to the EDS page, as the product list's links
+  a.href = area.href.replace(/^\/content\/stryker(?=\/)/, '');
+  a.textContent = names[label] || label;
+  return [label, `${percent(xs, map.width)}, ${percent(ys, map.height)}`, a];
+}
+
+// the Image Hotspots Corp block of an interactive image's box, put in place after the column rows
+// are built (hotspotBlocks): the box stays until then, so the row spacing pass (markRowEnds,
+// which marks stryker.com components) gives the block the source row spacing after the graphic
+const hotspotBlocksOf = new WeakMap();
+
 function interactiveImages(main, doc) {
   main.querySelectorAll('.interactivemedia').forEach((component) => {
     const asset = component.querySelector('[data-asset-path]');
@@ -519,7 +596,26 @@ function interactiveImages(main, doc) {
     const box = doc.createElement('div');
     box.className = 'c-standalone-image';
     box.append(img);
+    const map = imageMap(path);
+    // the product names are read now, while the lettered list is still the source's
+    const names = map ? productNames(component, main) : {};
+    const rows = map
+      ? map.areas.map((area) => hotspotRow(area, map, names, doc)).filter(Boolean)
+      : [];
+    if (rows.length) {
+      hotspotBlocksOf.set(box, WebImporter.Blocks.createBlock(doc, {
+        name: 'Image Hotspots Corp', cells: [[img.cloneNode()], ...rows],
+      }));
+    }
     component.replaceWith(box);
+  });
+}
+
+/** The interactive images' boxes replaced by their Image Hotspots Corp block (row end kept). */
+function hotspotBlocks(main) {
+  main.querySelectorAll('.c-standalone-image').forEach((box) => {
+    const block = hotspotBlocksOf.get(box);
+    if (block) box.replaceWith(keepBlock(block, box));
   });
 }
 
@@ -710,6 +806,7 @@ export function convertBeforeRows(main, doc, h) {
  *   long-page-detail-corp-sections.js
  */
 export function convertAfterRows(main, doc, h) {
+  hotspotBlocks(main);
   navigationBars(main, doc, h);
   accordions(main, doc, h);
   textBoxes(main, doc, h);
