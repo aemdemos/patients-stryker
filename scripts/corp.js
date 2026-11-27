@@ -43,7 +43,8 @@ export async function loadEager(doc) {
   // standardisation work in review (docs/standardisation): on draft pages and the authoring
   // panels' previews only (body.std-draft), so no other page changes until it is approved —
   // the Text style markers and the Columns rules for class names real pages already carry
-  if (/^\/(drafts|tools)\//.test(window.location.pathname)) doc.body.classList.add('std-draft');
+  // review pages: the drafts and tools folders, and the site's review folder /us/en/drafts/
+  if (/^\/(drafts|tools|us\/en\/drafts)\//.test(window.location.pathname)) doc.body.classList.add('std-draft');
   // HCP notice band: `hcp-banner: true` metadata adds the band to the header-corp and
   // extends the header height reservation (styles-corp.css --nav-height)
   if ((getMetadata('hcp-banner') || '').trim().toLowerCase() === 'true') {

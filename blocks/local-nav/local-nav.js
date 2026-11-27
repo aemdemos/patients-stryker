@@ -38,7 +38,7 @@ export default function decorate(block) {
   // a review copy of a page (/drafts/…/connected-or-operating-system-v5) is that page: its
   // name without the -vN version
   const lastName = (path) => path.split('/').pop().replace(/-v\d+$/, '');
-  const review = here.startsWith('/drafts/');
+  const review = /^\/(drafts|us\/en\/drafts)\//.test(here);
   const isCurrent = (a) => pathOf(a.href) === here
     || (review && lastName(pathOf(a.href)) === lastName(here));
 

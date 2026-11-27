@@ -15,11 +15,11 @@ import { loadFragment } from '../../blocks/fragment/fragment.js';
 
 /**
  * The folder of the shared fragments: next to the review pages for a draft page
- * (/drafts/astha/pages/fragments/), else the site's /us/en/fragments/.
+ * (/drafts/astha/pages/fragments/, /us/en/drafts/fragments/), else the site's /us/en/fragments/.
  */
 function fragmentsFolder() {
   const { pathname } = window.location;
-  if (pathname.startsWith('/drafts/')) return `${pathname.replace(/\/[^/]*$/, '')}/fragments/`;
+  if (/^\/(drafts|us\/en\/drafts)\//.test(pathname)) return `${pathname.replace(/\/[^/]*$/, '')}/fragments/`;
   return '/us/en/fragments/';
 }
 
