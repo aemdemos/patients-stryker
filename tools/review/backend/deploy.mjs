@@ -50,6 +50,8 @@ const ACTIONS = {
   pages: { web: true },
   tile: { web: true },
   images: { web: true },
+  // who is signed in, as Adobe says (the DA app proof, branch da-app-v3)
+  whoami: { web: true },
   admin: { web: false, timeout: 300000 },
   // the browser: 2 GB, 5 minutes (a run stops starting pages after 3.5); one run per container
   // (runs at the same time in one container share its CPU: each page then takes ~10x longer)

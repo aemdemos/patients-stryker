@@ -1,0 +1,20 @@
+/* the DA app proof page (da-proof.html): the checks as a list, a migrated page in a frame */
+.dp-main { max-width: 880px; margin: 0 auto; padding: var(--sp-5) 20px 60px; }
+.dp-kicker { margin: 0; color: var(--c-red); font-size: var(--fs-s); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.dp-title { margin: 4px 0 8px; font-size: var(--fs-2xl); font-weight: 900; line-height: 1.15; }
+.dp-lead { margin: 0 0 var(--sp-4); color: var(--c-ink-2); }
+.dp-checks { display: grid; gap: 8px; margin: 0 0 var(--sp-4); padding: 0; list-style: none; }
+.dp-check { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-left: 4px solid var(--c-line-2); border-radius: var(--r-s); background: var(--c-surface-2); }
+.dp-ok { border-left-color: var(--c-ok); }
+.dp-fail { border-left-color: var(--c-red); }
+.dp-mark { flex: 0 0 22px; block-size: 22px; border-radius: 50%; background: var(--c-line-2); color: #fff; font-size: var(--fs-xs); font-weight: 800; line-height: 22px; text-align: center; }
+.dp-ok .dp-mark { background: var(--c-ok); }
+.dp-fail .dp-mark { background: var(--c-red); }
+.dp-detail { display: block; margin-top: 2px; color: var(--c-ink-2); font-size: var(--fs-s); overflow-wrap: anywhere; }
+.dp-open { padding: 0 12px; overflow-wrap: anywhere; }
+.dp-frame-box[hidden] { display: none; }
+.dp-frame-label { margin: 0 0 4px; color: var(--c-muted); font-size: var(--fs-xs); }
+.dp-frame { inline-size: 100%; block-size: 420px; border: 1px solid var(--c-line-2); border-radius: var(--r-s); background: #fff; }
+.dp-copy { min-block-size: 32px; padding: 4px 16px; border: 1px solid var(--c-ink); border-radius: var(--r-pill); background: var(--c-ink); color: #fff; font-weight: 700; cursor: pointer; }
+.dp-copy:disabled { opacity: 0.5; cursor: default; }
+.dp-copied { color: var(--c-ink-2); font-size: var(--fs-s); }
