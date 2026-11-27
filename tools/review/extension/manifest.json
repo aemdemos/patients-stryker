@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Adobe Review: live stryker.com",
+  "version": "0.4.0",
+  "description": "Pilot for the AOE team: shows the real, interactive stryker.com page inside the migration review tool (Compare with: Live), with Scroll Sync.",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://www.stryker.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "framing",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.aem.page/tools/review/*",
+        "https://*.aem.live/tools/review/*",
+        "http://localhost:*/tools/review/*"
+      ],
+      "js": [
+        "tool.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.stryker.com/*"
+      ],
+      "js": [
+        "bridge.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

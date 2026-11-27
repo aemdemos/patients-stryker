@@ -1,0 +1,9 @@
+{
+  "name": "review-capture-browser",
+  "private": true,
+  "description": "The browser of the capture action (deploy.mjs builds the zip). Pinned: Chromium 133 is the last build with Amazon Linux 2 libraries, which the Runtime's Debian 10 (glibc 2.28) runs; 137+ need glibc 2.34.",
+  "dependencies": {
+    "@sparticuz/chromium-min": "133.0.0",
+    "puppeteer-core": "24.2.1"
+  }
+}

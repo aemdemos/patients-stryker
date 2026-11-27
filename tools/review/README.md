@@ -1,0 +1,515 @@
+# Migrated pages review tool (client review, branch `client-review-v3`)
+
+The customer reviews the migrated www.stryker.com pages **at their final paths on the main
+branch** (`/us/en/…`), side by side with a snapshot of the source page, and talks to the AOE
+team (Agentic Outcome Engineers) in the tool: page status, page comments, pinned QA notes, each
+a chat. Authoring-agnostic: the tool reads the rendered page, so it works whatever system a page
+was authored with (colon markers, bracket tags, plain formatting). It never changes documents.
+Not part of the site: it runs on preview hosts only (`*.aem.page`, the workspace preview).
+
+The same code is the standard-pages review on `standardise-v3` (design switches, as-is
+comparison); **`config.js` is the one file that differs** between the two (see below).
+
+Open with an invitation link:
+`https://main--stryker-com--strykerenterprise.aem.page/tools/review/index.html?invite=<token>`
+(before the merge: `client-review-v3--stryker-com--strykerenterprise.aem.page`); the browser
+keeps the invitation, later visits need no link.
+
+## What this review has (`config.js`)
+
+| Setting | Here |
+|---|---|
+| `space` | `main`: its entries and invitations in the review backend are its own (the standard-pages review is `std`; never mixed) |
+| `base` | the page at its final path on the same host (prefix `''`; the workspace preview proxies those paths to main) |
+| `compare` | `src`: the source snapshot, `live`: a live copy of the source page (as-is `rs` hidden) |
+| `design` | off: no design panel (variants, widths, backgrounds, text sets, groups); its "Open in a new tab" links are in the Feedback panel |
+| `widths` | Desktop 1440, Tablet 860 (source and EDS both in their tablet layouts), Phone 375 |
+| `mode` | side by side (flip and overlay stay available) |
+| `pages` | the site's query index `/us/en/query-index.json`, read on every visit: new pages appear at once; fragments left out |
+| `snapshots` | Document Authoring `/review-snapshots-main/<page>/<width>/<n>.jpg` (the first shots; later ones `<page>/<shot id>/<width>/…`) through the preview; locally `./snapshots` (a git-ignored link to the capture folder) |
+| `edit` | the DA editor of the site's content source (`https://da.live/edit#/strykerenterprise/stryker-com`): the AOE team's "Edit in Document Authoring" links (below) |
+
+## Files
+
+| File | What |
+|---|---|
+| `config.js` | What this copy of the tool reviews (above) and the browser storage keys (`main-review-…`) |
+| `index.html`, `review.css`, `review.js` | The shell: page, widths, compare, flip / overlay / side by side, sync; the Feedback panel (page status banner and buttons, comments on this page, QA notes, links); every change saved at once |
+| `pages.js` | The pages of the review for the tool, the status page and the results: the migration scope and the published pages through the backend (below), else the query index, else `pages.json` |
+| `scope-sheet.py` | The migration scope table's first content (from the migration catalog), written once to DA |
+| `ask.js` | The one confirmation dialog of every page (below) |
+| `batches.js` | Review batches, groups and representative pages, and the filters (batch, group, representatives, area) shared by the status page and the tool (below) |
+| `sync.js` | Text-matched scroll sync between the page and the snapshot |
+| `notes.js` | Pinned QA notes: a click on the page drops a pin tied to the nearest text run or image, so it keeps its place on reflow; category, text, width, open / resolved |
+| `store.js` | Saving and loading through the review backend (invitation in the browser, `rev` per change, conflicts refused, pending changes kept until confirmed) |
+| `threads.js` | The shared rules: page statuses, chats, Done |
+| `blockkeys.js` | Stable keys of blocks (used by the design side; harmless here) |
+| `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch and group marking |
+| `NEW-PAGES.md` | The design of the migration scope, published pages and the backend's first shots (built 23 Nov 2026), with the facts and decisions behind it |
+| `invites.html`, `invites.js`, `invites.css` | The AOE team's invitations: make, list, revoke (below) |
+| `summary.html`, `summary-page.js`, `summary-page.css` | The review summary (the results page until 25 Nov 2026; `results.html` forwards): progress, comments, QA notes, CSV downloads; for every invitation (no design decisions here) |
+| `live.js` | Keeps an open page up to date: every 15 s while its tab is visible, at once when it is shown again |
+| `launch.html`, `launch.js`, `launch.css` | The start page (where invitation links open): who you are, where the review stands (kept up to date), a card per page of the review, the way of working between the customer and the AOE team with the statuses in their colours; Adobe red |
+| `help.js`, `help.css` | The help on every page: "Start" and an ⓘ at the right end of the top bar; the ⓘ opens what is on the page and how to use it, for the viewer's side (AOE: theirs first, the reviewers' folded below) |
+| `ui.css` | The shared design of every page (25 Nov 2026): tokens (Adobe red = the AOE team, blue = reviewers, the statuses' colours, type sizes in rem, spacing, corners, shadows), base elements (fields, tables, focus rings) and the top bar; in cascade layers, so each page's own stylesheet refines it without specificity fights |
+| `bar.js` | The top bar of every page: the brand (to the start page), the tools in the order of the work (Summary, Status, Review tool, Invitations for the AOE team; the current one underlined in red), who you are with a red AOE team or blue Reviewer chip, Start and ⓘ; pinned at the top on wide screens |
+| `pictures.js`, `pictures.css` | Pictures in the chats: added (button, paste, drop), made smaller, uploaded in parts (backend `images`), shown as thumbnails; the viewer with zoom |
+| `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
+| `shots.js` | The page's source shots in the tool: the history, one version, the AOE team's request for a new one |
+| `shoot.mjs`, `snapshot-map.py`, `capture-snapshots.mjs`, `upload-snapshots.sh`, `record-shots.mjs`, `refresh-shots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/` | Source shots and their history (below) |
+| `backend/` | The review backend on App Builder (`backend/README.md`): invitations, state per page, audit; spaces |
+
+## Saving, chats and QA notes (since 25 Nov 2026)
+
+- **Saved at once**: no Save or Undo button. A message is saved on Send (Ctrl+Enter), the page
+  status, a Done tick or a QA note on click. Each message shows *sending…* until the backend has
+  it, *not sent* (Retry in the toolbar) when it failed; what is typed and not sent stays in the
+  browser; a change kept in the browser and not sent (the tab closed at once) is sent on the next
+  visit to the page.
+- **Withdraw**: a message sent is final, but its author may withdraw it (asked first): everyone
+  then sees "Message withdrawn", it counts for nothing, the audit keeps the original. The backend
+  allows it to the invitation that wrote it only.
+- **The start page** (`launch.html`, 25 Nov 2026): where new invitation links open (a link to one
+  page still opens the review tool on it; older links keep opening the tool). The viewer's name
+  and role, the review in numbers (pages in the review, waiting for the AOE team, waiting for the
+  reviewer, in review, approved, % done; the same for both sides, kept up to date), buttons in
+  the order of the work (summary, pages, review tool), a card per page (Review tool, Status page,
+  Summary, Invitations for the AOE team), and the way of working step by step with the statuses.
+  Colours: everything of the AOE team (Adobe) red, everything of the reviewers blue; the word is
+  always "reviewer" (never "customer") on every page of the tool.
+- **Compare with: Representative** (26 Nov 2026): the migrated page of the group's representative
+  (chosen ★, else the group's first page ☆), labelled "Migrated representative", side by side /
+  Flip / Overlay with Scroll Sync, like the as-is page. Always there; disabled while the page has
+  no migrated representative (in no group, the representative itself, or not published yet:
+  tooltip "No representative has been established or migrated for this page yet"); chosen
+  already, such a page shows a message in its place. Note mode switches it to the Screenshot (a
+  note belongs to the page reviewed). Test: `rep-tool.test.mjs`.
+- **Selecting on the status page** (26 Nov 2026): the header tick selects every page the filters
+  show, also those not loaded yet (half ticked: some); selecting all is all, nothing ever mentions
+  how many rows are loaded (the user's rule, 26 Nov 2026). A change asks first in the confirmation
+  dialog (below) only when it replaces or removes what the pages are in (another batch or group, a
+  chosen representative) or touches selected pages the filters hide now: their batch or group now,
+  those hidden; else it is done at once. After a filter change the bar says how many selected pages the list
+  doesn't show, with "Keep only the listed ones". Show more goes once every page is shown. Test:
+  `status-select-tool.test.mjs` (one test batch, removed after).
+- **One confirmation everywhere** (26 Nov 2026, the user's rule: consistent throughout the tool):
+  `ask.js` is the only way to confirm, a modal dialog with the question, boxes of what it touches
+  (up to six items each), a note, then the choices (the main one dark, a dangerous one red; Esc:
+  the last, Cancel / Keep it). Used for approving a page of a group, withdrawing a message, a
+  change to many pages on the status page and revoking an invitation. Never a question in place of
+  a page's own buttons. Styles: `ui.css` `.ui-dialog`.
+- **Approving a page of a group asks first** (26 Nov 2026): the dialog lists the group's other
+  pages by what happens to them (not reviewed yet / in review: they count as approved; other
+  statuses: kept, shown with the group's approval; already approved), with Approve the group /
+  Cancel (Esc: Cancel). Not asked when the page is in no group, alone in it, or its group is
+  approved already. Nothing is written on the other pages.
+- **Labels out of the way** (26 Nov 2026): the pages' labels fade out while the pointer is on
+  them (and 14 px around): the frames' own mouse moves, the extension's bridge for Live (0.4.0).
+- **Live: the real stryker.com page** (25 Nov 2026, pilot for the AOE team, `extension/`): with the
+  review extension (Chrome / Edge, loaded unpacked from `review-live-extension.zip`, linked on the
+  start page for the AOE team) Compare with offers **Live**: the real, interactive stryker.com page.
+  The extension removes stryker.com's framing headers only for www.stryker.com framed by a review
+  page (`rules.json`, aem.page / aem.live / localhost), and its bridge inside that page sends the
+  tool its anchors and scroll position (as `sync.js` does) and scrolls on request: Scroll Sync both
+  ways, the approach of fullyframe. Notes can't go on it (another site: note mode switches to the
+  Screenshot). (Snap, 0.2.0, was removed in 0.3.0: no more than a screenshot of
+  one's own, pasted into the chat.) Without the extension nothing changes. After changing the extension: bump its
+  version, `node tools/review/extension-zip.mjs`. Test: `live-extension-tool.test.mjs` (Chromium
+  with the extension, from a copy: Chrome writes into the folder it loads).
+- **QA notes on the source screenshot** (25 Nov 2026): side `src`, the screenshot's version and a
+  point in its pixels; with Render or Live showing, note mode switches to the Screenshot.
+- **Pictures in the chats** (25 Nov 2026, `pictures.js`, `pictures.css`, backend action `images`):
+  for what only shows after a click on the real page, a screenshot goes with a message: pasted
+  into the message box, dropped onto it, or added with **Picture**; up to 6 per message. A big
+  one is made smaller in the browser first (over 1.5 MB or 4096 px: WebP, JPEG where WebP can't
+  be written); a request may not be over 1 MB, so it is sent in parts of 600 KB, put together and
+  checked by the backend (PNG, JPEG, WebP or GIF by its bytes, never SVG; up to 8 MB) and kept in
+  Files (`<space>/images/<id>.<ext>` + `.json`: page, who, when). The message holds the pictures'
+  ids (`images: [{ id, w, h }]`); the first message of a comment chat stays the comment's text
+  ("Picture" when there is none) and its pictures follow as the next message. An `<img>` can't
+  send the invitation, so the tool asks the backend for short-lived links (only for pictures of
+  pages in the viewer's review). A click shows the picture in the viewer: − + (or Ctrl+wheel,
+  − + 0 1 keys), Fit, 100%, dragged around when larger than the window, ‹ › for the message's
+  others, Esc closes. A withdrawn message hides its pictures (the files are kept, like the audit);
+  `purge-invite` removes a test invitation's pictures. Not kept across a reload: pictures added
+  but not sent yet. Tests: `pictures-live.test.mjs`, `pictures-tool.test.mjs`.
+- **Fast loading** (25 Nov 2026, measured on Stage: pictures shown on a reload 1.25 s → 0.3 s,
+  no picture downloaded again): a picture never changes, so each one is kept in the browser
+  (Cache Storage `review-pictures-v1`) the first time it is shown, and the sender's own are kept
+  at once; the chat shows a small version made when it is sent (≤ 640 px wide, its top; `t` in
+  the message), the viewer the whole picture; a page's picture links come with its messages
+  (state action `pictures`). The page list is kept in the browser (`review-data-v1`, per
+  invitation and backend, up to a day) and used at once while it is asked again; the status
+  page's Refresh waits for a fresh one (`pages?fresh=1`). The backend keeps the scope sheet and
+  the live index a minute in a warm container (the capture always reads them fresh). The tool
+  asks for the page of its address (messages, document) at once, with the page list.
+  Not used on purpose: App Builder's CDN (for files deployed with the app, not for pictures
+  uploaded during the review) and its action-response cache (keyed by address, not by
+  invitation: it could hand one person's answer to another). The database reads are by key
+  (~0.1 s), so no index was needed.
+- **One design for every page** (`ui.css`, `bar.js`, 25 Nov 2026): the same dark top bar with
+  the tools in the order of the work, page heads with the title and when the page was read,
+  cards, pill buttons, status tiles that filter the list when clicked, tables whose head stays
+  while the page scrolls (on phones they scroll sideways in their box). Keep new pages on the
+  tokens of `ui.css`; the class names the code and tests use did not change.
+- **Help on every page** (`help.js`): "Start" and an ⓘ at the right end of every top bar; the
+  ⓘ opens a dialog about the page for the viewer's side (customer or AOE team). The texts live
+  in `help.js` (`HELP`): keep them in step with the pages.
+- **Kept up to date** (25 Nov 2026, `live.js`): the review page, the status page and the
+  summary page ask the backend again every 15 s while their tab is visible (at once when it is
+  shown again; nothing in a hidden tab). The review page draws its chats, notes and status again
+  only when something changed, and a message box being typed in keeps its text, cursor and focus
+  (not while changes are on their way, a dialog is open or a status field is in use); the status
+  page keeps filters, selection and scroll and waits while a row is edited; the summary keeps its
+  scroll. Each check is one small call (~0.05 GB-s): ~6% of the App Builder pack for 10 people, 8
+  hours a day. (App Builder can't push to the browser: it asks.)
+- **The summary page** (`summary.html`, the results page until 25 Nov 2026; older links to
+  `results.html` forward): for every invitation, the customer's too, within its pages; linked
+  from the review tool and the status page, and given with every new invitation. The "Hide test
+  entries" switch is the AOE team's only (test entries are hidden for everyone else). The
+  invitations' `results` right is no longer used.
+- **QA notes start their chat**: a new note asks for its first message (no subject of its own);
+  "Add note" saves the note and that message at once and opens the chat. A note is referred to by
+  its number ("note 4 on page X"): numbered by creation, deleted notes included, so a number never
+  moves. Edit changes the category or deletes the note. The rules: `threads.js` (`isWithdrawn`,
+  `firstText`), used by the backend, the tool, the summary page and the AOE summary.
+
+## The status page (customer and AOE team)
+
+One page for both sides (`status.html`, opened with the review link, or from the tool's
+"Review status of every page"): what it shows depends on the invitation. **The customer**
+(reviewer invitations) sees the published pages of its review with their states, batches,
+groups and filters, worded for its side; **the AOE team** also gets the organising box, the
+Migration scope box, "Not published yet", Edit in DA and Invitations. The backend refuses the
+AOE team's operations to reviewers anyway. Pages open in a new tab. **The page keeps its state
+on refresh** (in the browser): the picked status tiles, search, template, state, order, "only
+new", how many rows are shown and the scroll position; the batch, group, representatives and
+area filters are shared with the tool; "new since my last visit" counts from the tab's first
+load, so a refresh isn't a new visit.
+
+## Migration scope and published pages
+
+The review's pages come from the **migration scope table** in Document Authoring,
+`review/migration-scope` (a sheet: `source` = `https://www.stryker.com/….html`, `eds` = the EDS
+path, `template` = the AEM template), together with the **live query index** (the published
+pages). The backend's `pages` action reads both (the previewed sheet: edit it in DA, then
+**preview** it) and checks the table.
+
+- **Reviewers** see the pages of the scope that are **published**. A page published later joins
+  by itself, "Not reviewed yet"; the filters (batch, group, template, area) count the published
+  pages.
+- **The AOE team** sees the whole scope on the status page ("Not published yet" for the others)
+  and organises batches and groups on all of it. The **Migration scope** box lists: pages
+  published but not in the table, rows of the table to correct (a source or an EDS page in two
+  rows, an address that isn't a stryker.com page), sources to correct (a first shot failed: the
+  source answers 404 or redirects to another page), pages waiting for their first shot, the
+  capture's last run and its browser check.
+- The table started (23 Nov 2026) with all 2,553 pages of the migration catalog
+  (`scope-sheet.py`): the 568 pages with a first shot keep their known pair, the others have
+  their EDS path by the importer's rule (renamed pages: change the row). The AOE team removes
+  what is out of scope. A local copy is in the workspace (`content/review/migration-scope.json`).
+- **Behind the site login** (27 Nov 2026): since the site login is on for the preview addresses,
+  the backend can't read the previewed table (401). It falls back to **its own copy**
+  (`main/scope-copy.json` in its storage, `lib/scope.mjs`). An AOE member's Status page reads the
+  table through the site login, compares fingerprints and hands it over when it changed (`pages`
+  POST `scope-copy`). The admin op `scope-copy` writes it too (with `data`) or tells its date.
+  The Migration scope box says when the copy is in use. A site secret for the backend (needs the
+  site's configuration admin role) would end the need for the copy.
+
+## Live: the source page, rendered now
+
+**Live** (next to Source) shows a **live copy of the stryker.com page**, rendered on request by
+the backend's browser (action `live`) at the width being viewed, next to the page under review,
+synced by text like the as-is page.
+
+- **Why a copy:** stryker.com refuses to be shown inside another site (`X-Frame-Options:
+  SAMEORIGIN`, a strict CSP) and answers 404 to every request that isn't a real browser, so the
+  page can't be framed or fetched directly. The backend's browser (which loads it as for the
+  shots) gives its rendered page with **every script removed** and a `<base>` to stryker.com;
+  the reviewer's browser loads its stylesheets, images and fonts from stryker.com (its fonts
+  allow any site). Shown in a same-origin frame (a blob URL, sandboxed, no scripts), so the sync
+  reads it like the as-is page.
+- **What it is not:** not clickable as on stryker.com (menus, tabs, carousels stay as rendered;
+  a link opens the real page in a new tab), and **not evidence**: the dated shots are. No
+  analytics, trackers or ALTCHA run, so the copy leaves no traces on stryker.com's statistics.
+- **Per width:** stryker.com builds some parts with its scripts for each width (the main menu at
+  1024 px), so each width is its own copy. A copy is kept 10 minutes (the tag says when it was
+  rendered; **Render again** makes a fresh one). Measured: ~5 s the first time (the browser
+  starts), ~3 s with a warm browser, instant when kept.
+- The source: the migration scope table's (client review), else the newest shot's, else the
+  tool's snapshot facts (standard review).
+- **How close it is** (measured 24 Nov 2026, `backend/test/live-fidelity.mjs`: the real page in a
+  browser vs its copy, 7 pages of 6 templates at 1440 and 375): the same page height and text on
+  every page, 0% of pixels different on all but the home page at 1440 (5%: its banner video
+  shows its poster frame). Two causes were found and fixed: count-up numbers caught mid-count
+  (the backend now waits until the page's text stops changing, at most 4 s: pages with count-ups
+  take ~4 s) and videos played from an in-browser stream (now their poster image).
+- **What can still differ:** anything moving (videos show their poster, carousels the slide at
+  render time, animations their end state); embedded players and widgets in frames (videos,
+  maps, Marketo forms) that need their own scripts; parts that depend on the window's height
+  (the Live frame is as tall as the pane); content stryker.com varies by visitor (location,
+  personalisation: the backend is a first-time visitor without cookies); the page changing
+  after the copy was made (kept 10 minutes: Render again). A source that redirects is refused
+  (never another page than the one in the table).
+
+## Source shots taken by the backend
+
+The backend takes the source shots itself (action `capture`, a browser inside App Builder):
+
+- **First shots:** every 15 minutes (a scheduled trigger, `admin.mjs schedule`) it takes the
+  first shot of every published page of the scope without one, with the source from the table,
+  within ~15 minutes of the page being published. When the page was first seen published is
+  recorded with the shot.
+- **Refresh source shot** (AOE team): the request starts a capture at once; the new shot shows
+  in the tool within minutes (the tool looks for it by itself).
+- **Checks:** the source must answer 200 and not redirect to another page, else the page is
+  listed as a source to correct (tried again when its row changes, or after a day); a failed
+  Refresh shows its reason in the tool.
+- **Evidence** as for every shot: never replaced or removed, the date each width was taken, the
+  URL, status, final URL and title, a SHA-256 of every tile. The backend's tiles are in its own
+  storage (only the backend writes there) and reach the tool through the `tile` action (a
+  redirect to a short-lived read link); the first shots of 23 Nov stay in DA.
+- **The browser** (`backend/browser/`): the Runtime container is Debian 10 (glibc 2.28), so
+  Chromium is pinned to 133 (the last build with Amazon Linux 2 libraries), with Debian 10's own
+  NSS / NSPR shipped in the action (`debian-libs.json`, checked by SHA-256 at deploy). A daily
+  browser check reports in the Migration scope box if it stops working (e.g. after a change of
+  Adobe's container). Measured: ~15 s per page (three widths), about 14 pages per run.
+- Admin: `admin.mjs capture-state --space main`, `admin.mjs schedule --json '{"enabled":false}'`
+  (off) or `'{"cron":"*/15 * * * *"}'` (on).
+
+## Review batches and filters (`batches.js`)
+
+The AOE team splits the pages into numbered **review batches** (one batch per page) and works
+through them one by one; everyone filters by batch and by area.
+
+- **Marking** (AOE invitations, status page, "Mark pages for a batch"): paste the pages, one per
+  line (client URLs `https://www.stryker.com/us/en/….html`; this site's URLs and paths work too),
+  give the batch number, **Mark for this batch**; **Take them out of their batch** unmarks them;
+  **Use the pages shown** fills the list with what the filters show. Lines that are no page of the
+  review are listed back, never guessed (the page name: the importer's cleaned segments, `.html`
+  and `/index` dropped). Marking moves a page out of any other batch.
+- **Filters:** batch chips on the status page (several at once; none = all; "No batch"), the
+  Filter popover by the tool's page picker (batches and area); the page picker, the count and
+  page stepping go through the filtered pages. The chosen filters are kept in the browser, the
+  same for both pages. The status page also shows each page's batch and area; the tool shows the
+  page's batch by its status badge.
+- **Data:** kind `batch` on item `page` (a number 1–999, or null), saved by the AOE team only
+  (the backend refuses reviewers), several pages in one save, the newest wins (no rev check).
+  Organisation data, not review activity (`threads.js` ORG_KINDS): it never changes a page's
+  state, threads, latest activity or "new". The overview action returns each page's batch.
+
+## Groups and representative pages
+
+**Groups** are pages of exactly the same structure (called groups, not templates: "template"
+means something else here), numbered, one group per page. Each group has one **representative
+page**: the only page the customer reviews, to approve the whole group. Set by hand, like batches:
+
+- **Marking** (AOE, status page, "Organise pages: batches and groups"): choose **Group**, give the
+  number, paste the pages, **Mark** (or **Take them out**). A page moved to another group (or
+  out) is no representative any more. **Make the representative of its group**: each pasted page
+  becomes its group's representative and the group's earlier one is one no more; pages in no
+  group, or two pages of one group in the list, are refused with the reason.
+- **Filters:** Group (one group, or "In no group") and **Representative pages only** on the status
+  page and in the tool's Filter popover (kept with the batch and area filters). The status page's
+  Batch / group column and the tool's badge show "Batch 2 · Group 5 ★" (★ = the representative).
+- **Data:** kinds `group` (a number 1–999 or null) and `representative` (true / false) on item
+  `page`, AOE only, newest wins; organisation data, no review activity. A page is only a
+  representative while it is in a group. The overview action returns `group` and `representative`.
+- **The representative is a suggestion** (user, 23 Nov 2026): chosen or changed any time, or
+  none; a group without one has its **first published page** (path order) as representative,
+  shown ☆ ("Group 5 ☆"; ★ = chosen) and counted by "Representative pages only".
+- **Approving one page approves its group:** when a page of a group is approved, every other page
+  of the group shows "Approved with its group" (status page, tool); those not reviewed yet or in
+  review count as approved, the others keep their own state too (`withGroupApproval` in
+  `threads.js`, used by the overview). Derived, nothing written: a page moved out of the group
+  leaves the approval.
+
+**Changing it** (status page, AOE team), besides the paste box:
+- **A page's row:** **Edit** in its Batch / group cell: the batch, the group, "Representative
+  of its group"; an empty number takes the page out. Save or Cancel.
+- **Several pages:** tick them (the header's tick: every page shown); the selection bar moves
+  them to a batch or a group, takes them out of their batch or group, makes them the
+  representatives of their groups (one per group) or clears that.
+- **Groups and their representatives:** every group with its pages; choose its representative
+  from its pages, or **None chosen** (its first published page stands in, ☆); **Take out** a
+  page of the group (its page list stays open while you work).
+- Every change is saved at once and kept in the audit; the message under the selection bar
+  says what was done once the page shows it.
+
+## Edit in Document Authoring (AOE team)
+
+AOE invitations get a link to the page's document in the DA editor: "Edit in Document
+Authoring" in the tool's Feedback panel ("Open in a new tab") and "Edit in DA" next to each page
+on the status page. `editUrl(path)` (`pages.js`): `config.edit` + the base prefix + the path (a
+folder's page: `…/index`). Reviewers don't see the links; editing needs DA rights anyway. A page
+whose document is no longer in DA (it is still published) opens an empty document: don't save it
+there by mistake.
+
+## Invitations (AOE team)
+
+The **Invitations** page (`invites.html`; linked from the status page's bar and the tool's
+"Open in a new tab", AOE invitations only) lets the AOE team manage the invitations of its own
+review without the developers (backend web action `invites`, `backend/lib/invites.mjs`, shared
+with `backend/admin.mjs`):
+
+- **Make** an invitation: name (or email), role (reviewer, or AOE team: the AOE team always has
+  the summary page), valid for 1–365 days (default 90), and the
+  pages (path prefixes; default and limit: the AOE's own invitation's pages). The link points to
+  the tool on the host the page was opened on (the branch preview before the merge, then main).
+  **The link is shown once**: the backend keeps no tokens, and nobody can see or copy another
+  person's link later (a link is that person's identity in the review). Lost link: revoke it and
+  make a new one.
+- **List**: every invitation of this review (another review's never), newest first: name, role,
+  pages, made when and by whom, valid until, state (active, expired, revoked: when and by whom);
+  revoked and expired ones on request; search by name.
+- **Revoke** any invitation of this review except one's own, asked first in the confirmation dialog
+  (Revoke → Revoke / Cancel): the link stops working at once, for good. The invitation stays listed as revoked.
+- Every make and revoke is in the review's audit (who, when, which invitation; never a token).
+
+Developers can still use `backend/admin.mjs invite | invites | revoke` (made "by admin"). Test
+invitations (names `tool test …`, `zz-test-…`) are removed from the lists after revoking with
+`admin.mjs forget-test-invites`; nobody else's ever are.
+
+## The review backend and its spaces
+
+One App Builder backend (project "Stryker std review", **Production** workspace `892544-strykerstdreview` (the live review, since 24 Nov 2026; Stage,
+`892544-strykerstdreview-stage`, is the test workspace: backend/README.md, "Two workspaces")) serves both reviews. An invitation's scope names its **space**;
+the actions read and write only that space's entries:
+
+- `std` (no space named, the invitations of before): keys `p.…` / `g.…`, audit files `audit/…`.
+- `main`: keys `main.p.…` / `main.g.…`, audit files `main/audit/…`.
+
+The admin action takes `--space` on every op (default `std`). Invitations (the credential is the
+workspace's, in Settings):
+
+```
+node tools/review/backend/admin.mjs invite --space main --name "Jane Doe" --paths /us/en --days 30 [--results] [--host client-review-v3--stryker-com--strykerenterprise.aem.page]
+node tools/review/backend/admin.mjs invite --space main --name "AOE_name" --paths / --days 90 --role aoe
+node tools/review/backend/admin.mjs invites --space main
+node tools/review/backend/admin.mjs export --space main
+```
+
+`--host` points the link at another preview (a branch before its merge). Treat links like
+passwords. Deploy after backend changes: `node tools/review/backend/deploy.mjs` (both reviews use
+it: keep std's keys and behaviour unchanged).
+
+## Source shots and their history
+
+A **shot** is a snapshot of the source page (www.stryker.com) at one width (1440, 860, 375):
+JPEG tiles (4000 px) and the text / image anchors of the live page (`shoot.mjs`; ALTCHA, the
+cookie banner and trackers blocked). One capture of a page at every width is a **version** of
+its shot history.
+
+**The history is evidence: kept back to the first shot, never changed, never removed.**
+- Every version is kept with the date and time each width was taken, the source URL, the HTTP
+  status and final URL (from the second version on), who asked for it and when, when it was
+  recorded, and the **SHA-256 of every tile**.
+- It lives in the backend's file store (`backend/lib/shots.mjs`, `<space>/shots/<page>.json`),
+  not in its entry store (entries there expire after a year at most). The backend refuses a
+  version whose id is there already, and has no operation that removes a real page's shots
+  (`purge-test` removes `/test/…` pages only).
+- The tiles are in Document Authoring: the first shots at `<folder><page>/<width>/<n>.jpg`, later
+  ones at `<folder><page>/<shot id>/<width>/<n>.jpg` (id `s-YYYYMMDD-HHMMSS`, UTC). Uploads never
+  go over a file that is there already. **To check a tile**, compare the SHA-256 of the
+  original in Document Authoring (`admin.da.live/source/…`) with the history: the preview serves
+  a re-optimised copy, whose hash differs.
+- The first shots (23 Nov 2026, 568 pages × 3 widths, 1,964 tiles) were recorded with
+  `record-shots.mjs` after every tile was checked against its original in Document Authoring
+  (all identical).
+
+**In the tool** (Feedback panel, "Source shot"): the history, newest first (first shot and
+newest marked), the shot's date and source URL; an earlier shot can be shown (the source tag
+says so). The AOE team's **Refresh source shot** asks for a new shot (backend action `shots`,
+one open request per page, kept in the backend's audit). The request shows in the box until the
+new shot is there, or with the reason it failed (then **Ask again**). Pages without a first shot
+can't be refreshed (see *Planned*).
+
+**Taking the requested shots** (writes to Document Authoring: only when asked to):
+
+```
+node tools/review/refresh-shots.mjs --out <dir> --space main --ref <branch>   # every pending request
+node tools/review/refresh-shots.mjs --out <dir> --dry-run                     # capture only, nothing written
+```
+
+Per request: a new shot at every width from the newest version's source URL, the tiles to DA
+(each read back and its hash compared), previewed on the branch, the version into the history
+(closing the request); a failure is recorded on the request with its reason.
+
+**The first shots** (a new review, or pages added to it):
+
+```
+python3 -I tools/review/snapshot-map.py <query-index.json> .migration/xf-mapping <map.json>   # page → source URL (export file names)
+node tools/review/capture-snapshots.mjs --map <map.json> --out <dir>                            # 1440, 860, 375
+bash tools/review/upload-snapshots.sh <dir> <branch> <log> review-snapshots-main               # tiles to DA + preview, only on request
+node tools/review/record-shots.mjs --dir <dir> --space main [--verify <path → sha256 of DA originals>]  # the first versions
+python3 -I tools/review/pack-snapshot-meta.py <dir> tools/review/snapshot-meta                  # the tool's fallback without the backend
+```
+
+The source URLs come from the export file names (letter case kept), never from EDS paths.
+
+## Planned
+
+- Port spaces, batches, groups and the edit links to `standardise-v3` (its backend code has no
+  spaces yet: never deploy the backend from there before that).
+
+## Storage and speed
+
+The backend keeps the review in two App Builder stores:
+- **App Builder Database** (Data Services: Amazon DocumentDB, every write kept on several
+  storage nodes; `backend/lib/dbstate.mjs`, `backend/DATABASE.md`): **one document per page**
+  of a review, its saved items as fields (a comment, a reply, a page status, a batch number…,
+  each `{ v, by, at, rev }`); one document for the group choices, one per invitation. A page is
+  read with one request from the primary (it always shows what was just saved), a save writes
+  its items in place, and the rev check (someone else changed it meanwhile → a conflict) is done
+  by the database inside the write. No end date. Since 24 Nov 2026 (the old State store held
+  test data only: copied over, then emptied; its final copy is in Files,
+  `backups/state-final/`).
+- **Files** (blob storage): what must stay or is large: the audit, the shot history and its
+  images, the capture's record, the Live copies, the signing key, the daily backups and the
+  **review's summary**.
+
+**The review's summary** (`backend/lib/summary.mjs`, `<space>/summary/overview.json`): every
+page's state in one file, so the overview (status page, the tool's batches and groups) reads one
+file (~0.1 s) instead of every entry (5 s and more, growing with the review). Saves keep it
+current (organisation directly, other changes their page computed again); built again from every
+entry when missing, after admin operations that change entries, on the status page's
+**Refresh**, and every 15 minutes by the capture's schedule. Each page's part carries the time
+it was computed; writers merge by keeping the newer part.
+
+**Backups (the data must not be lost):** Adobe restores deleted database data only
+best-effort, so every day at 02:15 UTC (schedule `review-backup`, admin `backup`, ~0.5 s) the
+backend writes a full copy of every entry and invitation of both reviews to Files,
+`backups/<YYYY-MM-DD>/state.json`, kept. `admin.mjs backups` lists them,
+`restore-check --json '{"day":"…"}'` compares one with the store (missing, changed),
+`restore --json '{"day":"…","only":["main.p."]}'` puts back the entries missing now (never over
+an existing one; audited). The audit (every change with its value before) stays the second
+record. `admin.mjs db-stats`: page documents per review, invitations.
+
+**Saving:** changes are written 20 at a time (the changes to one item in their order), each
+with its rev check; organisation changes (batches, groups, representatives: the newest wins) go
+to the database in bulk, 500 a call, without reading first (their value before, for the audit,
+comes from the summary), up to 3,000 a request. Measured 24 Nov 2026: 220 pages moved to a batch
+in ~0.5 s (State: ~3 s, at first ~8.5 s), a single change ~0.15 s, the overview ~0.1 s; six
+saves of one item at the same moment: one written, five conflicts.
+
+## Tests
+
+```
+node tools/review/backend/test/states.test.mjs        # the shared rules
+node tools/review/backend/test/spaces.test.mjs        # the space keys (link backend/node_modules first, see the file)
+node tools/review/backend/test/spaces-live.test.mjs   # deployed: a main invitation sees only main (test page, cleans up)
+node tools/review/backend/test/backend.test.mjs       # the actions (std space, test page)
+node tools/review/backend/test/shots-live.test.mjs    # deployed: shot history and requests (test page, cleans up)
+node tools/review/backend/test/shots-tool.test.mjs <dev server>   # the tool's Source shot box (read only on a real page; test page); the client review's dev server (its shots)
+node tools/review/backend/test/invites-live.test.mjs  # deployed: the AOE team's invitations (test invitations, forgotten after)
+node tools/review/backend/test/invites-tool.test.mjs <dev server> # the Invitations page and its links
+node tools/review/backend/test/scope-live.test.mjs    # deployed: scope pages, a capture by the backend, tiles, group approval (test pages)
+node tools/review/backend/test/scope-tool.test.mjs <dev server>   # the scope on the status page, a backend shot in the tool, ☆
+node tools/review/backend/test/status-view.test.mjs <dev server>  # the customer's status page (no AOE parts), new tabs, state kept on refresh
+node tools/review/backend/test/live-tool.test.mjs <dev server> [page] [space]   # the Live comparison: the copy, fonts, no scripts, sync, links, widths
+node tools/review/backend/test/refresh-tool.test.mjs <dev server>   # live updates (15 s, typing kept), the summary for both roles, results.html forwards
+node tools/review/backend/test/org-edit.test.mjs <dev server> [space] [prefix of 3 pages]   # changing batches, groups, representatives (pages nobody used; purged after)
+```
+
+The standard-pages review's browser and summary tests live on `standardise-v3` (they use its
+`/std` sample pages).

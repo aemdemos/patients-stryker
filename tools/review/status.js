@@ -1,0 +1,765 @@
+/*
+ * Review status of every page: where each page stands in the back and forth between the reviewers
+ * and the AOE team, so nobody needs a call to find out (states: backend/lib/states.mjs, from the
+ * web action `overview`). Every page of the invitation's scope, pages without entries as not
+ * reviewed yet; filters (template, business unit, state, search, new since my last visit); the
+ * order puts what waits for the viewer first (reviewers: answered by the AOE team; the AOE team:
+ * open feedback); links into the review tool. State = a colour and a label.
+ */
+import { call, inviteToken } from './store.js';
+import { keepFresh } from './live.js';
+import { mountBar } from './bar.js';
+import ask, { askMessage } from './ask.js';
+import { REVIEW, storageKey } from './config.js';
+import loadPages, { editUrl, scopeFacts, handOverScope } from './pages.js';
+import {
+  getFilters, setFilters, pagesOf, markOrg, makeRepresentatives, areaLabel, orgLabel,
+  markFirstRepresentatives, clearRepresentatives, STATE_ORDER, clearFilters, filtersSet,
+  onFiltersChange, matches, sortPages,
+} from './batches.js';
+
+const { hostname } = window.location;
+const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
+const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
+const VISIT_KEY = storageKey('status-visit');
+// the page's own state, kept on refresh (the filters shared with the tool are batches.js's)
+const VIEW_KEY = storageKey('status-view');
+// the "last visit" of this tab: kept for its reloads, so a refresh is no new visit
+const TAB_VISIT_KEY = storageKey('status-tab-visit');
+const PAGE_SIZE = 300;
+const $ = (sel) => document.querySelector(sel);
+
+/** the states, worded for the viewer's side */
+const STATES = {
+  'waiting-customer': { reviewer: 'Waiting for the reviewer', aoe: 'Waiting for the reviewer' },
+  'waiting-aoe': { reviewer: 'Waiting for the AOE team', aoe: 'Waiting for the AOE team' },
+  'in-review': { reviewer: 'In review', aoe: 'In review' },
+  resolved: { reviewer: 'Resolved', aoe: 'Resolved' },
+  approved: { reviewer: 'Approved as is', aoe: 'Approved as is' },
+  unreviewed: { reviewer: 'Not reviewed yet', aoe: 'Not reviewed yet' },
+  skipped: { reviewer: 'Skipped: not migrated', aoe: 'Skipped: not migrated' },
+  // (in the migration scope, not published yet: the AOE team's lists only)
+  unpublished: { reviewer: 'Not published yet', aoe: 'Not published yet' },
+};
+// (each side's "what waits for me first": batches.js, shared with the tool)
+const ORDER = STATE_ORDER;
+
+function el(tag, attrs = {}, ...children) {
+  const e = document.createElement(tag);
+  Object.entries(attrs).forEach(([k, v]) => {
+    if (k === 'class') e.className = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v);
+  });
+  children.flat()
+    .filter((c) => c !== null && c !== undefined && c !== false)
+    .forEach((c) => e.append(c));
+  return e;
+}
+const when = (t) => (t ? new Date(t).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) : '');
+const inScope = (scope, page) => (scope.paths || []).some((p) => p === '/' || page === p || page.startsWith(p.endsWith('/') ? p : `${p}/`));
+
+let all = [];
+let me = { name: '', role: 'reviewer' };
+let previousVisit = '';
+let shown = PAGE_SIZE;
+// the status tiles picked: the shared filters' states (batches.js)
+const picked = {
+  has: (s) => getFilters().states.includes(s),
+  get size() { return getFilters().states.length; },
+};
+// the table is drawn further down; the state tiles redraw it through this
+const hooks = { draw: () => {}, load: () => {} };
+// the AOE team's organising: the pages ticked in the table, the page whose row is being edited
+const selected = new Set();
+// the list the filters show now (all of it): for the selection
+let listed = [];
+let editing = null;
+// the groups whose page list is open (kept across redraws)
+const openGroups = new Set();
+
+/** a batch or group number typed in a field: a number 1–999, null (empty) or undefined (wrong) */
+function numberOf(input) {
+  const v = input.value.trim();
+  if (!v) return null;
+  const n = Number(v);
+  return Number.isInteger(n) && n >= 1 && n <= 999 ? n : undefined;
+}
+
+/** the pages' organisation for makeRepresentatives (path → page), with changes on top */
+const orgMap = (over = {}) => new Map(all.filter((p) => (over[p.path] ?? p.group))
+  .map((p) => [p.path, { ...p, group: over[p.path] ?? p.group }]));
+
+/** organising steps, one after the other, then the page read again; the outcome said */
+async function organise(steps, done) {
+  const msg = $('.st-org-msg');
+  msg.textContent = 'Saving…';
+  const problems = [];
+  await steps.reduce((chain, step) => chain.then(async () => {
+    const r = await step();
+    problems.push(...(r?.refused || []), ...(r?.failed || []).map((f) => `not saved: ${f}`));
+  }), Promise.resolve());
+  editing = null;
+  await hooks.load({ quick: true });
+  // (said once the page shows it)
+  msg.textContent = problems.length ? `${done}, except: ${problems.join('; ')}` : done;
+}
+
+/** the editor in a page's Batch / group cell: batch, group, representative of its group */
+function orgEditor(p) {
+  const batch = el('input', {
+    type: 'number', min: '1', max: '999', class: 'st-ed-num', value: p.batch ?? '', 'aria-label': 'Batch (empty: none)',
+  });
+  const group = el('input', {
+    type: 'number', min: '1', max: '999', class: 'st-ed-num', value: p.group ?? '', 'aria-label': 'Group (empty: none)',
+  });
+  const rep = el('input', { type: 'checkbox', ...(p.representative ? { checked: '' } : {}) });
+  rep.disabled = !p.group;
+  group.addEventListener('input', () => {
+    rep.disabled = !group.value.trim();
+    if (rep.disabled) rep.checked = false;
+  });
+  const err = el('span', { class: 'st-ed-err', 'aria-live': 'polite' });
+  const save = async () => {
+    const nb = numberOf(batch);
+    const ng = numberOf(group);
+    if (nb === undefined || ng === undefined) {
+      err.textContent = 'A batch or group is a number from 1 to 999 (empty: none).';
+      return;
+    }
+    const steps = [];
+    if (nb !== (p.batch || null)) steps.push(() => markOrg([p.path], 'batch', nb));
+    if (ng !== (p.group || null)) steps.push(() => markOrg([p.path], 'group', ng));
+    const wantRep = rep.checked && !!ng;
+    if (wantRep && (!p.representative || ng !== p.group)) {
+      steps.push(() => makeRepresentatives([p.path], orgMap({ [p.path]: ng })));
+    }
+    if (!wantRep && p.representative && ng === p.group) {
+      steps.push(() => clearRepresentatives([p.path]));
+    }
+    if (!steps.length) {
+      editing = null;
+      hooks.draw();
+      return;
+    }
+    await organise(steps, `${p.title}: saved`);
+  };
+  return el(
+    'div',
+    { class: 'st-ed' },
+    el('label', {}, 'Batch ', batch),
+    el('label', {}, 'Group ', group),
+    el('label', { class: 'st-check' }, rep, ' Representative of its group'),
+    el('div', {}, el('button', { type: 'button', class: 'rs-btn st-ed-save', onclick: save }, 'Save'), ' ', el('button', {
+      type: 'button',
+      class: 'rs-btn st-ed-cancel',
+      onclick: () => {
+        editing = null;
+        hooks.draw();
+      },
+    }, 'Cancel')),
+    err,
+  );
+}
+
+/** the bar for the ticked pages: the same change for all of them */
+function drawBulk() {
+  const bar = $('.st-bulk');
+  const pages = [...selected].filter((path) => all.some((p) => p.path === path));
+  bar.hidden = me.role !== 'aoe' || !pages.length;
+  if (bar.hidden) return;
+  const num = (name) => el('input', {
+    type: 'number', min: '1', max: '999', class: 'st-ed-num', 'aria-label': name,
+  });
+  const batch = num('Batch number');
+  const group = num('Group number');
+  const n = `${pages.length} page${pages.length === 1 ? '' : 's'}`;
+  // (selected pages the list the filters show now leaves out: selected before a filter change)
+  const inList = new Set(listed.map((p) => p.path));
+  const outside = pages.filter((p) => !inList.has(p)).length;
+  const byPath = new Map(all.map((p) => [p.path, p]));
+  const titleOf = (path) => byPath.get(path)?.title || path;
+  const valueOf = (path, kind) => byPath.get(path)?.[kind] || '';
+  const now = (kind) => {
+    const counts = new Map();
+    pages.forEach((path) => {
+      const v = valueOf(path, kind);
+      counts.set(v, (counts.get(v) || 0) + 1);
+    });
+    return [...counts].sort((a, b) => b[1] - a[1])
+      .map(([v, c]) => `${v ? `${kind[0].toUpperCase()}${kind.slice(1)} ${v}` : `No ${kind}`}: ${c} page${c === 1 ? '' : 's'}`);
+  };
+  // asked first (ask.js) only when it replaces or removes what is set already, or touches pages
+  // the filters hide now; else done at once. (Selecting all is all: what the list has loaded
+  // doesn't matter.)
+  const sure = (what, go, {
+    yes, kind, touched = [], foot,
+  } = {}) => async () => {
+    const gone = pages.filter((p) => !inList.has(p));
+    if (!touched.length && !gone.length) {
+      go();
+      return;
+    }
+    const message = askMessage({
+      head: `${what}?`,
+      parts: [
+        kind && { title: `Their ${kind} now`, items: now(kind) },
+        gone.length && { title: `${gone.length} not in the list the filters show now (selected before a filter change)`, items: gone.map(titleOf) },
+      ],
+      foot: foot || 'Only the organising changes: the pages\' reviews, comments and notes stay as they are.',
+    });
+    if (await ask(message, [[yes || 'Change them', true, 'primary'], ['Cancel', false]])) go();
+  };
+  // (what a change replaces or removes)
+  const withValue = (kind) => pages.filter((p) => valueOf(p, kind));
+  const chosenReps = pages.filter((p) => byPath.get(p)?.representative);
+  const groupsOf = new Set(pages.map((p) => valueOf(p, 'group')).filter(Boolean));
+  const otherReps = all.filter((p) => p.representative && groupsOf.has(p.group)
+    && !selected.has(p.path)).map((p) => p.path);
+  const repsFoot = `${otherReps.length ? `${otherReps.length} other page${otherReps.length === 1 ? ' is' : 's are'} the chosen representative of these groups now: no longer. ` : ''}Only the organising changes: the pages' reviews, comments and notes stay as they are.`;
+  const move = (kind, input) => () => {
+    const v = numberOf(input);
+    if (!v) {
+      $('.st-org-msg').textContent = `Give the ${kind} number (1 to 999).`;
+      return;
+    }
+    sure(`Move ${n} to ${kind} ${v}`, () => organise([() => markOrg(pages, kind, v)], `${n} moved to ${kind} ${v}`), { yes: `Move ${n}`, kind, touched: withValue(kind).filter((p) => String(valueOf(p, kind)) !== String(v)) })();
+  };
+  const btn = (text, onclick, title = '') => el('button', {
+    type: 'button', class: 'rs-btn', onclick, title,
+  }, text);
+  bar.replaceChildren(...[
+    el('b', {}, `${n} selected:`),
+    outside ? el('span', { class: 'st-bulk-note' }, `${outside} of them not in the list the filters show now`, btn('Keep only the listed ones', () => {
+      [...selected].filter((p) => !inList.has(p)).forEach((p) => selected.delete(p));
+      hooks.draw();
+    })) : null,
+    el('span', { class: 'st-bulk-group' }, 'Batch ', batch, btn('Move', move('batch', batch)), btn('Take out of their batch', sure(`Take ${n} out of their batch`, () => organise([() => markOrg(pages, 'batch', null)], `${n} taken out of their batch`), { yes: `Take ${n} out`, kind: 'batch', touched: withValue('batch') }))),
+    el('span', { class: 'st-bulk-group' }, 'Group ', group, btn('Move', move('group', group)), btn('Take out of their group', sure(`Take ${n} out of their group`, () => organise([() => markOrg(pages, 'group', null)], `${n} taken out of their group`), {
+      yes: `Take ${n} out`, kind: 'group', touched: withValue('group'), foot: 'A page taken out of its group no longer shares the group\'s approval or representative. Their reviews, comments and notes stay as they are.',
+    }))),
+    el(
+      'span',
+      { class: 'st-bulk-group' },
+      btn('Make representatives', sure(`Make ${n} representatives`, () => organise([() => makeRepresentatives(pages, orgMap())], 'Representatives chosen'), {
+        yes: 'Make them representatives', kind: 'group', touched: otherReps, foot: repsFoot,
+      }), 'Each becomes its group\'s representative (one per group)'),
+      btn('Clear representative', sure(`Clear the representative of ${n}`, () => organise([() => clearRepresentatives(pages)], 'Representatives cleared (each group\'s first page stands in)'), { yes: 'Clear them', kind: 'group', touched: chosenReps })),
+    ),
+    btn('Clear the selection', () => {
+      selected.clear();
+      hooks.draw();
+    }),
+  ].filter(Boolean));
+}
+
+/** the groups: each with its pages and its representative to choose (or none: its first page) */
+function drawGroups() {
+  const box = $('.st-groups');
+  box.hidden = me.role !== 'aoe';
+  if (box.hidden) return;
+  const groups = [...new Set(all.map((p) => p.group).filter(Boolean))].sort((a, b) => a - b);
+  $('.st-groups-sum').textContent = `Groups and their representatives (${groups.length})`;
+  if (!groups.length) {
+    $('.st-groups-body').replaceChildren(el('p', { class: 'rs-muted' }, 'No groups yet: give pages a group (Edit in their row, the selection bar or the box above).'));
+    return;
+  }
+  const short = (p) => `${p.title} (${p.path})`;
+  $('.st-groups-body').replaceChildren(...groups.map((g) => {
+    const members = all.filter((p) => p.group === g).sort((a, b) => (a.path < b.path ? -1 : 1));
+    const chosen = members.find((p) => p.representative);
+    const first = members.find((p) => p.representativeAuto) || members[0];
+    const pick = el('select', {
+      class: 'st-rep-pick',
+      'aria-label': `Representative of group ${g}`,
+      onchange: (e) => {
+        const v = e.target.value;
+        organise([v
+          ? () => makeRepresentatives([v], orgMap())
+          : () => clearRepresentatives(members.filter((p) => p.representative).map((p) => p.path))], v ? `Group ${g}: representative chosen` : `Group ${g}: no representative chosen (its first page stands in)`);
+      },
+    }, el('option', { value: '' }, `None chosen: the first page stands in (${first?.title || ''})`), ...members.map((p) => el('option', { value: p.path }, short(p))));
+    pick.value = chosen ? chosen.path : '';
+    return el(
+      'div',
+      { class: 'st-group-row' },
+      el('b', {}, `Group ${g}`),
+      el('span', { class: 'rs-muted' }, ` ${members.length} page${members.length === 1 ? '' : 's'} · representative `),
+      pick,
+      el('details', {
+        ...(openGroups.has(g) ? { open: '' } : {}),
+        ontoggle: (e) => (e.target.open ? openGroups.add(g) : openGroups.delete(g)),
+      }, el('summary', {}, 'Its pages'), el('ul', {}, ...members.map((p) => el(
+        'li',
+        {},
+        `${short(p)}${p.representative ? ' ★' : ''}${p.representativeAuto ? ' ☆' : ''} `,
+        el('button', {
+          type: 'button', class: 'rs-btn st-take-out', onclick: () => organise([() => markOrg([p.path], 'group', null)], `${p.title}: taken out of group ${g}`),
+        }, 'Take out'),
+      )))),
+    );
+  }));
+}
+
+/** the saved state of the page: { search, template, state, order, onlyNew, picked, scroll } */
+function savedView() {
+  try {
+    return JSON.parse(window.localStorage.getItem(VIEW_KEY)) || {};
+  } catch (e) {
+    return {};
+  }
+}
+function saveView(extra = {}) {
+  // (the filters and the order: shared with the tool, batches.js; only "new" and the place here)
+  window.localStorage.setItem(VIEW_KEY, JSON.stringify({
+    ...savedView(),
+    onlyNew: $('.st-new').checked,
+    ...extra,
+  }));
+}
+
+/** the filter fields from the shared filters (after a change here, in the tool or Clear all) */
+function showFilters({ fromElsewhere = false } = {}) {
+  const f = getFilters();
+  // (not while typing in it here; always when the tool changed it)
+  if (fromElsewhere || document.activeElement !== $('.st-search')) $('.st-search').value = f.search;
+  $('.st-template').value = f.template;
+  $('.st-unit').value = f.area;
+  $('.st-group').value = String(f.group);
+  $('.st-reps').checked = f.reps;
+  $('.st-state').value = f.states.length === 1 ? f.states[0] : '';
+  $('.st-order').value = f.order;
+}
+
+const pickedStates = (state, before) => {
+  if (state) return [state];
+  return before.length > 1 ? before : [];
+};
+
+/** the shared filters from the fields */
+function takeFilters() {
+  const v = $('.st-group').value;
+  const state = $('.st-state').value;
+  const before = getFilters().states;
+  setFilters({
+    search: $('.st-search').value,
+    template: $('.st-template').value,
+    area: $('.st-unit').value,
+    group: v === '' || v === 'none' ? v : Number(v),
+    reps: $('.st-reps').checked,
+    // (the select picks one status; the tiles may have picked several)
+    states: pickedStates(state, before),
+    order: $('.st-order').value,
+  });
+}
+// the selects filled from the pages (template, state) get their saved value on the first load
+let restoredSelects = false;
+
+function label(state) {
+  return STATES[state][me.role === 'aoe' ? 'aoe' : 'reviewer'];
+}
+
+function filtered() {
+  const f = getFilters();
+  const onlyNew = $('.st-new').checked;
+  return all.filter((p) => matches(p, p, f) && (!onlyNew || p.isNew));
+}
+
+function sorted(list) {
+  return sortPages(list, getFilters().order, me.role);
+}
+
+function tiles() {
+  const count = (s) => all.filter((p) => p.state === s).length;
+  // (Not published yet: only when there are such pages, the AOE team's lists)
+  const rank = ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'].filter((s) => s !== 'unpublished' || count(s));
+  $('.st-tiles').replaceChildren(...rank.map((s) => el('button', {
+    type: 'button',
+    class: `st-tile st-${s}${picked.has(s) ? ' st-picked' : ''}`,
+    'aria-pressed': String(picked.has(s)),
+    onclick: () => {
+      const states = getFilters().states.filter((x) => x !== s);
+      setFilters({ states: picked.has(s) ? states : [...states, s] });
+      showFilters();
+      saveView();
+      shown = PAGE_SIZE;
+      hooks.draw();
+    },
+  }, el('b', {}, String(count(s))), el('span', {}, label(s)))));
+  $('.st-meter').replaceChildren(...rank.filter(count).map((s) => el('div', {
+    class: `st-${s}`, style: `flex-grow: ${count(s)}`, title: `${label(s)}: ${count(s)}`,
+  })));
+}
+
+/** the group mark's explanation */
+function repTitle(p) {
+  if (p.representative) return 'The representative page of its group (chosen): the reviewer reviews it for the whole group';
+  if (p.representativeAuto) return 'The first page of its group: its representative while none is chosen';
+  return '';
+}
+
+/** approved: by whom and when, or with its group (approving one page approves the group) */
+function approvedText(p) {
+  if (p.approved) return `${p.approved.by} · ${when(p.approved.at)}`;
+  if (!p.groupApproved) return '';
+  const g = p.groupApproved;
+  return el('span', { class: 'st-group-ok', title: `Approved with its group: ${g.page} was approved` }, `With its group · ${g.by} · ${when(g.at)}`);
+}
+
+/** the migration scope's facts for the AOE team: counts and what to look at */
+function drawScope() {
+  const box = $('.st-scope');
+  const f = scopeFacts();
+  box.hidden = me.role !== 'aoe' || !f;
+  if (box.hidden) return;
+  const published = all.filter((p) => p.published).length;
+  const { waiting = [], lastRun, health } = f.capture || {};
+  const ch = f.changes || { redirects: [], unreachable: [] };
+  const toCorrect = waiting.filter((w) => w.problem);
+  const issues = f.notInScope.length + f.problems.length + toCorrect.length
+    + ch.redirects.length + ch.unreachable.length + (health && !health.ok ? 1 : 0);
+  box.open = box.open || issues > 0;
+  const list = (title, items, row) => (items.length ? [el('h3', {}, `${title} (${items.length})`), el('ul', { class: 'st-scope-list' }, ...items.slice(0, 200).map((i) => el('li', {}, row(i))))] : []);
+  $('.st-scope-sum').textContent = `Migration scope: ${all.length} pages, ${published} published${issues ? ` · ${issues} to look at` : ''}`;
+  $('.st-scope-body').replaceChildren(
+    el('p', { class: 'rs-muted' }, 'The scope is the table review/migration-scope in Document Authoring (source, eds, template; preview it after a change). Reviewers see the published pages of the scope; a page joins when it is published, and the backend takes its first source shot within 15 minutes.'),
+    // (the site login keeps the backend from reading the table: its copy, which this page hands
+    // over whenever an AOE member opens it)
+    ...(f.scopeCopy?.used ? [el('p', { class: 'rs-muted' }, `The backend can't read the table behind the site login, so it uses its copy of ${when(f.scopeCopy.at)}. Opening this page as the AOE team updates that copy when the table has changed.`)] : []),
+    ...list('Published, not in the scope table', f.notInScope, (i) => [el('a', { href: `./index.html?page=${encodeURIComponent(i.path)}`, target: '_blank', rel: 'noopener' }, i.path), ` ${i.title}`]),
+    ...list('Rows of the scope table to correct', f.problems, (i) => `Row ${i.row}: ${i.eds || ''} ${i.source || ''}: ${i.detail}`),
+    ...list('No first shot possible (the source redirects or fails)', toCorrect, (i) => [el('b', {}, i.path), ` ${i.source}: ${i.problem.reason} (${when(i.problem.at)})`]),
+    ...list('Sources that redirect (daily change check)', ch.redirects, (i) => [el('b', {}, i.path), ` ${i.source} → ${i.to} (since ${i.since})`]),
+    ...list('Sources not reachable (daily change check)', ch.unreachable, (i) => [el('b', {}, i.path), ` ${i.source}: ${i.reason} (since ${i.since})`]),
+    ...list('Waiting for their first shot', waiting.filter((w) => !w.problem), (i) => `${i.path} (published, seen ${when(i.since)})`),
+    el('p', { class: 'rs-muted' }, [
+      lastRun ? `Last capture ${when(lastRun.at)}: ${lastRun.done.length} shot${lastRun.done.length === 1 ? '' : 's'}, ${lastRun.failed.length} failed${lastRun.waiting ? `, ${lastRun.waiting} for the next run` : ''}.` : 'No capture run yet.',
+      health ? ` Browser check ${when(health.at)}: ${health.ok ? 'working' : `NOT WORKING (${health.detail})`}.` : '',
+    ].join('')),
+  );
+}
+
+function threadsText(t) {
+  if (!t) return '';
+  return [t.open && `${t.open} open`, t.done && `${t.done} done`].filter(Boolean).join(' · ');
+}
+
+/** the batch chips: every batch with its page count, and the pages in no batch; several at once */
+function batchChips() {
+  const { batches: chosen } = getFilters();
+  const numbers = [...new Set(all.map((p) => p.batch).filter(Boolean))].sort((a, b) => a - b);
+  const count = (b) => all.filter((p) => (p.batch || 'none') === b).length;
+  const toggle = (b) => {
+    const f = getFilters();
+    f.batches = f.batches.includes(b) ? f.batches.filter((x) => x !== b) : [...f.batches, b];
+    setFilters(f);
+    shown = PAGE_SIZE;
+    hooks.draw();
+  };
+  const chip = (b, text) => el('button', {
+    type: 'button', class: 'st-batch', 'aria-pressed': String(chosen.includes(b)), onclick: () => toggle(b),
+  }, text);
+  $('.st-batches').replaceChildren(...[
+    el('span', {}, 'Batches:'),
+    el('button', {
+      type: 'button',
+      class: 'st-batch',
+      'aria-pressed': String(!chosen.length),
+      onclick: () => {
+        setFilters({ ...getFilters(), batches: [] });
+        hooks.draw();
+      },
+    }, `All (${all.length})`),
+    ...numbers.map((b) => chip(b, `Batch ${b} (${count(b)})`)),
+    count('none') ? chip('none', `No batch (${count('none')})`) : null,
+  ].filter(Boolean));
+}
+
+function draw() {
+  batchChips();
+  tiles();
+  $('.st-clear').disabled = !filtersSet() && !$('.st-new').checked;
+  const list = sorted(filtered());
+  $('.st-count').textContent = `${list.length} of ${all.length} pages${all.some((p) => p.isNew) ? ` · ${all.filter((p) => p.isNew).length} with news since your last visit` : ''}`;
+  // (template and design choices: only where the pages have them)
+  const templates = all.some((p) => p.template);
+  const aoe = me.role === 'aoe';
+  const head = ['State', 'Page', 'Batch / group', 'Area', templates && 'Template', 'Threads', REVIEW.design && 'Design choices', 'Approved', 'Latest activity'].filter(Boolean);
+  const visible = list.slice(0, shown);
+  listed = list;
+  // (the AOE team: a tick per page, and one for every page the filters show)
+  const ticked = list.filter((p) => selected.has(p.path)).length;
+  const tickAll = aoe ? el('input', {
+    type: 'checkbox',
+    'aria-label': `Select every page the filters show (${list.length})`,
+    title: `Every page the filters show (${list.length})`,
+    ...(list.length && ticked === list.length ? { checked: '' } : {}),
+    onchange: (e) => {
+      list.forEach((p) => (e.target.checked ? selected.add(p.path) : selected.delete(p.path)));
+      hooks.draw();
+    },
+  }) : null;
+  if (tickAll) tickAll.indeterminate = ticked > 0 && ticked < list.length;
+  const rows = visible.map((p) => el(
+    'tr',
+    { class: `${p.isNew ? 'st-row-new' : ''}${selected.has(p.path) ? ' st-row-picked' : ''}` },
+    aoe ? el('td', {}, el('input', {
+      type: 'checkbox',
+      'aria-label': `Select ${p.title}`,
+      ...(selected.has(p.path) ? { checked: '' } : {}),
+      onchange: (e) => {
+        if (e.target.checked) selected.add(p.path);
+        else selected.delete(p.path);
+        hooks.draw();
+      },
+    })) : null,
+    el('td', {}, el('span', { class: `st-chip st-${p.state}` }, label(p.state))),
+    el(
+      'td',
+      { class: 'st-page-cell' },
+      el('a', { href: `./index.html?page=${encodeURIComponent(p.path)}`, target: '_blank', rel: 'noopener' }, p.title),
+      el('br'),
+      el('small', { class: 'rs-muted' }, p.path),
+      // (the AOE team's: open the page's document to edit)
+      me.role === 'aoe' && editUrl(p.path) ? [' ', el('a', {
+        class: 'st-edit', href: editUrl(p.path), target: '_blank', rel: 'noopener', title: 'Open the page in Document Authoring to edit it',
+      }, 'Edit in DA')] : null,
+    ),
+    el('td', {}, editing === p.path ? orgEditor(p) : [
+      orgLabel(p) ? el('span', { class: `st-batch-tag${p.representative || p.representativeAuto ? ' st-rep' : ''}`, title: repTitle(p) }, orgLabel(p)) : '',
+      aoe ? el('button', {
+        type: 'button',
+        class: 'st-ed-open',
+        title: 'Change the batch, the group or the representative of this page',
+        onclick: () => {
+          editing = p.path;
+          hooks.draw();
+        },
+      }, 'Edit') : null,
+    ]),
+    el('td', {}, areaLabel(p.unit || '')),
+    templates ? el('td', {}, p.template) : null,
+    el('td', {}, threadsText(p.threads)),
+    REVIEW.design ? el('td', {}, p.choices ? String(p.choices) : '') : null,
+    el('td', {}, approvedText(p)),
+    el('td', {}, p.last ? [`${p.last.by}${p.last.role === 'aoe' ? ' (AOE)' : ''} · ${when(p.last.at)}`, p.isNew ? el('span', { class: 'st-new-badge' }, 'new') : null] : ''),
+  ));
+  drawBulk();
+  drawGroups();
+  $('.st-table').replaceChildren(list.length
+    ? el('table', {}, el('thead', {}, el('tr', {}, aoe ? el('th', {}, tickAll) : null, ...head.map((h) => el('th', {}, h)))), el('tbody', {}, ...rows))
+    : el('p', { class: 'rs-none' }, 'No pages match.'));
+  $('.st-more').hidden = list.length <= shown;
+  $('.st-more').textContent = `Show more (${Math.max(0, list.length - shown)} more)`;
+}
+
+hooks.draw = draw;
+
+function options(select, values) {
+  const keep = select.value;
+  select.replaceChildren(el('option', { value: '' }, 'All'), ...values.map((v) => el('option', { value: v.value ?? v }, v.label ?? v)));
+  select.value = keep;
+}
+
+// the pages of the review, kept between loads (they change only with the scope or publishing)
+let pagesKept = null;
+
+/**
+ * reads the review's state (and the pages); quick: the pages kept (after organising);
+ * rebuild: the backend builds its summary again from every entry (Refresh)
+ */
+let bar = null;
+// (the AOE team hands the scope table to the backend once per visit, when its copy differs)
+let scopeHanded = false;
+async function load({ quick = false, rebuild = false, quiet = false } = {}) {
+  // (quiet: the 15-second refresh, live.js: no "Loading…" in between)
+  if (!quiet) $('.rs-updated').textContent = 'Loading…';
+  // (the AOE team: every page of the migration scope; reviewers: the published ones)
+  const [{ status, body }, pages] = await Promise.all([
+    call(`overview${rebuild ? '?rebuild=1' : ''}`),
+    quick && pagesKept ? pagesKept : loadPages({ all: true, fresh: rebuild }),
+  ]);
+  pagesKept = pages;
+  if (status !== 200) {
+    $('.rs-updated').textContent = body?.error?.message || 'Could not read the review status: open this page with your review link.';
+    return;
+  }
+  me = { name: body.reviewer, role: body.role || 'reviewer' };
+  bar?.setRole(me.role, me.name);
+  if (me.role === 'aoe' && !scopeHanded) {
+    scopeHanded = true;
+    handOverScope().then((r) => { if (r?.rows) load({ quiet: true }); });
+  }
+  const states = new Map(body.pages.map((p) => [p.page, p]));
+  all = pages.filter((p) => inScope(body.scope, p.path)).map((p) => {
+    const s = states.get(p.path) || { state: 'unreviewed' };
+    // news: activity by someone else since this viewer's last visit
+    const isNew = !!(previousVisit && s.last && s.last.at > previousVisit && s.last.by !== me.name);
+    // (a page of the scope that isn't published yet, with no review of its own)
+    const state = p.published === false && s.state === 'unreviewed' ? 'unpublished' : s.state;
+    return {
+      ...p, ...s, state, page: undefined, isNew,
+    };
+  });
+  // the first published page of a group without a chosen representative
+  markFirstRepresentatives(all.filter((p) => p.published !== false));
+  drawScope();
+  options($('.st-template'), [...new Set(all.map((p) => p.template).filter(Boolean))].sort());
+  $('.st-template').closest('label').hidden = !all.some((p) => p.template);
+  options($('.st-unit'), [...new Set(all.map((p) => p.unit).filter(Boolean))].sort()
+    .map((u) => ({ value: u, label: areaLabel(u) })));
+  // the area, group and representatives only, kept with the tool's filters
+  $('.st-unit').value = getFilters().area;
+  const groups = [...new Set(all.map((p) => p.group).filter(Boolean))].sort((a, b) => a - b);
+  const groupCount = (g) => all.filter((p) => p.group === g).length;
+  options($('.st-group'), [
+    ...groups.map((g) => ({ value: String(g), label: `Group ${g} (${groupCount(g)})` })),
+    { value: 'none', label: 'In no group' },
+  ]);
+  $('.st-reps').checked = getFilters().reps;
+  // the AOE team marks pages for a batch
+  $('.st-mark').hidden = me.role !== 'aoe';
+  options($('.st-state'), ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'].map((s) => ({ value: s, label: label(s) })));
+  if (!restoredSelects) restoredSelects = true;
+  showFilters();
+  $('.rs-updated').textContent = `Last read ${when(body.at)}`;
+  draw();
+  window.localStorage.setItem(VISIT_KEY, body.at);
+}
+
+hooks.load = load;
+
+async function start() {
+  if (!PREVIEW) {
+    $('.rs-blocked').hidden = false;
+    return;
+  }
+  // the invitation is kept in the browser, not in the address bar
+  inviteToken();
+  if (new URLSearchParams(window.location.search).has('invite')) {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('invite');
+    window.history.replaceState(null, '', url);
+  }
+  document.title = `${REVIEW.title}: status of every page`;
+  // (a first visit ever has none: its own time counts from the next load on)
+  previousVisit = window.sessionStorage.getItem(TAB_VISIT_KEY)
+    || window.localStorage.getItem(VISIT_KEY) || '';
+  if (previousVisit) window.sessionStorage.setItem(TAB_VISIT_KEY, previousVisit);
+  // the page as it was: only new, the place; the filters and the order are the shared ones
+  // (an older visit's own search, template, state, order and tiles: taken over once)
+  const view = savedView();
+  const older = view.search || view.template || view.state || view.order || view.picked?.length;
+  if (!view.shared && older) {
+    setFilters({
+      search: view.search || '',
+      template: view.template || '',
+      states: view.picked?.length ? view.picked : [view.state].filter(Boolean),
+      ...(view.order ? { order: view.order } : {}),
+    });
+  }
+  saveView({ shared: true });
+  $('.st-new').checked = !!view.onlyNew;
+  showFilters();
+  $('.st-clear').addEventListener('click', () => {
+    clearFilters();
+    $('.st-new').checked = false;
+    shown = PAGE_SIZE;
+    saveView();
+    showFilters();
+    draw();
+  });
+  // (the tool changed them, in another tab)
+  onFiltersChange(() => {
+    showFilters({ fromElsewhere: true });
+    draw();
+  });
+  const result = (text) => {
+    $('.st-mark-result').textContent = text;
+  };
+  const pasted = () => {
+    // (the scope table's pairs first: source path → EDS path)
+    const bySource = new Map(all.filter((p) => p.source)
+      .map((p) => [new URL(p.source).pathname, p.path]));
+    const { found, missing } = pagesOf($('.st-mark-list').value, all.map((p) => p.path), bySource);
+    if (!found.length) {
+      result(missing.length ? `None of these is a page of this review:\n${missing.join('\n')}` : 'Paste the pages first.');
+    }
+    return { found, missing };
+  };
+  const report = (lines, missing) => result([...lines, missing.length ? `Not pages of this review (${missing.length}), left out:\n${missing.join('\n')}` : '']
+    .filter(Boolean).join('\n\n'));
+  const mark = async (value) => {
+    const kind = $('.st-mark-kind').value;
+    const { found, missing } = pasted();
+    if (!found.length) return;
+    result(`Saving ${found.length} page${found.length > 1 ? 's' : ''}…`);
+    const { done, failed } = await markOrg(found, kind, value);
+    report([
+      `${done} page${done === 1 ? '' : 's'} ${value ? `marked for ${kind} ${value}` : `taken out of their ${kind}`}.`,
+      failed.length ? `Not saved (${failed.length}):\n${failed.join('\n')}` : '',
+    ], missing);
+    await load();
+  };
+  $('.st-mark-go').addEventListener('click', () => {
+    const n = Number($('.st-mark-batch').value);
+    if (!Number.isInteger(n) || n < 1 || n > 999) {
+      result(`Give the ${$('.st-mark-kind').value} number (1 to 999).`);
+      return;
+    }
+    mark(n);
+  });
+  $('.st-mark-clear').addEventListener('click', () => mark(null));
+  $('.st-mark-rep').addEventListener('click', async () => {
+    const { found, missing } = pasted();
+    if (!found.length) return;
+    result('Saving…');
+    const org = new Map(all.filter((p) => p.group).map((p) => [p.path, p]));
+    const { done, failed, refused } = await makeRepresentatives(found, org);
+    report([
+      `${done} page${done === 1 ? ' is now the representative of its group' : 's are now the representatives of their groups'}.`,
+      refused.length ? `Not made representatives (${refused.length}):\n${refused.join('\n')}` : '',
+      failed.length ? `Not saved (${failed.length}):\n${failed.join('\n')}` : '',
+    ], missing);
+    await load();
+  });
+  $('.st-mark-shown').addEventListener('click', () => {
+    // (the source of the scope table: the EDS path doesn't give it back)
+    $('.st-mark-list').value = sorted(filtered()).map((p) => p.source || `https://www.stryker.com${p.path}.html`).join('\n');
+  });
+  ['.st-search', '.st-template', '.st-unit', '.st-group', '.st-reps', '.st-state', '.st-order', '.st-new'].forEach((sel) => {
+    $(sel).addEventListener(sel === '.st-search' ? 'input' : 'change', () => {
+      shown = PAGE_SIZE;
+      if (sel !== '.st-new') takeFilters();
+      saveView();
+      showFilters();
+      draw();
+    });
+  });
+  // the scroll position, kept too (put back once the table is there)
+  let scrollTimer = 0;
+  window.addEventListener('scroll', () => {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      saveView({ scroll: Math.round(window.scrollY), shown });
+    }, 200);
+  });
+  if (view.shown > PAGE_SIZE) shown = view.shown;
+  $('.st-more').addEventListener('click', () => {
+    shown += PAGE_SIZE;
+    draw();
+  });
+  $('.st-refresh').addEventListener('click', () => load({ rebuild: true }));
+  bar = mountBar('status', $('.rs-bar'));
+  await load();
+  if (view.scroll) window.scrollTo(0, view.scroll);
+  // kept up to date (live.js), not while a row is being edited or a field of the selection bar
+  // or the groups box is in use
+  keepFresh(() => {
+    const active = document.activeElement;
+    const busy = editing !== null || (active && /^(INPUT|SELECT|TEXTAREA)$/.test(active.tagName) && active.closest('.st-bulk, .st-groups, table'));
+    return busy ? null : load({ quick: true, quiet: true });
+  });
+}
+
+start();

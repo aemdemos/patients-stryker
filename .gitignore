@@ -20,3 +20,7 @@ tools/importer/reports/
 # Playwright / a11y test artifacts
 playwright-report/
 test-results/
+
+# review tool: the local snapshot tiles (a link to the capture folder)
+tools/review/snapshots
+tools/review/backend/node_modules

@@ -1,0 +1,110 @@
+/*
+ * The review's report pages: the summary, and the parts the status and invitations pages share
+ * (sections, tiles, buttons, tables). On the shared design (ui.css).
+ */
+
+/* the bar is the shared one (bar.js); its old title is gone */
+.rs-bar h1 { margin: 0; }
+.rs-check { display: inline-flex; gap: 6px; align-items: center; color: var(--c-ink-2); font-size: var(--fs-s); }
+.rs-check[hidden] { display: none; }
+
+/* buttons: neutral by default; the primary one is dark, a dangerous one red */
+.rs-btn {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  min-block-size: 32px;
+  padding: 5px 14px;
+  border: 1px solid var(--c-line-2);
+  border-radius: var(--r-pill);
+  background: var(--c-surface);
+  color: var(--c-ink);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.rs-btn:hover:not(:disabled) { border-color: var(--c-ink); color: var(--c-ink); }
+.rs-btn:active:not(:disabled) { transform: translateY(1px); }
+.rs-btn:disabled { opacity: 0.5; cursor: default; }
+/* (its display would win over hidden: e.g. Show more, once every page is shown) */
+.rs-btn[hidden] { display: none; }
+.rs-btn-primary { border-color: var(--c-ink); background: var(--c-ink); color: #fff; }
+.rs-btn-primary:hover:not(:disabled) { background: #000; color: #fff; }
+
+/* the page */
+.rs-main { max-width: 1200px; margin: 0 auto; padding: 0 20px 48px; }
+
+.rs-section {
+  margin-bottom: var(--sp-5);
+  padding: var(--sp-4);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-l);
+  background: var(--c-surface);
+  box-shadow: var(--shadow-1);
+}
+
+.rs-section h2 { margin: 0 0 var(--sp-3); font-size: var(--fs-xl); font-weight: 900; letter-spacing: -0.01em; }
+.rs-section h2::after { content: ""; display: block; inline-size: 40px; block-size: 4px; margin-top: 6px; border-radius: 2px; background: var(--c-red); }
+.rs-section h3 { margin: var(--sp-5) 0 var(--sp-2); color: var(--c-ink); font-size: var(--fs-l); font-weight: 800; }
+.rs-section[hidden] { display: none; }
+
+/* the numbers */
+.rs-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); margin-bottom: var(--sp-3); }
+.rs-tile { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border: 1px solid var(--c-line); border-radius: var(--r-m); background: var(--c-surface-2); }
+.rs-tile b { display: block; font-size: var(--fs-3xl); font-weight: 900; line-height: 1; }
+.rs-tile span { color: var(--c-ink-2); font-size: var(--fs-s); font-weight: 600; }
+.rs-tile:first-child { border-color: transparent; background: linear-gradient(135deg, var(--c-ink), #3a3a3a); color: #fff; }
+.rs-tile:first-child span { color: rgb(255 255 255 / 85%); }
+.rs-bar-meter { block-size: 10px; margin: var(--sp-1) 0 var(--sp-3); overflow: hidden; border-radius: var(--r-pill); background: #ececea; }
+.rs-bar-meter > div { block-size: 100%; border-radius: inherit; background: linear-gradient(90deg, #ff4d2e, var(--c-red)); transition: width 0.6s var(--ease); }
+
+/* tables: on small screens they scroll sideways in their box; wider, their head stays while the page scrolls */
+.rs-section table { margin-top: var(--sp-1); }
+.rs-section th { background: var(--c-surface); }
+:is(.st-table, .iv-table) { overflow-x: auto; }
+:is(.st-table, .iv-table) table { min-inline-size: 860px; }
+td a { color: var(--c-link); font-weight: 600; }
+.rs-muted { color: var(--c-muted); }
+.rs-none { color: var(--c-muted); font-style: italic; }
+
+/* chips of a note or comment */
+.rs-tag { display: inline-block; padding: 1px 9px; border-radius: var(--r-pill); background: #ececea; font-size: var(--fs-xs); font-weight: 700; white-space: nowrap; }
+.rs-tag.rs-open { background: #fff1c2; color: #6b4b00; }
+.rs-tag.rs-resolved { background: #dcf3e2; color: #135c29; }
+.rs-tag.rs-exception { background: var(--c-red-50); color: var(--c-red-800); }
+
+/* downloads: a button next to the heading */
+.rs-download {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-inline-start: var(--sp-2);
+  padding: 3px 12px;
+  border: 1px solid var(--c-line-2);
+  border-radius: var(--r-pill);
+  background: var(--c-surface);
+  color: var(--c-ink);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-decoration: none;
+  vertical-align: 2px;
+}
+
+.rs-download::before { content: "↓"; }
+.rs-download:hover { border-color: var(--c-ink); color: var(--c-ink); }
+
+.rs-blocked { position: fixed; inset: 0; z-index: 40; display: grid; place-items: center; background: var(--c-surface); font-size: var(--fs-xl); }
+.rs-blocked[hidden] { display: none; }
+
+@media (width >= 600px) {
+  .rs-section { padding: var(--sp-5); }
+  .rs-tiles { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+}
+
+@media (width >= 900px) {
+  :is(.st-table, .iv-table) { overflow: visible; }
+  .rs-section th { position: sticky; top: var(--bar-h); z-index: 1; }
+}

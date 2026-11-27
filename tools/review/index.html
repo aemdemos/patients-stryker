@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Standard pages review</title>
+  <link rel="stylesheet" href="./ui.css">
+  <link rel="stylesheet" href="./review.css">
+  <script type="module" src="./review.js"></script>
+</head>
+<body>
+  <header class="rv-appbar"></header>
+  <header class="rv-bar">
+    <!-- row 1: which page (the page picker, where it is in the list, the filter, its status, its two pages) -->
+    <div class="rv-row rv-row-page">
+      <div class="rv-group rv-pages">
+        <button type="button" class="rv-btn" data-action="prev" title="Previous page (Alt+←)">‹</button>
+        <div class="rv-pick-box"></div>
+        <button type="button" class="rv-btn" data-action="next" title="Next page (Alt+→)">›</button>
+        <span class="rv-count" aria-live="polite"></span>
+        <span class="rv-page-badge" aria-live="polite"></span>
+      </div>
+      <div class="rv-group rv-end">
+        <span class="rv-status rv-saved" aria-live="polite"><span class="rv-status-text">All changes saved</span> <button type="button" class="rv-btn rv-retry" hidden>Retry</button></span>
+        <label class="rv-name">Your name <input type="text" class="rv-reviewer" autocomplete="name"></label>
+      </div>
+    </div>
+    <!-- row 2: how to look at it -->
+    <div class="rv-row rv-row-view">
+      <div class="rv-group" role="group" aria-label="Viewport">
+        <button type="button" class="rv-btn" data-vp="1440">Desktop</button>
+        <button type="button" class="rv-btn" data-vp="375">Phone</button>
+      </div>
+      <div class="rv-group" role="group" aria-label="Compare with">
+        <span class="rv-label">Compare with</span>
+        <button type="button" class="rv-btn" data-cmp="rs" title="The page as migrated, before standardisation">As-is</button>
+        <button type="button" class="rv-btn" data-cmp="src" title="A screenshot of the stryker.com page, taken by the review (its date is in the Source shot box)">Screenshot</button>
+        <button type="button" class="rv-btn" data-cmp="live" title="The stryker.com page as it is now, rendered by the review backend at this width (as rendered: menus, tabs and carousels don't move; links open the real page in a new tab)">Render</button>
+        <button type="button" class="rv-btn" data-cmp="real" title="The real stryker.com page, interactive (menus, tabs, carousels work), with Scroll Sync: needs the review extension (pilot)">Live</button>
+        <button type="button" class="rv-btn" data-cmp="rep" title="No representative has been established or migrated for this page yet" disabled>Representative</button>
+      </div>
+      <div class="rv-group" role="group" aria-label="View">
+        <button type="button" class="rv-btn" data-mode="flip" title="Flip between the standard page and the other one (Space)">Flip</button>
+        <button type="button" class="rv-btn" data-mode="opacity" title="The other page over the standard page">Overlay</button>
+        <button type="button" class="rv-btn" data-mode="side" title="Side by side">Side by side</button>
+        <label class="rv-opacity"><span class="rv-opacity-label">As-is</span> <input type="range" min="0" max="100" step="5" aria-label="Opacity"></label>
+        <label class="rv-check" title="Both pages scroll together"><input type="checkbox" class="rv-sync" checked> Scroll Sync</label>
+      </div>
+      <div class="rv-group">
+        <button type="button" class="rv-btn rv-note-btn" data-action="note" aria-pressed="false" title="Then click the spot on the standard page (N; Esc to stop)">+ Add QA note</button>
+      </div>
+      <div class="rv-group rv-showing" aria-live="polite"></div>
+    </div>
+  </header>
+  <div class="rv-main">
+    <aside class="rv-panel rv-panel-left" aria-label="Designs on this page">
+      <div class="rv-panel-head">
+        <h2>Designs on this page</h2>
+        <button type="button" class="rv-collapse" data-panel="left" aria-expanded="true" title="Hide this panel">‹</button>
+      </div>
+      <div class="rv-panel-body">
+        <p class="rv-hint">Every block and text section of the page, in order. ‹ › tries the other designs a block's content fits; its section's background and text style are below it. Click a name to scroll to it.</p>
+        <ol class="rv-blocks"></ol>
+        <h2>Open in a new tab</h2>
+        <ul class="rv-links"></ul>
+      </div>
+    </aside>
+    <main class="rv-stage">
+      <div class="rv-frame rv-std" data-side="std"><iframe title="Standard page"></iframe><span class="rv-tag">Standard</span></div>
+      <div class="rv-frame rv-rs" data-side="rs"><iframe title="As-is page"></iframe><span class="rv-tag">As-is</span></div>
+      <div class="rv-frame rv-src" data-side="src">
+        <div class="rv-src-scroller"><div class="rv-src-page"></div></div>
+        <span class="rv-tag">Screenshot</span>
+        <p class="rv-src-none" hidden>No snapshot of this page at this width yet.</p>
+      </div>
+      <div class="rv-frame rv-rep" data-side="rep">
+        <iframe title="The group's representative page"></iframe>
+        <span class="rv-tag">Migrated representative</span>
+        <p class="rv-live-msg rv-rep-msg" hidden></p>
+      </div>
+      <div class="rv-frame rv-real" data-side="real">
+        <iframe title="The real stryker.com page"></iframe>
+        <span class="rv-tag">Live stryker.com</span>
+      </div>
+      <div class="rv-frame rv-live" data-side="live">
+        <iframe sandbox="allow-same-origin" title="Live stryker.com page"></iframe>
+        <span class="rv-tag">Render of stryker.com</span>
+        <p class="rv-live-msg" hidden></p>
+        <button type="button" class="rv-live-again" hidden title="Render the live page again now">Render again</button>
+      </div>
+    </main>
+    <aside class="rv-panel rv-panel-right" aria-label="Feedback on this page">
+      <div class="rv-resize" title="Drag to resize this panel" aria-hidden="true"></div>
+      <div class="rv-panel-head">
+        <h2>Feedback</h2>
+        <button type="button" class="rv-collapse" data-panel="right" aria-expanded="true" title="Hide this panel">›</button>
+      </div>
+      <div class="rv-panel-body">
+        <section class="rv-statusbox" aria-label="Status of this page">
+          <div class="rv-status-banner"></div>
+          <div class="rv-status-actions" role="group" aria-label="Change the status"></div>
+        </section>
+        <section class="rv-pagebox">
+          <h3>General page comments</h3>
+          <div class="rv-pagebox-body"></div>
+        </section>
+        <section class="rv-notesbox">
+          <h3>QA notes <span class="rv-notes-count"></span></h3>
+          <div class="rv-note-editor" hidden></div>
+          <ol class="rv-notes"></ol>
+        </section>
+      </div>
+    </aside>
+  </div>
+  <div class="rv-blocked" hidden>The review tool runs on the review preview only.</div>
+</body>
+</html>

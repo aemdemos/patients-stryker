@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Standard pages review: status of every page</title>
+  <link rel="stylesheet" href="./ui.css">
+  <link rel="stylesheet" href="./summary-page.css">
+  <link rel="stylesheet" href="./status.css">
+  <script type="module" src="./status.js"></script>
+</head>
+<body>
+  <header class="rs-bar"></header>
+  <div class="ui-pagehead">
+    <div>
+      <h1>Status of every page</h1>
+      <span class="rs-updated" aria-live="polite">Loading…</span>
+    </div>
+    <div class="ui-actions">
+      <button type="button" class="rs-btn st-refresh">Refresh</button>
+    </div>
+  </div>
+  <main class="rs-main">
+    <section class="rs-section">
+      <div class="st-tiles" role="group" aria-label="Pages per state (click to filter)"></div>
+      <p class="st-tiles-hint">Click a status to list only its pages; click it again to show them all.</p>
+      <div class="st-meter" aria-hidden="true"></div>
+      <div class="st-batches" role="group" aria-label="Review batches (click to show only those)"></div>
+      <div class="st-filters">
+        <label>Search <input type="search" class="st-search" placeholder="Words of the title or path"></label>
+        <label>Template <select class="st-template"><option value="">All</option></select></label>
+        <label>Area <select class="st-unit"><option value="">All</option></select></label>
+        <label>Group <select class="st-group"><option value="">All</option></select></label>
+        <label class="st-check"><input type="checkbox" class="st-reps"> Representative pages only</label>
+        <label>State <select class="st-state"><option value="">All</option></select></label>
+        <label>Order <select class="st-order">
+          <option value="waiting">What waits for me first</option>
+          <option value="recent">Latest activity first</option>
+          <option value="title">Title</option>
+        </select></label>
+        <label class="st-check"><input type="checkbox" class="st-new"> Only new since my last visit</label>
+        <button type="button" class="rs-btn st-clear" title="Every filter off (the order stays); the review tool's filters are the same">Clear all filters</button>
+      </div>
+      <details class="st-mark" hidden>
+        <summary>Organise pages: batches and groups</summary>
+        <p class="rs-muted">Paste the pages (client URLs such as https://www.stryker.com/us/en/….html, one per line; paths work too). A page is in one batch and one group: marking moves it. Groups are pages of exactly the same structure; each group's representative page is the one the reviewer reviews for the whole group.</p>
+        <textarea class="st-mark-list" rows="6" aria-label="Pages to mark"></textarea>
+        <div class="st-mark-row">
+          <label><select class="st-mark-kind" aria-label="Batch or group"><option value="batch">Batch</option><option value="group">Group</option></select>
+            <input type="number" class="st-mark-batch" min="1" max="999" step="1" aria-label="Number"></label>
+          <button type="button" class="rs-btn st-mark-go">Mark</button>
+          <button type="button" class="rs-btn st-mark-clear">Take them out</button>
+          <button type="button" class="rs-btn st-mark-rep" title="Each pasted page becomes its group's representative (one per group)">Make the representative of its group</button>
+          <button type="button" class="rs-btn st-mark-shown" title="Fill the list with the pages the filters show">Use the pages shown</button>
+        </div>
+        <p class="st-mark-result" aria-live="polite"></p>
+      </details>
+      <details class="st-groups" hidden>
+        <summary class="st-groups-sum">Groups and their representatives</summary>
+        <div class="st-groups-body"></div>
+      </details>
+      <details class="st-scope" hidden>
+        <summary class="st-scope-sum">Migration scope</summary>
+        <div class="st-scope-body"></div>
+      </details>
+      <p class="st-count rs-muted"></p>
+      <div class="st-bulk" hidden></div>
+      <p class="st-org-msg" aria-live="polite"></p>
+      <div class="st-table"></div>
+      <button type="button" class="rs-btn st-more" hidden>Show more</button>
+    </section>
+  </main>
+  <div class="rs-blocked" hidden>The review status opens on the review preview only.</div>
+</body>
+</html>

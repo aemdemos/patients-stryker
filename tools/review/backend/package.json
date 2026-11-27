@@ -1,0 +1,12 @@
+{
+  "name": "std-review-backend",
+  "private": true,
+  "description": "The review backend's libraries (installed outside the project by deploy.mjs, bundled into the actions)",
+  "dependencies": {
+    "@adobe/aio-lib-files": "4.1.4",
+    "@adobe/aio-lib-state": "5.4.0",
+    "esbuild": "0.25.12",
+    "@adobe/aio-lib-db": "1.1.0",
+    "@adobe/aio-lib-core-auth": "1.2.0"
+  }
+}
