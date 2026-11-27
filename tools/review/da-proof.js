@@ -211,13 +211,13 @@ async function run() {
       'li',
       { class: 'dp-hop' },
       el('p', {}, el('b', {}, 'Last step: '), 'the tool would move itself to the review host, where its pages are the real ones. Copy the results above first if you like, then:'),
-      el('button', { type: 'button', class: 'dp-copy', onclick: () => window.location.assign(target) }, 'Continue on the review host'),
+      el('button', { type: 'button', class: 'dp-move', onclick: () => window.location.assign(target) }, 'Continue on the review host'),
     ));
   }
 }
 
 run().finally(() => {
-  const btn = $('.dp-copy');
+  const btn = $('.dp-actions .dp-copy');
   btn.disabled = false;
   btn.addEventListener('click', async () => {
     try {

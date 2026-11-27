@@ -16,7 +16,7 @@
 .dp-frame-label { margin: 0 0 4px; color: var(--c-muted); font-size: var(--fs-xs); }
 .dp-frames { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .dp-frame { inline-size: 100%; block-size: 520px; border: 1px solid var(--c-line-2); border-radius: var(--r-s); background: #fff; }
-.dp-copy { min-block-size: 32px; padding: 4px 16px; border: 1px solid var(--c-ink); border-radius: var(--r-pill); background: var(--c-ink); color: #fff; font-weight: 700; cursor: pointer; }
+.dp-copy, .dp-move { min-block-size: 32px; padding: 4px 16px; border: 1px solid var(--c-ink); border-radius: var(--r-pill); background: var(--c-ink); color: #fff; font-weight: 700; cursor: pointer; }
 .dp-copy:disabled { opacity: 0.5; cursor: default; }
 .dp-copied { color: var(--c-ink-2); font-size: var(--fs-s); }
 .dp-hop { display: grid; gap: 8px; justify-items: start; padding: 12px; border: 1px dashed var(--c-line-2); border-radius: var(--r-s); }
