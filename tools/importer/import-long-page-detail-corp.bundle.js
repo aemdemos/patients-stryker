@@ -7564,6 +7564,16 @@ var CustomImportScript = (() => {
     }
   }
 
+  // tools/importer/procare-tile.js
+  var TILE = ".c-cross-promotional-tile";
+  function procareUnit(document) {
+    const tile = document.querySelector(TILE);
+    if (!tile || !tile.querySelector(".c-procare-tile")) return "";
+    const link2 = tile.querySelector(".c-procare-tile-info a.btn[href]");
+    const m = link2 && link2.getAttribute("href").match(/\/us\/en\/([^/]+)\/services\/procare/i);
+    return m ? m[1].toLowerCase() : "";
+  }
+
   // tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
@@ -7709,6 +7719,7 @@ var CustomImportScript = (() => {
       const { document, url, params } = payload;
       const main = document.body;
       const hcp = !!document.querySelector(".g-hcpbanner");
+      const procare = stdProductPage(document) ? procareUnit(document) : "";
       const published = publishedDate(document);
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
@@ -7734,6 +7745,7 @@ var CustomImportScript = (() => {
       meta.site = "corp";
       meta.template = stdProductPage(document) ? "product-detail" : PAGE_TEMPLATE.name;
       if (hcp) meta["hcp-banner"] = "true";
+      if (procare) meta.procare = procare;
       if (published) {
         meta.published = published;
         meta["last-updated"] = "false";

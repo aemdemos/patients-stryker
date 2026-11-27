@@ -41,3 +41,125 @@ body.product-detail.std-draft main .product-detail-icon-row img {
     width: var(--corp-social-icon-size-l);
   }
 }
+
+/* ProCare tile (page metadata `procare`, product-detail.js; stryker.com Isolibrium): the tile
+   image across the content on phones, 420px and centred from 600px, a gold round arrow 20px in
+   from its bottom-right corner; a click opens the pop-up */
+body.product-detail.std-draft main > .section.procare .procare-tile {
+  box-sizing: content-box;
+  max-width: var(--corp-procare-tile-width);
+  margin-inline: auto;
+  padding-inline: var(--container-gutter);
+}
+
+body.product-detail.std-draft main .procare-open {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+body.product-detail.std-draft main .procare-open img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.product-detail.std-draft main .procare-open:focus-visible {
+  outline: var(--corp-focus-ring) solid var(--color-primary);
+  outline-offset: var(--corp-focus-ring);
+}
+
+body.product-detail.std-draft main .procare-arrow {
+  position: absolute;
+  right: var(--space-block-l);
+  bottom: var(--space-block-l);
+  width: var(--corp-procare-arrow-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* the white chevron in the circle */
+body.product-detail.std-draft main .procare-arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 25%;
+  height: 25%;
+  margin: auto;
+  border: solid var(--color-white);
+  border-width: calc(var(--corp-procare-arrow-size) / 16) calc(var(--corp-procare-arrow-size) / 16) 0 0;
+  transform: translateX(-15%) rotate(45deg);
+}
+
+/* the pop-up: a white box 10px from the window edges on phones, 600px wide and 30px from the
+   top from 600px, over the page dimmed to half */
+body.product-detail.std-draft main .procare-dialog {
+  box-sizing: border-box;
+  width: calc(100% - 2 * var(--space-block-s));
+  max-width: var(--corp-dialog-width);
+  max-height: calc(100% - 2 * var(--space-block-s));
+  margin: var(--space-block-s) auto;
+  padding: var(--container-gutter);
+  border: 1px solid var(--corp-dialog-border);
+  border-radius: var(--corp-dialog-radius);
+  background: var(--color-white);
+  box-shadow: var(--corp-dialog-shadow);
+}
+
+body.product-detail.std-draft main .procare-dialog::backdrop {
+  background: var(--overlay-scrim);
+}
+
+/* the fragment's sections in the pop-up: the box's own spacing only */
+body.product-detail.std-draft main .procare-dialog-body > .section,
+body.product-detail.std-draft main .procare-dialog-body > .section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+body.product-detail.std-draft main .procare-dialog-body > .section > div > .block {
+  margin-inline: 0;
+}
+
+/* the round close button in the top-right corner, 5px in */
+body.product-detail.std-draft main .procare-dialog-close {
+  position: absolute;
+  top: calc(var(--space-block-s) / 2);
+  right: calc(var(--space-block-s) / 2);
+  width: var(--corp-dialog-close-size);
+  aspect-ratio: 1;
+  padding: 0;
+  border: calc(var(--corp-dialog-close-size) / 15) solid var(--color-black);
+  border-radius: 50%;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+body.product-detail.std-draft main .procare-dialog-close::before,
+body.product-detail.std-draft main .procare-dialog-close::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: calc(var(--corp-dialog-close-size) / 10);
+  margin: auto;
+  background: var(--color-black);
+  transform: rotate(45deg);
+}
+
+body.product-detail.std-draft main .procare-dialog-close::after {
+  transform: rotate(-45deg);
+}
+
+@media (width >= 600px) {
+  body.product-detail.std-draft main .procare-dialog {
+    max-height: calc(100% - 2 * var(--space-section));
+    margin-block: var(--space-section);
+  }
+}

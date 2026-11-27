@@ -17,6 +17,7 @@ import longPageDetailSectionsTransformer, {
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import corpTextMarkersTransformer, { STD_DRAFT_IMPORT, STD_REVIEW_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
 import REVIEW_XFS from './review-pages-xf.js';
+import { procareUnit } from './procare-tile.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
@@ -114,6 +115,9 @@ export default {
     // read before the cleanup removes the header: the "Information for healthcare
     // professionals" band (.g-hcpbanner) and the page date
     const hcp = !!document.querySelector('.g-hcpbanner');
+    // in review, product pages: the template's ProCare tile is page metadata (`procare: <unit>`,
+    // procare-tile.js); the tile itself is the unit's shared fragment (import-procare-tile.js)
+    const procare = stdProductPage(document) ? procareUnit(document) : '';
     const published = publishedDate(document);
 
     // 1. beforeTransform: rebuild the page content, strip chrome
@@ -153,6 +157,7 @@ export default {
     // review build: a stryker.com product page is a product-detail page
     meta.template = stdProductPage(document) ? 'product-detail' : PAGE_TEMPLATE.name;
     if (hcp) meta['hcp-banner'] = 'true';
+    if (procare) meta.procare = procare;
     // the Last Updated line is not shown for now (`show` turns it on, scripts/corp.js)
     if (published) {
       meta.published = published;
