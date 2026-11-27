@@ -313,6 +313,58 @@ export function slideFragments(main, document, page) {
 }
 
 /**
+ * In review (product pages, staging build; run from the import's preprocess, on the source
+ * layout): the space stryker.com shows below each band (.c-full-bleed-panel) before the next
+ * text, image, box or band, in px (data-std-space-after). A band on EDS meets the next
+ * section, so that space becomes a spacer section, the nearest step (long-page-detail-corp-
+ * article.js; Isolibrium "Calculate potential savings" 47px below the gold band →
+ * `spacer, large`).
+ * @param {Document} document The source document
+ */
+export function markBandGaps(document) {
+  if (!stdProductPage(document)) return;
+  const bands = [...document.querySelectorAll('.c-full-bleed-panel')]
+    .filter((b) => !b.parentElement.closest('.c-full-bleed-panel') && b.getBoundingClientRect().height > 0);
+  if (!bands.length) return;
+  const skip = 'header, footer, .g-header, .g-footer, script, style, noscript, .modal';
+  // the tops of everything visible below a band: text, media, and the next bands themselves
+  const tops = [];
+  const walker = document.createTreeWalker(document.body, 4);
+  for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+    if (t.nodeValue.trim() && !t.parentElement.closest(skip)) {
+      const range = document.createRange();
+      range.selectNodeContents(t);
+      const r = range.getBoundingClientRect();
+      if (r.height > 0 && r.width > 0) tops.push({ top: r.top, el: t.parentElement });
+    }
+  }
+  // …and the top of any box or bar (a background, border or shadow: the jump bar, a white
+  // shadow box), where its own text starts lower
+  const view = document.defaultView;
+  const drawn = (el) => {
+    if (!view) return false;
+    const cs = view.getComputedStyle(el);
+    const bg = cs.backgroundColor;
+    return (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent' && bg !== 'rgb(255, 255, 255)')
+      || cs.backgroundImage !== 'none' || cs.boxShadow !== 'none' || parseFloat(cs.borderTopWidth) > 0;
+  };
+  // (an image not loaded yet has no size, but starts where it will be: it counts)
+  document.querySelectorAll('main *, [role="main"] *, body > div *').forEach((el) => {
+    if (!(el.matches('img, video, iframe, .c-full-bleed-panel') || drawn(el)) || el.closest(skip)) return;
+    const r = el.getBoundingClientRect();
+    const media = el.matches('img, video, iframe') && el.offsetParent !== null;
+    if ((r.height > 0 && r.width > 0) || media) tops.push({ top: r.top, el });
+  });
+  bands.forEach((band) => {
+    const { bottom } = band.getBoundingClientRect();
+    const below = tops.filter((t) => t.top >= bottom - 2 && !band.contains(t.el));
+    if (!below.length) return;
+    const gap = Math.round(Math.min(...below.map((t) => t.top)) - bottom);
+    if (gap >= 15) band.setAttribute('data-std-space-after', String(gap));
+  });
+}
+
+/**
  * In review (product pages, staging build): no empty sections. Two section breaks with nothing
  * between them (a carousel's own breaks next to the page's, LIFEPAK 35) are one break; space
  * between sections is the section gap, or a `spacer` section where the source has more.

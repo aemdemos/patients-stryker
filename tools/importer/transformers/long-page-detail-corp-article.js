@@ -1581,7 +1581,7 @@ function stdSectionStyle(section, labels) {
 function stdDropSpacers(sections) {
   for (let i = sections.length - 1; i >= 0; i -= 1) {
     const sec = sections[i];
-    if (sec.kind === 'spacer' && !sec.nodes.length) {
+    if (sec.kind === 'spacer' && !sec.nodes.length && !sec.keepSpacer) {
       const next = sections.slice(i + 1).find((s) => s.nodes.length);
       if (sec.anchor && next) next.anchor = [sec.anchor, next.anchor].filter(Boolean).join(', ');
       // a rule the spacer carried goes to the next section too
@@ -1589,6 +1589,32 @@ function stdDropSpacers(sections) {
         next.style = ['separator', next.style].filter(Boolean).join(', ');
       }
       if (!sec.anchor || next) sections.splice(i, 1);
+    }
+  }
+}
+
+// the spacer section steps (styles/styles.css: 30px each)
+const SPACER_STEPS = [[0, ''], [30, 'spacer'], [60, 'spacer, large'], [90, 'spacer, xlarge'], [120, 'spacer, xxlarge']];
+
+/** The spacer section style nearest to a space in px ('' for none). */
+function spacerStep(px) {
+  const off = ([step]) => Math.abs(step - px);
+  return SPACER_STEPS.reduce((best, step) => (off(step) < off(best) ? step : best))[1];
+}
+
+/**
+ * Review build: the spacer after a band (markBandGaps) takes the nearest spacer step of the
+ * space stryker.com shows there, measured to the next text, image, box or band (Mako "More
+ * innovation" 31px to the next band → `spacer`); a spacer that comes to nothing goes.
+ * @param {Object[]} sections The article sections
+ */
+function sizeBandSpacers(sections) {
+  for (let i = sections.length - 1; i >= 0; i -= 1) {
+    const sec = sections[i];
+    if (sec.keepSpacer) {
+      const style = spacerStep(sec.spacePx);
+      if (style) sec.style = style;
+      else sections.splice(i, 1);
     }
   }
 }
@@ -1711,6 +1737,18 @@ export default function buildArticle(element, {
       // content, a section of its style alone (OR staff `gold-bar`), as a spacer
       if (component.getAttribute('data-keep') === 'nodes') {
         const style = component.getAttribute('data-section-style') || undefined;
+        // review build: the spacer the space below a band asks for (markBandGaps) stays
+        if (component.hasAttribute('data-std-spacer') && style) {
+          sections.push({
+            kind: 'spacer',
+            style,
+            nodes: [],
+            keepSpacer: true,
+            spacePx: Number(component.getAttribute('data-std-spacer')) || 0,
+          });
+          current = null;
+          return;
+        }
         startSection(component.children.length || !style ? 'kept' : 'spacer', style)
           .nodes.push(...component.children);
         current = null;
@@ -2029,8 +2067,9 @@ export default function buildArticle(element, {
   const SIZES = ['', 'large', 'xlarge', 'xxlarge'];
   for (let i = 0; i < sections.length; i += 1) {
     let n = 1;
-    while (sections[i].kind === 'spacer' && sections[i].style === 'spacer'
-      && sections[i + n] && sections[i + n].kind === 'spacer' && sections[i + n].style === 'spacer' && n < 4) n += 1;
+    while (sections[i].kind === 'spacer' && sections[i].style === 'spacer' && !sections[i].keepSpacer
+      && sections[i + n] && sections[i + n].kind === 'spacer' && sections[i + n].style === 'spacer'
+      && !sections[i + n].keepSpacer && n < 4) n += 1;
     if (n > 1) {
       // the anchors of merged spacers (review build) stay on the one section
       const anchors = sections.slice(i, i + n).map((sec) => sec.anchor).filter(Boolean);
@@ -2042,6 +2081,7 @@ export default function buildArticle(element, {
 
   if (stdText) stdFragmentText(sections);
   if (STD_DRAFT_IMPORT) stdDropSpacers(sections);
+  if (STD_DRAFT_IMPORT) sizeBandSpacers(sections);
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a
   // `spacer` section is the metadata alone)
@@ -2061,7 +2101,8 @@ export default function buildArticle(element, {
       if ((section.style || '').split(', ').includes(style)) return;
       section.style = [section.style, style].filter(Boolean).join(', ');
     });
-    if (STD_DRAFT_IMPORT) {
+    // (a spacer section keeps its spacer style: spacers are not a section choice)
+    if (STD_DRAFT_IMPORT && !section.keepSpacer) {
       const labels = marked.filter((el) => el.getAttribute('data-section-style') === 'body-font-bold');
       section.style = stdSectionStyle(section, labels) || undefined;
     }

@@ -1659,13 +1659,28 @@ var CustomImportScript = (() => {
   function stdDropSpacers(sections) {
     for (let i = sections.length - 1; i >= 0; i -= 1) {
       const sec = sections[i];
-      if (sec.kind === "spacer" && !sec.nodes.length) {
+      if (sec.kind === "spacer" && !sec.nodes.length && !sec.keepSpacer) {
         const next = sections.slice(i + 1).find((s) => s.nodes.length);
         if (sec.anchor && next) next.anchor = [sec.anchor, next.anchor].filter(Boolean).join(", ");
         if (/\b(separator|divider)\b/.test(sec.style || "") && next) {
           next.style = ["separator", next.style].filter(Boolean).join(", ");
         }
         if (!sec.anchor || next) sections.splice(i, 1);
+      }
+    }
+  }
+  var SPACER_STEPS = [[0, ""], [30, "spacer"], [60, "spacer, large"], [90, "spacer, xlarge"], [120, "spacer, xxlarge"]];
+  function spacerStep(px) {
+    const off = ([step]) => Math.abs(step - px);
+    return SPACER_STEPS.reduce((best, step) => off(step) < off(best) ? step : best)[1];
+  }
+  function sizeBandSpacers(sections) {
+    for (let i = sections.length - 1; i >= 0; i -= 1) {
+      const sec = sections[i];
+      if (sec.keepSpacer) {
+        const style = spacerStep(sec.spacePx);
+        if (style) sec.style = style;
+        else sections.splice(i, 1);
       }
     }
   }
@@ -1765,6 +1780,17 @@ var CustomImportScript = (() => {
         }
         if (component.getAttribute("data-keep") === "nodes") {
           const style = component.getAttribute("data-section-style") || void 0;
+          if (component.hasAttribute("data-std-spacer") && style) {
+            sections.push({
+              kind: "spacer",
+              style,
+              nodes: [],
+              keepSpacer: true,
+              spacePx: Number(component.getAttribute("data-std-spacer")) || 0
+            });
+            current = null;
+            return;
+          }
           startSection(component.children.length || !style ? "kept" : "spacer", style).nodes.push(...component.children);
           current = null;
           return;
@@ -2000,7 +2026,7 @@ var CustomImportScript = (() => {
     const SIZES = ["", "large", "xlarge", "xxlarge"];
     for (let i = 0; i < sections.length; i += 1) {
       let n = 1;
-      while (sections[i].kind === "spacer" && sections[i].style === "spacer" && sections[i + n] && sections[i + n].kind === "spacer" && sections[i + n].style === "spacer" && n < 4) n += 1;
+      while (sections[i].kind === "spacer" && sections[i].style === "spacer" && !sections[i].keepSpacer && sections[i + n] && sections[i + n].kind === "spacer" && sections[i + n].style === "spacer" && !sections[i + n].keepSpacer && n < 4) n += 1;
       if (n > 1) {
         const anchors = sections.slice(i, i + n).map((sec) => sec.anchor).filter(Boolean);
         if (anchors.length) sections[i].anchor = anchors.join(", ");
@@ -2010,6 +2036,7 @@ var CustomImportScript = (() => {
     }
     if (stdText) stdFragmentText(sections);
     if (STD_DRAFT_IMPORT) stdDropSpacers(sections);
+    if (STD_DRAFT_IMPORT) sizeBandSpacers(sections);
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
@@ -2022,7 +2049,7 @@ var CustomImportScript = (() => {
         if ((section.style || "").split(", ").includes(style)) return;
         section.style = [section.style, style].filter(Boolean).join(", ");
       });
-      if (STD_DRAFT_IMPORT) {
+      if (STD_DRAFT_IMPORT && !section.keepSpacer) {
         const labels = marked.filter((el) => el.getAttribute("data-section-style") === "body-font-bold");
         section.style = stdSectionStyle(section, labels) || void 0;
       }
@@ -2367,6 +2394,12 @@ var CustomImportScript = (() => {
         out.push(bar);
       }
       if (!out.length) return;
+      const space = product && component.getAttribute("data-std-space-after");
+      if (space) {
+        const spacer = keepNodes(doc, [], "spacer");
+        spacer.setAttribute("data-std-spacer", space);
+        out.push(spacer);
+      }
       (component.closest(".fullbleedpanel") || component).replaceWith(...out);
     });
   }

@@ -427,6 +427,14 @@ function fullBleedPanels(main, doc, h) {
       out.push(bar);
     }
     if (!out.length) return;
+    // review build, product pages: the space stryker.com shows below the band (markBandGaps) is
+    // a spacer section after it
+    const space = product && component.getAttribute('data-std-space-after');
+    if (space) {
+      const spacer = keepNodes(doc, [], 'spacer');
+      spacer.setAttribute('data-std-spacer', space);
+      out.push(spacer);
+    }
     (component.closest('.fullbleedpanel') || component).replaceWith(...out);
   });
 }

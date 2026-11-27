@@ -12,7 +12,7 @@ import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
 import longPageDetailSectionsTransformer, {
   keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths, markCentredRows, slideFragments,
-  dropEmptySections,
+  dropEmptySections, markBandGaps,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import corpTextMarkersTransformer, { STD_DRAFT_IMPORT, STD_REVIEW_IMPORT, stdProductPage } from './transformers/corp-text-markers.js';
@@ -105,6 +105,8 @@ export default {
     }
     // in review, product pages: rows with their text centred to the image (Columns valign-middle)
     if (stdProductPage(document)) markCentredRows(document);
+    // …and the space below each band, as a spacer step
+    if (stdProductPage(document)) markBandGaps(document);
     keepHeadlineBlankLines(document);
     blankLineSpacers(document, params.originalURL);
   },
