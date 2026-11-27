@@ -55,6 +55,7 @@ import {
   open, secretOf, readAll, saveChanges, entryKey, pagePattern, groupPattern, parseKey, replyProblem, SPACES,
 } from '../lib/core.mjs';
 import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
+import { readScopeCopy, writeScopeCopy } from '../lib/scope.mjs';
 import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
 import {
@@ -140,6 +141,12 @@ async function run(params) {
     }
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
     // the daily source change check (lib/changes.mjs)
+    if (op === 'scope-copy') {
+      // the backend's copy of the scope table (lib/scope.mjs): written with data, else read
+      if (Array.isArray(params.data)) return ok(await writeScopeCopy(files, space, params.data, { name: 'developers (admin)' }));
+      const kept = await readScopeCopy(files, space);
+      return ok(kept ? { at: kept.at, by: kept.by, hash: kept.hash, rows: kept.data.length } : { none: true });
+    }
     if (op === 'changes-scope') {
       if (Array.isArray(params.pages)) {
         const pages = params.pages.filter((p) => p && typeof p.page === 'string' && /^https:\/\/www\.stryker\.com\//.test(p.source || ''))

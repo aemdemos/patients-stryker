@@ -127,7 +127,7 @@ async function shoot(stores, browser, space, page, source, extra) {
 async function run(stores, space, started) {
   const { files } = stores;
   const cs = await readCaptureState(files, space);
-  const { pages } = await pageList(space, { fresh: true });
+  const { pages } = await pageList(space, { fresh: true, files });
   const byPath = new Map(pages.map((p) => [p.path, p]));
   const withShots = await pagesWithShots(files, space);
   const now = Date.now();
