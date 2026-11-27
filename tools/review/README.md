@@ -15,6 +15,11 @@ Open with an invitation link:
 (before the merge: `client-review-v3--stryker-com--strykerenterprise.aem.page`); the browser
 keeps the invitation, later visits need no link.
 
+
+> **Branch da-app-v3 (27 Nov 2026): the DA sign-in.** On this branch people sign in with their
+> Adobe account through Document Authoring (`start.html`), not with invitation links; the AOE
+> team manages them on the People page. Design, findings and what is built: `DA-APP.md`.
+
 ## What this review has (`config.js`)
 
 | Setting | Here |

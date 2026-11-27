@@ -157,9 +157,36 @@ part of this review: ask the AOE team".
 - **Tests:** sign-in through the stand-in for DA (as in the proof), sessions, roles and hosts,
   People page, refusals, the hand-over block.
 
+### Built (27 Nov 2026, Stage only; branch da-app-v3)
+
+- **Backend:**
+  - people (`lib/people.mjs`, database collection `people`; admin ops `people`, `person-put`,
+    `person-remove`, `person-forget` for @example.com test people, `test-session` on Stage only);
+  - `signin` (the Adobe token → a 12-hour session); `people` (the AOE team);
+  - sessions accepted by every action like an invitation (`core.mjs` checkInvite);
+  - test: `test/people-sessions.test.mjs`.
+- **Tool:**
+  - `start.html`, the sign-in;
+  - `store.js`: the session from `#session=`, out of the address bar; without a session, or once
+    it has ended, `goSignIn` to the DA address with the page asked for;
+  - `people.html` instead of Invitations;
+  - the published site opens every page;
+  - sending a page back to the reviewer is blocked until its newest preview is published
+    (`review.js` publishedForReviewer);
+  - test: `test/da-signin-tool.test.mjs`.
+- **Screenshots:** the first shots copied into the backend's Files with `backend/tiles-to-files.mjs`
+  (from the local capture folder, each tile's SHA-256 checked against the history), the versions
+  marked `store: 'files'` (admin ops `tiles-upload`, `tiles-mark`).
+  - Stage: 568 pages, none failed.
+  - Production: on the switch-over day.
+- **Links:** an old link or bookmark opens the tool, which goes to the sign-in and comes back to
+  that page, so the Summary's and emails' links need no change.
+
 ### Step 4: switch-over (one agreed day)
 
 - The AOE team gives an email for each person invited today.
 - Their invitations' entries keep the names; each person's email is added with the same name and
   role.
 - All invitation links are revoked; the old addresses lead to the DA sign-in.
+- Production gets the backend of da-app-v3, the copy of the first shots
+  (`tiles-to-files.mjs production …`) and its people; main gets the tool.
