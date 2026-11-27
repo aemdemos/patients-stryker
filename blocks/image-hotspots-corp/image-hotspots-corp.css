@@ -1,0 +1,40 @@
+/* image-hotspots-corp: an image with links placed on it, the www.stryker.com Dynamic Media
+   interactive image (measured on ASC operating room, pre- and post-operative at 390 / 1000 /
+   1440): the image one column gutter wider than the text on each side (the source viewer
+   fills its column, gutter included: edge to edge below 1024px, 1410px from x=15 at 1440),
+   each hotspot the source's white ring icon (56 x 56px at every width, 60% opacity) centred
+   on its point, a pointer, no hover change; an icon at the image edge is cut off there, as
+   the source viewer clips it (no sideways scrolling). The keyboard focus ring and full
+   opacity show the focused hotspot. */
+
+.image-hotspots-corp .image-hotspots-corp-media {
+  position: relative;
+  margin-inline: calc(-1 * var(--container-gutter));
+  overflow: clip;
+}
+
+.image-hotspots-corp .image-hotspots-corp-media picture,
+.image-hotspots-corp .image-hotspots-corp-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-hotspots-corp .image-hotspots-corp-spot {
+  position: absolute;
+  top: var(--image-hotspots-corp-top);
+  left: var(--image-hotspots-corp-left);
+  width: var(--corp-hotspot-size);
+  height: var(--corp-hotspot-size);
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: url('./hotspot.png') center / 100% 100% no-repeat;
+  opacity: var(--corp-hotspot-opacity);
+}
+
+/* the ring inside the icon, so a hotspot at the image edge keeps all of it */
+.image-hotspots-corp .image-hotspots-corp-spot:focus-visible {
+  outline: var(--corp-focus-ring) solid var(--color-primary);
+  outline-offset: calc(-1 * var(--corp-focus-ring));
+  opacity: 1;
+}

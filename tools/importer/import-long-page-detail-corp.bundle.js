@@ -1932,6 +1932,52 @@ var CustomImportScript = (() => {
       (component.closest(".engagementcta") || component).replaceWith(h.richText(doc, nodes));
     });
   }
+  function imageMap(path) {
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", `https://media-assets.stryker.com/is/image/${path}?req=set,json`, false);
+      xhr.send();
+      if (xhr.status !== 200) return null;
+      const body = xhr.responseText;
+      const json = body.slice(body.indexOf("(") + 1, body.lastIndexOf(")")).replace(/,\s*"[^"]*"\s*$/, "");
+      const { item } = JSON.parse(json).set;
+      const areas = item.map && item.map.area;
+      const list = areas && (Array.isArray(areas) ? areas : [areas]);
+      if (!list || !list.length || !Number(item.dx) || !Number(item.dy)) return null;
+      return { width: Number(item.dx), height: Number(item.dy), areas: list };
+    } catch (e) {
+      return null;
+    }
+  }
+  function hotspotLabel(alt) {
+    const text4 = (alt || "").trim();
+    const letter = text4.match(/\b([A-Z])$/);
+    if (letter) return letter[1];
+    const number = text4.match(/(\d+)$/);
+    return number ? String.fromCharCode(64 + Number(number[1])) : text4;
+  }
+  function productNames(component, main) {
+    const names = {};
+    const nodes = [...main.querySelectorAll("p, .interactivemedia")];
+    nodes.slice(nodes.indexOf(component) + 1).filter((el) => el.matches("p")).forEach((p) => {
+      const m = p.textContent.replace(/\s+/g, " ").trim().match(/^([A-Z])\.\s+(.+)$/);
+      if (m && !names[m[1]]) [, , names[m[1]]] = m;
+    });
+    return names;
+  }
+  function hotspotRow(area, map, names, doc) {
+    const coords = String(area.coords || "").split(",").map(Number);
+    const xs = coords.filter((_, i) => i % 2 === 0);
+    const ys = coords.filter((_, i) => i % 2 === 1);
+    if (!area.href || !xs.length || xs.some(Number.isNaN) || ys.some(Number.isNaN)) return null;
+    const percent = (v, size) => `${Math.round((Math.min(...v) + Math.max(...v)) / 2 / size * 1e4) / 100}%`;
+    const label = hotspotLabel(area.alt);
+    const a = doc.createElement("a");
+    a.href = area.href.replace(/^\/content\/stryker(?=\/)/, "");
+    a.textContent = names[label] || label;
+    return [label, `${percent(xs, map.width)}, ${percent(ys, map.height)}`, a];
+  }
+  var hotspotBlocksOf = /* @__PURE__ */ new WeakMap();
   function interactiveImages(main, doc) {
     main.querySelectorAll(".interactivemedia").forEach((component) => {
       const asset = component.querySelector("[data-asset-path]");
@@ -1946,7 +1992,22 @@ var CustomImportScript = (() => {
       const box = doc.createElement("div");
       box.className = "c-standalone-image";
       box.append(img);
+      const map = imageMap(path);
+      const names = map ? productNames(component, main) : {};
+      const rows = map ? map.areas.map((area) => hotspotRow(area, map, names, doc)).filter(Boolean) : [];
+      if (rows.length) {
+        hotspotBlocksOf.set(box, WebImporter.Blocks.createBlock(doc, {
+          name: "Image Hotspots Corp",
+          cells: [[img.cloneNode()], ...rows]
+        }));
+      }
       component.replaceWith(box);
+    });
+  }
+  function hotspotBlocks(main) {
+    main.querySelectorAll(".c-standalone-image").forEach((box) => {
+      const block = hotspotBlocksOf.get(box);
+      if (block) box.replaceWith(keepBlock(block, box));
     });
   }
   var STAT_COLOURS = [
@@ -2084,6 +2145,7 @@ var CustomImportScript = (() => {
     groupLists(main, doc, h);
   }
   function convertAfterRows(main, doc, h) {
+    hotspotBlocks(main);
     navigationBars(main, doc, h);
     accordions(main, doc, h);
     textBoxes(main, doc, h);
