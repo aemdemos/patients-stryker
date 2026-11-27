@@ -16,7 +16,8 @@ body.corp.std-draft .sticky-nav-mobile {
   /* a hero right above the bar meets it: stryker.com sets the jump bar on the hero's bottom
      edge (Isolibrium, LIFEPAK 35, Mako, RISE); after other content the section gap stays
      (SafeAir, TPX HD). Phones hide the bar, so the hero keeps its gap there */
-  body.corp.std-draft main > .section.hero-corp-container:has(+ .section.sticky-nav-container) {
+  body.corp.std-draft main > .section.hero-corp-container:has(+ .section.sticky-nav-container),
+  body.corp.std-draft main > .section.hero-corp-container:has(+ .section.sticky-nav-container) .hero-corp {
     margin-bottom: 0;
   }
 }
