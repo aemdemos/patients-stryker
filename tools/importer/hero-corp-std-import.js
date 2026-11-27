@@ -124,12 +124,13 @@ export function sizeBrackets(root) {
  * @param {number|null} slide.top top in %
  * @param {Element|null} slide.overlay the .overlayparsys (phone layout, mobile-text-black)
  * @param {Element|null} slide.headline the .c-largeheadline (box, colours)
+ * @param {number} [slide.inset] the headline's own left padding in % (slide-position.js)
  * @returns {string[]} the options after image-slide
  */
 export function slideOptions({
-  left, right, top, overlay, headline,
+  left, right, top, overlay, headline, inset = 0,
 }) {
-  const options = [...slidePosition(left, right, top).options];
+  const options = [...slidePosition(left, right, top, inset).options];
   const boxed = headline && headline.querySelector('.has-background[class*="bg-"]');
   // the box colour noted before the page steps unwrapped a rich-text box (sections transformer)
   const bg = (boxed && [...boxed.classList].find((c) => BOXES[c]))

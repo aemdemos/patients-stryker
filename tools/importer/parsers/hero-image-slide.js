@@ -306,12 +306,19 @@ export default function parse(element, context) {
   if (STD_DRAFT_IMPORT && overlay) {
     const style = overlay.getAttribute('style') || '';
     const num = (re) => { const m = style.match(re); return m ? parseFloat(m[1]) : null; };
+    // product pages: the headline's own left padding (an author-set Large Headline padding, e.g.
+    // Pangea 5%) counts in where its text starts (slide-position.js)
+    const padded = stdProductPage(document) && overlay.querySelector('.largeheadline[style*="padding-left"]');
+    const inset = padded
+      ? parseFloat(((padded.getAttribute('style') || '').match(/padding-left:\s*(\d+(?:\.\d+)?)%/i) || [])[1] || '0')
+      : 0;
     const options = slideOptions({
       left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
       right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
       top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
       overlay,
       headline: overlay.querySelector('.c-largeheadline') || overlay,
+      inset,
     });
     // colour tags that repeat the title / subline colour, or white on a dark box, go
     const colours = new Set(options.map((o) => (o.match(/^(?:title|subline)-(.+)$/) || [])[1]).filter(Boolean));

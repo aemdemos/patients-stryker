@@ -466,11 +466,13 @@ var CustomImportScript = (() => {
     "text-middle": 30,
     "text-lower": 45
   };
-  function slidePosition(left, right, top) {
+  function slidePosition(left, right, top, inset = 0) {
     const options = [];
     let shift = 0;
     if (left !== null && right !== null) {
-      const [side, [l, r]] = Object.entries(SLIDE_SIDES).map((entry) => [entry, Math.abs(entry[1][0] - left) + Math.abs(entry[1][1] - right)]).sort((a, b) => a[1] - b[1])[0][0];
+      const start = left + (100 - left - right) * inset / 100;
+      const distance = ([l2, r2]) => inset > 0 ? Math.abs(l2 - start) : Math.abs(l2 - left) + Math.abs(r2 - right);
+      const [side, [l, r]] = Object.entries(SLIDE_SIDES).map((entry) => [entry, distance(entry[1])]).sort((a, b) => a[1] - b[1])[0][0];
       options.push(side);
       shift = Math.max(shift, Math.abs(l - left), Math.abs(r - right));
     }
@@ -573,9 +575,10 @@ var CustomImportScript = (() => {
     right,
     top,
     overlay,
-    headline: headline2
+    headline: headline2,
+    inset = 0
   }) {
-    const options = [...slidePosition(left, right, top).options];
+    const options = [...slidePosition(left, right, top, inset).options];
     const boxed = headline2 && headline2.querySelector('.has-background[class*="bg-"]');
     const bg = boxed && [...boxed.classList].find((c) => BOXES[c]) || overlay && BOXES[overlay.getAttribute("data-std-box")] && overlay.getAttribute("data-std-box");
     if (bg) options.push(BOXES[bg]);
@@ -2677,12 +2680,15 @@ var CustomImportScript = (() => {
         const m = style.match(re);
         return m ? parseFloat(m[1]) : null;
       };
+      const padded = stdProductPage(document) && overlay.querySelector('.largeheadline[style*="padding-left"]');
+      const inset = padded ? parseFloat(((padded.getAttribute("style") || "").match(/padding-left:\s*(\d+(?:\.\d+)?)%/i) || [])[1] || "0") : 0;
       const options = slideOptions({
         left: num(/margin-left:\s*(\d+(?:\.\d+)?)%/i),
         right: num(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i),
         top: num(/top:\s*(\d+(?:\.\d+)?)%/i),
         overlay,
-        headline: overlay.querySelector(".c-largeheadline") || overlay
+        headline: overlay.querySelector(".c-largeheadline") || overlay,
+        inset
       });
       const colours = new Set(options.map((o) => (o.match(/^(?:title|subline)-(.+)$/) || [])[1]).filter(Boolean));
       if (options.some((o) => /^box-(blue|dark|purple-gradient|blue-gradient)$/.test(o))) colours.add("white");

@@ -20,14 +20,21 @@ export const SLIDE_HEIGHTS = {
  * @param {number|null} left the source margin-left in %
  * @param {number|null} right the source right inset in %
  * @param {number|null} top the source top in %
+ * @param {number} [inset] the headline's own left padding in % of the overlay (review build:
+ *   stryker.com Large Headline padding-left, e.g. Pangea 5%). The hero has no inner spacing
+ *   setting, so a padded headline takes the column whose start is nearest to where its text
+ *   starts (Pangea: 5% + 5% of the 90% overlay = 9.5% → the left column, 6%)
  * @returns {{options: string[], shift: number}} the hero-corp options and the largest move
  */
-export function slidePosition(left, right, top) {
+export function slidePosition(left, right, top, inset = 0) {
   const options = [];
   let shift = 0;
   if (left !== null && right !== null) {
+    const start = left + ((100 - left - right) * inset) / 100;
+    const distance = ([l, r]) => (inset > 0 ? Math.abs(l - start)
+      : Math.abs(l - left) + Math.abs(r - right));
     const [side, [l, r]] = Object.entries(SLIDE_SIDES)
-      .map((entry) => [entry, Math.abs(entry[1][0] - left) + Math.abs(entry[1][1] - right)])
+      .map((entry) => [entry, distance(entry[1])])
       .sort((a, b) => a[1] - b[1])[0][0];
     options.push(side);
     shift = Math.max(shift, Math.abs(l - left), Math.abs(r - right));
