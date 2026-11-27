@@ -99,7 +99,10 @@ async function run() {
       type: 'button',
       class: 'sg-btn sg-open',
       onclick: () => window.open(target, '_top'),
-    }, 'Open the review')],
+    }, 'Open the review'),
+    // (Chrome's lookalike check: the address holds the site's name, stryker-com, which reads like
+    // stryker.com; it asks once per browser)
+    el('span', { class: 'sg-note' }, `Your browser may ask whether you meant stryker.com: the review's address (${new URL(target).host}) contains the site's name. It is the review's: continue to it (once per browser).`)],
   );
   $('.sg-open').focus();
 }
