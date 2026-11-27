@@ -176,6 +176,9 @@ function factsOf(html) {
   facts.text = !!block.textContent.trim();
   facts.video = !!block.querySelector('video') || [...block.querySelectorAll('a[href]')]
     .some((a) => DM_VIDEO.test(a.getAttribute('href')));
+  // any video, YouTube included (for choices about the row's layout, not the player)
+  facts.anyVideo = facts.video || !!block.querySelector('iframe') || [...block.querySelectorAll('a[href]')]
+    .some((a) => /youtube\.com\/|youtu\.be\//i.test(a.getAttribute('href')));
   // the block holds only a link to a sheet (its .json): Table `sheet`
   const links = [...block.querySelectorAll('a[href]')];
   facts.sheetLink = links.length === 1 && /\.json([?#]|$)/.test(links[0].getAttribute('href'))
@@ -194,7 +197,7 @@ function unfit(needs, facts) {
     'cells-3+': facts.cells >= 3 ? '' : `needs 3 or more cells (this row has ${cells})`,
     'cells-4': facts.cells === 4 ? '' : `needs 4 cells (this row has ${cells})`,
     images: facts.images ? '' : 'needs images in the row',
-    media: facts.images || facts.video ? '' : 'needs an image or a video in the row',
+    media: facts.images || facts.anyVideo ? '' : 'needs an image or a video in the row',
     caption: facts.caption ? '' : 'needs a photo with a caption under it',
     'image-first': facts.imageFirst ? '' : 'needs an image in the first cell and text beside it',
     links: facts.links ? '' : 'needs links in the row',
