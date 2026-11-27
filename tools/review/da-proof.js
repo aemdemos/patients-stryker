@@ -107,7 +107,12 @@ function readFrame(frame) {
       const missing = /not found/i.test(d?.title || '') || /^404/.test(text);
       if (missing || (heading && text.length > 200) || Date.now() - started > 15000) {
         resolve({
-          readable: true, title: d?.title || '', heading, chars: text.length, missing,
+          readable: true,
+          title: d?.title || '',
+          heading,
+          chars: text.length,
+          missing,
+          quirks: d?.compatMode === 'BackCompat',
         });
       } else setTimeout(look, 500);
     };
@@ -131,6 +136,22 @@ function framePage(path) {
   });
 }
 
+/** the results from before the move to the review host (carried in the address) */
+function before() {
+  try {
+    const v = new URLSearchParams(window.location.hash.slice(1)).get('before');
+    return v ? decodeURIComponent(escape(atob(v))) : '';
+  } catch (e) {
+    return '';
+  }
+}
+
+function copyText() {
+  const lines = results.map((r) => `${{ true: '[ok]', false: '[FAILED]', null: '[info]' }[String(r.ok)]} ${r.title}${r.detail ? `: ${r.detail}` : ''}`);
+  const now = [`DA app proof, ${new Date().toISOString()}, ${window.location.host}, ${navigator.userAgent}`, ...lines].join('\n');
+  return before() ? `${before()}\n\n--- after the move ---\n${now}` : now;
+}
+
 async function run() {
   const hello = await helloFromDa(8000);
   if (!hello) {
@@ -142,7 +163,8 @@ async function run() {
   const { context = {}, token, email } = hello;
   const { host } = window.location;
   let where = host;
-  if (/\.preview\.da\.live$/.test(host)) where = 'Document Authoring\'s preview of the site (DA content as it is now, for signed-in DA users)';
+  if (/\.aem\.page$/.test(host)) where = 'the review host (the branch preview, where the tool runs today): the app moved here and DA\'s hello came again';
+  else if (/\.preview\.da\.live$/.test(host)) where = 'Document Authoring\'s preview of the site (DA content as it is now, for signed-in DA users)';
   else if (/\.aem\.live$/.test(host)) where = 'the published site (what is live)';
   report('Where the app runs', null, `${host}: ${where}. Site ${context.org}/${context.repo}, branch ${context.ref}.`);
   report('Document Authoring says you are', email ? null : false, email || 'No email in DA\'s hello.');
@@ -176,11 +198,22 @@ async function run() {
   else if (f.missing) report('A migrated page in a frame on this host', false, `${what}: this host answers "page not found" (${f.title}).`);
   else if (!f.heading || f.chars < 200) report('A migrated page in a frame on this host', false, `${what} loads and can be read, but shows almost nothing: heading "${f.heading}", ${f.chars} characters of text.`);
   else report('A migrated page in a frame on this host', true, `${what} loads and the tool can read it: heading "${f.heading}", ${f.chars} characters of text. Below, compare it with the published page.`);
-}
-
-function copyText() {
-  const lines = results.map((r) => `${{ true: '[ok]', false: '[FAILED]', null: '[info]' }[String(r.ok)]} ${r.title}${r.detail ? `: ${r.detail}` : ''}`);
-  return [`DA app proof, ${new Date().toISOString()}, ${navigator.userAgent}`, ...lines].join('\n');
+  if (f.readable && !f.missing) {
+    report('The page renders in standards mode', !f.quirks, f.quirks
+      ? 'No: this host serves the page without a doctype, so the browser uses quirks mode (lines with mixed text sizes come out shorter than on the real page, with the same computed line height).'
+      : 'Yes: it has a doctype, like the real page.');
+  }
+  // DA's preview host: move the app to the review host (DA says hello again after every load
+  // of the app's frame), where the tool runs today and its pages are the real ones
+  if (!/\.aem\.page$/.test(host)) {
+    const target = `https://${branch()}--${SITE.site}--${SITE.org}.aem.page/tools/review/da-proof.html#before=${encodeURIComponent(btoa(unescape(encodeURIComponent(copyText()))))}`;
+    $('.dp-checks').append(el(
+      'li',
+      { class: 'dp-hop' },
+      el('p', {}, el('b', {}, 'Last step: '), 'the tool would move itself to the review host, where its pages are the real ones. Copy the results above first if you like, then:'),
+      el('button', { type: 'button', class: 'dp-copy', onclick: () => window.location.assign(target) }, 'Continue on the review host'),
+    ));
+  }
 }
 
 run().finally(() => {
