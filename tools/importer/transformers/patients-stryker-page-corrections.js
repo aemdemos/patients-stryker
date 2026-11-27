@@ -408,6 +408,37 @@ function labelsToSubheads(main, doc, labels) {
   });
 }
 
+/**
+ * A reference paragraph that numbers its entries inline ("<strong>References: 1.</strong> …
+ * <strong>2.</strong> …") → its label on a line of its own ("<strong>References: </strong>")
+ * and the entries as an ordered list, as the Sage news pages are authored in DA.
+ */
+function inlineReferencesToList(main, doc) {
+  main.querySelectorAll('p').forEach((p) => {
+    const head = p.firstElementChild;
+    if (!head || head.tagName !== 'STRONG' || !txt(p).startsWith(txt(head))) return;
+    const label = txt(head).match(/^(.+:)\s*1\.$/);
+    if (!label) return;
+    const lead = doc.createElement('p');
+    const b = doc.createElement('strong');
+    b.textContent = `${label[1]} `;
+    lead.append(b);
+    const ol = doc.createElement('ol');
+    let li = null;
+    [...p.childNodes].forEach((n) => {
+      if (n === head || (n.nodeName === 'STRONG' && /^\d+\.$/.test(txt(n)))) {
+        li = doc.createElement('li');
+        ol.append(li);
+      } else if (li) li.append(n);
+    });
+    ol.querySelectorAll('li').forEach((item) => {
+      const t = item.firstChild;
+      if (t && t.nodeType === 3) t.textContent = t.textContent.replace(/^\s+/, '');
+    });
+    p.replaceWith(lead, ol);
+  });
+}
+
 /** The DA `tags` metadata (not on the source page): import-text-only.js writes `data-meta-*`. */
 function tags(main, value) {
   main.setAttribute('data-meta-tags', value);
@@ -1129,6 +1160,12 @@ const CORRECTIONS = {
       tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
       // the small print: `disclaimer` as in DA
       [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => { if (txt(td) === 'disclaimer, references-body-lines') td.textContent = 'disclaimer'; }));
+      // the references: the label on its own line, the entries as a numbered list (as in DA)
+      inlineReferencesToList(m, d);
+      // the serif lead-in is an italic Heading 2 (the Egyptienne headline convention), as in DA
+      const uti = find(m, 'p', 'Urinary tract infections (UTIs) are one of the most common');
+      style(m, d, uti, null);
+      if (uti) { const em = d.createElement('em'); em.append(...uti.childNodes); uti.append(em); retag(m, d, uti, 'h2'); }
     },
   ],
   // new-safety-advisory-from-the-joint-commission
@@ -1156,6 +1193,8 @@ const CORRECTIONS = {
       style(m, d, more, null);
       mergeWithPrevious(m, more);
       style(m, d, more, null);
+      // the references: the label on its own line, the entries as a numbered list (as in DA)
+      inlineReferencesToList(m, d);
     },
   ],
   // sage-supports-the-family-health-partnership-clinic-in-mchenry-co
@@ -1206,6 +1245,8 @@ const CORRECTIONS = {
       // like the representative school safety page: body-l, bold H3 subheads, no size styles
       bodyLRepresentative(m, d);
       tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      // the references: the label on its own line, the entries as a numbered list (as in DA)
+      inlineReferencesToList(m, d);
     },
   ],
   // infection-control-today-article-about-waterborne-pathogens
@@ -1214,6 +1255,8 @@ const CORRECTIONS = {
       // like the representative school safety page: body-l, bold H3 subheads, no size styles
       bodyLRepresentative(m, d);
       tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      // the references: the label on its own line, the entries as a numbered list (as in DA)
+      inlineReferencesToList(m, d);
     },
   ],
   // joint-commission-barbara-quinn-interview-nv-hap-prevention
@@ -1222,6 +1265,9 @@ const CORRECTIONS = {
       // like the representative school safety page: body-l, bold H3 subheads, no size styles
       bodyLRepresentative(m, d);
       tags(m, "stryker:content-type/news");
+      // the reference: no typed number in the list item; the small print is `disclaimer` (as in DA)
+      stripListNumbers(m, find(m, 'li', '1. The Joint Commission'));
+      style(m, d, find(m, 'li', 'The Joint Commission: Preventing'), 'disclaimer');
     },
   ],
   // poster-presented-at-wocn-shows-comfort-shield-reduces-iad
@@ -1230,6 +1276,8 @@ const CORRECTIONS = {
       // like the representative school safety page: body-l, bold H3 subheads, no size styles
       bodyLRepresentative(m, d);
       tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+      // the references: the label on its own line, the entries as a numbered list (as in DA)
+      inlineReferencesToList(m, d);
     },
   ],
   // preoperative-strategy-to-reduce-the-risk-of-surgical-site-infect
@@ -1296,6 +1344,8 @@ const CORRECTIONS = {
       // like the representative school safety page: body-l, bold H3 subheads, no size styles
       bodyLRepresentative(m, d);
       tags(m, "stryker:content-type/news");
+      // the references: the label on its own line, the entries as a numbered list (as in DA)
+      inlineReferencesToList(m, d);
     },
   ],
   // shea-oral-care-reduction-in-non-ventilator-associated-pneumonia
@@ -1304,6 +1354,8 @@ const CORRECTIONS = {
       // like the representative school safety page: body-l, bold H3 subheads, no size styles
       bodyLRepresentative(m, d);
       tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+      // the references: the label on its own line, the entries as a numbered list (as in DA)
+      inlineReferencesToList(m, d);
     },
   ],
   // study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients
@@ -1312,6 +1364,8 @@ const CORRECTIONS = {
       // like the representative school safety page: body-l, bold H3 subheads, no size styles
       bodyLRepresentative(m, d);
       tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      // the references: the label on its own line, the entries as a numbered list (as in DA)
+      inlineReferencesToList(m, d);
     },
   ],
   // stryker-advances-urology-portfolio-launch-flexible-ureteroscope
