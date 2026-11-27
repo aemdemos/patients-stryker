@@ -31,7 +31,8 @@ const loadGroups = async () => {
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
-const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
+// (the published site too since the DA sign-in, 27 Nov 2026: the reviewers' host)
+const PREVIEW = LOCAL || /\.aem\.(page|live)$/.test(hostname);
 // the pages under review (config.js): the migrated pages at their final paths, or /std
 const BASE = LOCAL ? REVIEW.base.localPrefix : REVIEW.base.prefix;
 const TEST_REVIEWERS = /^(tool test( b)?|save-route test|browser test|screenshot)$/i;

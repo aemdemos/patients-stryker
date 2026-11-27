@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Review: people</title>
+  <link rel="stylesheet" href="./ui.css">
+  <link rel="stylesheet" href="./summary-page.css">
+  <link rel="stylesheet" href="./invites.css">
+  <link rel="stylesheet" href="./people.css">
+  <script type="module" src="./people.js"></script>
+</head>
+<body>
+  <header class="rs-bar"></header>
+  <div class="ui-pagehead">
+    <div>
+      <h1>People</h1>
+      <span class="rs-updated" aria-live="polite">Loading…</span>
+    </div>
+  </div>
+  <main class="rs-main">
+    <p class="iv-denied rs-section" hidden></p>
+    <section class="rs-section pp-new" hidden>
+      <h2>Add a person</h2>
+      <p class="rs-muted">People sign in to the review with their Adobe account, through Document Authoring: add the email of the Adobe account they use (a free one on their own email is enough). Reviewers see the published pages; the AOE team also sees the pages not published yet and needs Sidekick signed in to the site. Send them the review's address: <a class="pp-address" href="#">the sign-in</a>.</p>
+      <form class="iv-form pp-form">
+        <label>Email <input type="email" class="pp-email" maxlength="200" required placeholder="name@company.com" autocomplete="off"></label>
+        <label>Name <input type="text" class="pp-name" maxlength="80" required placeholder="First and last name"></label>
+        <fieldset class="iv-role">
+          <legend>Role</legend>
+          <label class="iv-role-reviewer"><input type="radio" name="pp-role" value="reviewer" checked> Reviewer</label>
+          <label class="iv-role-aoe"><input type="radio" name="pp-role" value="aoe"> AOE team</label>
+        </fieldset>
+        <label class="iv-paths-label">Pages <textarea class="pp-paths" rows="2" aria-describedby="pp-paths-help">/</textarea></label>
+        <p id="pp-paths-help" class="rs-muted">One path per line: the pages under it (/ is every page).</p>
+        <button type="submit" class="rs-btn pp-add">Add</button>
+      </form>
+      <div class="pp-made" aria-live="polite"></div>
+    </section>
+    <section class="rs-section pp-list" hidden>
+      <h2>People of this review</h2>
+      <div class="iv-filters">
+        <label>Search <input type="search" class="pp-search" placeholder="Name or email"></label>
+        <label class="iv-check"><input type="checkbox" class="pp-all"> Show removed people</label>
+      </div>
+      <p class="pp-count rs-muted"></p>
+      <div class="iv-table pp-table"></div>
+    </section>
+  </main>
+  <div class="rs-blocked" hidden>The review opens on its preview and published addresses only.</div>
+</body>
+</html>

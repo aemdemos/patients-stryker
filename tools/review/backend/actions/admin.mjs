@@ -61,7 +61,7 @@ import {
   listPeople, putPerson, removePerson, personProblem, issueSession, getPerson, cleanEmail,
 } from '../lib/people.mjs';
 import { schedule } from '../lib/runtime.mjs';
-import { readCaptureState } from '../lib/capture-state.mjs';
+import { readCaptureState, tileFile } from '../lib/capture-state.mjs';
 import {
   readScope, readSite, readPageState, writeJson, scopeFile, pageFile as changesPageFile, siteFile as changesSiteFile,
 } from '../lib/changes.mjs';
@@ -402,6 +402,35 @@ async function run(params) {
       return ok({ deleted, by });
     }
     if (op === 'shot-requests') return ok({ space, requests: await listRequests(files, space) });
+    // the first shots, kept in Document Authoring (served by the branch preview only), copied into
+    // Files so the published site shows them too (the DA sign-in, 27 Nov 2026): upload links for a
+    // version's tiles, then the version marked as stored in Files once every tile is there (the
+    // tiles' SHA-256 checked against the history before the upload, by the uploader)
+    if (op === 'tiles-upload' || op === 'tiles-mark') {
+      const page = String(params.page || '');
+      const h = page.startsWith('/') ? await readHistory(files, space, page) : null;
+      const v = h?.versions.find((x) => x.id === params.id);
+      if (!v) return bad('no such version of the page');
+      if (v.store === 'files') return ok({ already: true });
+      const names = Object.entries(v.widths || {}).flatMap(([vp, w]) => (w.tiles || []).map((t) => ({ vp, file: t.file })));
+      if (op === 'tiles-upload') {
+        return ok({
+          links: await Promise.all(names.map(async ({ vp, file }) => ({
+            vp, file, url: await files.generatePresignURL(tileFile(space, page, v.id, vp, file), { expiryInSeconds: 900, permissions: 'w' }),
+          }))),
+        });
+      }
+      const missing = [];
+      await Promise.all(names.map(async ({ vp, file }) => {
+        const props = await files.getProperties(tileFile(space, page, v.id, vp, file)).catch(() => null);
+        if (!props) missing.push(`${vp}/${file}`);
+      }));
+      if (missing.length) return bad(`not in Files yet: ${missing.join(', ')}`);
+      const at = new Date().toISOString();
+      const versions = h.versions.map((x) => (x.id === v.id ? { ...x, store: 'files', storedAt: at } : x));
+      await files.write(historyFile(space, page), JSON.stringify({ page, versions }));
+      return ok({ marked: true, tiles: names.length });
+    }
     if (op === 'shot-history') {
       if (!String(params.page || '').startsWith('/')) return bad('page');
       return ok(await readHistory(files, space, params.page));

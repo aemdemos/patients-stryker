@@ -2,7 +2,7 @@
  * The review's top bar on every page (25 Nov 2026): the brand (to the start page), the tools in
  * the order of the work (Summary, Status, Review tool; Invitations for the AOE team), who you are
  * (a red AOE team chip or a blue Reviewer chip), then Start and ⓘ (help.js). DOM only.
- * mountBar(page, bar) → { setRole(role, name) }; page: review | status | summary | invites
+ * mountBar(page, bar) → { setRole(role, name) }; page: review | status | summary | people | invites
  */
 import { mountHelp } from './help.js';
 
@@ -27,7 +27,7 @@ export const TOOLS = [
   { key: 'status', href: './status.html', label: 'Status' },
   { key: 'review', href: './index.html', label: 'Review tool' },
   {
-    key: 'invites', href: './invites.html', label: 'Invitations', aoe: true,
+    key: 'people', href: './people.html', label: 'People', aoe: true,
   },
 ];
 
@@ -54,7 +54,7 @@ export function mountBar(page, bar) {
     setRole(role, name) {
       const aoe = role === 'aoe';
       help.setRole(role);
-      nav.querySelector('.ui-nav-invites').hidden = !aoe;
+      nav.querySelector('.ui-nav-people').hidden = !aoe;
       // (drawn again only when it changes: the pages call this on every update)
       const key = `${aoe}|${name || ''}`;
       if (key === shown) return;

@@ -43,6 +43,8 @@ const ICONS = {
   status: ['M4 6h16M4 12h16M4 18h16', 'M7 4v4M7 10v4M7 16v4'],
   summary: ['M5 4h14v16H5z', 'M8 9h8M8 13h8M8 17h5'],
   invites: ['M4 6h16v12H4z', 'M4 7l8 6 8-6'],
+  // (two people)
+  people: ['M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z', 'M3 19c0-3 3-5 6-5s6 2 6 5', 'M16 5a3 3 0 0 1 0 6', 'M17 14c2 .5 4 2 4 5'],
 };
 
 const { hostname } = window.location;
@@ -82,12 +84,12 @@ const CARDS = [
     text: 'One page at a time, next to the original stryker.com page (a snapshot, or rendered live), at every width. Comment, pin QA notes, approve.',
   },
   {
-    key: 'invites',
-    href: './invites.html',
-    title: 'Invitations',
-    cta: 'Manage links',
+    key: 'people',
+    href: './people.html',
+    title: 'People',
+    cta: 'Manage people',
     aoe: true,
-    text: 'The AOE team makes and withdraws the review links of the people taking part.',
+    text: 'The AOE team adds the people taking part (the email of their Adobe account, their role and pages) and removes them.',
   },
 ];
 
@@ -96,7 +98,7 @@ const FLOW = [
     who: 'aoe',
     title: 'Pages are published and organised',
     state: ['unreviewed'],
-    text: 'The AOE team publishes the migrated pages, puts them in review batches, groups the pages built exactly the same way (one representative each), and sends each person taking part their own review link: one personal link per person (not one per page), which opens this start page and every page of the review they are invited to.',
+    text: 'The AOE team publishes the migrated pages, puts them in review batches, groups the pages built exactly the same way (one representative each), and adds each person taking part by the email of their Adobe account. They sign in through Document Authoring, which opens this start page and every page of the review they take part in.',
   },
   {
     who: 'reviewer',
@@ -241,7 +243,7 @@ async function start() {
   const load = async () => {
     const { status, body } = await call('overview');
     if (status !== 200) {
-      $('.ln-hello').textContent = body?.error?.message || 'Open this page with your review link to see where the review stands.';
+      $('.ln-hello').textContent = body?.error?.message || 'Sign in to the review to see where it stands.';
       $('.ln-stats').hidden = true;
       return;
     }

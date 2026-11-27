@@ -11,7 +11,8 @@ import ask, { askMessage } from './ask.js';
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
-const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
+// (the published site too since the DA sign-in, 27 Nov 2026: the reviewers' host)
+const PREVIEW = LOCAL || /\.aem\.(page|live)$/.test(hostname);
 const $ = (sel) => document.querySelector(sel);
 
 function el(tag, attrs = {}, ...children) {

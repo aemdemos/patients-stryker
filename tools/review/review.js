@@ -41,7 +41,8 @@ const PANEL = REVIEW.designPanel ?? REVIEW.design;
 const { hostname } = window.location;
 // the workspace preview: the local dev server, also seen through the coder preview's address
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
-const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
+// (the published site too since the DA sign-in, 27 Nov 2026: the reviewers' host)
+const PREVIEW = LOCAL || /\.aem\.(page|live)$/.test(hostname);
 // the workspace preview serves the imported documents under /content
 const CONTENT = LOCAL ? '/content' : '';
 // the page under review (config.js): its path prefix here (the migrated pages at their final
@@ -1297,6 +1298,36 @@ function currentRows() {
  * 2026). Not asked when the page is in no group, alone in it, or its group is approved already.
  * → true to go on
  */
+/**
+ * Reviewers see only what is live (the DA sign-in, 27 Nov 2026): a page goes back to the reviewer
+ * only once its newest preview is published (the user's rule: blocked until then). Adobe's admin
+ * service says, asked from this browser: Sidekick adds the AOE member's login to its requests.
+ * true: published (or no scope to check, locally); false: told why, in the shared dialog.
+ */
+async function publishedForReviewer() {
+  const page = state.page || '';
+  let info = null;
+  try {
+    const resp = await fetch(`https://admin.hlx.page/status/strykerenterprise/stryker-com/main${page}`);
+    info = resp.ok ? await resp.json() : { refused: resp.status };
+  } catch (e) {
+    info = { refused: 0 };
+  }
+  const t = (x) => (x ? new Date(x).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) : '');
+  let why = '';
+  if (info.refused !== undefined) {
+    why = `Adobe's admin service couldn't be asked whether this page is published (${info.refused || 'no answer'}): sign in to Sidekick for the site, then try again.`;
+  } else if (info.live?.status !== 200) {
+    why = 'This page isn\'t published: the reviewer sees only published pages. Publish it, then send it back.';
+  } else if (Date.parse(info.preview?.lastModified || 0)
+    > Date.parse(info.live?.lastModified || 0)) {
+    why = `Its preview (${t(info.preview.lastModified)}) is newer than what is live (${t(info.live.lastModified)}): the reviewer would still see the old page. Publish it, then send it back.`;
+  }
+  if (!why) return true;
+  await ask(askMessage({ head: 'Publish this page first', foot: why }), [['OK', false, 'primary']]);
+  return false;
+}
+
 async function confirmGroupApproval() {
   const own = orgOf.get(state.page);
   if (!own?.group || own.groupApproved) return true;
@@ -1351,6 +1382,8 @@ function renderPageStatus() {
       const clearing = st.pageState === value;
       // (approving a page of a group: what happens to the others, OK or Cancel)
       if (value === 'approved' && !clearing && !(await confirmGroupApproval())) return;
+      // (back to the reviewer: only once what they will see, the live page, is the newest)
+      if (value === 'waiting-customer' && !clearing && !(await publishedForReviewer())) return;
       saveRow('page', 'state', clearing ? '' : value);
       renderPageStatus();
     },

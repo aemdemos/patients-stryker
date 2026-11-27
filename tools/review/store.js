@@ -1,7 +1,11 @@
 /*
  * Review tool: saving and loading the review state, in the review backend on App Builder
- * (tools/review/backend): reviewers open the tool with their invitation link (`?invite=`), which
- * the browser keeps; the reviewer's name comes from it. Changes are saved at once (since 25 Nov
+ * (tools/review/backend). Signing in (branch da-app-v3, 27 Nov 2026: instead of invitation links):
+ * the tool's DA address (start.html, a Document Authoring app) checks the Adobe sign-in with the
+ * backend and opens the tool with a review session (`#session=`), which the browser keeps for
+ * its 12 hours; the name and role come from it. Without a session, or once it has ended, the
+ * tool goes to its DA address again (signInUrl), with the page that was asked for.
+ * Changes are saved at once (since 25 Nov
  * 2026 the tool has no Save button: a message on Send, a status or a tick on click), each with
  * the rev it started from (a change someone else made meanwhile is a conflict, never
  * overwritten). Until the backend has a change it stays in the browser (pending: shown as
@@ -21,9 +25,8 @@ export const CONFIG = {
   backend: REVIEW.backend,
 };
 const ID = '__id__';
-// (one invitation kept per backend: a Stage link never replaces the live review's, nor the other
-// way round; the live review's keeps the name it always had)
-const INVITE_KEY = storageKey(REVIEW.backendEnv === 'production' ? 'invite' : 'invite-stage');
+// (one session kept per backend: a Stage sign-in never replaces the live review's)
+const SESSION_KEY = storageKey(REVIEW.backendEnv === 'production' ? 'session' : 'session-stage');
 const PENDING_KEY = storageKey('pending-backend');
 
 /** CSV text → rows of fields (quoted fields, doubled quotes, line breaks inside quotes) */
@@ -83,18 +86,49 @@ export function merge(rows) {
   return state;
 }
 
-/** the invitation token: from the link (kept in the browser), else the one kept earlier */
-export function inviteToken() {
-  const invite = new URLSearchParams(window.location.search).get('invite');
-  if (invite) window.localStorage.setItem(INVITE_KEY, invite);
-  return window.localStorage.getItem(INVITE_KEY) || '';
+/** the review session: from the sign-in (`#session=`, kept in the browser), else the one kept */
+export function sessionToken() {
+  const hash = new URLSearchParams(window.location.hash.slice(1));
+  const session = hash.get('session');
+  if (session) {
+    window.localStorage.setItem(SESSION_KEY, session);
+    // (not left in the address bar: a copied link never carries it)
+    hash.delete('session');
+    const rest = hash.toString();
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${rest ? `#${rest}` : ''}`);
+  }
+  return window.localStorage.getItem(SESSION_KEY) || '';
+}
+// (the name every page has used since the invitations; a session now)
+export const inviteToken = sessionToken;
+
+/** the tool's DA address (start.html, the sign-in), coming back to `next` (this page by default) */
+export function signInUrl(next = `${window.location.pathname}${window.location.search}`) {
+  const { hostname } = window.location;
+  const branch = (hostname.match(/^([a-z0-9-]+)--stryker-com--strykerenterprise\./) || [])[1];
+  const ref = ['localhost', '127.0.0.1'].includes(hostname) ? 'local' : branch || 'main';
+  const params = new URLSearchParams({ ...(ref === 'main' ? {} : { ref }), next });
+  return `https://da.live/app/strykerenterprise/stryker-com/tools/review/start?${params}`;
 }
 
-/** a call to the review backend with the invitation (state, save, results, overview) */
+// the answers that mean "sign in (again)": no session, a broken or ended one, a removed person
+const SIGN_IN = ['no-invite', 'bad-invite', 'expired', 'revoked', 'removed'];
+/** to the sign-in, with this page (once a minute at most: never a loop) */
+export function goSignIn() {
+  const key = storageKey('signin-redirect');
+  const last = Number(window.sessionStorage.getItem(key) || 0);
+  if (Date.now() - last < 60000) return false;
+  window.sessionStorage.setItem(key, String(Date.now()));
+  window.localStorage.removeItem(SESSION_KEY);
+  window.location.assign(signInUrl());
+  return true;
+}
+
+/** a call to the review backend with the session (state, save, results, overview) */
 export async function call(path, opts = {}) {
   const resp = await fetch(`${CONFIG.backend}/${path}`, {
     ...opts,
-    headers: { 'x-review-invite': inviteToken(), ...(opts.body ? { 'content-type': 'application/json' } : {}) },
+    headers: { 'x-review-invite': sessionToken(), ...(opts.body ? { 'content-type': 'application/json' } : {}) },
   });
   let body = null;
   try {
@@ -102,22 +136,24 @@ export async function call(path, opts = {}) {
   } catch (e) {
     body = null;
   }
+  if (resp.status === 401 && SIGN_IN.includes(body?.error?.code)) goSignIn();
   return { status: resp.status, body };
 }
 
 const MESSAGES = {
-  'no-invite': 'Open the tool with your review link to save',
-  'bad-invite': 'This review link is not valid: ask for a new one',
-  expired: 'Your review link has expired: ask for a new one',
-  revoked: 'Your review link was withdrawn: ask for a new one',
+  'no-invite': 'Sign in to save: opening the sign-in…',
+  'bad-invite': 'Your sign-in is not valid: opening the sign-in…',
+  expired: 'Your sign-in has ended: opening the sign-in…',
+  revoked: 'Your sign-in was withdrawn: opening the sign-in…',
+  removed: 'You are no longer part of this review: ask the AOE team',
   'out-of-scope': 'This page is not part of your review',
-  'no-results': 'Your review link does not include the results',
+  'no-results': 'Your access does not include the results',
   moved: 'The review has moved: reload the page to continue (nothing was saved)',
 };
 
 export function createStore(onStatus = () => {}) {
-  // (kept from the link at once: the tool rewrites the address bar before its first request)
-  inviteToken();
+  // (kept from the sign-in at once: the tool rewrites the address bar before its first request)
+  sessionToken();
   const pending = () => {
     try {
       return JSON.parse(window.localStorage.getItem(PENDING_KEY)) || [];

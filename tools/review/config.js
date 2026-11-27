@@ -55,7 +55,8 @@ const BACKENDS = {
   production: 'https://892544-strykerstdreview.adobeioruntime.net/api/v1/web/std-review',
   stage: 'https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review',
 };
-const LIVE_HOSTS = /^(main|client-review-v3|standardise-v3)--stryker-com--strykerenterprise\.aem\.(page|live)$/;
+// (and DA's preview of those branches: the sign-in page, start.html, runs there)
+const LIVE_HOSTS = /^(main|client-review-v3|standardise-v3)--stryker-com--strykerenterprise\.(aem\.(page|live)|preview\.da\.live)$/;
 const BACKEND_KEY = 'review-backend';
 
 function backendEnv() {

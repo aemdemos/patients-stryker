@@ -1,0 +1,6 @@
+/* the People page (people.html): on top of the Invitations page's styles (invites.css) */
+.pp-removed td { color: var(--c-muted); }
+.pp-actions { white-space: nowrap; }
+.pp-ed { display: grid; gap: 6px; min-inline-size: 220px; white-space: normal; }
+.pp-ed textarea { inline-size: 100%; box-sizing: border-box; }
+.pp-address { overflow-wrap: anywhere; }

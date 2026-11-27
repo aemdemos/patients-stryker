@@ -3,7 +3,8 @@
  * "Start" link (the launch page) and an ⓘ button; the button opens a dialog about the page: what
  * is on it and how to use it, for the viewer's side (the reviewers, or the AOE team:
  * theirs first, the reviewers' part folded below). DOM only (no innerHTML).
- * mountHelp(page, bar) → { setRole(role) }; page: launch | review | status | summary | invites
+ * mountHelp(page, bar) → { setRole(role) };
+ * page: launch | review | status | summary | people | invites
  */
 import { REVIEW } from './config.js';
 
@@ -37,11 +38,11 @@ export const HELP = {
     title: 'The start page',
     intro: 'Where the review starts: the pages you use, where the review stands, and how the reviewers and the AOE team work through it together.',
     reviewer: [
-      ['What you see', P('Your name and role, from your review link.', 'The review in numbers, kept up to date while the page is open: the pages in the review, the pages waiting for the AOE team (red) and for the reviewer (blue), in review and approved.', 'A card for each tool of the review (Summary, Status page, Review tool), and the way of working, step by step, with the colours of each status.')],
-      ['Where to begin', P(['The **Summary** gathers everything said and decided so far.', 'The **Status page** lists the pages that are yours to review (your batch, if the AOE team gave you one).', 'Open a page in the **Review tool**, compare it with the original, comment and approve.', 'Your review link is personal and covers every page you are invited to: keep it to yourself.'])],
+      ['What you see', P('Your name and role, from your sign-in (your Adobe account, through Document Authoring).', 'The review in numbers, kept up to date while the page is open: the pages in the review, the pages waiting for the AOE team (red) and for the reviewer (blue), in review and approved.', 'A card for each tool of the review (Summary, Status page, Review tool), and the way of working, step by step, with the colours of each status.')],
+      ['Where to begin', P(['The **Summary** gathers everything said and decided so far.', 'The **Status page** lists the pages that are yours to review (your batch, if the AOE team gave you one).', 'Open a page in the **Review tool**, compare it with the original, comment and approve.', 'You sign in with your Adobe account through Document Authoring; the sign-in lasts 12 hours, then the review asks again (one click while you are signed in to Adobe).'])],
     ],
     aoe: [
-      ['For the AOE team', P('The same page and the same numbers the reviewers see.', ['The **Invitations** card: create review links for reviewers and AOE members, and withdraw them.', 'The way of working is the same for everyone: point new reviewers to this page.'])],
+      ['For the AOE team', P('The same page and the same numbers the reviewers see.', ['The **People** card: add reviewers and AOE members by the email of their Adobe account, change their role or pages, remove them.', 'The way of working is the same for everyone: point new reviewers to this page.'])],
     ],
   },
   review: {
@@ -75,6 +76,15 @@ export const HELP = {
     ],
     aoe: [
       ['For the AOE team', P(['**Hide test entries** (yours only): leave it on to see the review as the reviewers do.', 'The same page the reviewers see: use it to agree on what is left.'])],
+    ],
+  },
+  people: {
+    title: 'People',
+    intro: 'Who takes part in the review: added here by the AOE team, by the email of their Adobe account. They sign in through Document Authoring.',
+    reviewer: [],
+    aoe: [
+      ['Adding someone', P(['The **email** of the Adobe account they sign in with (a free one on their own email is enough), their **name**, **role** (reviewer or AOE team) and **pages** (one path per line; / for everything).', 'Send them the review\'s address (shown above the form). Reviewers see the published pages; AOE members also the pages not published yet, with Sidekick signed in to the site.'])],
+      ['The list', P(['**Change** a role or the pages; **Remove** ends someone\'s access at once (asked first); what they wrote stays.', 'Someone signed in with an email that isn\'t on the list is told so: add that email, or ask them to use the account you added.'])],
     ],
   },
   invites: {
