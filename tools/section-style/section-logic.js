@@ -125,12 +125,22 @@ export function normalisedSection(styles) {
 }
 
 /** a section choice that is on although its own condition (another section choice) is off */
+// whether a choice's conditions that are other section choices hold (`split` for a band …)
+const choiceNeedsMet = (meta, draft) => !sectionUnfit(
+  (meta?.needs || []).filter((n) => SECTION_CHOICE_NEEDS.includes(n)),
+  {},
+  draft,
+);
+
 function unmetChoice(draft) {
   return sectionChoices().find(([value, , meta]) => {
     const tokens = tokensOf(value);
-    const needs = (meta?.needs || []).filter((n) => SECTION_CHOICE_NEEDS.includes(n));
     const on = tokens.length && tokens.every((t) => draft.includes(t));
-    return on && sectionUnfit(needs, {}, draft);
+    // the same style can be two choices (Dark grey is a background and a split slide's band):
+    // it stays while one of them holds
+    const heldElsewhere = sectionChoices()
+      .some(([other, , otherMeta]) => other === value && choiceNeedsMet(otherMeta, draft));
+    return on && !choiceNeedsMet(meta, draft) && !heldElsewhere;
   });
 }
 
@@ -211,7 +221,10 @@ function groupFieldset(group, {
   draft, facts, explain, onChange, values, legend = true,
 }) {
   const isOn = (value) => !!value && tokensOf(value).every((t) => draft.includes(t));
-  const offered = (value, meta) => isOn(value) || !sectionUnfit(meta?.needs, facts, draft);
+  // a style the section has shows (so it can be removed), unless it belongs to another choice
+  // here: a band colour is shown only on a split slide, though it is also a background
+  const offered = (value, meta) => (isOn(value) && choiceNeedsMet(meta, draft))
+    || !sectionUnfit(meta?.needs, facts, draft);
   const titleOf = (value, meta) => [meta?.hint, value ? `Style “${value.replace(' ', ', ')}”` : 'No style']
     .filter(Boolean).join('\n');
   const choices = (group.options || group.flags)
