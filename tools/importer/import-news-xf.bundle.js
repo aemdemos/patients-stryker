@@ -3739,6 +3739,58 @@ var CustomImportScript = (() => {
       else t.remove();
     });
   }
+  function serifBanner(main, doc) {
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => {
+      const v = txt(t).toLowerCase();
+      if (!v.includes("h2-1-5") || !v.includes("bg-gold")) return;
+      sectionOf(main, t).filter((n) => n.tagName === "H2").forEach((h2) => {
+        if (h2.querySelector("em")) return;
+        const lead = [];
+        for (const n of [...h2.childNodes]) {
+          if (n.nodeType === 1 && n.matches("strong, b")) break;
+          lead.push(n);
+        }
+        if (!lead.some((n) => n.textContent.trim())) return;
+        const trailing = lead[lead.length - 1];
+        const space = trailing.nodeType === 3 && /\s$/.test(trailing.textContent);
+        if (space) trailing.textContent = trailing.textContent.replace(/\s+$/, "");
+        const em = doc.createElement("em");
+        lead[0].before(em);
+        em.append(...lead);
+        if (space) em.after(doc.createTextNode(" "));
+      });
+    });
+  }
+  function formPageBodyL(main, doc) {
+    main.setAttribute("data-meta-theme", "full-width, body-l");
+    const sizes = /^p-1(-\d+)?$/;
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+      const v = txt(td).split(",").map((x) => x.trim());
+      if (!v.some((x) => sizes.test(x))) return;
+      const rest = v.filter((x) => !sizes.test(x));
+      if (rest.length) td.textContent = rest.join(", ");
+      else t.remove();
+    }));
+    const title = sectionOf(main, main.querySelector("h1"));
+    const afterTitle = title.length && title[title.length - 1].nextElementSibling;
+    spacerBefore(main, doc, afterTitle && afterTitle.nextElementSibling, "spacer");
+    let banner = [...main.querySelectorAll("p, h2")].find((el) => /^(want to|interested in) learn(ing)? more\?/i.test(txt(el)));
+    if (banner) {
+      breakBefore(main, doc, banner, null);
+      banner = retag(main, doc, banner, "h2");
+      breakAfter(main, doc, banner);
+      sectionOf(main, banner).filter(isSectionMetadata).forEach((t) => t.remove());
+      const sec = sectionOf(main, banner);
+      sec[sec.length - 1].after(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
+    }
+    serifBanner(main, doc);
+    style(main, doc, blockTable(main, "marketo form"), "form-with-aside");
+    const first = [...main.querySelectorAll("ol > li")].find((li) => /^1\.\s/.test(txt(li)) && sectionOf(main, li).some((n) => isSectionMetadata(n) && txt(n).includes("disclaimer")));
+    if (first) {
+      stripListNumbers(main, first);
+      style(main, doc, first, "disclaimer");
+    }
+  }
   function tags(main, value) {
     main.setAttribute("data-meta-tags", value);
   }
@@ -4449,6 +4501,69 @@ var CustomImportScript = (() => {
       }
     ],
     // single news-detail pages
+    // hospital-fall-prevention-with-smart-stretchers
+    "https://www.stryker.com/us/en/acute-care/news/hospital-fall-prevention-with-smart-stretchers.html": [
+      (m, d) => {
+        formPageBodyL(m, d);
+        tags(m, "stryker:content-type/news");
+      }
+    ],
+    // hospital-acquired-infection-prevention-strategies
+    "https://www.stryker.com/us/en/sage/news/2025/hospital-acquired-infection-prevention-strategies.html": [
+      (m, d) => {
+        formPageBodyL(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+      }
+    ],
+    // patient-skin-integrity-a-critical-factor-in-infection-prevention
+    "https://www.stryker.com/us/en/sage/news/2025/patient-skin-integrity-a-critical-factor-in-infection-prevention.html": [
+      (m, d) => {
+        var _a;
+        formPageBodyL(m, d);
+        const cImg = (_a = m.querySelector('a[href*="Sage-CHG-Cloths-Thumbnail"]')) == null ? void 0 : _a.closest("p");
+        const cText = find(m, "p", "Help address bacteria");
+        const cMore = [...m.querySelectorAll("p")].find((x) => txt(x) === "Learn more");
+        if (cImg && cText && cMore) {
+          [cImg, cText, cMore].forEach((el) => sectionOf(m, el).filter(isSectionMetadata).forEach((t) => t.remove()));
+          const dup = cImg.nextElementSibling;
+          if (dup && dup.tagName === "P" && !dup.querySelector("strong") && dup.querySelector('a[href="/us/en/sage/products/sage-chg-cloths"]')) dup.remove();
+          mergeWithPrevious(m, cText);
+          mergeWithPrevious(m, cMore);
+          const block = WebImporter.Blocks.createBlock(d, { name: "Cards Corp (teaser, three-up)", cells: [[cImg.querySelector("a"), [cText, cMore]]] });
+          cImg.replaceWith(block);
+        }
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2");
+        style(m, d, blockTable(m, "marketo form"), null);
+      }
+    ],
+    // why-powered-fleet-is-key-ems-fire-departments
+    "https://www.stryker.com/us/en/emergency-care/news/2025/why-powered-fleet-is-key-ems-fire-departments.html": [
+      (m, d) => {
+        tags(m, "stryker:business-unit/ems/news/articles, stryker:content-type/news, stryker:business-unit/ems/news");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => /^p-1(-\d+)?$/.test(x))) return;
+          const rest = v.filter((x) => !/^p-1(-\d+)?$/.test(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        let banner = find(m, "p", "Want to learn more? Download the full eGuide");
+        if (banner) {
+          breakBefore(m, d, banner, null);
+          banner = retag(m, d, banner, "h2");
+          const sec = sectionOf(m, banner);
+          sec.filter(isSectionMetadata).forEach((t) => t.remove());
+          const rest = sectionOf(m, banner);
+          rest[rest.length - 1].after(WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
+        }
+        style(m, d, blockTable(m, "marketo form"), "form-with-aside");
+        serifBanner(m, d);
+      }
+    ],
     // lifepak35-15-lead-ecg-integration
     "https://www.stryker.com/us/en/emergency-care/news/2026/lifepak35-15-lead-ecg-integration.html": [
       (m, d) => {
@@ -4482,6 +4597,7 @@ var CustomImportScript = (() => {
         }
         stripListNumbers(m, find(m, "li", "1. Thygesen"));
         style(m, d, find(m, "li", "Thygesen"), "disclaimer");
+        serifBanner(m, d);
       }
     ],
     // close-the-gap-in-fecal-management
@@ -4507,6 +4623,7 @@ var CustomImportScript = (() => {
           sec[sec.length - 1].after(WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
         }
         style(m, d, blockTable(m, "marketo form"), "form-with-aside");
+        serifBanner(m, d);
       }
     ],
     // life-saving-journey-inspires-community
