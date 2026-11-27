@@ -1292,6 +1292,35 @@ const CORRECTIONS = {
   ],
 
   // single news-detail pages
+  // nurses-in-the-or
+  'https://www.stryker.com/us/en/surgical-technologies/news/nurses-in-the-or.html': [
+    (m, d) => {
+      // no `join` (as in DA)
+      [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => { const v = txt(td).split(',').map((x) => x.trim()); if (v.includes('join')) { const rest = v.filter((x) => x !== 'join'); if (rest.length) td.textContent = rest.join(', '); else t.remove(); } }));
+      tags(m, "stryker:business-unit/surgical_technologies, stryker:content-type/news");
+      // as in DA: a spacer section above the title, the article in 8 columns (`col-8`) from the quote down
+      const lead = WebImporter.Blocks.createBlock(d, { name: 'Section Metadata', cells: { style: 'spacer' } }); m.prepend(lead, d.createElement('hr'));
+      style(m, d, find(m, 'p', '“Together, we can make surgical smoke'), 'p-1-5, col-8');
+      style(m, d, blockTable(m, 'video'), 'col-8');
+      style(m, d, find(m, 'p', 'Take the first step toward a smoke-free OR'), 'p-1-5, col-8');
+      style(m, d, find(m, 'p', 'Knowing that the journey to a smoke-free'), 'col-8');
+      style(m, d, blockTable(m, 'marketo form'), 'col-8');
+      style(m, d, find(m, 'p', 'Back to trending topics'), 'col-8');
+      m.setAttribute('data-meta-theme', 'full-width');
+    },
+  ],
+  // protect-your-patients-and-your-or-staff
+  'https://www.stryker.com/us/en/surgical-technologies/news/protect-your-patients-and-your-or-staff.html': [
+    (m, d) => {
+      // the title and small print full width, as on stryker.com (and in DA)
+      m.setAttribute('data-meta-theme', 'full-width');
+      tags(m, "stryker:business-unit/surgical_technologies, stryker:content-type/news");
+      // as in DA: a spacer section above the title; the title `ps-0`, the campaign line a Heading 1 of its own (`h1-0-8`); small print `disclaimer`
+      const lead = WebImporter.Blocks.createBlock(d, { name: 'Section Metadata', cells: { style: 'spacer' } }); m.prepend(lead, d.createElement('hr'));
+      const campaign = [...m.querySelectorAll('h2')].find((h) => txt(h).startsWith('Stryker’s Smoke-Free OR Campaign')); if (campaign) { breakBefore(m, d, campaign, null); style(m, d, m.querySelector('h1'), 'ps-0'); style(m, d, retag(m, d, campaign, 'h1'), 'h1-0-8'); }
+      [...m.querySelectorAll('table')].filter(isSectionMetadata).forEach((t) => t.querySelectorAll('td').forEach((td) => { if (txt(td) === 'disclaimer, references-body-lines') td.textContent = 'disclaimer'; }));
+    },
+  ],
   // reduce-cauti-icu-primafit
   'https://www.stryker.com/us/en/sage/news/2024/reduce-cauti-icu-primafit.html': [
     (m, d) => {
