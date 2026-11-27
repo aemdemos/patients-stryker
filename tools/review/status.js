@@ -11,7 +11,7 @@ import { keepFresh } from './live.js';
 import { mountBar } from './bar.js';
 import ask, { askMessage } from './ask.js';
 import { REVIEW, storageKey } from './config.js';
-import loadPages, { editUrl, scopeFacts } from './pages.js';
+import loadPages, { editUrl, scopeFacts, handOverScope } from './pages.js';
 import {
   getFilters, setFilters, pagesOf, markOrg, makeRepresentatives, areaLabel, orgLabel,
   markFirstRepresentatives, clearRepresentatives, STATE_ORDER, clearFilters, filtersSet,
@@ -423,6 +423,9 @@ function drawScope() {
   $('.st-scope-sum').textContent = `Migration scope: ${all.length} pages, ${published} published${issues ? ` · ${issues} to look at` : ''}`;
   $('.st-scope-body').replaceChildren(
     el('p', { class: 'rs-muted' }, 'The scope is the table review/migration-scope in Document Authoring (source, eds, template; preview it after a change). Reviewers see the published pages of the scope; a page joins when it is published, and the backend takes its first source shot within 15 minutes.'),
+    // (the site login keeps the backend from reading the table: its copy, which this page hands
+    // over whenever an AOE member opens it)
+    ...(f.scopeCopy?.used ? [el('p', { class: 'rs-muted' }, `The backend can't read the table behind the site login, so it uses its copy of ${when(f.scopeCopy.at)}. Opening this page as the AOE team updates that copy when the table has changed.`)] : []),
     ...list('Published, not in the scope table', f.notInScope, (i) => [el('a', { href: `./index.html?page=${encodeURIComponent(i.path)}`, target: '_blank', rel: 'noopener' }, i.path), ` ${i.title}`]),
     ...list('Rows of the scope table to correct', f.problems, (i) => `Row ${i.row}: ${i.eds || ''} ${i.source || ''}: ${i.detail}`),
     ...list('No first shot possible (the source redirects or fails)', toCorrect, (i) => [el('b', {}, i.path), ` ${i.source}: ${i.problem.reason} (${when(i.problem.at)})`]),
@@ -566,6 +569,8 @@ let pagesKept = null;
  * rebuild: the backend builds its summary again from every entry (Refresh)
  */
 let bar = null;
+// (the AOE team hands the scope table to the backend once per visit, when its copy differs)
+let scopeHanded = false;
 async function load({ quick = false, rebuild = false, quiet = false } = {}) {
   // (quiet: the 15-second refresh, live.js: no "Loading…" in between)
   if (!quiet) $('.rs-updated').textContent = 'Loading…';
@@ -581,6 +586,10 @@ async function load({ quick = false, rebuild = false, quiet = false } = {}) {
   }
   me = { name: body.reviewer, role: body.role || 'reviewer' };
   bar?.setRole(me.role, me.name);
+  if (me.role === 'aoe' && !scopeHanded) {
+    scopeHanded = true;
+    handOverScope().then((r) => { if (r?.rows) load({ quiet: true }); });
+  }
   const states = new Map(body.pages.map((p) => [p.page, p]));
   all = pages.filter((p) => inScope(body.scope, p.path)).map((p) => {
     const s = states.get(p.path) || { state: 'unreviewed' };

@@ -67,7 +67,7 @@ function copyOf(finalUrl) {
 }
 
 async function sourceOf(files, space, page, given) {
-  const { rows } = await loadScope(space);
+  const { rows } = await loadScope(space, files);
   const row = rows.find((r) => r.eds === page);
   if (row) return row.source;
   const h = await readHistory(files, space, page);

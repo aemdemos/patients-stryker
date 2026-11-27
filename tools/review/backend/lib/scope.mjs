@@ -4,7 +4,40 @@
  * none: their pages come from elsewhere.
  * scope row: { source: https://www.stryker.com/….html, eds: /us/en/…, template }
  */
+import crypto from 'crypto';
 import { SPACES } from './core.mjs';
+
+/*
+ * The backend's copy of the scope table (27 Nov 2026: the site login on the previews answers the
+ * backend's read with 401): <space>/scope-copy.json { at, by, hash, data: [{ source, eds,
+ * template }] }, written by the admin op scope-copy and by the AOE team's Status page (it reads
+ * the table through the site login and hands it over when it differs); used when the table
+ * itself can't be read.
+ */
+const copyFile = (space) => `${space === 'std' ? '' : `${space}/`}scope-copy.json`;
+/** the table's rows as the copy keeps them, and their hash (the Status page hashes the same way) */
+export function scopeRows(data) {
+  return (Array.isArray(data) ? data : []).map((r) => ({
+    source: String(r?.source || '').trim(), eds: String(r?.eds || '').trim(), template: String(r?.template || '').trim(),
+  })).filter((r) => r.source || r.eds);
+}
+export const scopeHash = (rows) => crypto.createHash('sha256').update(JSON.stringify(rows)).digest('hex');
+export async function readScopeCopy(files, space) {
+  try {
+    return JSON.parse((await files.read(copyFile(space))).toString());
+  } catch (e) {
+    return null;
+  }
+}
+/** keeps a copy of the table → { at, rows, hash } (rows: up to 20000) */
+export async function writeScopeCopy(files, space, data, by) {
+  const rows = scopeRows(data).slice(0, 20000);
+  const copy = {
+    at: new Date().toISOString(), by, hash: scopeHash(rows), data: rows,
+  };
+  await files.write(copyFile(space), JSON.stringify(copy));
+  return { at: copy.at, rows: rows.length, hash: copy.hash };
+}
 
 const clean = (seg) => seg.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 /** the importer's EDS path of a source URL (renamed pages differ from it: shown, allowed) */
@@ -21,11 +54,23 @@ async function json(url) {
   return resp.json();
 }
 
-/** the scope: { rows, problems: [{ kind, eds?, source?, detail }] } */
-export async function loadScope(space) {
+/**
+ * the scope: { rows, problems: [{ kind, eds?, source?, detail }], copy? } (copy: { at } when the
+ * table couldn't be read and the backend's copy stood in; with files only)
+ */
+export async function loadScope(space, files = null) {
   const url = SPACES[space]?.scope;
   if (!url) return { rows: [], problems: [], none: true };
-  const data = (await json(url)).data || [];
+  let data;
+  let copy = null;
+  try {
+    data = (await json(url)).data || [];
+  } catch (e) {
+    const kept = files ? await readScopeCopy(files, space) : null;
+    if (!kept?.data?.length) throw e;
+    data = kept.data;
+    copy = { at: kept.at, why: String(e.message || e).slice(0, 160) };
+  }
   const rows = [];
   const problems = [];
   const byEds = new Map();
@@ -63,7 +108,7 @@ export async function loadScope(space) {
       source, eds, template, row: i + 2, renamed: edsOf(source) !== eds,
     });
   });
-  return { rows, problems };
+  return { rows, problems, ...(copy ? { copy } : {}) };
 }
 
 /** the published pages: Map path → { title, lastModified } (fragments left out) */
@@ -85,17 +130,19 @@ export async function loadLive(space) {
 const KEEP_MS = 60 * 1000;
 const kept = new Map();
 
-export async function pageList(space, { fresh = false } = {}) {
+export async function pageList(space, { fresh = false, files = null } = {}) {
   const k = kept.get(space);
   if (!fresh && k && Date.now() - k.at < KEEP_MS) return k.list;
-  const list = buildPageList(space);
+  const list = buildPageList(space, files);
   kept.set(space, { at: Date.now(), list });
   list.catch(() => kept.delete(space));
   return list;
 }
 
-async function buildPageList(space) {
-  const [{ rows, problems, none }, live] = await Promise.all([loadScope(space), loadLive(space)]);
+async function buildPageList(space, files) {
+  const [{
+    rows, problems, none, copy,
+  }, live] = await Promise.all([loadScope(space, files), loadLive(space)]);
   const seen = new Set();
   const pages = [];
   rows.forEach((r) => {
@@ -114,6 +161,6 @@ async function buildPageList(space) {
   });
   const notInScope = [...live].filter(([p]) => !seen.has(p)).map(([path, l]) => ({ path, title: l.title }));
   return {
-    pages: pages.sort((a, b) => (a.path < b.path ? -1 : 1)), notInScope, problems, none: !!none,
+    pages: pages.sort((a, b) => (a.path < b.path ? -1 : 1)), notInScope, problems, none: !!none, ...(copy ? { copy } : {}),
   };
 }
