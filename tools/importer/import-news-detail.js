@@ -13,6 +13,7 @@ import representativeNormaliseTransformer from './transformers/news-representati
 import newsDetailSectionsTransformer from './transformers/news-detail-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
+import pageCorrectionsTransformer from './transformers/corp-page-corrections.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
@@ -28,6 +29,26 @@ const PAGE_TEMPLATE = {
     'https://www.stryker.com/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html',
     'https://www.stryker.com/us/en/about/news/2026/stryker-introduces-mako-handheld-robotics-mako-rps.html',
     'https://www.stryker.com/us/en/about/news/2026/stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas.html',
+    'https://www.stryker.com/us/en/about/news/2022/stryker-launches-the-connected-power-pro-2-powered-ambulance-cot.html',
+    'https://www.stryker.com/us/en/about/news/2022/stryker-strengthens-its-r-d-capabilities-with-advanced-global-te.html',
+    'https://www.stryker.com/us/en/about/news/2025/stryker-names-spencer-stiles-president-and-chief-operating-officer.html',
+    'https://www.stryker.com/us/en/about/news/2026/stryker-cmr-surgical-announce-strategic-alliance-advance-robotic-assisted-surgery.html',
+    'https://www.stryker.com/us/en/about/news/2026/stryker-partners-professional-golfer-shane-lowry-caregiver-journey.html',
+    'https://www.stryker.com/us/en/about/news/2022/stryker-launches-new-gamma4-hip-fracture-nailing-system.html',
+    'https://www.stryker.com/us/en/about/news/2022/stryker-launches-q-guidance-system-with-spine-guidance-software.html',
+    'https://www.stryker.com/us/en/about/news/2025/stryker-launches-steri-shield-8-personal-protection-system.html',
+    'https://www.stryker.com/us/en/about/news/2020/stryker-launches-industry-s-first-completely-wireless-hospital-b.html',
+    'https://www.stryker.com/us/en/about/news/2023/a-clearer-vision-of-surgery-stryker-releases-its-next-generation-of-advanced-surgical-cameras.html',
+    'https://www.stryker.com/us/en/about/news/2025/stryker-receives-fda-clearance-for-optablate-bvn-ablation-system.html',
+    'https://www.stryker.com/us/en/about/news/2020/stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi.html',
+    'https://www.stryker.com/us/en/about/news/2023/stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-.html',
+    'https://www.stryker.com/us/en/about/news/2024/features/how-augmented-reality-can-help-care-teams-plan--design-and-const.html',
+    'https://www.stryker.com/us/en/sage/news/2022/sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t.html',
+    'https://www.stryker.com/us/en/sage/news/2022/sea-promotes-social-responsibility-with-tree-planting-event-.html',
+    'https://www.stryker.com/us/en/sage/news/2022/the-journey-to-zero-program-supports-nurse-safety.html',
+    'https://www.stryker.com/us/en/sage/news/2023/study-validates-the-value-of-mobilty-for-older-patients.html',
+    'https://www.stryker.com/us/en/sage/news/2024/2-percent-chlorhexidine-gluconate-cloth-ssi-prevention.html',
+    'https://www.stryker.com/us/en/emergency-care/news/2024/aeds-role-in-athletics.html',
   ],
   blocks: [
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
@@ -56,6 +77,8 @@ const transformers = [
   newsDetailSectionsTransformer,
   cleanupTransformer,
   dmImagesTransformer,
+  // persisted DA edits (excat-persist-content-edit): last, on the final page
+  pageCorrectionsTransformer,
 ];
 
 function executeTransformers(hookName, element, payload) {
@@ -146,6 +169,16 @@ export default {
     // keywords, as on the source page (<meta name="keywords">, e.g. "News, Our impact")
     const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
     if (keywords) meta.Keywords = keywords;
+    // metadata a page correction sets (corp-page-corrections.js: `data-meta-<name>`
+    // on the body, e.g. the `tags` authors added in DA, which the source page does not carry);
+    // an empty value removes the row
+    const dropMeta = [];
+    [...main.attributes].filter((a) => a.name.startsWith('data-meta-')).forEach((a) => {
+      const name = a.name.slice('data-meta-'.length);
+      if (a.value) meta[name] = a.value;
+      else dropMeta.push(name);
+      main.removeAttribute(a.name);
+    });
     meta.site = 'corp';
     meta.template = 'news-detail';
     // the date below the title (`first-published`, YYYY-MM-DD): shown by the news-detail
@@ -176,6 +209,7 @@ export default {
       meta.theme = theme;
       main.removeAttribute('data-news-theme');
     }
+    dropMeta.forEach((name) => delete meta[name]);
     const xf = main.getAttribute('data-news-xf');
     if (xf) main.removeAttribute('data-news-xf');
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));

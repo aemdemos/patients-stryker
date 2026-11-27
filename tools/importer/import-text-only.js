@@ -13,7 +13,7 @@ import newsDetailSectionsTransformer from './transformers/news-detail-sections.j
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 import textOnlyTransformer from './transformers/news-text-only.js';
-import pageCorrectionsTransformer from './transformers/patients-stryker-page-corrections.js';
+import pageCorrectionsTransformer from './transformers/corp-page-corrections.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
@@ -54,6 +54,25 @@ const PAGE_TEMPLATE = {
     'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/ripple20-treck-tcp-ip-stack-vulnerabilities-icsa-20-168-01.html',
     'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/-sweyntooth--ble-vulnerabilities--icsa--20-063-01-.html',
     'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/vocera-report-server-vulnerabilities--cve-2022-46898--cve-2022-4.html',
+    'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/apache--log4j--open-source-logging-library.html',
+    'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/microsoft-print-spooler-vulnerabilities--cve-2021-34527-and-cve-.html',
+    'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/stryker-responds-to-krack-vulnerability-for-ibed-wireless-enable.html',
+    'https://www.stryker.com/us/en/about/governance/cyber-security/product-security/wannacry-vulnerability.html',
+    'https://www.stryker.com/us/en/about/news/2021/kevin-lobo-shares-leadership-strategies-with-medical-design---ou.html',
+    'https://www.stryker.com/us/en/about/news/2021/stryker-announced-as-new-partner-for-the-ana-innovation-awards.html',
+    'https://www.stryker.com/us/en/about/news/2021/stryker-sponsors-pga-2021-world-golf-championships-fedex-st--jud.html',
+    'https://www.stryker.com/us/en/about/news/2021/stryker-to-showcase-new--combined-foot-and-ankle-portfolio-at--2.html',
+    'https://www.stryker.com/us/en/about/news/2022/cms-grants-outpatient-facility-code-for-insertion-of-stryker-s-i.html',
+    'https://www.stryker.com/us/en/about/news/2022/stryker-completes-acquisition-of-vocera-communications.html',
+    'https://www.stryker.com/us/en/about/news/2022/stryker-works-with-red-cross-to-direct-resources-to-humanitarian.html',
+    'https://www.stryker.com/us/en/about/news/2022/vocera--now-part-of-stryker--introduces-latest-evolution-in-hand.html',
+    'https://www.stryker.com/us/en/ent/news/Cigna-Coverage-Policy-Update-ClariFix.html',
+    'https://www.stryker.com/us/en/ent/news/stryker-announces-creation-new-nasal-valve-collapse-1CD-10-CM-codes.html',
+    'https://www.stryker.com/us/en/ent/news/stryker-announces-creation-of-new-category-1-cpt-codes-for-repor.html',
+    'https://www.stryker.com/us/en/ent/news/united-healthcare-medicare-advantage-policy-update-for-clarifix-.html',
+    'https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/i-thought-op-knees-were-approved-by-medicare--why-arent-they-in-.html',
+    'https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/update-from-cms--what-to-expect-may--september-2018.html',
+    'https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/will-your-practice-qualify-for-mips-exemption-under-bpci-advance.html',
   ],
   blocks: [
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
@@ -158,11 +177,15 @@ export default {
     // keywords, as on the source page (<meta name="keywords">, e.g. "News, Our impact")
     const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
     if (keywords) meta.Keywords = keywords;
-    // metadata a page correction sets (patients-stryker-page-corrections.js: `data-meta-<name>`
+    // metadata a page correction sets (corp-page-corrections.js: `data-meta-<name>`
     // on the body, e.g. the `tags` authors added in DA, which the source page does not carry),
     // in the DA order: after Keywords
+    // an empty value removes the row (e.g. `theme` on pages that have no theme in DA)
+    const dropMeta = [];
     [...main.attributes].filter((a) => a.name.startsWith('data-meta-')).forEach((a) => {
-      meta[a.name.slice('data-meta-'.length)] = a.value;
+      const name = a.name.slice('data-meta-'.length);
+      if (a.value) meta[name] = a.value;
+      else dropMeta.push(name);
       main.removeAttribute(a.name);
     });
     meta.site = 'corp';
@@ -171,6 +194,7 @@ export default {
     meta.template = 'news-detail';
     meta.theme = main.getAttribute('data-news-theme') || 'basic';
     main.removeAttribute('data-news-theme');
+    dropMeta.forEach((name) => delete meta[name]);
     // the date below the title (`first-published`, YYYY-MM-DD): shown by the news-detail
     // template, as the bottom "Last Updated" line is rendered from `published`
     const firstPublished = main.getAttribute('data-first-published');

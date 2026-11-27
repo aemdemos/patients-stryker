@@ -86,8 +86,8 @@ var CustomImportScript = (() => {
     });
     return out;
   }
-  function percent(style, re) {
-    const m = style.match(re);
+  function percent(style2, re) {
+    const m = style2.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
   }
   function parse(element, { document }) {
@@ -113,10 +113,10 @@ var CustomImportScript = (() => {
         lines.push(p);
       });
       if (lines.length) cells.push([lines]);
-      const style = overlay.getAttribute("style") || "";
-      const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
-      const left = percent(style, /margin-left:\s*(\d+(?:\.\d+)?)%/i);
-      const right = percent(style, /width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
+      const style2 = overlay.getAttribute("style") || "";
+      const top = percent(style2, /top:\s*(\d+(?:\.\d+)?)%/i);
+      const left = percent(style2, /margin-left:\s*(\d+(?:\.\d+)?)%/i);
+      const right = percent(style2, /width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
       if (top !== null) variants.push(`top-${top}`);
       if (left !== null) variants.push(`left-${left}`);
       if (right !== null) variants.push(`right-${right}`);
@@ -347,27 +347,42 @@ var CustomImportScript = (() => {
       sizes: ["serif"],
       mergeJoined: true,
       paths: [
+        "/us/en/about/news/2020/stryker-launches-industry-s-first-completely-wireless-hospital-b.html",
+        "/us/en/about/news/2020/stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi.html",
         "/us/en/about/news/2022/john-collings-named-chair-of-asia-pacific-medical-technology-ass.html",
         "/us/en/about/news/2022/stryker-announces-definitive-agreement-to-acquire-vocera-communi.html",
         "/us/en/about/news/2022/stryker-earns-100-percent-on-hrc-equality-index.html",
         "/us/en/about/news/2022/stryker-fulfills-carbon-reduction-goal-early--commits-to-100--re.html",
+        "/us/en/about/news/2022/stryker-launches-new-gamma4-hip-fracture-nailing-system.html",
+        "/us/en/about/news/2022/stryker-launches-q-guidance-system-with-spine-guidance-software.html",
+        "/us/en/about/news/2022/stryker-launches-the-connected-power-pro-2-powered-ambulance-cot.html",
+        "/us/en/about/news/2022/stryker-strengthens-its-r-d-capabilities-with-advanced-global-te.html",
+        "/us/en/about/news/2023/a-clearer-vision-of-surgery-stryker-releases-its-next-generation-of-advanced-surgical-cameras.html",
         "/us/en/about/news/2023/cd-nxt-power-tool-system-empowers-surgeons-through-real-time-dep.html",
         "/us/en/about/news/2023/cerus-endovascular.html",
         "/us/en/about/news/2023/stryker-awarded-transparency-partner-distinction-by-the-healthca.html",
         "/us/en/about/news/2023/stryker-celebrates-wind-power-milestone-on-our-way-to-become-carbon-neutral.html",
+        "/us/en/about/news/2023/stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-.html",
         "/us/en/about/news/2023/stryker-receives-the-don-clifton-strengths-based-culture-award.html",
         "/us/en/about/news/2024/new-intermediate-nail-and-rc-lag-screw-expand-gamma4-portfolio-to-meet-the-needs-of-surgeons-and-their-patients.html",
         "/us/en/about/news/2024/stryker-announces-definitive-agreement-to-acquire-vertos-medical.html",
         "/us/en/about/news/2024/stryker-announces-launch-of-pangea-plating-system.html",
         "/us/en/about/news/2024/stryker-receives-don-clifton-strengths-based-culture-award-for-f.html",
+        "/us/en/about/news/2024/stryker-unveils-oculan-lighting-platform.html",
         "/us/en/about/news/2025/inari-medical-stryker-launches-all-new-inthrill-thrombectomy-system.html",
+        "/us/en/about/news/2025/stryker-launches-steri-shield-8-personal-protection-system.html",
         "/us/en/about/news/2025/stryker-launches-surpass-elite-flow-diverter.html",
         "/us/en/about/news/2025/stryker-launches-sync-badge.html",
+        "/us/en/about/news/2025/stryker-names-spencer-stiles-president-and-chief-operating-officer.html",
+        "/us/en/about/news/2025/stryker-receives-fda-clearance-for-optablate-bvn-ablation-system.html",
         "/us/en/about/news/2025/stryker-unveils-new-intracranial-base-catheter.html",
         "/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study.html",
+        "/us/en/about/news/2026/stryker-cmr-surgical-announce-strategic-alliance-advance-robotic-assisted-surgery.html",
         "/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html",
         "/us/en/about/news/2026/stryker-launches-synchfix-evt-expanding-options-for-flexible-syndesmotic-fixation.html",
         "/us/en/about/news/2026/stryker-launches-t2-alpha-humerus-nailing-system.html",
+        "/us/en/about/news/2026/stryker-partners-professional-golfer-shane-lowry-caregiver-journey.html",
+        "/us/en/about/news/2026/stryker-showcases-continued-innovation-across-orthopaedics-at-aaos-2026-annual-meeting.html",
         "/us/en/about/news/2026/stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance.html"
       ]
     },
@@ -483,7 +498,8 @@ var CustomImportScript = (() => {
     } catch (e) {
       return;
     }
-    const group = GROUPS.find((g) => g.paths.includes(path));
+    const fallback = payload.template && payload.template.newsGroup;
+    const group = GROUPS.find((g) => g.paths.includes(path)) || (fallback ? GROUPS.find((g) => g.name === fallback) : void 0);
     if (!group) return;
     if (group.theme) element.setAttribute("data-representative-theme", group.theme);
     if (group.sizes) element.setAttribute("data-representative-sizes", group.sizes.join(","));
@@ -803,7 +819,7 @@ var CustomImportScript = (() => {
     section.style = list.join(", ") || void 0;
   };
   var elements = (section) => section.nodes.filter((node) => node.nodeType === 1);
-  var spacer = (style = "spacer") => ({ kind: "spacer", style, nodes: [] });
+  var spacer = (style2 = "spacer") => ({ kind: "spacer", style: style2, nodes: [] });
   function isImageSection(section) {
     const els = elements(section);
     return els.length > 0 && !section.nodes.some((n) => n.nodeType === 3 && n.textContent.trim()) && els.every((el) => el.matches('picture, img, a[href*="/is/image/"]') || el.matches("p") && !text2(el).replace(/^\S+$/, "") && el.querySelector('picture, img, a[href*="/is/image/"]'));
@@ -1146,8 +1162,8 @@ var CustomImportScript = (() => {
   function newTabHref(source, href) {
     if (!href || href.includes("#") || /^(mailto|tel):/i.test(href)) return href;
     const isPdf = /\.pdf(\?|$)/i.test(href);
-    const newTab2 = (source.getAttribute("target") || "").toLowerCase() === "_blank";
-    return isPdf || newTab2 ? `${href}#_blank` : href;
+    const newTab3 = (source.getAttribute("target") || "").toLowerCase() === "_blank";
+    return isPdf || newTab3 ? `${href}#_blank` : href;
   }
   var SIZE_STYLES = [
     // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph),
@@ -1232,27 +1248,27 @@ var CustomImportScript = (() => {
   }
   function tagGoldText(root) {
     const tagged = /* @__PURE__ */ new Set();
-    const wrap = (nodes) => markGold(nodes, root);
+    const wrap2 = (nodes) => markGold(nodes, root);
     root.querySelectorAll('[style*="color"]').forEach((el) => {
       if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
       tagged.add(el);
       if (!hasOtherColour(el)) {
-        wrap([el]);
+        wrap2([el]);
         return;
       }
       let run = [];
       [...el.childNodes].forEach((child) => {
         if (hasOtherColour(child)) {
-          wrap(run);
+          wrap2(run);
           run = [];
         } else run.push(child);
       });
-      wrap(run);
+      wrap2(run);
     });
   }
   function cleanRichText(root) {
-    const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text3(el));
-    const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
+    const blocks2 = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text3(el));
+    const centred = blocks2.length > 0 && blocks2.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
     const doc = root.ownerDocument;
     root.querySelectorAll('a:not([href]), a[href=""]').forEach(unwrap);
@@ -1522,8 +1538,8 @@ var CustomImportScript = (() => {
   }
   function unspaced(component, side) {
     const box = component && component.querySelector(":scope > div[style]");
-    const style = box ? box.getAttribute("style") : "";
-    return !new RegExp(`(margin|padding)-${side}:\\s*[\\d.]+`).test(style);
+    const style2 = box ? box.getAttribute("style") : "";
+    return !new RegExp(`(margin|padding)-${side}:\\s*[\\d.]+`).test(style2);
   }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
@@ -1571,8 +1587,8 @@ var CustomImportScript = (() => {
     });
     let last = null;
     nodes.forEach((node) => {
-      const style = elementStyles.get(node);
-      node.copyStyle = style === void 0 || style === null ? last : style;
+      const style2 = elementStyles.get(node);
+      node.copyStyle = style2 === void 0 || style2 === null ? last : style2;
       if (node.copyStyle !== null) last = node.copyStyle;
     });
     const first = nodes.find((node) => node.copyStyle !== null);
@@ -1923,8 +1939,8 @@ var CustomImportScript = (() => {
       strong.replaceWith(...parts.filter((part) => part.nodeName === "BR" || text3(part)));
     });
     const out = [];
-    const blocks = box.querySelectorAll("p").length ? [...box.querySelectorAll("p")] : [box];
-    blocks.forEach((block) => {
+    const blocks2 = box.querySelectorAll("p").length ? [...box.querySelectorAll("p")] : [box];
+    blocks2.forEach((block) => {
       let line = doc.createElement("p");
       const flush = () => {
         if (text3(line)) out.push(line);
@@ -2094,8 +2110,8 @@ var CustomImportScript = (() => {
           const nested = nestedGrid(item);
           if (nested) gridRows(nested, doc, share);
           else if (item.querySelector(".c-standalone-image img")) {
-            const style = share <= 1 / 3 + 0.01 && "image-1-3" || share <= 0.5 + 0.01 && "image-1-2" || "";
-            if (style) item.querySelector(".c-standalone-image").setAttribute("data-xf-image-style", style);
+            const style2 = share <= 1 / 3 + 0.01 && "image-1-3" || share <= 0.5 + 0.01 && "image-1-2" || "";
+            if (style2) item.querySelector(".c-standalone-image").setAttribute("data-xf-image-style", style2);
           }
         }));
         return;
@@ -2238,9 +2254,9 @@ var CustomImportScript = (() => {
     const variants = [marker.getAttribute("data-variant"), nodes.some((node) => node.imageLink) ? linkVariant : ""].filter(Boolean);
     const name = variants.length ? `Columns (${variants.join(", ")})` : "Columns";
     const copy = nodes.filter((node) => node.copyStyle !== void 0 && node.copyStyle !== null).sort((a, b) => text3(b).length - text3(a).length)[0];
-    const style = copy ? copy.copyStyle : "";
+    const style2 = copy ? copy.copyStyle : "";
     nodes.forEach((node) => {
-      if (!(node.copyStyle || "").split(", ").includes("p-1-25") || style.split(", ").includes("p-1-25")) return;
+      if (!(node.copyStyle || "").split(", ").includes("p-1-25") || style2.split(", ").includes("p-1-25")) return;
       const lines = node.matches("ul, ol") ? [...node.querySelectorAll("li")] : [node];
       lines.filter((line) => line.matches("p, li") && text3(line)).forEach((line) => {
         line.prepend(doc.createTextNode("[[text-1-25]"));
@@ -2248,12 +2264,12 @@ var CustomImportScript = (() => {
       });
     });
     const block = WebImporter.Blocks.createBlock(doc, { name, cells: [cells.map((c) => c.length ? c : "")] });
-    return { block, style };
+    return { block, style: style2 };
   }
   function transform2(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
     const templateName = payload && payload.template && payload.template.name;
-    if (templateName !== "news-detail" && templateName !== "news-detail-xf") return;
+    if (!["news-detail", "news-detail-xf", "text-only"].includes(templateName)) return;
     const xf = templateName === "news-detail-xf";
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
@@ -2266,10 +2282,10 @@ var CustomImportScript = (() => {
     let separatorNext = false;
     let blankNext = false;
     const startSection = (kind, sectionStyle) => {
-      const style = [separatorNext ? "separator" : "", sectionStyle, blankNext ? "blank-above" : ""].filter(Boolean).join(", ") || void 0;
+      const style2 = [separatorNext ? "separator" : "", sectionStyle, blankNext ? "blank-above" : ""].filter(Boolean).join(", ") || void 0;
       separatorNext = false;
       blankNext = false;
-      current = { kind, style, nodes: [] };
+      current = { kind, style: style2, nodes: [] };
       sections.push(current);
       return current;
     };
@@ -2331,12 +2347,12 @@ var CustomImportScript = (() => {
         const title2 = doc.createElement("h2");
         title2.append(...titleRun.childNodes);
         titleRun.remove();
-        const subtitle = doc.createElement("h2");
+        const subtitle2 = doc.createElement("h2");
         const em = doc.createElement("em");
         em.append(...lead[0].childNodes);
         trimLeading(em);
-        subtitle.append(em);
-        lead.splice(0, 1, title2, subtitle);
+        subtitle2.append(em);
+        lead.splice(0, 1, title2, subtitle2);
       }
       if (h3Statement) {
         const at = Math.max(0, lead.findIndex((n) => n.nodeName !== "H2"));
@@ -2410,13 +2426,13 @@ var CustomImportScript = (() => {
         return true;
       }
       setVideoTheme("news-video");
-      const style = [
+      const style2 = [
         "video-text",
         asideCol.querySelector(".urw-egyptienne") && "serif",
         lead.querySelector(".fontsize-1-5em") && "p-1-5",
         quotes.some((q) => q.querySelector(".fontsize-1-75em")) && "quote-1-75"
       ].filter(Boolean).join(", ");
-      const section = startSection("video-text", style);
+      const section = startSection("video-text", style2);
       section.background = "light-gray";
       section.nodes.push(video, ...nodes);
       current = null;
@@ -2471,9 +2487,9 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".xf-columns")) {
-        const { block, style } = xfColumns(component, doc);
-        if (!current || current.kind !== "xf-columns" || current.copy !== style) {
-          startSection("xf-columns", style || void 0).copy = style;
+        const { block, style: style2 } = xfColumns(component, doc);
+        if (!current || current.kind !== "xf-columns" || current.copy !== style2) {
+          startSection("xf-columns", style2 || void 0).copy = style2;
         }
         current.nodes.push(block);
         return;
@@ -2533,8 +2549,8 @@ var CustomImportScript = (() => {
         const columnStyle = imageColumnStyle(component) || component.getAttribute("data-xf-image-style") || "";
         if (isFirst && !component.closest(".colctrl")) leadBelowDate = true;
         if (isFirst || columnStyle) {
-          const style = [columnStyle, linkStyle].filter(Boolean).join(", ");
-          startSection(isFirst ? "lead" : "image", style || void 0).nodes.push(...nodes2);
+          const style2 = [columnStyle, linkStyle].filter(Boolean).join(", ");
+          startSection(isFirst ? "lead" : "image", style2 || void 0).nodes.push(...nodes2);
           current = null;
           return;
         }
@@ -2764,11 +2780,11 @@ var CustomImportScript = (() => {
         } else if (!current || !current.kind.startsWith("body")) {
           startSection("body");
         }
-        const subtitle = component.querySelector(".cta-subtitle, .cta-title");
-        if (subtitle && text3(subtitle)) {
+        const subtitle2 = component.querySelector(".cta-subtitle, .cta-title");
+        if (subtitle2 && text3(subtitle2)) {
           const p = doc.createElement("p");
           const strong = doc.createElement("strong");
-          strong.textContent = text3(subtitle);
+          strong.textContent = text3(subtitle2);
           p.append(strong);
           nodes2.unshift(p);
           if (!(current.style || "").split(", ").includes("label-1-5")) {
@@ -2926,9 +2942,9 @@ var CustomImportScript = (() => {
       const selector = MARKS.map((m) => `[${m}]`).join(", ");
       const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches(selector) ? [node] : [], ...node.querySelectorAll(selector)] : []);
       const markStyles = marked.flatMap((el) => MARKS.map((m) => el.getAttribute(m)).filter(Boolean));
-      [...new Set(markStyles)].forEach((style) => {
-        if ((section.style || "").split(", ").includes(style)) return;
-        section.style = [section.style, style].filter(Boolean).join(", ");
+      [...new Set(markStyles)].forEach((style2) => {
+        if ((section.style || "").split(", ").includes(style2)) return;
+        section.style = [section.style, style2].filter(Boolean).join(", ");
       });
       marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
       if (section.style || section.background) {
@@ -2981,6 +2997,7 @@ var CustomImportScript = (() => {
     const isNewsDetail = !!(payload && payload.template && [
       "news-detail",
       "news-detail-xf",
+      "text-only",
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
       "event-detail",
@@ -3210,6 +3227,2571 @@ var CustomImportScript = (() => {
     });
   }
 
+  // tools/importer/transformers/corp-page-corrections.js
+  var txt = (el) => (el ? el.textContent : "").replace(/[\s ]+/g, " ").trim();
+  var isBlank = (n) => n && n.nodeType === 3 && !n.textContent.trim();
+  function nextOf(n) {
+    let x = n && n.nextSibling;
+    while (isBlank(x)) x = x.nextSibling;
+    return x;
+  }
+  function prevOf(n) {
+    let x = n && n.previousSibling;
+    while (isBlank(x)) x = x.previousSibling;
+    return x;
+  }
+  var find = (main, sel, start) => [...main.querySelectorAll(sel)].find((el) => txt(el).startsWith(start));
+  function topOf(main, el) {
+    let node = el;
+    while (node && node.parentElement !== main) node = node.parentElement;
+    return node;
+  }
+  function sectionOf(main, el) {
+    const kids = [...main.children];
+    const i = kids.indexOf(topOf(main, el));
+    if (i < 0) return [];
+    let s = i;
+    while (s > 0 && kids[s - 1].tagName !== "HR") s -= 1;
+    let e = i;
+    while (e < kids.length - 1 && kids[e + 1].tagName !== "HR") e += 1;
+    return kids.slice(s, e + 1);
+  }
+  var isSectionMetadata = (el) => el && el.tagName === "TABLE" && txt(el.querySelector("th, td")).toLowerCase() === "section metadata";
+  function style(main, doc, el, value) {
+    if (!el) return;
+    const section = sectionOf(main, el);
+    const table = section.find(isSectionMetadata);
+    if (!value) {
+      if (table) table.remove();
+      return;
+    }
+    if (table) {
+      const row = [...table.querySelectorAll("tr")].find((tr) => txt(tr.cells[0]).toLowerCase() === "style");
+      if (row) {
+        row.cells[1].textContent = value;
+        return;
+      }
+      table.remove();
+    }
+    section[section.length - 1].after(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: value } }));
+  }
+  function breakBefore(main, doc, el, value) {
+    var _a;
+    if (!el) return;
+    const top = topOf(main, el);
+    if (((_a = top.previousElementSibling) == null ? void 0 : _a.tagName) === "HR") {
+      style(main, doc, el, value);
+      return;
+    }
+    const table = sectionOf(main, el).find(isSectionMetadata);
+    const hr = doc.createElement("hr");
+    top.before(hr);
+    if (table) hr.before(table);
+    if (value) style(main, doc, el, value);
+  }
+  function breakAfter(main, doc, el, { keepStyle = false } = {}) {
+    var _a;
+    if (!el) return;
+    const top = topOf(main, el);
+    if (((_a = top.nextElementSibling) == null ? void 0 : _a.tagName) === "HR") return;
+    const table = sectionOf(main, el).find(isSectionMetadata);
+    const hr = doc.createElement("hr");
+    top.after(hr);
+    if (keepStyle && table) hr.before(table);
+  }
+  function mergeWithPrevious(main, el) {
+    if (!el) return;
+    const section = sectionOf(main, el);
+    const hr = section[0].previousElementSibling;
+    if (!hr || hr.tagName !== "HR") return;
+    section.filter(isSectionMetadata).forEach((t) => t.remove());
+    const before = hr.previousElementSibling;
+    hr.remove();
+    const rest = sectionOf(main, section.find((n) => n.isConnected) || before);
+    if (isSectionMetadata(before)) rest[rest.length - 1].after(before);
+  }
+  function retag(main, doc, el, tag) {
+    if (!el || el.tagName.toLowerCase() === tag) return el;
+    const out = doc.createElement(tag);
+    out.append(...el.childNodes);
+    el.replaceWith(out);
+    return out;
+  }
+  function subtitle(main, doc, el, { em = false, split = true } = {}) {
+    const h3 = retag(main, doc, el, "h3");
+    if (!h3) return;
+    if (em && !h3.querySelector("em")) {
+      const i = doc.createElement("em");
+      i.append(...h3.childNodes);
+      h3.append(i);
+    }
+    if (split) breakAfter(main, doc, h3);
+  }
+  function joinLabel(main, doc, label) {
+    [...main.querySelectorAll("p")].filter((p) => txt(p) === label && txt(p.querySelector("strong")) === label).forEach((p) => {
+      const next = p.nextElementSibling;
+      if (!next || next.tagName !== "P") return;
+      p.append(doc.createElement("br"), ...next.childNodes);
+      next.remove();
+    });
+  }
+  function joinParagraph(doc, p, breaks = 2) {
+    const prev = p && p.previousElementSibling;
+    if (!prev || prev.tagName !== "P") return;
+    for (let i = 0; i < breaks; i += 1) prev.append(doc.createElement("br"));
+    prev.append(...p.childNodes);
+    p.remove();
+  }
+  function boldAll(main, doc, el) {
+    if (!el || el.children.length === 1 && el.firstElementChild.tagName === "STRONG" && txt(el) === txt(el.firstElementChild)) return;
+    const b = doc.createElement("strong");
+    b.append(...el.childNodes);
+    el.append(b);
+  }
+  function boldPerLine(strong, doc) {
+    if (!strong || !strong.querySelector("br")) return;
+    const parts = [[]];
+    [...strong.childNodes].forEach((n) => n.nodeName === "BR" ? parts.push([]) : parts[parts.length - 1].push(n));
+    const out = [];
+    parts.forEach((nodes, i) => {
+      if (i) out.push(doc.createElement("br"));
+      const b = doc.createElement("strong");
+      b.append(...nodes);
+      out.push(b);
+    });
+    strong.replaceWith(...out);
+  }
+  function brBeforeLabel(p) {
+    var _a;
+    const b = p && p.querySelector("strong");
+    if (b && ((_a = b.firstChild) == null ? void 0 : _a.nodeName) === "BR") b.before(b.firstChild);
+  }
+  function newTab2(main, hrefs) {
+    hrefs.forEach((h) => main.querySelectorAll(`a[href="${h}"]`).forEach((a) => a.setAttribute("href", `${h}#_blank`)));
+  }
+  function newTabExternal(main) {
+    main.querySelectorAll('a[href^="http"]').forEach((a) => {
+      const href = a.getAttribute("href");
+      if (href.endsWith("#_blank")) return;
+      let host = "";
+      try {
+        host = new URL(href).hostname.toLowerCase();
+      } catch (e) {
+        return;
+      }
+      if (["www.stryker.com", "stryker.com"].includes(host) || /\.aem\.(page|live)$/.test(host)) return;
+      a.setAttribute("href", `${href}#_blank`);
+    });
+  }
+  function noTheme(main) {
+    main.setAttribute("data-meta-theme", "");
+  }
+  function dropTextTag(main, doc, name) {
+    const open = `[[${name}]`;
+    main.querySelectorAll("p").forEach((p) => {
+      if (!txt(p).startsWith(open) || !txt(p).endsWith("]")) return;
+      const walker = doc.createTreeWalker(
+        p,
+        4
+        /* NodeFilter.SHOW_TEXT */
+      );
+      const texts = [];
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) texts.push(n);
+      const first = texts.find((t) => t.textContent.includes(open));
+      if (first) first.textContent = first.textContent.replace(open, "");
+      const last = [...texts].reverse().find((t) => t.textContent.trim());
+      if (last && last.textContent.trim().endsWith("]")) last.textContent = last.textContent.replace(/\]\s*$/, "");
+    });
+  }
+  function underlineLinks(el, doc) {
+    if (!el) return;
+    el.querySelectorAll("a").forEach((a) => {
+      if (a.querySelector("u")) return;
+      const u = doc.createElement("u");
+      u.append(...a.childNodes);
+      a.append(u);
+    });
+  }
+  function unwrapSubSup(main) {
+    main.querySelectorAll("sub").forEach((sub) => {
+      const sup = sub.children.length === 1 && sub.firstElementChild.tagName === "SUP" ? sub.firstElementChild : null;
+      if (!sup || /^[\s\d,*†‡-]*$/.test(sup.textContent)) return;
+      sub.replaceWith(...sup.childNodes);
+    });
+  }
+  function joinLines(main, doc, label, count) {
+    const p = [...main.querySelectorAll("p")].find((el) => txt(el) === label);
+    if (!p || p.querySelector("br")) return;
+    if (!p.querySelector("strong")) boldAll(main, doc, p);
+    for (let i = 0; i < count; i += 1) {
+      const next = p.nextElementSibling;
+      if (!next || next.tagName !== "P") break;
+      p.append(doc.createElement("br"), ...next.childNodes);
+      next.remove();
+    }
+  }
+  function superscript(main, doc) {
+    const walker = doc.createTreeWalker(
+      main,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    const nodes = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (/[™®]/.test(n.textContent) && !n.parentElement.closest("sup, script, style")) nodes.push(n);
+    }
+    nodes.forEach((n) => {
+      const out = n.textContent.split(/([™®])/).filter(Boolean).map((part) => {
+        if (!/^[™®]$/.test(part)) return doc.createTextNode(part);
+        const sup = doc.createElement("sup");
+        sup.textContent = part;
+        return sup;
+      });
+      n.replaceWith(...out);
+    });
+  }
+  function dropLeadingSpacer(main) {
+    const first = main.firstElementChild;
+    if (!isSectionMetadata(first) || txt(first).toLowerCase().indexOf("spacer") < 0) return;
+    const hr = first.nextElementSibling;
+    first.remove();
+    if (hr && hr.tagName === "HR") hr.remove();
+  }
+  function splitAtFirstBreak(doc, p) {
+    const br = p && p.querySelector(":scope > br");
+    if (!br) return;
+    const rest = doc.createElement("p");
+    while (br.nextSibling) rest.append(br.nextSibling);
+    br.remove();
+    p.after(rest);
+  }
+  function spacerBefore(main, doc, el, value) {
+    var _a;
+    if (!el) return;
+    const first = sectionOf(main, el)[0];
+    const prevHr = first.previousElementSibling;
+    if (prevHr && prevHr.tagName === "HR" && isSectionMetadata(prevHr.previousElementSibling) && ((_a = prevHr.previousElementSibling.previousElementSibling) == null ? void 0 : _a.tagName) === "HR" && txt(prevHr.previousElementSibling).toLowerCase().includes(value.split(",")[0])) return;
+    const table = WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: value } });
+    if (prevHr && prevHr.tagName === "HR") prevHr.after(table, doc.createElement("hr"));
+    else first.before(table, doc.createElement("hr"));
+  }
+  function dropSpacerAfter(main, el) {
+    if (!el) return;
+    const section = sectionOf(main, el);
+    const hr = section[section.length - 1].nextElementSibling;
+    const table = hr && hr.nextElementSibling;
+    if (!hr || hr.tagName !== "HR" || !isSectionMetadata(table) || !txt(table).toLowerCase().includes("spacer")) return;
+    const after = table.nextElementSibling;
+    if (after && after.tagName !== "HR") return;
+    hr.remove();
+    table.remove();
+  }
+  var blockTable = (main, name) => [...main.querySelectorAll("table")].find((t) => txt(t.querySelector("th, td")).toLowerCase().startsWith(name.toLowerCase()));
+  function blockSectionAfter(main, doc, el, name, cells) {
+    if (!el) return;
+    const section = sectionOf(main, el);
+    const last = section[section.length - 1];
+    const table = WebImporter.Blocks.createBlock(doc, { name, cells });
+    last.after(doc.createElement("hr"), table);
+  }
+  function socialShareAfter(main, doc, el) {
+    if (blockTable(main, "social share corp")) return;
+    blockSectionAfter(main, doc, el, "Social Share Corp", [[":facebook:"], [":linkedin:"], [":email:"], [":copy-link:"]]);
+  }
+  function underlineBold(main, doc, labels) {
+    main.querySelectorAll("strong").forEach((b) => {
+      if (b.querySelector("u") || !labels.some((l) => txt(b).startsWith(l))) return;
+      const u = doc.createElement("u");
+      u.append(...b.childNodes);
+      b.append(u);
+    });
+  }
+  function dropEmptyLastCells(main, name) {
+    [...main.querySelectorAll("table")].filter((t) => txt(t.querySelector("th, td")).toLowerCase().startsWith(name)).forEach((t) => {
+      [...t.querySelectorAll("tr")].slice(1).forEach((tr) => {
+        const last = tr.cells[tr.cells.length - 1];
+        if (tr.cells.length > 2 && last && !txt(last) && !last.querySelector("img, picture, a")) last.remove();
+      });
+    });
+  }
+  function stripListNumbers(main, el) {
+    if (!el) return;
+    const doc = main.ownerDocument;
+    sectionOf(main, el).forEach((node) => {
+      var _a;
+      return (_a = node.querySelectorAll) == null ? void 0 : _a.call(node, "ol > li").forEach((li) => {
+        [...li.querySelectorAll(":scope > br")].reverse().forEach((br) => {
+          const next = br.nextSibling;
+          if (!next || next.nodeType !== 3 || !/^\s*\d+\.\s/.test(next.textContent)) return;
+          const item = doc.createElement("li");
+          while (br.nextSibling) item.append(br.nextSibling);
+          br.remove();
+          li.after(item);
+        });
+      });
+    });
+    sectionOf(main, el).forEach((node) => {
+      var _a;
+      return (_a = node.querySelectorAll) == null ? void 0 : _a.call(node, "ol > li").forEach((li) => {
+        const t = li.firstChild;
+        if (t && t.nodeType === 3) t.textContent = t.textContent.replace(/^\s*\d+\.\s*/, "");
+      });
+    });
+  }
+  var BODY_L_REPLACES = ["p-1", "p-1-25", "p-1-5", "p-1-75", "p-2", "p-2-5", "h2-0-8", "h2-1-25", "h2-1-5", "h3-0-8", "h3-1-25", "h3-1-5", "h4-1-25", "join"];
+  function bodyLRepresentative(main, doc) {
+    main.setAttribute("data-meta-theme", "body-l");
+    main.querySelectorAll("h2").forEach((h2) => {
+      const h3 = doc.createElement("h3");
+      const b = doc.createElement("strong");
+      b.append(...h2.childNodes);
+      b.querySelectorAll("em, strong").forEach((el) => el.replaceWith(...el.childNodes));
+      h3.append(b);
+      h2.replaceWith(h3);
+    });
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => {
+      const row = [...t.querySelectorAll("tr")].find((tr) => txt(tr.cells[0]).toLowerCase() === "style");
+      if (!row) return;
+      const rest = txt(row.cells[1]).split(",").map((v) => v.trim()).filter((v) => v && !BODY_L_REPLACES.includes(v));
+      if (rest.length) row.cells[1].textContent = rest.join(", ");
+      else if (t.querySelectorAll("tr").length <= 2) t.remove();
+      else row.remove();
+    });
+    main.querySelectorAll("h3").forEach((h3) => breakBefore(main, doc, h3, null));
+  }
+  function labelsToSubheads(main, doc, labels) {
+    main.querySelectorAll("p").forEach((p) => {
+      if (!labels.includes(txt(p)) || !p.querySelector("em strong, strong em")) return;
+      const h2 = doc.createElement("h2");
+      h2.append(...p.childNodes);
+      p.replaceWith(h2);
+    });
+  }
+  function inlineReferencesToList(main, doc) {
+    main.querySelectorAll("p").forEach((p) => {
+      const head = p.firstElementChild;
+      if (!head || head.tagName !== "STRONG" || !txt(p).startsWith(txt(head))) return;
+      const label = txt(head).match(/^(.+:)\s*1\.$/);
+      if (!label) return;
+      const lead = doc.createElement("p");
+      const b = doc.createElement("strong");
+      b.textContent = `${label[1]} `;
+      lead.append(b);
+      const ol = doc.createElement("ol");
+      let li = null;
+      [...p.childNodes].forEach((n) => {
+        if (n === head || n.nodeName === "STRONG" && /^\d+\.$/.test(txt(n))) {
+          li = doc.createElement("li");
+          ol.append(li);
+        } else if (li) li.append(n);
+      });
+      ol.querySelectorAll("li").forEach((item) => {
+        const t = item.firstChild;
+        if (t && t.nodeType === 3) t.textContent = t.textContent.replace(/^\s+/, "");
+      });
+      p.replaceWith(lead, ol);
+    });
+  }
+  function photoPairColumns(main, doc, el) {
+    var _a;
+    const first = el && el.closest("p");
+    if (!first) return;
+    const paras = [first];
+    while (paras.length < 4 && ((_a = paras[paras.length - 1].nextElementSibling) == null ? void 0 : _a.tagName) === "P") {
+      paras.push(paras[paras.length - 1].nextElementSibling);
+    }
+    if (paras.length < 4) return;
+    const table = sectionOf(main, first).find(isSectionMetadata);
+    const hr = doc.createElement("hr");
+    first.before(hr);
+    if (table) hr.before(table);
+    const after = paras[3].nextElementSibling;
+    const block = WebImporter.Blocks.createBlock(doc, { name: "Columns", cells: [[[paras[0], paras[1]], [paras[2], paras[3]]]] });
+    hr.after(block);
+    if (after && after.tagName !== "HR") block.after(doc.createElement("hr"));
+  }
+  function sizedTextToH3(main, doc) {
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => {
+      const row = [...t.querySelectorAll("tr")].find((tr) => txt(tr.cells[0]).toLowerCase() === "style");
+      const values = row ? txt(row.cells[1]).split(",").map((v) => v.trim()) : [];
+      if (!values.includes("p-1-5")) return;
+      const serif = values.includes("serif");
+      sectionOf(main, t).filter((n) => n.tagName === "P").forEach((para) => {
+        const h3 = retag(main, doc, para, "h3");
+        const only = h3.children.length === 1 && h3.firstElementChild.matches("strong, b") && txt(h3.firstElementChild) === txt(h3);
+        if (only) h3.firstElementChild.replaceWith(...h3.firstElementChild.childNodes);
+        if (serif && !h3.querySelector("em")) {
+          const em = doc.createElement("em");
+          em.append(...h3.childNodes);
+          h3.append(em);
+        }
+      });
+      const rest = values.filter((v) => v !== "p-1-5" && !(serif && v === "serif"));
+      if (rest.length) row.cells[1].textContent = rest.join(", ");
+      else t.remove();
+    });
+  }
+  function serifBanner(main, doc) {
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => {
+      const v = txt(t).toLowerCase();
+      if (!v.includes("h2-1-5") || !v.includes("bg-gold")) return;
+      sectionOf(main, t).filter((n) => n.tagName === "H2").forEach((h2) => {
+        if (h2.querySelector("em")) return;
+        const lead = [];
+        for (const n of [...h2.childNodes]) {
+          if (n.nodeType === 1 && n.matches("strong, b")) break;
+          lead.push(n);
+        }
+        if (!lead.some((n) => n.textContent.trim())) return;
+        const trailing = lead[lead.length - 1];
+        const space = trailing.nodeType === 3 && /\s$/.test(trailing.textContent);
+        if (space) trailing.textContent = trailing.textContent.replace(/\s+$/, "");
+        const em = doc.createElement("em");
+        lead[0].before(em);
+        em.append(...lead);
+        if (space) em.after(doc.createTextNode(" "));
+      });
+    });
+  }
+  function formPageBodyL(main, doc, { references = false } = {}) {
+    main.setAttribute("data-meta-theme", "full-width, body-l");
+    const sizes = /^p-1(-\d+)?$/;
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+      const v = txt(td).split(",").map((x) => x.trim());
+      if (!v.some((x) => sizes.test(x))) return;
+      const rest = v.filter((x) => !sizes.test(x));
+      if (rest.length) td.textContent = rest.join(", ");
+      else t.remove();
+    }));
+    const title = sectionOf(main, main.querySelector("h1"));
+    const afterTitle = title.length && title[title.length - 1].nextElementSibling;
+    spacerBefore(main, doc, afterTitle && afterTitle.nextElementSibling, "spacer");
+    let banner = [...main.querySelectorAll("p, h2")].find((el) => /^(want to|interested in) learn(ing)? more\?/i.test(txt(el)));
+    if (banner) {
+      breakBefore(main, doc, banner, null);
+      banner = retag(main, doc, banner, "h2");
+      breakAfter(main, doc, banner);
+      sectionOf(main, banner).filter(isSectionMetadata).forEach((t) => t.remove());
+      const sec = sectionOf(main, banner);
+      sec[sec.length - 1].after(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
+    }
+    serifBanner(main, doc);
+    const form = blockTable(main, "marketo form");
+    const formMeta = form && sectionOf(main, form).find(isSectionMetadata);
+    const formRow = formMeta && [...formMeta.querySelectorAll("tr")].find((tr) => txt(tr.cells[0]).toLowerCase() === "style");
+    const formStyle = formRow ? txt(formRow.cells[1]).split(",").map((x) => x.trim()).filter(Boolean) : [];
+    if (form && !formStyle.includes("form-with-aside")) style(main, doc, form, ["form-with-aside", ...formStyle].join(", "));
+    [...main.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+      const v = txt(td).split(",").map((x) => x.trim());
+      if (!v.includes("join")) return;
+      const rest = v.filter((x) => x !== "join");
+      if (rest.length) td.textContent = rest.join(", ");
+      else t.remove();
+    }));
+    const first = references && [...main.querySelectorAll("ol > li")].find((li) => /^1\.\s/.test(txt(li)) && sectionOf(main, li).some((n) => isSectionMetadata(n) && txt(n).includes("disclaimer")));
+    if (first) {
+      stripListNumbers(main, first);
+      first.parentElement.querySelectorAll(":scope > li").forEach((li) => {
+        const lead = li.firstElementChild;
+        if (lead && lead === li.firstChild && lead.matches("strong, b") && /^\d+[.:]$/.test(txt(lead))) {
+          lead.remove();
+          if (li.firstChild && li.firstChild.nodeType === 3) li.firstChild.textContent = li.firstChild.textContent.replace(/^\s+/, "");
+        }
+      });
+      style(main, doc, first, "disclaimer");
+    }
+  }
+  var SRC = "https://www.stryker.com/us/en/";
+  var norm = (t) => (t || "").replace(/\s+/g, " ").trim();
+  var headOf = (table) => table.querySelector("tr");
+  var nameOf = (table) => {
+    var _a;
+    return norm((_a = headOf(table)) == null ? void 0 : _a.textContent).toLowerCase();
+  };
+  var blocks = (main, re) => [...main.querySelectorAll("table")].filter((t) => re.test(nameOf(t)));
+  function variantsOf(table) {
+    const m = norm(headOf(table).textContent).match(/^([^(]+?)\s*(?:\((.*)\))?$/);
+    return { name: m[1], list: (m[2] || "").split(",").map((v) => v.trim()).filter(Boolean) };
+  }
+  function setVariants(table, list) {
+    const { name } = variantsOf(table);
+    headOf(table).firstElementChild.textContent = list.length ? `${name} (${list.join(", ")})` : name;
+  }
+  function addVariants(table, ...more) {
+    const { list } = variantsOf(table);
+    setVariants(table, [...list, ...more.filter((v) => !list.includes(v))]);
+  }
+  function setTheme(main, theme) {
+    main.setAttribute("data-semantic-theme", theme);
+  }
+  function rename2(el, tag) {
+    const doc = el.ownerDocument;
+    const out = doc.createElement(tag);
+    while (el.firstChild) out.append(el.firstChild);
+    el.replaceWith(out);
+    return out;
+  }
+  function wrap(node, tag) {
+    const el = node.ownerDocument.createElement(tag);
+    node.before(el);
+    el.append(node);
+    return el;
+  }
+  var styleCells = (main) => blocks(main, /^section metadata$/).flatMap((t) => [...t.querySelectorAll("tr")]).filter((tr) => {
+    var _a;
+    return norm((_a = tr.firstElementChild) == null ? void 0 : _a.textContent).toLowerCase() === "style" && tr.children[1];
+  }).map((tr) => tr.children[1]);
+  function replaceStyle(main, from, to, nth = -1) {
+    styleCells(main).filter((td) => norm(td.textContent) === from).forEach((td, i) => {
+      if (nth < 0 || i === nth) td.textContent = to;
+    });
+  }
+  var metaWithStyle = (main, style2) => styleCells(main).filter((td) => norm(td.textContent) === style2).map((td) => td.closest("table"));
+  function removeEmptySection(meta) {
+    const next = meta.nextElementSibling;
+    if ((next == null ? void 0 : next.tagName) === "HR") next.remove();
+    meta.remove();
+  }
+  var heroes = (main) => blocks(main, /^hero corp\b/);
+  var named = (main, name) => blocks(main, new RegExp(`^${name.replace(/[()]/g, "\\$&")}$`));
+  function trimLead(el) {
+    const first = el.firstChild;
+    if ((first == null ? void 0 : first.nodeType) === 3) first.textContent = first.textContent.trimStart();
+  }
+  function dropBlankText(el) {
+    [...el.childNodes].filter((n) => n.nodeType === 3 && !norm(n.textContent)).forEach((n) => n.remove());
+  }
+  function posterSize(main, asset, wid, hei) {
+    main.querySelectorAll(`a[href*="/${asset}"]`).forEach((a) => {
+      a.setAttribute("href", a.getAttribute("href").replace(/wid=\d+&hei=\d+/, `wid=${wid}&hei=${hei}`));
+    });
+  }
+  function splitLastLine(para) {
+    const brs = para.querySelectorAll(":scope > br");
+    const last = brs[brs.length - 1];
+    if (!last) return;
+    const out = para.ownerDocument.createElement("p");
+    while (last.nextSibling) out.append(last.nextSibling);
+    last.remove();
+    out.normalize();
+    trimLead(out);
+    para.after(out);
+  }
+  function splitFirstLine(el, tag, keep = (n) => n) {
+    const br = el.querySelector(":scope > br");
+    if (!br) return;
+    const doc = el.ownerDocument;
+    const head = doc.createElement(tag);
+    const rest = doc.createElement("p");
+    const kids = [...el.childNodes];
+    const at = kids.indexOf(br);
+    head.append(...kids.slice(0, at).map(keep));
+    rest.append(...kids.slice(at + 1));
+    rest.normalize();
+    trimLead(rest);
+    el.replaceWith(head, rest);
+  }
+  var unItalic = (n) => {
+    if (n.nodeName !== "EM") return n;
+    const frag = n.ownerDocument.createDocumentFragment();
+    frag.append(...n.childNodes);
+    return frag;
+  };
+  function styleTable(doc, style2) {
+    const table = doc.createElement("table");
+    const head = doc.createElement("tr");
+    const th = doc.createElement("th");
+    th.setAttribute("colspan", "2");
+    th.textContent = "Section Metadata";
+    head.append(th);
+    const row = doc.createElement("tr");
+    ["style", style2].forEach((v) => {
+      const td = doc.createElement("td");
+      td.textContent = v;
+      row.append(td);
+    });
+    table.append(head, row);
+    return table;
+  }
+  function addSectionStyle(node, style2) {
+    let last = node;
+    while (last.nextElementSibling && last.nextElementSibling.tagName !== "HR") last = last.nextElementSibling;
+    last.after(styleTable(node.ownerDocument, style2));
+  }
+  function sectionBefore(node, style2) {
+    node.before(styleTable(node.ownerDocument, style2), node.ownerDocument.createElement("hr"));
+  }
+  function spacerSectionsBefore(node) {
+    const out = [];
+    let hr = node.previousElementSibling;
+    while ((hr == null ? void 0 : hr.tagName) === "HR") {
+      const meta = hr.previousElementSibling;
+      if ((meta == null ? void 0 : meta.tagName) !== "TABLE" || nameOf(meta) !== "section metadata") break;
+      const before = meta.previousElementSibling;
+      if (before && before.tagName !== "HR") break;
+      out.push(meta);
+      hr = before;
+    }
+    return out;
+  }
+  function lpdBlockTable(doc, name, cells) {
+    const table = doc.createElement("table");
+    const head = doc.createElement("tr");
+    const th = doc.createElement("th");
+    th.setAttribute("colspan", String(cells.length));
+    th.textContent = name;
+    head.append(th);
+    const row = doc.createElement("tr");
+    cells.forEach((nodes) => {
+      const td = doc.createElement("td");
+      td.append(...nodes);
+      row.append(td);
+    });
+    table.append(head, row);
+    return table;
+  }
+  var withText = (main, tag, text4) => [...main.querySelectorAll(tag)].filter((el) => norm(el.textContent) === text4);
+  function boldHeading(h) {
+    const strong = h.ownerDocument.createElement("strong");
+    strong.textContent = norm(h.textContent);
+    h.replaceChildren(strong);
+    return h;
+  }
+  function boldSecondTitleLine(h1) {
+    const gold = [...h1.children].find((el) => el.tagName === "EM" && el.querySelector(":scope > strong"));
+    if (!gold) return;
+    const lead = gold.querySelector(":scope > strong");
+    let after = gold;
+    const kids = [...gold.childNodes];
+    kids.slice(kids.indexOf(lead) + 1).forEach((n) => {
+      after.after(n);
+      after = n;
+    });
+    let started = false;
+    let done = false;
+    let node = gold.nextSibling;
+    while (node) {
+      const next = node.nextSibling;
+      if (node.nodeName === "BR") {
+        if (started) done = true;
+      } else if (norm(node.textContent)) {
+        if (!done) {
+          started = true;
+          if (node.nodeName === "EM") rename2(node, "strong");
+          else if (node.nodeName !== "STRONG") wrap(node, "strong");
+        } else if (node.nodeType === 3) {
+          wrap(node, "em");
+        }
+      }
+      node = next;
+    }
+  }
+  var JR45_TITLE = [
+    (main) => blocks(main, /^columns \(columns 67 33, large-titles, large-copy\)$/).forEach((t) => {
+      const h1 = t.querySelector("h1");
+      if (!h1) return;
+      addVariants(t, "plain-bold");
+      boldSecondTitleLine(h1);
+    })
+  ];
+  var JR45_BOX = [
+    (main) => blocks(main, /^columns \((stack, )?faculty\)$/).forEach((t) => addVariants(t, "large-box-copy"))
+  ];
+  var TOOLKIT = (title) => [
+    (main) => withText(main, "h1", title).forEach(boldHeading),
+    (main) => [...main.querySelectorAll(":scope > h2")].filter((h) => norm(h.textContent).startsWith("Welcome to the")).forEach((h) => rename2(h, "h4")),
+    (main) => named(main, "columns (columns-33-67, large-serif-copy)").forEach((t) => addVariants(t, "plain-bold")),
+    (main) => named(main, "hero corp (banner, half-text)").forEach((t) => addVariants(t, "large-serif-copy")),
+    (main) => withText(main, "p", "Follow Stryker's Foot & Ankle team on Social Media!").forEach((el) => rename2(el, "h3")),
+    (main) => setTheme(main, "large-headlines, xxlarge-copy, serif-copy")
+  ];
+  var page = (path) => `${SRC}${path}.html`;
+  var jr45 = (path) => `${SRC}training-and-education/orthopaedics/joint-replacement/jr45/${path}.html`;
+  function tags(main, value) {
+    main.setAttribute("data-meta-tags", value);
+  }
+  function footnotesToList(main, doc, first) {
+    if (!first) return;
+    const paras = [];
+    for (let p = first; p && p.tagName === "P" && /^\d+\./.test(txt(p)); p = p.nextElementSibling) paras.push(p);
+    const ol = doc.createElement("ol");
+    paras.forEach((p) => {
+      let item = [];
+      const flush = () => {
+        var _a;
+        if (!item.length) return;
+        const li = doc.createElement("li");
+        li.append(...item);
+        if (((_a = li.firstChild) == null ? void 0 : _a.nodeType) === 3) li.firstChild.textContent = li.firstChild.textContent.replace(/^\s*\d+\.\s*/, "");
+        ol.append(li);
+        item = [];
+      };
+      [...p.childNodes].forEach((n) => {
+        var _a, _b, _c, _d;
+        if (n.nodeName === "BR" && ((_a = nextOf(n)) == null ? void 0 : _a.nodeName) === "BR") {
+          flush();
+          return;
+        }
+        if (n.nodeName === "BR" && ((_b = prevOf(n)) == null ? void 0 : _b.nodeName) === "BR") return;
+        if (isBlank(n) && (((_c = nextOf(n)) == null ? void 0 : _c.nodeName) === "BR" || ((_d = prevOf(n)) == null ? void 0 : _d.nodeName) === "BR") && !item.length) return;
+        item.push(n);
+      });
+      flush();
+    });
+    const last = paras[paras.length - 1];
+    const hr1 = doc.createElement("hr");
+    const hr2 = doc.createElement("hr");
+    last.after(hr1, WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: "spacer" } }), hr2, ol);
+    paras.forEach((p) => p.remove());
+    ol.after(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: { style: "disclaimer" } }));
+  }
+  var CORRECTIONS2 = __spreadValues(__spreadProps(__spreadValues(__spreadProps(__spreadValues({
+    // text-only news pages (import-text-only.js): the edits authors made in DA after the
+    // import, so a re-import gives the reviewed page; `tags` is the DA metadata row
+    // stryker-announces-definitive-agreement-to-acquire-artelon--inc--
+    "https://www.stryker.com/us/en/about/news/2024/stryker-announces-definitive-agreement-to-acquire-artelon--inc--.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+      }
+    ],
+    // stryker-completes-acquisition-of-vertos-medical-inc-expanding-interventional-pain-management-solutions
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-vertos-medical-inc-expanding-interventional-pain-management-solutions.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-care-ai
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-care-ai.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-joins-atrium-health-affiliate-ircad-north-america--to-ad
+    "https://www.stryker.com/us/en/about/news/2024/stryker-joins-atrium-health-affiliate-ircad-north-america--to-ad.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-nico-corporation--expanding-min
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-nico-corporation--expanding-min.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-molli-surgical
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-molli-surgical.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-artelon-inc
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-artelon-inc.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews");
+      }
+    ],
+    // stryker-completes-acquisition-of-serf-sas
+    "https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-serf-sas.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        style(m, d, find(m, "p", "Forward-looking statements"), null);
+        ["About Menix", "About SERF SAS", "Media contact"].forEach((label) => joinLabel(m, d, label));
+      }
+    ],
+    // stryker-expands-foot---ankle-portfolio-with-specialized-offering
+    "https://www.stryker.com/us/en/about/news/2024/stryker-expands-foot---ankle-portfolio-with-specialized-offering.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        retag(m, d, find(m, "h4", "The company to feature new products"), "h3");
+      }
+    ],
+    // stryker-expands-prophecy-surgical-planning-system-to-include-the
+    "https://www.stryker.com/us/en/about/news/2024/stryker-expands-prophecy-surgical-planning-system-to-include-the.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        boldAll(m, d, find(m, "p", "References:"));
+      }
+    ],
+    // stryker-unveils-mako-total-knee-2-0-at-the-aaos-2023-annual-meet
+    "https://www.stryker.com/us/en/about/news/2023/stryker-unveils-mako-total-knee-2-0-at-the-aaos-2023-annual-meet.html": [
+      (m, d) => {
+        var _a;
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "p", "Next advancement of Mako SmartRobotics"), { em: true });
+        const about = find(m, "p", "About Stryker");
+        breakBefore(m, d, about, "separator");
+        if (about && ((_a = about.lastChild) == null ? void 0 : _a.nodeName) !== "BR") about.append(d.createElement("br"));
+        brBeforeLabel(find(m, "p", "Media contact"));
+      }
+    ],
+    // stryker-s-pangea-systems-receive-fda-clearance
+    "https://www.stryker.com/us/en/about/news/2023/stryker-s-pangea-systems-receive-fda-clearance.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "h2", "Pangea to offer"));
+      }
+    ],
+    // stryker-receives-fda-clearance-for-q-guidance-system-for-spine-a
+    "https://www.stryker.com/us/en/about/news/2022/stryker-receives-fda-clearance-for-q-guidance-system-for-spine-a.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "p", "Innovative planning and intraoperative"));
+        ["About Stryker", "Media contact"].forEach((label) => joinLabel(m, d, label));
+        style(m, d, find(m, "p", "About Stryker"), "separator");
+        style(m, d, find(m, "p", "Media contact"), "separator");
+      }
+    ],
+    // 2022-ana-innovation-award-winners-address-gaps-in-health-equity-
+    "https://www.stryker.com/us/en/about/news/2022/2022-ana-innovation-award-winners-address-gaps-in-health-equity-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+      }
+    ],
+    // stryker-announces-first-patient-case-using--new-tornier-perform-
+    "https://www.stryker.com/us/en/about/news/2022/stryker-announces-first-patient-case-using--new-tornier-perform-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/news/events, stryker:content-type/news/in-the-news");
+        breakAfter(m, d, find(m, "p", "Case to be Presented at 2022"));
+      }
+    ],
+    // stryker-donates-to-k9s-for-warriors-to-conclude-2022-minor-leagu
+    "https://www.stryker.com/us/en/about/news/2022/stryker-donates-to-k9s-for-warriors-to-conclude-2022-minor-leagu.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        subtitle(m, d, find(m, "h4", "This season, the Official SmartRobotics"), { split: false });
+        breakBefore(m, d, find(m, "p", "About Stryker"), "separator");
+      }
+    ],
+    // stryker-launches--free-your-feet--campaign-to-raise-awareness-ab
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches--free-your-feet--campaign-to-raise-awareness-ab.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        const more = find(m, "p", "More information about the campaign");
+        mergeWithPrevious(m, more);
+        joinParagraph(d, more, 2);
+        style(m, d, find(m, "p", "About Stryker"), "separator");
+      }
+    ],
+    // stryker-launches-prostep--mica-solo-guide--to-simplify-minimally
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches-prostep--mica-solo-guide--to-simplify-minimally.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/product-bulletins, stryker:content-type/news/events, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+      }
+    ],
+    // stryker-to-showcase-innovative-portfolio-of-spine-solutions--at-
+    "https://www.stryker.com/us/en/about/news/2022/stryker-to-showcase-innovative-portfolio-of-spine-solutions--at-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "p", "Newly Launched Q Guidance System"), { em: true });
+        mergeWithPrevious(m, find(m, "p", "QGS-MM-2_3426"));
+        style(m, d, find(m, "p", "References:"), "separator, disclaimer");
+      }
+    ],
+    // stryker-launches-insignia--femoral-hip-stem-at-the-american-acad
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches-insignia--femoral-hip-stem-at-the-american-acad.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/product-bulletins, stryker:content-type/news/events, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        subtitle(m, d, find(m, "p", "Engineered to optimize fit and function"));
+        joinLabel(m, d, "About Stryker");
+        style(m, d, find(m, "p", "About Stryker"), "separator");
+      }
+    ],
+    // stryker-enters-national-partnership-with-minor-league-baseball-t
+    "https://www.stryker.com/us/en/about/news/2021/stryker-enters-national-partnership-with-minor-league-baseball-t.html": [
+      (m, d) => {
+        var _a, _b;
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        const label = [...m.querySelectorAll("p > strong")].find((s) => txt(s) === "The Nation Emerges from COVID-19");
+        if (label && ((_a = nextOf(label)) == null ? void 0 : _a.nodeName) === "BR" && ((_b = nextOf(nextOf(label))) == null ? void 0 : _b.nodeName) !== "BR") label.after(d.createElement("br"));
+      }
+    ],
+    // stryker-introduces-market-leading-tornier-shoulder-arthroplasty-
+    "https://www.stryker.com/us/en/about/news/2021/stryker-introduces-market-leading-tornier-shoulder-arthroplasty-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        const date = [...m.querySelectorAll("p > strong, p > b")].find((s) => /^MAHWAH, N\.J\.—?$/.test(txt(s)));
+        if (date) {
+          const dash = nextOf(date);
+          if (dash && dash.nodeType === 1 && txt(dash) === "\u2014") dash.remove();
+          if (txt(date).endsWith("\u2014")) date.textContent = "MAHWAH, N.J.";
+          const rest = nextOf(date);
+          if (rest && rest.nodeType === 3 && !rest.textContent.startsWith(" \u2014 ")) rest.textContent = ` \u2014 ${rest.textContent.replace(/^[\s—]+/, "")}`;
+        }
+        breakBefore(m, d, find(m, "p", "Media Contacts"), null);
+      }
+    ],
+    // stryker-expands-its-mako-smartrobotics-footprint-to-reach-more-v
+    "https://www.stryker.com/us/en/about/news/2021/stryker-expands-its-mako-smartrobotics-footprint-to-reach-more-v.html": [
+      (m, d) => {
+        var _a, _b;
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/news/in-the-news");
+        breakAfter(m, d, find(m, "p", "Stryker continues to work with United"), { keepStyle: true });
+        const label = [...m.querySelectorAll("p > strong")].find((s) => txt(s) === "About Stryker");
+        if (label && ((_a = nextOf(label)) == null ? void 0 : _a.nodeName) === "BR" && ((_b = nextOf(nextOf(label))) == null ? void 0 : _b.nodeName) === "BR") nextOf(label).remove();
+      }
+    ],
+    // awareness-campaign-launched-to-support-world-restart-a-heart-day
+    "https://www.stryker.com/us/en/about/news/2020/awareness-campaign-launched-to-support-world-restart-a-heart-day.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        noTheme(m);
+        footnotesToList(m, d, find(m, "p", "1. Cardiovascular diseases (CVDs)"));
+      }
+    ],
+    // stryker-releases-emergency-relief-bed
+    "https://www.stryker.com/us/en/about/news/2020/stryker-releases-emergency-relief-bed.html": [
+      (m, d) => {
+        tags(m, "stryker:Stryker-SEO-Tags/covid19, stryker:content-type/news, stryker:Stryker-SEO-Tags/coronavirus, stryker:Stryker-SEO-Tags/covid-19, stryker:content-type/news/product-bulletins, stryker:content-type/corporatenews, stryker:content-type/news/covid-19");
+        const place = find(m, "h5", "Kalamazoo, MI, USA");
+        if (place) {
+          const p = d.createElement("p");
+          const b = d.createElement("strong");
+          b.append(...place.childNodes);
+          p.append(b);
+          place.replaceWith(p);
+        }
+        const h1 = m.querySelector("h1");
+        if (h1 && !h1.querySelector("strong")) boldAll(m, d, h1);
+        style(m, d, h1, null);
+        retag(m, d, find(m, "h4", "Company aims to manufacture"), "h3");
+        ["About Stryker", "Media contact"].forEach((label) => joinLabel(m, d, label));
+        breakBefore(m, d, find(m, "p", "About Stryker"), "separator");
+        breakBefore(m, d, find(m, "p", "Media contact"), null);
+      }
+    ],
+    // stryker-completes-acquisition-of-wright-medical
+    "https://www.stryker.com/us/en/about/news/2020/stryker-completes-acquisition-of-wright-medical.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/ir, stryker:content-type/corporatenews");
+        noTheme(m);
+      }
+    ],
+    // stryker-joins-leading-executives-and-employers-in-forming-oneten
+    "https://www.stryker.com/us/en/about/news/2020/stryker-joins-leading-executives-and-employers-in-forming-oneten.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews, stryker:content-type/news/diversity-equity-inclusion");
+        noTheme(m);
+        const sub = find(m, "p", "OneTen will create one million jobs");
+        style(m, d, sub, null);
+        subtitle(m, d, sub);
+      }
+    ],
+    // urgent-11-vulnerabilities---wind-river-vxworks-
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/urgent-11-vulnerabilities---wind-river-vxworks-.html": [
+      (m, d) => {
+        noTheme(m);
+        m.querySelectorAll('a[href="https://www.us-cert.gov/ics/advisories/icsa-19-211-01"]').forEach((a) => {
+          const u = a.querySelector("u") || a;
+          if (txt(u) === "https://www.us-cert.gov/ics/advisories/icsa-19-211-01") u.textContent = u.textContent.toUpperCase();
+        });
+      }
+    ],
+    // microsoft-windows-rdp-vulnerability--cve-2019-0708--bulletin
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/microsoft-windows-rdp-vulnerability--cve-2019-0708--bulletin.html": [
+      (m, d) => {
+        noTheme(m);
+        newTab2(m, ["https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708", "https://support.microsoft.com/en-us/help/4500705/customer-guidance-for-cve-2019-0708"]);
+      }
+    ],
+    // ripple20-treck-tcp-ip-stack-vulnerabilities-icsa-20-168-01
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/ripple20-treck-tcp-ip-stack-vulnerabilities-icsa-20-168-01.html": [
+      (m, d) => {
+        noTheme(m);
+        newTab2(m, ["https://us-cert.cisa.gov/ics/advisories/icsa-20-168-01"]);
+      }
+    ],
+    // -sweyntooth--ble-vulnerabilities--icsa--20-063-01-
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/-sweyntooth--ble-vulnerabilities--icsa--20-063-01-.html": [
+      (m, d) => {
+        noTheme(m);
+        newTab2(m, ["https://us-cert.cisa.gov/ics/alerts/ics-alert-20-063-01"]);
+      }
+    ],
+    // vocera-report-server-vulnerabilities--cve-2022-46898--cve-2022-4
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/vocera-report-server-vulnerabilities--cve-2022-46898--cve-2022-4.html": [
+      (m, d) => {
+        noTheme(m);
+        boldPerLine([...m.querySelectorAll("p > strong")].find((s) => txt(s).startsWith("CVE-2022-46898 Arbitrary File Upload")), d);
+        newTab2(m, ["https://support.vocera.com/s/contactsupport", ...["46898", "46899", "46900", "46901", "46902"].map((n) => `https://cve.report/CVE-2022-${n}`)]);
+      }
+    ],
+    // text-only pages, second set: the DA `tags` row and external links in a new tab
+    // apache--log4j--open-source-logging-library
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/apache--log4j--open-source-logging-library.html": [
+      (m, d) => {
+        newTabExternal(m);
+      }
+    ],
+    // microsoft-print-spooler-vulnerabilities--cve-2021-34527-and-cve-
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/microsoft-print-spooler-vulnerabilities--cve-2021-34527-and-cve-.html": [
+      (m, d) => {
+        newTabExternal(m);
+      }
+    ],
+    // stryker-responds-to-krack-vulnerability-for-ibed-wireless-enable
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/stryker-responds-to-krack-vulnerability-for-ibed-wireless-enable.html": [
+      (m, d) => {
+        newTabExternal(m);
+      }
+    ],
+    // wannacry-vulnerability
+    "https://www.stryker.com/us/en/about/governance/cyber-security/product-security/wannacry-vulnerability.html": [
+      (m, d) => {
+        newTabExternal(m);
+      }
+    ],
+    // kevin-lobo-shares-leadership-strategies-with-medical-design---ou
+    "https://www.stryker.com/us/en/about/news/2021/kevin-lobo-shares-leadership-strategies-with-medical-design---ou.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        newTabExternal(m);
+      }
+    ],
+    // stryker-announced-as-new-partner-for-the-ana-innovation-awards
+    "https://www.stryker.com/us/en/about/news/2021/stryker-announced-as-new-partner-for-the-ana-innovation-awards.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        newTabExternal(m);
+      }
+    ],
+    // stryker-sponsors-pga-2021-world-golf-championships-fedex-st--jud
+    "https://www.stryker.com/us/en/about/news/2021/stryker-sponsors-pga-2021-world-golf-championships-fedex-st--jud.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/events");
+        newTabExternal(m);
+      }
+    ],
+    // stryker-to-showcase-new--combined-foot-and-ankle-portfolio-at--2
+    "https://www.stryker.com/us/en/about/news/2021/stryker-to-showcase-new--combined-foot-and-ankle-portfolio-at--2.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/product-bulletins, stryker:content-type/news/events, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        newTabExternal(m);
+      }
+    ],
+    // cms-grants-outpatient-facility-code-for-insertion-of-stryker-s-i
+    "https://www.stryker.com/us/en/about/news/2022/cms-grants-outpatient-facility-code-for-insertion-of-stryker-s-i.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews, stryker:content-type/news/product-bulletins");
+        retag(m, d, find(m, "p", "The new code enables greater access"), "h3");
+        ["About the decision", "About Stryker", "Media contact"].forEach((label) => joinLabel(m, d, label));
+        ["About the decision", "About Stryker", "Media contact"].forEach((label) => style(m, d, find(m, "p", label), "separator"));
+        newTabExternal(m);
+      }
+    ],
+    // stryker-completes-acquisition-of-vocera-communications
+    "https://www.stryker.com/us/en/about/news/2022/stryker-completes-acquisition-of-vocera-communications.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/ir, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        newTabExternal(m);
+      }
+    ],
+    // stryker-works-with-red-cross-to-direct-resources-to-humanitarian
+    "https://www.stryker.com/us/en/about/news/2022/stryker-works-with-red-cross-to-direct-resources-to-humanitarian.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        newTabExternal(m);
+      }
+    ],
+    // vocera--now-part-of-stryker--introduces-latest-evolution-in-hand
+    "https://www.stryker.com/us/en/about/news/2022/vocera--now-part-of-stryker--introduces-latest-evolution-in-hand.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        retag(m, d, find(m, "p", "New Minibadge expands intuitive mobile"), "h4");
+        newTabExternal(m);
+      }
+    ],
+    // Cigna-Coverage-Policy-Update-ClariFix
+    "https://www.stryker.com/us/en/ent/news/Cigna-Coverage-Policy-Update-ClariFix.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news");
+        joinLabel(m, d, "About Stryker");
+        style(m, d, find(m, "p", "About Stryker"), null);
+        newTabExternal(m);
+      }
+    ],
+    // stryker-announces-creation-new-nasal-valve-collapse-1CD-10-CM-codes
+    "https://www.stryker.com/us/en/ent/news/stryker-announces-creation-new-nasal-valve-collapse-1CD-10-CM-codes.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news");
+        style(m, d, find(m, "p", "Effective October 1, 2024"), null);
+        newTabExternal(m);
+      }
+    ],
+    // stryker-announces-creation-of-new-category-1-cpt-codes-for-repor
+    "https://www.stryker.com/us/en/ent/news/stryker-announces-creation-of-new-category-1-cpt-codes-for-repor.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/ent/clinical-information");
+        joinLabel(m, d, "About Stryker");
+        joinLines(m, d, "Media contact", 3);
+        style(m, d, find(m, "p", "About Stryker"), "separator");
+        newTabExternal(m);
+      }
+    ],
+    // united-healthcare-medicare-advantage-policy-update-for-clarifix-
+    "https://www.stryker.com/us/en/ent/news/united-healthcare-medicare-advantage-policy-update-for-clarifix-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news");
+        newTabExternal(m);
+      }
+    ],
+    // i-thought-op-knees-were-approved-by-medicare--why-arent-they-in-
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/i-thought-op-knees-were-approved-by-medicare--why-arent-they-in-.html": [
+      (m, d) => {
+        unwrapSubSup(m);
+        mergeWithPrevious(m, find(m, "p", "While there is not (yet)"));
+        dropTextTag(m, d, "color-teal");
+        const back = [...m.querySelectorAll("p")].find((p) => txt(p) === "BACK");
+        underlineLinks(back, d);
+        style(m, d, back, null);
+        newTabExternal(m);
+      }
+    ],
+    // update-from-cms--what-to-expect-may--september-2018
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/update-from-cms--what-to-expect-may--september-2018.html": [
+      (m, d) => {
+        style(m, d, find(m, "p", "On April 24th, CMS provided"), null);
+        const close = find(m, "p", "Every episode is an opportunity");
+        if (close) {
+          const h5 = d.createElement("h5");
+          const first = d.createElement("strong");
+          first.textContent = "Every episode is an opportunity to do what is best for your patients.";
+          const em = d.createElement("em");
+          const second = d.createElement("strong");
+          second.textContent = "We have your back.";
+          em.append(second);
+          h5.append(first, em);
+          close.replaceWith(h5);
+        }
+        dropTextTag(m, d, "color-teal");
+        const back = [...m.querySelectorAll("p")].find((p) => txt(p) === "GO BACK");
+        underlineLinks(back, d);
+        style(m, d, back, null);
+        newTabExternal(m);
+      }
+    ],
+    // will-your-practice-qualify-for-mips-exemption-under-bpci-advance
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/will-your-practice-qualify-for-mips-exemption-under-bpci-advance.html": [
+      (m, d) => {
+        style(m, d, find(m, "p", "Many orthopedic physician groups"), null);
+        dropTextTag(m, d, "color-teal");
+        const back = [...m.querySelectorAll("p")].find((p) => txt(p) === "BACK");
+        underlineLinks(back, d);
+        style(m, d, back, null);
+        newTabExternal(m);
+      }
+    ],
+    // news-detail `basic` pages (text and lead image, import-news-detail.js): the DA `tags`
+    // row and ™ / ® as superscript
+    // stryker-expands-mako-robotics-portfolio
+    "https://www.stryker.com/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        superscript(m, d);
+      }
+    ],
+    // stryker-showcases-continued-innovation-across-orthopaedics-at-aaos-2026-annual-meeting
+    "https://www.stryker.com/us/en/about/news/2026/stryker-showcases-continued-innovation-across-orthopaedics-at-aaos-2026-annual-meeting.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        superscript(m, d);
+      }
+    ],
+    // stryker-launches-surpass-elite-flow-diverter
+    "https://www.stryker.com/us/en/about/news/2025/stryker-launches-surpass-elite-flow-diverter.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        superscript(m, d);
+      }
+    ],
+    // stryker-unveils-oculan-lighting-platform
+    "https://www.stryker.com/us/en/about/news/2024/stryker-unveils-oculan-lighting-platform.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        superscript(m, d);
+      }
+    ],
+    // stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-
+    "https://www.stryker.com/us/en/about/news/2023/stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        dropLeadingSpacer(m);
+        style(m, d, m.querySelector("h1"), null);
+        subtitle(m, d, find(m, "p", "Stryker\u2019s PROstep MIS portfolio will be"), { em: true });
+        splitAtFirstBreak(d, [...m.querySelectorAll("p")].find((p) => txt(p).startsWith("References: 1.")));
+        style(m, d, find(m, "p", "A surgeon must always rely"), "separator,disclaimer");
+        superscript(m, d);
+      }
+    ],
+    // stryker-announces-definitive-agreement-to-acquire-vocera-communi
+    "https://www.stryker.com/us/en/about/news/2022/stryker-announces-definitive-agreement-to-acquire-vocera-communi.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/ir, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        superscript(m, d);
+      }
+    ],
+    // news-detail `basic` pages, second set (import-news-detail.js; SurgiCount: import-news-xf.js)
+    // stryker-launches-the-connected-power-pro-2-powered-ambulance-cot
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches-the-connected-power-pro-2-powered-ambulance-cot.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        superscript(m, d);
+      }
+    ],
+    // stryker-strengthens-its-r-d-capabilities-with-advanced-global-te
+    "https://www.stryker.com/us/en/about/news/2022/stryker-strengthens-its-r-d-capabilities-with-advanced-global-te.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        subtitle(m, d, find(m, "p", "New center to help accelerate"));
+        joinLabel(m, d, "About Stryker");
+        style(m, d, find(m, "p", "About Stryker"), "separator");
+        ["Stryker:", "SPAG:"].forEach((label) => joinLabel(m, d, label));
+        mergeWithPrevious(m, find(m, "p", "SPAG:"));
+        style(m, d, find(m, "p", "Media contact"), "separator");
+        superscript(m, d);
+      }
+    ],
+    // stryker-launches-next-generation-of-surgicount--to-help-improve-
+    "https://www.stryker.com/us/en/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        m.setAttribute("data-meta-theme", "basic");
+        const h1 = m.querySelector("h1");
+        dropSpacerAfter(m, h1);
+        const cols = blockTable(m, "columns");
+        if (cols) {
+          const a = d.createElement("a");
+          a.href = "/us/en/fragments/stryker/corporate/en/about/news/2024/stryker-launches-next-generation-of-surgicount-to-help-improve";
+          a.textContent = a.getAttribute("href");
+          cols.replaceWith(WebImporter.Blocks.createBlock(d, { name: "Fragment", cells: [[a]] }));
+        }
+        spacerBefore(m, d, m.querySelector("ol"), "spacer, small");
+        superscript(m, d);
+      }
+    ],
+    // stryker-names-spencer-stiles-president-and-chief-operating-officer
+    "https://www.stryker.com/us/en/about/news/2025/stryker-names-spencer-stiles-president-and-chief-operating-officer.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        const h1 = m.querySelector("h1");
+        style(m, d, h1, null);
+        breakAfter(m, d, h1);
+        breakAfter(m, d, m.querySelector("h2"));
+        const logo = [...m.querySelectorAll("p")].find((p) => txt(p) === "stryker_logo2015_left");
+        breakAfter(m, d, logo);
+        spacerBefore(m, d, find(m, "p", "PORTAGE, Mich., USA \u2013 Dec. 4"), "spacer, small");
+        socialShareAfter(m, d, find(m, "p", "About Stryker"));
+        superscript(m, d);
+      }
+    ],
+    // stryker-cmr-surgical-announce-strategic-alliance-advance-robotic-assisted-surgery
+    "https://www.stryker.com/us/en/about/news/2026/stryker-cmr-surgical-announce-strategic-alliance-advance-robotic-assisted-surgery.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        const lead = find(m, "p", "Strategic alliance combines CMR");
+        style(m, d, lead, null);
+        breakAfter(m, d, lead);
+        underlineBold(m, d, ["Strategic alliance combines CMR", "For investor inquiries for Stryker:", "For media inquiries for Stryker:", "For investor and media inquiries for CMR Surgical:"]);
+        superscript(m, d);
+      }
+    ],
+    // stryker-partners-professional-golfer-shane-lowry-caregiver-journey
+    "https://www.stryker.com/us/en/about/news/2026/stryker-partners-professional-golfer-shane-lowry-caregiver-journey.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        socialShareAfter(m, d, find(m, "p", "About Stryker"));
+        superscript(m, d);
+      }
+    ],
+    // stryker-launches-new-gamma4-hip-fracture-nailing-system
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches-new-gamma4-hip-fracture-nailing-system.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        dropSpacerAfter(m, m.querySelector("h1"));
+        const sub = find(m, "p", "New System to Strengthen the Gamma");
+        breakAfter(m, d, sub);
+        style(m, d, sub, "p-1-25");
+        const media = find(m, "p", "Media contact");
+        breakBefore(m, d, media, null);
+        spacerBefore(m, d, media, "spacer");
+        spacerBefore(m, d, find(m, "p", "References"), "spacer, small");
+        superscript(m, d);
+      }
+    ],
+    // stryker-launches-q-guidance-system-with-spine-guidance-software
+    "https://www.stryker.com/us/en/about/news/2022/stryker-launches-q-guidance-system-with-spine-guidance-software.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        const sub = find(m, "p", "First spine navigation software");
+        breakAfter(m, d, sub);
+        style(m, d, sub, "p-1-25");
+        const about = find(m, "p", "About Stryker");
+        breakBefore(m, d, about, null);
+        spacerBefore(m, d, about, "spacer");
+        const media = find(m, "p", "Media contact");
+        breakBefore(m, d, media, null);
+        spacerBefore(m, d, media, "spacer, small");
+        spacerBefore(m, d, find(m, "p", "References:"), "spacer, small");
+        superscript(m, d);
+      }
+    ],
+    // stryker-launches-steri-shield-8-personal-protection-system
+    "https://www.stryker.com/us/en/about/news/2025/stryker-launches-steri-shield-8-personal-protection-system.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        const note = find(m, "p", "*Stryker internal data");
+        spacerBefore(m, d, note, "spacer, small");
+        style(m, d, note, "disclaimer, join");
+        superscript(m, d);
+      }
+    ],
+    // stryker-launches-industry-s-first-completely-wireless-hospital-b
+    "https://www.stryker.com/us/en/about/news/2020/stryker-launches-industry-s-first-completely-wireless-hospital-b.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews");
+        const img = [...m.querySelectorAll("p, a")].find((el) => txt(el) === "IsoTour bed");
+        spacerBefore(m, d, img, "spacer");
+        style(m, d, img, "col-8");
+        style(m, d, find(m, "p", "ProCuity Bed Series designed"), "col-8");
+        style(m, d, find(m, "p", "Specific key features of ProCuity"), "separator, col-8");
+        dropEmptyLastCells(m, "columns");
+        ["About Stryker", "Media contact"].forEach((label) => joinLabel(m, d, label));
+        style(m, d, find(m, "p", "About Stryker"), null);
+        style(m, d, find(m, "p", "Media contact"), null);
+        const refs = m.querySelector("ol");
+        stripListNumbers(m, refs);
+        style(m, d, refs, "disclaimer");
+        superscript(m, d);
+      }
+    ],
+    // a-clearer-vision-of-surgery-stryker-releases-its-next-generation-of-advanced-surgical-cameras
+    "https://www.stryker.com/us/en/about/news/2023/a-clearer-vision-of-surgery-stryker-releases-its-next-generation-of-advanced-surgical-cameras.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        spacerBefore(m, d, [...m.querySelectorAll("p, a")].find((el) => txt(el) === "1788 Camera hero"), "spacer");
+        breakAfter(m, d, m.querySelector("h2"));
+        breakBefore(m, d, blockTable(m, "video"), null);
+        const media = find(m, "p", "Media contacts");
+        breakBefore(m, d, media, null);
+        spacerBefore(m, d, media, "spacer, small");
+        spacerBefore(m, d, m.querySelector("ol"), "spacer");
+        superscript(m, d);
+      }
+    ],
+    // stryker-receives-fda-clearance-for-optablate-bvn-ablation-system
+    "https://www.stryker.com/us/en/about/news/2025/stryker-receives-fda-clearance-for-optablate-bvn-ablation-system.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/in-the-news");
+        const body = find(m, "p", "PORTAGE, Mich., USA");
+        spacerBefore(m, d, body, "spacer, small");
+        const img = [...m.querySelectorAll("p")].find((p) => txt(p) === "OptaBlate-BVN-ablation-vertebral-body");
+        const key = find(m, "p", "Key features of the system include");
+        if (img && key && !blockTable(m, "columns")) {
+          const rest = sectionOf(m, key).filter((n) => !isSectionMetadata(n));
+          sectionOf(m, key).filter(isSectionMetadata).forEach((t) => t.remove());
+          const hr = rest[0].previousElementSibling;
+          const table = WebImporter.Blocks.createBlock(d, { name: "Columns (columns-50-50)", cells: [[[img], rest]] });
+          hr.after(table);
+        }
+        style(m, d, body, "join");
+        const notes = find(m, "p", "*Chronic low back pain");
+        const refs = [...m.querySelectorAll("p")].find((p) => txt(p) === "References");
+        breakBefore(m, d, refs, "disclaimer, bold-body");
+        style(m, d, notes, null);
+        breakBefore(m, d, notes, null);
+        spacerBefore(m, d, notes, "spacer, small");
+        spacerBefore(m, d, refs, "spacer, small");
+        superscript(m, d);
+      }
+    ],
+    // stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi
+    "https://www.stryker.com/us/en/about/news/2020/stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews");
+        dropLeadingSpacer(m);
+        const h1 = m.querySelector("h1");
+        style(m, d, h1, null);
+        const img = [...m.querySelectorAll("p")].find((p) => /atlas-1/.test(p.innerHTML) && p.querySelector("a"));
+        breakAfter(m, d, img, { keepStyle: true });
+        spacerBefore(m, d, m.querySelector("ol"), "spacer, small");
+        superscript(m, d);
+      }
+    ],
+    // single news-detail pages
+    // nurses-in-the-or
+    "https://www.stryker.com/us/en/surgical-technologies/news/nurses-in-the-or.html": [
+      (m, d) => {
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (v.includes("join")) {
+            const rest = v.filter((x) => x !== "join");
+            if (rest.length) td.textContent = rest.join(", ");
+            else t.remove();
+          }
+        }));
+        tags(m, "stryker:business-unit/surgical_technologies, stryker:content-type/news");
+        const lead = WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "spacer" } });
+        m.prepend(lead, d.createElement("hr"));
+        style(m, d, find(m, "p", "\u201CTogether, we can make surgical smoke"), "p-1-5, col-8");
+        style(m, d, blockTable(m, "video"), "col-8");
+        style(m, d, find(m, "p", "Take the first step toward a smoke-free OR"), "p-1-5, col-8");
+        style(m, d, find(m, "p", "Knowing that the journey to a smoke-free"), "col-8");
+        style(m, d, blockTable(m, "marketo form"), "col-8");
+        style(m, d, find(m, "p", "Back to trending topics"), "col-8");
+        m.setAttribute("data-meta-theme", "full-width");
+      }
+    ],
+    // protect-your-patients-and-your-or-staff
+    "https://www.stryker.com/us/en/surgical-technologies/news/protect-your-patients-and-your-or-staff.html": [
+      (m, d) => {
+        m.setAttribute("data-meta-theme", "full-width");
+        tags(m, "stryker:business-unit/surgical_technologies, stryker:content-type/news");
+        const lead = WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "spacer" } });
+        m.prepend(lead, d.createElement("hr"));
+        const campaign = [...m.querySelectorAll("h2")].find((h) => txt(h).startsWith("Stryker\u2019s Smoke-Free OR Campaign"));
+        if (campaign) {
+          breakBefore(m, d, campaign, null);
+          style(m, d, m.querySelector("h1"), "ps-0");
+          style(m, d, retag(m, d, campaign, "h1"), "h1-0-8");
+        }
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          if (txt(td) === "disclaimer, references-body-lines") td.textContent = "disclaimer";
+        }));
+      }
+    ],
+    // reduce-cauti-icu-primafit
+    "https://www.stryker.com/us/en/sage/news/2024/reduce-cauti-icu-primafit.html": [
+      (m, d) => {
+        formPageBodyL(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+        inlineReferencesToList(m, d);
+      }
+    ],
+    // surgical-site-infections-safety-savings
+    "https://www.stryker.com/us/en/sage/news/2024/surgical-site-infections-safety-savings.html": [
+      (m, d) => {
+        formPageBodyL(m, d, { references: true });
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+        style(m, d, blockTable(m, "marketo form"), "form-with-aside, bold-body");
+      }
+    ],
+    // successful-virtual-care-partnership-in-hospitals
+    "https://www.stryker.com/us/en/smart-care/news/successful-virtual-care-partnership-in-hospitals.html": [
+      (m, d) => {
+        var _a;
+        formPageBodyL(m, d);
+        const vBanner = [...m.querySelectorAll("h2")].find((h) => txt(h).startsWith("Interested in learning more?"));
+        if (vBanner) {
+          const em = vBanner.querySelector("em");
+          if (em && ((_a = em.nextSibling) == null ? void 0 : _a.nodeName) !== "BR") {
+            if (em.nextSibling && em.nextSibling.nodeType === 3 && !em.nextSibling.textContent.trim()) em.nextSibling.remove();
+            em.after(d.createElement("br"));
+          }
+          style(m, d, vBanner, "h2-1-5, col-8");
+        }
+        tags(m, "stryker:content-type/news");
+        m.querySelectorAll('a[href="/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"]').forEach((a) => {
+          a.href = "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/body-copy/master";
+          if (a.textContent.includes("/fragments/")) a.textContent = a.getAttribute("href");
+        });
+      }
+    ],
+    // hospital-fall-prevention-with-smart-stretchers
+    "https://www.stryker.com/us/en/acute-care/news/hospital-fall-prevention-with-smart-stretchers.html": [
+      (m, d) => {
+        formPageBodyL(m, d, { references: true });
+        tags(m, "stryker:content-type/news");
+      }
+    ],
+    // hospital-acquired-infection-prevention-strategies
+    "https://www.stryker.com/us/en/sage/news/2025/hospital-acquired-infection-prevention-strategies.html": [
+      (m, d) => {
+        formPageBodyL(m, d, { references: true });
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+      }
+    ],
+    // patient-skin-integrity-a-critical-factor-in-infection-prevention
+    "https://www.stryker.com/us/en/sage/news/2025/patient-skin-integrity-a-critical-factor-in-infection-prevention.html": [
+      (m, d) => {
+        var _a;
+        formPageBodyL(m, d, { references: true });
+        const cImg = (_a = m.querySelector('a[href*="Sage-CHG-Cloths-Thumbnail"]')) == null ? void 0 : _a.closest("p");
+        const cText = find(m, "p", "Help address bacteria");
+        const cMore = [...m.querySelectorAll("p")].find((x) => txt(x) === "Learn more");
+        if (cImg && cText && cMore) {
+          [cImg, cText, cMore].forEach((el) => sectionOf(m, el).filter(isSectionMetadata).forEach((t) => t.remove()));
+          const dup = cImg.nextElementSibling;
+          if (dup && dup.tagName === "P" && !dup.querySelector("strong") && dup.querySelector('a[href="/us/en/sage/products/sage-chg-cloths"]')) dup.remove();
+          mergeWithPrevious(m, cText);
+          mergeWithPrevious(m, cMore);
+          const block = WebImporter.Blocks.createBlock(d, { name: "Cards Corp (teaser, three-up)", cells: [[cImg.querySelector("a"), [cText, cMore]]] });
+          cImg.replaceWith(block);
+        }
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage, stryker:content-type/news/sage/2");
+      }
+    ],
+    // why-powered-fleet-is-key-ems-fire-departments
+    "https://www.stryker.com/us/en/emergency-care/news/2025/why-powered-fleet-is-key-ems-fire-departments.html": [
+      (m, d) => {
+        tags(m, "stryker:business-unit/ems/news/articles, stryker:content-type/news, stryker:business-unit/ems/news");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => /^p-1(-\d+)?$/.test(x))) return;
+          const rest = v.filter((x) => !/^p-1(-\d+)?$/.test(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        let banner = find(m, "p", "Want to learn more? Download the full eGuide");
+        if (banner) {
+          breakBefore(m, d, banner, null);
+          banner = retag(m, d, banner, "h2");
+          const sec = sectionOf(m, banner);
+          sec.filter(isSectionMetadata).forEach((t) => t.remove());
+          const rest = sectionOf(m, banner);
+          rest[rest.length - 1].after(WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
+        }
+        style(m, d, blockTable(m, "marketo form"), "form-with-aside");
+        serifBanner(m, d);
+      }
+    ],
+    // lifepak35-15-lead-ecg-integration
+    "https://www.stryker.com/us/en/emergency-care/news/2026/lifepak35-15-lead-ecg-integration.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:business-unit/ems/news, stryker:business-unit/ems, stryker:business-unit/ems/news/case-studies");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => /^p-1(-\d+)?$/.test(x))) return;
+          const rest = v.filter((x) => !/^p-1(-\d+)?$/.test(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        const box = [...m.querySelectorAll("h2")].find((h) => /learn(ing)? more\?/i.test(txt(h)));
+        if (box) {
+          const t = sectionOf(m, box).find(isSectionMetadata);
+          if (t) t.remove();
+          const sec = sectionOf(m, box);
+          sec[sec.length - 1].after(WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
+        }
+        style(m, d, blockTable(m, "marketo form"), "form-with-aside");
+        const refsLabel = [...m.querySelectorAll("p")].find((x) => txt(x) === "References:");
+        if (refsLabel) {
+          const b = refsLabel.querySelector("strong");
+          const u = d.createElement("u");
+          u.textContent = "References:";
+          (b || refsLabel).replaceWith(u);
+          if (!b) refsLabel.append(u);
+        }
+        stripListNumbers(m, find(m, "li", "1. Thygesen"));
+        style(m, d, find(m, "li", "Thygesen"), "disclaimer");
+        serifBanner(m, d);
+      }
+    ],
+    // close-the-gap-in-fecal-management
+    "https://www.stryker.com/us/en/sage/news/2026/close-the-gap-in-fecal-management.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:business-unit/SAGE");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => /^p-1(-\d+)?$/.test(x))) return;
+          const rest = v.filter((x) => !/^p-1(-\d+)?$/.test(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        const box = [...m.querySelectorAll("h2")].find((h) => /learn(ing)? more\?/i.test(txt(h)));
+        if (box) {
+          const t = sectionOf(m, box).find(isSectionMetadata);
+          if (t) t.remove();
+          const sec = sectionOf(m, box);
+          sec[sec.length - 1].after(WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "h2-1-5", background: "bg-gold" } }));
+        }
+        style(m, d, blockTable(m, "marketo form"), "form-with-aside");
+        serifBanner(m, d);
+      }
+    ],
+    // life-saving-journey-inspires-community
+    "https://www.stryker.com/us/en/emergency-care/news/2024/life-saving-journey-inspires-community.html": [
+      (m, d) => {
+        tags(m, "stryker:business-unit/ems/news/articles, stryker:content-type/news, stryker:business-unit/ems/news");
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => BODY_L_REPLACES.includes(x))) return;
+          const rest = v.filter((x) => !BODY_L_REPLACES.includes(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        m.querySelectorAll("h2").forEach((h2) => breakBefore(m, d, h2, null));
+        stripListNumbers(m, find(m, "li", "1. Beseems"));
+        style(m, d, find(m, "li", "Beseems"), "disclaimer");
+        spacerBefore(m, d, find(m, "li", "Beseems"), "spacer");
+        style(m, d, find(m, "p", "Chasie Greathouse and Cherish Works"), "p-1");
+        const caption = find(m, "p", "Chasie Greathouse and Cherish Works");
+        if (caption && !caption.querySelector("em")) {
+          const em = d.createElement("em");
+          em.append(...caption.childNodes);
+          caption.append(em);
+        }
+        spacerBefore(m, d, blockTable(m, "fragment"), "spacer");
+      }
+    ],
+    // acute-care-training-and-education-resources
+    "https://www.stryker.com/us/en/acute-care/news/acute-care-training-and-education-resources.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:business-unit/acute-care/news, stryker:business-unit/acute-care/news/articles");
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => BODY_L_REPLACES.includes(x))) return;
+          const rest = v.filter((x) => !BODY_L_REPLACES.includes(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        m.querySelectorAll("h2").forEach((h2) => breakBefore(m, d, h2, null));
+        spacerBefore(m, d, [...m.querySelectorAll("table")].filter(isSectionMetadata).find((t) => txt(t).includes("disclaimer")), "spacer");
+      }
+    ],
+    // nurse-led-innovation-and-the-power-of-partnership
+    "https://www.stryker.com/us/en/acute-care/news/nurse-led-innovation-and-the-power-of-partnership.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:custom/acute-care/acute-care-bu-news");
+        const titleSection = sectionOf(m, m.querySelector("h1"));
+        const afterTitle = titleSection[titleSection.length - 1].nextElementSibling;
+        spacerBefore(m, d, afterTitle && afterTitle.nextElementSibling, "spacer");
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (!v.some((x) => BODY_L_REPLACES.includes(x))) return;
+          const rest = v.filter((x) => !BODY_L_REPLACES.includes(x));
+          if (rest.length) td.textContent = rest.join(", ");
+          else t.remove();
+        }));
+        m.querySelectorAll("h2").forEach((h2) => breakBefore(m, d, h2, null));
+        spacerBefore(m, d, [...m.querySelectorAll("table")].filter(isSectionMetadata).find((t) => txt(t).includes("disclaimer")), "spacer");
+        const refs = [...m.querySelectorAll("p")].filter((p) => /^\d+\s/.test(txt(p)) && sectionOf(m, p).some((n) => isSectionMetadata(n) && txt(n).includes("disclaimer")));
+        if (refs.length) {
+          const ol = d.createElement("ol");
+          refs[0].before(ol);
+          refs.forEach((p) => {
+            const li = d.createElement("li");
+            li.append(...p.childNodes);
+            li.normalize();
+            if (li.firstChild && li.firstChild.nodeType === 3) li.firstChild.textContent = li.firstChild.textContent.replace(/^\s*\d+\s+/, "");
+            ol.append(li);
+            p.remove();
+          });
+        }
+      }
+    ],
+    // stryker-highlights-commitment-to-advanced-digital-healthcare
+    "https://www.stryker.com/us/en/about/news/2021/stryker-highlights-commitment-to-advanced-digital-healthcare.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/Features");
+      }
+    ],
+    // fda-authorizes-production-of-non-sterile-hoods-and-togas
+    "https://www.stryker.com/us/en/about/news/2020/fda-authorizes-production-of-non-sterile-hoods-and-togas.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/corporatenews, stryker:content-type/news/covid-19");
+      }
+    ],
+    // stryker-is-a-gallup-exceptional-workplace-for-the-13th-year
+    "https://www.stryker.com/us/en/about/news/2020/stryker-is-a-gallup-exceptional-workplace-for-the-13th-year.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+      }
+    ],
+    // people-magazine-names-stryker-as-one-of-its-companies-that-care
+    "https://www.stryker.com/us/en/about/news/2021/people-magazine-names-stryker-as-one-of-its-companies-that-care-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/awards, stryker:content-type/news, stryker:content-type/news/Features, stryker:content-type/corporatenews, stryker:content-type/news/cr");
+        superscript(m, d);
+        m.querySelectorAll('a[href="/us/en/about/corporate-responsibility"] u').forEach((u) => {
+          u.textContent = u.textContent.toUpperCase();
+        });
+      }
+    ],
+    // people-magazine-names-stryker-as-one-of-its-companies-that-care-2022
+    "https://www.stryker.com/us/en/about/news/2022/people-magazine-names-stryker-as-one-of-its-companies-that-care-2022.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        superscript(m, d);
+      }
+    ],
+    // stryker-announces-definitive-agreement-to-acquire-inari-medical-inc
+    "https://www.stryker.com/us/en/about/news/2025/stryker-announces-definitive-agreement-to-acquire-inari-medical-inc.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        dropSpacerAfter(m, m.querySelector("h1"));
+      }
+    ],
+    // stryker-signs-definitive-agreement-acquire-amplitude-vascular-systems
+    "https://www.stryker.com/us/en/about/news/2026/stryker-signs-definitive-agreement-acquire-amplitude-vascular-systems.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news, stryker:content-type/corporatenews");
+        socialShareAfter(m, d, find(m, "p", "Read full press release here"));
+      }
+    ],
+    // rebuilding-what-s-been-broken
+    "https://www.stryker.com/us/en/about/news/features/rebuilding-what-s-been-broken-.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/Features");
+        m.querySelectorAll("ol > li").forEach((li) => {
+          const t = li.firstChild;
+          if (t && t.nodeType === 3) t.textContent = t.textContent.replace(/^\s*\d+:\s*/, "");
+        });
+        style(m, d, m.querySelector("ol > li"), "disclaimer");
+      }
+    ],
+    // revealing-character-rebuilding-lives
+    "https://www.stryker.com/us/en/about/news/features/revealing-character--rebuilding-lives-.html": [
+      (m, d) => {
+        tags(m, "stryker:Stryker-SEO-Tags/covid19, stryker:content-type/news, stryker:Stryker-SEO-Tags/coronavirus, stryker:Stryker-SEO-Tags/covid-19, stryker:content-type/news/Features, stryker:content-type/news/covid-19");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (v.includes("join")) {
+            const rest = v.filter((x) => x !== "join");
+            if (rest.length) td.textContent = rest.join(", ");
+            else t.remove();
+          }
+        }));
+        sizedTextToH3(m, d);
+      }
+    ],
+    // trees-landfills-and-the-environment
+    "https://www.stryker.com/us/en/about/news/features/trees--landfills-and-the-environment.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news/Features");
+        style(m, d, m.querySelector("h1"), "h1-42");
+      }
+    ],
+    // bpci-a-team-last-but-not-least
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/_bpci_-a-team-_-last-but-not-least-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // bpci-advanced-calendar-updated
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/bpci-advanced-calendar--updated-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // meet-the-bpci-a-team-take-two
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/meet-the--bpci--a-team---take-two-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // meet-the-bpci-a-team-take-four
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/meet-the-_bpci_-a-team--take-four-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // meet-the-bpci-a-team-take-three
+    "https://www.stryker.com/us/en/joint-replacement/sps-blog/2018/meet-the-_bpci_-a-team--take-three-.html": [
+      (m, d) => {
+        dropTextTag(m, d, "color-teal");
+        m.querySelectorAll("p > strong > a").forEach((a) => {
+          if (/^(GO )?BACK$/.test(txt(a.parentElement.parentElement))) underlineLinks(a.parentElement, d);
+        });
+      }
+    ],
+    // target-tetra-gets-510k-clearance
+    "https://www.stryker.com/us/en/neurovascular/news/target-tetra-gets-510k-clearance.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:custom/neurovascular/neurovascular-bu-news");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          const v = txt(td).split(",").map((x) => x.trim());
+          if (v.includes("join")) {
+            const rest = v.filter((x) => x !== "join");
+            if (rest.length) td.textContent = rest.join(", ");
+            else t.remove();
+          }
+        }));
+      }
+    ],
+    // stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-a
+    "https://www.stryker.com/us/en/about/news/2021/stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-a.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/in-the-news");
+        dropEmptyLastCells(m, "columns");
+      }
+    ],
+    // changing-the-course-of-healthcare-in-under-resourced-communities
+    "https://www.stryker.com/us/en/about/news/features/changing-the-course-of-healthcare-in-under-resourced-communities.html": [
+      (m, d) => {
+        tags(m, "stryker:content-type/news, stryker:content-type/news/Features");
+        photoPairColumns(m, d, m.querySelector('a[href*="Rwanda%20surgical%20center%20img-2"]'));
+        photoPairColumns(m, d, m.querySelector('a[href*="Jess%20F%20with%20baby%20Sandrine"]'));
+        sizedTextToH3(m, d);
+      }
+    ],
+    // cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females
+    "https://www.stryker.com/us/en/sage/news/2021/cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females.html": [
+      (m, d) => {
+        labelsToSubheads(m, d, ["Background", "Intervention", "Results", "Conclusion", "About the Clinicians"]);
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          if (txt(td) === "disclaimer, references-body-lines") td.textContent = "disclaimer";
+        }));
+        inlineReferencesToList(m, d);
+        const uti = find(m, "p", "Urinary tract infections (UTIs) are one of the most common");
+        style(m, d, uti, null);
+        if (uti) {
+          const em = d.createElement("em");
+          em.append(...uti.childNodes);
+          uti.append(em);
+          retag(m, d, uti, "h2");
+        }
+      }
+    ],
+    // new-safety-advisory-from-the-joint-commission
+    "https://www.stryker.com/us/en/sage/news/2021/new-safety-advisory-from-the-joint-commission.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // primafit-device-updates
+    "https://www.stryker.com/us/en/sage/news/2021/primafit-device-updates.html": [
+      (m, d) => {
+        labelsToSubheads(m, d, ["Developed in partnership with clinicians for better outcomes", "New enhancements for better care", "Addressing the #1 CAUTI risk factor", "No catheter. No CAUTI.\u2122"]);
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => t.querySelectorAll("td").forEach((td) => {
+          if (txt(td) === "disclaimer, references-body-lines") td.textContent = "disclaimer";
+        }));
+        dropTextTag(m, d, "color-teal");
+        const more = find(m, "p", "To learn more about how Sage can help");
+        if (more && !more.querySelector("em")) {
+          const em = d.createElement("em");
+          em.append(...more.childNodes);
+          more.append(em);
+        }
+        style(m, d, more, null);
+        mergeWithPrevious(m, more);
+        style(m, d, more, null);
+        inlineReferencesToList(m, d);
+      }
+    ],
+    // sage-supports-the-family-health-partnership-clinic-in-mchenry-co
+    "https://www.stryker.com/us/en/sage/news/2021/sage-supports-the-family-health-partnership-clinic-in-mchenry-co.html": [
+      (m, d) => {
+        labelsToSubheads(m, d, ["Raising funds and awareness at the Care4Breast Cancer 5K", "Helping our neighbors", "Donate today \u2013 any amount makes a difference!"]);
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // can-brushing-your-teeth-keep-you-healthy-in-the-hospital
+    "https://www.stryker.com/us/en/sage/news/2022/can-brushing-your-teeth-keep-you-healthy-in-the-hospital.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // ecri-reports-nvhap-as-a-top-threat-to-patient-safety-in-2022
+    "https://www.stryker.com/us/en/sage/news/2022/ecri-reports-nvhap-as-a-top-threat-to-patient-safety-in-2022.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // evergreen-medical-uses-a-kinder-gentler-presurgical-skin-prep
+    "https://www.stryker.com/us/en/sage/news/2022/evergreen-medical-uses-a-kinder-gentler-presurgical-skin-prep.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/4");
+      }
+    ],
+    // focusrn-website-is-now-available
+    "https://www.stryker.com/us/en/sage/news/2022/focusrn-website-is-now-available.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // health-affairs-urges-policy-makers-to-confront-pneumonia-threat
+    "https://www.stryker.com/us/en/sage/news/2022/health-affairs-urges-policy-makers-to-confront-pneumonia-threat.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+        inlineReferencesToList(m, d);
+      }
+    ],
+    // infection-control-today-article-about-waterborne-pathogens
+    "https://www.stryker.com/us/en/sage/news/2022/infection-control-today-article-about-waterborne-pathogens.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+        inlineReferencesToList(m, d);
+      }
+    ],
+    // joint-commission-barbara-quinn-interview-nv-hap-prevention
+    "https://www.stryker.com/us/en/sage/news/2022/joint-commission-barbara-quinn-interview-nv-hap-prevention.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news");
+        stripListNumbers(m, find(m, "li", "1. The Joint Commission"));
+        style(m, d, find(m, "li", "The Joint Commission: Preventing"), "disclaimer");
+      }
+    ],
+    // poster-presented-at-wocn-shows-comfort-shield-reduces-iad
+    "https://www.stryker.com/us/en/sage/news/2022/poster-presented-at-wocn-shows-comfort-shield-reduces-iad.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+        inlineReferencesToList(m, d);
+      }
+    ],
+    // preoperative-strategy-to-reduce-the-risk-of-surgical-site-infect
+    "https://www.stryker.com/us/en/sage/news/2022/preoperative-strategy-to-reduce-the-risk-of-surgical-site-infect.html": [
+      (m, d) => {
+        labelsToSubheads(m, d, ["Surgical Technology International article recommends using chlorhexidine-impregnated cloths instead of a chlorhexidine solution"]);
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // sage-launches-journey-to-zero-to-help-reduce-nurse-injury
+    "https://www.stryker.com/us/en/sage/news/2022/sage-launches-journey-to-zero-to-help-reduce-nurse-injury.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // stryker-sea-and-mccd-help-clean-up-hickory-grove-highlands
+    "https://www.stryker.com/us/en/sage/news/2022/stryker-sea-and-mccd-help-clean-up-hickory-grove-highlands.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // stryker-womens-network-at-sage-supports-international-womens-day
+    "https://www.stryker.com/us/en/sage/news/2022/stryker-womens-network-at-sage-supports-international-womens-day.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // a-magical-celebration-in-cary
+    "https://www.stryker.com/us/en/sage/news/2023/a-magical-celebration-in-cary.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // iu-health-decreases-urinary-catheter-usage-and-cauti-rates
+    "https://www.stryker.com/us/en/sage/news/2023/iu-health-decreases-urinary-catheter-usage-and-cauti-rates.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/4");
+      }
+    ],
+    // journey-to-zero-program-helps-protect-healthcare-workers
+    "https://www.stryker.com/us/en/sage/news/2023/journey-to-zero-program-helps-protect-healthcare-workers.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // nyc-medical-center-implementation-of-external-female-catheter-av
+    "https://www.stryker.com/us/en/sage/news/2023/nyc-medical-center-implementation-of-external-female-catheter-av.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news");
+        inlineReferencesToList(m, d);
+      }
+    ],
+    // shea-oral-care-reduction-in-non-ventilator-associated-pneumonia
+    "https://www.stryker.com/us/en/sage/news/2023/shea-oral-care-reduction-in-non-ventilator-associated-pneumonia.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news/sage/4, stryker:content-type/news");
+        inlineReferencesToList(m, d);
+      }
+    ],
+    // study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients
+    "https://www.stryker.com/us/en/sage/news/2023/study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+        inlineReferencesToList(m, d);
+      }
+    ],
+    // stryker-advances-urology-portfolio-launch-flexible-ureteroscope
+    "https://www.stryker.com/us/en/endoscopy/news/stryker-advances-urology-portfolio-launch-flexible-ureteroscope.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:business-unit/endoscopy");
+        style(m, d, [...m.querySelectorAll("p")].find((p) => txt(p) === "F88 ureteroscope"), "image-1-2, col-8");
+        style(m, d, find(m, "p", "To learn more, visit Stryker"), "col-8");
+      }
+    ],
+    // sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t
+    "https://www.stryker.com/us/en/sage/news/2022/sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // sea-promotes-social-responsibility-with-tree-planting-event-
+    "https://www.stryker.com/us/en/sage/news/2022/sea-promotes-social-responsibility-with-tree-planting-event-.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/3");
+      }
+    ],
+    // the-journey-to-zero-program-supports-nurse-safety
+    "https://www.stryker.com/us/en/sage/news/2022/the-journey-to-zero-program-supports-nurse-safety.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/1");
+      }
+    ],
+    // study-validates-the-value-of-mobilty-for-older-patients
+    "https://www.stryker.com/us/en/sage/news/2023/study-validates-the-value-of-mobilty-for-older-patients.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2");
+      }
+    ],
+    // 2-percent-chlorhexidine-gluconate-cloth-ssi-prevention
+    "https://www.stryker.com/us/en/sage/news/2024/2-percent-chlorhexidine-gluconate-cloth-ssi-prevention.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:content-type/news, stryker:content-type/news/sage/2, stryker:business-unit/SAGE");
+      }
+    ],
+    // aeds-role-in-athletics
+    "https://www.stryker.com/us/en/emergency-care/news/2024/aeds-role-in-athletics.html": [
+      (m, d) => {
+        bodyLRepresentative(m, d);
+        tags(m, "stryker:business-unit/ems/news/articles, stryker:content-type/news");
+        spacerBefore(m, d, [...m.querySelectorAll("h3")].find((h) => txt(h) === "Learn More"), "spacer");
+        mergeWithPrevious(m, find(m, "p", "Knowing when to use an AED"));
+        const refs = [...m.querySelectorAll("ol")].find((ol) => txt(ol).includes("Rothmier"));
+        if (refs) refs.replaceWith(...[...refs.children].map((li) => {
+          const p = d.createElement("p");
+          p.append(...li.childNodes);
+          return p;
+        }));
+      }
+    ],
+    // introducing-ip-bravoe-a-new-standard-in-or-integration
+    "https://www.stryker.com/us/en/endoscopy/news/introducing-ip-bravoe-a-new-standard-in-or-integration.html": [
+      (m, d) => {
+        m.setAttribute("data-meta-theme", "body-l");
+        tags(m, "stryker:content-type/news, stryker:business-unit/endoscopy");
+        style(m, d, find(m, "p", "As surgical environments evolve"), null);
+        const close = find(m, "p", "The future of");
+        style(m, d, close, null);
+        close == null ? void 0 : close.querySelectorAll("em").forEach((em) => em.replaceWith(...em.childNodes));
+      }
+    ],
+    // school-safety-staff-communication
+    "https://www.stryker.com/us/en/smart-care/news/school-safety-staff-communication.html": [
+      (m, d) => {
+        m.setAttribute("data-meta-theme", "body-l");
+        tags(m, "stryker:content-type/news, stryker:business-unit/acute-care/news");
+        style(m, d, find(m, "p", "In today"), null);
+        m.querySelectorAll("h3").forEach((h3) => breakBefore(m, d, h3, null));
+        [...m.querySelectorAll("table")].filter(isSectionMetadata).forEach((t) => {
+          const row = [...t.querySelectorAll("tr")].find((tr) => txt(tr.cells[0]).toLowerCase() === "style");
+          if (!row) return;
+          const rest = txt(row.cells[1]).split(",").map((v) => v.trim()).filter((v) => v && v !== "p-1-25");
+          if (rest.length) row.cells[1].textContent = rest.join(", ");
+          else if (t.querySelectorAll("tr").length <= 2) t.remove();
+          else row.remove();
+        });
+      }
+    ],
+    // how-augmented-reality-can-help-care-teams-plan--design-and-const
+    "https://www.stryker.com/us/en/about/news/2024/features/how-augmented-reality-can-help-care-teams-plan--design-and-const.html": [
+      (m, d) => {
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        tags(m, "stryker:content-type/news/product-bulletins, stryker:content-type/news, stryker:content-type/news/Features, stryker:content-type/news/advanced-digital-healthcare");
+        const cols = blockTable(m, "columns");
+        if (cols && !sectionOf(m, cols).some(isSectionMetadata)) {
+          const section = sectionOf(m, cols);
+          section[section.length - 1].after(WebImporter.Blocks.createBlock(d, { name: "Section Metadata", cells: { style: "full-bleed", background: "light-gray" } }));
+        }
+      }
+    ],
+    // advancing-surgical-education-highlights-from-ispies-at-ircad
+    "https://www.stryker.com/us/en/endoscopy/news/advancing-surgical-education-highlights-from-ispies-at-ircad.html": [
+      (m, d) => {
+        var _a, _b;
+        m.setAttribute("data-meta-theme", "full-width, body-l");
+        tags(m, "stryker:business-unit/endoscopy, stryker:content-type/news");
+        const body = find(m, "p", "In mid-October, Endoscopy");
+        style(m, d, body, null);
+        m.querySelectorAll("h2").forEach((h2) => {
+          if (h2.querySelector("em") || !txt(h2)) return;
+          const em = d.createElement("em");
+          em.append(...h2.childNodes);
+          h2.append(em);
+        });
+        const spacer2 = (_b = (_a = sectionOf(m, m.querySelector("h1"))[0]) == null ? void 0 : _a.nextElementSibling) == null ? void 0 : _b.nextElementSibling;
+        if (isSectionMetadata(spacer2) && !blockTable(m, "social share corp")) {
+          style(m, d, spacer2, "spacer,small");
+          socialShareAfter(m, d, spacer2);
+          spacerBefore(m, d, body, "spacer");
+        }
+      }
+    ]
+  }, Object.fromEntries(["april", "may", "december", "january", "february", "march", "june", "july", "november"].map((p) => [jr45(p), JR45_TITLE]))), {
+    [jr45("october")]: [
+      ...JR45_TITLE,
+      (main) => blocks(main, /^columns \(gray-2, headline-serif-copy\)$/).forEach((t) => setVariants(t, ["gray-2", "headline-copy", "serif"]))
+    ],
+    [page("about/corporate-responsibility/employee-benefits-and-resources")]: [
+      (main) => setTheme(main, "xlarge-copy, serif-copy")
+    ],
+    [page("nse/products/heavy-duty-attachments/cutting-accessories")]: [
+      (main) => setTheme(main, "large-headlines, xlarge-copy, serif-copy")
+    ],
+    [page("nse/products/mis-attachments/accessories")]: [
+      (main) => replaceStyle(main, "tabbed", "tabbed, light-gray-titles")
+    ],
+    [page("nse/products/mis-attachments/cutting-accessories")]: [
+      (main) => blocks(main, /^columns \(columns 67 33, gray last, plain-bold\)$/).forEach((t) => setVariants(t, ["columns 67 33", "product-details"])),
+      (main) => blocks(main, /^columns \(stack\)$/).forEach((t) => addVariants(t, "product-names"))
+    ],
+    [page("training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/colorectal-surgery")]: [
+      (main) => blocks(main, /^columns \(product-names, xlarge-copy\)$/).forEach((t) => setVariants(t, ["xlarge-copy"]))
+    ],
+    [page("training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/plastic-surgery")]: [
+      // the video title on one heading ("The Ergonomics and Utility of SPY-PHI")
+      (main) => withText(main, "h3", "The Ergonomics and Utility").forEach((h) => {
+        const next = h.nextElementSibling;
+        if ((next == null ? void 0 : next.tagName) !== "H3" || norm(next.textContent) !== "of SPY-PHI") return;
+        h.querySelector("strong").textContent = "The Ergonomics and Utility of SPY-PHI";
+        next.remove();
+      })
+    ],
+    [page("training-and-education/medical-and-surgical-equipment--/neurosurgical/medical-education/events")]: [
+      (main) => blocks(main, /^columns$/).forEach((t) => addVariants(t, "event-cards"))
+    ],
+    [page("training-and-education/orthopaedics/joint-replacement/OR_Staff")]: [
+      (main) => withText(main, "h5", "Want more Mako educational information?").forEach((h) => boldHeading(rename2(h, "h3"))),
+      (main) => setTheme(main, "large-headlines, xlarge-copy, or-staff")
+    ]
+  }), Object.fromEntries(["accelerate", "assist", "assure"].map((p) => [
+    page(`spine/products/bacs-balance-acs/index/${p}`),
+    [
+      (main) => heroes(main).forEach((t) => addVariants(t, "fixed-title")),
+      (main) => setTheme(main, "bacs")
+    ]
+  ]))), {
+    [page("training-and-education/orthopaedics/spine/spine-medical-education/on-demand-webinars")]: [
+      (main) => named(main, "local nav corp (border)").forEach((t) => setVariants(t, ["overlay"])),
+      (main) => named(main, "marketo form").forEach((t) => setVariants(t, ["two-thirds"]))
+    ],
+    [page("training-and-education/orthopaedics/trauma-extremities/teach/TEACH-Landing-Page/TEACH-Thank-You")]: [
+      (main) => named(main, "columns (columns 50 50)").forEach((t) => addVariants(t, "page-title")),
+      (main) => replaceStyle(main, "separator, image-link, center", "image-link, center")
+    ],
+    [page("training-and-education/neurotechnology/neurovascular/skill/skill-connect")]: [
+      (main) => heroes(main).forEach((t) => addVariants(t, "fixed-title")),
+      (main) => named(main, "columns (columns 50 50, large-copy)").forEach((t) => addVariants(t, "lowered-text")),
+      (main) => setTheme(main, "large-copy, skill")
+    ],
+    [page("training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities")]: [
+      // the hero section without a style, and no spacer section after it
+      (main) => metaWithStyle(main, "white-text").forEach((t) => t.remove()),
+      (main) => metaWithStyle(main, "spacer").slice(0, 1).forEach(removeEmptySection),
+      (main) => named(main, "columns (stack)").forEach((t) => addVariants(t, "course-boxes")),
+      (main) => setTheme(main, "large-headlines, te-vlc")
+    ],
+    [page("about/corporate-responsibility/giving-back")]: [
+      // the intro: a paragraph, the Bold Heading 3 "Stryker’s global support", a paragraph
+      (main, doc) => [...main.querySelectorAll("p")].filter((el) => [...el.querySelectorAll(":scope > strong")].some((b) => norm(b.textContent) === "Stryker\u2019s global support")).forEach((para) => {
+        const bold = [...para.querySelectorAll(":scope > strong")].find((b) => norm(b.textContent) === "Stryker\u2019s global support");
+        const before = doc.createElement("p");
+        const after = doc.createElement("p");
+        const kids = [...para.childNodes];
+        const at = kids.indexOf(bold);
+        before.append(...kids.slice(0, at));
+        after.append(...kids.slice(at + 1));
+        [before, after].forEach((el) => {
+          el.querySelectorAll(":scope > br").forEach((br) => br.remove());
+          el.normalize();
+          el.childNodes.forEach((n) => {
+            if (n.nodeType === 3) n.textContent = n.textContent.trim();
+          });
+        });
+        const h3 = doc.createElement("h3");
+        h3.append(bold);
+        para.replaceWith(before, h3, after);
+      })
+    ],
+    [page("surgical-technologies/services/instruments/contact-information")]: [
+      (main) => posterSize(main, "AdobeStock_275515599-AVS", 1464, 824),
+      (main) => named(main, "columns (blue all)").forEach((t) => {
+        setVariants(t, ["blue-all", "contact-boxes"]);
+        t.querySelectorAll("td > p").forEach((para) => {
+          if (/Opt\. 2 Then Opt\. [23]\s*\S+@stryker\.com$/.test(norm(para.textContent))) splitLastLine(para);
+        });
+      })
+    ],
+    [page("surgical-technologies/services/instruments/new-accounts")]: [
+      (main) => posterSize(main, "AdobeStock_313522943-AVS", 1464, 824),
+      // the headline box: the title, then its line as a paragraph (plain)
+      (main) => [...main.querySelectorAll("h3")].filter((h) => norm(h.textContent).startsWith("New Accounts To Request")).forEach((h) => {
+        const kids = [...h.childNodes];
+        const br = h.querySelector(":scope > br");
+        const line = kids.slice(kids.indexOf(br) + 1).find((n) => norm(n.textContent));
+        if ((line == null ? void 0 : line.nodeName) === "EM") line.replaceWith(...line.childNodes);
+        splitFirstLine(h, "h3");
+      }),
+      (main) => replaceStyle(main, "headline-box, blue", "headline-box, blue, gold-titles")
+    ],
+    [page("surgical-technologies/services/instruments/tech-support")]: [
+      (main) => posterSize(main, "AdobeStock_280821945-AVS", 1464, 824),
+      (main) => named(main, "columns (columns 67 33, blue all, headline-copy)").forEach((t) => {
+        var _a, _b;
+        setVariants(t, ["columns 67 33", "blue-all", "contact-boxes"]);
+        const cells = t.querySelectorAll("tr:nth-child(2) > td");
+        const lead = (_a = cells[0]) == null ? void 0 : _a.querySelector(":scope > p");
+        if (lead) splitFirstLine(lead, "h2", unItalic);
+        (_b = cells[1]) == null ? void 0 : _b.querySelectorAll(":scope > p").forEach((para) => {
+          if (/Opt\. 2 Then Opt\. 3\s*\S+@stryker\.com$/.test(norm(para.textContent))) splitLastLine(para);
+        });
+      }),
+      (main) => withText(main, "h2", "Products").forEach((h) => {
+        const em = h.querySelector(":scope > em");
+        if (em) rename2(em, "u");
+      })
+    ],
+    [page("training-and-education/neurotechnology/neurovascular/skill/skill-assist-max")]: [
+      (main) => heroes(main).forEach((t) => addVariants(t, "fixed-title")),
+      (main) => named(main, "panel (gold)").forEach((t) => addVariants(t, "spaced")),
+      (main) => named(main, "accordion (large-copy)").forEach((t) => addVariants(t, "blue-titles")),
+      (main) => setTheme(main, "large-copy, skill")
+    ],
+    [page("training-and-education/orthopaedics/spine/spine-medical-education/events")]: [
+      (main) => named(main, "local nav corp (border)").forEach((t) => setVariants(t, ["overlay"])),
+      // the MedEd banner title without the source's blank lines and "\" lines
+      (main) => [...main.querySelectorAll("h2")].filter((h) => norm(h.textContent) === "\\ MedEd Events").forEach((h) => {
+        h.querySelectorAll(":scope > br").forEach((br) => br.remove());
+        [...h.querySelectorAll(":scope > strong")].filter((b) => norm(b.textContent) === "\\").forEach((b) => b.remove());
+        h.normalize();
+        [...h.childNodes].filter((n) => n.nodeType === 3 && !norm(n.textContent)).forEach((n) => {
+          if (n === h.firstChild || n === h.lastChild) n.remove();
+        });
+        const next = h.nextElementSibling;
+        if ((next == null ? void 0 : next.tagName) === "P" && norm(next.textContent) === "\\") next.remove();
+      }),
+      (main) => setTheme(main, "spine-meded")
+    ],
+    [page("training-and-education/orthopaedics/spine/spine-medical-education/contact")]: [
+      (main) => named(main, "local nav corp (border)").forEach((t) => setVariants(t, ["overlay"])),
+      (main) => named(main, "marketo form").forEach((t) => setVariants(t, ["with-aside"])),
+      (main) => [...main.querySelectorAll(":scope > p")].filter((el) => norm(el.textContent).startsWith("Questions? Contact")).forEach((el) => addSectionStyle(el, "p-2")),
+      (main) => setTheme(main, "xlarge-copy, serif-copy, spine-meded")
+    ],
+    [page("training-and-education/orthopaedics/joint-replacement/Medical_Education_Landing_Page/Mako_Refreshers_Page")]: [
+      // the title, then its text as a paragraph (plain)
+      (main) => [...main.querySelectorAll("h1")].filter((h) => norm(h.textContent).startsWith("Join us for one")).forEach((h) => splitFirstLine(h, "h1", (n) => n)),
+      (main) => [...main.querySelectorAll("p")].filter((el) => norm(el.textContent).startsWith("Each virtual course")).forEach((el) => [...el.querySelectorAll(":scope > em")].forEach((em) => em.replaceWith(...em.childNodes))),
+      (main) => named(main, "columns (dark lead, large-titles, large-subtitles, large-copy)").forEach((t) => setVariants(t, ["dark-lead", "course-cards"])),
+      (main) => [...main.querySelectorAll("p")].filter((el) => norm(el.textContent) === "Together with our customers, we are driven to make healthcare better.").forEach((el) => {
+        const h3 = rename2(el, "h3");
+        const em = h3.ownerDocument.createElement("em");
+        em.textContent = norm(h3.textContent);
+        h3.replaceChildren(em);
+      }),
+      (main) => setTheme(main, "large-headlines, mako-refreshers")
+    ],
+    [page("nse/products/heavy-duty-attachments/accessories")]: [
+      (main) => named(main, "columns (columns 67 33, left border bottom)").forEach((t) => {
+        var _a;
+        addVariants(t, "product-intro");
+        const first = t.querySelector("tr:nth-child(2) > td > p");
+        if (first && norm(first.textContent) === norm((_a = first.querySelector(":scope > strong")) == null ? void 0 : _a.textContent)) rename2(first, "h2");
+      })
+    ],
+    [page("training-and-education/neurotechnology/neurovascular/skill/training-centers")]: [
+      (main) => heroes(main).forEach((t) => addVariants(t, "fixed-title")),
+      (main) => [...main.querySelectorAll(":scope > h2")].filter((h) => norm(h.textContent) === "Advancing your procedural skills").forEach((h) => sectionBefore(h, "spacer, large")),
+      (main) => named(main, "columns (columns 50 50, large-copy)").forEach((t) => addVariants(t, "lowered-text-m")),
+      (main) => replaceStyle(main, "center", "center, p-1-5", 0),
+      (main) => withText(main, "h4", "Salt Lake City, UT").filter((h) => h.parentElement === main).forEach((h) => sectionBefore(h, "spacer")),
+      (main) => setTheme(main, "large-headlines, large-copy, skill")
+    ],
+    [page("training-and-education/neurotechnology/neurovascular/skill/centers-of-excellence")]: [
+      (main) => heroes(main).forEach((t) => addVariants(t, "fixed-title")),
+      (main) => named(main, "video").slice(0, 1).forEach((t) => sectionBefore(t, "spacer, large")),
+      (main) => posterSize(main, "SKILL%20COE_V3-1-AVS", 1380, 776),
+      (main) => named(main, "columns (columns 50 50, large-copy)").forEach((t) => addVariants(t, "lowered-text")),
+      (main) => named(main, "panel (gold)").filter((t) => norm(t.textContent).includes("These days, young neurointerventionalists")).forEach((t) => addVariants(t, "quote")),
+      (main) => withText(main, "p", "Contact your local representative to find out more!").forEach((el) => rename2(el, "h2")),
+      (main) => setTheme(main, "large-copy, skill")
+    ],
+    [page("training-and-education/neurotechnology/neurovascular/skill/neuroelite-fellows-program")]: [
+      (main) => heroes(main).forEach((t) => addVariants(t, "fixed-title")),
+      (main) => replaceStyle(main, "separator", "separator, h2-1-25", 0),
+      (main) => named(main, "panel (gold)").forEach((t) => addVariants(t, "spaced")),
+      (main) => named(main, "columns (columns 50 50, large-copy)").forEach((t) => addVariants(t, "lowered-text")),
+      // the gold-lead row a section of its own
+      (main, doc) => named(main, "columns (columns 50 50, gold lead, large-copy)").forEach((t) => {
+        var _a;
+        setVariants(t, ["columns 50 50", "gold-lead-copy", "lowered-text-m"]);
+        if (((_a = t.previousElementSibling) == null ? void 0 : _a.tagName) === "TABLE") t.before(doc.createElement("hr"));
+      }),
+      // "SKILL MedEd curriculum" and its image in sections of their own
+      (main, doc) => withText(main, "h2", "SKILL MedEd curriculum").filter((h) => h.parentElement === main).forEach((h) => {
+        var _a;
+        if (((_a = h.nextElementSibling) == null ? void 0 : _a.tagName) === "P") h.after(doc.createElement("hr"));
+      }),
+      (main) => setTheme(main, "large-headlines, large-copy, skill")
+    ],
+    [page("training-and-education/neurotechnology/neurovascular/skill/e-lab")]: [
+      (main) => heroes(main).forEach((t) => {
+        setVariants(t, ["banner", "third-text", "fixed-xlarge-title"]);
+        t.querySelectorAll("h2").forEach((h) => {
+          if (norm(h.textContent) !== "e-Lab") return;
+          const title = rename2(h, "h1");
+          title.querySelectorAll("br").forEach((br) => br.remove());
+          dropBlankText(title);
+        });
+      }),
+      (main) => [...main.querySelectorAll(":scope > h1")].filter((h) => norm(h.textContent) === "A 24/7 online training platform").forEach((h) => rename2(h, "h2")),
+      (main) => named(main, "columns (columns 50 50, large-copy)").forEach((t) => addVariants(t, "lowered-text-s")),
+      (main, doc) => named(main, "columns (columns 50 50, gold lead, large-copy)").forEach((t) => {
+        var _a;
+        if (((_a = t.previousElementSibling) == null ? void 0 : _a.tagName) === "TABLE") t.before(doc.createElement("hr"));
+      }),
+      (main) => withText(main, "h3", "The SKILL e-Lab offers what you need").forEach((h) => {
+        const b = h.querySelector(":scope > strong");
+        if (b && !b.querySelector("em")) {
+          const em = h.ownerDocument.createElement("em");
+          em.append(...b.childNodes);
+          b.append(em);
+        }
+      }),
+      (main) => setTheme(main, "large-headlines, large-copy, skill")
+    ],
+    [page("training-and-education/orthopaedics/foot-and-ankle/patient-marketing-toolkit/bunion")]: TOOLKIT("Bunion"),
+    [page("training-and-education/orthopaedics/foot-and-ankle/patient-marketing-toolkit/total-ankle-replacement")]: TOOLKIT("Total Ankle Replacement"),
+    [page("training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/ispies")]: [
+      // the title row: the Heading 1, its date a plain Heading 2 (Columns `large-headline`, `title`)
+      (main) => named(main, "columns (columns 50 50)").forEach((t) => {
+        setVariants(t, ["columns 50 50", "large-headline", "title"]);
+        t.querySelectorAll("h1").forEach((h) => {
+          splitFirstLine(h, "h1");
+          const date = t.querySelector("h1 + p");
+          if (!date) return;
+          const h2 = rename2(date, "h2");
+          h2.querySelectorAll("em").forEach((em) => em.replaceWith(...em.childNodes));
+        });
+      }),
+      // the "Where: … | When: …" lines as Heading 2 headline boxes
+      (main) => [...main.querySelectorAll(":scope > p")].filter((el) => norm(el.textContent).startsWith("Where: IRCAD")).forEach((el) => addSectionStyle(rename2(el, "h2"), "headline-box")),
+      (main) => setTheme(main, "large-headlines, xxlarge-copy, serif-copy")
+    ],
+    [page("training-and-education/orthopaedics/spine/spine-medical-education/resources")]: [
+      (main) => named(main, "local nav corp (border)").forEach((t) => setVariants(t, [])),
+      (main) => named(main, "columns (columns-67-33, gold-first, large-serif-copy)").forEach((t, i) => {
+        setVariants(t, ["columns-67-33", "gold-headline-first", "large-serif-copy"]);
+        if (i === 0) addSectionStyle(t, "spaced-items");
+      }),
+      (main) => replaceStyle(main, "spacer", "spacer, large", 0),
+      (main) => [...main.querySelectorAll("p")].filter((el) => norm(el.textContent).startsWith("The goal of this program")).forEach((el) => {
+        const b = el.querySelector(":scope > strong");
+        if (!b || b.querySelector("em")) return;
+        const em = el.ownerDocument.createElement("em");
+        em.append(...b.childNodes);
+        b.append(em);
+      }),
+      // the two S2S list titles: Heading 2 lines, the plain words Italic (Columns `large-titles`)
+      (main) => named(main, "columns (columns-50-50, large-serif-copy)").forEach((t) => {
+        addVariants(t, "large-titles");
+        [...t.querySelectorAll("p")].filter((el) => /^(Highlights of each interactive|Routine) S2S/.test(norm(el.textContent))).forEach((el) => {
+          const h2 = rename2(el, "h2");
+          [...h2.childNodes].filter((n) => n.nodeType === 3 && norm(n.textContent)).forEach((n) => {
+            n.textContent = norm(n.textContent);
+            wrap(n, "em");
+          });
+        });
+      }),
+      (main) => setTheme(main, "large-headlines, spine-meded")
+    ],
+    [page("about/corporate-responsibility/environmental-programs")]: [
+      (main) => named(main, "columns (columns 50 50, boxed all, serif)").forEach((t) => setVariants(t, ["columns 50 50", "boxed-all", "goal-cards"])),
+      (main) => blocks(main, /^columns \(stack, image border(, large-copy)?\)$/).forEach((t) => setVariants(t, ["image-border", "large-copy"])),
+      // the section titles teal (`teal-titles`)
+      (main) => [...main.querySelectorAll(":scope > h3")].filter((h) => /^(Stryker’s locations using renewable energy|Design for sustainability)/.test(norm(h.textContent))).forEach((h) => addSectionStyle(h, "teal-titles")),
+      // the five procurement items: one Columns row (`product-names`, `large-copy`)
+      (main, doc) => {
+        const first = [...main.querySelectorAll(":scope > p")].find((el) => el.querySelector('a[href*="/hydro-V2"]'));
+        if (!first) return;
+        const cells = [];
+        let node = first;
+        while (node && node.tagName === "P" && cells.length < 5) {
+          const image = node;
+          const label = node.nextElementSibling;
+          node = label == null ? void 0 : label.nextElementSibling;
+          cells.push([image, label]);
+        }
+        const table = lpdBlockTable(doc, "Columns (product-names, large-copy)", [...cells, []]);
+        (node || first).before(table);
+      },
+      // one `spacer, large` section before "Design for sustainability" and before "Employee
+      // engagement on sustainability"
+      (main) => [...main.querySelectorAll(":scope > h3")].filter((h) => /^(Design for sustainability|Employee engagement on sustainability)/.test(norm(h.textContent))).forEach((h) => {
+        const [nearest, next] = spacerSectionsBefore(h);
+        if (!nearest || !next) return;
+        if (norm(h.textContent).startsWith("Design")) {
+          nearest.querySelector("tr:nth-child(2) > td:last-child").textContent = "spacer, large";
+          removeEmptySection(next);
+        } else {
+          next.querySelector("tr:nth-child(2) > td:last-child").textContent = "spacer, large";
+          removeEmptySection(nearest);
+        }
+      }),
+      // "Doing more with less…": a Bold Heading 4 subtitle above the rule line
+      (main) => [...main.querySelectorAll(":scope > p")].filter((el) => norm(el.textContent).startsWith("Doing more with less through additive manufacturing")).forEach((el) => {
+        const b = el.querySelector(":scope > strong");
+        const br = el.querySelector(":scope > br");
+        if (!b || !br) return;
+        const h4 = el.ownerDocument.createElement("h4");
+        h4.append(b);
+        dropBlankText(el);
+        br.remove();
+        el.before(h4);
+      })
+    ],
+    [page("training-and-education/orthopaedics/joint-replacement/Mako_surgeon_campaign")]: [
+      // the hero: the two title lines, then the text as a paragraph (plain)
+      (main, doc) => [...main.querySelectorAll("h1")].filter((h) => norm(h.textContent).startsWith("Know more. Cut less.")).forEach((h) => {
+        var _a;
+        const brs = [...h.querySelectorAll(":scope > br")];
+        const second = brs.find((br) => {
+          var _a2;
+          return ((_a2 = br.nextSibling) == null ? void 0 : _a2.nodeName) === "BR";
+        });
+        if (!second) return;
+        const para = doc.createElement("p");
+        const kids = [...h.childNodes];
+        const rest = kids.slice(kids.indexOf(second) + 2);
+        second.nextSibling.remove();
+        second.remove();
+        rest.forEach((n) => {
+          if (n.nodeName === "EM") para.append(...n.childNodes);
+          else if (norm(n.textContent)) para.append(n);
+          else n.remove();
+        });
+        para.normalize();
+        para.childNodes.forEach((n) => {
+          if (n.nodeType === 3) n.textContent = n.textContent.replace(/\s+/g, " ");
+        });
+        trimLead(para);
+        if (((_a = h.lastChild) == null ? void 0 : _a.nodeType) === 3 && !norm(h.lastChild.textContent)) h.lastChild.remove();
+        h.after(para);
+      }),
+      (main) => posterSize(main, "JR_2021_Dig_Media_campaign_video_banner-1", 1380, 776),
+      (main) => ["MAKTKA_VA_39-1", "MKOTHA_VA_20-1", "MAKPKA_VA_32-1"].forEach((v) => posterSize(main, v, 440, 248)),
+      // the section titles Heading 3 (Bold), the training academy line a Heading 2
+      (main) => ["Know more", "Cut less", "See Mako in action", "Turn data into insights and insights into action"].forEach((text4) => withText(main, "h4", text4).forEach((h) => boldHeading(rename2(h, "h3")))),
+      (main) => [...main.querySelectorAll("h4")].filter((h) => norm(h.textContent).startsWith("For more procedural videos")).forEach((h) => rename2(h, "h2")),
+      // the key clinical studies accordions (`large-titles`): a Total Knee / Total Hip panel's
+      // title is one Heading 2 (the gold product, Bold "key clinical studies", the topic on its own
+      // line; Partial Knee keeps its two paragraphs), the study labels Heading 4
+      (main, doc) => named(main, "accordion (large-copy)").forEach((t) => {
+        addVariants(t, "large-titles");
+        [...t.querySelectorAll("p")].filter((el) => {
+          var _a;
+          return /^Mako Total (Knee|Hip) key clinical studies$/.test(norm(el.textContent)) && ((_a = el.nextElementSibling) == null ? void 0 : _a.tagName) === "P" && el.nextElementSibling.querySelector(":scope > strong") && norm(el.nextElementSibling.textContent) === norm(el.nextElementSibling.querySelector(":scope > strong").textContent);
+        }).forEach((el) => {
+          const topic = el.nextElementSibling;
+          const h2 = doc.createElement("h2");
+          h2.append(...el.childNodes, doc.createElement("br"), topic.querySelector(":scope > strong"));
+          topic.remove();
+          el.replaceWith(h2);
+        });
+        t.querySelectorAll("h5").forEach((h) => rename2(h, "h4"));
+      }),
+      (main) => setTheme(main, "large-headlines, xlarge-copy, mako-campaign")
+    ]
+  }), Object.fromEntries([
+    "august",
+    "september",
+    "season-2/december",
+    "season-2/february",
+    "season-2/november",
+    "season-2/october",
+    "season-2/september",
+    "season-3/april",
+    "season-3/february",
+    "season-3/january",
+    "season-3/july",
+    "season-3/june",
+    "season-3/march"
+  ].map((p) => [jr45(p), JR45_BOX])));
+  var FRAGMENT_CORRECTIONS = {
+    // '<fragment document path, e.g. fragments/authors/jane-doe>': [(fragment, document) => { ... }],
+  };
+  var pageKey = (u) => {
+    try {
+      const { origin, pathname } = new URL(u);
+      return `${origin}${pathname.replace(/\/$/, "")}`;
+    } catch (e) {
+      return u;
+    }
+  };
+  var fragmentKey = (p) => String(p).replace(/\\/g, "/").replace(/\.plain\.html$/, "").split("/").reduce((parts, part) => {
+    if (part === "..") parts.pop();
+    else if (part && part !== ".") parts.push(part);
+    return parts;
+  }, []).join("/");
+  function applyCorrections(element, payload, pageCorrections, fragmentCorrections) {
+    const { document, params } = payload || {};
+    if (!document || !params) return;
+    if (element === document.body) {
+      if (!params.originalURL) return;
+      (pageCorrections[pageKey(params.originalURL)] || []).forEach((fix) => fix(element, document));
+      return;
+    }
+    const fragment = (params.fragments || []).find((f) => f.element === element);
+    if (!fragment || typeof fragment.path !== "string") return;
+    (fragmentCorrections[fragmentKey(fragment.path)] || []).forEach((fix) => fix(element, document));
+  }
+  function transform5(hookName, element, payload) {
+    if (hookName !== "afterTransform") return;
+    applyCorrections(element, payload, CORRECTIONS2, FRAGMENT_CORRECTIONS);
+  }
+
   // tools/importer/import-news-detail.js
   var PAGE_TEMPLATE = {
     name: "news-detail",
@@ -3223,7 +5805,27 @@ var CustomImportScript = (() => {
       "https://www.stryker.com/us/en/about/news/2026/stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance.html",
       "https://www.stryker.com/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html",
       "https://www.stryker.com/us/en/about/news/2026/stryker-introduces-mako-handheld-robotics-mako-rps.html",
-      "https://www.stryker.com/us/en/about/news/2026/stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas.html"
+      "https://www.stryker.com/us/en/about/news/2026/stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas.html",
+      "https://www.stryker.com/us/en/about/news/2022/stryker-launches-the-connected-power-pro-2-powered-ambulance-cot.html",
+      "https://www.stryker.com/us/en/about/news/2022/stryker-strengthens-its-r-d-capabilities-with-advanced-global-te.html",
+      "https://www.stryker.com/us/en/about/news/2025/stryker-names-spencer-stiles-president-and-chief-operating-officer.html",
+      "https://www.stryker.com/us/en/about/news/2026/stryker-cmr-surgical-announce-strategic-alliance-advance-robotic-assisted-surgery.html",
+      "https://www.stryker.com/us/en/about/news/2026/stryker-partners-professional-golfer-shane-lowry-caregiver-journey.html",
+      "https://www.stryker.com/us/en/about/news/2022/stryker-launches-new-gamma4-hip-fracture-nailing-system.html",
+      "https://www.stryker.com/us/en/about/news/2022/stryker-launches-q-guidance-system-with-spine-guidance-software.html",
+      "https://www.stryker.com/us/en/about/news/2025/stryker-launches-steri-shield-8-personal-protection-system.html",
+      "https://www.stryker.com/us/en/about/news/2020/stryker-launches-industry-s-first-completely-wireless-hospital-b.html",
+      "https://www.stryker.com/us/en/about/news/2023/a-clearer-vision-of-surgery-stryker-releases-its-next-generation-of-advanced-surgical-cameras.html",
+      "https://www.stryker.com/us/en/about/news/2025/stryker-receives-fda-clearance-for-optablate-bvn-ablation-system.html",
+      "https://www.stryker.com/us/en/about/news/2020/stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi.html",
+      "https://www.stryker.com/us/en/about/news/2023/stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-.html",
+      "https://www.stryker.com/us/en/about/news/2024/features/how-augmented-reality-can-help-care-teams-plan--design-and-const.html",
+      "https://www.stryker.com/us/en/sage/news/2022/sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t.html",
+      "https://www.stryker.com/us/en/sage/news/2022/sea-promotes-social-responsibility-with-tree-planting-event-.html",
+      "https://www.stryker.com/us/en/sage/news/2022/the-journey-to-zero-program-supports-nurse-safety.html",
+      "https://www.stryker.com/us/en/sage/news/2023/study-validates-the-value-of-mobilty-for-older-patients.html",
+      "https://www.stryker.com/us/en/sage/news/2024/2-percent-chlorhexidine-gluconate-cloth-ssi-prevention.html",
+      "https://www.stryker.com/us/en/emergency-care/news/2024/aeds-role-in-athletics.html"
     ],
     blocks: [
       { name: "hero-image-slide", instances: [".c-autocarousel"] },
@@ -3244,7 +5846,9 @@ var CustomImportScript = (() => {
     transform,
     transform2,
     transform3,
-    transform4
+    transform4,
+    // persisted DA edits (excat-persist-content-edit): last, on the final page
+    transform5
   ];
   function executeTransformers(hookName, element, payload) {
     const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
@@ -3313,6 +5917,13 @@ var CustomImportScript = (() => {
       if (meta.Title) meta.Title = meta.Title.replace(/(\s*\|\s*Stryker)+\s*$/i, "");
       const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
       if (keywords) meta.Keywords = keywords;
+      const dropMeta = [];
+      [...main.attributes].filter((a) => a.name.startsWith("data-meta-")).forEach((a) => {
+        const name = a.name.slice("data-meta-".length);
+        if (a.value) meta[name] = a.value;
+        else dropMeta.push(name);
+        main.removeAttribute(a.name);
+      });
       meta.site = "corp";
       meta.template = "news-detail";
       const firstPublished = main.getAttribute("data-first-published");
@@ -3334,6 +5945,7 @@ var CustomImportScript = (() => {
         meta.theme = theme;
         main.removeAttribute("data-news-theme");
       }
+      dropMeta.forEach((name) => delete meta[name]);
       const xf = main.getAttribute("data-news-xf");
       if (xf) main.removeAttribute("data-news-xf");
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));

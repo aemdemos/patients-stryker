@@ -14,7 +14,7 @@ import longPageDetailSectionsTransformer, {
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 import semanticTransformer from './transformers/long-page-detail-corp-semantic.js';
-import pageCorrectionsTransformer from './transformers/patients-stryker-page-corrections.js';
+import pageCorrectionsTransformer from './transformers/corp-page-corrections.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {

@@ -110,6 +110,29 @@ body.news-detail.full-width.basic main > .section:not(.disclaimer) > .default-co
   line-height: var(--body-line-height-l);
 }
 
+/* body-l: the article copy at 17.5px on 20.125px lines at every width, the small print
+   unchanged; headings keep the template sizes. Measured on stryker.com, "Advancing Surgical
+   Education: Highlights from iSPIES at IRCAD North America" (copy in fontsize-1-25em spans:
+   Humanist 17.5px / 20.125px at 390 and 1440px). A section styled `p-1` keeps the 14px
+   copy, e.g. the lead photo's caption of "From the desert to the heart of hope" (14px on
+   stryker.com) */
+body.news-detail.body-l main > .section:not(.disclaimer, .p-1) > .default-content-wrapper :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height);
+}
+
+/* body-l: a heading 2 authored in italic (the Egyptienne subheads, e.g. "iSPIES: Minimally
+   Invasive Surgery") at 21px, 24.5px from 600px, whatever size style its section has */
+body.news-detail.body-l main > .section > .default-content-wrapper > h2:has(em) {
+  font-size: var(--heading-font-size-l);
+}
+
+@media (width >= 600px) {
+  body.news-detail.body-l main > .section > .default-content-wrapper > h2:has(em) {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
 body.news-detail.full-width.basic main > .section > .default-content-wrapper > h1 {
   font-size: var(--corp-heading-font-size-h1-1-5);
   line-height: var(--heading-line-height);
@@ -123,6 +146,20 @@ body.news-detail.full-width.basic main > .section > .default-content-wrapper li 
   display: inline-block;
   margin-bottom: var(--space-block);
   font-family: var(--display-font-family);
+}
+
+/* body-l: the gold banner above a form (section style `h2-1-5` with `background: bg-gold`,
+   e.g. "Interested in learning more?" of "What you're not seeing on a 12-lead ECG") keeps
+   the h2-1-5 heading size, also when the heading is authored in italic: 31.5px, 36.75px
+   from 600px (stryker.com h2 > span.fontsize-1-5em) */
+body.news-detail.body-l main > .section.h2-1-5.bg-gold > .default-content-wrapper > h2 {
+  font-size: var(--corp-heading-font-size-h2-1-5-s);
+}
+
+@media (width >= 600px) {
+  body.news-detail.body-l main > .section.h2-1-5.bg-gold > .default-content-wrapper > h2 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
 }
 
 /* full-width: news pages whose source runs the title, the small print and the "Last
