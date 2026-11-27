@@ -1051,6 +1051,19 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   background-color: var(--corp-color-navy-bright-pressed);
 }
 
+/* purple text (authoring conventions): Italic + Underline words in body text are purple,
+   italic, without an underline; bold words among them stay purple too (upright, not the
+   gold of Bold + Italic). Not in links (an Italic + Underline link alone on its line is the purple
+   button) and not in headings (their underline draws the heading rule) */
+:where(body.corp) main :is(:is(em, i) u, u:has(:is(em, i))):not(a *, :is(h1, h2, h3, h4, h5, h6) *) {
+  color: var(--color-purple);
+  text-decoration: none;
+}
+
+:where(body.corp) main :is(:is(em, i) u, u:has(:is(em, i))) :is(em, i, strong, b):not(a *, :is(h1, h2, h3, h4, h5, h6) *) {
+  color: inherit;
+}
+
 /* ---- back-to-top control (corp.js) ---- */
 
 /* the wrapper of the round link (lazy-styles.css styles .back-to-top as the patients'
