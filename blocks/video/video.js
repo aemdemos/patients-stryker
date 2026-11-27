@@ -138,6 +138,29 @@ function setPlayback(block, player) {
 }
 
 /**
+ * In review: a Dynamic Media video's frame takes the video's own shape (stryker.com shows a
+ * 2.4:1 video at 2.4:1, not in a 16:9 frame with empty bars and the controls under them). The
+ * shape comes from the poster image (the player loads no video data before playback when it
+ * has a poster), or from the video itself once it knows its size.
+ * @param {Element} block The video block
+ */
+function fitToVideo(block) {
+  block.querySelectorAll('video.dm-video').forEach((video) => {
+    const fit = (width, height) => {
+      if (width > 0 && height > 0) video.style.aspectRatio = `${width} / ${height}`;
+    };
+    if (video.videoWidth) fit(video.videoWidth, video.videoHeight);
+    video.addEventListener('loadedmetadata', () => fit(video.videoWidth, video.videoHeight), { once: true });
+    const poster = video.getAttribute('poster');
+    if (poster && !video.videoWidth) {
+      const img = new Image();
+      img.addEventListener('load', () => { if (!video.videoWidth) fit(img.naturalWidth, img.naturalHeight); }, { once: true });
+      img.src = poster;
+    }
+  });
+}
+
+/**
  * loads and decorates the video block
  * @param {Element} block The block element
  */
@@ -148,6 +171,7 @@ export default function decorate(block) {
   const rendered = !link && block.querySelector('.dm-video-wrapper');
   if (std && rendered) {
     setPlayback(block, rendered);
+    fitToVideo(block);
     return;
   }
   if (!link) {
@@ -174,5 +198,8 @@ export default function decorate(block) {
   block.replaceChildren(player);
   // in review (docs/standardisation/video.md): the `autoplay` (muted) and `loop` options,
   // on draft pages only for now
-  if (std) setPlayback(block, player);
+  if (std) {
+    setPlayback(block, player);
+    fitToVideo(block);
+  }
 }
