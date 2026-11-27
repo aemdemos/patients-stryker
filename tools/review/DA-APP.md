@@ -65,9 +65,15 @@ preview shows DA's current content; the published site shows what is live).
   serves pages without a doctype (quirks mode: shorter mixed-size lines, the same computed line
   height). So the tool must not show its pages from there: the app moves itself to a host whose
   pages are the real ones, and DA says hello again after every load of the app's frame.
-- Moving to the branch preview (`*.aem.page`) inside DA gave 401 in one run (the site's login is
-  added by Sidekick; in an incognito window Sidekick is off unless allowed). The published site
-  (`*.aem.live`) is public. Both are being tried.
+- The move works on both hosts (27 Nov 2026, a normal window): on the branch preview
+  (`*.aem.page`, the site's login added by Sidekick even inside DA's frame, Sidekick itself not
+  shown there) and on the published site (`*.aem.live`, public). After the move DA's hello came
+  again, Adobe confirmed the email through the backend, the page read in a frame was the real one
+  and rendered in standards mode. One earlier 401 on `*.aem.page` was most likely an incognito
+  window, where Sidekick is off.
+
+**The proof passed:** the tool can run as a DA app, know who is signed in from the Adobe sign-in
+alone, and show the real pages, readable for side by side and Scroll Sync.
 
 ## Steps 2–4 (after the proof, to be agreed)
 
