@@ -113,8 +113,10 @@ body.news-detail.full-width.basic main > .section:not(.disclaimer) > .default-co
 /* body-l: the article copy at 17.5px on 20.125px lines at every width, the small print
    unchanged; headings keep the template sizes. Measured on stryker.com, "Advancing Surgical
    Education: Highlights from iSPIES at IRCAD North America" (copy in fontsize-1-25em spans:
-   Humanist 17.5px / 20.125px at 390 and 1440px) */
-body.news-detail.body-l main > .section:not(.disclaimer) > .default-content-wrapper :is(p, li) {
+   Humanist 17.5px / 20.125px at 390 and 1440px). A section styled `p-1` keeps the 14px
+   copy, e.g. the lead photo's caption of "From the desert to the heart of hope" (14px on
+   stryker.com) */
+body.news-detail.body-l main > .section:not(.disclaimer, .p-1) > .default-content-wrapper :is(p, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height);
 }

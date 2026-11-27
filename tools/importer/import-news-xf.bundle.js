@@ -4468,6 +4468,14 @@ var CustomImportScript = (() => {
         stripListNumbers(m, find(m, "li", "1. Beseems"));
         style(m, d, find(m, "li", "Beseems"), "disclaimer");
         spacerBefore(m, d, find(m, "li", "Beseems"), "spacer");
+        style(m, d, find(m, "p", "Chasie Greathouse and Cherish Works"), "p-1");
+        const caption = find(m, "p", "Chasie Greathouse and Cherish Works");
+        if (caption && !caption.querySelector("em")) {
+          const em = d.createElement("em");
+          em.append(...caption.childNodes);
+          caption.append(em);
+        }
+        spacerBefore(m, d, blockTable(m, "fragment"), "spacer");
       }
     ],
     // acute-care-training-and-education-resources

@@ -1217,6 +1217,11 @@ const CORRECTIONS = {
       style(m, d, find(m, 'li', 'Beseems'), 'disclaimer');
       // a spacer section above the small print
       spacerBefore(m, d, find(m, 'li', 'Beseems'), 'spacer');
+      // the lead photo's caption at 14px, as on stryker.com: `p-1` on the photo section (body-l keeps it)
+      style(m, d, find(m, 'p', 'Chasie Greathouse and Cherish Works'), 'p-1');
+      // the caption in italic and a spacer above the Resources fragment (as in DA)
+      const caption = find(m, 'p', 'Chasie Greathouse and Cherish Works'); if (caption && !caption.querySelector('em')) { const em = d.createElement('em'); em.append(...caption.childNodes); caption.append(em); }
+      spacerBefore(m, d, blockTable(m, 'fragment'), 'spacer');
     },
   ],
   // acute-care-training-and-education-resources
