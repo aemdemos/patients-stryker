@@ -1,5 +1,5 @@
 /* the DA app proof page (da-proof.html): the checks as a list, a migrated page in a frame */
-.dp-main { max-width: 880px; margin: 0 auto; padding: var(--sp-5) 20px 60px; }
+.dp-main { max-width: 1200px; margin: 0 auto; padding: var(--sp-5) 20px 60px; }
 .dp-kicker { margin: 0; color: var(--c-red); font-size: var(--fs-s); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
 .dp-title { margin: 4px 0 8px; font-size: var(--fs-2xl); font-weight: 900; line-height: 1.15; }
 .dp-lead { margin: 0 0 var(--sp-4); color: var(--c-ink-2); }
@@ -14,7 +14,8 @@
 .dp-open { padding: 0 12px; overflow-wrap: anywhere; }
 .dp-frame-box[hidden] { display: none; }
 .dp-frame-label { margin: 0 0 4px; color: var(--c-muted); font-size: var(--fs-xs); }
-.dp-frame { inline-size: 100%; block-size: 420px; border: 1px solid var(--c-line-2); border-radius: var(--r-s); background: #fff; }
+.dp-frames { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.dp-frame { inline-size: 100%; block-size: 520px; border: 1px solid var(--c-line-2); border-radius: var(--r-s); background: #fff; }
 .dp-copy { min-block-size: 32px; padding: 4px 16px; border: 1px solid var(--c-ink); border-radius: var(--r-pill); background: var(--c-ink); color: #fff; font-weight: 700; cursor: pointer; }
 .dp-copy:disabled { opacity: 0.5; cursor: default; }
 .dp-copied { color: var(--c-ink-2); font-size: var(--fs-s); }

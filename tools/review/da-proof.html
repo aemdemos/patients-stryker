@@ -7,6 +7,8 @@
   <title>Review: Document Authoring app proof</title>
   <link rel="stylesheet" href="./ui.css">
   <link rel="stylesheet" href="./da-proof.css">
+  <!-- DA's SDK first: it must listen before the page's load event (da-proof.js) -->
+  <script type="module" src="https://da.live/nx/utils/sdk.js"></script>
   <script type="module" src="./da-proof.js"></script>
 </head>
 <body>
@@ -17,7 +19,10 @@
     <ol class="dp-checks" aria-live="polite"></ol>
     <div class="dp-frame-box" hidden>
       <p class="dp-frame-label"></p>
-      <iframe class="dp-frame" title="A migrated page, as the tool would show it"></iframe>
+      <div class="dp-frames">
+        <iframe class="dp-frame" title="The page on this host, as the tool would show it"></iframe>
+        <iframe class="dp-frame" title="The published page, to compare"></iframe>
+      </div>
     </div>
     <p class="dp-actions"><button type="button" class="dp-copy" disabled>Copy the results</button> <span class="dp-copied" aria-live="polite"></span></p>
   </main>
