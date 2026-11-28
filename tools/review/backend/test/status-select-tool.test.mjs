@@ -26,9 +26,12 @@ const check = (label, ok, detail = '') => {
   if (!ok) failed += 1;
 };
 
-const aoe = await admin({
-  op: 'invite', name: 'tool test select AOE', paths: ['/'], days: 1, role: 'aoe',
+// (a test AOE member and a review session: the DA sign-in, 27 Nov 2026; test sessions on Stage)
+const AOE = 'zz-select-aoe@example.com';
+await admin({
+  op: 'person-put', email: AOE, name: 'tool test select AOE', role: 'aoe', paths: ['/'],
 });
+const aoe = { token: (await admin({ op: 'test-session', email: AOE })).session, id: `p:${AOE}` };
 const before = (await admin({ op: 'export' })).rows.length;
 const browser = await chromium.launch();
 const errors = [];
@@ -36,7 +39,7 @@ try {
   const p = await (await browser.newContext({ viewport: { width: 1500, height: 950 } })).newPage();
   p.setDefaultTimeout(60000);
   p.on('pageerror', (e) => errors.push(String(e.stack || e).split('\n').slice(0, 2).join(' ').slice(0, 300)));
-  await p.goto(`${base}/tools/review/status.html?invite=${encodeURIComponent(aoe.token)}`);
+  await p.goto(`${base}/tools/review/status.html#session=${encodeURIComponent(aoe.token)}`);
   await p.waitForFunction(() => /pages/.test(document.querySelector('.st-count')?.textContent || '') && document.querySelector('.st-table th input[type=checkbox]'), null, { timeout: 90000 });
   if (!(await p.$eval('.st-clear', (b) => b.disabled))) await p.click('.st-clear');
   await p.waitForTimeout(500);
@@ -111,8 +114,7 @@ try {
 } finally {
   await browser.close();
   await admin({ op: 'purge-invite', id: aoe.id });
-  await admin({ op: 'revoke', id: aoe.id });
-  await admin({ op: 'forget-test-invites' });
+  await admin({ op: 'person-forget', email: AOE });
   const leftover = (await admin({ op: 'export' })).rows.filter((r) => r.kind === 'batch' && r.value === '998').length;
   check('clean-up: the test batch removed', leftover === 0, leftover);
 }
